@@ -1,0 +1,27 @@
+/* Explore page (explore.html). Palette and typography come from base.css. */
+body { color: var(--fg); min-height: 100svh; display: flex; flex-direction: column; }
+
+.explore-head { padding: clamp(80px, 12svh, 120px) var(--gutter) clamp(20px, 4svh, 36px); }
+.explore-head h1 { font-family: var(--serif); font-weight: 400; line-height: .95; letter-spacing: -.01em; font-size: clamp(2.6rem, 7vw, 5.5rem); }
+
+#map { flex: 1; min-height: 60svh; background: var(--deep); z-index: 0; }
+
+/* soften the standard tiles so they sit well with the palette */
+.leaflet-tile-pane { filter: grayscale(.45) sepia(.12) saturate(.85) brightness(.97); }
+
+.pin span { display: block; width: 28px; height: 28px; border-radius: 50%; background: var(--sand); border: 3px solid var(--deep); box-shadow: 0 0 0 1px var(--sand), 0 2px 8px rgba(14, 36, 48, .45); transition: transform .2s ease; }
+.pin:hover span, .pin:focus span { transform: scale(1.2); }
+
+.leaflet-popup-content-wrapper { background: var(--paper); color: var(--ink); border-radius: 2px; }
+.leaflet-popup-tip { background: var(--paper); }
+.pop { font-family: var(--sans); padding: 4px 2px; }
+.pop strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.35rem; line-height: 1.1; margin-bottom: .5rem; }
+.pop a { display: inline-flex; align-items: center; min-height: 44px; color: var(--sand-dark); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; }
+.pop a:hover { text-decoration: underline; }
+.leaflet-container a.leaflet-popup-close-button { width: 44px; height: 44px; font-size: 22px; line-height: 44px; color: var(--ink); }
+.leaflet-touch .leaflet-bar a { width: 44px; height: 44px; line-height: 44px; }
+.leaflet-container :focus-visible { outline: 2px solid var(--sand-dark); outline-offset: 2px; }
+
+@supports not (view-transition-name: none) { body { animation: pagein .5s ease; } }
+@keyframes pagein { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { body { animation: none !important; } .pin span { transition: none; } }

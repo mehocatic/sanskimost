@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sanski Most</title>
+  <link rel="icon" href="data:,">
+  <meta name="description" data-i18n-attr="content:home.meta" content="Sanski Most, Bosnia and Herzegovina: a town on nine rivers, with a medieval fortress, caves, the four-minaret Hamzibeg Mosque and Blihe Waterfall.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <script src="lib.js"></script>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <nav class="site-nav nav-hidden" aria-label="Main" data-i18n-attr="aria-label:nav.label" data-hero="#scene">
+    <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
+    <a href="explore.html" data-i18n="nav.explore">Explore</a>
+  </nav>
+
+  <div id="loader"><span id="loader-text">0%</span></div>
+
+  <!-- Tall section = the scroll "track" the video plays along -->
+  <section id="scene">
+    <div id="stage">
+      <canvas id="canvas" data-frames="412" data-path="frames/f_" data-frames-m="144" data-path-m="frames-m/f_" data-ext="webp"></canvas>
+      <div class="shade"></div>
+      <p id="hero-caption" data-i18n="hero.caption">Blihe Waterfall</p>
+      <div id="fade"></div>
+
+      <h1 id="title">SANSKI<br>MOST</h1>
+      <p id="scroll-hint" data-i18n="hero.scroll">Scroll</p>
+      <p id="outro" data-i18n="hero.outro">Sanski Most &middot; Bosnia and Herzegovina</p>
+    </div>
+  </section>
+
+
+  <main>
+    <section id="intro" class="on-deep" aria-label="Introduction" data-i18n-attr="aria-label:intro.label">
+      <div class="intro-inner">
+        <div>
+          <p id="intro-text" data-i18n="intro.text">Nine rivers. One town.</p>
+          <p id="intro-sub" data-i18n="intro.sub">Sanski Most has a medieval fortress, caves, a mosque with four minarets and a waterfall of about 56&nbsp;m.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="rise to-paper" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
+
+    <section id="places" class="on-paper" aria-labelledby="places-title">
+      <div class="places-head">
+        <p class="eyebrow" data-i18n="places.eyebrow">Places</p>
+        <h2 id="places-title" data-i18n-html="places.title.html">Around <br>Sanski Most</h2>
+      </div>
+      <div class="places-track" id="track"></div>
+      <p class="places-count" id="places-count" aria-hidden="true"></p>
+    </section>
+
+    <section id="where" class="on-paper" aria-labelledby="where-title">
+      <header class="where-head">
+        <p class="eyebrow" data-i18n="where.eyebrow">Suggestions</p>
+        <h2 id="where-title" data-i18n="where.title">Where to go</h2>
+      </header>
+      <div class="where-groups">
+        <div class="where-group">
+          <h3 data-i18n="where.water">Water</h3>
+          <ul>
+            <li><a href="place.html?slug=blihe"><span class="wn" data-i18n-place="blihe">Blihe Waterfall</span><span class="wd" data-i18n="where.water.blihe">The Bliha river drops about 56&nbsp;m.</span></a></li>
+            <li><a href="place.html?slug=dabarska"><span class="wn" data-i18n-place="dabarska">Dabar Cave</span><span class="wd" data-i18n="where.water.dabarska">The source of the Dabar river, with a lake inside.</span></a></li>
+            <li><a href="place.html?slug=bobijasko-oko"><span class="wn" data-i18n-place="bobijasko-oko">Bobija&scaron;ko Oko</span><span class="wd" data-i18n="where.water.bobijasko">A vertical karst shaft that looks like an eye from above.</span></a></li>
+          </ul>
+        </div>
+        <div class="where-group">
+          <h3 data-i18n="where.nature">Nature</h3>
+          <ul>
+            <li><a href="place.html?slug=grmec-forest"><span class="wn" data-i18n-place="grmec-forest">Grme&#269; Forest</span><span class="wd" data-i18n="where.nature.grmec">A primeval forest of over 100 hectares, with trees over 500 years old.</span></a></li>
+            <li><a href="place.html?slug=bobijasko-oko"><span class="wn" data-i18n-place="bobijasko-oko">Bobija&scaron;ko Oko</span><span class="wd" data-i18n="where.nature.bobijasko">The water level changes its look, from a deep blue pool to a lake.</span></a></li>
+            <li><a href="place.html?slug=mulez"><span class="wn" data-i18n-place="mulez">Mule&#382;</span><span class="wd" data-i18n="where.nature.mulez">A mountain above the Sana canyon, with a sulphur spring at Ilid&#382;a at its foot.</span></a></li>
+          </ul>
+        </div>
+        <div class="where-group">
+          <h3 data-i18n="where.history">History</h3>
+          <ul>
+            <li><a href="place.html?slug=kamengrad"><span class="wn" data-i18n-place="kamengrad">Kamengrad Fortress</span><span class="wd" data-i18n="where.history.kamengrad">A medieval fortress, first mentioned in 1374.</span></a></li>
+            <li><a href="place.html?slug=hamzibegova"><span class="wn" data-i18n-place="hamzibegova">Hamzibeg Mosque</span><span class="wd" data-i18n="where.history.hamzibeg">Built before 1557, with four minarets; reopened in 2000.</span></a></li>
+            <li><a href="place.html?slug=korcanica"><span class="wn" data-i18n-place="korcanica">Kor&#269;anica</span><span class="wd" data-i18n="where.history.korcanica">A WWII memorial complex on Grme&#269; mountain, opened in 1979.</span></a></li>
+          </ul>
+        </div>
+        <div class="where-group">
+          <h3 data-i18n="where.adventure">Adventure</h3>
+          <ul>
+            <li><a href="place.html?slug=mulez"><span class="wn" data-i18n="where.adventure.ferrata.name">Mule&#382; via ferrata</span><span class="wd" data-i18n="where.adventure.ferrata">A secured climbing route along a 90&nbsp;m rock wall, for experienced hikers.</span></a></li>
+            <li><a href="place.html?slug=hrustovacka"><span class="wn" data-i18n-place="hrustovacka">Hrustova&#269;ka Cave</span><span class="wd" data-i18n="where.adventure.hrustovacka">A passage of about 500&nbsp;m ends in a small lake.</span></a></li>
+            <!-- no page for the trail, so no link -->
+            <li><div class="where-item"><span class="wn" data-i18n="where.adventure.cvjetna.name">Cvjetna trail</span><span class="wd" data-i18n="where.adventure.cvjetna">About 15&nbsp;km, linking Kamengrad, the waterfall and Jasice.</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="good-to-know" aria-labelledby="gtk-title">
+        <h3 id="gtk-title" data-i18n="gtk.title">Good to know</h3>
+        <ul>
+          <li data-i18n="gtk.1">Distances from the town: Blihe Waterfall about 14&nbsp;km, Hrustovo about 13&nbsp;km, the Grme&#269; forest and Bobija&scaron;ko Oko about 20&nbsp;km.</li>
+          <li data-i18n="gtk.2">Caves: bring a torch and good shoes, and never go alone.</li>
+          <li data-i18n="gtk.3">The via ferrata is for experienced hikers with proper equipment.</li>
+          <li data-i18n="gtk.4">Bobija&scaron;ko Oko is best after snowmelt or heavy rain.</li>
+          <li data-i18n="gtk.5">Check conditions before you go.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="rise to-mist" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
+
+    <section id="history" class="on-mist" aria-labelledby="history-title">
+
+      <!-- a) name -->
+      <div class="h-block h-name">
+        <header>
+          <p class="eyebrow" data-i18n="history.eyebrow">History</p>
+          <h2 id="history-title" data-i18n="history.name.title">How the town got its name</h2>
+        </header>
+        <p class="big-text" data-i18n-html="history.name.html">The name comes from the river Sana, from the Latin <em>sana</em> (&ldquo;healthy&rdquo;), as in <em>Aqua Sana</em>. In 1717, in the Ottoman period, the fortress town is mentioned as <em>D&#382;isr-i Sana</em> (<em>d&#382;isr</em> = bridge).</p>
+      </div>
+
+      <!-- b) timeline -->
+      <div class="h-block h-centuries">
+        <header>
+          <h2 class="h3" data-i18n="history.centuries">Through the centuries</h2>
+        </header>
+        <ol class="timeline" id="timeline">
+          <!-- TODO: no verified information on peoples or tribes before the Ottoman period. Do not name any. -->
+          <li><span class="yr s" data-i18n="tl.1.yr">6th&ndash;3rd c. BC</span><p data-i18n="tl.1">An Iron Age settlement with a necropolis of 176 graves.</p></li>
+          <li><span class="yr">1374</span><p data-i18n="tl.2">Kamengrad is first mentioned; the area belongs to the Sana county (&#382;upa).</p></li>
+          <li><span class="yr">1498&ndash;99</span><p data-i18n="tl.3">The Ottomans take the area.</p></li>
+          <li><span class="yr s" data-i18n="tl.4.yr">16th c.</span><p data-i18n="tl.4">The Hamzibeg Mosque is built (before 1557).</p></li>
+          <li><span class="yr">1878</span><p data-i18n="tl.5">Austro-Hungarian occupation; Sanski Most becomes a district seat.</p></li>
+          <!-- TODO(verify): check the 1941 entry with a local source before publishing. -->
+          <li><span class="yr">1941</span><p data-i18n="tl.6">In May, an uprising in villages south-east of the town is suppressed within days, and 27 Serb civilians are executed in retaliation. In August, Usta&#353;e forces kill thousands of civilians, mostly Serbs, at &Scaron;u&scaron;njar; estimates vary.</p></li>
+          <li><span class="yr">1944</span><p data-i18n="tl.7">The second session of ZAVNOBiH is held here.</p></li>
+          <!-- TODO(verify): check the 1992 entry with a local source before publishing. -->
+          <li><span class="yr">1992</span><p data-i18n="tl.8">After the Army of Republika Srpska takes control of the municipality, non-Serb civilians are killed and held in camps; about 800 killed residents are later found in more than 30 graves. On 31 May, 19 civilians are killed on the Vrhpolje bridge; on 27 June the Hamzibeg Mosque is demolished.</p></li>
+          <li><span class="yr">1995</span><p data-i18n="tl.9">The Bosnian Army enters the town in Operation Sana, on 9&ndash;10 October.</p></li>
+          <li><span class="yr">2000</span><p data-i18n="tl.10">The Hamzibeg Mosque reopens after reconstruction.</p></li>
+        </ol>
+      </div>
+
+    </section>
+
+    <div class="rise to-deep" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
+
+    <section id="numbers" class="on-deep" aria-labelledby="numbers-title">
+      <header>
+        <p class="eyebrow">Sanski Most</p>
+        <h2 class="h3" id="numbers-title" data-i18n="numbers.title">In numbers</h2>
+      </header>
+      <ul class="stats">
+        <li class="stat s1"><p class="num"><span class="n" data-to="9">9</span></p><p class="cap" data-i18n="num.1">Rivers meet in and around the town.</p></li>
+        <li class="stat s2"><p class="num"><span class="n" data-to="142">142</span><span class="u"> km</span></p><p class="cap" data-i18n="num.2">The length of the Sana river, which flows into the Una at Novi Grad.</p></li>
+        <li class="stat s3"><p class="num"><span class="n" data-to="56">56</span><span class="u"> m</span></p><p class="cap" data-i18n="num.3">The drop of the Blihe waterfall.</p></li>
+        <li class="stat s4"><p class="num"><span class="n" data-to="4">4</span></p><p class="cap" data-i18n="num.4">Minarets on the Hamzibeg Mosque, reportedly the only mosque in Bosnia and Herzegovina with four.</p></li>
+        <li class="stat s5"><p class="num"><span class="n" data-to="1374">1374</span></p><p class="cap" data-i18n="num.5">The year Kamengrad fortress is first mentioned.</p></li>
+        <li class="stat s6"><p class="num"><span class="n" data-to="176">176</span></p><p class="cap" data-i18n="num.6">Graves in an Iron Age necropolis from the 6th&ndash;3rd century BC.</p></li>
+      </ul>
+    </section>
+
+    <section id="rivers" class="on-deep" aria-labelledby="rivers-title">
+      <header class="rivers-head">
+        <p class="eyebrow" data-i18n="rivers.eyebrow">Nine rivers</p>
+        <h2 id="rivers-title"><span class="nine" aria-hidden="true">9</span><span class="rt" data-i18n-html="rivers.title.html">The town on<br>nine rivers</span></h2>
+      </header>
+
+      <p class="sana-label">Sana</p>
+      <!-- Order of the tributaries is decorative, it does not follow the real course of the river -->
+      <div class="sana" id="sana">
+        <span class="sana-track" aria-hidden="true"></span>
+        <span class="sana-line" aria-hidden="true"></span>
+        <ol class="tribs">
+          <li class="trib left"><div class="cell"><span class="trib-name">Sanica</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
+          <li class="trib right"><div class="cell"><span class="trib-name">Dabar</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
+          <li class="trib left"><div class="cell"><span class="trib-name">Zdena</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
+          <li class="trib right"><div class="cell"><span class="trib-name">Bliha</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
+          <li class="trib left"><div class="cell"><span class="trib-name">Majdanska rijeka</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
+          <li class="trib right"><div class="cell"><span class="trib-name">Japra</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
+          <li class="trib left"><div class="cell"><span class="trib-name">Sasinka</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
+          <li class="trib right"><div class="cell"><span class="trib-name">Kozica</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
+        </ol>
+      </div>
+      <p class="rivers-fact" data-i18n="rivers.fact">The Sana is about 142 km long and flows into the Una at Novi Grad.</p>
+    </section>
+  </main>
+
+  <footer class="on-deep">
+    <p class="foot-name">Sanski Most</p>
+    <p data-i18n="footer.country">Bosnia and Herzegovina</p>
+    <a href="#top" class="foot-top" data-i18n="footer.top">Back to top</a>
+  </footer>
+
+  <script src="places.js"></script>
+  <script src="i18n/en.js"></script>
+  <script src="i18n/bs.js"></script>
+  <script src="i18n.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+  <script src="main.js"></script>
+  <script src="fx.js"></script>
+  <script src="sound.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

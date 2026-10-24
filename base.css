@@ -1,0 +1,92 @@
+/* Shared by every page: palette, section colours, typography. */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; background: var(--deep); }
+img { max-width: 100%; }
+
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
+
+:root {
+  --deep: #0e2430;
+  --river: #2f7f9e;
+  --mist: #dfe9ec;
+  --paper: #f4f1ea;
+  --ink: #10212a;
+  --sand: #b89b72;
+  --sand-dark: #8a6b3f;
+  --rise-h: clamp(110px, 20svh, 220px);
+  --river-light: #8fd3e8;
+  --river-text: #cfe8f1;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gutter: clamp(20px, 6vw, 96px);
+}
+
+/* Section colours: dark water (.on-deep), light paper (.on-paper) and pale mist (.on-mist) */
+.on-deep { --sec-bg: var(--deep); --fg: var(--paper); --fg-soft: rgba(244, 241, 234, .86); --fg-muted: rgba(244, 241, 234, .66); --rule: rgba(244, 241, 234, .16); --acc: var(--sand); background: var(--sec-bg); color: var(--fg); }
+.on-paper { --sec-bg: var(--paper); --fg: var(--ink); --fg-soft: rgba(16, 33, 42, .88); --fg-muted: rgba(16, 33, 42, .68); --rule: rgba(16, 33, 42, .16); --acc: var(--sand-dark); background: var(--sec-bg); color: var(--fg); }
+.on-mist { --sec-bg: var(--mist); --fg: var(--ink); --fg-soft: rgba(16, 33, 42, .88); --fg-muted: rgba(16, 33, 42, .68); --rule: rgba(16, 33, 42, .16); --acc: var(--sand-dark); background: var(--sec-bg); color: var(--fg); }
+
+body { font-family: var(--sans); font-size: 1rem; line-height: 1.6; overflow-x: clip; }
+:focus-visible { outline: 1px solid var(--acc); outline-offset: 3px; }
+em { font-style: italic; }
+
+.eyebrow {
+  font-size: .75rem; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--acc); margin-bottom: 1.2rem;
+}
+h2 {
+  font-family: var(--serif); font-weight: 400; line-height: .95;
+  font-size: clamp(3rem, 10vw, 9rem); letter-spacing: -.01em;
+}
+h2.h3 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); }
+
+.ph {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 1.5rem; background: #1a3340; border: 1px solid rgba(244, 241, 234, .14);
+  font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 2rem); color: rgba(244, 241, 234, .34);
+}
+
+
+/* Discrete main menu, fixed top right on every page */
+.site-nav {
+  position: fixed; top: 16px; right: var(--gutter); z-index: 60; display: flex; gap: 8px;
+  transition: transform .45s cubic-bezier(.2, .7, .2, 1), opacity .35s ease;
+}
+/* hidden by nav.js (scrolling down, or the home hero on screen); keyboard focus brings it back */
+.site-nav.nav-hidden:not(:focus-within) { transform: translateY(calc(-100% - 20px)); opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) {
+  .site-nav { transition: opacity .2s ease; }
+  .site-nav.nav-hidden:not(:focus-within) { transform: none; }
+}
+.site-nav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem;
+  background: rgba(14, 36, 48, .72); color: var(--paper); border: 1px solid rgba(244, 241, 234, .28);
+  font-family: var(--sans); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.site-nav a:hover { border-color: var(--sand); }
+.site-nav a[aria-current="page"] { color: var(--sand); border-color: var(--sand); }
+
+/* EN | BS (added by i18n.js) */
+.lang-switch {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 .3rem;
+  background: rgba(14, 36, 48, .72); border: 1px solid rgba(244, 241, 234, .28);
+  color: rgba(244, 241, 234, .4); font-family: var(--sans); font-size: .72rem;
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.lang-switch button {
+  min-height: 42px; min-width: 36px; padding: 0 .45rem; background: none; border: 0; cursor: pointer;
+  color: rgba(244, 241, 234, .66); font: inherit; letter-spacing: .2em; padding-left: calc(.45rem + .2em);
+}
+.lang-switch button:hover { color: var(--paper); }
+.lang-switch button[aria-pressed="true"] { color: var(--sand); }
+
+@media (max-width: 420px) {
+  .site-nav { gap: 6px; }
+  .site-nav a { padding: 0 .6rem; letter-spacing: .1em; }
+  .lang-switch { padding: 0 .15rem; }
+  .lang-switch button { min-width: 32px; padding: 0 .3rem; letter-spacing: .1em; }
+}
