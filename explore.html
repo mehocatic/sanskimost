@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" integrity="sha256-YU3qCpj/P06tdPBJGPax0bm6Q1wltfwjsho5TR4+TYc=" crossorigin="">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="explore.css">
 </head>
@@ -25,10 +26,26 @@
     <h1 data-i18n="explore.title">Places on the map</h1>
   </header>
 
-  <div id="map" role="region" aria-label="Map of places around Sanski Most" data-i18n-attr="aria-label:explore.map"></div>
+  <!-- filled by explore.js: category filters, or the route being shown (?route=<id>) -->
+  <div class="explore-bar">
+    <div class="filters" id="filters" role="group" aria-label="Filter the map by category" data-i18n-attr="aria-label:explore.filter"></div>
+    <div class="route-bar" id="route-bar" hidden></div>
+  </div>
+
+  <div class="explore-main">
+    <div id="map" role="region" aria-label="Map of places around Sanski Most" data-i18n-attr="aria-label:explore.map"></div>
+    <aside class="poi-list" aria-labelledby="poi-list-title">
+      <h2 id="poi-list-title"><span data-i18n="explore.list">On the map</span> <span class="poi-count" id="poi-count"></span></h2>
+      <p class="route-missing" id="route-missing" hidden></p>
+      <ol class="poi-items" id="poi-items"></ol>
+    </aside>
+  </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" integrity="sha256-Hk4dIpcqOSb0hZjgyvFOP+cEmDXUKKNE/tT542ZbNQg=" crossorigin=""></script>
   <script src="places.js"></script>
+  <script src="routes.js"></script>
+  <script src="poi.js"></script>
   <script src="i18n/en.js"></script>
   <script src="i18n/bs.js"></script>
   <script src="i18n.js"></script>
