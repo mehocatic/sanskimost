@@ -102,7 +102,10 @@ html, body { background: var(--bg); color: var(--paper); }
   font-family: var(--sans); font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1.55;
   max-width: 34ch; margin-top: clamp(24px, 5svh, 56px); color: var(--fg-muted);
 }
-.js-anim #intro-text .w { opacity: .1; }
+#intro-text .w { display: inline-block; white-space: nowrap; }
+.js-anim #intro-text .ch { opacity: .1; }
+/* visually hidden, still read by screen readers */
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .js-anim #intro-sub { opacity: 0; transform: translateY(14px); }
 
 /* 2. Places carousel */
@@ -179,30 +182,56 @@ html, body { background: var(--bg); color: var(--paper); }
   }
 }
 
-/* Where to go: four groups of suggestions and a "Good to know" box */
-#where { padding: clamp(40px, 8svh, 100px) var(--gutter) clamp(150px, 28svh, 300px); }
-.where-head { margin-bottom: clamp(40px, 8svh, 90px); }
-.where-head h2 { font-size: clamp(2.6rem, 7vw, 6.5rem); }
-.where-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(56px, 10svh, 110px) 6vw; }
-.where-group h3, .good-to-know h3 {
-  font-family: var(--sans); font-weight: 400; font-size: .75rem; letter-spacing: .3em; text-transform: uppercase;
-  line-height: 1.4; color: var(--acc);
+/* Routes (routes.js, built by main.js): a line through the stops draws on scroll and each stop lights up when it is reached */
+#routes { padding: clamp(40px, 8svh, 100px) var(--gutter) clamp(150px, 28svh, 300px); }
+.routes-head { margin-bottom: clamp(40px, 8svh, 90px); }
+.routes-head h2 { font-size: clamp(2.6rem, 7vw, 6.5rem); }
+.routes { list-style: none; }
+.route { padding: clamp(36px, 7svh, 72px) 0; border-top: 1px solid var(--rule); }
+.route:last-child { border-bottom: 1px solid var(--rule); }
+.route-num { font-size: .75rem; letter-spacing: .3em; color: var(--acc); margin-bottom: .8rem; }
+.route-name { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.6vw, 3.2rem); line-height: 1.05; }
+.route-text { max-width: 36ch; margin-top: .7rem; color: var(--fg-muted); }
+.route-extra { max-width: 36ch; margin-top: 1rem; padding-left: 1rem; border-left: 1px solid var(--acc); color: var(--fg-muted); font-size: .9rem; }
+.route-map {
+  display: inline-flex; align-items: center; min-height: 44px; margin-top: 1.4rem; padding: 0 1.1rem;
+  border: 1px solid var(--acc); color: var(--fg); text-decoration: none;
+  font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; transition: background .3s ease, color .3s ease;
 }
-.where-group h3 { padding-bottom: .9rem; border-bottom: 1px solid var(--rule); }
-.where-group ul, .good-to-know ul { list-style: none; }
-.where-group a, .where-item { display: block; padding: 1.2rem 0 1.3rem; border-bottom: 1px solid var(--rule); color: inherit; text-decoration: none; }
-.wn { display: block; font-family: var(--serif); font-size: clamp(1.7rem, 2.6vw, 2.4rem); line-height: 1.1; transition: color .3s ease; }
-.wd { display: block; max-width: 40ch; margin-top: .35rem; font-size: .95rem; color: var(--fg-muted); }
-.where-group a .wn::after { content: " \2192"; font-family: var(--sans); font-size: .5em; vertical-align: .25em; color: var(--acc); }
-.where-group a:hover .wn { color: var(--acc); }
-.good-to-know { max-width: 46rem; margin-top: clamp(64px, 12svh, 130px); padding: clamp(24px, 4vw, 40px); border: 1px solid var(--rule); }
-.good-to-know h3 { margin-bottom: 1rem; }
-.good-to-know li { position: relative; padding: .4rem 0 .4rem 1rem; color: var(--fg-soft); }
-.good-to-know li::before { content: ""; position: absolute; left: 0; top: 1.2em; width: 6px; height: 1px; background: var(--acc); }
-@media (max-width: 768px) {
-  .where-groups { grid-template-columns: minmax(0, 1fr); }
+.route-map::after { content: "\2192"; margin-left: .6rem; letter-spacing: 0; }
+.route-map:hover { background: var(--acc); color: var(--paper); }
+
+.route-track { position: relative; margin-top: clamp(28px, 5svh, 48px); }
+.route-line { position: absolute; background: var(--acc); pointer-events: none; transform-origin: 0 0; }
+.stops { list-style: none; position: relative; }
+/* stacked: dot | photo | text; the dot sits level with the middle of the photo */
+.stop { position: relative; display: grid; grid-template-columns: 11px 84px minmax(0, 1fr); column-gap: 14px; align-items: start; padding-bottom: 28px; transition: opacity .5s ease; }
+.stop:last-child { padding-bottom: 0; }
+.stop-dot { position: relative; z-index: 1; width: 11px; height: 11px; margin-top: 26px; border-radius: 50%; border: 1px solid var(--acc); background: var(--sec-bg); transition: background .4s ease; }
+.stop.on .stop-dot { background: var(--acc); }
+.stop-photo { width: 84px; aspect-ratio: 4 / 3; overflow: hidden; background: #1a3340; }
+.stop-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.stop-photo .ph { padding: .3rem; font-size: .75rem; border: 0; }
+.stop-name { font-family: var(--serif); font-size: 1.45rem; line-height: 1.1; }
+.stop-name a { display: inline-block; padding: .5rem 0; margin: -.5rem 0; color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: .2em; }
+.stop-name a:hover { color: var(--acc); text-decoration-color: var(--acc); }
+.stop-km { margin-top: .35rem; font-size: .8rem; letter-spacing: .06em; color: var(--acc); }
+.stop-note { max-width: 34ch; margin-top: .3rem; font-size: .88rem; color: var(--fg-muted); }
+.js-anim .stop:not(.on) { opacity: .35; }
+.js-anim .route-line { transform: scaleY(0); }
+.routes-check { margin-top: clamp(40px, 8svh, 80px); font-family: var(--serif); font-size: clamp(1.3rem, 2.2vw, 1.8rem); line-height: 1.3; color: var(--fg-soft); }
+
+/* side by side from 900px: three columns per route, a horizontal line through the dots above the photos */
+@media (min-width: 900px) {
+  .route { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 4vw; }
+  .route-track { margin-top: .4rem; }
+  .stops { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2vw; }
+  .stop { grid-template-columns: minmax(0, 1fr); row-gap: 16px; padding-bottom: 0; }
+  .stop-dot { margin-top: 0; }
+  .stop-photo { width: 100%; }
+  .js-anim .route-line { transform: scaleX(0); }
 }
-@media (prefers-reduced-motion: reduce) { .wn { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .stop, .stop-dot, .route-map { transition: none; } }
 
 /* 3. History */
 #history { padding: clamp(100px, 20svh, 240px) var(--gutter) clamp(140px, 26svh, 300px); }

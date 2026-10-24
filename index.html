@@ -58,57 +58,14 @@
       <p class="places-count" id="places-count" aria-hidden="true"></p>
     </section>
 
-    <section id="where" class="on-paper" aria-labelledby="where-title">
-      <header class="where-head">
-        <p class="eyebrow" data-i18n="where.eyebrow">Suggestions</p>
-        <h2 id="where-title" data-i18n="where.title">Where to go</h2>
+    <section id="routes" class="on-paper" aria-labelledby="routes-title">
+      <header class="routes-head">
+        <p class="eyebrow" data-i18n="routes.eyebrow">Suggestions</p>
+        <h2 id="routes-title" data-i18n="routes.title">Routes</h2>
       </header>
-      <div class="where-groups">
-        <div class="where-group">
-          <h3 data-i18n="where.water">Water</h3>
-          <ul>
-            <li><a href="place.html?slug=blihe"><span class="wn" data-i18n-place="blihe">Blihe Waterfall</span><span class="wd" data-i18n="where.water.blihe">The Bliha river drops about 56&nbsp;m.</span></a></li>
-            <li><a href="place.html?slug=dabarska"><span class="wn" data-i18n-place="dabarska">Dabar Cave</span><span class="wd" data-i18n="where.water.dabarska">The source of the Dabar river, with a lake inside.</span></a></li>
-            <li><a href="place.html?slug=bobijasko-oko"><span class="wn" data-i18n-place="bobijasko-oko">Bobija&scaron;ko Oko</span><span class="wd" data-i18n="where.water.bobijasko">A vertical karst shaft that looks like an eye from above.</span></a></li>
-          </ul>
-        </div>
-        <div class="where-group">
-          <h3 data-i18n="where.nature">Nature</h3>
-          <ul>
-            <li><a href="place.html?slug=grmec-forest"><span class="wn" data-i18n-place="grmec-forest">Grme&#269; Forest</span><span class="wd" data-i18n="where.nature.grmec">A primeval forest of over 100 hectares, with trees over 500 years old.</span></a></li>
-            <li><a href="place.html?slug=bobijasko-oko"><span class="wn" data-i18n-place="bobijasko-oko">Bobija&scaron;ko Oko</span><span class="wd" data-i18n="where.nature.bobijasko">The water level changes its look, from a deep blue pool to a lake.</span></a></li>
-            <li><a href="place.html?slug=mulez"><span class="wn" data-i18n-place="mulez">Mule&#382;</span><span class="wd" data-i18n="where.nature.mulez">A mountain above the Sana canyon, with a sulphur spring at Ilid&#382;a at its foot.</span></a></li>
-          </ul>
-        </div>
-        <div class="where-group">
-          <h3 data-i18n="where.history">History</h3>
-          <ul>
-            <li><a href="place.html?slug=kamengrad"><span class="wn" data-i18n-place="kamengrad">Kamengrad Fortress</span><span class="wd" data-i18n="where.history.kamengrad">A medieval fortress, first mentioned in 1374.</span></a></li>
-            <li><a href="place.html?slug=hamzibegova"><span class="wn" data-i18n-place="hamzibegova">Hamzibeg Mosque</span><span class="wd" data-i18n="where.history.hamzibeg">Built before 1557, with four minarets; reopened in 2000.</span></a></li>
-            <li><a href="place.html?slug=korcanica"><span class="wn" data-i18n-place="korcanica">Kor&#269;anica</span><span class="wd" data-i18n="where.history.korcanica">A WWII memorial complex on Grme&#269; mountain, opened in 1979.</span></a></li>
-          </ul>
-        </div>
-        <div class="where-group">
-          <h3 data-i18n="where.adventure">Adventure</h3>
-          <ul>
-            <li><a href="place.html?slug=mulez"><span class="wn" data-i18n="where.adventure.ferrata.name">Mule&#382; via ferrata</span><span class="wd" data-i18n="where.adventure.ferrata">A secured climbing route along a 90&nbsp;m rock wall, for experienced hikers.</span></a></li>
-            <li><a href="place.html?slug=hrustovacka"><span class="wn" data-i18n-place="hrustovacka">Hrustova&#269;ka Cave</span><span class="wd" data-i18n="where.adventure.hrustovacka">A passage of about 500&nbsp;m ends in a small lake.</span></a></li>
-            <!-- no page for the trail, so no link -->
-            <li><div class="where-item"><span class="wn" data-i18n="where.adventure.cvjetna.name">Cvjetna trail</span><span class="wd" data-i18n="where.adventure.cvjetna">About 15&nbsp;km, linking Kamengrad, the waterfall and Jasice.</span></div></li>
-          </ul>
-        </div>
-      </div>
-
-      <aside class="good-to-know" aria-labelledby="gtk-title">
-        <h3 id="gtk-title" data-i18n="gtk.title">Good to know</h3>
-        <ul>
-          <li data-i18n="gtk.1">Distances from the town: Blihe Waterfall about 14&nbsp;km, Hrustovo about 13&nbsp;km, the Grme&#269; forest and Bobija&scaron;ko Oko about 20&nbsp;km.</li>
-          <li data-i18n="gtk.2">Caves: bring a torch and good shoes, and never go alone.</li>
-          <li data-i18n="gtk.3">The via ferrata is for experienced hikers with proper equipment.</li>
-          <li data-i18n="gtk.4">Bobija&scaron;ko Oko is best after snowmelt or heavy rain.</li>
-          <li data-i18n="gtk.5">Check conditions before you go.</li>
-        </ul>
-      </aside>
+      <!-- filled by main.js from routes.js -->
+      <ol class="routes" id="routes-list"></ol>
+      <p class="routes-check" data-i18n="routes.conditions">Check conditions before you go.</p>
     </section>
 
     <div class="rise to-mist" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
@@ -136,13 +93,11 @@
           <li><span class="yr">1498&ndash;99</span><p data-i18n="tl.3">The Ottomans take the area.</p></li>
           <li><span class="yr s" data-i18n="tl.4.yr">16th c.</span><p data-i18n="tl.4">The Hamzibeg Mosque is built (before 1557).</p></li>
           <li><span class="yr">1878</span><p data-i18n="tl.5">Austro-Hungarian occupation; Sanski Most becomes a district seat.</p></li>
-          <!-- TODO(verify): check the 1941 entry with a local source before publishing. -->
-          <li><span class="yr">1941</span><p data-i18n="tl.6">In May, an uprising in villages south-east of the town is suppressed within days, and 27 Serb civilians are executed in retaliation. In August, Usta&#353;e forces kill thousands of civilians, mostly Serbs, at &Scaron;u&scaron;njar; estimates vary.</p></li>
-          <li><span class="yr">1944</span><p data-i18n="tl.7">The second session of ZAVNOBiH is held here.</p></li>
+          <li><span class="yr">1944</span><p data-i18n="tl.6">The second session of ZAVNOBiH is held here.</p></li>
           <!-- TODO(verify): check the 1992 entry with a local source before publishing. -->
-          <li><span class="yr">1992</span><p data-i18n="tl.8">After the Army of Republika Srpska takes control of the municipality, non-Serb civilians are killed and held in camps; about 800 killed residents are later found in more than 30 graves. On 31 May, 19 civilians are killed on the Vrhpolje bridge; on 27 June the Hamzibeg Mosque is demolished.</p></li>
-          <li><span class="yr">1995</span><p data-i18n="tl.9">The Bosnian Army enters the town in Operation Sana, on 9&ndash;10 October.</p></li>
-          <li><span class="yr">2000</span><p data-i18n="tl.10">The Hamzibeg Mosque reopens after reconstruction.</p></li>
+          <li><span class="yr">1992</span><p data-i18n="tl.7">After the Army of Republika Srpska takes control of the municipality, non-Serb civilians are killed and held in camps; about 800 killed residents are later found in more than 30 graves. On 31 May, 19 civilians are killed on the Vrhpolje bridge; on 27 June the Hamzibeg Mosque is demolished.</p></li>
+          <li><span class="yr">1995</span><p data-i18n="tl.8">The Bosnian Army enters the town in Operation Sana 95, on 9&ndash;10 October.</p></li>
+          <li><span class="yr">2000</span><p data-i18n="tl.9">The Hamzibeg Mosque reopens after reconstruction.</p></li>
         </ol>
       </div>
 
@@ -198,6 +153,7 @@
   </footer>
 
   <script src="places.js"></script>
+  <script src="routes.js"></script>
   <script src="i18n/en.js"></script>
   <script src="i18n/bs.js"></script>
   <script src="i18n.js"></script>

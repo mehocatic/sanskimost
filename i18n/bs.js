@@ -27,33 +27,24 @@ I18N.bs = {
   'card.aria': '{name}: saznaj više',
   'cursor.view': 'Pogledaj',
 
-  // where to go
-  'where.eyebrow': 'Prijedlozi',
-  'where.title': 'Kuda ići',
-  'where.water': 'Voda',
-  'where.nature': 'Priroda',
-  'where.history': 'Historija',
-  'where.adventure': 'Avantura',
-  'where.water.blihe': 'Rijeka Bliha ovdje pada s visine od oko 56 m.',
-  'where.water.dabarska': 'Izvor rijeke Dabar, s jezerom u unutrašnjosti.',
-  'where.water.bobijasko': 'Vertikalna kraška jama koja odozgo izgleda kao oko.',
-  'where.nature.grmec': 'Prašuma na više od 100 hektara, sa stablima starijim od 500 godina.',
-  'where.nature.bobijasko': 'Izgled mu se mijenja s nivoom vode, od tamnoplavog vira do jezera.',
-  'where.nature.mulez': 'Planina iznad kanjona Sane, sa sumpornim izvorom na Ilidži u podnožju.',
-  'where.history.kamengrad': 'Srednjovjekovna tvrđava, prvi put spomenuta 1374.',
-  'where.history.hamzibeg': 'Izgrađena prije 1557, s četiri munare; ponovo otvorena 2000.',
-  'where.history.korcanica': 'Spomen-kompleks iz Drugog svjetskog rata na Grmeču, otvoren 1979.',
-  'where.adventure.ferrata.name': 'Via ferrata na Muležu',
-  'where.adventure.ferrata': 'Osigurana penjačka staza duž stijene od 90 m, za iskusne planinare.',
-  'where.adventure.hrustovacka': 'Hodnik dug oko 500 m završava malim jezerom.',
-  'where.adventure.cvjetna.name': 'Staza Cvjetna',
-  'where.adventure.cvjetna': 'Oko 15 km, povezuje Kamengrad, vodopad i Jasice.',
-  'gtk.title': 'Dobro je znati',
-  'gtk.1': 'Udaljenosti od grada: vodopad Blihe oko 14 km, Hrustovo oko 13 km, prašuma na Grmeču i Bobijaško oko približno 20 km.',
-  'gtk.2': 'Pećine: ponesite baterijsku lampu i dobru obuću i nikad ne idite sami.',
-  'gtk.3': 'Via ferrata je za iskusne planinare s odgovarajućom opremom.',
-  'gtk.4': 'Bobijaško oko najbolje je vidjeti nakon otapanja snijega ili jakih kiša.',
-  'gtk.5': 'Prije polaska provjerite uslove.',
+  // routes (routes.js)
+  'routes.eyebrow': 'Prijedlozi',
+  'routes.title': 'Rute',
+  'routes.map': 'Vidi na karti',
+  'routes.km': 'Oko {km} km od grada',
+  'routes.conditions': 'Provjerite uslove prije polaska.',
+  'route.half-day.name': 'Pola dana',
+  'route.half-day.text': 'Srednjovjekovna tvrđava, musala ispod nje i džamija s četiri munare.',
+  'route.water.name': 'Dan uz vodu',
+  'route.water.text': 'Dvije kraške lokacije povezane istom vodom, pa vodopad.',
+  'route.adventure.name': 'Avantura',
+  'route.adventure.text': 'Osigurana penjačka staza na stijeni od 90 m i pećinski hodnik dug oko 500 m.',
+  'route.grmec.name': 'Grmeč',
+  'route.grmec.text': 'Prašuma i spomen-kompleks iz Drugog svjetskog rata na istoj planini.',
+  'note.cave': 'Ponesite baterijsku lampu i nikad ne idite sami.',
+  'note.ferrata': 'Za iskusne planinare; preporučuju se kaciga, pojas i sajle.',
+  'note.bobijasko': 'Najbolje ga je vidjeti nakon otapanja snijega ili jakih kiša.',
+  'note.cvjetna': 'Staza Cvjetna, duga oko 15 km, povezuje Kamengrad, vodopad i Jasice.',
 
   // history
   'history.eyebrow': 'Historija',
@@ -67,13 +58,11 @@ I18N.bs = {
   'tl.4.yr': '16. st.',
   'tl.4': 'Gradi se Hamzibegova džamija (prije 1557).',
   'tl.5': 'Austrougarska okupacija; Sanski Most postaje sjedište kotara.',
-  // TODO(verify): check the 1941 entry with a local source before publishing.
-  'tl.6': 'U maju je ustanak u selima jugoistočno od grada ugušen u roku od nekoliko dana, a 27 srpskih civila strijeljano je u znak odmazde. U augustu ustaške snage na Šušnjaru ubijaju hiljade civila, većinom Srba; procjene se razlikuju.',
-  'tl.7': 'Ovdje se održava drugo zasjedanje ZAVNOBiH-a.',
+  'tl.6': 'Ovdje se održava drugo zasjedanje ZAVNOBiH-a.',
   // TODO(verify): check the 1992 entry with a local source before publishing.
-  'tl.8': 'Nakon što Vojska Republike Srpske preuzme kontrolu nad općinom, nesrpski civili su ubijani i zatvarani u logore; oko 800 ubijenih stanovnika kasnije je pronađeno u više od 30 grobnica. Na mostu u Vrhpolju 31. maja ubijeno je 19 civila; 27. juna srušena je Hamzibegova džamija.',
-  'tl.9': 'Armija RBiH ulazi u grad u operaciji Sana, 9. i 10. oktobra.',
-  'tl.10': 'Hamzibegova džamija ponovo je otvorena nakon obnove.',
+  'tl.7': 'Nakon što Vojska Republike Srpske preuzme kontrolu nad općinom, nesrpski civili su ubijani i zatvarani u logore; oko 800 ubijenih stanovnika kasnije je pronađeno u više od 30 grobnica. Na mostu u Vrhpolju 31. maja ubijeno je 19 civila; 27. juna srušena je Hamzibegova džamija.',
+  'tl.8': 'Armija RBiH ulazi u grad u operaciji Sana 95, 9. i 10. oktobra.',
+  'tl.9': 'Hamzibegova džamija ponovo je otvorena nakon obnove.',
 
   // numbers
   'numbers.title': 'U brojkama',
@@ -118,6 +107,19 @@ I18N.bs = {
   'explore.title': 'Mjesta na karti',
   'explore.map': 'Karta mjesta oko Sanskog Mosta',
   'explore.view': 'Pogledaj mjesto →',
+  'explore.filter': 'Filtriraj kartu po kategoriji',
+  'explore.all': 'Sve',
+  'explore.legend': 'Legenda',
+  'explore.list': 'Na karti',
+  'explore.route': 'Ruta: {name}',
+  'explore.showAll': 'Prikaži sva mjesta',
+  'explore.missing': 'Još nisu na karti: {names}.',
+  'cat.nature': 'Priroda',
+  'cat.water': 'Voda',
+  'cat.history': 'Historija',
+  'cat.culture': 'Kultura',
+  'cat.camps': 'Logori',
+  'cat.memorials': 'Spomenici',
 
   // optional river sound
   'sound.label': 'Zvuk rijeke',
@@ -130,8 +132,7 @@ I18N.bs = {
       short: 'Zaštićeni spomenik prirode gdje rijeka Bliha pada oko 56 m.',
       long: 'Vodopad Blihe, kod mještana poznat kao Blihin skok, nalazi se oko 14 km od Sanskog Mosta. Ovdje rijeka Bliha pada oko 56 m. Zaštićen je kao spomenik prirode. Planinarska staza „Cvjetna“, duga oko 15 km, povezuje Kamengrad, vodopad i izletište Jasice.',
       see: [
-        'Staza „Cvjetna“ (oko 15 km) povezuje Kamengrad, vodopad i izletište Jasice.',
-        'Fajtovci, selo na rijeci Blihi gdje pada vodopad.'
+        'Staza „Cvjetna“ (oko 15 km) povezuje Kamengrad, vodopad i izletište Jasice.'
       ]
     },
     'kamengrad': {
@@ -217,13 +218,10 @@ I18N.bs = {
         'Bobijaško oko, vertikalna kraška jama koja odozgo izgleda kao oko.'
       ]
     },
-    'fajtovci': {
-      name: 'Fajtovci',
-      short: 'Selo na rijeci Blihi, gdje vodopad Blihe pada oko 56 m.',
-      long: 'Fajtovci su selo na rijeci Blihi, gdje vodopad Blihe pada oko 56 m. Seoska džamija nosi ime generala Mehmeda Alagića (1947–2003), rođenog u Fajtovcima. Komandovao je korpusom Armije Republike Bosne i Hercegovine, a kasnije je bio prvi poslijeratni načelnik Sanskog Mosta. Položio je kamen temeljac džamije, koja je ponovo otvorena 19. jula 2008, a ukopan je u haremu džamije. Godišnjica njegove smrti obilježava se 7. marta; planira se spomen-soba.',
-      see: [
-        'Vodopad Blihe, gdje rijeka Bliha pada oko 56 m.'
-      ]
+    'turbe-alagic': {
+      name: 'Turbe generala Alagića',
+      short: 'General Mehmed Alagić (1947–2003), komandant korpusa i prvi poslijeratni načelnik Sanskog Mosta.',
+      long: 'Mehmed Alagić (1947–2003) bio je general i komandant korpusa Armije Republike Bosne i Hercegovine. Bio je i prvi poslijeratni načelnik Sanskog Mosta. Godišnjica njegove smrti obilježava se 7. marta.'
     },
     'zavnobih': {
       name: 'ZAVNOBiH 1944',

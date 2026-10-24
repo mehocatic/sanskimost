@@ -33,7 +33,7 @@
   }
 
   /* ---------- headings reveal line by line (SplitText; plain word split if it is not available) ---------- */
-  const HEADINGS = '.places-head h2, .where-head h2, #history h2, .big-text, #numbers h2, .rivers-head .rt';
+  const HEADINGS = '.places-head h2, .routes-head h2, #history h2, .big-text, #numbers h2, .rivers-head .rt';
   const reveals = []; // { split, tween } per heading, undone before the language changes
   function revealLines(el) {
     const trigger = { trigger: el, start: 'top 88%', toggleActions: 'play none none none' };
@@ -57,15 +57,35 @@
     (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go);
   }
 
-  /* ---------- 1. intro: reveal words on scroll ---------- */
+  /* ---------- 1. intro: reveal letter by letter on scroll ---------- */
+  // Letters sit inside word spans (inline-block, nowrap) so a word never breaks; screen readers get
+  // the whole sentence from a visually hidden copy, the letters are aria-hidden.
   const introText = document.getElementById('intro-text');
   let introTl = null;
   function setupIntro() {
-    introText.innerHTML = introText.textContent.trim().split(/\s+/)
-      .map(w => `<span class="w">${w}</span>`).join(' ');
+    const text = introText.textContent.trim();
+    const label = document.createElement('span');
+    label.className = 'vh';
+    label.textContent = text;
+    const letters = document.createElement('span');
+    letters.setAttribute('aria-hidden', 'true');
+    text.split(/\s+/).forEach((word, i) => {
+      if (i) letters.append(' ');
+      const w = document.createElement('span');
+      w.className = 'w';
+      for (const ch of word) {
+        const c = document.createElement('span');
+        c.className = 'ch';
+        c.textContent = ch;
+        w.appendChild(c);
+      }
+      letters.appendChild(w);
+    });
+    introText.replaceChildren(label, letters);
     if (!animate) return;
+    // the letters take the same share of the scroll as the four words did (2 of 2.5), the sub line the rest
     introTl = gsap.timeline({ scrollTrigger: { trigger: '#intro', start: 'top 40%', end: 'top -60%', scrub: true } })
-      .fromTo('#intro-text .w', { opacity: .1 }, { opacity: 1, ease: 'none', stagger: 0.5 })
+      .fromTo('#intro-text .ch', { opacity: .1 }, { opacity: 1, ease: 'none', duration: .5, stagger: { amount: 1.5 } })
       .fromTo('#intro-sub', { opacity: 0, y: 14 }, { opacity: 1, y: 0, ease: 'none' });
   }
   setupIntro();
@@ -162,6 +182,116 @@
     clicked = null;
   });
 
+  /* ---------- routes (routes.js): a line through the stops draws on scroll, each stop lights up when the line reaches it ---------- */
+  // Phones and narrow screens: stops stacked, vertical line. From 900px: stops side by side, horizontal line.
+  const routesList = document.getElementById('routes-list');
+  const ROUTES_ROW = window.matchMedia('(min-width: 900px)');
+  let routeTriggers = [];
+
+  const make = (tag, cls, text) => {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  };
+
+  function renderRoutes() {
+    routesList.replaceChildren(...ROUTES.map((r, ri) => {
+      const li = make('li', 'route');
+      li.id = `route-${r.id}`;
+
+      const info = make('div', 'route-info');
+      info.append(
+        make('p', 'route-num', String(ri + 1).padStart(2, '0')),
+        make('h3', 'route-name', I18n.t(`route.${r.id}.name`)),
+        make('p', 'route-text', I18n.t(`route.${r.id}.text`))
+      );
+      if (r.extra) info.appendChild(make('p', 'route-extra', I18n.t(r.extra)));
+      const map = make('a', 'route-map', I18n.t('routes.map'));
+      map.href = `explore.html?route=${encodeURIComponent(r.id)}`;
+      info.appendChild(map);
+
+      const trackEl = make('div', 'route-track');
+      const line = make('span', 'route-line');
+      line.setAttribute('aria-hidden', 'true');
+      const stops = make('ol', 'stops');
+      r.stops.forEach(s => {
+        const p = PLACES.find(q => q.slug === s.slug);
+        if (!p) return;
+        const name = I18n.place(p, 'name');
+        // without the animation every stop is shown as reached
+        const stop = make('li', animate ? 'stop' : 'stop on');
+        const dot = make('span', 'stop-dot');
+        dot.setAttribute('aria-hidden', 'true');
+        const pic = make('div', 'stop-photo');
+        pic.appendChild(photo(photoEntry(p.photos && p.photos[0]).src, name));
+        const body = make('div', 'stop-body');
+        const title = make('p', 'stop-name');
+        const a = make('a', null, name);
+        a.href = `place.html?slug=${encodeURIComponent(p.slug)}`;
+        title.appendChild(a);
+        body.appendChild(title);
+        if (s.km) body.appendChild(make('p', 'stop-km', I18n.t('routes.km', { km: s.km })));
+        if (s.note) body.appendChild(make('p', 'stop-note', I18n.t(s.note)));
+        stop.append(dot, pic, body);
+        stops.appendChild(stop);
+      });
+      trackEl.append(line, stops);
+      li.append(info, trackEl);
+      return li;
+    }));
+    layoutRoutes();
+  }
+
+  // place each line from the first dot to the last, and note where along it every stop sits (0..1)
+  function layoutRoutes() {
+    const row = ROUTES_ROW.matches;
+    routesList.querySelectorAll('.route-track').forEach(t => {
+      const line = t.querySelector('.route-line');
+      const box = t.getBoundingClientRect();
+      const c = [...t.querySelectorAll('.stop-dot')].map(d => {
+        const r = d.getBoundingClientRect();
+        return { x: r.left + r.width / 2 - box.left, y: r.top + r.height / 2 - box.top };
+      });
+      if (c.length < 2) { line.style.display = 'none'; t._pos = c.map(() => 0); return; }
+      const a = c[0], b = c[c.length - 1];
+      line.style.display = '';
+      if (row) Object.assign(line.style, { left: a.x + 'px', top: a.y + 'px', width: (b.x - a.x) + 'px', height: '1px' });
+      else Object.assign(line.style, { left: a.x + 'px', top: a.y + 'px', width: '1px', height: (b.y - a.y) + 'px' });
+      t._row = row;
+      t._pos = c.map(p => row ? (p.x - a.x) / (b.x - a.x) : (p.y - a.y) / (b.y - a.y));
+    });
+  }
+
+  function setupRouteTriggers() {
+    if (!animate) return;
+    routesList.querySelectorAll('.route-track').forEach(t => {
+      const line = t.querySelector('.route-line');
+      const stops = [...t.querySelectorAll('.stop')];
+      const apply = p => {
+        line.style.transform = t._row ? `scaleX(${p})` : `scaleY(${p})`;
+        stops.forEach((s, i) => s.classList.toggle('on', p > 0 && p >= t._pos[i] - .001));
+      };
+      // stacked: the tip of the line stays at 70% of the screen height (as the Sana line);
+      // side by side: the line draws while the row crosses the lower half of the screen
+      routeTriggers.push(ScrollTrigger.create({
+        trigger: t,
+        start: () => ROUTES_ROW.matches ? 'top 80%' : `top+=${parseFloat(line.style.top) || 0} 70%`,
+        end: () => ROUTES_ROW.matches ? 'bottom 55%' : `top+=${(parseFloat(line.style.top) || 0) + (parseFloat(line.style.height) || 0)} 70%`,
+        invalidateOnRefresh: true,
+        onUpdate: self => apply(self.progress),
+        onRefresh: self => apply(self.progress)
+      }));
+      apply(0);
+    });
+  }
+
+  renderRoutes();
+  setupRouteTriggers();
+  if (animate) ScrollTrigger.addEventListener('refreshInit', layoutRoutes);
+  else window.addEventListener('resize', layoutRoutes);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { layoutRoutes(); if (animate) ScrollTrigger.refresh(); });
+
   /* ---------- 3b. timeline: the line draws, entries enter in order ---------- */
   const timeline = document.getElementById('timeline');
   const tlLine = document.createElement('span');
@@ -227,10 +357,14 @@
     });
     reveals.length = 0;
     if (introTl) { introTl.scrollTrigger.kill(); introTl.kill(); introTl = null; }
+    routeTriggers.forEach(st => st.kill());
+    routeTriggers = [];
   });
   window.addEventListener('langchange', () => {
     setupIntro();
     [...track.children].forEach((slot, i) => cardText(slot, PLACES[i]));
+    renderRoutes();
+    setupRouteTriggers();
     if (headingsSplit) document.querySelectorAll(HEADINGS).forEach(revealLines);
     if (animate) ScrollTrigger.refresh();
   });
