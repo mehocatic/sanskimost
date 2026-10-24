@@ -23,8 +23,7 @@ const PLACES = [
     short: "A protected natural monument where the Bliha river drops about 56 m.",
     long: "Blihe Waterfall, known locally as Blihin skok, lies about 14 km from Sanski Most. Here the Bliha river drops about 56 m. It is a protected natural monument. The “Cvjetna” hiking trail, about 15 km long, links Kamengrad, the waterfall and the Jasice recreation area.",
     see: [
-      "The \u201CCvjetna\u201D trail (about 15 km) links Kamengrad, the waterfall and the Jasice recreation area.",
-      { slug: "fajtovci", text: "Fajtovci, the village on the Bliha river where the waterfall drops." }
+      "The \u201CCvjetna\u201D trail (about 15 km) links Kamengrad, the waterfall and the Jasice recreation area."
     ],
     photos: [{ src: "photos/bliha.jpg", author: "", license: "", sourceUrl: "" }, PH, PH, PH]
   },
@@ -44,7 +43,7 @@ const PLACES = [
   },
   {
     slug: "musalla",
-    // TODO coords: not found in OpenStreetMap, so no marker on the map. Add coords: [lat, lon] once verified.
+    // coords: not set here. In OpenStreetMap it is node 519029537 (amenity=place_of_worship, "Fatihova Musalla"), and poi.js uses it for the map.
     name: "Fatih’s Musalla",
     short: "An Ottoman-era open-air prayer place in Kamengrad.",
     long: "Fatih’s Musalla in Kamengrad is an Ottoman-era open-air prayer place, dated to 1463 in some sources. Friday prayers and an annual event are held there.",
@@ -131,8 +130,7 @@ const PLACES = [
       "The via ferrata along the 90 m rock wall, open since September 2024.",
       "The sulphur spring at Ilidža, at the foot of the mountain."
     ],
-    // TODO: no photo yet, so the neutral placeholder with the name is shown
-    photos: []
+    photos: [{ src: "photos/mulez.jpg", author: "", license: "", sourceUrl: "" }]
   },
   {
     slug: "grmec-forest",
@@ -144,21 +142,18 @@ const PLACES = [
       { slug: "korcanica", text: "Korčanica, a WWII memorial complex on Grmeč mountain." },
       { slug: "bobijasko-oko", text: "Bobijaško Oko, a vertical karst shaft that looks like an eye from above." }
     ],
-    // TODO: no photo yet, so the neutral placeholder with the name is shown
-    photos: []
+    photos: [{ src: "photos/grmec.jpg", author: "", license: "", sourceUrl: "" }]
   },
   {
-    slug: "fajtovci",
-    // TODO coords: not verified, so no marker on the map. Add coords: [lat, lon] once verified.
-    // TODO(verify): a turbe and a park named after General Alagić are not confirmed in the sources. Do not add them until confirmed.
-    name: "Fajtovci",
-    short: "A village on the Bliha river, where the Blihe waterfall drops about 56 m.",
-    long: "Fajtovci is a village on the Bliha river, where the Blihe waterfall drops about 56 m. The village mosque bears the name of General Mehmed Alagić (1947–2003), who was born in Fajtovci. He commanded an Army of the Republic of Bosnia and Herzegovina corps and was later the first post-war mayor of Sanski Most. He laid the foundation stone of the mosque, which was reopened on 19 July 2008, and he is buried in the mosque cemetery. His death anniversary is commemorated on 7 March; a memorial room is planned.",
-    see: [
-      { slug: "blihe", text: "Blihe Waterfall, where the Bliha river drops about 56 m." }
-    ],
-    // TODO: no photo yet, so the neutral placeholder with the name is shown
-    photos: []
+    slug: "turbe-alagic",
+    // Facts: FACTS.md, "Fajtovci / General Mehmed Alagic" and the decision that this card is only about the general.
+    // TODO coords: the turbe's location is not known yet (Meho will provide it), so no marker on the map.
+    // TODO(verify): a park named after General Alagić is not confirmed in the sources. Do not add it until confirmed.
+    name: "Turbe Generala Alagića",
+    short: "General Mehmed Alagić (1947–2003), corps commander and the first post-war mayor of Sanski Most.",
+    long: "Mehmed Alagić (1947–2003) was a general and a corps commander in the Army of the Republic of Bosnia and Herzegovina. He was also the first post-war mayor of Sanski Most. The anniversary of his death is marked on 7 March.",
+    see: [],
+    photos: [{ src: "photos/turbe.jpg", author: "", license: "", sourceUrl: "" }]
   },
   {
     slug: "zavnobih",
