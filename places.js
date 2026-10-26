@@ -164,12 +164,11 @@ const PLACES = [
   },
   {
     slug: "grmec-forest",
-    // coords: given by Meho (2026-10-25), a single point for the forest, not a trail or an entrance.
-    // TODO(verify): the point is NOT inside Općina Sanski Most. OpenStreetMap puts it in Općina Bosanski Petrovac (relation 2528168),
-    // 25.8 km in a straight line from the town centre, 8.2 km west of Bobijaško oko and 5.8 km from Korčanica. The text says the forest is
-    // in the municipality of Sanski Most, about 20 km from the town; the peak Velika Bobija (OSM node 12621109051) is in Sanski Most, 8.6 km east of this point.
+    // coords: given by Meho ("dao Meho"), a single point for the forest, not a trail or an entrance.
+    // Checked 2026-10-26 against OpenStreetMap: the point is inside Općina Sanski Most (relation 2528261), 19.98 km in a straight line from the town
+    // centre (44.7658, 16.6663), 1.9 km from Korčanica and 3.4 km from Bobijaško oko. That matches the text (municipality of Sanski Most, about 20 km).
     // OSM has no forest element here (natural=wood, landuse=forest, protected_area and names with Bobij / Prašum / Grmeč searched on 2026-10-25).
-    coords: [44.67459772049096, 16.36658428841864],
+    coords: [44.673051955468395, 16.449710576267698],
     see: ["korcanica", "bobijasko-oko"],
     photos: [
       pic("grmec.jpg"),
@@ -181,14 +180,16 @@ const PLACES = [
   {
     slug: "turbe-alagic",
     // Facts: FACTS.md, "Fajtovci / General Mehmed Alagic", Meho's text, and the decision that this card is only about the general (no village, mosque or waterfall).
-    // TODO coords: the turbe's location is not known yet (Meho will provide it), so no marker on the map.
-    // TODO(verify): a park named after General Alagić is not confirmed in the sources. OSM has leisure=park "Park generala Mehmeda Alagića" (way 40699044), which is on the map as a name only.
+    // TODO coords: no marker on the map. OpenStreetMap has no object for this turbe (searched the municipality on 2026-10-26: "Alijino turbe", way 245559589,
+    // is a different one); add coords when Meho gives them or the turbe is mapped.
+    // The Medžlis confirmed that the turbe exists, that a park in the town bears the general's name (OSM leisure=park, way 40699044, on the map as a name only)
+    // and that the portrait may be published.
     // TODO(verify): Meho's text names no source for the military career; it is written as plain facts, without his evaluations.
     // Left out on purpose: birthplace and parents, and the passages that judge his command (they are opinion, not fact).
     photos: [
       pic("turbe.jpg"),
       pic("turbe2.jpg"), // the gravestone, "General Mehmed Alagić 1947-2003"
-      pic("turbe3.jpg", { alt: "General Mehmed Alagić" }) // a portrait, no visible caption; Meho confirmed who it shows and that it may be published
+      pic("turbe3.jpg", { alt: "General Mehmed Alagić" }) // a portrait, no visible caption; the Medžlis confirmed who it shows and that it may be published
     ]
   },
   {
