@@ -7,10 +7,10 @@
 // see     : links of the "Also worth seeing" entries, in the same order as the texts in the language files:
 //           the slug of a place the entry links to, or null for a plain text entry (omit when there is none)
 // photos  : the first photo is the cover on the card (shown cropped to the card). Each entry is created with pic(name, extra):
-//           { src, srcset, author, license, sourceUrl, caption, main, hero, pos, posM }
+//           { src, srcset, author, license, sourceUrl, alt, main, hero, pos, posM }
 //           - author, license, sourceUrl: shown as a small credit in the photo viewer (all optional, empty ones are left out;
 //             nothing is filled in on assumption)
-//           - caption: a description under the photo in the gallery and in the viewer (the same text in both languages)
+//           - alt: the alt text of the photo (not shown; the same text in both languages), otherwise the place name is used
 //           - srcset: a smaller file for phones, e.g. "photos/a-1200.webp 1200w, photos/a.webp 2400w"
 //           - hero: true marks the one photo that fills the top of the place page, cropped (object-fit: cover). Only for a
 //             landscape photo at least about 1600 px wide. A place without one gets a banner: its main photo (main: true,
@@ -188,7 +188,7 @@ const PLACES = [
     photos: [
       pic("turbe.jpg"),
       pic("turbe2.jpg"), // the gravestone, "General Mehmed Alagić 1947-2003"
-      pic("turbe3.jpg", { caption: "General Mehmed Alagić" }) // a portrait; Meho confirmed who it shows and that it may be published
+      pic("turbe3.jpg", { alt: "General Mehmed Alagić" }) // a portrait, no visible caption; Meho confirmed who it shows and that it may be published
     ]
   },
   {

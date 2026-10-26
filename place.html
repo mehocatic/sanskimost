@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,11 +23,17 @@
   <a class="back" id="back" href="index.html#places"><span aria-hidden="true">&larr;</span> <span class="back-label" data-i18n="place.back">All places</span></a>
 
   <main>
-    <section class="place-hero" id="place-hero">
-      <div class="place-img" id="place-img"></div>
-      <div class="place-title">
-        <p class="eyebrow">Sanski Most</p>
-        <h1 id="place-title"></h1>
+    <header class="place-head">
+      <p class="eyebrow">Sanski Most</p>
+      <h1 id="place-title"></h1>
+    </header>
+
+    <section class="place-slider" id="slider" hidden>
+      <div class="slider-track" id="slider-track" tabindex="0" role="group" aria-roledescription="carousel"></div>
+      <div class="slider-bar" id="slider-bar">
+        <button class="slider-btn" id="slider-prev" type="button" aria-label="Previous photo" data-i18n-attr="aria-label:lb.prev">&larr;</button>
+        <p class="slider-count" id="slider-count" aria-live="polite"></p>
+        <button class="slider-btn" id="slider-next" type="button" aria-label="Next photo" data-i18n-attr="aria-label:lb.next">&rarr;</button>
       </div>
     </section>
 
@@ -40,7 +46,6 @@
           <ul id="place-see-list"></ul>
         </div>
       </div>
-      <div class="detail-gallery" id="gallery"></div>
     </section>
 
     <nav class="place-pager" aria-label="Other places" data-i18n-attr="aria-label:place.others">
@@ -56,7 +61,6 @@
     <button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Next photo" data-i18n-attr="aria-label:lb.next">&rarr;</button>
     <p class="lb-count" id="lb-count"></p>
     <div class="lb-meta">
-      <p class="lb-caption" id="lb-caption" hidden></p>
       <p class="lb-credit" id="lb-credit" hidden></p>
     </div>
   </div>

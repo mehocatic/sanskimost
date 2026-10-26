@@ -5,11 +5,11 @@
 //   data-i18n-attr="attr:key"   attributes, several separated by ";"
 //   data-i18n-place="slug"      that place's name
 // Page scripts re-render their own texts on the "langchange" event ("beforelangchange" fires first).
-// The choice is kept in localStorage when it is available; without it the page still works, in English.
+// The choice is kept in localStorage when it is available; without it the page still works, in Bosnian (the default language).
 window.I18n = (() => {
   const LANGS = ['en', 'bs'];
   const KEY = 'lang';
-  let lang = 'en';
+  let lang = 'bs';
   try { const saved = localStorage.getItem(KEY); if (LANGS.includes(saved)) lang = saved; } catch (e) { /* no storage */ }
 
   const dict = l => (window.I18N && window.I18N[l]) || {};
