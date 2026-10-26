@@ -169,7 +169,7 @@ I18N.bs = {
       short: 'Spomen-kompleks iz Drugog svjetskog rata na planini Grmeč, otvoren 1979.',
       long: 'Memorijalna zona Korčanica posvećena je Narodnooslobodilačkoj borbi u Drugom svjetskom ratu. Nalazi se oko 32 km od Sanskog Mosta, kod planine Grmeč, a obuhvata nekoliko objekata, među njima česmu i dvije grobnice.\n\nU ovom području je 1942. i 1943. djelovala partizanska bolnica sa 19 objekata.\n\nSpomenik „Revolucije“, rad vajara Ljubomira Denkovića, otvoren je 27. jula 1979. na mjestu spomen-obeliska. Čine ga dva velika polukružna zida, visoka oko 15 m, koji okružuju unutrašnji prostor s maketom terena i bolnice, te veliko vodeno ogledalo ispred njih.\n\nPrije rata područje je bilo hortikulturno uređeno, a posjećivali su ga turisti i učenici. Od 1990-ih je zapušteno i uglavnom zaboravljeno.',
       see: [
-        'Prašuma na Grmeču, oko 20 km od grada: više od 100 ha, sa stablima starijim od 500 godina.'
+        'Prašuma na Grmeču, oko 17 km od grada: više od 100 ha, sa stablima starijim od 500 godina.'
       ]
     },
     'hrustovacka': {
@@ -208,7 +208,7 @@ I18N.bs = {
     'grmec-forest': {
       name: 'Prašuma na Grmeču',
       short: 'Prašuma na više od 100 hektara, sa stablima starijim od 500 godina.',
-      long: 'Prašuma Bobija nalazi se na Grmeču, u općini Sanski Most, oko 20 km od grada. Prostire se na više od 100 hektara.\n\nNajzastupljenija su stabla bukve i jele, bijelog i crnog bora, hrasta, javora, brijesta, jasena i smreke. Neka stabla starija su od 500 godina.\n\nU blizini se nalazi Bobijaško oko.',
+      long: 'Prašuma Bobija nalazi se na Grmeču, u općini Sanski Most, oko 17 km od grada. Prostire se na više od 100 hektara.\n\nNajzastupljenija su stabla bukve i jele, bijelog i crnog bora, hrasta, javora, brijesta, jasena i smreke. Neka stabla starija su od 500 godina.\n\nU blizini se nalazi Bobijaško oko.',
       see: [
         'Korčanica, spomen-kompleks iz Drugog svjetskog rata kod planine Grmeč.',
         'Bobijaško oko, vertikalna kraška jama koja odozgo izgleda kao oko.'

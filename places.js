@@ -165,10 +165,10 @@ const PLACES = [
   {
     slug: "grmec-forest",
     // coords: given by Meho ("dao Meho"), a single point for the forest, not a trail or an entrance.
-    // Checked 2026-10-26 against OpenStreetMap: the point is inside Općina Sanski Most (relation 2528261), 19.98 km in a straight line from the town
-    // centre (44.7658, 16.6663), 1.9 km from Korčanica and 3.4 km from Bobijaško oko. That matches the text (municipality of Sanski Most, about 20 km).
+    // Checked 2026-10-26 against OpenStreetMap: the point is inside Općina Sanski Most (relation 2528261), 17.41 km in a straight line from the town
+    // centre (44.7658, 16.6663), 3.2 km from Korčanica and 2.3 km from Bobijaško oko. The text says about 17 km (rounded).
     // OSM has no forest element here (natural=wood, landuse=forest, protected_area and names with Bobij / Prašum / Grmeč searched on 2026-10-25).
-    coords: [44.673051955468395, 16.449710576267698],
+    coords: [44.684125390645384, 16.478326730966664],
     see: ["korcanica", "bobijasko-oko"],
     photos: [
       pic("grmec.jpg"),

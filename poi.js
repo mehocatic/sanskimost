@@ -100,11 +100,11 @@ const POI = [
   },
   {
     // given by Meho ("dao Meho"), one point for the forest (not a trail or an entrance); no forest element in OSM (only the peaks Mala Bobija, node 12621109050, and Velika Bobija, node 12621109051).
-    // Checked 2026-10-26: inside Općina Sanski Most (OSM relation 2528261), 19.98 km in a straight line from the town centre. Texts: i18n/en.js, i18n/bs.js
+    // Checked 2026-10-26: inside Općina Sanski Most (OSM relation 2528261), 17.41 km in a straight line from the town centre. Texts: i18n/en.js, i18n/bs.js
     id: "grmec-forest",
     slug: "grmec-forest",
     cat: "nature",
-    coords: [44.673051955468395, 16.449710576267698],
+    coords: [44.684125390645384, 16.478326730966664],
     name: { en: "Grmeč Forest", bs: "Prašuma na Grmeču" },
     short: { en: "A primeval forest of over 100 hectares, with trees over 500 years old.", bs: "Prašuma na više od 100 hektara, sa stablima starijim od 500 godina." }
   },

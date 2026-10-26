@@ -1,6 +1,6 @@
 // Suggested routes: the "Routes" section on the home page and explore.html?route=<id>.
 // Stops are slugs from places.js; route names, texts and notes are i18n keys (i18n/en.js, i18n/bs.js).
-// km: distance from town, only where FACTS.md confirms it (Hrustovacka ~13, Blihe ~14, Grmec forest and Bobijasko oko ~20).
+// km: distance from town, only where FACTS.md confirms it (Hrustovacka ~13, Blihe ~14, Bobijasko oko ~20; Grmec forest 17, measured to the point on the map, see places.js).
 // note: at most one practical note per stop, taken from the existing texts.
 const ROUTES = [
   {
@@ -19,6 +19,6 @@ const ROUTES = [
   },
   {
     id: "grmec",
-    stops: [{ slug: "grmec-forest", km: 20 }, { slug: "korcanica" }]
+    stops: [{ slug: "grmec-forest", km: 17 }, { slug: "korcanica" }]
   }
 ];

@@ -168,7 +168,7 @@ I18N.en = {
       short: 'A WWII memorial complex at Grmeč mountain, opened in 1979.',
       long: 'The Korčanica memorial zone is dedicated to the National Liberation Struggle in the Second World War. It lies about 32 km from Sanski Most, at Grmeč mountain, and includes several structures, among them a fountain and two tombs.\n\nIn 1942 and 1943 a Partisan hospital with 19 buildings operated in this area.\n\nThe monument “Revolution”, by the sculptor Ljubomir Denković, was opened on 27 July 1979, on the site of the memorial obelisk. It consists of two large semicircular walls, about 15 m high, that enclose an inner space with a model of the terrain and the hospital, and a large reflecting pool in front of them.\n\nBefore the war the site was landscaped and visited by tourists and school groups. Since the 1990s it has been neglected and is largely forgotten.',
       see: [
-        'The Grmeč primeval forest, about 20 km from the town: over 100 ha, with trees over 500 years old.'
+        'The Grmeč primeval forest, about 17 km from the town: over 100 ha, with trees over 500 years old.'
       ]
     },
     'hrustovacka': {
@@ -207,7 +207,7 @@ I18N.en = {
     'grmec-forest': {
       name: 'Grmeč Forest',
       short: 'A primeval forest of over 100 hectares, with trees over 500 years old.',
-      long: 'The primeval forest Bobija lies on Grmeč, in the municipality of Sanski Most, about 20 km from the town. It covers more than 100 hectares.\n\nThe most common trees are beech and fir, white and black pine, oak, maple, elm, ash and spruce. Some trees are more than 500 years old.\n\nThe karst feature Bobijaško Oko lies nearby.',
+      long: 'The primeval forest Bobija lies on Grmeč, in the municipality of Sanski Most, about 17 km from the town. It covers more than 100 hectares.\n\nThe most common trees are beech and fir, white and black pine, oak, maple, elm, ash and spruce. Some trees are more than 500 years old.\n\nThe karst feature Bobijaško Oko lies nearby.',
       see: [
         'Korčanica, a WWII memorial complex at Grmeč mountain.',
         'Bobijaško Oko, a vertical karst shaft that looks like an eye from above.'
