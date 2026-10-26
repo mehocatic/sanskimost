@@ -37,7 +37,44 @@
   const p = PLACES[index];
   const name = () => I18n.place(p, 'name');
 
-  $('place-img').appendChild(photo(photoEntry(p.photos && p.photos[0]).src, name(), null, true));
+  const entries = (p.photos || []).map(photoEntry).filter(e => e.src);
+
+  // every photo of the place, in the order of places.js; the viewer steps through all of them, the lead one included
+  let items = entries.map((entry, i) => ({ src: entry.src, entry, btn: null, n: i + 1 })); // photos that are really shown, used by the viewer
+  const dropItem = item => { items = items.filter(g => g !== item); };
+
+  // The top of the page. A place has a hero only when places.js marks one (a landscape photo at least about 1600 px wide):
+  // it fills the whole width and is cropped (object-fit: cover). Every other place gets a banner: the lead photo (the one
+  // marked main, otherwise the first) blurred and darkened across the whole width, with the same photo sharp and whole on it,
+  // never larger than it is. The lead photo is not repeated in the gallery.
+  const hero = entries.find(e => e.hero);
+  const lead = hero || entries.find(e => e.main) || entries[0] || {};
+  const leadItem = items.find(it => it.entry === lead);
+  const placeImg = $('place-img');
+  $('place-hero').classList.toggle('is-banner', !hero);
+  if (hero && hero.pos) placeImg.style.setProperty('--pos', hero.pos);
+  if (hero && hero.posM) placeImg.style.setProperty('--pos-m', hero.posM);
+  const onLeadFail = () => { if (leadItem) dropItem(leadItem); };
+  if (hero || !lead.src) {
+    placeImg.appendChild(photo(lead.src, name(), onLeadFail, true, { srcset: lead.srcset, sizes: '100vw' }));
+  } else {
+    const bg = document.createElement('div');
+    bg.className = 'banner-bg';
+    bg.style.backgroundImage = `url("${encodeURI(lead.src)}")`;
+    const scrim = document.createElement('div');
+    scrim.className = 'banner-scrim';
+    const fg = document.createElement('div');
+    fg.className = 'banner-fg';
+    const open = document.createElement('button');
+    open.type = 'button';
+    open.className = 'banner-open';
+    if (lead.caption) open.dataset.caption = lead.caption;
+    leadItem.btn = open;
+    open.addEventListener('click', () => openLightbox(leadItem));
+    open.appendChild(photo(lead.src, name(), () => { onLeadFail(); open.replaceWith(placeholder(name())); }, true, { natural: true }));
+    fg.appendChild(open);
+    placeImg.append(bg, scrim, fg);
+  }
 
   /* ---------- previous / next place ---------- */
   const n = PLACES.length;
@@ -46,25 +83,32 @@
   $('pager-next').href = `place.html?slug=${encodeURIComponent(next.slug)}`;
 
   /* ---------- gallery ---------- */
+  // Masonry in CSS columns: every photo whole, in its own proportions. The photo at the top of the page is left out.
   const gallery = $('gallery');
-  let items = []; // photos that are really shown (not placeholders), used by the viewer
-  const list = (p.photos || []).map(photoEntry).filter(e => e.src);
-  gallery.classList.toggle('single', list.length <= 1);
-  (list.length ? list : [null]).forEach((entry, i) => {
+  const shown = items.filter(it => it !== leadItem);
+  gallery.hidden = !shown.length;
+  gallery.classList.toggle('single', shown.length === 1);
+  shown.forEach(item => {
+    const entry = item.entry;
     const fig = document.createElement('figure');
-    if (!entry) { fig.appendChild(placeholder(name())); gallery.appendChild(fig); return; }
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'gal-item';
-    const item = { src: entry.src, entry, btn, n: i + 1 };
-    btn.appendChild(photo(entry.src, name(), () => {
+    item.btn = btn;
+    if (entry.caption) btn.dataset.caption = entry.caption;
+    btn.appendChild(photo(entry.src, entry.caption || name(), () => {
       // missing file: show the placeholder and stop offering it in the viewer
-      items = items.filter(g => g !== item);
+      dropItem(item);
       btn.replaceWith(placeholder(name()));
-    }));
+    }, true, { srcset: entry.srcset, sizes: '(max-width: 768px) 100vw, 50vw', natural: true }));
     btn.addEventListener('click', () => openLightbox(item));
-    items.push(item);
     fig.appendChild(btn);
+    // a visible description under the photo, when places.js gives one (the same text in both languages)
+    if (entry.caption) {
+      const cap = document.createElement('figcaption');
+      cap.textContent = entry.caption;
+      fig.appendChild(cap);
+    }
     gallery.appendChild(fig);
   });
 
@@ -74,7 +118,12 @@
     document.title = `${nm} · Sanski Most`;
     if (meta) meta.content = I18n.place(p, 'short');
     $('place-title').textContent = nm;
-    $('place-long').textContent = I18n.place(p, 'long');
+    // paragraphs are separated by a blank line in the language files
+    $('place-long').replaceChildren(...I18n.place(p, 'long').split('\n\n').map(text => {
+      const para = document.createElement('p');
+      para.textContent = text;
+      return para;
+    }));
     $('place-note').textContent = I18n.place(p, 'note') || '';
 
     const seeList = $('place-see-list');
@@ -96,29 +145,38 @@
     $('pager-prev').querySelector('.pn').textContent = I18n.place(prev, 'name');
     $('pager-next').querySelector('.pn').textContent = I18n.place(next, 'name');
 
-    items.forEach(it => it.btn.setAttribute('aria-label', I18n.t('place.photo', { name: nm, i: it.n, n: list.length })));
-    document.querySelectorAll('.place-page img:not(#lb-img)').forEach(img => { img.alt = nm; });
-    if (!lb.hidden) { lbImg.alt = nm; showCredit(items[lbIndex].entry); }
+    items.forEach(it => { if (it.btn) it.btn.setAttribute('aria-label', I18n.t('place.photo', { name: it.entry.caption || nm, i: it.n, n: entries.length })); });
+    document.querySelectorAll('.place-page img:not(#lb-img)').forEach(img => {
+      const b = img.closest('.gal-item, .banner-open');
+      img.alt = (b && b.dataset.caption) || nm;
+    });
+    if (!lb.hidden) { lbImg.alt = items[lbIndex].entry.caption || nm; showMeta(items[lbIndex].entry); }
     document.querySelectorAll('.place-page .ph').forEach(el => { el.textContent = nm; });
   }
 
   /* ---------- full-screen photo viewer ---------- */
   const lb = $('lightbox'), lbImg = $('lb-img'), lbCount = $('lb-count');
-  const lbPrev = $('lb-prev'), lbNext = $('lb-next'), lbClose = $('lb-close'), lbCredit = $('lb-credit');
+  const lbPrev = $('lb-prev'), lbNext = $('lb-next'), lbClose = $('lb-close'), lbCredit = $('lb-credit'), lbCaption = $('lb-caption');
   let lbIndex = 0, lbOpener = null;
 
   function showLb(i) {
     const m = items.length;
     if (!m) { closeLightbox(); return; }
     lbIndex = (i + m) % m;
+    const e = items[lbIndex].entry;
+    // a smaller file on phones when places.js gives a srcset; the photo is always shown whole (object-fit: contain)
+    if (e.srcset) { lbImg.sizes = '100vw'; lbImg.srcset = e.srcset; } else lbImg.removeAttribute('srcset');
     lbImg.src = items[lbIndex].src;
-    lbImg.alt = name();
+    lbImg.alt = e.caption || name();
     lbCount.textContent = `${lbIndex + 1} / ${m}`;
     lbPrev.hidden = lbNext.hidden = m < 2;
-    showCredit(items[lbIndex].entry);
+    showMeta(e);
   }
-  // small credit line under the photo: "Photo: author · license", the author (or "Source") links to sourceUrl
-  function showCredit(e) {
+  // under the photo: the description (caption) when there is one, and the credit line "Photo: author · license"
+  // (the author, or "Source", links to sourceUrl); the credit line is left out when the photo has none
+  function showMeta(e) {
+    lbCaption.textContent = e.caption || '';
+    lbCaption.hidden = !e.caption;
     const url = /^https?:\/\//i.test(e.sourceUrl || '') ? e.sourceUrl : '';
     const parts = [];
     const link = text => {
@@ -136,7 +194,7 @@
       parts.forEach((x, k) => lbCredit.append(...(k ? [' · ', x] : [x])));
     }
     lbCredit.hidden = !parts.length;
-    lb.classList.toggle('has-credit', !!parts.length);
+    lb.classList.toggle('has-meta', !!parts.length || !!e.caption);
   }
   function openLightbox(item) {
     lbOpener = item.btn;
@@ -149,6 +207,7 @@
     if (lb.hidden) return;
     lb.hidden = true;
     document.body.style.overflow = '';
+    lbImg.removeAttribute('srcset');
     lbImg.removeAttribute('src');
     if (lbOpener && lbOpener.isConnected) lbOpener.focus({ preventScroll: true });
   }

@@ -1,5 +1,5 @@
 // English texts, by key. i18n/bs.js uses the same keys; a key missing there shows the English text.
-// Place names and descriptions are in places.js (English) and under `places` in i18n/bs.js.
+// Place texts are under `places` here and in i18n/bs.js (places.js only holds links, coordinates and photos).
 // Keys ending in .html may contain markup (<br>, <em>).
 window.I18N = window.I18N || {};
 I18N.en = {
@@ -124,5 +124,106 @@ I18N.en = {
   // optional river sound (sound.js, off by default)
   'sound.label': 'River sound',
   'sound.on': 'On',
-  'sound.off': 'Off'
+  'sound.off': 'Off',
+
+  // place texts by slug (same keys as in bs.js)
+  places: {
+    'blihe': {
+      name: 'Blihe Waterfall',
+      short: 'A protected natural monument where the Bliha river drops about 56 m.',
+      long: 'Blihe Waterfall, known locally as Blihin skok, lies about 14 km from Sanski Most. Here the Bliha river drops about 56 m. It is a protected natural monument.\n\nThe “Cvjetna” hiking trail, about 15 km long, links Kamengrad, the waterfall and the Jasice recreation area.',
+      see: []
+    },
+    'kamengrad': {
+      name: 'Kamengrad Fortress',
+      short: 'A medieval fortress above Donji Kamengrad, first mentioned in 1374. A national monument since 2008.',
+      long: 'Kamengrad is a medieval fortress on a steep hill above Donji Kamengrad. It is first mentioned in 1374. Before the Ottomans it belonged to the Babonić Blagajski princes.\n\nSources give different dates for when the Ottomans took it: 1463, about eleven years later, and 1498. According to the historian Hamdija Kreševljaković, it was in Ottoman hands in 1499. The Ottomans made it the seat of a nahija within the Sana county (župa), with a garrison under a dizdar.\n\nBelow the fortress the Ottomans built a lower town, Donji Grad, known locally as Palanka, protected by high walls with palisades. Stone walls five to seven metres high are still visible, overgrown by forest.\n\nThe old town of Kamengrad was declared a national monument in 2008.',
+      note: 'Local legend says the Ottomans besieged the fortress for eleven years.',
+      see: [
+        'Fatih’s Musalla, below the fortress.',
+        'The “Cvjetna” trail, which links Kamengrad, Blihe Waterfall and the Jasice recreation area.'
+      ]
+    },
+    'musalla': {
+      name: 'Fatih’s Musalla',
+      short: 'An Ottoman-era open-air prayer place in Donji Kamengrad, a national monument since 2003.',
+      long: 'Fatih’s Musalla is an open-air prayer place in Donji Kamengrad. According to local tradition, Sultan Mehmed Fatih performed the Friday prayer here when Kamengrad was taken, and the musalla was built on that spot; some sources date it to 1463.\n\nIt is a space enclosed by a wall, with a mihrab, a raised place for the preacher (hatib) and a canopy with a wooden dome on four wooden pillars.\n\nMusallas of this type disappeared gradually, mostly under Austro-Hungarian rule. This one survived and was renovated several times, among others in 1909 and most recently after the last war.\n\nA cemetery called Musalla lies in the same complex; one of its gravestones is dated 1782. The musalla was declared a national monument in 2003.\n\nThe annual event Musalla is held here, and its central part is the Friday prayer on the first Friday of July.',
+      note: 'The director of the event, Mirsad Spahić, says it is the only musalla from that period left in the whole of the Balkans. This is his claim; another text calls it one of the few that survived.',
+      see: [
+        'Kamengrad Fortress, above it.'
+      ]
+    },
+    'hamzibegova': {
+      name: 'Hamzibeg Mosque',
+      short: 'Built before 1557, destroyed in 1992 and reopened on 6 August 2000.',
+      long: 'The Hamzibeg Mosque was built and endowed (as a vakuf) by the sanjak-bey Hamza-beg Biharović, who came from the area of Sanski Most, probably from Kamengrad. It was built before 1557, the year its founder died, and is assumed to have existed in 1555.\n\nThe original building had one minaret, of stone with a wooden interior. The mosque was rebuilt in 1705 after war damage and last reconstructed in 1984.\n\nIt was destroyed on 27 June 1992. Construction of the new mosque began in July 1997, and it was opened on 6 August 2000.\n\nIt is reportedly the only mosque in Bosnia and Herzegovina with four minarets. The Commission to Preserve National Monuments has put it on the provisional list of national monuments of Bosnia and Herzegovina.',
+      see: [
+        'The adjoining Muslim cemetery, with gravestones from about 1751–52.',
+        'Rafting on the Sana can start near the mosque.',
+        'The city bridge over the Sana, lit at night by LED lights.'
+      ]
+    },
+    'korcanica': {
+      name: 'Korčanica',
+      short: 'A WWII memorial complex at Grmeč mountain, opened in 1979.',
+      long: 'The Korčanica memorial zone is dedicated to the National Liberation Struggle in the Second World War. It lies about 32 km from Sanski Most, at Grmeč mountain, and includes several structures, among them a fountain and two tombs.\n\nIn 1942 and 1943 a Partisan hospital with 19 buildings operated in this area.\n\nThe monument “Revolution”, by the sculptor Ljubomir Denković, was opened on 27 July 1979, on the site of the memorial obelisk. It consists of two large semicircular walls, about 15 m high, that enclose an inner space with a model of the terrain and the hospital, and a large reflecting pool in front of them.\n\nBefore the war the site was landscaped and visited by tourists and school groups. Since the 1990s it has been neglected and is largely forgotten.',
+      see: [
+        'The Grmeč primeval forest, about 20 km from the town: over 100 ha, with trees over 500 years old.'
+      ]
+    },
+    'hrustovacka': {
+      name: 'Hrustovačka Cave',
+      short: 'A prehistoric shelter with finds of the Vučedol culture.',
+      long: 'Hrustovačka Cave is a prehistoric shelter with finds of the Vučedol culture, locally called the “Hrustovo type”, which are exhibited in the National Museum in Sarajevo.\n\nA passage of about 500 m ends in a small lake. The cave has been a national monument since 2014 and was used as a hideout in several wars.',
+      note: 'Self-guided: bring a torch and never go alone.',
+      see: [
+        'The karst spring of the Glibaje river, just below the entrance, with a picnic area.',
+        'Dabar Cave.'
+      ]
+    },
+    'dabarska': {
+      name: 'Dabar Cave',
+      short: 'The source of the Dabar river, with a lake inside.',
+      long: 'Dabar Cave lies at the source of the Dabar river, which flows for about seven kilometres through a canyon and joins the Sana. The entrance is about twenty metres high.\n\nAbout 200 m can be walked without equipment, up to a lake; beyond it the passage can be followed only by boat and with diving equipment. Speleological research found that the cave divides into two channels, and the longest ends in a siphon lake.\n\nResearch in 2016 confirmed three species of cave spiders, a number of bats and the cave shrimp Troglocaris bosnica. An olm, the “human fish”, has been found in one of the inner lakes.\n\nPottery and artefacts of the Vučedol culture show that the cave was inhabited in prehistoric times. The spring and the cave are a protected natural monument.',
+      note: 'Inside it is about ten degrees cooler than outside, even in summer.',
+      see: [
+        'Bobijaško Oko, whose outflow reappears here.'
+      ]
+    },
+    'bobijasko-oko': {
+      name: 'Bobijaško Oko',
+      short: 'A vertical karst shaft that looks like an eye from above.',
+      long: 'Bobijaško Oko is a karst feature at the foot of Grmeč mountain, near Jelašinovci, about 20 km from Sanski Most. Seen from above it looks like an eye. It is a lake connected with the sources of the Dabar and Zdena rivers.\n\nThe water moves in both directions: after heavy rain it behaves like a spring, and at low water it becomes a sinkhole. Its look changes with the water level, from a deep blue pool to a lake. The outflow forms the Jezernica brook, which sinks and reappears at Dabar Cave.\n\nEnglish cave divers found an olm, the “human fish”, in it.\n\nLocal legends tell of fairies who dance on it at night, and of a sheep that fell into the sinkhole and was said to have been found days later at a nearby spring.',
+      note: 'Best seen after snowmelt or heavy rain. Swimming is forbidden. The site is not adapted for visitors: the road is poor, navigation may send you the wrong way, and the last part is a gravel road, then parking on a meadow and a walk of a few minutes.',
+      see: []
+    },
+    'mulez': {
+      name: 'Mulež',
+      short: 'A mountain above the Sana canyon, with a via ferrata along a 90 m rock wall.',
+      long: 'Mulež is a mountain above the Sana canyon, with hiking trails from easy ones, suitable for families and beginners, to demanding climbs.\n\nThe via ferrata (a secured climbing route), open since September 2024, runs up a 90 m rock wall on cables and metal steps. It was built by the mountaineering society SPD “Mulež” and is meant for experienced hikers.\n\nA newly built suspension bridge, 60 m long, links two rock faces above deep gorges. From the route there are views of the Sana canyon and the Sana basin.\n\nA sulphur spring at Ilidža lies at the foot of the mountain.',
+      note: 'For experienced hikers. A helmet, harness and cables are recommended; follow the safety signs.',
+      see: []
+    },
+    'grmec-forest': {
+      name: 'Grmeč Forest',
+      short: 'A primeval forest of over 100 hectares, with trees over 500 years old.',
+      long: 'The primeval forest Bobija lies on Grmeč, in the municipality of Sanski Most, about 20 km from the town. It covers more than 100 hectares and is one of the largest in Bosnia and Herzegovina.\n\nThe most common trees are beech and fir, white and black pine, oak, maple, elm, ash and spruce. Some trees are more than 500 years old.\n\nThe karst feature Bobijaško Oko lies nearby.',
+      see: [
+        'Korčanica, a WWII memorial complex at Grmeč mountain.',
+        'Bobijaško Oko, a vertical karst shaft that looks like an eye from above.'
+      ]
+    },
+    'turbe-alagic': {
+      name: 'Turbe Generala Alagića',
+      short: 'General Mehmed Alagić (1947–2003), corps commander and the first post-war mayor of Sanski Most.',
+      long: 'Mehmed Alagić (born 8 July 1947, died 7 March 2003) was a general of the Army of the Republic of Bosnia and Herzegovina and the first post-war mayor of Sanski Most.\n\nWhen the war began he was in the 17th Krajina Brigade. He became commander of the Operational Group Bosanska Krajina and, for a short time, commander of the 3rd Corps. The 7th Corps was formed on his initiative; he commanded it and was promoted to general.\n\nOn the night of 9 to 10 October 1995 the 7th Corps entered Sanski Most together with the 5th Corps, under Atif Dudaković.\n\nThe anniversary of his death is marked on 7 March.',
+      see: []
+    },
+    'zavnobih': {
+      name: 'ZAVNOBiH 1944',
+      short: 'The second session of ZAVNOBiH was held in Sanski Most, 30 June – 2 July 1944.',
+      long: 'The second session of ZAVNOBiH was held in Sanski Most from 30 June to 2 July 1944. It declared the equality of Serbs, Muslims (Bosniaks) and Croats, and Bosnia and Herzegovina as a state within the Yugoslav federation.\n\nOn 1 July, in the “Sokolski dom”, the session adopted a declaration on the rights of citizens in Bosnia and Herzegovina. It built on the conclusions of the first session, held on 25 November in Mrkonjić Grad, and the post-war Socialist Republic of Bosnia and Herzegovina was organised on the basis of those conclusions.\n\nThe building in which the session was held was demolished. A project to revitalise it, as a national monument, has been contracted between the Institute for the Protection of Cultural Heritage of Una-Sana Canton and a contractor.',
+      see: []
+    }
+  }
 };

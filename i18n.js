@@ -21,21 +21,22 @@ window.I18n = (() => {
     return vars ? s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m)) : s;
   }
 
-  // text of a place field (name, short, long, note) in the current language, English from places.js otherwise
+  // the texts of one place (name, short, long, note, see) in a language: `places` in i18n/en.js and i18n/bs.js
+  const texts = (l, p) => (dict(l).places && dict(l).places[p.slug]) || {};
+
+  // text of a place field (name, short, long, note) in the current language, English otherwise
   function place(p, field) {
-    const tr = lang !== 'en' && dict(lang).places && dict(lang).places[p.slug];
-    const v = tr ? tr[field] : null;
-    return v != null && v !== '' ? v : p[field];
+    const v = texts(lang, p)[field];
+    if (v != null && v !== '') return v;
+    const e = texts('en', p)[field];
+    return e != null ? e : '';
   }
 
-  // "Also worth seeing" entries as { text, slug? }
+  // "Also worth seeing" entries as { text, slug? }; the texts are in the language files,
+  // places.js only says which of them link to another place (p.see[i] = slug, or null)
   function see(p) {
-    const tr = lang !== 'en' && dict(lang).places && dict(lang).places[p.slug];
-    return (p.see || []).map((s, i) => {
-      const en = typeof s === 'string' ? { text: s } : s;
-      const alt = tr && tr.see && tr.see[i];
-      return { slug: en.slug, text: alt || en.text };
-    });
+    const own = texts(lang, p).see || [];
+    return (texts('en', p).see || []).map((en, i) => ({ slug: (p.see && p.see[i]) || undefined, text: own[i] || en }));
   }
 
   function apply(root) {

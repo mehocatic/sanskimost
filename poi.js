@@ -1,8 +1,8 @@
 // Points on the map (explore.html), separate from PLACES (the carousel and the place pages).
 // Each point: id, cat, coords [lat, lon] (null: not on the map yet), name and short in EN and BS, and slug when it has a page.
-// Sources: every coordinate names its OpenStreetMap element (fetched with the Overpass API on 2026-10-24,
-// area: relation 2528261 "Općina Sanski Most"); texts come from FACTS.md / places.js, or only say what the OSM tags say.
-// Points with a page copy their texts from places.js and i18n/bs.js; the map shows the live texts from there.
+// Sources: every coordinate names its source: an OpenStreetMap element (fetched with the Overpass API on 2026-10-24,
+// area: relation 2528261 "Općina Sanski Most") or "given by Meho" (Mulež, ZAVNOBiH); texts come from FACTS.md and the language files, or only say what the OSM tags say.
+// Points with a page copy their texts from i18n/en.js and i18n/bs.js; the map shows the live texts from there.
 // What could not be confirmed is listed in poi-todo.md.
 // Memorials are added only after Meho approves each one (source for both the location and the nature of the place).
 // Camps are not on the map; they stay in the timeline (Meho, 2026-10-24). The category is kept so the colour stays reserved.
@@ -18,7 +18,7 @@ const POI_CATS = [
 
 const POI = [
   {
-    // OSM node 4411996013 (waterway=waterfall); text: places.js
+    // OSM node 4411996013 (waterway=waterfall); texts: i18n/en.js, i18n/bs.js
     id: "blihe",
     slug: "blihe",
     cat: "water",
@@ -27,25 +27,25 @@ const POI = [
     short: { en: "A protected natural monument where the Bliha river drops about 56 m.", bs: "Zaštićeni spomenik prirode gdje rijeka Bliha pada oko 56 m." }
   },
   {
-    // OSM node 4409177788 (historic=archaeological_site, "Tvrđava Stari Grad"); text: places.js
+    // OSM node 4409177788 (historic=archaeological_site, "Tvrđava Stari Grad"); texts: i18n/en.js, i18n/bs.js
     id: "kamengrad",
     slug: "kamengrad",
     cat: "history",
     coords: [44.7797073, 16.5630776],
     name: { en: "Kamengrad Fortress", bs: "Tvrđava Kamengrad" },
-    short: { en: "A medieval fortress above Donji Kamengrad, first mentioned in 1374.", bs: "Srednjovjekovna tvrđava iznad Donjeg Kamengrada, prvi put spomenuta 1374." }
+    short: { en: "A medieval fortress above Donji Kamengrad, first mentioned in 1374. A national monument since 2008.", bs: "Srednjovjekovna tvrđava iznad Donjeg Kamengrada, prvi put spomenuta 1374. Nacionalni spomenik od 2008." }
   },
   {
-    // OSM node 519029537 (amenity=place_of_worship, "Fatihova Musalla", wikidata Q17997763); text: places.js
+    // OSM node 519029537 (amenity=place_of_worship, "Fatihova Musalla", wikidata Q17997763); texts: i18n/en.js, i18n/bs.js
     id: "musalla",
     slug: "musalla",
     cat: "culture",
     coords: [44.7855807, 16.571875],
     name: { en: "Fatih’s Musalla", bs: "Fatihova musala" },
-    short: { en: "An Ottoman-era open-air prayer place in Kamengrad.", bs: "Mjesto za molitvu na otvorenom iz osmanskog perioda, u Kamengradu." }
+    short: { en: "An Ottoman-era open-air prayer place in Donji Kamengrad, a national monument since 2003.", bs: "Mjesto za molitvu na otvorenom iz osmanskog perioda, u Donjem Kamengradu; nacionalni spomenik od 2003." }
   },
   {
-    // OSM way 346178044 (amenity=place_of_worship); text: places.js
+    // OSM way 346178044 (amenity=place_of_worship); texts: i18n/en.js, i18n/bs.js
     id: "hamzibegova",
     slug: "hamzibegova",
     cat: "culture",
@@ -54,16 +54,16 @@ const POI = [
     short: { en: "Built before 1557, destroyed in 1992 and reopened on 6 August 2000.", bs: "Izgrađena prije 1557, srušena 1992. i ponovo otvorena 6. augusta 2000." }
   },
   {
-    // OSM node 11146153554 (historic=memorial); text: places.js
+    // OSM node 11146153554 (historic=memorial); texts: i18n/en.js, i18n/bs.js
     id: "korcanica",
     slug: "korcanica",
     cat: "memorials",
     coords: [44.6872744, 16.4375984],
     name: { en: "Korčanica", bs: "Korčanica" },
-    short: { en: "A WWII memorial complex on Grmeč mountain, opened in 1979.", bs: "Spomen-kompleks iz Drugog svjetskog rata na planini Grmeč, otvoren 1979." }
+    short: { en: "A WWII memorial complex at Grmeč mountain, opened in 1979.", bs: "Spomen-kompleks iz Drugog svjetskog rata na planini Grmeč, otvoren 1979." }
   },
   {
-    // OSM node 5613053430 (natural=cave_entrance); text: places.js
+    // OSM node 5613053430 (natural=cave_entrance); texts: i18n/en.js, i18n/bs.js
     id: "hrustovacka",
     slug: "hrustovacka",
     cat: "nature",
@@ -72,7 +72,7 @@ const POI = [
     short: { en: "A prehistoric shelter with finds of the Vučedol culture.", bs: "Praistorijsko sklonište s nalazima vučedolske kulture." }
   },
   {
-    // OSM node 5613084883 (natural=cave_entrance); text: places.js
+    // OSM node 5613084883 (natural=cave_entrance); texts: i18n/en.js, i18n/bs.js
     id: "dabarska",
     slug: "dabarska",
     cat: "water",
@@ -81,7 +81,7 @@ const POI = [
     short: { en: "The source of the Dabar river, with a lake inside.", bs: "Izvor rijeke Dabar, s jezerom u unutrašnjosti." }
   },
   {
-    // OSM way 1202275847 (natural=water), search position as in places.js; text: places.js
+    // OSM way 1202275847 (natural=water), search position as in places.js; texts: i18n/en.js, i18n/bs.js
     id: "bobijasko-oko",
     slug: "bobijasko-oko",
     cat: "water",
@@ -90,29 +90,30 @@ const POI = [
     short: { en: "A vertical karst shaft that looks like an eye from above.", bs: "Vertikalna kraška jama koja odozgo izgleda kao oko." }
   },
   {
-    // TODO coords: Mulež is not in OpenStreetMap (searched 2026-10-24), no marker. Text: places.js
+    // given by Meho on 2026-10-25 (no Mulež object in OSM; the point is inside Općina Sanski Most, relation 2528261); texts: i18n/en.js, i18n/bs.js
     id: "mulez",
     slug: "mulez",
     cat: "nature",
-    coords: null,
+    coords: [44.65399773076312, 16.81145299681311],
     name: { en: "Mulež", bs: "Mulež" },
     short: { en: "A mountain above the Sana canyon, with a via ferrata along a 90 m rock wall.", bs: "Planina iznad kanjona Sane, s via ferratom duž stijene od 90 m." }
   },
   {
-    // TODO coords: the primeval forest is not in OpenStreetMap (searched 2026-10-24), no marker. Text: places.js
+    // given by Meho on 2026-10-25, one point for the forest (not a trail or an entrance); no forest element in OSM (only the peaks Mala Bobija, node 12621109050, and Velika Bobija, node 12621109051).
+    // TODO(verify): the point is in Općina Bosanski Petrovac (relation 2528168), not in Sanski Most, 25.8 km from the town centre. Texts: i18n/en.js, i18n/bs.js
     id: "grmec-forest",
     slug: "grmec-forest",
     cat: "nature",
-    coords: null,
+    coords: [44.67459772049096, 16.36658428841864],
     name: { en: "Grmeč Forest", bs: "Prašuma na Grmeču" },
     short: { en: "A primeval forest of over 100 hectares, with trees over 500 years old.", bs: "Prašuma na više od 100 hektara, sa stablima starijim od 500 godina." }
   },
   {
-    // TODO coords: the building of the session is not confirmed (FACTS.md), no marker. Text: places.js
+    // given by Meho on 2026-10-25, the site of the building (same point as the OSM street "ZAVNOBIH-a", way 41075160); texts: i18n/en.js, i18n/bs.js
     id: "zavnobih",
     slug: "zavnobih",
     cat: "history",
-    coords: null,
+    coords: [44.76558562977139, 16.670158483327427],
     name: { en: "ZAVNOBiH 1944", bs: "ZAVNOBiH 1944" },
     short: { en: "The second session of ZAVNOBiH was held in Sanski Most, 30 June – 2 July 1944.", bs: "Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944." }
   },
