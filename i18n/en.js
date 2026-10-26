@@ -193,7 +193,7 @@ I18N.en = {
     'bobijasko-oko': {
       name: 'Bobijaško Oko',
       short: 'A vertical karst shaft that looks like an eye from above.',
-      long: 'Bobijaško Oko is a karst feature at the foot of Grmeč mountain, near Jelašinovci, about 20 km from Sanski Most. Seen from above it looks like an eye. It is a lake connected with the sources of the Dabar and Zdena rivers.\n\nThe water moves in both directions: after heavy rain it behaves like a spring, and at low water it becomes a sinkhole. Its look changes with the water level, from a deep blue pool to a lake. The outflow forms the Jezernica brook, which sinks and reappears at Dabar Cave.\n\nEnglish cave divers found an olm, the “human fish”, in it.\n\nLocal legends tell of fairies who dance on it at night, and of a sheep that fell into the sinkhole and was said to have been found days later at a nearby spring.',
+      long: 'Bobijaško Oko is a karst feature at the foot of Grmeč mountain, near Jelašinovci, about 20 km from Sanski Most. Seen from above it looks like an eye. It is a lake connected with the sources of the Dabar and Zdena rivers.\n\nThe water moves in both directions: after heavy rain it behaves like a spring, and at low water it becomes a sinkhole. Its look changes with the water level, from a deep blue pool to a lake. The outflow forms the Jezernica brook, which sinks and reappears at Dabar Cave.\n\nEnglish cave divers found an olm, the “human fish”, in it.\n\nLocal legends tell of fairies and elves who dance on it at night, and of a sheep that fell into the sinkhole and was said to have been found days later at a nearby spring.',
       note: 'Best seen after snowmelt or heavy rain. Swimming is forbidden. The site is not adapted for visitors: the road is poor, navigation may send you the wrong way, and the last part is a gravel road, then parking on a meadow and a walk of a few minutes.',
       see: []
     },
@@ -207,7 +207,7 @@ I18N.en = {
     'grmec-forest': {
       name: 'Grmeč Forest',
       short: 'A primeval forest of over 100 hectares, with trees over 500 years old.',
-      long: 'The primeval forest Bobija lies on Grmeč, in the municipality of Sanski Most, about 20 km from the town. It covers more than 100 hectares and is one of the largest in Bosnia and Herzegovina.\n\nThe most common trees are beech and fir, white and black pine, oak, maple, elm, ash and spruce. Some trees are more than 500 years old.\n\nThe karst feature Bobijaško Oko lies nearby.',
+      long: 'The primeval forest Bobija lies on Grmeč, in the municipality of Sanski Most, about 20 km from the town. It covers more than 100 hectares.\n\nThe most common trees are beech and fir, white and black pine, oak, maple, elm, ash and spruce. Some trees are more than 500 years old.\n\nThe karst feature Bobijaško Oko lies nearby.',
       see: [
         'Korčanica, a WWII memorial complex at Grmeč mountain.',
         'Bobijaško Oko, a vertical karst shaft that looks like an eye from above.'

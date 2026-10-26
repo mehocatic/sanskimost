@@ -14,7 +14,7 @@ I18N.bs = {
   // home: head and hero
   'home.meta': 'Sanski Most, Bosna i Hercegovina: grad na devet rijeka, sa srednjovjekovnom tvrđavom, pećinama, Hamzibegovom džamijom s četiri munare i vodopadom Blihe.',
   'hero.caption': 'Vodopad Blihe',
-  'hero.scroll': 'Skrolajte',
+  'hero.scroll': 'Pomaknite prema dolje',
   'hero.outro': 'Sanski Most · Bosna i Hercegovina',
 
   // intro
@@ -25,16 +25,16 @@ I18N.bs = {
   // places carousel
   'places.eyebrow': 'Mjesta',
   'places.title.html': 'Sanski Most <br>i okolina',
-  'card.more': 'Saznaj više',
-  'card.aria': '{name}: saznaj više',
-  'cursor.view': 'Pogledaj',
+  'card.more': 'Saznajte više',
+  'card.aria': '{name}: saznajte više',
+  'cursor.view': 'Pogledajte',
 
   // routes (routes.js)
   'routes.eyebrow': 'Prijedlozi',
   'routes.title': 'Rute',
-  'routes.map': 'Vidi na karti',
+  'routes.map': 'Pogledajte na karti',
   'routes.km': 'Oko {km} km od grada',
-  'routes.conditions': 'Provjerite uslove prije polaska.',
+  'routes.conditions': 'Provjerite uvjete prije polaska.',
   'route.half-day.name': 'Pola dana',
   'route.half-day.text': 'Srednjovjekovna tvrđava, musala ispod nje i džamija s četiri munare.',
   'route.water.name': 'Dan uz vodu',
@@ -46,7 +46,7 @@ I18N.bs = {
   'note.cave': 'Ponesite baterijsku lampu i nikad ne idite sami.',
   'note.ferrata': 'Za iskusne planinare; preporučuju se kaciga, pojas i sajle.',
   'note.bobijasko': 'Najbolje ga je vidjeti nakon otapanja snijega ili jakih kiša.',
-  'note.cvjetna': 'Staza Cvjetna, duga oko 15 km, povezuje Kamengrad, vodopad i Jasice.',
+  'note.cvjetna': 'Staza „Cvjetna“, duga oko 15 km, povezuje Kamengrad, vodopad i Jasice.',
 
   // history
   'history.eyebrow': 'Historija',
@@ -92,11 +92,11 @@ I18N.bs = {
   'place.prev': 'Prethodno mjesto',
   'place.next': 'Sljedeće mjesto',
   'place.notfound': 'Mjesto nije pronađeno',
-  'place.notfound.text': 'Na ovoj adresi nema mjesta. Odaberite neko sa spiska.',
-  'place.photo': '{name}: otvori fotografiju {i} od {n}',
+  'place.notfound.text': 'Na ovoj adresi nema mjesta. Odaberite neko mjesto s popisa.',
+  'place.photo': '{name}: otvorite fotografiju {i} od {n}',
   'lb.label': 'Pregled fotografija',
   'lb.close': 'Zatvori',
-  'lb.close.aria': 'Zatvori fotografiju',
+  'lb.close.aria': 'Zatvori pregled',
   'lb.prev': 'Prethodna fotografija',
   'lb.next': 'Sljedeća fotografija',
   'lb.photo': 'Fotografija',
@@ -108,20 +108,20 @@ I18N.bs = {
   'explore.eyebrow': 'Istraži',
   'explore.title': 'Mjesta na karti',
   'explore.map': 'Karta mjesta oko Sanskog Mosta',
-  'explore.view': 'Pogledaj mjesto →',
-  'explore.filter': 'Filtriraj kartu po kategoriji',
+  'explore.view': 'Pogledajte mjesto →',
+  'explore.filter': 'Filtrirajte kartu po kategoriji',
   'explore.all': 'Sve',
   'explore.legend': 'Legenda',
   'explore.list': 'Na karti',
   'explore.route': 'Ruta: {name}',
-  'explore.showAll': 'Prikaži sva mjesta',
+  'explore.showAll': 'Prikažite sva mjesta',
   'explore.missing': 'Još nisu na karti: {names}.',
   'cat.nature': 'Priroda',
   'cat.water': 'Voda',
   'cat.history': 'Historija',
   'cat.culture': 'Kultura',
   'cat.camps': 'Logori',
-  'cat.memorials': 'Spomenici',
+  'cat.memorials': 'Spomen-obilježja',
 
   // optional river sound
   'sound.label': 'Zvuk rijeke',
@@ -148,7 +148,7 @@ I18N.bs = {
     'musalla': {
       name: 'Fatihova musala',
       short: 'Mjesto za molitvu na otvorenom iz osmanskog perioda, u Donjem Kamengradu; nacionalni spomenik od 2003.',
-      long: 'Fatihova musala je mjesto za molitvu na otvorenom u Donjem Kamengradu. Prema narodnom kazivanju, sultan Mehmed Fatih je pri osvajanju Kamengrada ovdje klanjao džuma-namaz, a na tom mjestu je izgrađena musala; neki izvori je datiraju u 1463.\n\nRiječ je o prostoru opasanom zidom, s mihrabom, uzdignutim mjestom za hatiba i nadstrešnicom s drvenom kupolom na četiri drvena stuba.\n\nMusale ovog tipa postepeno su nestajale, najviše u doba austrougarske uprave. Ova je preživjela i nekoliko puta je obnavljana, između ostalog 1909, a posljednji put nakon rata.\n\nU kompleksu se nalazi mezarje koje se zove Musalla; jedan nišan ima natpis iz 1782. Musala je 2003. proglašena nacionalnim spomenikom.\n\nOvdje se održava godišnja manifestacija Musalla, a njen središnji dio je džuma-namaz prvog petka u julu.',
+      long: 'Fatihova musala je mjesto za molitvu na otvorenom u Donjem Kamengradu. Prema narodnom kazivanju, sultan Mehmed Fatih je pri osvajanju Kamengrada ovdje klanjao džuma-namaz, a na tom mjestu je izgrađena musala; neki izvori je datiraju u 1463.\n\nRiječ je o prostoru opasanom zidom, s mihrabom, uzdignutim mjestom za hatiba i nadstrešnicom s drvenom kupolom na četiri drvena stuba.\n\nMusale ovog tipa postupno su nestajale, najviše u doba austrougarske uprave. Ova je preživjela i nekoliko puta je obnavljana, između ostalog 1909, a posljednji put nakon rata.\n\nU kompleksu se nalazi mezarje koje se zove Musalla; jedan nišan ima natpis iz 1782. Musala je 2003. proglašena nacionalnim spomenikom.\n\nOvdje se održava godišnja manifestacija Musalla, a njen središnji dio je džuma-namaz prvog petka u julu.',
       note: 'Direktor manifestacije Mirsad Spahić navodi da je to jedina preostala musala iz tog perioda na cijelom Balkanu. To je njegova tvrdnja; jedan tekst je opisuje kao jednu od rijetkih koje su preživjele.',
       see: [
         'Tvrđava Kamengrad, iznad nje.'
@@ -157,7 +157,7 @@ I18N.bs = {
     'hamzibegova': {
       name: 'Hamzibegova džamija',
       short: 'Izgrađena prije 1557, srušena 1992. i ponovo otvorena 6. augusta 2000.',
-      long: 'Hamza-begovu džamiju sagradio je i uvakufio sandžak-beg Hamza-beg Biharović, porijeklom iz okoline Sanskog Mosta, vjerovatno iz Kamengrada. Sagrađena je prije 1557, godine kada je umro njen osnivač, a pretpostavlja se da je postojala već 1555.\n\nPrvobitna džamija imala je jednu munaru, od kamena a s drvenom unutrašnjošću. Obnovljena je 1705. nakon ratnih oštećenja, a posljednja rekonstrukcija izvršena je 1984.\n\nSrušena je 27. juna 1992. Izgradnja nove džamije počela je u julu 1997, a otvorena je 6. augusta 2000.\n\nPrema navodima, to je jedina džamija u Bosni i Hercegovini s četiri munare. Komisija za očuvanje nacionalnih spomenika stavila ju je na privremenu listu nacionalnih spomenika Bosne i Hercegovine.',
+      long: 'Hamzibegovu džamiju sagradio je i uvakufio sandžak-beg Hamza-beg Biharović, porijeklom iz okoline Sanskog Mosta, vjerovatno iz Kamengrada. Sagrađena je prije 1557, godine kada je umro njen osnivač, a pretpostavlja se da je postojala već 1555.\n\nPrvobitna džamija imala je jednu munaru, od kamena, s drvenom unutrašnjošću. Obnovljena je 1705. nakon ratnih oštećenja, a posljednji put je rekonstruirana 1984.\n\nSrušena je 27. juna 1992. Izgradnja nove džamije počela je u julu 1997, a otvorena je 6. augusta 2000.\n\nPrema navodima, to je jedina džamija u Bosni i Hercegovini s četiri munare. Komisija za očuvanje nacionalnih spomenika stavila ju je na privremenu listu nacionalnih spomenika Bosne i Hercegovine.',
       see: [
         'Mezarje uz džamiju, s nišanima iz otprilike 1751–52.',
         'Rafting na Sani može početi kod džamije.',
@@ -167,7 +167,7 @@ I18N.bs = {
     'korcanica': {
       name: 'Korčanica',
       short: 'Spomen-kompleks iz Drugog svjetskog rata na planini Grmeč, otvoren 1979.',
-      long: 'Memorijalna zona Korčanica posvećena je Narodnooslobodilačkoj borbi u Drugom svjetskom ratu. Nalazi se oko 32 km od Sanskog Mosta, kod planine Grmeč, a obuhvata nekoliko objekata, među njima česmu i dvije grobnice.\n\nU ovom području su 1942. i 1943. djelovala partizanska bolnica sa 19 objekata.\n\nSpomenik „Revolucije“, rad vajara Ljubomira Denkovića, otvoren je 27. jula 1979. na mjestu spomen-obeliska. Čine ga dva velika polukružna zida, visoka oko 15 m, koji okružuju unutrašnji prostor s maketom terena i bolnice, te veliki refleksioni bazen ispred njih.\n\nPrije rata područje je bilo hortikulturno uređeno, a posjećivali su ga turisti i učenici. Od 1990-ih je zapušteno i uglavnom zaboravljeno.',
+      long: 'Memorijalna zona Korčanica posvećena je Narodnooslobodilačkoj borbi u Drugom svjetskom ratu. Nalazi se oko 32 km od Sanskog Mosta, kod planine Grmeč, a obuhvata nekoliko objekata, među njima česmu i dvije grobnice.\n\nU ovom području je 1942. i 1943. djelovala partizanska bolnica sa 19 objekata.\n\nSpomenik „Revolucije“, rad vajara Ljubomira Denkovića, otvoren je 27. jula 1979. na mjestu spomen-obeliska. Čine ga dva velika polukružna zida, visoka oko 15 m, koji okružuju unutrašnji prostor s maketom terena i bolnice, te veliko vodeno ogledalo ispred njih.\n\nPrije rata područje je bilo hortikulturno uređeno, a posjećivali su ga turisti i učenici. Od 1990-ih je zapušteno i uglavnom zaboravljeno.',
       see: [
         'Prašuma na Grmeču, oko 20 km od grada: više od 100 ha, sa stablima starijim od 500 godina.'
       ]
@@ -201,14 +201,14 @@ I18N.bs = {
     'mulez': {
       name: 'Mulež',
       short: 'Planina iznad kanjona Sane, s via ferratom duž stijene od 90 m.',
-      long: 'Mulež je planina iznad kanjona Sane s planinarskim stazama, od lakših, pogodnih za porodice i početnike, do zahtjevnih uspona.\n\nVia ferrata (osigurana penjačka staza), otvorena od septembra 2024, vodi uz stijenu visoku 90 m, po sajlama i metalnim stepenicama. Izgradilo ju je planinarsko društvo SPD „Mulež“, a namijenjena je iskusnim planinarima.\n\nNovoizgrađeni viseći most dug 60 m spaja dvije stijene iznad dubokih provalija. Sa rute se vide kanjon rijeke Sane i sanska kotlina.\n\nU podnožju planine, na Ilidži, nalazi se sumporni izvor.',
+      long: 'Mulež je planina iznad kanjona Sane s planinarskim stazama, od lakših, pogodnih za porodice i početnike, do zahtjevnih uspona.\n\nVia ferrata (osigurana penjačka staza), otvorena od septembra 2024, vodi uz stijenu visoku 90 m, po sajlama i metalnim stepenicama. Izgradilo ju je planinarsko društvo SPD „Mulež“, a namijenjena je iskusnim planinarima.\n\nNovoizgrađeni viseći most dug 60 m spaja dvije stijene iznad dubokih provalija. S rute se vide kanjon rijeke Sane i sanska kotlina.\n\nU podnožju planine, na Ilidži, nalazi se sumporni izvor.',
       note: 'Za iskusne planinare. Preporučuju se kaciga, pojas i sajle; pratite sigurnosne oznake.',
       see: []
     },
     'grmec-forest': {
       name: 'Prašuma na Grmeču',
       short: 'Prašuma na više od 100 hektara, sa stablima starijim od 500 godina.',
-      long: 'Prašuma Bobija nalazi se na Grmeču, u općini Sanski Most, oko 20 km od grada. Prostire se na više od 100 hektara i jedna je od najvećih u Bosni i Hercegovini.\n\nNajzastupljenija su stabla bukve i jele, bijelog i crnog bora, hrasta, javora, brijesta, jasena i smreke. Neka stabla starija su od 500 godina.\n\nU blizini se nalazi Bobijaško oko.',
+      long: 'Prašuma Bobija nalazi se na Grmeču, u općini Sanski Most, oko 20 km od grada. Prostire se na više od 100 hektara.\n\nNajzastupljenija su stabla bukve i jele, bijelog i crnog bora, hrasta, javora, brijesta, jasena i smreke. Neka stabla starija su od 500 godina.\n\nU blizini se nalazi Bobijaško oko.',
       see: [
         'Korčanica, spomen-kompleks iz Drugog svjetskog rata kod planine Grmeč.',
         'Bobijaško oko, vertikalna kraška jama koja odozgo izgleda kao oko.'
@@ -223,7 +223,7 @@ I18N.bs = {
     'zavnobih': {
       name: 'ZAVNOBiH 1944',
       short: 'Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944.',
-      long: 'Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944. Na njemu je proglašena ravnopravnost Srba, Muslimana (Bošnjaka) i Hrvata, te Bosna i Hercegovina kao država u okviru jugoslavenske federacije.\n\nDana 1. jula, u „Sokolskom domu“, donesena je deklaracija o pravima građana u Bosni i Hercegovini. Ona se nadovezala na zaključke prvog zasjedanja, održanog 25. novembra u Mrkonjić Gradu, a na osnovu tih zaključaka ustrojena je poslijeratna Socijalistička Republika Bosna i Hercegovina.\n\nZgrada u kojoj je zasjedanje održano srušena je. Projekt njene revitalizacije, kao nacionalnog spomenika, ugovoren je između Zavoda za zaštitu kulturnog naslijeđa Unsko-sanskog kantona i izvođača radova.',
+      long: 'Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944. Na njemu je proglašena ravnopravnost Srba, Muslimana (Bošnjaka) i Hrvata, te Bosna i Hercegovina kao država u okviru jugoslavenske federacije.\n\nDana 1. jula, u „Sokolskom domu“, donesena je deklaracija o pravima građana u Bosni i Hercegovini. Ona se nadovezala na zaključke prvog zasjedanja, održanog 25. novembra u Mrkonjić Gradu, a na osnovu tih zaključaka ustrojena je poslijeratna Socijalistička Republika Bosna i Hercegovina.\n\nZgrada u kojoj je održano zasjedanje srušena je. Projekt njene revitalizacije, kao nacionalnog spomenika, ugovoren je između Zavoda za zaštitu kulturnog naslijeđa Unsko-sanskog kantona i izvođača radova.',
       see: []
     }
   }
