@@ -102,11 +102,10 @@ html, body { background: var(--bg); color: var(--paper); }
   font-family: var(--sans); font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1.55;
   max-width: 34ch; margin-top: clamp(24px, 5svh, 56px); color: var(--fg-muted);
 }
-#intro-text .w { display: inline-block; white-space: nowrap; }
-.js-anim #intro-text .ch { opacity: .1; }
+#intro-text .w, #intro-sub .w { display: inline-block; white-space: nowrap; }
+.js-anim #intro-text .ch, .js-anim #intro-sub .ch { opacity: .1; }
 /* visually hidden, still read by screen readers */
 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.js-anim #intro-sub { opacity: 0; transform: translateY(14px); }
 
 /* 2. Places carousel */
 #places {

@@ -61,15 +61,16 @@
   // Letters sit inside word spans (inline-block, nowrap) so a word never breaks; screen readers get
   // the whole sentence from a visually hidden copy, the letters are aria-hidden.
   const introText = document.getElementById('intro-text');
+  const introSub = document.getElementById('intro-sub');
   let introTl = null;
-  function setupIntro() {
-    const text = introText.textContent.trim();
+  function splitLetters(el) {
+    const text = el.textContent.trim();
     const label = document.createElement('span');
     label.className = 'vh';
     label.textContent = text;
     const letters = document.createElement('span');
     letters.setAttribute('aria-hidden', 'true');
-    text.split(/\s+/).forEach((word, i) => {
+    text.split(/[ \t\n]+/).forEach((word, i) => {
       if (i) letters.append(' ');
       const w = document.createElement('span');
       w.className = 'w';
@@ -81,12 +82,16 @@
       }
       letters.appendChild(w);
     });
-    introText.replaceChildren(label, letters);
+    el.replaceChildren(label, letters);
+  }
+  function setupIntro() {
+    splitLetters(introText);
+    splitLetters(introSub);
     if (!animate) return;
-    // the letters take the same share of the scroll as the four words did (2 of 2.5), the sub line the rest
+    // the title letters take 2 of 3 scroll units, the sub line letters start when the title is done and take the last one
     introTl = gsap.timeline({ scrollTrigger: { trigger: '#intro', start: 'top 40%', end: 'top -60%', scrub: true } })
       .fromTo('#intro-text .ch', { opacity: .1 }, { opacity: 1, ease: 'none', duration: .5, stagger: { amount: 1.5 } })
-      .fromTo('#intro-sub', { opacity: 0, y: 14 }, { opacity: 1, y: 0, ease: 'none' });
+      .fromTo('#intro-sub .ch', { opacity: .1 }, { opacity: 1, ease: 'none', duration: .3, stagger: { amount: .7 } });
   }
   setupIntro();
 
