@@ -5,7 +5,7 @@
 // Points with a page copy their texts from i18n/en.js and i18n/bs.js; the map shows the live texts from there.
 // What could not be confirmed is listed in poi-todo.md.
 // Memorials are added only after Meho approves each one (source for both the location and the nature of the place).
-// Camps are not on the map; they stay in the timeline (Meho, 2026-10-24). The category is kept so the colour stays reserved.
+// Camps: first kept off the map (Meho, 2026-10-24); on the map since 2026-10-27, when Meho gave the coordinates (see the end of the list).
 
 const POI_CATS = [
   { id: "nature", color: "#5b9a5f" },
@@ -484,5 +484,76 @@ const POI = [
     coords: [44.7791519, 16.6719786],
     name: { en: "Nišan Mustafe Alagića", bs: "Nišan Mustafe Alagića" },
     short: { en: "Stone gravestone (nišan).", bs: "Kameni nišan." }
+  },
+  // Camps (cat "camps"). Coordinates given by Meho (2026-10-27), no OSM element exists for any of them (Nominatim, 2026-10-27).
+  // Nature of each place: the texts are written from the text Meho pasted on 2026-10-27 (sources named there: inmedia.ba/logor-smrti-sanski-most/ 2016,
+  // ratnizlocin.detektor.ba, rtvusk.ba, federalna.ba); the site names no source in the popup.
+  // TODO(verify): every text in this group is waiting for Meho's approval (sensitive text); numbers (1,000 / 2,000, 19 suffocated,
+  // "several hundred" at Sanakeram) and the 1995 crimes at Sanakeram have no second source checked yet; the police station text has no source named for it.
+  {
+    // given by Meho; Inmedia: "Betonirka", a concrete plant, over 1,000 detained
+    id: "logor-betonirka",
+    cat: "camps",
+    coords: [44.7626560978299, 16.67285393539636],
+    name: { en: "Betonirka", bs: "Betonirka" },
+    short: {
+      en: "More than 1,000 people were held here in 1992, mostly Bosniak and Croat intellectuals, prominent citizens and men able to fight, in concrete cells. On 7 July 1992 detainees were taken by truck to Manjača; 19 of them suffocated on the way, and their bodies were found in a mass grave at Ušće Dabra.",
+      bs: "Ovdje je 1992. bilo zatočeno više od 1.000 ljudi, uglavnom bošnjačkih i hrvatskih intelektualaca, uglednih građana i muškaraca sposobnih za borbu, u betonskim ćelijama. Dana 7. jula 1992. zatočenici su kamionima prevezeni prema Manjači; 19 ih se ugušilo na putu, a tijela su pronađena u masovnoj grobnici na lokalitetu Ušće Dabra."
+    }
+  },
+  {
+    // given by Meho; Inmedia: sports hall, over 2,000 detained
+    id: "logor-sportska-dvorana",
+    cat: "camps",
+    coords: [44.7690027420453, 16.657905007900315],
+    name: { en: "Sports hall", bs: "Sportska dvorana" },
+    short: {
+      en: "More than 2,000 civilians were held in the city sports hall. It served as a transit camp: people were kept here after the villages around the town were cleared, before being sent on to Manjača or expelled from the municipality.",
+      bs: "Kroz gradsku sportsku dvoranu prošlo je više od 2.000 zatočenih civila. Služila je kao tranzitni logor: ljudi su ovdje držani nakon čišćenja okolnih sela, prije nego što bi bili prebačeni prema Manjači ili protjerani iz općine."
+    }
+  },
+  {
+    // given by Meho (spelled "Sanakeram"); Inmedia spells it "Sanakerm"
+    id: "logor-sanakeram",
+    cat: "camps",
+    coords: [44.78321934420272, 16.59734548232884],
+    name: { en: "Sanakeram factory", bs: "Tvornica Sanakeram" },
+    short: {
+      en: "An industrial plant where several hundred detainees were held at a time. They were forced to do hard physical work under armed guard. Shortly before the liberation of the town in 1995, further crimes against the remaining civilians were committed at this site and nearby.",
+      bs: "Industrijski pogon u kojem je istovremeno bilo zatočeno nekoliko stotina ljudi. Pod naoružanom stražom bili su primorani na teške fizičke radove. Neposredno prije oslobođenja grada 1995. na ovoj lokaciji i u blizini počinjeni su dodatni zločini nad preostalim civilima."
+    }
+  },
+  {
+    // given by Meho; Inmedia spells it "Krinks"
+    id: "logor-krings",
+    cat: "camps",
+    coords: [44.76854684079692, 16.637480886807353],
+    name: { en: "Krings factory", bs: "Tvornica Krings" },
+    short: {
+      en: "A furniture factory turned into a camp. Men, women and children were held in its halls. It was one of the main collection points for the deportation of civilians from Sanski Most.",
+      bs: "Tvornica namještaja pretvorena u logor. U njenim halama držani su muškarci, žene i djeca. Bila je jedan od glavnih sabirnih centara za deportaciju civila iz Sanskog Mosta."
+    }
+  },
+  {
+    // given by Meho ("Zatvorske prostorije Policijske stanice Sanski Most"); no source for the nature of this place beyond Meho's text
+    id: "logor-policijska-stanica",
+    cat: "camps",
+    coords: [44.763335071548994, 16.67193149800302],
+    name: { en: "Police station, detention rooms", bs: "Policijska stanica, zatvorske prostorije" },
+    short: {
+      en: "The cellars and rooms of the police station were used for the first arrests, interrogations, beatings and the selection of detainees, who were then sent to Betonirka or Krings or deported from the town.",
+      bs: "Podrumi i prostorije policijske stanice korišteni su za prva privođenja, ispitivanja, premlaćivanja i selekciju zatočenika, koji su potom raspoređivani u Betonirku ili Krings ili protjerivani iz grada."
+    }
+  },
+  {
+    // given by Meho; Inmedia lists the school "Hasan Kikić" among the camps
+    id: "logor-os-hasan-kikic",
+    cat: "camps",
+    coords: [44.76344930619379, 16.668283940676336],
+    name: { en: "Hasan Kikić primary school", bs: "Osnovna škola „Hasan Kikić“" },
+    short: {
+      en: "A primary school in the town, one of several school buildings turned into temporary and permanent camps for the local population.",
+      bs: "Osnovna škola u gradu, jedna od više školskih zgrada pretvorenih u privremene i stalne logore za lokalno stanovništvo."
+    }
   }
 ];
