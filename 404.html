@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title data-i18n="notfound.doctitle">Page not found &middot; Sanski Most</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <!-- every path here starts with /: Netlify serves this page at any missing address, at any depth -->
+  <script src="/lib.js"></script>
+  <link rel="stylesheet" href="/base.css">
+  <style>
+    .nf {
+      min-height: 100svh; display: flex; flex-direction: column; justify-content: center;
+      padding: calc(76px + 4svh) var(--gutter) 10svh; max-width: 1100px; margin: 0 auto;
+    }
+    .nf-code {
+      font-family: var(--serif); font-weight: 400; line-height: .85; letter-spacing: -.02em;
+      font-size: clamp(6.5rem, 34vw, 15rem); color: var(--fg);
+    }
+    .nf-river { display: block; width: 100%; max-width: 620px; height: auto; margin: clamp(10px, 3svh, 28px) 0 clamp(18px, 4svh, 40px); overflow: visible; }
+    .nf h1 { font-family: var(--serif); font-weight: 400; line-height: 1.05; letter-spacing: -.01em; font-size: clamp(2rem, 6vw, 3.4rem); }
+    .nf-text { max-width: 36ch; margin-top: .9rem; color: var(--fg-muted); }
+    .nf-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.8rem; }
+    .nf-btn {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 1.1rem;
+      border: 1px solid var(--acc); color: var(--fg); text-decoration: none;
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; transition: background .3s ease, color .3s ease;
+    }
+    .nf-btn:hover { background: var(--acc); color: var(--paper); }
+
+    /* The river line draws itself (stroke-dashoffset, pathLength = 1), then runs out into the hole. Once, no loop. */
+    .nf-line {
+      fill: none; stroke: var(--river); stroke-width: 2; stroke-linecap: butt;
+      stroke-dasharray: 1 1.1; stroke-dashoffset: 0;
+      animation: nf-flow 4.6s both;
+    }
+    @keyframes nf-flow {
+      0%   { stroke-dashoffset: 1.05; animation-timing-function: ease-in-out; }
+      48%  { stroke-dashoffset: 0; }
+      58%  { stroke-dashoffset: 0; animation-timing-function: ease-in; }
+      100% { stroke-dashoffset: -1.05; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .nf-line { animation: none; stroke-dashoffset: 0; }
+      .nf-btn { transition: none; }
+    }
+  </style>
+</head>
+<body class="on-deep">
+
+  <nav class="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+    <a href="/index.html" data-i18n="nav.home">Home</a>
+    <a href="/explore.html" data-i18n="nav.explore">Explore</a>
+  </nav>
+
+  <main class="nf">
+    <p class="nf-code">404</p>
+
+    <svg class="nf-river" viewBox="0 0 600 150" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id="nf-hole">
+          <stop offset="0" stop-color="#010507"/>
+          <stop offset=".55" stop-color="#030c11"/>
+          <stop offset="1" stop-color="#0e2430" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <path class="nf-line" pathLength="1" d="M4 46 C 90 12, 160 104, 262 82 S 420 26, 500 70 S 548 116, 540 118"/>
+      <ellipse cx="540" cy="120" rx="54" ry="17" fill="url(#nf-hole)"/>
+      <ellipse cx="540" cy="120" rx="34" ry="9" fill="#010507"/>
+    </svg>
+
+    <h1 data-i18n="notfound.title">Page not found.</h1>
+    <p class="nf-text" data-i18n="notfound.text">Check the address or go back to the home page.</p>
+    <div class="nf-actions">
+      <a class="nf-btn" href="/index.html" data-i18n="nav.home">Home</a>
+      <a class="nf-btn" href="/explore.html" data-i18n="nav.explore">Explore</a>
+    </div>
+  </main>
+
+  <script src="/i18n/en.js"></script>
+  <script src="/i18n/bs.js"></script>
+  <script src="/i18n.js"></script>
+  <script src="/nav.js"></script>
+</body>
+</html>

@@ -121,6 +121,11 @@ I18N.en = {
   'cat.camps': 'Camps',
   'cat.memorials': 'Memorials',
 
+  // 404 page (its buttons use nav.home and nav.explore)
+  'notfound.doctitle': 'Page not found · Sanski Most',
+  'notfound.title': 'Page not found.',
+  'notfound.text': 'Check the address or go back to the home page.',
+
   // optional river sound (sound.js, off by default)
   'sound.label': 'River sound',
   'sound.on': 'On',

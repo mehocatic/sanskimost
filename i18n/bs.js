@@ -123,6 +123,11 @@ I18N.bs = {
   'cat.camps': 'Logori',
   'cat.memorials': 'Spomen-obilježja',
 
+  // 404 page
+  'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
+  'notfound.title': 'Stranica nije pronađena.',
+  'notfound.text': 'Provjerite adresu ili se vratite na početnu.',
+
   // optional river sound
   'sound.label': 'Zvuk rijeke',
   'sound.on': 'Uklj.',
