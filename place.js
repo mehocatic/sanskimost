@@ -18,11 +18,22 @@
   });
 
   const meta = document.querySelector('meta[name="description"]');
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  // title, description and Open Graph copies of them, in the current language
+  const setHead = (title, desc) => {
+    document.title = `${title} · Sanski Most`;
+    if (meta) meta.content = desc;
+    if (ogTitle) ogTitle.content = document.title;
+    if (ogDesc) ogDesc.content = desc;
+  };
+  // og:url keeps the placeholder domain (TODO(verify) in place.html) and gets the real path of this place
+  if (ogUrl && slug && index >= 0) ogUrl.content = ogUrl.content.replace(/\/place.*$/, `/place?slug=${encodeURIComponent(slug)}`);
 
   if (index < 0) {
     const notFound = () => {
-      document.title = `${I18n.t('place.notfound')} · Sanski Most`;
-      if (meta) meta.content = I18n.t('place.meta');
+      setHead(I18n.t('place.notfound'), I18n.t('place.meta'));
       $('place-title').textContent = I18n.t('place.notfound');
       $('place-long').textContent = I18n.t('place.notfound.text');
     };
@@ -142,8 +153,7 @@
   /* ---------- texts, again whenever the language changes ---------- */
   function render() {
     const nm = name();
-    document.title = `${nm} · Sanski Most`;
-    if (meta) meta.content = I18n.place(p, 'short');
+    setHead(nm, I18n.place(p, 'short'));
     $('place-title').textContent = nm;
     track.setAttribute('aria-label', nm);
     // paragraphs are separated by a blank line in the language files

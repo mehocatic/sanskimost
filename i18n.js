@@ -56,6 +56,12 @@ window.I18n = (() => {
         if (p) el.textContent = place(p, 'name');
       });
     }
+    // Open Graph locale follows the language: bs_BA or en_US, the other one as alternate
+    const loc = { bs: 'bs_BA', en: 'en_US' };
+    const ogLoc = document.querySelector('meta[property="og:locale"]');
+    const ogAlt = document.querySelector('meta[property="og:locale:alternate"]');
+    if (ogLoc) ogLoc.content = loc[lang];
+    if (ogAlt) ogAlt.content = loc[lang === 'bs' ? 'en' : 'bs'];
     document.querySelectorAll('.lang-switch button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   }
 
