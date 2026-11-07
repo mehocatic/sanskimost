@@ -51,7 +51,7 @@
     if (s) box.appendChild(make('p', 'pop-short', s));
     if (p.slug && places[p.slug]) {
       const link = make('a', null, I18n.t('explore.view'));
-      link.href = `place.html?slug=${encodeURIComponent(p.slug)}`;
+      link.href = `place?slug=${encodeURIComponent(p.slug)}`;
       box.appendChild(link);
     }
     return box;
@@ -111,7 +111,7 @@
   function renderBar() {
     if (route) {
       const back = make('a', 'route-all', I18n.t('explore.showAll'));
-      back.href = 'explore.html';
+      back.href = 'explore';
       routeBar.replaceChildren(make('p', 'route-name', I18n.t('explore.route', { name: I18n.t(`route.${route.id}.name`) })), back);
       return;
     }

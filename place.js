@@ -136,8 +136,8 @@
   /* ---------- previous / next place ---------- */
   const n = PLACES.length;
   const prev = PLACES[(index - 1 + n) % n], next = PLACES[(index + 1) % n];
-  $('pager-prev').href = `place.html?slug=${encodeURIComponent(prev.slug)}`;
-  $('pager-next').href = `place.html?slug=${encodeURIComponent(next.slug)}`;
+  $('pager-prev').href = `place?slug=${encodeURIComponent(prev.slug)}`;
+  $('pager-next').href = `place?slug=${encodeURIComponent(next.slug)}`;
 
   /* ---------- texts, again whenever the language changes ---------- */
   function render() {
@@ -162,7 +162,7 @@
       else {
         // { slug, text }: the text links to that place
         const a = document.createElement('a');
-        a.href = `place.html?slug=${encodeURIComponent(s.slug)}`;
+        a.href = `place?slug=${encodeURIComponent(s.slug)}`;
         a.textContent = s.text;
         li.appendChild(a);
       }

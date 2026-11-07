@@ -107,7 +107,7 @@
 
     const card = document.createElement('a');
     card.className = 'card';
-    card.href = `place.html?slug=${encodeURIComponent(p.slug)}`;
+    card.href = `place?slug=${encodeURIComponent(p.slug)}`;
 
     const media = document.createElement('span');
     media.className = 'media';
@@ -213,7 +213,7 @@
       );
       if (r.extra) info.appendChild(make('p', 'route-extra', I18n.t(r.extra)));
       const map = make('a', 'route-map', I18n.t('routes.map'));
-      map.href = `explore.html?route=${encodeURIComponent(r.id)}`;
+      map.href = `explore?route=${encodeURIComponent(r.id)}`;
       info.appendChild(map);
 
       const trackEl = make('div', 'route-track');
@@ -233,7 +233,7 @@
         const body = make('div', 'stop-body');
         const title = make('p', 'stop-name');
         const a = make('a', null, name);
-        a.href = `place.html?slug=${encodeURIComponent(p.slug)}`;
+        a.href = `place?slug=${encodeURIComponent(p.slug)}`;
         title.appendChild(a);
         body.appendChild(title);
         if (s.km) body.appendChild(make('p', 'stop-km', I18n.t('routes.km', { km: s.km })));
