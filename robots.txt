@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# TODO(verify): replace the placeholder domain with the real one.
+# The 404 page is not listed here; it stays out of search with <meta name="robots" content="noindex">.
+Sitemap: https://TODO-domain.example/sitemap.xml

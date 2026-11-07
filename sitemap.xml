@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO(verify): replace https://TODO-domain.example with the real domain. Place addresses come from places.js; 404 is left out on purpose. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://TODO-domain.example/</loc></url>
+  <url><loc>https://TODO-domain.example/explore</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=blihe</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=kamengrad</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=musalla</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=hamzibegova</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=korcanica</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=hrustovacka</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=dabarska</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=bobijasko-oko</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=mulez</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=grmec-forest</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=turbe-alagic</loc></url>
+  <url><loc>https://TODO-domain.example/place?slug=zavnobih</loc></url>
+</urlset>
