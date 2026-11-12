@@ -42,7 +42,7 @@
       try {
         // check support first so a missing WebGL never reaches the console
         if (!document.createElement('canvas').getContext('webgl')) throw new Error('no webgl');
-        const { Renderer, Program, Mesh, Triangle, Texture } = await import('https://cdn.jsdelivr.net/npm/ogl@1.0.11/+esm');
+        const { Renderer, Program, Mesh, Triangle, Texture } = await import('./vendor/ogl.esm.js');
         const canvas = document.createElement('canvas');
         canvas.className = 'gl';
         const renderer = new Renderer({ canvas, dpr: Math.min(window.devicePixelRatio || 1, 1.5), alpha: false, antialias: false });
