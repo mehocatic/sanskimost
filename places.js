@@ -20,9 +20,11 @@
 //           The gallery is a masonry of the other photos, each whole in its own proportions (the photo at the top of the page
 //           is not repeated there, but it is in the viewer). In the viewer every photo is shown whole (object-fit: contain).
 // Photos listed more than once are shown more than once, so list each photo once.
-// Photos that are not listed here are kept in originals/ (not in the repository, see .gitignore).
+// Photos that are not listed here are kept in originals/ (not in the repository, see .gitignore), together with the files
+// as they were before they were re-encoded for the site (WebP, quality 75, long side at most 1600 px, heroes 2400 px; a file
+// is kept in its old format when WebP would not be smaller). Nothing is scaled up.
 // A path whose file does not exist shows a neutral placeholder with the place name.
-// TODO: fill in author, license and sourceUrl for each photo; only the author of musalla.jpeg is known (from the file).
+// TODO: fill in author, license and sourceUrl for each photo; only the author of musalla.webp is known (from the file).
 const pic = (name, extra) => ({ src: `photos/${name}`, author: "", license: "", sourceUrl: "", ...extra });
 
 const PLACES = [
@@ -34,10 +36,10 @@ const PLACES = [
       pic("bliha3.webp"), // the cover on the card
       // hero: 2400 px wide WebP (and 1200 px for phones) made from the 5464 x 3640 px original, which is in originals/bliha2.jpg
       pic("bliha2.webp", { hero: true, pos: "50% 30%", posM: "54% 45%", srcset: "photos/bliha2-1200.webp 1200w, photos/bliha2.webp 2400w" }),
-      pic("bliha.jpg"),
+      pic("bliha.webp"),
       pic("bliha4.webp"),
       pic("bliha5.webp"),
-      pic("bliha6.jpg")
+      pic("bliha6.webp")
     ]
   },
   {
@@ -54,7 +56,7 @@ const PLACES = [
     see: [null, null],
     photos: [
       pic("kamengrad.webp"),
-      pic("kamengrad2.jpeg"), // a drawing, not a photo
+      pic("kamengrad2.webp"), // a drawing, not a photo
       pic("kamengrad3.jpg"),
       pic("kamengrad4.webp")
     ]
@@ -64,10 +66,10 @@ const PLACES = [
     // coords: not set here. In OpenStreetMap it is node 519029537 (amenity=place_of_worship, "Fatihova Musalla"), and poi.js uses it for the map.
     see: [null],
     photos: [
-      pic("musalla.jpeg", { author: "Almedin Handanovic" }), // author: EXIF Artist tag of the file (Copyright tag says "Gorsak na salasu", not a license)
-      pic("musalla2.jpeg"),
+      pic("musalla.webp", { author: "Almedin Handanovic" }), // author: EXIF Artist tag of the file (Copyright tag says "Gorsak na salasu", not a license)
+      pic("musalla2.webp"),
       // photos/musalla3.jpg (in originals/) shows the monument to the Turkish martyrs (OSM node 4409248503), not the musalla; no place page for it
-      pic("musalla4.jpg")
+      pic("musalla4.webp")
     ]
   },
   {
@@ -77,15 +79,15 @@ const PLACES = [
     // TODO(verify): Meho's text says members of the Army of Republika Srpska demolished the mosque on 27 June 1992 and that
     // the building material and gravestones were taken to a dump. No source is named, so only the date is on the site.
     // TODO(verify): the text says "the largest mosque in Sanski Most"; left out (superlative, no source).
-    // TODO(verify): hamzibegova4.jpg (a prayer, wooden mihrab, looks like a scanned print) does not look like the interior in
+    // TODO(verify): hamzibegova4.webp (a prayer, wooden mihrab, looks like a scanned print) does not look like the interior in
     // hamzibegova2 and 3 (white walls, teal carpet). Meho to confirm it is the Hamzibeg Mosque.
     see: [null, null, null],
     photos: [
-      pic("hamzibegova.jpg"),
-      pic("hamzibegova5.jpg", { main: true }), // the mosque with four minarets, shown at the top (1024 x 1472)
-      pic("hamzibegova2.jpg"),
-      pic("hamzibegova3.jpg"),
-      pic("hamzibegova4.jpg")
+      pic("hamzibegova.webp"),
+      pic("hamzibegova5.webp", { main: true }), // the mosque with four minarets, shown at the top (1024 x 1472)
+      pic("hamzibegova2.webp"),
+      pic("hamzibegova3.webp"),
+      pic("hamzibegova4.webp")
     ]
   },
   {
@@ -100,14 +102,14 @@ const PLACES = [
       pic("korcanica.jpg"),
       pic("korcanica2.jpg"),
       pic("korcanica3.jpg", { main: true }), // the monument, shown at the top (738 x 416)
-      pic("korcanica4.avif") // the ruined hotel; AVIF, works in current browsers
+      pic("korcanica4.webp") // the ruined hotel
     ]
   },
   {
     slug: "hrustovacka",
     // coords: given by the site owner; matches OpenStreetMap node 5613053430 (natural=cave_entrance)
     coords: [44.6726663, 16.7006463],
-    // hrustovacka2.jpg and hrustovacka5.jpeg show a lit cave with a walkway and a group: Meho confirmed they are Hrustovačka Cave
+    // hrustovacka2.jpg and hrustovacka5.webp show a lit cave with a walkway and a group: Meho confirmed they are Hrustovačka Cave
     // (visits with an organised group). The text "self-guided, bring a torch" is unchanged.
     see: [null, null],
     photos: [
@@ -115,7 +117,7 @@ const PLACES = [
       pic("hrustovacka3.webp", { main: true }), // the entrance, shown at the top (1180 x 885)
       pic("hrustovacka2.jpg"),
       pic("hrustovacka4.webp"),
-      pic("hrustovacka5.jpeg")
+      pic("hrustovacka5.webp")
     ]
   },
   {
@@ -127,13 +129,13 @@ const PLACES = [
     see: [null],
     photos: [
       pic("dabarska.jpg"),
-      // dabarska2.jpg and dabarska7.jpg carry the Canva authors "lejla avdagic" / "Antonio Ivičević" in their metadata; that is the
+      // dabarska2.webp and dabarska7.webp carry the Canva authors "lejla avdagic" / "Antonio Ivičević" in their metadata; that is the
       // account that exported the file, not necessarily the photographer, so no author is set
-      pic("dabarska2.jpg", { hero: true, pos: "50% 50%", posM: "60% 50%" }), // 1640 x 924
+      pic("dabarska2.webp", { hero: true, pos: "50% 50%", posM: "60% 50%", srcset: "photos/dabarska2-1200.webp 1200w, photos/dabarska2.webp 1640w" }), // 1640 x 924
       pic("dabarska3.jpg"),
       pic("dabarska4.jpg"),
       pic("dabarska6.jpg"), // has a "DOK" mark at the bottom, probably the author's
-      pic("dabarska7.jpg")
+      pic("dabarska7.webp")
     ]
   },
   {
@@ -145,7 +147,7 @@ const PLACES = [
       pic("bobijasko-oko.webp"),
       pic("bobijasko-oko2.webp"),
       pic("bobijasko-oko3.jpg"),
-      pic("bobijasko-oko4.jpg")
+      pic("bobijasko-oko4.webp")
     ]
   },
   {
@@ -155,11 +157,11 @@ const PLACES = [
     coords: [44.65399773076312, 16.81145299681311],
     // TODO(verify): the highest peak, V. Divić, is given as 1013 m by one source. Not shown until verified.
     photos: [
-      pic("mulez.jpg", { hero: true, pos: "50% 50%", posM: "40% 50%" }), // 2048 x 1152
+      pic("mulez.jpg", { hero: true, pos: "50% 50%", posM: "40% 50%", srcset: "photos/mulez-1200.webp 1200w, photos/mulez.jpg 2048w" }), // 2048 x 1152; the JPEG stays, a WebP of it was not smaller
       pic("mulez2.jpg"),
       pic("mulez3.jpg"),
-      pic("mulez4.jpg"),
-      pic("mulez5.jpg")
+      pic("mulez4.webp"),
+      pic("mulez5.webp")
     ]
   },
   {
@@ -187,9 +189,9 @@ const PLACES = [
     // TODO(verify): Meho's text names no source for the military career; it is written as plain facts, without his evaluations.
     // Left out on purpose: birthplace and parents, and the passages that judge his command (they are opinion, not fact).
     photos: [
-      pic("turbe.jpg"),
-      pic("turbe2.jpg"), // the gravestone, "General Mehmed Alagić 1947-2003"
-      pic("turbe3.jpg", { alt: "General Mehmed Alagić" }) // a portrait, no visible caption; the Medžlis confirmed who it shows and that it may be published
+      pic("turbe.webp"),
+      pic("turbe2.webp"), // the gravestone, "General Mehmed Alagić 1947-2003"
+      pic("turbe3.webp", { alt: "General Mehmed Alagić" }) // a portrait, no visible caption; the Medžlis confirmed who it shows and that it may be published
     ]
   },
   {
