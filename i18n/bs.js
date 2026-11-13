@@ -9,6 +9,7 @@ I18N.bs = {
   'nav.label': 'Glavni meni',
   'nav.home': 'Početna',
   'nav.explore': 'Istraži',
+  'nav.plan': 'Posjeta',
   'nav.lang': 'Jezik',
 
   // home: head and hero
@@ -122,6 +123,20 @@ I18N.bs = {
   'cat.culture': 'Kultura',
   'cat.camps': 'Logori',
   'cat.memorials': 'Spomen-obilježja',
+
+  // plan page (plan.html); distances, notes and routes come from the place texts and routes.js
+  'plan.doctitle': 'Planirajte posjetu · Sanski Most',
+  'plan.meta': 'Udaljenosti, praktične napomene i prijedlozi ruta za Sanski Most i okolinu.',
+  'plan.eyebrow': 'Posjeta',
+  'plan.title': 'Planirajte posjetu',
+  'plan.lead': 'Udaljenosti, praktične napomene i prijedlozi ruta za Sanski Most i okolinu.',
+  'plan.dist.title': 'Koliko je daleko od grada',
+  'plan.dist.note': 'Udaljenosti su približne.',
+  'plan.before.title': 'Prije polaska',
+  'plan.when.title': 'Kada',
+  'plan.when.bobijasko': 'Bobijaško oko najbolje je vidjeti nakon otapanja snijega ili jakih kiša.',
+  'plan.when.musalla': 'Manifestacija Musalla održava se svake godine; njen središnji dio je džuma-namaz prvog petka u julu.',
+  'plan.routes.title': 'Prijedlozi ruta',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

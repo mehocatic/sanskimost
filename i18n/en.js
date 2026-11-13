@@ -7,6 +7,7 @@ I18N.en = {
   'nav.label': 'Main',
   'nav.home': 'Home',
   'nav.explore': 'Explore',
+  'nav.plan': 'Visit',
   'nav.lang': 'Language',
 
   // home: head and hero
@@ -120,6 +121,20 @@ I18N.en = {
   'cat.culture': 'Culture',
   'cat.camps': 'Camps',
   'cat.memorials': 'Memorials',
+
+  // plan page (plan.html); distances, notes and routes come from the place texts and routes.js
+  'plan.doctitle': 'Plan your visit · Sanski Most',
+  'plan.meta': 'Distances, practical notes and suggested routes for Sanski Most and its surroundings.',
+  'plan.eyebrow': 'Visit',
+  'plan.title': 'Plan your visit',
+  'plan.lead': 'Distances, practical notes and suggested routes for Sanski Most and its surroundings.',
+  'plan.dist.title': 'How far from town',
+  'plan.dist.note': 'Distances are approximate.',
+  'plan.before.title': 'Before you go',
+  'plan.when.title': 'When',
+  'plan.when.bobijasko': 'Bobijaško oko is best seen after snowmelt or heavy rain.',
+  'plan.when.musalla': 'The Musalla event is held every year; its central part is the Friday prayer on the first Friday of July.',
+  'plan.routes.title': 'Suggested routes',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',

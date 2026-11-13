@@ -3,6 +3,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://TODO-domain.example/</loc></url>
   <url><loc>https://TODO-domain.example/explore</loc></url>
+  <url><loc>https://TODO-domain.example/plan</loc></url>
   <url><loc>https://TODO-domain.example/place?slug=blihe</loc></url>
   <url><loc>https://TODO-domain.example/place?slug=kamengrad</loc></url>
   <url><loc>https://TODO-domain.example/place?slug=musalla</loc></url>

@@ -104,3 +104,9 @@ h2.h3 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); }
   .lang-switch { margin-left: 2px; padding-left: 4px; }
   .lang-switch button { min-width: 34px; padding: 0 .35rem 0 calc(.35rem + .12em); }
 }
+/* three links do not fit a phone beside the language choice: the link of the page you are on is left out there,
+   and on a place page the Home link too (the back arrow goes there) */
+@media (max-width: 560px) {
+  .site-nav a[aria-current="page"] { display: none; }
+  .place-page .site-nav a[href="./"] { display: none; }
+}

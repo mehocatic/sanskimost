@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planirajte posjetu · Sanski Most</title>
+  <meta name="description" data-i18n-attr="content:plan.meta" content="Udaljenosti, praktične napomene i prijedlozi ruta za Sanski Most i okolinu.">
+  <!-- TODO(verify): the domain is not known yet. Replace https://TODO-domain.example in og:url, og:image and twitter:image (also in robots.txt and sitemap.xml). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sanski Most">
+  <meta property="og:title" content="Planirajte posjetu · Sanski Most">
+  <meta property="og:description" data-i18n-attr="content:plan.meta" content="Udaljenosti, praktične napomene i prijedlozi ruta za Sanski Most i okolinu.">
+  <meta property="og:url" content="https://TODO-domain.example/plan">
+  <meta property="og:image" content="https://TODO-domain.example/photos/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="bs_BA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://TODO-domain.example/photos/og.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/fonts/fonts.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="plan.css">
+</head>
+<body class="on-deep plan-page">
+
+  <nav class="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+    <a href="./" data-i18n="nav.home">Home</a>
+    <a href="explore" data-i18n="nav.explore">Explore</a>
+    <a href="plan" aria-current="page" data-i18n="nav.plan">Visit</a>
+  </nav>
+
+  <main>
+    <header class="plan-head">
+      <p class="eyebrow" data-i18n="plan.eyebrow">Visit</p>
+      <h1 data-i18n="plan.title">Plan your visit</h1>
+      <p class="plan-lead" data-i18n="plan.lead">Distances, practical notes and suggested routes for Sanski Most and its surroundings.</p>
+    </header>
+
+    <div class="plan-body on-paper">
+
+      <!-- TODO(verify): "How to get there" (roads, bus, distances from other towns) is left out: nothing about it is in FACTS.md. Add it when Meho gives the facts. -->
+
+      <section class="plan-sec" aria-labelledby="plan-dist-title">
+        <h2 id="plan-dist-title" data-i18n="plan.dist.title">How far from town</h2>
+        <!-- filled by plan.js: only the distances the site already states -->
+        <ul class="dist" id="plan-dist"></ul>
+        <p class="plan-small" data-i18n="plan.dist.note">Distances are approximate.</p>
+      </section>
+
+      <section class="plan-sec" aria-labelledby="plan-before-title">
+        <h2 id="plan-before-title" data-i18n="plan.before.title">Before you go</h2>
+        <!-- filled by plan.js from the practical notes of the places (i18n: places.<slug>.note) -->
+        <ul class="notes" id="plan-notes"></ul>
+      </section>
+
+      <section class="plan-sec" aria-labelledby="plan-when-title">
+        <h2 id="plan-when-title" data-i18n="plan.when.title">When</h2>
+        <ul class="when">
+          <li data-i18n="plan.when.bobijasko">Bobijaško oko is best seen after snowmelt or heavy rain.</li>
+          <li data-i18n="plan.when.musalla">The Musalla event is held every year; its central part is the Friday prayer on the first Friday of July.</li>
+        </ul>
+      </section>
+
+      <section class="plan-sec" aria-labelledby="plan-routes-title">
+        <h2 id="plan-routes-title" data-i18n="plan.routes.title">Suggested routes</h2>
+        <!-- filled by plan.js from routes.js -->
+        <ol class="plan-routes" id="plan-routes"></ol>
+        <p class="plan-small" data-i18n="routes.conditions">Check conditions before you go.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="places.js"></script>
+  <script src="routes.js"></script>
+  <script src="i18n/en.js"></script>
+  <script src="i18n/bs.js"></script>
+  <script src="i18n.js"></script>
+  <script src="plan.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>
