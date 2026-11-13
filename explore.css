@@ -1,25 +1,27 @@
 /* Explore page (explore.html). Palette and typography come from base.css; category colours from poi.js. */
 body { color: var(--fg); min-height: 100svh; }
 
-/* compact header: below the fixed nav on phones, level with it on wide screens, so the map gets the rest of the viewport */
-.explore-head { padding: 68px var(--gutter) 8px; }
-.explore-head .eyebrow { margin-bottom: 2px; }
-.explore-head h1 { font-family: var(--serif); font-weight: 400; line-height: 1; letter-spacing: -.01em; font-size: clamp(1.6rem, 4vw, 2.4rem); }
+/* header: the title with room around it, then the category filters; below the fixed menu on phones */
+.explore-head { padding: 84px var(--gutter) 0; }
+.explore-head .eyebrow { margin-bottom: .7rem; }
+.explore-head h1 { font-family: var(--serif); font-weight: 400; line-height: 1; letter-spacing: -.01em; font-size: clamp(2.1rem, 4.4vw, 3.4rem); }
 
-/* category filters: one at a time, "All" first */
-.explore-bar { padding: 0 var(--gutter) 10px; }
-.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+/* category filters: one at a time, "All" first. Rounded chips; the chosen one is filled */
+.explore-bar { padding: 22px var(--gutter) 22px; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; }
 .filters[hidden] { display: none; }
 .filter {
-  display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; padding: 0 .95rem;
-  background: transparent; color: var(--paper); border: 1px solid rgba(244, 241, 234, .28); cursor: pointer;
-  font: inherit; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; padding: 0 1.1rem 0 .95rem; border-radius: 999px;
+  background: rgba(244, 241, 234, .05); color: rgba(244, 241, 234, .86); border: 1px solid rgba(244, 241, 234, .16); cursor: pointer;
+  font: inherit; font-size: .82rem; letter-spacing: .02em;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
 }
-.filter:hover { border-color: var(--c, var(--sand)); }
-.filter[aria-pressed="true"] { border-color: var(--c, var(--sand)); background: rgba(244, 241, 234, .1); }
-.filter-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); flex: none; }
+.filter:hover { border-color: rgba(244, 241, 234, .45); color: var(--paper); }
+.filter[aria-pressed="true"] { background: var(--paper); border-color: var(--paper); color: var(--ink); }
+.filter-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); flex: none; }
 .filter-all .filter-dot { background: conic-gradient(#5b9a5f 0 20%, #4db6d6 0 40%, #b89b72 0 60%, #8e6bb0 0 80%, #8a8f98 0); }
-.filter-count { color: rgba(244, 241, 234, .6); letter-spacing: .06em; }
+.filter-count { font-size: .74rem; color: rgba(244, 241, 234, .5); font-variant-numeric: tabular-nums; }
+.filter[aria-pressed="true"] .filter-count { color: rgba(16, 33, 42, .6); }
 
 /* route mode (?route=<id>) */
 .route-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.4rem; }
@@ -29,8 +31,8 @@ body { color: var(--fg); min-height: 100svh; }
 .route-all::before { content: "\2190"; margin-right: .6rem; letter-spacing: 0; }
 .route-all:hover { text-decoration: underline; }
 
-/* map and list: side by side from 900px, list under the map on phones */
-.explore-main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; height: max(480px, calc(100svh - 120px)); border-top: 1px solid var(--rule); }
+/* map and list: side by side from 900px (the page is one screen high, the map takes what the header leaves), list under the map on phones */
+.explore-main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; border-top: 1px solid var(--rule); }
 #map { height: 100%; background: var(--deep); z-index: 0; }
 .poi-list { overflow-y: auto; border-left: 1px solid var(--rule); padding: 20px 0 28px; overscroll-behavior: contain; }
 .poi-list h2 { font-family: var(--sans); font-weight: 400; font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; line-height: 1.4; color: var(--acc); padding: 0 20px 10px; }
@@ -51,16 +53,22 @@ body { color: var(--fg); min-height: 100svh; }
 .numbered .poi-dot::before { content: counter(stop); }
 
 @media (min-width: 900px) {
-  .explore-head { padding-top: 14px; padding-bottom: 6px; display: flex; align-items: baseline; gap: 1rem; }
-  .explore-head .eyebrow { margin-bottom: 0; }
+  .explore-page { display: flex; flex-direction: column; height: 100svh; min-height: 680px; }
+  .explore-head { padding-top: 34px; }
+  .explore-main { flex: 1 1 auto; min-height: 0; }
+  .poi-list { min-height: 0; }
+  .filter { min-height: 40px; }
 }
 @media (max-width: 899px) {
+  .explore-bar { padding: 18px 0 18px; }
   .explore-main { display: block; height: auto; }
-  #map { height: calc(100svh - 190px); min-height: 340px; }
+  #map { height: calc(100svh - 250px); min-height: 340px; }
   .poi-list { border-left: 0; overflow: visible; }
-  /* filters in one row that scrolls sideways instead of wrapping into several rows */
-  .filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+  /* filters in one row that scrolls sideways instead of wrapping into several rows; the row runs to the screen edges */
+  .filters { flex-wrap: nowrap; overflow-x: auto; padding: 0 var(--gutter) 4px; scrollbar-width: none; }
+  .filters::-webkit-scrollbar { display: none; }
   .filter { flex: none; }
+  .route-bar { padding: 0 var(--gutter); }
 }
 
 /* soften the standard tiles so they sit well with the palette */

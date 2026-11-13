@@ -50,9 +50,13 @@ h2.h3 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); }
 }
 
 
-/* Discrete main menu, fixed top right on every page */
+/* Main menu, fixed top right on every page: one rounded bar that holds the links and the language choice */
 .site-nav {
-  position: fixed; top: 16px; right: var(--gutter); z-index: 60; display: flex; gap: 8px;
+  position: fixed; top: 16px; right: var(--gutter); z-index: 60; display: flex; align-items: center;
+  padding: 0 6px 0 10px; border-radius: 999px;
+  background: rgba(14, 36, 48, .8); border: 1px solid rgba(244, 241, 234, .16);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  box-shadow: 0 6px 24px rgba(8, 22, 30, .28);
   transition: transform .45s cubic-bezier(.2, .7, .2, 1), opacity .35s ease;
 }
 /* hidden by nav.js (scrolling down, or the home hero on screen); keyboard focus brings it back */
@@ -62,31 +66,41 @@ h2.h3 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); }
   .site-nav.nav-hidden:not(:focus-within) { transform: none; }
 }
 .site-nav a {
-  display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem;
-  background: rgba(14, 36, 48, .72); color: var(--paper); border: 1px solid rgba(244, 241, 234, .28);
-  font-family: var(--sans); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: 0 .85rem;
+  color: rgba(244, 241, 234, .72); text-decoration: none;
+  font-family: var(--sans); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+  transition: color .2s ease;
 }
-.site-nav a:hover { border-color: var(--sand); }
-.site-nav a[aria-current="page"] { color: var(--sand); border-color: var(--sand); }
+.site-nav a:hover { color: var(--paper); }
+.site-nav a[aria-current="page"] { color: var(--paper); }
+/* the current page: a short sand line under the word (the right inset takes off the trailing letter-spacing) */
+.site-nav a[aria-current="page"]::after {
+  content: ""; position: absolute; left: .85rem; right: calc(.85rem + .18em); bottom: 10px; height: 1px; background: var(--sand);
+}
 
-/* EN | BS (added by i18n.js) */
+/* BS / EN (added by i18n.js): two small segments after a thin divider, the chosen one on a lighter chip */
 .lang-switch {
-  display: inline-flex; align-items: center; min-height: 44px; padding: 0 .3rem;
-  background: rgba(14, 36, 48, .72); border: 1px solid rgba(244, 241, 234, .28);
-  color: rgba(244, 241, 234, .4); font-family: var(--sans); font-size: .72rem;
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  display: inline-flex; align-items: center; margin-left: 6px; padding-left: 6px;
+  border-left: 1px solid rgba(244, 241, 234, .16);
+  font-family: var(--sans); font-size: .7rem;
 }
+.lang-switch span { display: none; }
 .lang-switch button {
-  min-height: 42px; min-width: 36px; padding: 0 .45rem; background: none; border: 0; cursor: pointer;
-  color: rgba(244, 241, 234, .66); font: inherit; letter-spacing: .2em; padding-left: calc(.45rem + .2em);
+  position: relative; z-index: 0; min-height: 44px; min-width: 38px; padding: 0 .5rem 0 calc(.5rem + .12em);
+  background: none; border: 0; cursor: pointer;
+  color: rgba(244, 241, 234, .55); font: inherit; letter-spacing: .12em; transition: color .2s ease;
+}
+.lang-switch button::before {
+  content: ""; position: absolute; z-index: -1; inset: 8px 2px; border-radius: 999px; background: transparent; transition: background .2s ease;
 }
 .lang-switch button:hover { color: var(--paper); }
-.lang-switch button[aria-pressed="true"] { color: var(--sand); }
+.lang-switch button[aria-pressed="true"] { color: var(--paper); }
+.lang-switch button[aria-pressed="true"]::before { background: rgba(244, 241, 234, .14); }
 
 @media (max-width: 420px) {
-  .site-nav { gap: 6px; }
-  .site-nav a { padding: 0 .6rem; letter-spacing: .1em; }
-  .lang-switch { padding: 0 .15rem; }
-  .lang-switch button { min-width: 32px; padding: 0 .3rem; letter-spacing: .1em; }
+  .site-nav { padding: 0 4px 0 6px; }
+  .site-nav a { padding: 0 .6rem; letter-spacing: .12em; }
+  .site-nav a[aria-current="page"]::after { left: .6rem; right: calc(.6rem + .12em); }
+  .lang-switch { margin-left: 2px; padding-left: 4px; }
+  .lang-switch button { min-width: 34px; padding: 0 .35rem 0 calc(.35rem + .12em); }
 }

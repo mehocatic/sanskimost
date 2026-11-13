@@ -74,14 +74,14 @@ window.I18n = (() => {
     dispatchEvent(new Event('langchange'));
   }
 
-  // EN | BS in the main menu
+  // BS / EN in the main menu (Bosnian, the default language, first)
   const nav = document.querySelector('.site-nav');
   if (nav) {
     const box = document.createElement('div');
     box.className = 'lang-switch';
     box.setAttribute('role', 'group');
     box.dataset.i18nAttr = 'aria-label:nav.lang';
-    [['en', 'EN', 'English'], ['bs', 'BS', 'Bosanski']].forEach(([code, label, full], i) => {
+    [['bs', 'BS', 'Bosanski'], ['en', 'EN', 'English']].forEach(([code, label, full], i) => {
       if (i) {
         const sep = document.createElement('span');
         sep.setAttribute('aria-hidden', 'true');

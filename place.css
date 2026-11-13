@@ -9,17 +9,17 @@ body { color: var(--fg); min-height: 100svh; }
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
 }
 .back:hover, .lb-btn:hover, .slider-btn:hover { border-color: var(--sand); }
-.back { position: fixed; top: 16px; left: var(--gutter); z-index: 20; }
+.back { position: fixed; top: 16px; left: var(--gutter); z-index: 20; border-radius: 999px; background: rgba(14, 36, 48, .8); border-color: rgba(244, 241, 234, .16); }
 
 /* every place has the same layout: a low dark header, a slider of all its photos, then the text */
 .place-head {
-  box-sizing: border-box; min-height: 130px; padding: 68px var(--gutter) 14px;
+  box-sizing: border-box; min-height: 150px; padding: 86px var(--gutter) 16px;
   display: flex; flex-direction: column; justify-content: flex-end; background: var(--deep);
 }
 .place-head .eyebrow { margin-bottom: .5rem; }
 .place-head h1 { font-family: var(--serif); font-weight: 400; line-height: 1; letter-spacing: -.01em; font-size: clamp(1.8rem, 8vw, 2.2rem); overflow-wrap: break-word; }
 @media (min-width: 769px) {
-  .place-head { min-height: 160px; padding: 72px var(--gutter) 16px; }
+  .place-head { min-height: 176px; padding: 86px var(--gutter) 18px; }
   .place-head h1 { font-size: clamp(2.2rem, 3.6vw, 2.7rem); }
 }
 
