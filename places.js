@@ -4,6 +4,7 @@
 //
 // slug    : address of the place page (place.html?slug=...) and key of its texts
 // coords  : [lat, lon] for the map on explore.html (a place without it has no marker); the comment names the source
+// km      : approximate distance from town in km, only where FACTS.md or the place text states it (shown on the place page and on /plan)
 // see     : links of the "Also worth seeing" entries, in the same order as the texts in the language files:
 //           the slug of a place the entry links to, or null for a plain text entry (omit when there is none)
 // photos  : the first photo is the cover on the card (shown cropped to the card). Each entry is created with pic(name, extra):
@@ -32,6 +33,7 @@ const PLACES = [
     slug: "blihe",
     // coords: OpenStreetMap node 4411996013 (waterway=waterfall, "Bliha Skok")
     coords: [44.7889880, 16.5247591],
+    km: 14, // FACTS.md: about 14 km from town
     photos: [
       pic("bliha3.webp"), // the cover on the card
       // hero: 2400 px wide WebP (and 1200 px for phones) made from the 5464 x 3640 px original, which is in originals/bliha2.jpg
@@ -94,6 +96,7 @@ const PLACES = [
     slug: "korcanica",
     // coords: OpenStreetMap node 11146153554 (historic=memorial, "Korčanica Monument to the Revolution at Grmeč")
     coords: [44.6872744, 16.4375984],
+    km: 32, // the Korčanica text says about 32 km from town
     // TODO(verify): Meho's text gives 316 fallen fighters buried in two tombs, and 2732 m2 for the hospital; no source is named, so left out.
     // The earlier text said "central white concrete sculpture shaped like an opening bud" and "underground museum"; Meho's text says
     // two semicircular marble walls. The material and the museum are left out until a source settles it.
@@ -109,6 +112,7 @@ const PLACES = [
     slug: "hrustovacka",
     // coords: given by the site owner; matches OpenStreetMap node 5613053430 (natural=cave_entrance)
     coords: [44.6726663, 16.7006463],
+    km: 13, // FACTS.md: about 13 km from town
     // hrustovacka2.jpg and hrustovacka5.webp show a lit cave with a walkway and a group: Meho confirmed they are Hrustovačka Cave
     // (visits with an organised group). The text "self-guided, bring a torch" is unchanged.
     see: [null, null],
@@ -142,6 +146,7 @@ const PLACES = [
     slug: "bobijasko-oko",
     // coords: OpenStreetMap way 1202275847 (natural=water, "Bobijaško oko"), point given is the way’s search position
     coords: [44.7016006, 16.4632008],
+    km: 20, // FACTS.md: about 20 km from town
     // TODO(verify): bobijasko-oko2.jpg (a river that runs under a rock arch, from above) may show the Dabar spring and not the shaft.
     photos: [
       pic("bobijasko-oko.webp"),
@@ -171,6 +176,7 @@ const PLACES = [
     // centre (44.7658, 16.6663), 3.2 km from Korčanica and 2.3 km from Bobijaško oko. The text says about 17 km (rounded).
     // OSM has no forest element here (natural=wood, landuse=forest, protected_area and names with Bobij / Prašum / Grmeč searched on 2026-10-25).
     coords: [44.684125390645384, 16.478326730966664],
+    km: 17, // FACTS.md: about 17 km from town
     see: ["korcanica", "bobijasko-oko"],
     photos: [
       pic("grmec.jpg"),

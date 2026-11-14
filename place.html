@@ -21,6 +21,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="vendor/fonts/fonts.css">
   <script src="lib.js"></script>
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="place.css">
 </head>
@@ -35,9 +36,13 @@
   <a class="back" id="back" href="./#places"><span aria-hidden="true">&larr;</span> <span class="back-label" data-i18n="place.back">All places</span></a>
 
   <main>
-    <header class="place-head">
-      <p class="eyebrow">Sanski Most</p>
-      <h1 id="place-title"></h1>
+    <header class="place-head" id="place-head">
+      <div class="place-hero" id="place-hero" aria-hidden="true" hidden></div>
+      <button class="hero-open" id="hero-open" type="button" hidden></button>
+      <div class="place-head-text">
+        <p class="eyebrow">Sanski Most</p>
+        <h1 id="place-title"></h1>
+      </div>
     </header>
 
     <section class="place-slider" id="slider" hidden>
@@ -50,6 +55,15 @@
     </section>
 
     <section class="place-body on-paper">
+      <div class="place-facts" id="place-facts" hidden>
+        <dl>
+          <div id="fact-dist" hidden>
+            <dt data-i18n="place.dist.label">Distance from town</dt>
+            <dd id="fact-dist-v"></dd>
+          </div>
+        </dl>
+        <a class="facts-link" id="map-link" href="explore" hidden><span data-i18n="place.map.open">Show on map</span> <span aria-hidden="true">&rarr;</span></a>
+      </div>
       <div class="place-text">
         <div class="detail-long" id="place-long"></div>
         <p class="detail-note" id="place-note"></p>
@@ -57,6 +71,9 @@
           <h2 data-i18n="place.see">Also worth seeing</h2>
           <ul id="place-see-list"></ul>
         </div>
+      </div>
+      <div class="place-map-wrap" id="place-map-wrap" hidden>
+        <div class="place-map" id="place-map" role="region"></div>
       </div>
     </section>
 

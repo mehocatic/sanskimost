@@ -67,14 +67,8 @@
   }
 
   /* ---------- distances: a road from town, one stop per place ---------- */
-  // km from town. Sources: FACTS.md (Hrustovacka ~13, Blihe ~14, Bobijasko oko ~20, Grmec forest ~17) and the Korcanica text (about 32 km).
-  const DIST = [
-    { slug: 'hrustovacka', km: 13 },
-    { slug: 'blihe', km: 14 },
-    { slug: 'grmec-forest', km: 17 },
-    { slug: 'bobijasko-oko', km: 20 },
-    { slug: 'korcanica', km: 32 }
-  ].filter(d => bySlug[d.slug]);
+  // km from town: the `km` of each place in places.js (sources are named there), nearest first
+  const DIST = PLACES.filter(p => p.km != null).map(p => ({ slug: p.slug, km: p.km })).sort((a, b) => a.km - b.km);
 
   const journey = $('journey');
   const jLine = make('span', 'j-line');

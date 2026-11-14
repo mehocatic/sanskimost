@@ -73,7 +73,35 @@
     return (phone.matches ? c[0] : c[c.length - 1]).url;
   }
 
+  /* ---------- hero: the photo marked hero in places.js fills the top of the page (cropped); a place without one keeps the low header ---------- */
+  const head = $('place-head'), heroBox = $('place-hero'), heroBtn = $('hero-open');
+  const heroItem = lead && lead.hero ? items[0] : null;
+  if (heroItem) {
+    const e = heroItem.entry;
+    const h = photo(e.src, '', () => {
+      // missing file: back to the low header and out of the viewer
+      dropItem(heroItem);
+      head.classList.remove('has-hero');
+      document.body.classList.remove('hero-page');
+      heroBox.hidden = heroBtn.hidden = true;
+    }, true, { srcset: e.srcset, sizes: '100vw' });
+    const img = h.querySelector('img');
+    if (img) {
+      img.alt = '';
+      img.style.setProperty('--pos', e.pos || '50% 50%');
+      img.style.setProperty('--pos-m', e.posM || e.pos || '50% 50%');
+    }
+    heroBox.appendChild(h);
+    heroBox.hidden = heroBtn.hidden = false;
+    head.classList.add('has-hero');
+    document.body.classList.add('hero-page');
+    heroItem.btn = heroBtn;
+    heroBtn.addEventListener('click', () => openLightbox(heroItem));
+  }
+
+  // the slider shows the other photos; the hero is not repeated in it (it is still in the viewer)
   items.forEach(item => {
+    if (item === heroItem) return;
     const entry = item.entry;
     const fig = document.createElement('figure');
     fig.className = 'slide';
@@ -144,6 +172,45 @@
   });
   sync();
 
+  /* ---------- facts and mini map ---------- */
+  // distance (places.js km) and the position (places.js coords); a place without them shows nothing for them
+  const TILES = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+  const ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+  const hasKm = p.km != null, hasPos = Array.isArray(p.coords);
+  $('fact-dist').hidden = !hasKm;
+  $('place-facts').hidden = !(hasKm || hasPos);
+  $('map-link').hidden = !hasPos;
+  if (hasPos) $('map-link').href = `explore?place=${encodeURIComponent(p.slug)}`;
+
+  let miniMap = null, miniMarker = null;
+  // Leaflet is loaded only when the map is about to be seen, so the page itself stays light
+  function loadLeaflet() {
+    if (window.L) return Promise.resolve();
+    return new Promise((ok, fail) => {
+      const s = document.createElement('script');
+      s.src = 'vendor/leaflet/leaflet.js';
+      s.onload = ok; s.onerror = fail;
+      document.head.appendChild(s);
+    });
+  }
+  function buildMap() {
+    const L = window.L;
+    // on touch screens dragging is off so that a swipe over the map still scrolls the page; the wheel never zooms it
+    miniMap = L.map('place-map', { scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false, zoomControl: true });
+    L.tileLayer(TILES, { maxZoom: 18, attribution: ATTR }).addTo(miniMap);
+    const icon = L.divIcon({ className: 'pin', html: '<span></span>', iconSize: [24, 24], iconAnchor: [12, 12] });
+    miniMarker = L.marker(p.coords, { icon, title: name(), alt: name(), keyboard: false }).addTo(miniMap);
+    miniMap.setView(p.coords, 13);
+  }
+  if (hasPos) {
+    $('place-map-wrap').hidden = false;
+    const start = () => loadLeaflet().then(buildMap).catch(() => { $('place-map-wrap').hidden = true; });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => { if (es.some(x => x.isIntersecting)) { io.disconnect(); start(); } }, { rootMargin: '300px' });
+      io.observe($('place-map-wrap'));
+    } else start();
+  }
+
   /* ---------- previous / next place ---------- */
   const n = PLACES.length;
   const prev = PLACES[(index - 1 + n) % n], next = PLACES[(index + 1) % n];
@@ -183,8 +250,13 @@
     $('pager-prev').querySelector('.pn').textContent = I18n.place(prev, 'name');
     $('pager-next').querySelector('.pn').textContent = I18n.place(next, 'name');
 
+    if (hasKm) $('fact-dist-v').textContent = I18n.t('place.km', { km: p.km });
+    if (hasPos) {
+      $('place-map').setAttribute('aria-label', I18n.t('place.map.label', { name: nm }));
+      if (miniMarker) { miniMarker.options.title = miniMarker.options.alt = nm; const el = miniMarker.getElement(); if (el) el.title = nm; }
+    }
     items.forEach(it => { if (it.btn) it.btn.setAttribute('aria-label', I18n.t('place.photo', { name: it.entry.alt || nm, i: it.n, n: entries.length })); });
-    document.querySelectorAll('.place-page img:not(#lb-img)').forEach(img => {
+    document.querySelectorAll('.slider-track img').forEach(img => {
       const b = img.closest('.slide-open');
       img.alt = (b && b.dataset.alt) || nm;
     });

@@ -23,6 +23,22 @@ body { color: var(--fg); min-height: 100svh; }
   .place-head h1 { font-size: clamp(2.2rem, 3.6vw, 2.7rem); }
 }
 
+/* a place with a hero photo: the photo fills the header (cropped, never a frame), the title sits on a dark gradient at the bottom */
+.place-head { position: relative; overflow: hidden; }
+.place-head-text { position: relative; z-index: 2; pointer-events: none; }
+.place-hero, .hero-open { position: absolute; inset: 0; }
+.place-hero[hidden], .hero-open[hidden] { display: none; }
+.place-hero img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos-m, 50% 50%); }
+.hero-open { z-index: 1; padding: 0; border: 0; background: linear-gradient(to top, rgba(14, 36, 48, .88) 0%, rgba(14, 36, 48, .35) 45%, rgba(14, 36, 48, .25) 100%); cursor: zoom-in; }
+.place-head.has-hero { min-height: clamp(300px, 58svh, 520px); padding-bottom: clamp(22px, 4svh, 40px); }
+.place-head.has-hero h1 { font-size: clamp(2.2rem, 10vw, 3rem); text-shadow: 0 1px 14px rgba(14, 36, 48, .55); }
+.hero-page .place-hero { view-transition-name: place-hero; }
+@media (min-width: 769px) {
+  .place-hero img { object-position: var(--pos, 50% 50%); }
+  .place-head.has-hero { min-height: clamp(420px, 68svh, 680px); }
+  .place-head.has-hero h1 { font-size: clamp(3rem, 5.4vw, 4.6rem); }
+}
+
 /* the slider: one row of photos at a fixed height, each in its own proportions (no crop, no frame). A photo smaller than the row
    is shown at its own size, centred in the row, and is never enlarged: the img has width and height auto and only a maximum.
    Snapping to the start edge and a maximum width a little under the screen width leave the next photo showing at the right edge. */
@@ -38,7 +54,7 @@ body { color: var(--fg); min-height: 100svh; }
 .slider-track:focus-visible { outline-offset: -3px; }
 .slide { flex: none; display: flex; align-items: center; margin: 0; scroll-snap-align: start; }
 /* its name matches the card photo on the home page so the browser can fly one into the other */
-.slide:first-child .slide-open { view-transition-name: place-hero; }
+body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: place-hero; }
 .slide-open { display: block; margin: 0; padding: 0; border: 0; background: none; line-height: 0; cursor: zoom-in; }
 .slide-open > div { display: block; }
 .slide-open img { display: block; width: auto; height: auto; max-height: var(--row-h); max-width: calc(100vw - var(--gutter) - 48px); }
@@ -52,9 +68,32 @@ body { color: var(--fg); min-height: 100svh; }
 /* on phones the photos are swiped: no arrows, only the counter */
 @media (max-width: 768px) { .slider-btn { display: none; } .slider-count { min-width: 0; } }
 
-.place-body { padding: clamp(36px, 6svh, 64px) var(--gutter) clamp(48px, 9svh, 100px); }
-/* under the slider: the text in a readable measure, then "Also worth seeing" */
-.place-text { max-width: 65ch; font-size: 1.05rem; }
+.place-body {
+  padding: clamp(36px, 6svh, 64px) var(--gutter) clamp(48px, 9svh, 100px);
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem;
+  grid-template-areas: "facts" "text" "map";
+}
+@media (min-width: 900px) {
+  .place-body { grid-template-columns: minmax(0, 65ch) minmax(300px, 1fr); column-gap: clamp(40px, 6vw, 96px); row-gap: 1.6rem; grid-template-areas: "text facts" "text map" "text ."; align-items: start; }
+  .place-map-wrap { max-width: 520px; }
+}
+/* distance and the link to the map */
+.place-facts { grid-area: facts; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 1.6rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--rule); }
+.place-facts[hidden] { display: none; }
+.place-facts dt { font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: var(--acc); }
+.place-facts dd { margin: .2rem 0 0; font-family: var(--serif); font-size: 1.7rem; line-height: 1.1; }
+.facts-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: 0 1.1rem; border: 1px solid var(--acc); color: var(--fg); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; }
+.facts-link:hover { background: var(--acc); color: var(--paper); }
+.facts-link[hidden] { display: none; }
+/* mini map: the tiles are softened the same way as on the map page */
+.place-map-wrap { grid-area: map; }
+.place-map-wrap[hidden] { display: none; }
+.place-map { height: 260px; background: var(--mist); border: 1px solid var(--rule); }
+@media (min-width: 900px) { .place-map { height: 340px; } }
+.place-map .leaflet-tile-pane { filter: grayscale(.45) sepia(.12) saturate(.85) brightness(.97); }
+.place-map .pin span { display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--sand); border: 3px solid var(--deep); box-shadow: 0 0 0 1px var(--sand), 0 2px 8px rgba(14, 36, 48, .45); }
+/* under the hero and the slider: the text in a readable measure, then "Also worth seeing" */
+.place-text { grid-area: text; max-width: 65ch; font-size: 1.05rem; }
 .detail-long { color: var(--fg-soft); }
 .detail-long p + p { margin-top: 1em; }
 .detail-note { margin-top: 1.4rem; padding-left: 1rem; border-left: 1px solid var(--acc); color: var(--fg-muted); font-size: .92rem; }

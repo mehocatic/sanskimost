@@ -208,4 +208,9 @@
   renderLegend();
   if (!route) active = fromHash();
   show(true);
+
+  // ?place=<slug> (the "Show on map" link of a place page): centre on that place and open its popup
+  const wanted = new URLSearchParams(location.search).get('place');
+  const target = wanted && points.find(p => p.slug === wanted);
+  if (target && !route) focusPoint(target);
 })();
