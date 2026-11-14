@@ -19,7 +19,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://TODO-domain.example/photos/og.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="photos/bliha2.webp" imagesrcset="photos/bliha2-1200.webp 1200w, photos/bliha2.webp 2400w" imagesizes="100vw">
   <link rel="stylesheet" href="vendor/fonts/fonts.css">
+  <script src="lib.js"></script>
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="plan.css">
 </head>
@@ -32,45 +34,69 @@
   </nav>
 
   <main>
-    <header class="plan-head">
-      <p class="eyebrow" data-i18n="plan.eyebrow">Visit</p>
-      <h1 data-i18n="plan.title">Plan your visit</h1>
-      <p class="plan-lead" data-i18n="plan.lead">Distances, practical notes and suggested routes for Sanski Most and its surroundings.</p>
+    <!-- hero: the Blihe photo that is the hero of its place page (places.js), filled by plan.js -->
+    <header class="plan-hero" id="plan-hero">
+      <div class="plan-hero-media" id="plan-hero-media" aria-hidden="true"></div>
+      <div class="plan-hero-text">
+        <p class="eyebrow" data-i18n="plan.eyebrow">Visit</p>
+        <h1 class="plan-title"><span class="pt-mask"><span class="pt-line" data-i18n="plan.title">Plan your visit</span></span></h1>
+        <p class="plan-lead" data-i18n="plan.lead">Distances, practical notes and suggested routes for Sanski Most and its surroundings.</p>
+      </div>
+      <p class="plan-scroll" aria-hidden="true" data-i18n="hero.scroll">Scroll</p>
     </header>
 
-    <div class="plan-body on-paper">
+    <div class="rise to-paper" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
 
-      <!-- TODO(verify): "How to get there" (roads, bus, distances from other towns) is left out: nothing about it is in FACTS.md. Add it when Meho gives the facts. -->
+    <!-- TODO(verify): "How to get there" (roads, bus, distances from other towns) is left out: nothing about it is in FACTS.md. Add it when Meho gives the facts. -->
 
-      <section class="plan-sec" aria-labelledby="plan-dist-title">
-        <h2 id="plan-dist-title" data-i18n="plan.dist.title">How far from town</h2>
-        <!-- filled by plan.js: only the distances the site already states -->
-        <ul class="dist" id="plan-dist"></ul>
-        <p class="plan-small" data-i18n="plan.dist.note">Distances are approximate.</p>
-      </section>
+    <section class="plan-sec on-paper" id="sec-dist" aria-labelledby="plan-dist-title">
+      <header class="sec-head">
+        <p class="eyebrow" data-i18n="plan.dist.eyebrow">Distances</p>
+        <h2 id="plan-dist-title" class="reveal" data-i18n="plan.dist.title">How far from town</h2>
+      </header>
+      <!-- filled by plan.js: only the distances the site already states -->
+      <div class="journey" id="journey"></div>
+      <p class="plan-small" data-i18n="plan.dist.note">Distances are approximate.</p>
+    </section>
 
-      <section class="plan-sec" aria-labelledby="plan-before-title">
-        <h2 id="plan-before-title" data-i18n="plan.before.title">Before you go</h2>
-        <!-- filled by plan.js from the practical notes of the places (i18n: places.<slug>.note) -->
-        <ul class="notes" id="plan-notes"></ul>
-      </section>
+    <section class="plan-sec on-paper" id="sec-before" aria-labelledby="plan-before-title">
+      <header class="sec-head">
+        <p class="eyebrow" data-i18n="plan.before.eyebrow">Practical</p>
+        <h2 id="plan-before-title" class="reveal" data-i18n="plan.before.title">Before you go</h2>
+      </header>
+      <!-- filled by plan.js from the practical notes of the places (i18n: places.<slug>.note) -->
+      <ul class="tips" id="plan-tips"></ul>
+    </section>
 
-      <section class="plan-sec" aria-labelledby="plan-when-title">
-        <h2 id="plan-when-title" data-i18n="plan.when.title">When</h2>
-        <ul class="when">
-          <li data-i18n="plan.when.bobijasko">Bobijaško oko is best seen after snowmelt or heavy rain.</li>
-          <li data-i18n="plan.when.musalla">The Musalla event is held every year; its central part is the Friday prayer on the first Friday of July.</li>
-        </ul>
-      </section>
+    <div class="rise to-deep" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
 
-      <section class="plan-sec" aria-labelledby="plan-routes-title">
-        <h2 id="plan-routes-title" data-i18n="plan.routes.title">Suggested routes</h2>
-        <!-- filled by plan.js from routes.js -->
-        <ol class="plan-routes" id="plan-routes"></ol>
-        <p class="plan-small" data-i18n="routes.conditions">Check conditions before you go.</p>
-      </section>
+    <section class="plan-sec on-deep" id="sec-when" aria-labelledby="plan-when-title">
+      <header class="sec-head">
+        <p class="eyebrow" data-i18n="plan.when.eyebrow">Timing</p>
+        <h2 id="plan-when-title" class="reveal" data-i18n="plan.when.title">When</h2>
+      </header>
+      <!-- filled by plan.js -->
+      <div class="seasons" id="plan-when"></div>
+    </section>
 
-    </div>
+    <div class="rise to-paper" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
+
+    <section class="plan-sec on-paper" id="sec-routes" aria-labelledby="plan-routes-title">
+      <header class="sec-head">
+        <p class="eyebrow" data-i18n="routes.eyebrow">Suggestions</p>
+        <h2 id="plan-routes-title" class="reveal" data-i18n="plan.routes.title">Suggested routes</h2>
+      </header>
+      <!-- filled by plan.js from routes.js -->
+      <ol class="rcards" id="plan-routes"></ol>
+      <p class="plan-check" data-i18n="routes.conditions">Check conditions before you go.</p>
+    </section>
+
+    <div class="rise to-deep" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
+
+    <section class="plan-cta on-deep" aria-labelledby="plan-cta-title">
+      <h2 id="plan-cta-title" class="reveal" data-i18n="plan.cta.title">Every place on one map</h2>
+      <a class="cta-btn" href="explore" data-i18n="plan.cta.btn">Open the map</a>
+    </section>
   </main>
 
   <script src="places.js"></script>
@@ -78,6 +104,9 @@
   <script src="i18n/en.js"></script>
   <script src="i18n/bs.js"></script>
   <script src="i18n.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
   <script src="plan.js"></script>
   <script src="nav.js"></script>
 </body>

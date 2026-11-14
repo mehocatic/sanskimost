@@ -137,6 +137,11 @@ I18N.bs = {
   'plan.when.bobijasko': 'Bobijaško oko najbolje je vidjeti nakon otapanja snijega ili jakih kiša.',
   'plan.when.musalla': 'Manifestacija Musalla održava se svake godine; njen središnji dio je džuma-namaz prvog petka u julu.',
   'plan.routes.title': 'Prijedlozi ruta',
+  'plan.dist.eyebrow': 'Udaljenosti',
+  'plan.before.eyebrow': 'Praktično',
+  'plan.when.eyebrow': 'Kada ići',
+  'plan.cta.title': 'Sva mjesta na jednoj karti',
+  'plan.cta.btn': 'Otvorite kartu',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

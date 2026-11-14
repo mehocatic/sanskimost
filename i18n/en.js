@@ -135,6 +135,11 @@ I18N.en = {
   'plan.when.bobijasko': 'Bobijaško oko is best seen after snowmelt or heavy rain.',
   'plan.when.musalla': 'The Musalla event is held every year; its central part is the Friday prayer on the first Friday of July.',
   'plan.routes.title': 'Suggested routes',
+  'plan.dist.eyebrow': 'Distances',
+  'plan.before.eyebrow': 'Practical',
+  'plan.when.eyebrow': 'Timing',
+  'plan.cta.title': 'Every place on one map',
+  'plan.cta.btn': 'Open the map',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
