@@ -280,4 +280,5 @@ footer {
 }
 @media (max-width: 759px) { .build { grid-template-columns: 1fr 1fr; } .build .big { grid-column: 1 / -1; } .build img { aspect-ratio: 4 / 3; } }
 
-.ul-credit { margin-top: .4rem; font-size: .76rem; color: var(--fg-muted); }
+.ul-credit { margin-top: .6rem; font-size: .76rem; color: var(--fg-muted); }
+.ul-credit a { color: var(--acc); }

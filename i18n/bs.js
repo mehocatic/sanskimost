@@ -290,6 +290,15 @@ I18N.bs = {
   'hist.ul.2.e': 'Stari hotel „Asi“, 31. 3. 1997.',
   'hist.ul.nodate': 'bez datuma',
   'hist.ul.70s': '1970-e',
+  'hist.ul.3': 'Hamzibegova džamija',
+  'hist.ul.3.span': '03 · 1946 · 1998 · danas',
+  'hist.ul.3.p': 'Fotografija iz 1946. i niz snimaka iz aprila 1998, dok se džamija gradila.',
+  'hist.ul.3.a': 'Gradnja, 10. 4. 1998.',
+  'hist.ul.3.b': 'Ulica uz gradilište',
+  'hist.ul.3.c': 'Temelji za munaru',
+  'hist.ul.3.d': 'Raskrsnica kod džamije',
+  'hist.ul.3.credit': 'Fotografije iz 1998: Edin Šarčević',
+  'hist.ul.3.link': 'Nekad i danas na stranici džamije →',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

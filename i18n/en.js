@@ -288,6 +288,15 @@ I18N.en = {
   'hist.ul.2.e': 'The old “Asi” hotel, 31 March 1997',
   'hist.ul.nodate': 'undated',
   'hist.ul.70s': '1970s',
+  'hist.ul.3': 'The Hamzibeg Mosque',
+  'hist.ul.3.span': '03 · 1946 · 1998 · today',
+  'hist.ul.3.p': 'A photograph from 1946 and a series taken in April 1998, while the mosque was being built.',
+  'hist.ul.3.a': 'Construction, 10 April 1998',
+  'hist.ul.3.b': 'The street by the building site',
+  'hist.ul.3.c': 'Foundations for the minaret',
+  'hist.ul.3.d': 'The crossroads by the mosque',
+  'hist.ul.3.credit': 'Photographs from 1998: Edin Šarčević',
+  'hist.ul.3.link': 'Then and now on the mosque’s page →',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
