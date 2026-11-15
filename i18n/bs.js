@@ -267,6 +267,13 @@ I18N.bs = {
   'hist.zv.n1': 'dinara za četiri sanduka za drva, 1958.',
   'hist.zv.n2': 'filmova u kinu „Sana“ za jedan august, 1968.',
   'hist.zv.n3': 'pokretno kino koje je obilazilo sela',
+  'hist.ul.chip': 'Ulice kroz vrijeme',
+  'hist.ul.yr.html': '1900<br>–danas',
+  'hist.ul.title': 'Ista mjesta, druge godine',
+  'hist.ul.p1': 'Šest mjesta u gradu, svako na svojoj vremenskoj liniji: od razglednica s početka 20. stoljeća, preko fotografija Edina Šarčevića iz 1996–1998, do današnjeg izgleda.',
+  'hist.ul.now': 'Danas',
+  'hist.ul.wait': 'fotografija iz istog ugla, uskoro',
+  'hist.src.es': 'Foto: Edin Šarčević',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

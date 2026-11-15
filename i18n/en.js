@@ -265,6 +265,13 @@ I18N.en = {
   'hist.zv.n1': 'dinars for four firewood chests, 1958',
   'hist.zv.n2': 'films at the “Sana” in one August, 1968',
   'hist.zv.n3': 'a travelling cinema that toured the villages',
+  'hist.ul.chip': 'Streets through time',
+  'hist.ul.yr.html': '1900<br>–today',
+  'hist.ul.title': 'The same places, other years',
+  'hist.ul.p1': 'Six places in town, each on its own time line: from postcards of the early 20th century, through Edin Šarčević’s photographs of 1996–1998, to how they look today.',
+  'hist.ul.now': 'Today',
+  'hist.ul.wait': 'a photo from the same spot, coming soon',
+  'hist.src.es': 'Photo: Edin Šarčević',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
