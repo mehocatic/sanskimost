@@ -278,6 +278,16 @@ I18N.en = {
   'hist.ul.1.a': 'Prijedorska Street, 1961',
   'hist.ul.1.b': 'Flood in Prijedorska Street, 1976',
   'hist.ul.1.c': 'Prijedorska Street, 31 March 1997',
+  'hist.ul.2': 'The town square',
+  'hist.ul.2.span': '02 · early 20th c. – today',
+  'hist.ul.2.p': 'At the start of the 20th century the Unkić house stood where the yellow building on “Ljiljana” square is today.',
+  'hist.ul.2.a': 'The town square and the Unkić house, early 20th century',
+  'hist.ul.2.b': 'The old square',
+  'hist.ul.2.c': 'Marshal Tito Square, early 1970s',
+  'hist.ul.2.d': 'The courtyard of the yellow building, 31 March 1997',
+  'hist.ul.2.e': 'The old “Asi” hotel, 31 March 1997',
+  'hist.ul.nodate': 'undated',
+  'hist.ul.70s': '1970s',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

@@ -280,6 +280,16 @@ I18N.bs = {
   'hist.ul.1.a': 'Prijedorska ulica, 1961.',
   'hist.ul.1.b': 'Poplava u Prijedorskoj, 1976.',
   'hist.ul.1.c': 'Prijedorska ulica, 31. 3. 1997.',
+  'hist.ul.2': 'Gradski trg',
+  'hist.ul.2.span': '02 · početak XX st. – danas',
+  'hist.ul.2.p': 'Na mjestu današnje žute zgrade na trgu „Ljiljana“ početkom 20. stoljeća stajala je kuća Unkića.',
+  'hist.ul.2.a': 'Gradski trg i kuća Unkića, početak XX stoljeća',
+  'hist.ul.2.b': 'Stari trg',
+  'hist.ul.2.c': 'Trg Maršala Tita, početak 1970-ih',
+  'hist.ul.2.d': 'Dvorište žute zgrade, 31. 3. 1997.',
+  'hist.ul.2.e': 'Stari hotel „Asi“, 31. 3. 1997.',
+  'hist.ul.nodate': 'bez datuma',
+  'hist.ul.70s': '1970-e',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
