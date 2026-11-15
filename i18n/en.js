@@ -247,6 +247,8 @@ I18N.en = {
   'hist.zv.3.l10': 'Total, dinars',
   'hist.zv.3.sign': 'Sanski Most, 17 February 1958 · paid on 18 February 1958 · signed: Kosorčić Mijo, carpenter',
   'hist.zv.3.scan': 'The receipt of the carpenter Mijo Kosorčić, 1958',
+  'hist.zv.3.q': 'Uncle Mijo had his carpentry shop at the very start of Ključka Street, next to the cobblers Husein Ćurt and Hilmo Beširević.',
+  'hist.zv.3.qs': 'A note kept with the receipt',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

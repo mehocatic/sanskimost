@@ -249,6 +249,8 @@ I18N.bs = {
   'hist.zv.3.l10': 'Ukupno, dinara',
   'hist.zv.3.sign': 'Sanski Most, 17. II 1958. · novac primljen 18. II 1958. · potpis: Kosorčić Mijo, stolar',
   'hist.zv.3.scan': 'Račun stolara Mije Kosorčića, 1958.',
+  'hist.zv.3.q': 'Čika Mijo je imao stolarsku radnju na samom početku Ključke ulice, a do njega obućari Husein Ćurt i Hilmo Beširević.',
+  'hist.zv.3.qs': 'Zapis uz račun',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
