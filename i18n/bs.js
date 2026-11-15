@@ -330,6 +330,9 @@ I18N.bs = {
   'hist.5.f.most2': 'Betonski gradski most preko Sane',
   'hist.5.f.rat1': 'Partizani u Sanskom Mostu, Drugi svjetski rat',
   'hist.5.f.rat2': 'Na željezničkoj stanici, Drugi svjetski rat',
+  'hist.src.5.html': '„Zajednica“, br. 6 (august 1968), stranica „August u Sanskom Mostu“: program kina „Sana“, biblioteka i čitaonice.',
+  'hist.src.6.html': 'Edin Šarčević: fotografije grada iz 1996–1998, s datumima na stranicama albuma.',
+  'hist.src.7.html': 'Računi Društvenog doma iz 1958. i 1959. i zapis o stolaru Miji Kosorčiću.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
