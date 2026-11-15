@@ -1,0 +1,11 @@
+# Statički sajt: nema build koraka, objavljuje se korijen repozitorija.
+[build]
+  publish = "."
+  # Netlify preskače build (exit 0) osim ako poruka zadnjeg commita sadrži [deploy].
+  # Tako obični pushevi ne troše kredite; objava se radi namjerno.
+  ignore = "git log -1 --pretty=%B | grep -qi '\\[deploy\\]' && exit 1 || exit 0"
+
+[[headers]]
+  for = "/photos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
