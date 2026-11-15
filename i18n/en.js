@@ -350,6 +350,7 @@ I18N.en = {
   'hist.src.8.html': 'Municipality of Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">“Historija općine Sanski Most”</a>: the Middle Ages, the Ottoman period, the district in 1910 and 1914, the srez between the wars and the entry in the Encyclopaedia of Yugoslavia (1968).',
   'hist.zv.5.i': 'Building the minaret at Šehovci',
   'hist.ul.2.f': 'The town square, an old postcard',
+  'hist.ul.5.z': 'Behind the town library, towards the Partizan stadium',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

@@ -352,6 +352,7 @@ I18N.bs = {
   'hist.src.8.html': 'Općina Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">„Historija općine Sanski Most“</a>: srednji vijek, osmanski period, kotar 1910. i 1914., srez između dva rata i opis iz Enciklopedije Jugoslavije (1968).',
   'hist.zv.5.i': 'Gradnja munare u Šehovcima',
   'hist.ul.2.f': 'Gradski trg, stara razglednica',
+  'hist.ul.5.z': 'Iza gradske biblioteke, prema stadionu Partizana',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
