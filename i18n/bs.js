@@ -55,7 +55,7 @@ I18N.bs = {
   'history.eyebrow': 'Historija',
   'history.name.title': 'Kako je grad dobio ime',
   'history.name.html': 'Ime dolazi od rijeke Sane, od latinskog <em>sana</em> („zdrava“), kao u <em>Aqua Sana</em>. Godine 1717, u osmanskom periodu, utvrđeni grad spominje se kao <em>Džisr-i Sana</em> (<em>džisr</em> = most).',
-  'history.more': 'Cijela historija, u šest poglavlja',
+  'history.more': 'Cijela historija, u osam poglavlja',
   'history.centuries': 'Kroz stoljeća',
   'history.word': 'latinski · „zdrava“',
   'history.chain.river': 'rijeka',
@@ -125,10 +125,10 @@ I18N.bs = {
   'tn.title': 'Nekad i danas',
 
   // history page (historija.html)
-  'hist.meta': 'Historija Sanskog Mosta od prahistorije do danas, u šest poglavlja i sa starim fotografijama.',
+  'hist.meta': 'Historija Sanskog Mosta od prahistorije do danas, u osam poglavlja i sa starim fotografijama.',
   'hist.eyebrow': 'Historija',
   'hist.title.html': 'Pet hiljada godina<br>uz Sanu',
-  'hist.lead': 'Od pećine u Hrustovu do grada uz most: kratka historija Sanskog Mosta u šest poglavlja, sa starim fotografijama.',
+  'hist.lead': 'Od pećine u Hrustovu do grada uz most: kratka historija Sanskog Mosta u osam poglavlja, sa starim fotografijama.',
   'hist.hero.cap': 'Sanski Most, stara fotografija',
   'hist.chapters': 'Poglavlja',
   'hist.src.book': 'Iz knjige „Sanski Most nekad i sad“',

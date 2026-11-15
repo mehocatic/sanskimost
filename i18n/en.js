@@ -53,7 +53,7 @@ I18N.en = {
   'history.eyebrow': 'History',
   'history.name.title': 'How the town got its name',
   'history.name.html': 'The name comes from the river Sana, from the Latin <em>sana</em> (“healthy”), as in <em>Aqua Sana</em>. In 1717, in the Ottoman period, the fortress town is mentioned as <em>Džisr-i Sana</em> (<em>džisr</em> = bridge).',
-  'history.more': 'The whole history, in six chapters',
+  'history.more': 'The whole history, in eight chapters',
   'history.centuries': 'Through the centuries',
   'history.word': 'Latin · “healthy”',
   'history.chain.river': 'the river',
@@ -123,10 +123,10 @@ I18N.en = {
   'tn.title': 'Then and now',
 
   // history page (historija.html)
-  'hist.meta': 'The history of Sanski Most from prehistory to today, in six chapters with old photographs.',
+  'hist.meta': 'The history of Sanski Most from prehistory to today, in eight chapters with old photographs.',
   'hist.eyebrow': 'History',
   'hist.title.html': 'Five thousand years<br>on the Sana',
-  'hist.lead': 'From a cave at Hrustovo to a town by a bridge: a short history of Sanski Most in six chapters, with old photographs.',
+  'hist.lead': 'From a cave at Hrustovo to a town by a bridge: a short history of Sanski Most in eight chapters, with old photographs.',
   'hist.hero.cap': 'Sanski Most, an old photograph',
   'hist.chapters': 'Chapters',
   'hist.src.book': 'From the book “Sanski Most nekad i sad”',
