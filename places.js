@@ -49,7 +49,9 @@ const PLACES = [
       pic("bliha.webp"),
       pic("bliha4.webp"),
       pic("bliha5.webp"),
-      pic("bliha6.webp")
+      pic("bliha6.webp"),
+      // an old photograph of the waterfall, 1942 (file name in Meho's folder); it carries the mark of aukcije.hr, where it was offered
+      pic("arhiv/blihe-1942.webp", { archive: "1942", source: "aukcije.hr" })
     ]
   },
   {
