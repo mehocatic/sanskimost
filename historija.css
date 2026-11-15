@@ -220,13 +220,13 @@ footer {
 /* gatherings: a mosaic, the year written large over every photo */
 .mosaic { display: grid; gap: 12px; margin-top: 1.8rem; grid-template-columns: 1fr 1fr; }
 .mosaic figure { position: relative; margin: 0; overflow: hidden; }
-.mosaic figure:first-child { grid-column: 1 / -1; }
+.mosaic figure:first-child, .mosaic figure.full { grid-column: 1 / -1; }
 .mosaic img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; filter: sepia(.12) contrast(1.04); transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
-.mosaic figure:first-child img { aspect-ratio: 2 / 1; }
+.mosaic figure:first-child img, .mosaic figure.full img { aspect-ratio: 2 / 1; }
 .mosaic figure:hover img { transform: scale(1.03); }
 .mosaic figcaption { position: absolute; inset: auto 0 0 0; padding: 50px 16px 12px; background: linear-gradient(transparent, rgba(12, 16, 14, .8)); color: var(--paper); font-size: .8rem; line-height: 1.35; }
 .mosaic figcaption b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.4vw, 3.4rem); line-height: .9; margin-bottom: .2rem; }
-@media (max-width: 560px) { .mosaic { grid-template-columns: 1fr; } .mosaic img, .mosaic figure:first-child img { aspect-ratio: 4 / 3; } }
+@media (max-width: 560px) { .mosaic { grid-template-columns: 1fr; } .mosaic img, .mosaic figure:first-child img, .mosaic figure.full img { aspect-ratio: 4 / 3; } }
 
 /* Chapter "Ulice kroz vrijeme": one street or place per block (.ul). The photos of the same place stand on a time line,
    oldest first. A photo of today is added at the end of a line once it exists (none are shown before that). */

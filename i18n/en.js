@@ -336,6 +336,12 @@ I18N.en = {
   'hist.6.g13': 'A flooded street, 2014',
   'hist.6.g14': 'A horse and cart in the flood, 2014',
   'hist.6.g15': 'A lorry and a horse in the water, 2014',
+  'hist.zv.5.d': 'Post office workers on an outing at the mouth of the Dabar',
+  'hist.zv.5.e': 'A hand-made wooden merry-go-round at Karići',
+  'hist.zv.5.f': 'The “trnavski klapci” group, Trnova',
+  'hist.zv.5.g': 'A walk through town',
+  'hist.zv.5.h': 'A family house at Progomolje',
+  'hist.zv.70s': '1970s',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

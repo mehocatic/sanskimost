@@ -338,6 +338,12 @@ I18N.bs = {
   'hist.6.g13': 'Poplavljena ulica, 2014.',
   'hist.6.g14': 'Konjska zaprega u poplavi, 2014.',
   'hist.6.g15': 'Kamion i konj u vodi, 2014.',
+  'hist.zv.5.d': 'Radnici pošte na izletu kod ušća Dabra',
+  'hist.zv.5.e': 'Drveni ringišpil, napravljen rukom, u Karićima',
+  'hist.zv.5.f': 'Družina „trnavskih klapaca“, Trnova',
+  'hist.zv.5.g': 'Šetnja kroz grad',
+  'hist.zv.5.h': 'Porodična kuća u Progomolju',
+  'hist.zv.70s': '1970-e',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
