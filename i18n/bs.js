@@ -351,6 +351,7 @@ I18N.bs = {
   'hist.zv.1.enc': 'Enciklopedija Jugoslavije iz 1968. opisuje Sanski Most kao općinsko središte na 158 m nadmorske visine, s pilanom, tvornicom panel-ploča, ciglanom, skladištem duhana, građevinskim i elektro preduzećima i rudnikom uglja u Kamengradu. Kroz grad tada prolazi uskotračna pruga koja povezuje Prijedor, Drvar i Ličku Kaldrmu.',
   'hist.src.8.html': 'Općina Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">„Historija općine Sanski Most“</a>: srednji vijek, osmanski period, kotar 1910. i 1914., srez između dva rata i opis iz Enciklopedije Jugoslavije (1968).',
   'hist.zv.5.i': 'Gradnja munare u Šehovcima',
+  'hist.ul.2.f': 'Gradski trg, stara razglednica',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

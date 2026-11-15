@@ -349,6 +349,7 @@ I18N.en = {
   'hist.zv.1.enc': 'The Encyclopaedia of Yugoslavia of 1968 describes Sanski Most as a municipal centre at 158 m above sea level, with a sawmill, a panel-board factory, a brickworks, a tobacco warehouse, building and electrical companies and a coal mine at Kamengrad. A narrow-gauge railway then ran through the town, linking Prijedor, Drvar and Lička Kaldrma.',
   'hist.src.8.html': 'Municipality of Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">“Historija općine Sanski Most”</a>: the Middle Ages, the Ottoman period, the district in 1910 and 1914, the srez between the wars and the entry in the Encyclopaedia of Yugoslavia (1968).',
   'hist.zv.5.i': 'Building the minaret at Šehovci',
+  'hist.ul.2.f': 'The town square, an old postcard',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
