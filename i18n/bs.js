@@ -258,7 +258,7 @@ I18N.bs = {
     'zavnobih': {
       name: 'ZAVNOBiH 1944',
       short: 'Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944.',
-      long: 'Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944. Na njemu je proglašena ravnopravnost Srba, Muslimana (Bošnjaka) i Hrvata, te Bosna i Hercegovina kao država u okviru jugoslavenske federacije.\n\nDana 1. jula, u „Sokolskom domu“, donesena je deklaracija o pravima građana u Bosni i Hercegovini. Ona se nadovezala na zaključke prvog zasjedanja, održanog 25. novembra u Mrkonjić Gradu, a na osnovu tih zaključaka ustrojena je poslijeratna Socijalistička Republika Bosna i Hercegovina.\n\nZgrada u kojoj je održano zasjedanje srušena je. Projekt njene revitalizacije, kao nacionalnog spomenika, ugovoren je između Zavoda za zaštitu kulturnog naslijeđa Unsko-sanskog kantona i izvođača radova.',
+      long: 'Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944. Na njemu je proglašena ravnopravnost Srba, Muslimana (Bošnjaka) i Hrvata, te Bosna i Hercegovina kao država u okviru jugoslavenske federacije.\n\nDana 1. jula, u „Sokolskom domu“, donesena je deklaracija o pravima građana u Bosni i Hercegovini. Ona se nadovezala na zaključke prvog zasjedanja, održanog 25. novembra 1943. u Mrkonjić Gradu, a na osnovu tih zaključaka ustrojena je poslijeratna Socijalistička Republika Bosna i Hercegovina.\n\nZgrada u kojoj je održano zasjedanje srušena je. Projekt njene revitalizacije, kao nacionalnog spomenika, ugovoren je između Zavoda za zaštitu kulturnog naslijeđa Unsko-sanskog kantona i izvođača radova.',
       see: []
     }
   }
