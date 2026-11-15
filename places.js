@@ -227,9 +227,12 @@ const PLACES = [
     // TODO(verify): Meho's text says works on the revitalisation were planned to start on Tuesday 27 October (the year is not stated).
     // The page only says the project has been contracted; update it when the works start.
     // Confirmed 2026-11-15 (ANUBiH, parlament.ba): first session 25-26 November 1943 in Mrkonjić Grad; the site now says 1943.
-    // TODO(verify): the text says the declaration was adopted in the "Sokolski dom"; it does not say outright that this is the building of the session.
+    // The Sokolski dom (1939) is the building of the session: zavnobih.webp, a page of a book, shows it with the caption "the building of the
+    // Fiskulturni dom in Sanski Most in which the Second Session of ZAVNOBiH was held", and Zukanović's book says the same; burnt and demolished in 1995.
     photos: [
       pic("zavnobih.webp"), // a photo of the old building in a book; no author or license known
+      // the same building, the Sokolski dom; TODO(verify): from Meho's notes from the book, the photographer is not known
+      pic("arhiv/sokolski-dom.webp", { archive: "1939", source: BOOK, alt: "Sokolski dom" }),
       // photos/zavnobih2.jpg (in originals/) is a computer render of the planned building, not a photo of it
       pic("zavnobih3.jpg"), // the memorial slab "Dom ZAVNOBiH-a"
       pic("zavnobih4.jpg") // a view of the town, the building is not in it
