@@ -114,6 +114,11 @@ I18N.bs = {
   'lb.source': 'Izvor',
   'place.archive': 'Arhiv',
 
+  // "then and now" photos (thennow.js)
+  'tn.old': 'Nekad',
+  'tn.now': 'Danas',
+  'tn.label': 'Pomjerite da uporedite nekad i danas',
+
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
   'explore.meta': 'Karta mjesta u Sanskom Mostu i okolini, Bosna i Hercegovina.',

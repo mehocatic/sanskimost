@@ -112,6 +112,11 @@ I18N.en = {
   'lb.source': 'Source',
   'place.archive': 'Archive',
 
+  // "then and now" photos (thennow.js)
+  'tn.old': 'Then',
+  'tn.now': 'Now',
+  'tn.label': 'Move to compare then and now',
+
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
   'explore.meta': 'Map of the places around Sanski Most, Bosnia and Herzegovina.',
