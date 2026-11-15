@@ -344,6 +344,7 @@ I18N.bs = {
   'hist.zv.5.g': 'Šetnja kroz grad',
   'hist.zv.5.h': 'Porodična kuća u Progomolju',
   'hist.zv.70s': '1970-e',
+  'hist.2.p3': 'Prema historiji objavljenoj na stranici Općine Sanski Most, naselje Mren spominje se već oko 820. Najstariji poznati dokument koji imenuje Sanu je povelja kralja Bele IV od 20. jula 1244, uz župe Donjih krajeva: Sanu, Dubicu, Mren i Vrbašku. Godine 1258. spominje se sanski župan Mihailo, a 1413. kralj Žigmund oduzima Sanu hercegu Hrvoju i predaje je knezovima Blagajskim.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

@@ -342,6 +342,7 @@ I18N.en = {
   'hist.zv.5.g': 'A walk through town',
   'hist.zv.5.h': 'A family house at Progomolje',
   'hist.zv.70s': '1970s',
+  'hist.2.p3': 'According to the history published by the Municipality of Sanski Most, a settlement called Mren is mentioned as early as about 820. The oldest known document naming the Sana is a charter of King Béla IV of 20 July 1244, together with the counties of the Donji kraji: Sana, Dubica, Mren and Vrbaška. A župan of Sana, Mihailo, is mentioned in 1258, and in 1413 King Sigismund took the Sana from Duke Hrvoje and gave it to the Blagaj princes.',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
