@@ -11,6 +11,8 @@
 //           { src, srcset, author, license, sourceUrl, alt, main, hero, pos, posM }
 //           - author, license, sourceUrl: shown as a small credit in the photo viewer (all optional, empty ones are left out;
 //             nothing is filled in on assumption)
+//           - archive: an old photo, postcard or document; true shows "Archive" on the slide, a string (a year) shows that
+//           - source: where an old photo comes from when its author is not known (a book, an archive), shown as "Source: ..."
 //           - alt: the alt text of the photo (not shown; the same text in both languages), otherwise the place name is used
 //           - srcset: a smaller file for phones, e.g. "photos/a-1200.webp 1200w, photos/a.webp 2400w"
 //           - hero: true marks the one photo that fills the top of the place page, cropped (object-fit: cover). Only for a
@@ -27,6 +29,8 @@
 // A path whose file does not exist shows a neutral placeholder with the place name.
 // TODO: fill in author, license and sourceUrl for each photo; only the author of musalla.webp is known (from the file).
 const pic = (name, extra) => ({ src: `photos/${name}`, author: "", license: "", sourceUrl: "", ...extra });
+// the book most of the old photos and facts on the site come from
+const BOOK = "J. Zukanović, „Sanski Most nekad i sad“ (2024)";
 
 const PLACES = [
   {

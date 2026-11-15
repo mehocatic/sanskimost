@@ -110,6 +110,7 @@ I18N.en = {
   'lb.next': 'Next photo',
   'lb.photo': 'Photo',
   'lb.source': 'Source',
+  'place.archive': 'Archive',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

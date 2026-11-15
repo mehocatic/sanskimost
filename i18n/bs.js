@@ -112,6 +112,7 @@ I18N.bs = {
   'lb.next': 'Sljedeća fotografija',
   'lb.photo': 'Fotografija',
   'lb.source': 'Izvor',
+  'place.archive': 'Arhiv',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

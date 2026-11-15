@@ -118,6 +118,13 @@
     }, true, { natural: true }));
     btn.addEventListener('click', () => openLightbox(item));
     fig.appendChild(btn);
+    // an old photo, postcard or document: a small label on the slide (the year from places.js, or "Archive")
+    if (entry.archive) {
+      const tag = document.createElement('span');
+      tag.className = 'slide-tag';
+      tag.setAttribute('aria-hidden', 'true');
+      fig.appendChild(tag);
+    }
     track.appendChild(fig);
   });
 
@@ -256,6 +263,11 @@
       if (miniMarker) { miniMarker.options.title = miniMarker.options.alt = nm; const el = miniMarker.getElement(); if (el) el.title = nm; }
     }
     items.forEach(it => { if (it.btn) it.btn.setAttribute('aria-label', I18n.t('place.photo', { name: it.entry.alt || nm, i: it.n, n: entries.length })); });
+    document.querySelectorAll('.slide-tag').forEach(tag => {
+      const it = items.find(x => x.btn && x.btn.parentNode === tag.parentNode);
+      const a = it && it.entry.archive;
+      tag.textContent = typeof a === 'string' ? a : I18n.t('place.archive');
+    });
     document.querySelectorAll('.slider-track img').forEach(img => {
       const b = img.closest('.slide-open');
       img.alt = (b && b.dataset.alt) || nm;
@@ -282,7 +294,8 @@
     showMeta(e);
   }
   // under the photo: the credit line "Photo: author · license" (the author, or "Source", links to sourceUrl);
-  // it is left out when the photo has none
+  // a photo without an author but with a written source (a book, an archive) gets "Source: <source>" instead;
+  // the line is left out when the photo has none
   function showMeta(e) {
     const url = /^https?:\/\//i.test(e.sourceUrl || '') ? e.sourceUrl : '';
     const parts = [];
@@ -299,6 +312,11 @@
     if (parts.length) {
       lbCredit.append(`${I18n.t('lb.photo')}: `);
       parts.forEach((x, k) => lbCredit.append(...(k ? [' · ', x] : [x])));
+    }
+    if (e.source) {
+      if (parts.length) lbCredit.append(' · ');
+      lbCredit.append(`${I18n.t('lb.source')}: ${e.source}`);
+      parts.push(e.source);
     }
     lbCredit.hidden = !parts.length;
     lb.classList.toggle('has-meta', !!parts.length);
