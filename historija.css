@@ -282,3 +282,8 @@ footer {
 
 .ul-credit { margin-top: .6rem; font-size: .76rem; color: var(--fg-muted); }
 .ul-credit a { color: var(--acc); }
+
+/* links between the cinema of 1968 and its building in 1996 */
+.zv-more { margin-top: .8rem !important; font-size: .85rem; }
+.zv-more a, .tl figcaption a { color: var(--acc); }
+.zv { scroll-margin-top: 120px; }

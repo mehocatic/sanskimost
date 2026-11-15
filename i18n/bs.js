@@ -333,6 +333,8 @@ I18N.bs = {
   'hist.src.5.html': '„Zajednica“, br. 6 (august 1968), stranica „August u Sanskom Mostu“: program kina „Sana“, biblioteka i čitaonice.',
   'hist.src.6.html': 'Edin Šarčević: fotografije grada iz 1996–1998, s datumima na stranicama albuma.',
   'hist.src.7.html': 'Računi Društvenog doma iz 1958. i 1959. i zapis o stolaru Miji Kosorčiću.',
+  'hist.zv.4.link': 'Zgrada kina 1996. →',
+  'hist.ul.5.link': 'Program kina 1968. →',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

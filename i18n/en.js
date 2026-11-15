@@ -331,6 +331,8 @@ I18N.en = {
   'hist.src.5.html': '“Zajednica”, no. 6 (August 1968), the page “August u Sanskom Mostu”: the programme of the “Sana” cinema, the library and the reading rooms.',
   'hist.src.6.html': 'Edin Šarčević: photographs of the town from 1996–1998, dated on the album pages.',
   'hist.src.7.html': 'Receipts of the Društveni dom from 1958 and 1959, and a note on the carpenter Mijo Kosorčić.',
+  'hist.zv.4.link': 'The cinema building in 1996 →',
+  'hist.ul.5.link': 'The cinema’s programme in 1968 →',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
