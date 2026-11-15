@@ -260,6 +260,10 @@ I18N.bs = {
   'hist.zv.4.list': 'Program kina, po danima u mjesecu',
   'hist.zv.4.clip': '„Zajednica“, br. 6: August u Sanskom Mostu',
   'hist.zv.4.p': 'Ista stranica donosi i radno vrijeme biblioteke: svaki dan osim nedjelje, od 9 do 12 i od 14 do 17 sati, a čitaonica do 22 sata. Po selima su radile čitaonice i pokretne biblioteke.',
+  'hist.zv.5': 'Kad se okupi narod',
+  'hist.zv.5.a': 'Grmečka korida, Međeđe brdo',
+  'hist.zv.5.b': 'Slet za Dan mladosti, stadion NK „Podgrmeč“, 25. maj',
+  'hist.zv.5.c': 'Mještani grade crkvu u Sasini',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

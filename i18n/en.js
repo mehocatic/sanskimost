@@ -258,6 +258,10 @@ I18N.en = {
   'hist.zv.4.list': 'The programme, by day of the month',
   'hist.zv.4.clip': '“Zajednica”, no. 6: August in Sanski Most',
   'hist.zv.4.p': 'The same page gives the library’s opening hours: every day except Sunday, from 9 to 12 and from 14 to 17, with the reading room open until 22. Reading rooms and travelling libraries worked in the villages.',
+  'hist.zv.5': 'When people gathered',
+  'hist.zv.5.a': 'The Grmeč bullfight, Međeđe brdo',
+  'hist.zv.5.b': 'A Youth Day rally at the NK “Podgrmeč” stadium, 25 May',
+  'hist.zv.5.c': 'Villagers building the church at Sasina',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
