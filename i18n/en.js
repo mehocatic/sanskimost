@@ -153,6 +153,17 @@ I18N.en = {
   'hist.src.kres': 'Map after H. Kreševljaković (1958)',
   'hist.2.f.kamengrad': 'Kamengrad today',
   'hist.src.2.html': 'Hamdija Kreševljaković, “Kamengrad”, <em>Naše starine</em> VI (1958): the map of the counties of Sana and Mren.',
+  'hist.3.chip': 'Ottoman period',
+  'hist.3.title': 'A musalla, a bridge and a mosque',
+  'hist.3.yr.html': '1498<br>–1878',
+  'hist.3.p1': 'Kamengrad falls to the Ottomans at the end of the 15th century. Tradition says that Sultan Mehmed the Conqueror prayed in the open below the fortress; the musalla built on that spot is one of the few on the Balkans.',
+  'hist.3.p2': 'By the bridge on the Sana a fortified settlement grows, called Džisr-i Sana (“the bridge on the Sana”) in the records, and the town takes its name from it. A stone slab with an inscription survives from its gate. The Ottomans also build bridges on the Sana at Tomina and Trnova; other rivers and streams the caravans mostly crossed by fords.',
+  'hist.3.p3': 'After the Ottomans lose Hungary and Lika at the end of the 17th century, Muslim families from there settle in the Krajina. Some families around Sanski Most, such as the Budimlićs, trace their roots to Hungary, and many Krajina surnames are still found in Lika.',
+  'hist.3.f.musala': 'The “Musalla” of Sultan Mehmed II, Donji Kamengrad',
+  'hist.src.postcard': 'An old postcard',
+  'hist.3.f.grad': 'The Sana and the old part of town, a coloured photograph',
+  'hist.3.f.ploca': 'The stone slab from the west side of the Sana gate',
+  'hist.3.tn': 'The Hamzibeg Mosque in 1946, with one minaret, and today, rebuilt in 2000.',
   'hist.note': 'If you took one of these photographs or know who did, let us know, so that we can credit it or take it down.',
 
   // explore page

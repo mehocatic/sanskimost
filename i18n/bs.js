@@ -155,6 +155,17 @@ I18N.bs = {
   'hist.src.kres': 'Karta prema H. Kreševljakoviću (1958)',
   'hist.2.f.kamengrad': 'Kamengrad danas',
   'hist.src.2.html': 'Hamdija Kreševljaković, „Kamengrad“, <em>Naše starine</em> VI (1958): karta župa Sana i Mren.',
+  'hist.3.chip': 'Osmanski period',
+  'hist.3.title': 'Musala, most i džamija',
+  'hist.3.yr.html': '1498<br>–1878',
+  'hist.3.p1': 'Kamengrad pada pod osmansku vlast krajem 15. vijeka. Predanje kaže da je sultan Mehmed Fatih ispod tvrđave klanjao na otvorenom; na tom mjestu nastala je musala, jedna od rijetkih na Balkanu.',
+  'hist.3.p2': 'Uz most na Sani nastaje utvrđeno naselje, u izvorima Džisr-i Sana („most na Sani“), po kojem grad nosi ime. S njegove kapije sačuvana je kamena ploča s natpisom. Osmanlije grade i mostove na Sani kod Tomine i Trnove; preko ostalih rijeka i potoka karavani su uglavnom prelazili gazom.',
+  'hist.3.p3': 'Nakon što Osmanlije krajem 17. vijeka izgube Ugarsku i Liku, u Krajinu dolaze muslimanske porodice iz tih krajeva. Neke porodice oko Sanskog Mosta, poput Budimlića, vode porijeklo iz Ugarske, a mnoga krajiška prezimena i danas postoje u Lici.',
+  'hist.3.f.musala': '„Musalla“ sultana Fatih Mehmeda II., Donji Kamengrad',
+  'hist.src.postcard': 'Stara razglednica',
+  'hist.3.f.grad': 'Sana i stari dio grada, kolorirana fotografija',
+  'hist.3.f.ploca': 'Kamena ploča sa zapadne strane kapije Sane',
+  'hist.3.tn': 'Hamzibegova džamija 1946, s jednom munarom, i danas, obnovljena 2000.',
   'hist.note': 'Ako ste autor neke od ovih fotografija ili znate ko jeste, javite nam se, da je potpišemo ili uklonimo.',
 
   // explore page
