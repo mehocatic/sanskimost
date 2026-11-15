@@ -66,8 +66,7 @@ I18N.bs = {
   'tl.4': 'Gradi se Hamzibegova džamija (prije 1557).',
   'tl.5': 'Austrougarska okupacija; Sanski Most postaje sjedište kotara.',
   'tl.6': 'Ovdje se održava drugo zasjedanje ZAVNOBiH-a.',
-  // TODO(verify): check the 1992 entry with a local source before publishing.
-  'tl.7': 'Nakon što Vojska Republike Srpske preuzme kontrolu nad općinom, nesrpski civili su ubijani i zatvarani u logore; oko 800 ubijenih stanovnika kasnije je pronađeno u više od 30 grobnica. Na mostu u Vrhpolju 31. maja ubijeno je 19 civila; 27. juna srušena je Hamzibegova džamija.',
+  'tl.7': 'Nakon što Vojska Republike Srpske preuzme kontrolu nad općinom, nesrpski civili su ubijani i zatvarani u logore; ubijeni stanovnici kasnije su pronalaženi u oko 30 masovnih grobnica. Na mostu u Vrhpolju 31. maja ubijeni su civili iz sela Begići; u junu je srušena Hamzibegova džamija.',
   'tl.8': 'Armija RBiH ulazi u grad u operaciji Sana 95, 9. i 10. oktobra. Taj dan, 10. oktobar, Sanski Most obilježava kao Dan oslobođenja i Dan općine.',
   'tl.9': 'Hamzibegova džamija ponovo je otvorena nakon obnove.',
 

@@ -64,8 +64,7 @@ I18N.en = {
   'tl.4': 'The Hamzibeg Mosque is built (before 1557).',
   'tl.5': 'Austro-Hungarian occupation; Sanski Most becomes a district seat.',
   'tl.6': 'The second session of ZAVNOBiH is held here.',
-  // TODO(verify): check the 1992 entry with a local source before publishing.
-  'tl.7': 'After the Army of Republika Srpska takes control of the municipality, non-Serb civilians are killed and held in camps; about 800 killed residents are later found in more than 30 graves. On 31 May, 19 civilians are killed on the Vrhpolje bridge; on 27 June the Hamzibeg Mosque is demolished.',
+  'tl.7': 'After the Army of Republika Srpska takes control of the municipality, non-Serb civilians are killed and held in camps; the killed residents are later found in about 30 mass graves. On 31 May, civilians from the village of Begići are killed on the Vrhpolje bridge; in June the Hamzibeg Mosque is demolished.',
   'tl.8': 'The Bosnian Army enters the town in Operation Sana 95, on 9–10 October. Sanski Most marks 10 October as Liberation Day and Municipality Day.',
   'tl.9': 'The Hamzibeg Mosque reopens after reconstruction.',
 
