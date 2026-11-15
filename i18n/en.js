@@ -251,6 +251,11 @@ I18N.en = {
   'hist.zv.3.qs': 'A note kept with the receipt',
   'hist.zv.3.b.html': '<b>200 dinars</b><br>A year and a half later, on 21 November 1959, Ibro Suljanić charged the Društveni dom for carrying 12 baskets of firewood from the building of the town council (NOO) to the hall.',
   'hist.zv.3.scan2': 'The receipt of Ibro Suljanić, 1959',
+  'hist.zv.4': 'The “Sana” cinema, August 1968',
+  'hist.zv.4.k': 'Now showing at the “Sana”',
+  'hist.zv.4.t': 'August 1968',
+  'hist.zv.4.note': 'The cinema also had a travelling 35 mm projector that toured the villages: Budimlić-Japra, Podvidača, Lušci-Palanka, Vrhpolje, Tomina, Gornji Kamengrad, Trnova, Jelašinovci, Čaplje, Fajtovci.',
+  'hist.zv.4.list': 'The programme, by day of the month',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

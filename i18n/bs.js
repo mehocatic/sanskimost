@@ -253,6 +253,11 @@ I18N.bs = {
   'hist.zv.3.qs': 'Zapis uz račun',
   'hist.zv.3.b.html': '<b>200 dinara</b><br>Godinu i po kasnije, 21. novembra 1959, Ibro Suljanić je Društvenom domu naplatio prenošenje 12 sepeta drva od zgrade NOO-a do doma.',
   'hist.zv.3.scan2': 'Račun Ibre Suljanića, 1959.',
+  'hist.zv.4': 'Kino „Sana“, august 1968.',
+  'hist.zv.4.k': 'Kino „Sana“ prikazuje',
+  'hist.zv.4.t': 'August 1968.',
+  'hist.zv.4.note': 'Kino je imalo i pokretno kino od 35 mm, koje je gostovalo po selima: Budimlić-Japra, Podvidača, Lušci-Palanka, Vrhpolje, Tomina, Gornji Kamengrad, Trnova, Jelašinovci, Čaplje, Fajtovci.',
+  'hist.zv.4.list': 'Program kina, po danima u mjesecu',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
