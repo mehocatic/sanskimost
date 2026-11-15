@@ -97,3 +97,14 @@ footer {
 .bars i { display: block; width: var(--w); height: 14px; background: var(--river); border-radius: 2px; }
 .bars b { font-weight: 400; text-align: right; }
 .bars-note { margin-top: .8rem; font-size: .85rem; color: var(--fg-muted); }
+
+/* the river over the years: a row that scrolls sideways on phones, a grid on wide screens */
+.strip { list-style: none; display: flex; gap: 14px; margin-top: 2.4rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.strip li { flex: 0 0 min(76vw, 320px); scroll-snap-align: start; }
+.strip figure { margin: 0; }
+.strip img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; filter: sepia(.1) contrast(1.02); }
+.strip figcaption { margin-top: .45rem; font-size: .82rem; color: var(--fg-muted); }
+.strip-src { margin-top: .4rem; font-size: .76rem; color: var(--fg-muted); }
+@media (min-width: 960px) {
+  .strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; max-width: 900px; }
+}
