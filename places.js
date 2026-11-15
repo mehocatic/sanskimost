@@ -101,7 +101,12 @@ const PLACES = [
       pic("hamzibegova3.webp"),
       pic("hamzibegova4.webp"),
       // TODO(verify): from Meho's notes from the book; the book is the source, the photographer is not known
-      pic("arhiv/hamzibegova-1946.webp", { archive: "1946", source: BOOK })
+      pic("arhiv/hamzibegova-1946.webp", { archive: "1946", source: BOOK }),
+      // the mosque being built, April 1998; the album pages are signed "Foto: Edin Šarčević" (one also "Copyright © by Edin Šarčević").
+      // The printed caption of one page says 10 April 1997, the handwritten date and the other pages say 10 April 1998; the site uses 1998.
+      pic("arhiv/dzamija-gradnja-b.webp", { archive: "1998", author: "Edin Šarčević" }),
+      pic("arhiv/dzamija-gradnja-c.webp", { archive: "1998", author: "Edin Šarčević" }),
+      pic("arhiv/dzamija-gradnja-d.webp", { archive: "1998", author: "Edin Šarčević" })
     ],
     // the old mosque in 1946 (one minaret) and the one rebuilt in 2000 (four minarets)
     thenNow: { old: "arhiv/hamzibegova-1946.webp", now: "hamzibegova5.webp", ar: "3 / 4", posOld: "50% 40%", posNow: "50% 55%" }
