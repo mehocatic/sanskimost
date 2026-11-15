@@ -66,7 +66,7 @@ I18N.en = {
   'tl.6': 'The second session of ZAVNOBiH is held here.',
   // TODO(verify): check the 1992 entry with a local source before publishing.
   'tl.7': 'After the Army of Republika Srpska takes control of the municipality, non-Serb civilians are killed and held in camps; about 800 killed residents are later found in more than 30 graves. On 31 May, 19 civilians are killed on the Vrhpolje bridge; on 27 June the Hamzibeg Mosque is demolished.',
-  'tl.8': 'The Bosnian Army enters the town in Operation Sana 95, on 9–10 October.',
+  'tl.8': 'The Bosnian Army enters the town in Operation Sana 95, on 9–10 October. Sanski Most marks 10 October as Liberation Day and Municipality Day.',
   'tl.9': 'The Hamzibeg Mosque reopens after reconstruction.',
 
   // numbers
