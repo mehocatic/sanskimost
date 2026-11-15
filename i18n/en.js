@@ -256,6 +256,8 @@ I18N.en = {
   'hist.zv.4.t': 'August 1968',
   'hist.zv.4.note': 'The cinema also had a travelling 35 mm projector that toured the villages: Budimlić-Japra, Podvidača, Lušci-Palanka, Vrhpolje, Tomina, Gornji Kamengrad, Trnova, Jelašinovci, Čaplje, Fajtovci.',
   'hist.zv.4.list': 'The programme, by day of the month',
+  'hist.zv.4.clip': '“Zajednica”, no. 6: August in Sanski Most',
+  'hist.zv.4.p': 'The same page gives the library’s opening hours: every day except Sunday, from 9 to 12 and from 14 to 17, with the reading room open until 22. Reading rooms and travelling libraries worked in the villages.',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

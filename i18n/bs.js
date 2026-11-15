@@ -258,6 +258,8 @@ I18N.bs = {
   'hist.zv.4.t': 'August 1968.',
   'hist.zv.4.note': 'Kino je imalo i pokretno kino od 35 mm, koje je gostovalo po selima: Budimlić-Japra, Podvidača, Lušci-Palanka, Vrhpolje, Tomina, Gornji Kamengrad, Trnova, Jelašinovci, Čaplje, Fajtovci.',
   'hist.zv.4.list': 'Program kina, po danima u mjesecu',
+  'hist.zv.4.clip': '„Zajednica“, br. 6: August u Sanskom Mostu',
+  'hist.zv.4.p': 'Ista stranica donosi i radno vrijeme biblioteke: svaki dan osim nedjelje, od 9 do 12 i od 14 do 17 sati, a čitaonica do 22 sata. Po selima su radile čitaonice i pokretne biblioteke.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
