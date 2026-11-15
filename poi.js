@@ -115,7 +115,7 @@ const POI = [
     cat: "history",
     coords: [44.76558562977139, 16.670158483327427],
     name: { en: "ZAVNOBiH 1944", bs: "ZAVNOBiH 1944" },
-    short: { en: "The second session of ZAVNOBiH was held in Sanski Most, 30 June – 2 July 1944.", bs: "Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944." }
+    short: { en: "The second session of ZAVNOBiH was held in Sanski Most from 30 June to 2 July 1944.", bs: "Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944." }
   },
   {
     // OSM way 393580870 (amenity=place_of_worship, denomination=sunni), way centre; text: FACTS.md ("General Mehmed Alagic" mosque, opened 19 Jul 2008)
