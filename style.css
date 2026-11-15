@@ -2,6 +2,9 @@
   --bg: var(--deep);
 }
 
+/* height the phone toolbar can cover (large minus small viewport); 0 where the units are equal */
+:root { --bar: calc(100lvh - 100svh); }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body { background: var(--bg); color: var(--paper); }
@@ -9,13 +12,14 @@ html, body { background: var(--bg); color: var(--paper); }
 body.home-page { background: var(--paper); }
 
 /* Height of this section decides how long the scroll takes to play the whole video */
-#scene { position: relative; height: 600svh; }
+#scene { position: relative; height: 600vh; height: 600svh; }
 
 /* sticky keeps the canvas on screen while the page scrolls through #scene */
 #stage {
   position: sticky;
   top: 0;
-  height: 100svh;
+  height: 100vh;
+  height: 100lvh; /* large viewport: stays full height when the phone's toolbar collapses, so no blank strip appears below */
   width: 100%;
   overflow: hidden;
 }
@@ -59,7 +63,7 @@ body.home-page { background: var(--paper); }
   pointer-events: none;
 }
 
-#scroll-hint { bottom: 6vh; font-size: .85rem; opacity: .8; }
+#scroll-hint { bottom: calc(6vh + var(--bar, 0px)); font-size: .85rem; opacity: .8; }
 #scroll-hint::after {
   content: ""; display: block; width: 1px; height: 42px; margin: 12px auto 0;
   background: var(--paper); transform-origin: top; animation: pulse 2s ease-in-out infinite;
@@ -67,7 +71,7 @@ body.home-page { background: var(--paper); }
 @keyframes pulse { 0%,100% { transform: scaleY(.3); opacity: .4; } 50% { transform: scaleY(1); opacity: 1; } }
 
 /* closing lines of the hero, bottom left, over the last frames */
-#hero-end { position: absolute; left: var(--gutter); right: var(--gutter); bottom: clamp(48px, 9svh, 96px); opacity: 0; pointer-events: none; will-change: opacity, transform; }
+#hero-end { position: absolute; left: var(--gutter); right: var(--gutter); bottom: calc(clamp(48px, 9svh, 96px) + var(--bar, 0px)); opacity: 0; pointer-events: none; will-change: opacity, transform; }
 .hero-end-eyebrow { font-family: var(--sans); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: var(--river-text); margin-bottom: 1rem; }
 #intro-text { font-family: var(--serif); font-weight: 500; font-size: clamp(3.2rem, 8.4vw, 7.4rem); line-height: .95; letter-spacing: -.01em; max-width: 8em; }
 #intro-sub { font-family: var(--sans); font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.55; max-width: 36ch; margin-top: clamp(16px, 2.6svh, 28px); color: rgba(246, 244, 238, .9); }
@@ -205,16 +209,18 @@ body.home-page { background: var(--paper); }
 .timeline { --tl-pad: clamp(26px, 3vw, 48px); list-style: none; position: relative; padding-left: var(--tl-pad); }
 .timeline::before, .tl-line { content: ""; position: absolute; left: 4px; top: .7rem; bottom: 0; width: 1.5px; }
 .timeline::before { background: var(--rule); }
-.tl-line { background: var(--river); transform-origin: top; }
+.timeline .tl-line { background: var(--river); transform-origin: top; }
 .timeline li { position: relative; padding-bottom: clamp(34px, 6svh, 64px); transition: opacity .5s ease; }
 .timeline li:last-child { padding-bottom: 0; }
+.timeline li.tl-line { padding: 0; opacity: 1; }
+.timeline li.tl-line::before { display: none; }
 .timeline li::before {
   content: ""; position: absolute; z-index: 1; left: calc(-1 * var(--tl-pad)); top: .75rem; width: 9.5px; height: 9.5px; border-radius: 50%;
   background: var(--sec-bg); border: 1.5px solid var(--fg-muted); transition: background .4s ease, border-color .4s ease, box-shadow .4s ease;
 }
 .timeline li.on::before { background: var(--river); border-color: var(--river); }
 .timeline li.now::before { box-shadow: 0 0 0 6px rgba(23, 149, 160, .18); }
-.js-anim .timeline li:not(.on) { opacity: .34; }
+.js-anim .timeline li:not(.on):not(.tl-line) { opacity: .74; }
 .yr { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 3.4vw, 3.2rem); line-height: 1; font-variant-numeric: lining-nums; }
 .yr.s { font-size: clamp(1.6rem, 2.3vw, 2.2rem); }
 .timeline p { color: var(--fg-soft); max-width: 46ch; margin-top: .6rem; }
@@ -329,7 +335,7 @@ footer {
 }
 
 /* Hero caption */
-#hero-caption { position: absolute; left: var(--gutter, 24px); bottom: 5vh; z-index: 1; font-family: "Cormorant Garamond", Georgia, serif; font-size: .95rem; letter-spacing: .12em; color: rgba(246, 244, 238, .6); pointer-events: none; }
+#hero-caption { position: absolute; left: var(--gutter, 24px); bottom: calc(5vh + var(--bar, 0px)); z-index: 1; font-family: "Cormorant Garamond", Georgia, serif; font-size: .95rem; letter-spacing: .12em; color: rgba(246, 244, 238, .6); pointer-events: none; }
 
 /* Line-by-line heading reveal: each line sits in a mask so it can rise from below; the padding keeps descenders visible */
 .ln-mask { padding-bottom: .14em; margin-bottom: -.14em; }

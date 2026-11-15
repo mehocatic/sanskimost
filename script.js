@@ -69,10 +69,15 @@ function nearest(i) {
   return -1;
 }
 
+let lastW = 0, lastH = 0;
 function resize() {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  canvas.width = window.innerWidth * dpr;
-  canvas.height = window.innerHeight * dpr;
+  // the stage is 100lvh, so its height does not change when the phone toolbar shows or hides
+  const w = stage.clientWidth || window.innerWidth, h = stage.clientHeight || window.innerHeight;
+  if (w === lastW && h === lastH) return;
+  lastW = w; lastH = h;
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
   lastDrawn = -1;
 }
 

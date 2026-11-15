@@ -40,7 +40,7 @@
     if (window.SplitText) {
       const r = { tween: null };
       r.split = SplitText.create(el, {
-        type: 'lines', mask: 'lines', autoSplit: true, linesClass: 'ln', maskClass: 'ln-mask',
+        type: 'lines', mask: 'lines', autoSplit: true, aria: 'none', linesClass: 'ln', maskClass: 'ln-mask',
         onSplit: self => (r.tween = gsap.from(self.lines, { yPercent: 110, duration: 1.1, stagger: .12, ease: 'power3.out', scrollTrigger: trigger }))
       });
       reveals.push(r);
@@ -101,7 +101,6 @@
   function cardText(slot, p) {
     const name = I18n.place(p, 'name');
     const card = slot.querySelector('.card');
-    card.setAttribute('aria-label', I18n.t('card.aria', { name }));
     card.querySelector('.name').textContent = name;
     card.querySelector('.desc').textContent = I18n.place(p, 'short');
     card.querySelector('.more').textContent = I18n.t('card.more');
@@ -157,10 +156,11 @@
 
   /* ---------- 3b. timeline: the line fills on scroll, an entry lights up when the line reaches it ---------- */
   const timeline = document.getElementById('timeline');
-  const tlLine = document.createElement('span');
+  const tlLine = document.createElement('li'); // an li, so the list holds only list items
   tlLine.className = 'tl-line';
+  tlLine.setAttribute('aria-hidden', 'true');
   timeline.prepend(tlLine);
-  const tlItems = [...timeline.querySelectorAll('li')];
+  const tlItems = [...timeline.querySelectorAll('li:not(.tl-line)')];
   const hNow = document.getElementById('h-now');
   // the last entry reached is "now": its dot gets a ring and its year is shown large beside the list (wide screens)
   function markNow() {

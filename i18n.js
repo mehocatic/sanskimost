@@ -93,7 +93,7 @@ window.I18n = (() => {
       b.dataset.lang = code;
       b.lang = code;
       b.textContent = label;
-      b.setAttribute('aria-label', full);
+      b.setAttribute('aria-label', label + ', ' + full); // starts with the visible text
       b.addEventListener('click', () => set(code));
       box.appendChild(b);
     });
