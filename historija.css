@@ -178,7 +178,8 @@ footer {
 .ledger-t { font-family: var(--serif); font-size: 1.7rem; line-height: 1.1; margin: .2rem 0 1rem; }
 .ledger ol { list-style: none; }
 .ledger li { display: flex; align-items: baseline; gap: 8px; line-height: 30px; font-size: .92rem; }
-.ledger li span { flex: 1; min-width: 0; border-bottom: 1px dotted rgba(21, 26, 24, .35); transform: translateY(-.3em); }
+.ledger li i { flex: 1; min-width: 12px; border-bottom: 1px dotted rgba(21, 26, 24, .35); transform: translateY(-.3em); }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .ledger li em { font-family: var(--serif); font-size: 1.12rem; }
 .ledger li.sum { font-weight: 500; }
 .ledger li.total { margin-top: 6px; border-top: 2px solid var(--ink); font-weight: 500; font-size: 1rem; }
