@@ -330,6 +330,8 @@ I18N.en = {
   'hist.src.7.html': 'Receipts of the Društveni dom from 1958 and 1959, and a note on the carpenter Mijo Kosorčić.',
   'hist.zv.4.link': 'The cinema building in 1996 →',
   'hist.ul.5.link': 'The cinema’s programme in 1968 →',
+  'hist.5.f.1938': 'Sanski Most in 1938, the bridge and the Hamzibeg Mosque from the river',
+  'hist.5.f.zgrade': 'Buildings by the Sana, an old photograph',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

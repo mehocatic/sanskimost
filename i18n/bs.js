@@ -332,6 +332,8 @@ I18N.bs = {
   'hist.src.7.html': 'Računi Društvenog doma iz 1958. i 1959. i zapis o stolaru Miji Kosorčiću.',
   'hist.zv.4.link': 'Zgrada kina 1996. →',
   'hist.ul.5.link': 'Program kina 1968. →',
+  'hist.5.f.1938': 'Sanski Most 1938, most i Hamzibegova džamija s rijeke',
+  'hist.5.f.zgrade': 'Zgrade uz Sanu, stara fotografija',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
