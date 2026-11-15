@@ -70,7 +70,8 @@ const PLACES = [
       pic("kamengrad.webp"),
       pic("kamengrad2.webp"), // a drawing, not a photo
       pic("kamengrad3.jpg"),
-      pic("kamengrad4.webp")
+      pic("kamengrad4.webp"),
+      pic("kamengrad5.webp") // the hill of the fortress from the air; from the Maezaei material in Meho's notes, author not known
     ]
   },
   {
