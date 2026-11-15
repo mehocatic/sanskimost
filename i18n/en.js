@@ -216,6 +216,16 @@ I18N.en = {
   'hist.zv.yr.html': '1938<br>–1986',
   'hist.zv.title': 'A railway, a raft and the “Sana” cinema',
   'hist.zv.p1': 'Life in the town and the villages long turned on the railway, the forest and the river. This chapter is put together from what people of Sanski Most kept: photographs, newspaper cuttings and two ordinary receipts.',
+  'hist.zv.1': 'The railway',
+  'hist.zv.1.a': 'Grmeč station',
+  'hist.zv.1.a2': 'Railwaymen in front of the station',
+  'hist.zv.1.b': 'A mine locomotive, late 1960s',
+  'hist.zv.1.b2': 'Engine driver Jasim Kalić, with Said Talić standing in front',
+  'hist.zv.1.c': 'Sanski Most station, 1975',
+  'hist.zv.1.c2': 'Archive: photogalerija.com',
+  'hist.zv.1.p': 'A short item in the local paper records two changes on the line: at Bosansko Vrhpolje a small wooden bridge was built over the Sanica, with a kilometre of road linking the station to the Sanski Most – Ključ road, and Sanica, after 16 years, is getting a station building again, for which the railway directorate approved 12 million dinars.',
+  'hist.zv.1.clip': 'A newspaper cutting',
+  'hist.zv.rail': 'The railway in photographs',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

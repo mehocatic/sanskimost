@@ -218,6 +218,16 @@ I18N.bs = {
   'hist.zv.yr.html': '1938<br>–1986',
   'hist.zv.title': 'Pruga, splav i kino „Sana“',
   'hist.zv.p1': 'Život u gradu i selima dugo se vrtio oko pruge, šume i rijeke. Ovo poglavlje je složeno od onoga što su Sanjani sačuvali: fotografija, novinskih isječaka i dva obična računa.',
+  'hist.zv.1': 'Pruga',
+  'hist.zv.1.a': 'Stanica Grmeč',
+  'hist.zv.1.a2': 'Željezničari ispred stanice',
+  'hist.zv.1.b': 'Rudnička lokomotiva, kraj 1960-ih',
+  'hist.zv.1.b2': 'Mašinovođa Jasim Kalić, ispred stoji Said Talić',
+  'hist.zv.1.c': 'Stanica Sanski Most, 1975.',
+  'hist.zv.1.c2': 'Arhiv: photogalerija.com',
+  'hist.zv.1.p': 'Kratka vijest iz lokalnih novina bilježi dvije promjene na pruzi: u Bosanskom Vrhpolju je izgrađen mali drveni most na Sanici i put od jednog kilometra koji vezuje stanicu s cestom Sanski Most – Ključ, a Sanica, nakon 16 godina, ponovo dobija staničnu zgradu, za koju je Direkcija željeznica odobrila 12 miliona dinara.',
+  'hist.zv.1.clip': 'Isječak iz novina',
+  'hist.zv.rail': 'Pruga na fotografijama',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
