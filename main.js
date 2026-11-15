@@ -33,7 +33,7 @@
   }
 
   /* ---------- headings reveal line by line (SplitText; plain word split if it is not available) ---------- */
-  const HEADINGS = '.places-head h2, #history h2, .big-text, #numbers h2, .rivers-head .rt';
+  const HEADINGS = '.places-head h2, #history h2, .big-text, #numbers h2, .rivers-head h2';
   const reveals = []; // { split, tween } per heading, undone before the language changes
   function revealLines(el) {
     const trigger = { trigger: el, start: 'top 88%', toggleActions: 'play none none none' };
@@ -241,30 +241,87 @@
     gsap.fromTo('#dots i', { opacity: .15 }, { opacity: 1, duration: .25, stagger: .008, scrollTrigger: once('.t-176') });
   }
 
-  /* ---------- 4. nine rivers: the Sana line draws, tributaries flow in and then get their names ---------- */
-  if (animate) {
-    const sana = document.getElementById('sana');
-    // The tip of the line sits at a fixed 70% of the viewport height, so a tributary
-    // reaches the line exactly when the tip passes the bottom of its row.
-    gsap.to('.sana-line', {
-      scaleY: 1, ease: 'none',
-      scrollTrigger: { trigger: sana, start: 'top 70%', end: 'bottom 70%', scrub: true }
+  /* ---------- 4. nine rivers: the Sana runs down with the scroll, tributaries flow in one by one, each name follows its curve ---------- */
+  // The order and sides of the tributaries are decorative (as in the old layout), not the real course of the river.
+  const riverMap = document.getElementById('river-map');
+  const TRIBS = ['Sanica', 'Dabar', 'Zdena', 'Bliha', 'Majdanska rijeka', 'Japra', 'Sasinka', 'Kozica'];
+  const clamp01 = v => Math.min(1, Math.max(0, v));
+  let river = null;   // { sana, len, tribs: [{ path, len, left, text, at }] }
+
+  function buildRiver() {
+    const W = riverMap.clientWidth, H = riverMap.clientHeight;
+    if (!W || !H) return;
+    const wide = W > 700;
+    const c = W * .5, a = Math.min(W * .15, 95), sw = wide ? 14 : 10, dy = wide ? 104 : 76;
+    riverMap.replaceChildren();
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}` }, riverMap);
+    const grad = svgEl('linearGradient', { id: 'riv-g', gradientUnits: 'userSpaceOnUse', x1: 0, y1: 0, x2: 0, y2: H }, svgEl('defs', {}, svg));
+    svgEl('stop', { offset: 0, 'stop-color': '#7fd6dc' }, grad);
+    svgEl('stop', { offset: 1, 'stop-color': '#0f7a85' }, grad);
+    const tribLayer = svgEl('g', {}, svg);   // under the Sana, so the mouths are covered by it
+    const sana = svgEl('path', {
+      d: `M${c} 0 C${c - a * .9} ${H * .11} ${c + a * 1.2} ${H * .19} ${c} ${H * .31} S${c - a * 1.25} ${H * .47} ${c - a * .1} ${H * .6} S${c + a * 1.35} ${H * .78} ${c - a * .2} ${H}`,
+      fill: 'none', stroke: 'url(#riv-g)', 'stroke-width': sw, 'stroke-linecap': 'round'
+    }, svg);
+    const len = sana.getTotalLength();
+    svgEl('text', { class: 'riv-name riv-sana', x: c + sw + 12, y: wide ? 40 : 28 }, svg).textContent = 'Sana';
+
+    const tribs = TRIBS.map((name, i) => {
+      const at = .15 + i * .106;                     // how far down the Sana this tributary joins
+      const p = sana.getPointAtLength(len * at);
+      const left = i % 2 === 0;
+      const edge = left ? -4 : W + 4, span = Math.abs(p.x - edge);
+      // both are written left to right so the name reads the right way up; the right ones are then drawn from their far end
+      const d = left
+        ? `M${edge} ${p.y - dy} C${edge + span * .42} ${p.y - dy * 1.04} ${p.x - span * .36} ${p.y - dy * .6} ${p.x} ${p.y}`
+        : `M${p.x} ${p.y} C${p.x + span * .36} ${p.y - dy * .6} ${edge - span * .42} ${p.y - dy * 1.04} ${edge} ${p.y - dy}`;
+      const path = svgEl('path', { id: `riv-t${i}`, d, fill: 'none', stroke: '#35aab3', 'stroke-width': Math.max(2, sw * .42 - i * .15), 'stroke-linecap': 'round' }, tribLayer);
+      const text = svgEl('text', { class: 'riv-name', dy: wide ? -12 : -9 }, tribLayer);
+      svgEl('textPath', { href: `#riv-t${i}`, startOffset: left ? '5%' : '95%', 'text-anchor': left ? 'start' : 'end' }, text).textContent = name;
+      return { path, len: path.getTotalLength(), left, text, at };
     });
-    sana.querySelectorAll('.trib').forEach(li => {
-      // small ring where the tributary reaches the Sana
-      const ring = document.createElement('span');
-      ring.className = 'ripple';
-      li.querySelector('.cell').appendChild(ring);
-      ScrollTrigger.create({
-        trigger: li, start: 'bottom 70%',
-        onEnter: () => gsap.fromTo(ring, { scale: .4, opacity: .8 }, { scale: 3.4, opacity: 0, duration: 1.1, ease: 'power2.out', overwrite: true }),
-        onLeaveBack: () => gsap.set(ring, { opacity: 0 })
-      });
-      gsap.timeline({ scrollTrigger: { trigger: li, start: 'top 70%', end: 'bottom 70%', scrub: true } })
-        .to(li.querySelector('.trib-svg'), { clipPath: 'inset(0 0% 0 0)', ease: 'none', duration: .85 })
-        .to(li.querySelector('.trib-name'), { opacity: 1, ease: 'none', duration: .15 });
+    river = { sana, len, tribs };
+  }
+
+  // p = 0..1: how much of the Sana is drawn. A tributary flows in over the stretch just before its mouth,
+  // so it arrives exactly when the tip of the Sana gets there; its name fades in on the way.
+  function drawRiver(p) {
+    if (!river) return;
+    river.sana.style.strokeDasharray = `${river.len * p} ${river.len}`;
+    river.sana.style.opacity = p > 0 ? 1 : 0;
+    river.tribs.forEach(t => {
+      const k = clamp01((p - (t.at - .1)) / .1);
+      t.path.style.opacity = k > 0 ? 1 : 0;
+      if (t.left) {
+        t.path.style.strokeDasharray = `${t.len * k} ${t.len}`;
+      } else {
+        t.path.style.strokeDasharray = `${t.len} ${t.len}`;
+        t.path.style.strokeDashoffset = -t.len * (1 - k);
+      }
+      t.text.style.opacity = clamp01((k - .3) / .5);
     });
   }
+
+  buildRiver();
+  let riverST = null;
+  if (animate) {
+    riverST = ScrollTrigger.create({
+      trigger: riverMap, start: 'top 72%', end: 'bottom 80%',
+      onUpdate: self => drawRiver(self.progress),
+      onRefresh: self => drawRiver(self.progress)
+    });
+    drawRiver(riverST.progress);
+  } else {
+    drawRiver(1);
+  }
+  // the drawing is made to the pixel size of its box: build it again when the width changes
+  let riverW = riverMap.clientWidth;
+  window.addEventListener('resize', () => {
+    if (riverMap.clientWidth === riverW) return;
+    riverW = riverMap.clientWidth;
+    buildRiver();
+    drawRiver(riverST ? riverST.progress : 1);
+  });
 
   /* ---------- language switch: undo the splits before i18n.js swaps the texts, then build them again ---------- */
   window.addEventListener('beforelangchange', () => {

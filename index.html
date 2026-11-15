@@ -161,30 +161,24 @@
       </ul>
     </section>
 
-    <section id="rivers" class="on-deep" aria-labelledby="rivers-title">
-      <header class="rivers-head">
-        <p class="eyebrow" data-i18n="rivers.eyebrow">Nine rivers</p>
-        <h2 id="rivers-title"><span class="nine" aria-hidden="true">9</span><span class="rt" data-i18n-html="rivers.title.html">The town on<br>nine rivers</span></h2>
-      </header>
-
-      <p class="sana-label">Sana</p>
-      <!-- Order of the tributaries is decorative, it does not follow the real course of the river -->
-      <div class="sana" id="sana">
-        <span class="sana-track" aria-hidden="true"></span>
-        <span class="sana-line" aria-hidden="true"></span>
-        <ol class="tribs">
-          <li class="trib left"><div class="cell"><span class="trib-name">Sanica</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
-          <li class="trib right"><div class="cell"><span class="trib-name">Dabar</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
-          <li class="trib left"><div class="cell"><span class="trib-name">Zdena</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
-          <li class="trib right"><div class="cell"><span class="trib-name">Bliha</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
-          <li class="trib left"><div class="cell"><span class="trib-name">Majdanska rijeka</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
-          <li class="trib right"><div class="cell"><span class="trib-name">Japra</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
-          <li class="trib left"><div class="cell"><span class="trib-name">Sasinka</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
-          <li class="trib right"><div class="cell"><span class="trib-name">Kozica</span><svg class="trib-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 60 0 40 100 100 100"/></svg></div></li>
+    <section id="rivers" class="on-paper" aria-labelledby="rivers-title">
+      <div class="rivers-grid">
+        <header class="rivers-head">
+          <span class="nine" aria-hidden="true">9</span>
+          <p class="eyebrow" data-i18n="rivers.eyebrow">Nine rivers</p>
+          <h2 id="rivers-title" class="h3" data-i18n-html="rivers.title.html">The town on<br>nine rivers</h2>
+          <p class="rivers-fact" data-i18n="rivers.fact">The Sana is about 142 km long and flows into the Una at Novi Grad.</p>
+        </header>
+        <!-- Drawn by main.js: the Sana runs down as the page scrolls, the tributaries flow in one by one and each name follows its own curve.
+             The order and the sides of the tributaries are decorative, they do not follow the real course of the river. -->
+        <div class="river-map" id="river-map" aria-hidden="true"></div>
+        <ol class="vh">
+          <li>Sana</li><li>Sanica</li><li>Dabar</li><li>Zdena</li><li>Bliha</li><li>Majdanska rijeka</li><li>Japra</li><li>Sasinka</li><li>Kozica</li>
         </ol>
       </div>
-      <p class="rivers-fact" data-i18n="rivers.fact">The Sana is about 142 km long and flows into the Una at Novi Grad.</p>
     </section>
+
+    <div class="rise to-deep" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
   </main>
 
   <footer class="on-deep">
