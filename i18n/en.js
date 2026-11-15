@@ -324,6 +324,10 @@ I18N.en = {
   'hist.6.g10': 'Wading through a flooded street, an old photograph',
   'hist.6.g11': 'A flood, 23 September 1996',
   'hist.src.mostbook': 'Most of the photographs from the book “Sanski Most nekad i sad”',
+  'hist.5.f.fudbal2': 'A football team in striped shirts',
+  'hist.5.f.most2': 'The concrete town bridge over the Sana',
+  'hist.5.f.rat1': 'Partisans in Sanski Most, Second World War',
+  'hist.5.f.rat2': 'At the railway station, Second World War',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

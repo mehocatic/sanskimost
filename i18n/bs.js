@@ -326,6 +326,10 @@ I18N.bs = {
   'hist.6.g10': 'Kroz poplavljenu ulicu, stara fotografija',
   'hist.6.g11': 'Poplava, 23. 9. 1996.',
   'hist.src.mostbook': 'Većina fotografija iz knjige „Sanski Most nekad i sad“',
+  'hist.5.f.fudbal2': 'Nogometna ekipa u prugastim dresovima',
+  'hist.5.f.most2': 'Betonski gradski most preko Sane',
+  'hist.5.f.rat1': 'Partizani u Sanskom Mostu, Drugi svjetski rat',
+  'hist.5.f.rat2': 'Na željezničkoj stanici, Drugi svjetski rat',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
