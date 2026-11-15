@@ -340,7 +340,7 @@ I18N.en = {
   'hist.zv.5.e': 'A hand-made wooden merry-go-round at Karići',
   'hist.zv.5.f': 'The “trnavski klapci” group, Trnova',
   'hist.zv.5.g': 'A walk through town',
-  'hist.zv.5.h': 'A family house at Progomolje',
+  'hist.zv.5.h': 'The family house of Brace Progomolje',
   'hist.zv.70s': '1970s',
   'hist.2.p3': 'According to the history published by the Municipality of Sanski Most, a settlement called Mren is mentioned as early as about 820. The oldest known document naming the Sana is a charter of King Béla IV of 20 July 1244, together with the counties of the Donji kraji: Sana, Dubica, Mren and Vrbaška. A župan of Sana, Mihailo, is mentioned in 1258, and in 1413 King Sigismund took the Sana from Duke Hrvoje and gave it to the Blagaj princes.',
   'hist.3.p4': 'Kamengrad was the main Ottoman fortress of the area and the seat of a kadiluk (a judicial district) set up between 1562 and 1574. When the Ottomans took Krupa in 1565, most of the garrison moved there and Kamengrad lost its earlier weight; from 1711 the seat of the Kamengrad kadiluk was in Stari Majdan. The Kamengrad captaincy was run by captains, most of them from the Cerić family, until the captaincies were abolished in 1835.',
@@ -348,6 +348,7 @@ I18N.en = {
   'hist.5.p4': 'Between the wars Sanski Most was the seat of a srez (district), part of the Vrbas Banovina from 1929 to 1941. In 1930 the srez had 87 settlements in eight municipalities: Budimlić Japra, Dabar, Gornji Kamengrad, Lušci Palanka, Sanski Most, Sasina, Stari Majdan and Tomina. The area of today’s municipality had 50,671 people in 1931 and 65,880 at the start of 1941. In the Second World War the municipality lost 3,605 people.',
   'hist.zv.1.enc': 'The Encyclopaedia of Yugoslavia of 1968 describes Sanski Most as a municipal centre at 158 m above sea level, with a sawmill, a panel-board factory, a brickworks, a tobacco warehouse, building and electrical companies and a coal mine at Kamengrad. A narrow-gauge railway then ran through the town, linking Prijedor, Drvar and Lička Kaldrma.',
   'hist.src.8.html': 'Municipality of Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">“Historija općine Sanski Most”</a>: the Middle Ages, the Ottoman period, the district in 1910 and 1914, the srez between the wars and the entry in the Encyclopaedia of Yugoslavia (1968).',
+  'hist.zv.5.i': 'Building the minaret at Šehovci',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

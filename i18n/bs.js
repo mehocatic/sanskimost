@@ -342,7 +342,7 @@ I18N.bs = {
   'hist.zv.5.e': 'Drveni ringišpil, napravljen rukom, u Karićima',
   'hist.zv.5.f': 'Družina „trnavskih klapaca“, Trnova',
   'hist.zv.5.g': 'Šetnja kroz grad',
-  'hist.zv.5.h': 'Porodična kuća u Progomolju',
+  'hist.zv.5.h': 'Porodična kuća Brace Progomolje',
   'hist.zv.70s': '1970-e',
   'hist.2.p3': 'Prema historiji objavljenoj na stranici Općine Sanski Most, naselje Mren spominje se već oko 820. Najstariji poznati dokument koji imenuje Sanu je povelja kralja Bele IV od 20. jula 1244, uz župe Donjih krajeva: Sanu, Dubicu, Mren i Vrbašku. Godine 1258. spominje se sanski župan Mihailo, a 1413. kralj Žigmund oduzima Sanu hercegu Hrvoju i predaje je knezovima Blagajskim.',
   'hist.3.p4': 'Kamengrad je bio glavna osmanska tvrđava kraja i sjedište kadiluka, osnovanog između 1562. i 1574. Kada Osmanlije 1565. zauzmu Krupu, veći dio posade odlazi tamo i Kamengrad gubi raniji značaj; od 1711. sjedište kamengradskog kadiluka je u Starom Majdanu. Kamengradskom kapetanijom upravljali su kapetani, najviše iz porodice Cerić, sve dok kapetanije nisu ukinute 1835.',
@@ -350,6 +350,7 @@ I18N.bs = {
   'hist.5.p4': 'Između dva rata Sanski Most je sjedište sreza, koji od 1929. do 1941. pripada Vrbaskoj banovini. Srez je 1930. imao 87 naselja u osam općina: Budimlić Japra, Dabar, Gornji Kamengrad, Lušci Palanka, Sanski Most, Sasina, Stari Majdan i Tomina. Na području današnje općine 1931. je živjelo 50.671 stanovnika, a početkom 1941. njih 65.880. U Drugom svjetskom ratu općina je izgubila 3.605 ljudi.',
   'hist.zv.1.enc': 'Enciklopedija Jugoslavije iz 1968. opisuje Sanski Most kao općinsko središte na 158 m nadmorske visine, s pilanom, tvornicom panel-ploča, ciglanom, skladištem duhana, građevinskim i elektro preduzećima i rudnikom uglja u Kamengradu. Kroz grad tada prolazi uskotračna pruga koja povezuje Prijedor, Drvar i Ličku Kaldrmu.',
   'hist.src.8.html': 'Općina Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">„Historija općine Sanski Most“</a>: srednji vijek, osmanski period, kotar 1910. i 1914., srez između dva rata i opis iz Enciklopedije Jugoslavije (1968).',
+  'hist.zv.5.i': 'Gradnja munare u Šehovcima',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
