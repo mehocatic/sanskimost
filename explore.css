@@ -54,7 +54,7 @@ body { color: var(--fg); min-height: 100svh; }
 
 @media (min-width: 900px) {
   .explore-page { display: flex; flex-direction: column; height: 100svh; min-height: 680px; }
-  .explore-head { padding-top: 34px; }
+  .explore-head { padding-top: 88px; }
   .explore-main { flex: 1 1 auto; min-height: 0; }
   .poi-list { min-height: 0; }
   .filter { min-height: 40px; }

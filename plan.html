@@ -28,9 +28,13 @@
 <body class="on-deep plan-page">
 
   <nav class="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
-    <a href="./" data-i18n="nav.home">Home</a>
-    <a href="explore" data-i18n="nav.explore">Explore</a>
-    <a href="plan" aria-current="page" data-i18n="nav.plan">Visit</a>
+    <a class="nav-logo" href="./">Sanski Most</a>
+    <div class="nav-links" id="nav-links">
+      <a class="nav-home" href="./" data-i18n="nav.home">Home</a>
+      <a href="explore" data-i18n="nav.explore">Explore</a>
+      <a href="plan" aria-current="page" data-i18n="nav.plan">Visit</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="t-open" data-i18n="nav.menu">Menu</span><span class="t-close" data-i18n="nav.close">Close</span></button>
   </nav>
 
   <main>

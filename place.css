@@ -9,7 +9,8 @@ body { color: var(--fg); min-height: 100svh; }
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
 }
 .back:hover, .lb-btn:hover, .slider-btn:hover { border-color: var(--sand); }
-.back { position: fixed; top: 16px; left: var(--gutter); z-index: 20; border-radius: 999px; background: rgba(21, 26, 24, .8); border-color: rgba(246, 244, 238, .16); }
+/* below the menu bar, and part of the page: it scrolls away with the header instead of covering the text */
+.back { position: absolute; top: 76px; left: var(--gutter); z-index: 20; border-radius: 999px; background: rgba(21, 26, 24, .8); border-color: rgba(246, 244, 238, .16); }
 
 /* every place has the same layout: a low dark header, a slider of all its photos, then the text */
 .place-head {

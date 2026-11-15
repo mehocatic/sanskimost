@@ -50,63 +50,82 @@ h2.h3 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); }
 }
 
 
-/* Main menu, fixed top right on every page: one rounded bar that holds the links and the language choice */
+/* Main menu on every page: a bar across the top with the town name, the pages and the language choice.
+   Its colours follow what is under it (nav.js): clear over a photo, dark over dark sections, light over light ones.
+   The blur sits on ::before, not on the bar: a backdrop-filter on the bar itself would trap the fixed phone menu inside it. */
 .site-nav {
-  position: fixed; top: 16px; right: var(--gutter); z-index: 60; display: flex; align-items: center;
-  padding: 0 6px 0 10px; border-radius: 999px;
-  background: rgba(21, 26, 24, .8); border: 1px solid rgba(246, 244, 238, .16);
-  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
-  box-shadow: 0 6px 24px rgba(8, 11, 10, .28);
-  transition: transform .45s cubic-bezier(.2, .7, .2, 1), opacity .35s ease;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  display: flex; align-items: center; gap: clamp(12px, 3vw, 40px);
+  min-height: 64px; padding: 0 var(--gutter); color: var(--paper);
+  transition: color .3s ease;
 }
-/* hidden by nav.js (scrolling down, or the home hero on screen); keyboard focus brings it back */
-.site-nav.nav-hidden:not(:focus-within) { transform: translateY(calc(-100% - 20px)); opacity: 0; pointer-events: none; }
-@media (prefers-reduced-motion: reduce) {
-  .site-nav { transition: opacity .2s ease; }
-  .site-nav.nav-hidden:not(:focus-within) { transform: none; }
+.site-nav::before {
+  content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(8, 11, 10, .5), rgba(8, 11, 10, 0));
+  border-bottom: 1px solid transparent; transition: background .3s ease, opacity .3s ease;
 }
-.site-nav a {
-  position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: 0 .85rem;
-  color: rgba(246, 244, 238, .72); text-decoration: none;
+.site-nav.nav-dark::before {
+  background: rgba(21, 26, 24, .84); border-bottom-color: rgba(246, 244, 238, .1);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.site-nav.nav-light { color: var(--ink); }
+.site-nav.nav-light::before {
+  background: rgba(246, 244, 238, .9); border-bottom-color: rgba(21, 26, 24, .1);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.nav-logo {
+  display: inline-flex; align-items: center; min-height: 44px; white-space: nowrap;
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 500; color: inherit; text-decoration: none;
+}
+.nav-links { flex: 1; display: flex; justify-content: center; gap: clamp(16px, 3vw, 44px); }
+.nav-links a {
+  position: relative; display: inline-flex; align-items: center; min-height: 44px;
+  color: inherit; opacity: .8; text-decoration: none;
   font-family: var(--sans); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
-  transition: color .2s ease;
+  transition: opacity .2s ease;
 }
-.site-nav a:hover { color: var(--paper); }
-.site-nav a[aria-current="page"] { color: var(--paper); }
-/* the current page: a short sand line under the word (the right inset takes off the trailing letter-spacing) */
-.site-nav a[aria-current="page"]::after {
-  content: ""; position: absolute; left: .85rem; right: calc(.85rem + .18em); bottom: 10px; height: 1px; background: var(--sand);
-}
+.nav-links a:hover, .nav-links a[aria-current="page"] { opacity: 1; }
+/* the current page: a line under the word (the right inset takes off the trailing letter-spacing) */
+.nav-links a[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: .18em; bottom: 9px; height: 1px; background: currentColor; }
+/* wide screens: the town name on the left is the way home, so the Home link is only in the phone menu */
+.nav-links .nav-home { display: none; }
+.nav-toggle { display: none; }
 
-/* BS / EN (added by i18n.js): two small segments after a thin divider, the chosen one on a lighter chip */
-.lang-switch {
-  display: inline-flex; align-items: center; margin-left: 6px; padding-left: 6px;
-  border-left: 1px solid rgba(246, 244, 238, .16);
-  font-family: var(--sans); font-size: .7rem;
-}
-.lang-switch span { display: none; }
+/* BS | EN (added by i18n.js), always visible */
+.lang-switch { display: inline-flex; align-items: center; font-family: var(--sans); font-size: .72rem; letter-spacing: .12em; }
+.lang-switch span { opacity: .4; }
 .lang-switch button {
-  position: relative; z-index: 0; min-height: 44px; min-width: 38px; padding: 0 .5rem 0 calc(.5rem + .12em);
-  background: none; border: 0; cursor: pointer;
-  color: rgba(246, 244, 238, .55); font: inherit; letter-spacing: .12em; transition: color .2s ease;
+  min-height: 44px; min-width: 34px; padding: 0 .3rem; background: none; border: 0; cursor: pointer;
+  color: inherit; font: inherit; letter-spacing: inherit; opacity: .55; transition: opacity .2s ease;
 }
-.lang-switch button::before {
-  content: ""; position: absolute; z-index: -1; inset: 8px 2px; border-radius: 999px; background: transparent; transition: background .2s ease;
-}
-.lang-switch button:hover { color: var(--paper); }
-.lang-switch button[aria-pressed="true"] { color: var(--paper); }
-.lang-switch button[aria-pressed="true"]::before { background: rgba(246, 244, 238, .14); }
+.lang-switch button:hover { opacity: .85; }
+.lang-switch button[aria-pressed="true"] { opacity: 1; font-weight: 500; }
 
-@media (max-width: 420px) {
-  .site-nav { padding: 0 4px 0 6px; }
-  .site-nav a { padding: 0 .6rem; letter-spacing: .12em; }
-  .site-nav a[aria-current="page"]::after { left: .6rem; right: calc(.6rem + .12em); }
-  .lang-switch { margin-left: 2px; padding-left: 4px; }
-  .lang-switch button { min-width: 34px; padding: 0 .35rem 0 calc(.35rem + .12em); }
+/* phones: name, language and a Menu button; the pages open as a full-screen list, so any number of pages fits */
+@media (max-width: 768px) {
+  .site-nav { min-height: 58px; gap: 6px; }
+  .nav-logo { order: 1; margin-right: auto; font-size: 1.35rem; }
+  .lang-switch { order: 2; }
+  .nav-toggle {
+    order: 3; display: inline-flex; align-items: center; min-height: 40px; padding: 0 .95rem; margin-left: 4px;
+    border: 1px solid currentColor; border-radius: 999px; background: none; color: inherit; cursor: pointer;
+    font: inherit; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+  }
+  .nav-toggle .t-close, .site-nav.open .nav-toggle .t-open { display: none; }
+  .site-nav.open .nav-toggle .t-close { display: inline; }
+  .nav-links {
+    position: fixed; inset: 0; z-index: -1; flex-direction: column; justify-content: center; gap: 0;
+    padding: 80px var(--gutter) 40px; background: var(--deep);
+    opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s;
+  }
+  .site-nav.open { color: var(--paper); }
+  .site-nav.open::before { opacity: 0; }
+  .site-nav.open .nav-links { opacity: 1; visibility: visible; }
+  .nav-links a, .nav-links .nav-home {
+    display: flex; opacity: 1; padding: .85rem 0; border-bottom: 1px solid rgba(246, 244, 238, .16); color: var(--paper);
+    font-family: var(--serif); font-size: 2.5rem; letter-spacing: 0; text-transform: none; line-height: 1.1;
+  }
+  .nav-links a[aria-current="page"] { color: var(--river-light); }
+  .nav-links a[aria-current="page"]::after { display: none; }
 }
-/* three links do not fit a phone beside the language choice: the link of the page you are on is left out there,
-   and on a place page the Home link too (the back arrow goes there) */
-@media (max-width: 560px) {
-  .site-nav a[aria-current="page"] { display: none; }
-  .place-page .site-nav a[href="./"] { display: none; }
-}
+@media (prefers-reduced-motion: reduce) { .site-nav, .site-nav::before, .nav-links { transition: none; } }

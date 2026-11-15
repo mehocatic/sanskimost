@@ -9,6 +9,8 @@ I18N.en = {
   'nav.explore': 'Explore',
   'nav.plan': 'Visit',
   'nav.lang': 'Language',
+  'nav.menu': 'Menu',
+  'nav.close': 'Close',
 
   // home: head and hero
   'home.meta': 'Sanski Most, Bosnia and Herzegovina: a town on nine rivers, with a medieval fortress, caves, the four-minaret Hamzibeg Mosque and Blihe Waterfall.',

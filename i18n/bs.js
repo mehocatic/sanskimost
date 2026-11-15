@@ -11,6 +11,8 @@ I18N.bs = {
   'nav.explore': 'Istraži',
   'nav.plan': 'Posjeta',
   'nav.lang': 'Jezik',
+  'nav.menu': 'Meni',
+  'nav.close': 'Zatvori',
 
   // home: head and hero
   'home.meta': 'Sanski Most, Bosna i Hercegovina: grad na devet rijeka, sa srednjovjekovnom tvrđavom, pećinama, Hamzibegovom džamijom s četiri munare i vodopadom Blihe.',
