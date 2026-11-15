@@ -316,6 +316,11 @@ I18N.en = {
   'hist.ul.5.g': 'The main street, 3 April 1997',
   'hist.ul.5.h': 'The church, 4 April 1997',
   'hist.ul.5.i': 'The Sana, 4 April 1997',
+  'hist.ul.6': 'The “Lovac” hotel',
+  'hist.ul.6.span': '06 · 1968 · 2005 · today',
+  'hist.ul.6.p': 'The old “Lovac” by the weir in 1968, and the site of the new building in November 2005.',
+  'hist.ul.6.a': '“Lovac”, 1968',
+  'hist.ul.6.b': 'Building the new block, 26 November 2005',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

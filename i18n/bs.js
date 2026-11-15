@@ -318,6 +318,11 @@ I18N.bs = {
   'hist.ul.5.g': 'Glavna ulica, 3. 4. 1997.',
   'hist.ul.5.h': 'Crkva, 4. 4. 1997.',
   'hist.ul.5.i': 'Sana, 4. 4. 1997.',
+  'hist.ul.6': 'Hotel „Lovac“',
+  'hist.ul.6.span': '06 · 1968 · 2005 · danas',
+  'hist.ul.6.p': 'Stari „Lovac“ uz slap 1968. i gradilište nove zgrade u novembru 2005.',
+  'hist.ul.6.a': '„Lovac“, 1968.',
+  'hist.ul.6.b': 'Gradnja nove zgrade, 26. 11. 2005.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
