@@ -306,6 +306,18 @@ I18N.bs = {
   'hist.ul.4.b': 'Kod mosta na Zdeni, 12. 10. 1996.',
   'hist.ul.4.c': 'Poslije bajram-namaza, 7. 4. 1998.',
   'hist.ul.4.d': 'Muhići, 10. 4. 1998.',
+  'hist.ul.5': 'Centar',
+  'hist.ul.5.span': '05 · 1996 – danas',
+  'hist.ul.5.p': 'Kino „Sana“, pošta, hotel uz rijeku i glavne ulice, snimljeni u jesen 1996. i proljeće 1997.',
+  'hist.ul.5.a': 'Kino „Sana“, 12. 10. 1996.',
+  'hist.ul.5.b': 'Pošta, 12. 10. 1996.',
+  'hist.ul.5.c': 'Sana i hotel, 12. 10. 1996.',
+  'hist.ul.5.d': 'Izborni plakati, 12. 10. 1996.',
+  'hist.ul.5.e': 'Uz rijeku, 31. 3. 1997.',
+  'hist.ul.5.f': 'Most, 31. 3. 1997.',
+  'hist.ul.5.g': 'Glavna ulica, 3. 4. 1997.',
+  'hist.ul.5.h': 'Crkva, 4. 4. 1997.',
+  'hist.ul.5.i': 'Sana, 4. 4. 1997.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

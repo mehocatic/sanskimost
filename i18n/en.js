@@ -304,6 +304,18 @@ I18N.en = {
   'hist.ul.4.b': 'By the bridge on the Zdena, 12 October 1996',
   'hist.ul.4.c': 'After the Bajram prayer, 7 April 1998',
   'hist.ul.4.d': 'Muhići, 10 April 1998',
+  'hist.ul.5': 'The centre',
+  'hist.ul.5.span': '05 · 1996 – today',
+  'hist.ul.5.p': 'The “Sana” cinema, the post office, the hotel by the river and the main streets, photographed in the autumn of 1996 and the spring of 1997.',
+  'hist.ul.5.a': 'The “Sana” cinema, 12 October 1996',
+  'hist.ul.5.b': 'The post office, 12 October 1996',
+  'hist.ul.5.c': 'The Sana and the hotel, 12 October 1996',
+  'hist.ul.5.d': 'Election posters, 12 October 1996',
+  'hist.ul.5.e': 'By the river, 31 March 1997',
+  'hist.ul.5.f': 'The bridge, 31 March 1997',
+  'hist.ul.5.g': 'The main street, 3 April 1997',
+  'hist.ul.5.h': 'The church, 4 April 1997',
+  'hist.ul.5.i': 'The Sana, 4 April 1997',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
