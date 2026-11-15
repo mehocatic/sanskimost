@@ -18,9 +18,8 @@ I18N.en = {
   'hero.scroll': 'Scroll',
   'hero.outro': 'Sanski Most · Bosnia and Herzegovina',
 
-  // intro
-  'intro.label': 'Introduction',
-  'intro.text': 'Nine rivers. One town.',
+  // closing lines of the hero
+  'intro.text.html': 'Nine rivers.<br>One town.',
   'intro.sub': 'Sanski Most has a medieval fortress, caves, a mosque with four minarets and a waterfall of about 56 m.',
 
   // places carousel
@@ -29,10 +28,10 @@ I18N.en = {
   'card.more': 'Read more',
   'card.aria': '{name}: read more',
   'cursor.view': 'View',
+  'places.all': 'Everything on the map',
 
   // routes (routes.js)
   'routes.eyebrow': 'Suggestions',
-  'routes.title': 'Routes',
   'routes.map': 'View on map',
   'routes.km': 'About {km} km from town',
   'routes.conditions': 'Check conditions before you go.',

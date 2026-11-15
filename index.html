@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body id="top">
+<body id="top" class="home-page">
 
   <nav class="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
     <a class="nav-logo" href="./">Sanski Most</a>
@@ -48,21 +48,17 @@
 
       <h1 id="title">SANSKI<br>MOST</h1>
       <p id="scroll-hint" data-i18n="hero.scroll">Scroll</p>
-      <p id="outro" data-i18n="hero.outro">Sanski Most &middot; Bosnia and Herzegovina</p>
+      <!-- shown over the last frames, at the end of the scroll -->
+      <div id="hero-end">
+        <p class="hero-end-eyebrow" data-i18n="hero.outro">Sanski Most &middot; Bosnia and Herzegovina</p>
+        <p id="intro-text" data-i18n-html="intro.text.html">Nine rivers.<br>One town.</p>
+        <p id="intro-sub" data-i18n="intro.sub">Sanski Most has a medieval fortress, caves, a mosque with four minarets and a waterfall of about 56&nbsp;m.</p>
+      </div>
     </div>
   </section>
 
 
   <main>
-    <section id="intro" class="on-deep" aria-label="Introduction" data-i18n-attr="aria-label:intro.label">
-      <div class="intro-inner">
-        <div>
-          <p id="intro-text" data-i18n="intro.text">Nine rivers. One town.</p>
-          <p id="intro-sub" data-i18n="intro.sub">Sanski Most has a medieval fortress, caves, a mosque with four minarets and a waterfall of about 56&nbsp;m.</p>
-        </div>
-      </div>
-    </section>
-
     <div class="rise to-paper" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
 
     <section id="places" class="on-paper" aria-labelledby="places-title">
@@ -71,17 +67,8 @@
         <h2 id="places-title" data-i18n-html="places.title.html">Around <br>Sanski Most</h2>
       </div>
       <div class="places-track" id="track"></div>
-      <p class="places-count" id="places-count" aria-hidden="true"></p>
-    </section>
-
-    <section id="routes" class="on-paper" aria-labelledby="routes-title">
-      <header class="routes-head">
-        <p class="eyebrow" data-i18n="routes.eyebrow">Suggestions</p>
-        <h2 id="routes-title" data-i18n="routes.title">Routes</h2>
-      </header>
-      <!-- filled by main.js from routes.js -->
-      <ol class="routes" id="routes-list"></ol>
-      <p class="routes-check" data-i18n="routes.conditions">Check conditions before you go.</p>
+      <!-- phones: how far along the row you are -->
+      <div class="places-progress" aria-hidden="true"><i id="places-bar"></i></div>
     </section>
 
     <div class="rise to-mist" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
@@ -169,7 +156,6 @@
   </footer>
 
   <script src="places.js"></script>
-  <script src="routes.js"></script>
   <script src="i18n/en.js"></script>
   <script src="i18n/bs.js"></script>
   <script src="i18n.js"></script>

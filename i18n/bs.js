@@ -20,9 +20,8 @@ I18N.bs = {
   'hero.scroll': 'Pomaknite prema dolje',
   'hero.outro': 'Sanski Most · Bosna i Hercegovina',
 
-  // intro
-  'intro.label': 'Uvod',
-  'intro.text': 'Devet rijeka. Jedan grad.',
+  // closing lines of the hero
+  'intro.text.html': 'Devet rijeka.<br>Jedan grad.',
   'intro.sub': 'Sanski Most ima srednjovjekovnu tvrđavu, pećine, džamiju s četiri munare i vodopad visok oko 56 m.',
 
   // places carousel
@@ -31,10 +30,10 @@ I18N.bs = {
   'card.more': 'Saznajte više',
   'card.aria': '{name}: saznajte više',
   'cursor.view': 'Pogledajte',
+  'places.all': 'Sve na karti',
 
   // routes (routes.js)
   'routes.eyebrow': 'Prijedlozi',
-  'routes.title': 'Rute',
   'routes.map': 'Pogledajte na karti',
   'routes.km': 'Oko {km} km od grada',
   'routes.conditions': 'Provjerite uvjete prije polaska.',

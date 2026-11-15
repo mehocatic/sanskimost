@@ -5,7 +5,8 @@ const title = document.getElementById('title');
 const stage = document.getElementById('stage');
 const fade = document.getElementById('fade');
 const hint = document.getElementById('scroll-hint');
-const outro = document.getElementById('outro');
+const heroEnd = document.getElementById('hero-end');
+const caption = document.getElementById('hero-caption');
 const loader = document.getElementById('loader');
 const loaderText = document.getElementById('loader-text');
 
@@ -111,11 +112,16 @@ function tick() {
   title.style.transform = `translateY(${-t * 40}px) scale(${1 + t * 0.04})`;
   hint.style.opacity = 0.8 * (1 - clamp01(current / 0.06));
 
-  // Last ~12% of the scroll: the frame darkens into the page background and the outro leaves with it.
-  // Driven by the raw scroll position too, so a fast flick never exposes a bright frame while leaving.
-  const dark = clamp01((Math.max(current, target) - 0.88) / 0.12);
-  fade.style.opacity = dark;
-  outro.style.opacity = clamp01((current - 0.72) / 0.08) * (1 - dark);
+  // Last part of the scroll: the lower half of the frame darkens and the closing lines rise in over it.
+  // They stay until the page scrolls on; the caption in the corner leaves so the two do not overlap.
+  const e = clamp01((current - 0.76) / 0.12);
+  fade.style.opacity = e;
+  // once the hero starts to leave the screen the lines go, so they never slide under the menu
+  const rect = scene.getBoundingClientRect();
+  const leave = clamp01((window.innerHeight - rect.bottom) / (window.innerHeight * 0.4));
+  heroEnd.style.opacity = e * (1 - leave);
+  heroEnd.style.transform = `translateY(${(1 - e) * 28}px)`;
+  caption.style.opacity = 1 - clamp01((current - 0.68) / 0.08);
 
   requestAnimationFrame(tick);
 }
