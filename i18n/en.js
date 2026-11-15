@@ -332,6 +332,10 @@ I18N.en = {
   'hist.ul.5.link': 'The cinema’s programme in 1968 →',
   'hist.5.f.1938': 'Sanski Most in 1938, the bridge and the Hamzibeg Mosque from the river',
   'hist.5.f.zgrade': 'Buildings by the Sana, an old photograph',
+  'hist.6.g12': 'By boat through town, 2014',
+  'hist.6.g13': 'A flooded street, 2014',
+  'hist.6.g14': 'A horse and cart in the flood, 2014',
+  'hist.6.g15': 'A lorry and a horse in the water, 2014',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

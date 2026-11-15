@@ -334,6 +334,10 @@ I18N.bs = {
   'hist.ul.5.link': 'Program kina 1968. →',
   'hist.5.f.1938': 'Sanski Most 1938, most i Hamzibegova džamija s rijeke',
   'hist.5.f.zgrade': 'Zgrade uz Sanu, stara fotografija',
+  'hist.6.g12': 'Čamcem kroz grad, 2014.',
+  'hist.6.g13': 'Poplavljena ulica, 2014.',
+  'hist.6.g14': 'Konjska zaprega u poplavi, 2014.',
+  'hist.6.g15': 'Kamion i konj u vodi, 2014.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
