@@ -347,6 +347,7 @@ I18N.bs = {
   'hist.2.p3': 'Prema historiji objavljenoj na stranici Općine Sanski Most, naselje Mren spominje se već oko 820. Najstariji poznati dokument koji imenuje Sanu je povelja kralja Bele IV od 20. jula 1244, uz župe Donjih krajeva: Sanu, Dubicu, Mren i Vrbašku. Godine 1258. spominje se sanski župan Mihailo, a 1413. kralj Žigmund oduzima Sanu hercegu Hrvoju i predaje je knezovima Blagajskim.',
   'hist.3.p4': 'Kamengrad je bio glavna osmanska tvrđava kraja i sjedište kadiluka, osnovanog između 1562. i 1574. Kada Osmanlije 1565. zauzmu Krupu, veći dio posade odlazi tamo i Kamengrad gubi raniji značaj; od 1711. sjedište kamengradskog kadiluka je u Starom Majdanu. Kamengradskom kapetanijom upravljali su kapetani, najviše iz porodice Cerić, sve dok kapetanije nisu ukinute 1835.',
   'hist.4.p4': 'Kotar Sanski Most je 1910. obuhvatao 1.017 km² i dvije općine, Sanski Most i Stari Majdan. Sama varoš je 1914. imala 2.234 stanovnika, više od 50 trgovina i zanatskih radnji, hotel i agenciju Zemaljske banke.',
+  'hist.5.p4': 'Između dva rata Sanski Most je sjedište sreza, koji od 1929. do 1941. pripada Vrbaskoj banovini. Srez je 1930. imao 87 naselja u osam općina: Budimlić Japra, Dabar, Gornji Kamengrad, Lušci Palanka, Sanski Most, Sasina, Stari Majdan i Tomina. Na području današnje općine 1931. je živjelo 50.671 stanovnika, a početkom 1941. njih 65.880. U Drugom svjetskom ratu općina je izgubila 3.605 ljudi.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
