@@ -155,23 +155,37 @@
     clicked = null;
   });
 
-  /* ---------- 3b. timeline: the line draws, entries enter in order ---------- */
+  /* ---------- 3b. timeline: the line fills on scroll, an entry lights up when the line reaches it ---------- */
   const timeline = document.getElementById('timeline');
   const tlLine = document.createElement('span');
   tlLine.className = 'tl-line';
   timeline.prepend(tlLine);
+  const tlItems = [...timeline.querySelectorAll('li')];
+  const hNow = document.getElementById('h-now');
+  // the last entry reached is "now": its dot gets a ring and its year is shown large beside the list (wide screens)
+  function markNow() {
+    const on = tlItems.filter(li => li.classList.contains('on'));
+    const cur = on[on.length - 1] || tlItems[0];
+    tlItems.forEach(li => li.classList.toggle('now', li === cur && on.length > 0));
+    const yr = cur.querySelector('.yr');
+    hNow.textContent = yr.textContent;
+    // anything longer than a plain year (a range, a century) is set smaller so it stays on one line
+    hNow.classList.toggle('s', yr.textContent.trim().length > 4);
+  }
   if (animate) {
     gsap.fromTo(tlLine, { scaleY: 0 }, {
       scaleY: 1, ease: 'none',
-      scrollTrigger: { trigger: timeline, start: 'top 65%', end: 'bottom 65%', scrub: true }
+      scrollTrigger: { trigger: timeline, start: 'top 62%', end: 'bottom 62%', scrub: true }
     });
-    timeline.querySelectorAll('li').forEach(li => {
-      gsap.to(li, {
-        opacity: 1, y: 0, duration: .9, ease: 'power2.out',
-        scrollTrigger: { trigger: li, start: 'top 80%', toggleActions: 'play none none reverse' }
-      });
-    });
+    tlItems.forEach(li => ScrollTrigger.create({
+      trigger: li, start: 'top 62%',
+      onEnter: () => { li.classList.add('on'); markNow(); },
+      onLeaveBack: () => { li.classList.remove('on'); markNow(); }
+    }));
+  } else {
+    tlItems.forEach(li => li.classList.add('on'));
   }
+  markNow();
 
   /* ---------- numbers: count up from zero when the section enters the screen ---------- */
   if (animate) {
@@ -223,6 +237,7 @@
   window.addEventListener('langchange', () => {
     track.querySelectorAll('.slot[data-slug]').forEach(slot => cardText(slot, PLACES.find(p => p.slug === slot.dataset.slug)));
     allText();
+    markNow();
     if (headingsSplit) document.querySelectorAll(HEADINGS).forEach(revealLines);
     if (animate) ScrollTrigger.refresh();
   });

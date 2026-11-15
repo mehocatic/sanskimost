@@ -71,36 +71,46 @@
       <div class="places-progress" aria-hidden="true"><i id="places-bar"></i></div>
     </section>
 
-    <div class="rise to-mist" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
-
-    <section id="history" class="on-mist" aria-labelledby="history-title">
+    <section id="history" class="on-paper" aria-labelledby="history-title">
 
       <!-- a) name -->
       <div class="h-block h-name">
         <header>
           <p class="eyebrow" data-i18n="history.eyebrow">History</p>
-          <h2 id="history-title" data-i18n="history.name.title">How the town got its name</h2>
+          <h2 id="history-title" class="h3" data-i18n="history.name.title">How the town got its name</h2>
         </header>
-        <p class="big-text" data-i18n-html="history.name.html">The name comes from the river Sana, from the Latin <em>sana</em> (&ldquo;healthy&rdquo;), as in <em>Aqua Sana</em>. In 1717, in the Ottoman period, the fortress town is mentioned as <em>D&#382;isr-i Sana</em> (<em>d&#382;isr</em> = bridge).</p>
+        <div class="h-name-grid">
+          <p class="h-word" aria-hidden="true"><span class="h-word-big" lang="la">sana</span><span class="h-word-cap" data-i18n="history.word">Latin &middot; &ldquo;healthy&rdquo;</span></p>
+          <div>
+            <p class="big-text" data-i18n-html="history.name.html">The name comes from the river Sana, from the Latin <em>sana</em> (&ldquo;healthy&rdquo;), as in <em>Aqua Sana</em>. In 1717, in the Ottoman period, the fortress town is mentioned as <em>D&#382;isr-i Sana</em> (<em>d&#382;isr</em> = bridge).</p>
+            <!-- the names from the text above, in a row; nothing here that the text does not say -->
+            <ol class="h-chain" aria-hidden="true">
+              <li><span>Sana</span><small data-i18n="history.chain.river">the river</small></li>
+              <li><span>D&#382;isr-i Sana</span><small>1717</small></li>
+              <li><span>Sanski Most</span><small data-i18n="history.chain.today">today</small></li>
+            </ol>
+          </div>
+        </div>
       </div>
 
-      <!-- b) timeline -->
+      <!-- b) timeline: the line fills on scroll, the entry that is reached lights up; main.js -->
       <div class="h-block h-centuries">
-        <header>
+        <header class="h-side">
           <h2 class="h3" data-i18n="history.centuries">Through the centuries</h2>
+          <p class="h-now" id="h-now" aria-hidden="true"></p>
         </header>
         <ol class="timeline" id="timeline">
           <!-- TODO: no verified information on peoples or tribes before the Ottoman period. Do not name any. -->
           <li><span class="yr s" data-i18n="tl.1.yr">6th&ndash;3rd c. BC</span><p data-i18n="tl.1">An Iron Age settlement with a necropolis of 176 graves.</p></li>
-          <li><span class="yr">1374</span><p data-i18n="tl.2">Kamengrad is first mentioned; the area belongs to the Sana county (&#382;upa).</p></li>
+          <li><span class="yr">1374</span><p data-i18n="tl.2">Kamengrad is first mentioned; the area belongs to the Sana county (&#382;upa).</p><figure class="tl-photo"><img src="photos/kamengrad.webp" alt="" loading="lazy" width="1200" height="896" style="object-position:50% 55%"></figure></li>
           <li><span class="yr">1498&ndash;99</span><p data-i18n="tl.3">The Ottomans take the area.</p></li>
           <li><span class="yr s" data-i18n="tl.4.yr">16th c.</span><p data-i18n="tl.4">The Hamzibeg Mosque is built (before 1557).</p></li>
           <li><span class="yr">1878</span><p data-i18n="tl.5">Austro-Hungarian occupation; Sanski Most becomes a district seat.</p></li>
-          <li><span class="yr">1944</span><p data-i18n="tl.6">The second session of ZAVNOBiH is held here.</p></li>
+          <li><span class="yr">1944</span><p data-i18n="tl.6">The second session of ZAVNOBiH is held here.</p><figure class="tl-photo"><img src="photos/zavnobih3.jpg" alt="" loading="lazy" width="554" height="554" style="object-position:50% 62%"></figure></li>
           <!-- TODO(verify): check the 1992 entry with a local source before publishing. -->
           <li><span class="yr">1992</span><p data-i18n="tl.7">After the Army of Republika Srpska takes control of the municipality, non-Serb civilians are killed and held in camps; about 800 killed residents are later found in more than 30 graves. On 31 May, 19 civilians are killed on the Vrhpolje bridge; on 27 June the Hamzibeg Mosque is demolished.</p></li>
           <li><span class="yr">1995</span><p data-i18n="tl.8">The Bosnian Army enters the town in Operation Sana 95, on 9&ndash;10 October.</p></li>
-          <li><span class="yr">2000</span><p data-i18n="tl.9">The Hamzibeg Mosque reopens after reconstruction.</p></li>
+          <li><span class="yr">2000</span><p data-i18n="tl.9">The Hamzibeg Mosque reopens after reconstruction.</p><figure class="tl-photo"><img src="photos/hamzibegova5.webp" alt="" loading="lazy" width="1024" height="1472" style="object-position:50% 30%"></figure></li>
         </ol>
       </div>
 
