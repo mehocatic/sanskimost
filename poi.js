@@ -23,7 +23,7 @@ const POI = [
     slug: "blihe",
     cat: "water",
     coords: [44.788988, 16.5247591],
-    name: { en: "Blihe Waterfall", bs: "Vodopad Blihe" },
+    name: { en: "Bliha Waterfall", bs: "Vodopad Blihe" },
     short: { en: "A protected natural monument where the Bliha river drops about 56 m.", bs: "Zaštićeni spomenik prirode gdje rijeka Bliha pada oko 56 m." }
   },
   {

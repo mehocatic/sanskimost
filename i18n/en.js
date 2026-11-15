@@ -14,8 +14,8 @@ I18N.en = {
   'nav.close': 'Close',
 
   // home: head and hero
-  'home.meta': 'Sanski Most, Bosnia and Herzegovina: a town on nine rivers, with a medieval fortress, caves, the four-minaret Hamzibeg Mosque and Blihe Waterfall.',
-  'hero.caption': 'Blihe Waterfall',
+  'home.meta': 'Sanski Most, Bosnia and Herzegovina: a town on nine rivers, with a medieval fortress, caves, the four-minaret Hamzibeg Mosque and Bliha Waterfall.',
+  'hero.caption': 'Bliha Waterfall',
   'hero.scroll': 'Scroll',
   'hero.outro': 'Sanski Most · Bosnia and Herzegovina',
 
@@ -74,7 +74,7 @@ I18N.en = {
   'numbers.title': 'In numbers',
   'num.1': 'Rivers meet in and around the town.',
   'num.2': 'The length of the Sana river, which flows into the Una at Novi Grad.',
-  'num.3': 'The drop of the Blihe waterfall.',
+  'num.3': 'The drop of the Bliha waterfall.',
   'num.4': 'Minarets on the Hamzibeg Mosque, reportedly the only mosque in Bosnia and Herzegovina with four.',
   'num.5': 'The year Kamengrad fortress is first mentioned.',
   'num.6': 'Graves in an Iron Age necropolis from the 6th to the 3rd century BC.',
@@ -405,9 +405,9 @@ I18N.en = {
   // place texts by slug (same keys as in bs.js)
   places: {
     'blihe': {
-      name: 'Blihe Waterfall',
+      name: 'Bliha Waterfall',
       short: 'A protected natural monument where the Bliha river drops about 56 m.',
-      long: 'Blihe Waterfall, known locally as Blihin skok, lies about 14 km from Sanski Most. Here the Bliha river drops about 56 m. It is a protected natural monument.\n\nThe “Cvjetna” hiking trail, about 15 km long, links Kamengrad, the waterfall and the Jasice recreation area.',
+      long: 'Bliha Waterfall, known locally as Blihin skok, lies about 14 km from Sanski Most. Here the Bliha river drops about 56 m. It is a protected natural monument.\n\nThe “Cvjetna” hiking trail, about 15 km long, links Kamengrad, the waterfall and the Jasice recreation area.',
       see: []
     },
     'kamengrad': {
@@ -417,7 +417,7 @@ I18N.en = {
       note: 'Local legend says the Ottomans besieged the fortress for eleven years.',
       see: [
         'Fatih’s Musalla, below the fortress.',
-        'The “Cvjetna” trail, which links Kamengrad, Blihe Waterfall and the Jasice recreation area.'
+        'The “Cvjetna” trail, which links Kamengrad, Bliha Waterfall and the Jasice recreation area.'
       ]
     },
     'musalla': {
