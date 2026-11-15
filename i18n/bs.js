@@ -102,6 +102,8 @@ I18N.bs = {
   'place.notfound.text': 'Na ovoj adresi nema mjesta. Odaberite neko mjesto s popisa.',
   'place.dist.label': 'Udaljenost od grada',
   'place.km': 'oko {km} km',
+  'place.alt.label': 'Nadmorska visina',
+  'place.alt': '{m} m',
   'place.map.open': 'Prikaži na karti',
   'place.map.label': 'Karta: {name}',
   'place.photo':'{name}: otvorite fotografiju {i} od {n}',
@@ -208,7 +210,7 @@ I18N.bs = {
     'korcanica': {
       name: 'Korčanica',
       short: 'Spomen-kompleks iz Drugog svjetskog rata na planini Grmeč, otvoren 1979.',
-      long: 'Memorijalna zona Korčanica posvećena je Narodnooslobodilačkoj borbi u Drugom svjetskom ratu. Nalazi se oko 32 km od Sanskog Mosta, kod planine Grmeč, a obuhvata nekoliko objekata, među njima česmu i dvije grobnice.\n\nU ovom području je 1942. i 1943. djelovala partizanska bolnica sa 19 objekata.\n\nSpomenik „Revolucije“, rad vajara Ljubomira Denkovića, otvoren je 27. jula 1979. na mjestu spomen-obeliska. Čine ga dva velika polukružna zida, visoka oko 15 m, koji okružuju unutrašnji prostor s maketom terena i bolnice, te veliko vodeno ogledalo ispred njih.\n\nPrije rata područje je bilo hortikulturno uređeno, a posjećivali su ga turisti i učenici. Od 1990-ih je zapušteno i uglavnom zaboravljeno.',
+      long: 'Memorijalna zona Korčanica posvećena je Narodnooslobodilačkoj borbi u Drugom svjetskom ratu. Nalazi se oko 32 km od Sanskog Mosta, kod planine Grmeč, a obuhvata nekoliko objekata, među njima česmu i dvije grobnice. Leži na 836 m nadmorske visine, na sjeveroistočnoj strani Grmeča, oko 9 km južno od Lušci Palanke.\n\nU ovom području je 1942. i 1943. djelovala partizanska bolnica sa 19 objekata, najveća u Bosanskoj krajini.\n\nSpomenik „Revolucije“, rad vajara Ljubomira Denkovića, otvoren je 27. jula 1979. na mjestu spomen-obeliska. Čine ga dva velika polukružna zida, visoka oko 15 m, u obliku rasječenog pupoljka, koji okružuju unutrašnji prostor s maketom terena i bolnice, te veliko vodeno ogledalo ispred njih.\n\nOkolne šume su bukva, jela i smrča, uz hrast i javor. Uz spomen-zonu je radio i hotel, koji je danas u ruševinama.\n\nPrije rata područje je bilo hortikulturno uređeno, a posjećivali su ga turisti i učenici. Od 1990-ih je zapušteno i uglavnom zaboravljeno.',
       see: [
         'Prašuma na Grmeču, oko 17 km od grada: više od 100 ha, sa stablima starijim od 500 godina.'
       ]

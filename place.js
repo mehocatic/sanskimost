@@ -180,12 +180,13 @@
   sync();
 
   /* ---------- facts and mini map ---------- */
-  // distance (places.js km) and the position (places.js coords); a place without them shows nothing for them
+  // distance and elevation (places.js km, alt) and the position (places.js coords); a place without them shows nothing for them
   const TILES = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
   const ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-  const hasKm = p.km != null, hasPos = Array.isArray(p.coords);
+  const hasKm = p.km != null, hasAlt = p.alt != null, hasPos = Array.isArray(p.coords);
   $('fact-dist').hidden = !hasKm;
-  $('place-facts').hidden = !(hasKm || hasPos);
+  $('fact-alt').hidden = !hasAlt;
+  $('place-facts').hidden = !(hasKm || hasAlt || hasPos);
   $('map-link').hidden = !hasPos;
   if (hasPos) $('map-link').href = `explore?place=${encodeURIComponent(p.slug)}`;
 
@@ -258,6 +259,7 @@
     $('pager-next').querySelector('.pn').textContent = I18n.place(next, 'name');
 
     if (hasKm) $('fact-dist-v').textContent = I18n.t('place.km', { km: p.km });
+    if (hasAlt) $('fact-alt-v').textContent = I18n.t('place.alt', { m: p.alt });
     if (hasPos) {
       $('place-map').setAttribute('aria-label', I18n.t('place.map.label', { name: nm }));
       if (miniMarker) { miniMarker.options.title = miniMarker.options.alt = nm; const el = miniMarker.getElement(); if (el) el.title = nm; }

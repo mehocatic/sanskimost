@@ -5,6 +5,7 @@
 // slug    : address of the place page (place.html?slug=...) and key of its texts
 // coords  : [lat, lon] for the map on explore.html (a place without it has no marker); the comment names the source
 // km      : approximate distance from town in km, only where FACTS.md or the place text states it (shown on the place page and on /plan)
+// alt     : elevation in m, only where a source states it (shown on the place page)
 // see     : links of the "Also worth seeing" entries, in the same order as the texts in the language files:
 //           the slug of a place the entry links to, or null for a plain text entry (omit when there is none)
 // photos  : the first photo is the cover on the card (shown cropped to the card). Each entry is created with pic(name, extra):
@@ -101,15 +102,19 @@ const PLACES = [
     // coords: OpenStreetMap node 11146153554 (historic=memorial, "Korčanica Monument to the Revolution at Grmeč")
     coords: [44.6872744, 16.4375984],
     km: 32, // the Korčanica text says about 32 km from town
+    alt: 836, // elevation in m: Zukanović, "Sanski Most nekad i sad" (2024)
     // TODO(verify): Meho's text gives 316 fallen fighters buried in two tombs, and 2732 m2 for the hospital; no source is named, so left out.
-    // The earlier text said "central white concrete sculpture shaped like an opening bud" and "underground museum"; Meho's text says
-    // two semicircular marble walls. The material and the museum are left out until a source settles it.
+    // The book describes the monument as a "split flower bud", which is what the two semicircular walls in the photos are.
+    // The material and the "underground museum" of an earlier text are left out until a source settles them.
+    // Left out: the book says the battle for the wounded on the Neretva started from here; no second source.
     see: [null],
     photos: [
       pic("korcanica.jpg"),
       pic("korcanica2.jpg"),
       pic("korcanica3.jpg", { main: true }), // the monument, shown at the top (738 x 416)
-      pic("korcanica4.webp") // the ruined hotel
+      pic("korcanica4.webp"), // the ruined hotel
+      // TODO(verify): an old postcard of the hotel; it is in Meho's notes from the book, the publisher of the postcard is not known
+      pic("arhiv/korcanica-razglednica.webp", { archive: true, source: BOOK })
     ]
   },
   {

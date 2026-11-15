@@ -84,6 +84,8 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
 /* distance and the link to the map */
 .place-facts { grid-area: facts; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 1.6rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--rule); }
 .place-facts[hidden] { display: none; }
+.place-facts dl { display: flex; flex-wrap: wrap; gap: .8rem 2rem; }
+.place-facts dl > div[hidden] { display: none; }
 .place-facts dt { font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: var(--acc); }
 .place-facts dd { margin: .2rem 0 0; font-family: var(--serif); font-size: 1.7rem; line-height: 1.1; }
 .facts-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: 0 1.1rem; border: 1px solid var(--acc); color: var(--fg); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; }
