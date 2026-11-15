@@ -108,3 +108,121 @@ footer {
 @media (min-width: 960px) {
   .strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; max-width: 900px; }
 }
+
+/* Chapter "Kako se živjelo": small sections (.zv) about the railway, the river and the timber, two receipts, the cinema
+   and the gatherings. Each one has its own little layout; together they read like a scrapbook of the town. */
+.zv { margin-top: clamp(56px, 8vw, 96px); max-width: 980px; }
+.zv-h { display: flex; align-items: baseline; gap: 14px; margin-bottom: 1.4rem; }
+.zv-h span { font-family: var(--serif); font-size: 1.1rem; color: var(--acc); }
+.zv-h h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1; }
+.zv-h::after { content: ""; flex: 1; height: 1px; background: var(--rule); transform: translateY(-.35em); }
+.zv > p { max-width: 40rem; color: var(--fg-soft); }
+.zv-src { margin-top: .9rem; font-size: .76rem; color: var(--fg-muted); }
+
+/* the railway: photos in a row with a line of track under them */
+.rail-row { list-style: none; display: flex; gap: 18px; margin-top: 1.8rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 44px; position: relative; }
+.rail-row li { flex: 0 0 min(72vw, 290px); scroll-snap-align: start; position: relative; }
+.rail-row li::after {
+  /* a piece of track under every photo; side by side they make one track */
+  content: ""; position: absolute; left: -18px; right: 0; bottom: -34px; height: 16px;
+  background:
+    linear-gradient(var(--ink), var(--ink)) 0 3px / 100% 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) 0 11px / 100% 2px no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 10px, rgba(21, 26, 24, .5) 10px 15px);
+  opacity: .55;
+}
+.rail-row li:first-child::after { left: 0; }
+.rail-row figure { margin: 0; }
+.rail-row img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; filter: sepia(.12) contrast(1.03); }
+.rail-row figcaption { margin-top: .55rem; font-size: .84rem; line-height: 1.45; color: var(--fg-muted); }
+.rail-row figcaption b { display: block; font-weight: 500; color: var(--fg); }
+@media (min-width: 960px) { .rail-row { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; } }
+
+/* a newspaper clipping, pinned with a strip of tape */
+.clip { position: relative; margin: 0; padding: 10px; background: #f3efe4; transform: rotate(-1.6deg); box-shadow: 0 14px 30px -18px rgba(0, 0, 0, .55); }
+.clip::before { content: ""; position: absolute; top: -12px; left: 50%; width: 92px; height: 24px; transform: translateX(-50%) rotate(2deg); background: rgba(225, 214, 180, .75); box-shadow: 0 1px 2px rgba(0, 0, 0, .08); }
+.clip img { display: block; width: 100%; height: auto; filter: contrast(1.05); }
+.clip figcaption { margin-top: .5rem; font-size: .8rem; color: var(--fg-muted); }
+.zv-pair { display: grid; gap: 34px; margin-top: 2rem; align-items: start; }
+.zv-pair .clip { max-width: 260px; justify-self: center; }
+@media (min-width: 760px) { .zv-pair { grid-template-columns: minmax(0, 1fr) 240px; } }
+
+/* timber on the river: one wide photo with the caption laid over it, a second photo beside */
+.wide { position: relative; margin: 1.8rem 0 0; overflow: hidden; }
+.wide img { display: block; width: 100%; height: auto; filter: sepia(.18) contrast(1.06); }
+.wide figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 22px 18px;
+  background: linear-gradient(transparent, rgba(12, 16, 14, .78)); color: var(--paper); font-size: .86rem;
+}
+.wide figcaption b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.1; }
+.zv-split { display: grid; gap: 24px; margin-top: 24px; align-items: center; }
+.zv-split figure { margin: 0; }
+.zv-split img { display: block; width: 100%; height: auto; filter: sepia(.1) contrast(1.03); }
+.zv-split figcaption { margin-top: .5rem; font-size: .84rem; color: var(--fg-muted); }
+.zv-split figcaption b { display: block; font-weight: 500; color: var(--fg); }
+@media (min-width: 760px) { .zv-split { grid-template-columns: 1fr 1fr; gap: 40px; } }
+
+/* two receipts: the scan next to a clean copy of what it says, on lined paper */
+.rcpt { display: grid; gap: 28px; margin-top: 1.8rem; align-items: start; }
+@media (min-width: 820px) { .rcpt { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 40px; } }
+.rcpt-scan { margin: 0; padding: 10px; background: #e7e2d5; box-shadow: 0 16px 32px -20px rgba(0, 0, 0, .45); }
+.rcpt-scan img { display: block; width: 100%; height: auto; }
+.ledger {
+  position: relative; padding: 26px 24px 22px 46px; background-color: #fbf9f3;
+  background-image: linear-gradient(90deg, transparent 32px, rgba(190, 70, 60, .35) 32px 33px, transparent 33px),
+    repeating-linear-gradient(transparent 0 29px, rgba(23, 149, 160, .16) 29px 30px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .04), 0 18px 34px -22px rgba(0, 0, 0, .45);
+  font-variant-numeric: tabular-nums;
+}
+.ledger-to { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--fg-muted); }
+.ledger-t { font-family: var(--serif); font-size: 1.7rem; line-height: 1.1; margin: .2rem 0 1rem; }
+.ledger ol { list-style: none; }
+.ledger li { display: flex; align-items: baseline; gap: 8px; line-height: 30px; font-size: .92rem; }
+.ledger li span { flex: 1; min-width: 0; border-bottom: 1px dotted rgba(21, 26, 24, .35); transform: translateY(-.3em); }
+.ledger li em { font-family: var(--serif); font-size: 1.12rem; }
+.ledger li.sum { font-weight: 500; }
+.ledger li.total { margin-top: 6px; border-top: 2px solid var(--ink); font-weight: 500; font-size: 1rem; }
+.ledger li.total b { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; }
+.ledger-sign { margin-top: 1rem; font-size: .8rem; color: var(--fg-muted); }
+.quote { margin: 2rem 0 0; max-width: 38rem; padding-left: 20px; border-left: 2px solid var(--acc); }
+.quote p { font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.3; }
+.quote cite { display: block; margin-top: .5rem; font-style: normal; font-size: .78rem; color: var(--fg-muted); }
+.rcpt.small { grid-template-columns: 1fr; }
+.rcpt.small .rcpt-scan { max-width: 240px; }
+@media (min-width: 820px) { .rcpt.small { grid-template-columns: 200px minmax(0, 1fr); align-items: center; } }
+.rcpt.small p { color: var(--fg-soft); max-width: 34rem; }
+.rcpt.small p b { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; color: var(--fg); }
+
+/* the cinema: a dark board with the programme, lit by a row of bulbs */
+.kino { display: grid; gap: 30px; margin-top: 1.8rem; align-items: start; }
+@media (min-width: 900px) { .kino { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); } }
+.board {
+  position: relative; padding: 34px clamp(20px, 3vw, 36px) 30px; background: #12100d; color: #f3ead6;
+  box-shadow: inset 0 0 0 1px rgba(243, 234, 214, .08), 0 24px 48px -26px rgba(0, 0, 0, .8);
+}
+.board::before, .board::after {
+  /* the bulbs along the top and the bottom edge */
+  content: ""; position: absolute; left: 14px; right: 14px; height: 8px;
+  background: radial-gradient(circle, #ffd889 0 2.4px, rgba(255, 196, 92, .25) 3.2px, transparent 4.5px) 0 0 / 18px 8px repeat-x;
+}
+.board::before { top: 10px; } .board::after { bottom: 10px; }
+.board-k { font-size: .7rem; letter-spacing: .4em; text-transform: uppercase; color: #e9b75c; }
+.board-t { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: .95; margin: .3rem 0 1.4rem; letter-spacing: .02em; }
+.board ol { list-style: none; columns: 2 220px; column-gap: 28px; }
+.board li { break-inside: avoid; display: grid; grid-template-columns: 3.6em 1fr; gap: 10px; padding: 7px 0; border-top: 1px solid rgba(243, 234, 214, .1); font-size: .82rem; }
+.board li i { font-style: normal; color: #e9b75c; font-variant-numeric: tabular-nums; }
+.board li b { font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+.board-note { margin-top: 1.2rem; font-size: .8rem; color: rgba(243, 234, 214, .62); }
+.kino-side .clip { transform: rotate(1.4deg); max-width: 300px; }
+.kino-side p { margin-top: 1.6rem; font-size: .92rem; color: var(--fg-soft); }
+
+/* gatherings: a mosaic, the year written large over every photo */
+.mosaic { display: grid; gap: 12px; margin-top: 1.8rem; grid-template-columns: 1fr 1fr; }
+.mosaic figure { position: relative; margin: 0; overflow: hidden; }
+.mosaic figure:first-child { grid-column: 1 / -1; }
+.mosaic img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; filter: sepia(.12) contrast(1.04); transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
+.mosaic figure:first-child img { aspect-ratio: 2 / 1; }
+.mosaic figure:hover img { transform: scale(1.03); }
+.mosaic figcaption { position: absolute; inset: auto 0 0 0; padding: 50px 16px 12px; background: linear-gradient(transparent, rgba(12, 16, 14, .8)); color: var(--paper); font-size: .8rem; line-height: 1.35; }
+.mosaic figcaption b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.4vw, 3.4rem); line-height: .9; margin-bottom: .2rem; }
+@media (max-width: 560px) { .mosaic { grid-template-columns: 1fr; } .mosaic img, .mosaic figure:first-child img { aspect-ratio: 4 / 3; } }
