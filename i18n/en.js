@@ -272,6 +272,12 @@ I18N.en = {
   'hist.ul.now': 'Today',
   'hist.ul.wait': 'a photo from the same spot, coming soon',
   'hist.src.es': 'Photo: Edin Šarčević',
+  'hist.ul.1': 'Prijedorska Street',
+  'hist.ul.1.span': '01 · 1961 – today',
+  'hist.ul.1.p': 'The same street at three times: an avenue of trees in 1961, floodwater in 1976 and spring 1997.',
+  'hist.ul.1.a': 'Prijedorska Street, 1961',
+  'hist.ul.1.b': 'Flood in Prijedorska Street, 1976',
+  'hist.ul.1.c': 'Prijedorska Street, 31 March 1997',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

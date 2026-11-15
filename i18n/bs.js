@@ -274,6 +274,12 @@ I18N.bs = {
   'hist.ul.now': 'Danas',
   'hist.ul.wait': 'fotografija iz istog ugla, uskoro',
   'hist.src.es': 'Foto: Edin Šarčević',
+  'hist.ul.1': 'Prijedorska ulica',
+  'hist.ul.1.span': '01 · 1961 – danas',
+  'hist.ul.1.p': 'Ista ulica u tri vremena: drvored 1961, voda 1976. i proljeće 1997.',
+  'hist.ul.1.a': 'Prijedorska ulica, 1961.',
+  'hist.ul.1.b': 'Poplava u Prijedorskoj, 1976.',
+  'hist.ul.1.c': 'Prijedorska ulica, 31. 3. 1997.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
