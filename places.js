@@ -108,7 +108,9 @@ const PLACES = [
       // The printed caption of one page says 10 April 1997, the handwritten date and the other pages say 10 April 1998; the site uses 1998.
       pic("arhiv/dzamija-gradnja-b.webp", { archive: "1998", author: "Edin Šarčević" }),
       pic("arhiv/dzamija-gradnja-c.webp", { archive: "1998", author: "Edin Šarčević" }),
-      pic("arhiv/dzamija-gradnja-d.webp", { archive: "1998", author: "Edin Šarčević" })
+      pic("arhiv/dzamija-gradnja-d.webp", { archive: "1998", author: "Edin Šarčević" }),
+      pic("arhiv/dzamija-gradnja-a.webp", { archive: "1998", author: "Edin Šarčević" }),
+      pic("arhiv/dzamija-ulica-1998.webp", { archive: "1998", author: "Edin Šarčević" })
     ],
     // the old mosque in 1946 (one minaret) and the one rebuilt in 2000 (four minarets)
     thenNow: { old: "arhiv/hamzibegova-1946.webp", now: "hamzibegova5.webp", ar: "3 / 4", posOld: "50% 40%", posNow: "50% 55%" }
