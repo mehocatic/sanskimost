@@ -48,8 +48,8 @@ const PLACES = [
     slug: "kamengrad",
     // coords: OpenStreetMap node 4409177788 (historic=archaeological_site, "Tvrđava Stari Grad"); English Wikipedia "Kamengrad Fort" gives 44.7786, 16.5631, the same spot
     coords: [44.7797073, 16.5630776],
-    // TODO(verify): Meho's text says first mentioned in 1373 (and, for the musalla, "in the 13th century"); FACTS.md and the site say 1374.
-    // TODO(verify): dates of the Ottoman conquest differ: 1463 and 11 years later (Meho), 1498 (FACTS.md), in Ottoman hands in 1499 (Kreševljaković).
+    // Checked 2026-11-15: first mention is 3 May 1374 (Kreševljaković, KONS, bs Wikipedia); no source found for 1373, so the site says 1374.
+    // Dates of the Ottoman conquest differ in sources: 1463 (tradition, Fatih's musalla), 1498 (KONS decision), 1499 (Kreševljaković); the site lists them as "sources differ".
     // The site now lists the dates as "sources differ" and no longer says that most historians give 1463.
     // TODO(verify): Meho's text says the Kamengrad kadiluk was founded around 1541 and that from 1624 the town was the seat of a captaincy
     // (Stari Majdan, Sanski Most "Vakuf"). Neither is in FACTS.md, so both sentences were taken off the site (EN and BS).
@@ -78,7 +78,7 @@ const PLACES = [
     slug: "hamzibegova",
     // coords: OpenStreetMap way 346178044 (amenity=place_of_worship, "Hamza-begova džamija")
     coords: [44.7638251, 16.6648616],
-    // TODO(verify): Meho's text says members of the Army of Republika Srpska demolished the mosque on 27 June 1992 and that
+    // Demolition date: bs Wikipedia, Inmedia and the Medžlis (2007) say 27 June 1992; a 2025 Medžlis text says 27 May (probably an error). The 1992 timeline entry now says only "in June". Meho's text says members of the Army of Republika Srpska demolished the mosque and that
     // the building material and gravestones were taken to a dump. No source is named, so only the date is on the site.
     // TODO(verify): the text says "the largest mosque in Sanski Most"; left out (superlative, no source).
     // TODO(verify): hamzibegova4.webp (a prayer, wooden mihrab, looks like a scanned print) does not look like the interior in
@@ -206,7 +206,7 @@ const PLACES = [
     coords: [44.76558562977139, 16.670158483327427],
     // TODO(verify): Meho's text says works on the revitalisation were planned to start on Tuesday 27 October (the year is not stated).
     // The page only says the project has been contracted; update it when the works start.
-    // TODO(verify): the year of the first session (25 November, Mrkonjić Grad) is not in Meho's text.
+    // Confirmed 2026-11-15 (ANUBiH, parlament.ba): first session 25-26 November 1943 in Mrkonjić Grad; the site now says 1943.
     // TODO(verify): the text says the declaration was adopted in the "Sokolski dom"; it does not say outright that this is the building of the session.
     photos: [
       pic("zavnobih.webp"), // a photo of the old building in a book; no author or license known
