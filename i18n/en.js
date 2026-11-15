@@ -164,6 +164,17 @@ I18N.en = {
   'hist.3.f.grad': 'The Sana and the old part of town, a coloured photograph',
   'hist.3.f.ploca': 'The stone slab from the west side of the Sana gate',
   'hist.3.tn': 'The Hamzibeg Mosque in 1946, with one minaret, and today, rebuilt in 2000.',
+  'hist.4.chip': 'Austria-Hungary',
+  'hist.4.title': 'A village becomes a small town',
+  'hist.4.yr.html': '1878<br>–1918',
+  'hist.4.p1': 'The Austro-Hungarian army enters Sanski Most on 8 September 1878 without a fight, after two days of fighting for Ključ. A new town begins to grow on the right bank of the Sana.',
+  'hist.4.p2': 'The district office, the court, the gendarmerie and the land registry are built, and the first pharmacy and the first primary schools open, in Sanski Most and Stari Majdan. Work on the 78 km gravel road Prijedor – Sanski Most – Ključ begins in 1879. The Podgrmeč road towards Lušci Palanka and Bosanska Krupa is built from 1882 to 1894, and later a narrow-gauge railway towards Drvar.',
+  'hist.4.p3': 'On 18 August 1915 a monument to Emperor Franz Joseph I was unveiled, paid for by the townspeople and villagers of the whole district. The newspapers of the time called it the first imperial monument in Bosnia and Herzegovina. The new authorities pulled it down as early as December 1918.',
+  'hist.4.f.spomenik': 'The unveiling of the monument, 18 August 1915',
+  'hist.src.paper': 'From a newspaper of the time, via the book “Sanski Most nekad i sad”',
+  'hist.4.f.novine': 'A newspaper report of the unveiling',
+  'hist.4.bars': 'People living in the town of Sanski Most, by census',
+  'hist.4.bars.note': 'The whole district had 18 371 people in 1879 and 38 422 by 1910.',
   'hist.note': 'If you took one of these photographs or know who did, let us know, so that we can credit it or take it down.',
 
   // explore page

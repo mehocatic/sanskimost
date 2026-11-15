@@ -166,6 +166,17 @@ I18N.bs = {
   'hist.3.f.grad': 'Sana i stari dio grada, kolorirana fotografija',
   'hist.3.f.ploca': 'Kamena ploča sa zapadne strane kapije Sane',
   'hist.3.tn': 'Hamzibegova džamija 1946, s jednom munarom, i danas, obnovljena 2000.',
+  'hist.4.chip': 'Austro-Ugarska',
+  'hist.4.title': 'Selo postaje varošica',
+  'hist.4.yr.html': '1878<br>–1918',
+  'hist.4.p1': 'Austrougarska vojska ulazi u Sanski Most 8. septembra 1878, bez borbe, nakon dvodnevnih borbi za Ključ. Novi grad počinje rasti na desnoj obali Sane.',
+  'hist.4.p2': 'Grade se zgrada kotara, kotarski sud, žandarmerija i gruntovnica, a otvaraju se prva apoteka i prve osnovne škole, u Sanskom Mostu i Starom Majdanu. Makadamski put Prijedor – Sanski Most – Ključ, dug 78 km, počinje se graditi 1879. Podgrmečka cesta prema Lušci Palanci i Bosanskoj Krupi gradi se od 1882. do 1894, a kasnije i uskotračna pruga prema Drvaru.',
+  'hist.4.p3': 'Dana 18. augusta 1915. otkriven je spomenik caru Franji Josipu I, podignut troškom građana i seljaka cijelog kotara. Tadašnje novine pisale su da je to prvi carski spomenik u Bosni i Hercegovini. Nova vlast srušila ga je već u decembru 1918.',
+  'hist.4.f.spomenik': 'Otkrivanje spomenika, 18. august 1915.',
+  'hist.src.paper': 'Iz tadašnjih novina, prema knjizi „Sanski Most nekad i sad“',
+  'hist.4.f.novine': 'Novinski izvještaj o otkrivanju spomenika',
+  'hist.4.bars': 'Stanovnika u varoši Sanski Most, prema popisima',
+  'hist.4.bars.note': 'U cijelom kotaru 1879. je živjelo 18 371 stanovnika, a 1910. već 38 422.',
   'hist.note': 'Ako ste autor neke od ovih fotografija ili znate ko jeste, javite nam se, da je potpišemo ili uklonimo.',
 
   // explore page
