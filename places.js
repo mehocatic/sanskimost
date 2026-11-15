@@ -79,7 +79,9 @@ const PLACES = [
       pic("musalla.webp", { author: "Almedin Handanovic" }), // author: EXIF Artist tag of the file (Copyright tag says "Gorsak na salasu", not a license)
       pic("musalla2.webp"),
       // photos/musalla3.jpg (in originals/) shows the monument to the Turkish martyrs (OSM node 4409248503), not the musalla; no place page for it
-      pic("musalla4.webp")
+      pic("musalla4.webp"),
+      // an old postcard, "Musalla Sultan Fatih Mehmed II. - D. Kamengrad"; from Meho's notes, the publisher is not known
+      pic("arhiv/musala-razglednica.webp", { archive: true, alt: "Musalla Sultan Fatih Mehmed II., D. Kamengrad" })
     ]
   },
   {
