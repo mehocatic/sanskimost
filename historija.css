@@ -229,7 +229,7 @@ footer {
 @media (max-width: 560px) { .mosaic { grid-template-columns: 1fr; } .mosaic img, .mosaic figure:first-child img { aspect-ratio: 4 / 3; } }
 
 /* Chapter "Ulice kroz vrijeme": one street or place per block (.ul). The photos of the same place stand on a time line,
-   oldest first; the last card waits for a photo of today. */
+   oldest first. A photo of today is added at the end of a line once it exists (none are shown before that). */
 .ul { scroll-margin-top: 120px; margin-top: clamp(56px, 8vw, 100px); }
 .ul-h { display: grid; gap: 4px 24px; align-items: end; max-width: 980px; }
 .ul-h h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: .95; }
@@ -257,14 +257,6 @@ footer {
 .tl img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; filter: contrast(1.02); background: #ddd8cb; }
 .tl figcaption { margin-top: .55rem; font-size: .84rem; line-height: 1.45; color: var(--fg-muted); }
 .tl figcaption b { display: block; font-weight: 500; color: var(--fg); }
-/* the photo of today, still to be taken */
-.tl li.now::after { background: transparent; border: 1.5px dashed var(--acc); width: 9px; height: 9px; }
-.tl .wait {
-  display: grid; place-items: center; aspect-ratio: 4 / 3; border: 1.5px dashed rgba(21, 26, 24, .28);
-  color: var(--fg-muted); font-size: .84rem; text-align: center; padding: 20px;
-}
-.tl .wait span { display: block; }
-.tl .wait b { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.6rem; color: var(--fg); }
 /* a row longer than the screen shows a soft edge on the right */
 .tl::after { content: ""; position: absolute; top: 0; right: 0; bottom: 18px; width: 60px; pointer-events: none; background: linear-gradient(90deg, transparent, var(--sec-bg)); }
 
