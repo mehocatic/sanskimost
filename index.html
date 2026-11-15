@@ -116,20 +116,48 @@
 
     </section>
 
-    <div class="rise to-deep" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
-
-    <section id="numbers" class="on-deep" aria-labelledby="numbers-title">
+    <!-- every figure here is also in the texts above or on the place pages; the drawings only illustrate them (main.js) -->
+    <section id="numbers" class="on-paper" aria-labelledby="numbers-title">
       <header>
         <p class="eyebrow">Sanski Most</p>
         <h2 class="h3" id="numbers-title" data-i18n="numbers.title">In numbers</h2>
       </header>
-      <ul class="stats">
-        <li class="stat s1"><p class="num"><span class="n" data-to="9">9</span></p><p class="cap" data-i18n="num.1">Rivers meet in and around the town.</p></li>
-        <li class="stat s2"><p class="num"><span class="n" data-to="142">142</span><span class="u"> km</span></p><p class="cap" data-i18n="num.2">The length of the Sana river, which flows into the Una at Novi Grad.</p></li>
-        <li class="stat s3"><p class="num"><span class="n" data-to="56">56</span><span class="u"> m</span></p><p class="cap" data-i18n="num.3">The drop of the Blihe waterfall.</p></li>
-        <li class="stat s4"><p class="num"><span class="n" data-to="4">4</span></p><p class="cap" data-i18n="num.4">Minarets on the Hamzibeg Mosque, reportedly the only mosque in Bosnia and Herzegovina with four.</p></li>
-        <li class="stat s5"><p class="num"><span class="n" data-to="1374">1374</span></p><p class="cap" data-i18n="num.5">The year Kamengrad fortress is first mentioned.</p></li>
-        <li class="stat s6"><p class="num"><span class="n" data-to="176">176</span></p><p class="cap" data-i18n="num.6">Graves in an Iron Age necropolis from the 6th&ndash;3rd century BC.</p></li>
+      <ul class="bento">
+        <li class="tile t-photo t-56">
+          <img src="photos/bliha2-1200.webp" alt="" loading="lazy" width="1200" height="800">
+          <span class="ruler" aria-hidden="true"><b>56</b><b>28</b><b>0</b></span>
+          <p class="num"><span class="n" data-to="56">56</span><span class="u"> m</span></p>
+          <p class="cap" data-i18n="num.3">The drop of the Blihe waterfall.</p>
+        </li>
+        <li class="tile t-water t-9">
+          <svg class="nine-lines" aria-hidden="true"></svg>
+          <p class="num"><span class="n" data-to="9">9</span></p>
+          <p class="cap" data-i18n="num.1">Rivers meet in and around the town.</p>
+        </li>
+        <li class="tile t-plain t-142">
+          <p class="num"><span class="n" data-to="142">142</span><span class="u"> km</span></p>
+          <div class="trk" aria-hidden="true"><i></i><b></b></div>
+          <p class="trk-ends" aria-hidden="true"><span data-i18n="num.2.from">Source</span><span data-i18n="num.2.to">Una, Novi Grad</span></p>
+          <p class="cap" data-i18n="num.2">The length of the Sana river, which flows into the Una at Novi Grad.</p>
+        </li>
+        <li class="tile t-photo t-1374">
+          <img src="photos/kamengrad.webp" alt="" loading="lazy" width="1200" height="896">
+          <p class="num"><span class="n" data-to="1374" data-from="1300">1374</span></p>
+          <p class="cap" data-i18n="num.5">The year Kamengrad fortress is first mentioned.</p>
+          <div class="trk" aria-hidden="true"><i></i><b></b></div>
+          <p class="trk-ends" aria-hidden="true"><span>1374</span><span data-i18n="num.5.span">more than 650 years</span><span data-i18n="history.chain.today">today</span></p>
+        </li>
+        <li class="tile t-photo t-4">
+          <img src="photos/hamzibegova5.webp" alt="" loading="lazy" width="1024" height="1472">
+          <p class="num"><span class="n" data-to="4">4</span></p>
+          <p class="cap" data-i18n="num.4">Minarets on the Hamzibeg Mosque, reportedly the only mosque in Bosnia and Herzegovina with four.</p>
+        </li>
+        <li class="tile t-plain t-176">
+          <p class="num"><span class="n" data-to="176">176</span></p>
+          <p class="cap" data-i18n="num.6">Graves in an Iron Age necropolis from the 6th&ndash;3rd century BC.</p>
+          <!-- one dot per grave, filled by main.js -->
+          <div class="dots" id="dots" aria-hidden="true"></div>
+        </li>
       </ul>
     </section>
 

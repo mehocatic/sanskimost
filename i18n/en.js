@@ -77,6 +77,9 @@ I18N.en = {
   'num.4': 'Minarets on the Hamzibeg Mosque, reportedly the only mosque in Bosnia and Herzegovina with four.',
   'num.5': 'The year Kamengrad fortress is first mentioned.',
   'num.6': 'Graves in an Iron Age necropolis from the 6th–3rd century BC.',
+  'num.2.from': 'Source',
+  'num.2.to': 'Una, Novi Grad',
+  'num.5.span': 'more than 650 years',
 
   // rivers (river names are the same in both languages and stay in the HTML)
   'rivers.eyebrow': 'Nine rivers',

@@ -187,18 +187,58 @@
   }
   markNow();
 
-  /* ---------- numbers: count up from zero when the section enters the screen ---------- */
+  /* ---------- numbers: each tile plays once when it enters the screen ---------- */
+  const SVG = 'http://www.w3.org/2000/svg';
+  const svgEl = (tag, attrs, parent) => {
+    const n = document.createElementNS(SVG, tag);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  };
+  // 176 dots, one for each grave
+  document.getElementById('dots').innerHTML = '<i></i>'.repeat(176);
+
+  // nine thin lines that run into one, drawn to the size of the tile so the strokes are not stretched
+  const nineSvg = document.querySelector('.nine-lines');
+  function drawNine() {
+    const w = nineSvg.clientWidth, h = nineSvg.clientHeight;
+    if (!w || !h) return;
+    nineSvg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    nineSvg.replaceChildren();
+    const x1 = w * .84, y1 = h * .6;   // where they meet, on the right so the text on the left stays clear
+    for (let i = 0; i < 9; i++) {
+      const x0 = w * (.3 + i * .08);
+      svgEl('path', { d: `M${x0} 0 C${x0} ${h * .32} ${x1} ${h * .3} ${x1} ${y1}`, pathLength: 1, 'stroke-dasharray': 1 }, nineSvg);
+    }
+    svgEl('path', { class: 'trunk', d: `M${x1} ${y1} L${x1} ${h}`, pathLength: 1, 'stroke-dasharray': 1 }, nineSvg);
+  }
+  drawNine();
+  let nineW = nineSvg.clientWidth;
+  window.addEventListener('resize', () => { if (nineSvg.clientWidth !== nineW) { nineW = nineSvg.clientWidth; drawNine(); } });
+
   if (animate) {
-    document.querySelectorAll('.stat .n').forEach(el => {
-      const to = +el.dataset.to;
-      const o = { v: 0 };
-      el.textContent = '0';
+    const once = el => ({ trigger: el, start: 'top 85%', once: true });
+    // figures count up (a year starts near itself, not at zero)
+    document.querySelectorAll('.tile .n').forEach(el => {
+      const o = { v: +(el.dataset.from || 0) };
+      el.textContent = o.v;
       gsap.to(o, {
-        v: to, duration: 2, ease: 'power2.out', snap: { v: 1 },
+        v: +el.dataset.to, duration: 2, ease: 'power2.out', snap: { v: 1 },
         onUpdate: () => { el.textContent = o.v; },
-        scrollTrigger: { trigger: el.closest('.stat'), start: 'top 85%', once: true }
+        scrollTrigger: once(el.closest('.tile'))
       });
     });
+    // the line fills and its dot travels with it, in step with the figure
+    document.querySelectorAll('.trk').forEach(t => {
+      const fill = t.querySelector('i'), dot = t.querySelector('b');
+      const o = { p: 0 };
+      const put = () => { fill.style.transform = `scaleX(${o.p})`; dot.style.left = (o.p * 100) + '%'; };
+      put();
+      gsap.to(o, { p: 1, duration: 2, ease: 'power2.out', onUpdate: put, scrollTrigger: once(t.closest('.tile')) });
+    });
+    gsap.from('.ruler', { scaleY: 0, duration: 1.6, ease: 'power2.out', scrollTrigger: once('.t-56') });
+    gsap.fromTo('.nine-lines path', { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.2, stagger: .09, ease: 'power2.inOut', scrollTrigger: once('.t-9') });
+    gsap.fromTo('#dots i', { opacity: .15 }, { opacity: 1, duration: .25, stagger: .008, scrollTrigger: once('.t-176') });
   }
 
   /* ---------- 4. nine rivers: the Sana line draws, tributaries flow in and then get their names ---------- */

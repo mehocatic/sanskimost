@@ -79,6 +79,9 @@ I18N.bs = {
   'num.4': 'Munare Hamzibegove džamije, koja je, prema navodima, jedina džamija u Bosni i Hercegovini s četiri munare.',
   'num.5': 'Godina u kojoj se tvrđava Kamengrad prvi put spominje.',
   'num.6': 'Grobova u željeznodobnoj nekropoli iz 6.–3. stoljeća p. n. e.',
+  'num.2.from': 'Izvor',
+  'num.2.to': 'Una, Novi Grad',
+  'num.5.span': 'više od 650 godina',
 
   // rivers
   'rivers.eyebrow': 'Devet rijeka',
