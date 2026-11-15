@@ -343,6 +343,7 @@ I18N.en = {
   'hist.zv.5.h': 'A family house at Progomolje',
   'hist.zv.70s': '1970s',
   'hist.2.p3': 'According to the history published by the Municipality of Sanski Most, a settlement called Mren is mentioned as early as about 820. The oldest known document naming the Sana is a charter of King Béla IV of 20 July 1244, together with the counties of the Donji kraji: Sana, Dubica, Mren and Vrbaška. A župan of Sana, Mihailo, is mentioned in 1258, and in 1413 King Sigismund took the Sana from Duke Hrvoje and gave it to the Blagaj princes.',
+  'hist.3.p4': 'Kamengrad was the main Ottoman fortress of the area and the seat of a kadiluk (a judicial district) set up between 1562 and 1574. When the Ottomans took Krupa in 1565, most of the garrison moved there and Kamengrad lost its earlier weight; from 1711 the seat of the Kamengrad kadiluk was in Stari Majdan. The Kamengrad captaincy was run by captains, most of them from the Cerić family, until the captaincies were abolished in 1835.',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
