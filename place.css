@@ -8,19 +8,20 @@ body { color: var(--fg); min-height: 100svh; }
   font: inherit; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; cursor: pointer;
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
 }
-.back:hover, .lb-btn:hover, .slider-btn:hover { border-color: var(--sand); }
+.back:hover, .lb-btn:hover, .slider-btn:hover { border-color: var(--river-light); }
 /* below the menu bar, and part of the page: it scrolls away with the header instead of covering the text */
 .back { position: absolute; top: 76px; left: var(--gutter); z-index: 20; border-radius: 999px; background: rgba(21, 26, 24, .8); border-color: rgba(246, 244, 238, .16); }
 
 /* every place has the same layout: a low dark header, a slider of all its photos, then the text */
 .place-head {
-  box-sizing: border-box; min-height: 150px; padding: 86px var(--gutter) 16px;
+  /* the top padding leaves room for the menu bar and the back button above the title */
+  box-sizing: border-box; min-height: 196px; padding: 136px var(--gutter) 16px;
   display: flex; flex-direction: column; justify-content: flex-end; background: var(--deep);
 }
 .place-head .eyebrow { margin-bottom: .5rem; }
 .place-head h1 { font-family: var(--serif); font-weight: 400; line-height: 1; letter-spacing: -.01em; font-size: clamp(1.8rem, 8vw, 2.2rem); overflow-wrap: break-word; }
 @media (min-width: 769px) {
-  .place-head { min-height: 176px; padding: 86px var(--gutter) 18px; }
+  .place-head { min-height: 216px; padding: 136px var(--gutter) 18px; }
   .place-head h1 { font-size: clamp(2.2rem, 3.6vw, 2.7rem); }
 }
 
