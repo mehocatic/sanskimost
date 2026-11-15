@@ -299,6 +299,13 @@ I18N.bs = {
   'hist.ul.3.d': 'Raskrsnica kod džamije',
   'hist.ul.3.credit': 'Fotografije iz 1998: Edin Šarčević',
   'hist.ul.3.link': 'Nekad i danas na stranici džamije →',
+  'hist.ul.4': 'Mahala i Muhići',
+  'hist.ul.4.span': '04 · 1996 – 1998',
+  'hist.ul.4.p': 'Most na Zdeni prema Mahali i Muhićima i ulice Muhića u proljeće 1998.',
+  'hist.ul.4.a': 'Most na Zdeni, 12. 10. 1996.',
+  'hist.ul.4.b': 'Kod mosta na Zdeni, 12. 10. 1996.',
+  'hist.ul.4.c': 'Poslije bajram-namaza, 7. 4. 1998.',
+  'hist.ul.4.d': 'Muhići, 10. 4. 1998.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

@@ -297,6 +297,13 @@ I18N.en = {
   'hist.ul.3.d': 'The crossroads by the mosque',
   'hist.ul.3.credit': 'Photographs from 1998: Edin Šarčević',
   'hist.ul.3.link': 'Then and now on the mosque’s page →',
+  'hist.ul.4': 'Mahala and Muhići',
+  'hist.ul.4.span': '04 · 1996 – 1998',
+  'hist.ul.4.p': 'The bridge on the Zdena towards Mahala and Muhići, and the streets of Muhići in spring 1998.',
+  'hist.ul.4.a': 'The bridge on the Zdena, 12 October 1996',
+  'hist.ul.4.b': 'By the bridge on the Zdena, 12 October 1996',
+  'hist.ul.4.c': 'After the Bajram prayer, 7 April 1998',
+  'hist.ul.4.d': 'Muhići, 10 April 1998',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
