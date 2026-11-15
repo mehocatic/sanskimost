@@ -228,6 +228,11 @@ I18N.bs = {
   'hist.zv.1.p': 'Kratka vijest iz lokalnih novina bilježi dvije promjene na pruzi: u Bosanskom Vrhpolju je izgrađen mali drveni most na Sanici i put od jednog kilometra koji vezuje stanicu s cestom Sanski Most – Ključ, a Sanica, nakon 16 godina, ponovo dobija staničnu zgradu, za koju je Direkcija željeznica odobrila 12 miliona dinara.',
   'hist.zv.1.clip': 'Isječak iz novina',
   'hist.zv.rail': 'Pruga na fotografijama',
+  'hist.zv.2': 'Drvo niz Sanu',
+  'hist.zv.2.a': 'Splavište na Sani u Čaplju',
+  'hist.zv.2.a2': 'Fotografija iz starih novina',
+  'hist.zv.2.p': 'Preduzeće ŠIP „Sana“ imalo je 1968. radilišta po planini, među njima Korčanicu, Mijačicu i Stanića Brdo. Matična biblioteka je tada predložila da se za radnike na njima formiraju pokretne biblioteke.',
+  'hist.zv.2.b': 'ŠIP „Sana“',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

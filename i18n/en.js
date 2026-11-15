@@ -226,6 +226,11 @@ I18N.en = {
   'hist.zv.1.p': 'A short item in the local paper records two changes on the line: at Bosansko Vrhpolje a small wooden bridge was built over the Sanica, with a kilometre of road linking the station to the Sanski Most – Ključ road, and Sanica, after 16 years, is getting a station building again, for which the railway directorate approved 12 million dinars.',
   'hist.zv.1.clip': 'A newspaper cutting',
   'hist.zv.rail': 'The railway in photographs',
+  'hist.zv.2': 'Timber down the Sana',
+  'hist.zv.2.a': 'The raft landing on the Sana at Čaplje',
+  'hist.zv.2.a2': 'A photograph from an old newspaper',
+  'hist.zv.2.p': 'In 1968 the ŠIP “Sana” company had work sites up in the mountains, among them Korčanica, Mijačica and Stanića Brdo. The town library then proposed setting up travelling libraries for the workers there.',
+  'hist.zv.2.b': 'ŠIP “Sana”',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
