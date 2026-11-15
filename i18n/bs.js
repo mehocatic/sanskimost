@@ -55,6 +55,7 @@ I18N.bs = {
   'history.eyebrow': 'Historija',
   'history.name.title': 'Kako je grad dobio ime',
   'history.name.html': 'Ime dolazi od rijeke Sane, od latinskog <em>sana</em> („zdrava“), kao u <em>Aqua Sana</em>. Godine 1717, u osmanskom periodu, utvrđeni grad spominje se kao <em>Džisr-i Sana</em> (<em>džisr</em> = most).',
+  'history.more': 'Cijela historija, u šest poglavlja',
   'history.centuries': 'Kroz stoljeća',
   'history.word': 'latinski · „zdrava“',
   'history.chain.river': 'rijeka',

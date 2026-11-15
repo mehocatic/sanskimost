@@ -53,6 +53,7 @@ I18N.en = {
   'history.eyebrow': 'History',
   'history.name.title': 'How the town got its name',
   'history.name.html': 'The name comes from the river Sana, from the Latin <em>sana</em> (“healthy”), as in <em>Aqua Sana</em>. In 1717, in the Ottoman period, the fortress town is mentioned as <em>Džisr-i Sana</em> (<em>džisr</em> = bridge).',
+  'history.more': 'The whole history, in six chapters',
   'history.centuries': 'Through the centuries',
   'history.word': 'Latin · “healthy”',
   'history.chain.river': 'the river',

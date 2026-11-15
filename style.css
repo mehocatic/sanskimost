@@ -297,6 +297,14 @@ body.home-page { background: var(--paper); }
   .riv-sana { font-size: 40px; }
 }
 
+.h-more {
+  grid-column: 2; justify-self: start; display: inline-flex; align-items: center; gap: .6rem; min-height: 48px; margin-top: 2.4rem;
+  padding: 0 1.3rem; border: 1px solid var(--acc); color: var(--fg); text-decoration: none;
+  font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; transition: background .2s, color .2s;
+}
+.h-more:hover { background: var(--acc); color: var(--paper); }
+@media (max-width: 768px) { .h-more { grid-column: 1; } }
+
 /* 5. Footer */
 footer {
   background: var(--deep); display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 2rem;
