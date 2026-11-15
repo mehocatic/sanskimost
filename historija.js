@@ -32,10 +32,8 @@
     links.forEach((a, k) => a.setAttribute('aria-current', String(k === i)));
     // keep the current chip in view in the bar, without moving the page
     const a = links[i];
-    if (a) {
-      const ol = list, x = a.offsetLeft - ol.clientWidth / 2 + a.offsetWidth / 2;
-      ol.scrollTo({ left: Math.max(0, x), behavior: 'smooth' });
-    }
+    const x = a ? a.offsetLeft - list.clientWidth / 2 + a.offsetWidth / 2 : 0; // above the first chapter: back to the start
+    list.scrollTo({ left: Math.max(0, x), behavior: 'smooth' });
   }
   let raf = 0;
   addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; mark(); }); }, { passive: true });
