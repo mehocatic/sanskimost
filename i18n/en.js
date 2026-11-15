@@ -262,6 +262,9 @@ I18N.en = {
   'hist.zv.5.a': 'The Grmeč bullfight, Međeđe brdo',
   'hist.zv.5.b': 'A Youth Day rally at the NK “Podgrmeč” stadium, 25 May',
   'hist.zv.5.c': 'Villagers building the church at Sasina',
+  'hist.zv.n1': 'dinars for four firewood chests, 1958',
+  'hist.zv.n2': 'films at the “Sana” in one August, 1968',
+  'hist.zv.n3': 'a travelling cinema that toured the villages',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

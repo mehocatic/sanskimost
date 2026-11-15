@@ -264,6 +264,9 @@ I18N.bs = {
   'hist.zv.5.a': 'Grmečka korida, Međeđe brdo',
   'hist.zv.5.b': 'Slet za Dan mladosti, stadion NK „Podgrmeč“, 25. maj',
   'hist.zv.5.c': 'Mještani grade crkvu u Sasini',
+  'hist.zv.n1': 'dinara za četiri sanduka za drva, 1958.',
+  'hist.zv.n2': 'filmova u kinu „Sana“ za jedan august, 1968.',
+  'hist.zv.n3': 'pokretno kino koje je obilazilo sela',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
