@@ -9,7 +9,7 @@
 
 const POI_CATS = [
   { id: "nature", color: "#5b9a5f" },
-  { id: "water", color: "#4db6d6" },
+  { id: "water", color: "#1795a0" },
   { id: "history", color: "#b89b72" },
   { id: "culture", color: "#8e6bb0" },
   { id: "camps", color: "#8c4a4a" },

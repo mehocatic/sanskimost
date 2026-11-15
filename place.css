@@ -4,12 +4,12 @@ body { color: var(--fg); min-height: 100svh; }
 .back, .lb-btn, .slider-btn {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 44px; min-width: 44px; padding: 0 1.1rem;
-  background: rgba(14, 36, 48, .72); color: var(--paper); border: 1px solid rgba(244, 241, 234, .28);
+  background: rgba(21, 26, 24, .72); color: var(--paper); border: 1px solid rgba(246, 244, 238, .28);
   font: inherit; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; cursor: pointer;
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
 }
 .back:hover, .lb-btn:hover, .slider-btn:hover { border-color: var(--sand); }
-.back { position: fixed; top: 16px; left: var(--gutter); z-index: 20; border-radius: 999px; background: rgba(14, 36, 48, .8); border-color: rgba(244, 241, 234, .16); }
+.back { position: fixed; top: 16px; left: var(--gutter); z-index: 20; border-radius: 999px; background: rgba(21, 26, 24, .8); border-color: rgba(246, 244, 238, .16); }
 
 /* every place has the same layout: a low dark header, a slider of all its photos, then the text */
 .place-head {
@@ -29,9 +29,9 @@ body { color: var(--fg); min-height: 100svh; }
 .place-hero, .hero-open { position: absolute; inset: 0; }
 .place-hero[hidden], .hero-open[hidden] { display: none; }
 .place-hero img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos-m, 50% 50%); }
-.hero-open { z-index: 1; padding: 0; border: 0; background: linear-gradient(to top, rgba(14, 36, 48, .88) 0%, rgba(14, 36, 48, .35) 45%, rgba(14, 36, 48, .25) 100%); cursor: zoom-in; }
+.hero-open { z-index: 1; padding: 0; border: 0; background: linear-gradient(to top, rgba(21, 26, 24, .88) 0%, rgba(21, 26, 24, .35) 45%, rgba(21, 26, 24, .25) 100%); cursor: zoom-in; }
 .place-head.has-hero { min-height: clamp(300px, 58svh, 520px); padding-bottom: clamp(22px, 4svh, 40px); }
-.place-head.has-hero h1 { font-size: clamp(2.2rem, 10vw, 3rem); text-shadow: 0 1px 14px rgba(14, 36, 48, .55); }
+.place-head.has-hero h1 { font-size: clamp(2.2rem, 10vw, 3rem); text-shadow: 0 1px 14px rgba(21, 26, 24, .55); }
 .hero-page .place-hero { view-transition-name: place-hero; }
 @media (min-width: 769px) {
   .place-hero img { object-position: var(--pos, 50% 50%); }
@@ -42,7 +42,7 @@ body { color: var(--fg); min-height: 100svh; }
 /* the slider: one row of photos at a fixed height, each in its own proportions (no crop, no frame). A photo smaller than the row
    is shown at its own size, centred in the row, and is never enlarged: the img has width and height auto and only a maximum.
    Snapping to the start edge and a maximum width a little under the screen width leave the next photo showing at the right edge. */
-.place-slider { --row-h: 300px; background: #153240; padding-top: 12px; }
+.place-slider { --row-h: 300px; background: #212825; padding-top: 12px; }
 .place-slider[hidden] { display: none; }
 @media (min-width: 769px) { .place-slider { --row-h: 440px; } }
 .slider-track {
@@ -63,7 +63,7 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
 .slider-count { margin: 0; min-width: 4.5em; text-align: center; font-size: .8rem; letter-spacing: .2em; color: var(--fg-muted); }
 .slider-btn { font-size: 1.2rem; letter-spacing: 0; }
 .slider-btn:disabled { opacity: .35; cursor: default; }
-.slider-btn:disabled:hover { border-color: rgba(244, 241, 234, .28); }
+.slider-btn:disabled:hover { border-color: rgba(246, 244, 238, .28); }
 .slider-btn[hidden] { display: none; }
 /* on phones the photos are swiped: no arrows, only the counter */
 @media (max-width: 768px) { .slider-btn { display: none; } .slider-count { min-width: 0; } }
@@ -91,7 +91,7 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
 .place-map { height: 260px; background: var(--mist); border: 1px solid var(--rule); }
 @media (min-width: 900px) { .place-map { height: 340px; } }
 .place-map .leaflet-tile-pane { filter: grayscale(.45) sepia(.12) saturate(.85) brightness(.97); }
-.place-map .pin span { display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--sand); border: 3px solid var(--deep); box-shadow: 0 0 0 1px var(--sand), 0 2px 8px rgba(14, 36, 48, .45); }
+.place-map .pin span { display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--sand); border: 3px solid var(--deep); box-shadow: 0 0 0 1px var(--sand), 0 2px 8px rgba(21, 26, 24, .45); }
 /* under the hero and the slider: the text in a readable measure, then "Also worth seeing" */
 .place-text { grid-area: text; max-width: 65ch; font-size: 1.05rem; }
 .detail-long { color: var(--fg-soft); }
@@ -108,31 +108,31 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
 .detail-see li::before { content: ""; position: absolute; left: 0; top: 1.05em; width: 6px; height: 1px; background: var(--acc); }
 
 /* previous / next place */
-.place-pager { display: grid; grid-template-columns: 1fr 1fr; background: var(--deep); color: var(--paper); border-top: 1px solid rgba(244, 241, 234, .16); }
+.place-pager { display: grid; grid-template-columns: 1fr 1fr; background: var(--deep); color: var(--paper); border-top: 1px solid rgba(246, 244, 238, .16); }
 .place-pager[hidden] { display: none; }
 .pager-link { display: block; min-height: 44px; padding: clamp(36px, 8svh, 90px) var(--gutter); color: inherit; text-decoration: none; }
-.pager-link + .pager-link { border-left: 1px solid rgba(244, 241, 234, .16); text-align: right; }
+.pager-link + .pager-link { border-left: 1px solid rgba(246, 244, 238, .16); text-align: right; }
 .pager-link .pl { display: block; font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: var(--sand); margin-bottom: .8rem; }
 .pager-link .pn { display: block; font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3.4rem); line-height: 1; transition: color .3s ease; overflow-wrap: anywhere; }
 .pager-link:hover .pn { color: var(--sand); }
 
 /* full-screen photo viewer */
 /* above the main menu (z-index 60), which would otherwise cover the Close button */
-#lightbox { position: fixed; inset: 0; z-index: 70; background: rgba(14, 36, 48, .97); display: flex; align-items: center; justify-content: center; }
+#lightbox { position: fixed; inset: 0; z-index: 70; background: rgba(21, 26, 24, .97); display: flex; align-items: center; justify-content: center; }
 #lightbox[hidden] { display: none; }
 #lb-img { max-width: calc(100vw - 2 * 72px); max-height: calc(100svh - 120px); object-fit: contain; }
 .lb-btn { position: absolute; z-index: 1; font-size: 1.2rem; letter-spacing: 0; }
-.lb-btn .esc { color: rgba(244, 241, 234, .66); margin-left: .6rem; }
+.lb-btn .esc { color: rgba(246, 244, 238, .66); margin-left: .6rem; }
 .lb-close { top: 16px; right: var(--gutter); font-size: .75rem; letter-spacing: .2em; }
 .lb-prev { left: 14px; top: 50%; margin-top: -22px; }
 .lb-next { right: 14px; top: 50%; margin-top: -22px; }
 .lb-btn[hidden] { display: none; }
-.lb-count { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; font-size: .8rem; letter-spacing: .25em; color: rgba(244, 241, 234, .66); }
+.lb-count { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; font-size: .8rem; letter-spacing: .25em; color: rgba(246, 244, 238, .66); }
 /* under the photo: the photo credit (author, license, source) from places.js; hidden when the photo has none */
 .lb-meta { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 48px; text-align: center; }
-.lb-credit { margin-top: .2rem; font-size: .72rem; line-height: 1.4; color: rgba(244, 241, 234, .6); }
+.lb-credit { margin-top: .2rem; font-size: .72rem; line-height: 1.4; color: rgba(246, 244, 238, .6); }
 .lb-credit[hidden] { display: none; }
-.lb-credit a { color: inherit; text-decoration: underline; text-decoration-color: rgba(244, 241, 234, .35); text-underline-offset: .2em; }
+.lb-credit a { color: inherit; text-decoration: underline; text-decoration-color: rgba(246, 244, 238, .35); text-underline-offset: .2em; }
 .lb-credit a:hover { color: var(--sand); }
 #lightbox.has-meta #lb-img { max-height: calc(100svh - 230px); }
 
@@ -148,7 +148,7 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
   .lb-prev { left: 8px; top: auto; bottom: 14px; margin: 0; }
   .lb-next { right: 8px; top: auto; bottom: 14px; margin: 0; }
   .place-pager { grid-template-columns: 1fr; }
-  .pager-link + .pager-link { border-left: 0; border-top: 1px solid rgba(244, 241, 234, .16); text-align: left; }
+  .pager-link + .pager-link { border-left: 0; border-top: 1px solid rgba(246, 244, 238, .16); text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {

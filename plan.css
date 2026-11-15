@@ -19,17 +19,17 @@ html.lenis, html.lenis body { height: auto; }
 /* dark at the bottom so the title reads, a little at the top for the menu */
 .plan-hero::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(14, 36, 48, .55) 0%, rgba(14, 36, 48, 0) 22%, rgba(14, 36, 48, 0) 45%, rgba(14, 36, 48, .78) 82%, var(--deep) 100%);
+  background: linear-gradient(180deg, rgba(21, 26, 24, .55) 0%, rgba(21, 26, 24, 0) 22%, rgba(21, 26, 24, 0) 45%, rgba(21, 26, 24, .78) 82%, var(--deep) 100%);
 }
 .plan-hero-text { position: relative; z-index: 1; padding: 0 var(--gutter) calc(var(--rise-h) * .7 + 24px); max-width: 1100px; }
 .plan-hero .eyebrow { color: var(--sand); }
 .plan-title { font-family: var(--serif); font-weight: 400; line-height: .95; letter-spacing: -.015em; font-size: clamp(3.2rem, 11vw, 9.5rem); }
 .pt-mask { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
 .pt-line { display: block; }
-.plan-lead { max-width: 40ch; margin-top: 1.4rem; font-size: clamp(1rem, 1.4vw, 1.2rem); color: rgba(244, 241, 234, .82); }
+.plan-lead { max-width: 40ch; margin-top: 1.4rem; font-size: clamp(1rem, 1.4vw, 1.2rem); color: rgba(246, 244, 238, .82); }
 .plan-scroll {
   position: absolute; z-index: 1; right: var(--gutter); bottom: calc(var(--rise-h) * .7 + 28px);
-  writing-mode: vertical-rl; font-size: .68rem; letter-spacing: .3em; text-transform: uppercase; color: rgba(244, 241, 234, .7);
+  writing-mode: vertical-rl; font-size: .68rem; letter-spacing: .3em; text-transform: uppercase; color: rgba(246, 244, 238, .7);
 }
 .plan-scroll::after { content: ""; display: block; width: 1px; height: 54px; margin: 14px auto 0; background: linear-gradient(var(--sand), transparent); animation: drip 2.2s ease-in-out infinite; transform-origin: top; }
 @keyframes drip { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
@@ -63,7 +63,7 @@ html.lenis, html.lenis body { height: auto; }
 .j-card .j-dot { grid-row: 1 / span 2; }
 .j-card .j-km { grid-column: 2 / 4; grid-row: 1; font-family: var(--serif); font-size: 1rem; color: var(--acc); line-height: 1; margin-bottom: 8px; padding-left: calc(92px + 18px); }
 .j-n { font-size: 2.4rem; color: var(--fg); margin-right: .1em; }
-.j-photo { grid-column: 2; grid-row: 2; display: block; aspect-ratio: 1; overflow: hidden; background: #1a3340; }
+.j-photo { grid-column: 2; grid-row: 2; display: block; aspect-ratio: 1; overflow: hidden; background: #232a27; }
 .j-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
 .j-txt { grid-column: 3; grid-row: 2; }
 .j-name { display: block; font-family: var(--serif); font-size: 1.4rem; line-height: 1.15; transition: color .2s ease; }
@@ -92,7 +92,7 @@ html.lenis, html.lenis body { height: auto; }
 /* ---------- before you go ---------- */
 .tips { display: grid; gap: clamp(28px, 4vw, 40px); }
 .tip { display: grid; gap: 18px; }
-.tip-photo { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #1a3340; }
+.tip-photo { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #232a27; }
 .tip-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
 .tip:hover .tip-photo img { transform: scale(1.05); }
 .tip-num { display: block; font-size: .72rem; letter-spacing: .25em; color: var(--acc); margin-bottom: .2rem; }
@@ -110,7 +110,7 @@ html.lenis, html.lenis body { height: auto; }
 #sec-when { padding-top: clamp(40px, 8svh, 90px); padding-bottom: calc(var(--rise-h) + clamp(40px, 8svh, 90px)); }
 .seasons { display: grid; gap: clamp(48px, 8svh, 90px); }
 .season { display: grid; gap: 22px; }
-.season-photo { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #1a3340; }
+.season-photo { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #232a27; }
 .season-photo img { width: 100%; height: 120%; margin-top: -10%; object-fit: cover; }
 .season-place { display: inline-flex; align-items: center; min-height: 44px; font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: var(--sand); text-decoration: none; }
 .season-place:hover { text-decoration: underline; }
@@ -127,8 +127,8 @@ html.lenis, html.lenis body { height: auto; }
 .rcard { display: grid; gap: 26px; }
 .rc-fan { position: relative; display: block; aspect-ratio: 16 / 10; max-height: 360px; }
 .rc-photo {
-  position: absolute; top: 50%; left: 50%; height: 84%; aspect-ratio: 3 / 4; overflow: hidden; background: #1a3340;
-  box-shadow: 0 14px 34px rgba(14, 36, 48, .22);
+  position: absolute; top: 50%; left: 50%; height: 84%; aspect-ratio: 3 / 4; overflow: hidden; background: #232a27;
+  box-shadow: 0 14px 34px rgba(21, 26, 24, .22);
   transform: translate(-50%, -50%); transition: transform .9s cubic-bezier(.2, .7, .2, 1);
 }
 .rc-photo img { width: 100%; height: 100%; object-fit: cover; }
