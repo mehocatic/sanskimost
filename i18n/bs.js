@@ -204,7 +204,7 @@ I18N.bs = {
   'hist.6.n3': 'prva od velikih poplava u knjizi',
   'hist.6.g1': 'Poplava u centru grada, stara fotografija',
   'hist.6.g2': 'Poplavljene kuće uz Sanu',
-  'hist.6.g3': 'Spašavanje tokom jedne od novijih poplava',
+  'hist.6.g3': 'Nabujala Sana kod Gradskog mosta, 2014.',
   'hist.6.g4': 'Zaleđena Sana',
   'hist.6.g5': 'Veliki snijeg',
   'hist.6.g6': 'Kupanje na Sani',
@@ -323,6 +323,9 @@ I18N.bs = {
   'hist.ul.6.p': 'Stari „Lovac“ uz slap 1968. i gradilište nove zgrade u novembru 2005.',
   'hist.ul.6.a': '„Lovac“, 1968.',
   'hist.ul.6.b': 'Gradnja nove zgrade, 26. 11. 2005.',
+  'hist.6.g10': 'Kroz poplavljenu ulicu, stara fotografija',
+  'hist.6.g11': 'Poplava, 23. 9. 1996.',
+  'hist.src.mostbook': 'Većina fotografija iz knjige „Sanski Most nekad i sad“',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

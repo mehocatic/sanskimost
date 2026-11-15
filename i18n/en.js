@@ -202,7 +202,7 @@ I18N.en = {
   'hist.6.n3': 'the first of the great floods in the book',
   'hist.6.g1': 'A flood in the town centre, an old photograph',
   'hist.6.g2': 'Flooded houses by the Sana',
-  'hist.6.g3': 'A rescue during one of the recent floods',
+  'hist.6.g3': 'The swollen Sana by the Town Bridge, 2014',
   'hist.6.g4': 'The Sana frozen over',
   'hist.6.g5': 'Heavy snow',
   'hist.6.g6': 'Bathing in the Sana',
@@ -321,6 +321,9 @@ I18N.en = {
   'hist.ul.6.p': 'The old “Lovac” by the weir in 1968, and the site of the new building in November 2005.',
   'hist.ul.6.a': '“Lovac”, 1968',
   'hist.ul.6.b': 'Building the new block, 26 November 2005',
+  'hist.6.g10': 'Wading through a flooded street, an old photograph',
+  'hist.6.g11': 'A flood, 23 September 1996',
+  'hist.src.mostbook': 'Most of the photographs from the book “Sanski Most nekad i sad”',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
