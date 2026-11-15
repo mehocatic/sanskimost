@@ -97,8 +97,12 @@ const PLACES = [
       pic("hamzibegova5.webp", { main: true }), // the mosque with four minarets, shown at the top (1024 x 1472)
       pic("hamzibegova2.webp"),
       pic("hamzibegova3.webp"),
-      pic("hamzibegova4.webp")
-    ]
+      pic("hamzibegova4.webp"),
+      // TODO(verify): from Meho's notes from the book; the book is the source, the photographer is not known
+      pic("arhiv/hamzibegova-1946.webp", { archive: "1946", source: BOOK })
+    ],
+    // the old mosque in 1946 (one minaret) and the one rebuilt in 2000 (four minarets)
+    thenNow: { old: "arhiv/hamzibegova-1946.webp", now: "hamzibegova5.webp", ar: "3 / 4", posOld: "50% 40%", posNow: "50% 55%" }
   },
   {
     slug: "korcanica",

@@ -199,6 +199,7 @@ I18N.en = {
     },
     'hamzibegova': {
       name: 'Hamzibeg Mosque',
+      tn: 'The old mosque in 1946, with one minaret, and today’s, rebuilt in 2000.',
       short: 'Built before 1557, destroyed in 1992 and reopened on 6 August 2000.',
       long: 'The Hamzibeg Mosque was built and endowed (as a vakuf) by the sanjak-bey Hamza-beg Biharović, who came from the area of Sanski Most, probably from Kamengrad. It was built before 1557, the year its founder died, and is assumed to have existed in 1555.\n\nThe original building had one minaret, of stone with a wooden interior. The mosque was rebuilt in 1705 after war damage and last reconstructed in 1984.\n\nIt was destroyed on 27 June 1992. Construction of the new mosque began in July 1997, and it was opened on 6 August 2000.\n\nIt is reportedly the only mosque in Bosnia and Herzegovina with four minarets. The Commission to Preserve National Monuments has put it on the provisional list of national monuments of Bosnia and Herzegovina.',
       see: [

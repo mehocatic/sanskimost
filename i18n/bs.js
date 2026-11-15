@@ -200,6 +200,7 @@ I18N.bs = {
     },
     'hamzibegova': {
       name: 'Hamzibegova džamija',
+      tn: 'Stara džamija 1946, s jednom munarom, i današnja, obnovljena 2000.',
       short: 'Izgrađena prije 1557, srušena 1992. i ponovo otvorena 6. augusta 2000.',
       long: 'Hamzibegovu džamiju sagradio je i uvakufio sandžak-beg Hamza-beg Biharović, porijeklom iz okoline Sanskog Mosta, vjerovatno iz Kamengrada. Sagrađena je prije 1557, godine kada je umro njen osnivač, a pretpostavlja se da je postojala već 1555.\n\nPrvobitna džamija imala je jednu munaru, od kamena, s drvenom unutrašnjošću. Obnovljena je 1705. nakon ratnih oštećenja, a posljednji put je rekonstruirana 1984.\n\nSrušena je 27. juna 1992. Izgradnja nove džamije počela je u julu 1997, a otvorena je 6. augusta 2000.\n\nPrema navodima, to je jedina džamija u Bosni i Hercegovini s četiri munare. Komisija za očuvanje nacionalnih spomenika stavila ju je na privremenu listu nacionalnih spomenika Bosne i Hercegovine.',
       see: [
