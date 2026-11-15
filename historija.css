@@ -72,6 +72,7 @@
 /* sources and the note to the owners of the photos */
 .hist-sources { padding: 64px var(--gutter) 90px; }
 .hist-sources ol { max-width: 46rem; padding-left: 1.2rem; font-size: .92rem; color: var(--fg-soft); }
+.hist-sources a { color: var(--acc); }
 .hist-sources li + li { margin-top: .45rem; }
 .hist-note { max-width: 46rem; margin-top: 1.6rem; padding-left: .9rem; border-left: 2px solid var(--acc); font-size: .85rem; color: var(--fg-muted); }
 

@@ -349,6 +349,7 @@ I18N.bs = {
   'hist.4.p4': 'Kotar Sanski Most je 1910. obuhvatao 1.017 km² i dvije općine, Sanski Most i Stari Majdan. Sama varoš je 1914. imala 2.234 stanovnika, više od 50 trgovina i zanatskih radnji, hotel i agenciju Zemaljske banke.',
   'hist.5.p4': 'Između dva rata Sanski Most je sjedište sreza, koji od 1929. do 1941. pripada Vrbaskoj banovini. Srez je 1930. imao 87 naselja u osam općina: Budimlić Japra, Dabar, Gornji Kamengrad, Lušci Palanka, Sanski Most, Sasina, Stari Majdan i Tomina. Na području današnje općine 1931. je živjelo 50.671 stanovnika, a početkom 1941. njih 65.880. U Drugom svjetskom ratu općina je izgubila 3.605 ljudi.',
   'hist.zv.1.enc': 'Enciklopedija Jugoslavije iz 1968. opisuje Sanski Most kao općinsko središte na 158 m nadmorske visine, s pilanom, tvornicom panel-ploča, ciglanom, skladištem duhana, građevinskim i elektro preduzećima i rudnikom uglja u Kamengradu. Kroz grad tada prolazi uskotračna pruga koja povezuje Prijedor, Drvar i Ličku Kaldrmu.',
+  'hist.src.8.html': 'Općina Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">„Historija općine Sanski Most“</a>: srednji vijek, osmanski period, kotar 1910. i 1914., srez između dva rata i opis iz Enciklopedije Jugoslavije (1968).',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

@@ -347,6 +347,7 @@ I18N.en = {
   'hist.4.p4': 'In 1910 the Sanski Most district covered 1,017 km² and two municipalities, Sanski Most and Stari Majdan. The town itself had 2,234 people in 1914, more than 50 shops and workshops, a hotel and an agency of the Zemaljska banka (the Provincial Bank).',
   'hist.5.p4': 'Between the wars Sanski Most was the seat of a srez (district), part of the Vrbas Banovina from 1929 to 1941. In 1930 the srez had 87 settlements in eight municipalities: Budimlić Japra, Dabar, Gornji Kamengrad, Lušci Palanka, Sanski Most, Sasina, Stari Majdan and Tomina. The area of today’s municipality had 50,671 people in 1931 and 65,880 at the start of 1941. In the Second World War the municipality lost 3,605 people.',
   'hist.zv.1.enc': 'The Encyclopaedia of Yugoslavia of 1968 describes Sanski Most as a municipal centre at 158 m above sea level, with a sawmill, a panel-board factory, a brickworks, a tobacco warehouse, building and electrical companies and a coal mine at Kamengrad. A narrow-gauge railway then ran through the town, linking Prijedor, Drvar and Lička Kaldrma.',
+  'hist.src.8.html': 'Municipality of Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">“Historija općine Sanski Most”</a>: the Middle Ages, the Ottoman period, the district in 1910 and 1914, the srez between the wars and the entry in the Encyclopaedia of Yugoslavia (1968).',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
