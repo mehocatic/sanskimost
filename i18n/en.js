@@ -144,6 +144,15 @@ I18N.en = {
   'hist.1.n2': 'BC: the Hrustovo type of the Vučedol culture',
   'hist.1.n3': 'the Maezaean mining centre “on the Sana”, still not found',
   'hist.see.place': 'See the place →',
+  'hist.2.chip': 'Middle Ages',
+  'hist.2.title': 'The counties of Sana and Mren',
+  'hist.2.yr.html': '1374',
+  'hist.2.p1': 'Before the Ottomans came, the area belonged to two medieval counties (župe), Sana and Mren. The town of Mren was the seat of its county, but it disappears from the records with the Ottoman conquest.',
+  'hist.2.p2': 'Kamengrad, the fortress on a steep hill above the Bliha, is first mentioned in 1374, when it belonged to the Babonić Blagajski princes.',
+  'hist.2.f.map': 'The counties of Sana and Mren before the Ottomans',
+  'hist.src.kres': 'Map after H. Kreševljaković (1958)',
+  'hist.2.f.kamengrad': 'Kamengrad today',
+  'hist.src.2.html': 'Hamdija Kreševljaković, “Kamengrad”, <em>Naše starine</em> VI (1958): the map of the counties of Sana and Mren.',
   'hist.note': 'If you took one of these photographs or know who did, let us know, so that we can credit it or take it down.',
 
   // explore page

@@ -146,6 +146,15 @@ I18N.bs = {
   'hist.1.n2': 'godina prije nove ere: hrustovački tip vučedolske kulture',
   'hist.1.n3': 'mezejsko rudarsko središte „na Sani“, još nepronađeno',
   'hist.see.place': 'Pogledajte mjesto →',
+  'hist.2.chip': 'Srednji vijek',
+  'hist.2.title': 'Župe Sana i Mren',
+  'hist.2.yr.html': '1374',
+  'hist.2.p1': 'Prije dolaska Osmanlija ovaj kraj pripada dvjema srednjovjekovnim župama, Sani i Mrenu. Grad Mren bio je središte svoje župe, ali s osmanskim osvajanjem nestaje iz izvora.',
+  'hist.2.p2': 'Kamengrad, tvrđava na strmom brdu iznad Blihe, prvi put se spominje 1374. Tada je bio posjed knezova Babonića Blagajskih.',
+  'hist.2.f.map': 'Župe Sana i Mren prije dolaska Osmanlija',
+  'hist.src.kres': 'Karta prema H. Kreševljakoviću (1958)',
+  'hist.2.f.kamengrad': 'Kamengrad danas',
+  'hist.src.2.html': 'Hamdija Kreševljaković, „Kamengrad“, <em>Naše starine</em> VI (1958): karta župa Sana i Mren.',
   'hist.note': 'Ako ste autor neke od ovih fotografija ili znate ko jeste, javite nam se, da je potpišemo ili uklonimo.',
 
   // explore page
