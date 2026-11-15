@@ -104,6 +104,9 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
 .detail-long p + p { margin-top: 1em; }
 .detail-note { margin-top: 1.4rem; padding-left: 1rem; border-left: 1px solid var(--acc); color: var(--fg-muted); font-size: .92rem; }
 .detail-note:empty { display: none; }
+.place-tn { margin-top: 2.4rem; }
+.place-tn[hidden] { display: none; }
+.place-tn h2 { font-family: var(--sans); font-size: .75rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; line-height: 1.4; color: var(--acc); margin-bottom: .9rem; }
 .detail-see { margin-top: 2.4rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); }
 .detail-see[hidden] { display: none; }
 .detail-see h2 { font-family: var(--sans); font-size: .75rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; line-height: 1.4; color: var(--acc); margin-bottom: .9rem; }

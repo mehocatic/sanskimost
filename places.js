@@ -6,6 +6,9 @@
 // coords  : [lat, lon] for the map on explore.html (a place without it has no marker); the comment names the source
 // km      : approximate distance from town in km, only where FACTS.md or the place text states it (shown on the place page and on /plan)
 // alt     : elevation in m, only where a source states it (shown on the place page)
+// thenNow : an old and a new photo of the same thing, shown as "then and now" under the text (thennow.js):
+//           { old, now, ar, posOld, posNow } (paths under photos/, the box's aspect ratio, object-position of each photo);
+//           its caption is `tn` in the place's texts
 // see     : links of the "Also worth seeing" entries, in the same order as the texts in the language files:
 //           the slug of a place the entry links to, or null for a plain text entry (omit when there is none)
 // photos  : the first photo is the cover on the card (shown cropped to the card). Each entry is created with pic(name, extra):
@@ -115,7 +118,9 @@ const PLACES = [
       pic("korcanica4.webp"), // the ruined hotel
       // TODO(verify): an old postcard of the hotel; it is in Meho's notes from the book, the publisher of the postcard is not known
       pic("arhiv/korcanica-razglednica.webp", { archive: true, source: BOOK })
-    ]
+    ],
+    // the hotel on the postcard (cut out of it) and the same hotel today; caption: `tn` in the language files
+    thenNow: { old: "arhiv/korcanica-hotel.webp", now: "korcanica4.webp", ar: "5 / 4", posOld: "50% 50%", posNow: "62% 50%" }
   },
   {
     slug: "hrustovacka",

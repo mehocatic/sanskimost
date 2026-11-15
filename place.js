@@ -219,6 +219,34 @@
     } else start();
   }
 
+  /* ---------- then and now ---------- */
+  // an old and a new photo of the same thing (places.js thenNow), under the text
+  const tnBox = $('place-tn');
+  let tnCap = null;
+  if (p.thenNow && window.ThenNow) {
+    const tn = p.thenNow;
+    const fig = document.createElement('figure');
+    fig.className = 'tn';
+    const box = document.createElement('div');
+    box.className = 'tn-box';
+    if (tn.ar) box.style.setProperty('--ar', tn.ar);
+    if (tn.posOld) box.style.setProperty('--pos-old', tn.posOld);
+    if (tn.posNow) box.style.setProperty('--pos-new', tn.posNow);
+    const img = (src, cls) => { const i = new Image(); i.className = cls; i.src = `photos/${src}`; i.alt = ''; i.loading = 'lazy'; i.decoding = 'async'; return i; };
+    const l = document.createElement('span'), r = document.createElement('span');
+    l.className = 'tn-lb tn-l'; r.className = 'tn-lb tn-r';
+    l.dataset.i18n = 'tn.old'; r.dataset.i18n = 'tn.now';
+    box.append(img(tn.now, 'tn-new'), img(tn.old, 'tn-old'), l, r);
+    tnCap = document.createElement('figcaption');
+    fig.append(box, tnCap);
+    const h = document.createElement('h2');
+    h.dataset.i18n = 'tn.title';
+    tnBox.append(h, fig);
+    tnBox.hidden = false;
+    I18n.apply(tnBox);
+    ThenNow.enhance(fig);
+  }
+
   /* ---------- previous / next place ---------- */
   const n = PLACES.length;
   const prev = PLACES[(index - 1 + n) % n], next = PLACES[(index + 1) % n];
@@ -238,6 +266,7 @@
       return para;
     }));
     $('place-note').textContent = I18n.place(p, 'note') || '';
+    if (tnCap) tnCap.textContent = I18n.place(p, 'tn') || '';
 
     const seeList = $('place-see-list');
     const see = I18n.see(p);

@@ -118,6 +118,7 @@ I18N.en = {
   'tn.old': 'Then',
   'tn.now': 'Now',
   'tn.label': 'Move to compare then and now',
+  'tn.title': 'Then and now',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
@@ -212,7 +213,8 @@ I18N.en = {
       long: 'The Korčanica memorial zone is dedicated to the National Liberation Struggle in the Second World War. It lies about 32 km from Sanski Most, at Grmeč mountain, and includes several structures, among them a fountain and two tombs. It is 836 m above sea level, on the north-eastern side of Grmeč, about 9 km south of Lušci Palanka.\n\nIn 1942 and 1943 a Partisan hospital with 19 buildings operated in this area, the largest in the Bosnian Krajina.\n\nThe monument “Revolution”, by the sculptor Ljubomir Denković, was opened on 27 July 1979, on the site of the memorial obelisk. It consists of two large semicircular walls, about 15 m high, shaped like a split bud, that enclose an inner space with a model of the terrain and the hospital, and a large reflecting pool in front of them.\n\nThe forests around it are beech, fir and spruce, with oak and maple. A hotel stood next to the memorial zone; today it is in ruins.\n\nBefore the war the site was landscaped and visited by tourists and school groups. Since the 1990s it has been neglected and is largely forgotten.',
       see: [
         'The Grmeč primeval forest, about 17 km from the town: over 100 ha, with trees over 500 years old.'
-      ]
+      ],
+      tn: 'The hotel at Korčanica on an old postcard and today.'
     },
     'hrustovacka': {
       name: 'Hrustovačka Cave',
