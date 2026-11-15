@@ -212,6 +212,10 @@ I18N.en = {
   'hist.6.strip': 'The Sana over the years',
   'hist.src.4.html': 'The Federal Hydrometeorological Institute of BiH and the RHMZ of Republika Srpska: July temperature records.',
   'hist.note': 'If you took one of these photographs or know who did, let us know, so that we can credit it or take it down.',
+  'hist.zv.chip': 'Everyday life',
+  'hist.zv.yr.html': '1938<br>–1986',
+  'hist.zv.title': 'A railway, a raft and the “Sana” cinema',
+  'hist.zv.p1': 'Life in the town and the villages long turned on the railway, the forest and the river. This chapter is put together from what people of Sanski Most kept: photographs, newspaper cuttings and two ordinary receipts.',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

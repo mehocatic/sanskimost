@@ -214,6 +214,10 @@ I18N.bs = {
   'hist.6.strip': 'Sana kroz godine',
   'hist.src.4.html': 'Federalni hidrometeorološki zavod BiH i RHMZ Republike Srpske: julski temperaturni rekordi.',
   'hist.note': 'Ako ste autor neke od ovih fotografija ili znate ko jeste, javite nam se, da je potpišemo ili uklonimo.',
+  'hist.zv.chip': 'Kako se živjelo',
+  'hist.zv.yr.html': '1938<br>–1986',
+  'hist.zv.title': 'Pruga, splav i kino „Sana“',
+  'hist.zv.p1': 'Život u gradu i selima dugo se vrtio oko pruge, šume i rijeke. Ovo poglavlje je složeno od onoga što su Sanjani sačuvali: fotografija, novinskih isječaka i dva obična računa.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
