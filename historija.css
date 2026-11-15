@@ -117,6 +117,7 @@ footer {
 .zv-h h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1; }
 .zv-h::after { content: ""; flex: 1; height: 1px; background: var(--rule); transform: translateY(-.35em); }
 .zv > p { max-width: 40rem; color: var(--fg-soft); }
+.zv > p + .rail-row { margin-top: 1.4rem; }
 .zv-src { margin-top: .9rem; font-size: .76rem; color: var(--fg-muted); }
 
 /* the railway: photos in a row with a line of track under them */
