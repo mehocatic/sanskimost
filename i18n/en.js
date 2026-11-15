@@ -249,6 +249,8 @@ I18N.en = {
   'hist.zv.3.scan': 'The receipt of the carpenter Mijo Kosorčić, 1958',
   'hist.zv.3.q': 'Uncle Mijo had his carpentry shop at the very start of Ključka Street, next to the cobblers Husein Ćurt and Hilmo Beširević.',
   'hist.zv.3.qs': 'A note kept with the receipt',
+  'hist.zv.3.b.html': '<b>200 dinars</b><br>A year and a half later, on 21 November 1959, Ibro Suljanić charged the Društveni dom for carrying 12 baskets of firewood from the building of the town council (NOO) to the hall.',
+  'hist.zv.3.scan2': 'The receipt of Ibro Suljanić, 1959',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',

@@ -251,6 +251,8 @@ I18N.bs = {
   'hist.zv.3.scan': 'Račun stolara Mije Kosorčića, 1958.',
   'hist.zv.3.q': 'Čika Mijo je imao stolarsku radnju na samom početku Ključke ulice, a do njega obućari Husein Ćurt i Hilmo Beširević.',
   'hist.zv.3.qs': 'Zapis uz račun',
+  'hist.zv.3.b.html': '<b>200 dinara</b><br>Godinu i po kasnije, 21. novembra 1959, Ibro Suljanić je Društvenom domu naplatio prenošenje 12 sepeta drva od zgrade NOO-a do doma.',
+  'hist.zv.3.scan2': 'Račun Ibre Suljanića, 1959.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',
