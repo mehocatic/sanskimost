@@ -10,6 +10,7 @@ I18N.bs = {
   'nav.home': 'Početna',
   'nav.explore': 'Istraži',
   'nav.plan': 'Posjeta',
+  'nav.history': 'Historija',
   'nav.lang': 'Jezik',
   'nav.menu': 'Meni',
   'nav.close': 'Zatvori',
@@ -121,6 +122,18 @@ I18N.bs = {
   'tn.now': 'Danas',
   'tn.label': 'Pomjerite da uporedite nekad i danas',
   'tn.title': 'Nekad i danas',
+
+  // history page (historija.html)
+  'hist.meta': 'Historija Sanskog Mosta od prahistorije do danas, u šest poglavlja i sa starim fotografijama.',
+  'hist.eyebrow': 'Historija',
+  'hist.title.html': 'Pet hiljada godina<br>uz Sanu',
+  'hist.lead': 'Od pećine u Hrustovu do grada uz most: kratka historija Sanskog Mosta u šest poglavlja, sa starim fotografijama.',
+  'hist.hero.cap': 'Sanski Most, stara fotografija',
+  'hist.chapters': 'Poglavlja',
+  'hist.src.book': 'Iz knjige „Sanski Most nekad i sad“',
+  'hist.sources': 'Izvori',
+  'hist.src.1.html': 'Jasmin Zukanović, <em>Sanski Most nekad i sad</em> (2024): većina starih fotografija i podataka na ovoj stranici.',
+  'hist.note': 'Ako ste autor neke od ovih fotografija ili znate ko jeste, javite nam se, da je potpišemo ili uklonimo.',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

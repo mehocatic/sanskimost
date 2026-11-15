@@ -1,0 +1,85 @@
+/* The history page (historija.html): a header, a bar of chapters, the chapters, the sources. */
+.hist-page main { background: var(--paper); }
+
+/* header: the title and one old photo of the town, kept at its own size (the old photos are small) */
+.hist-hero {
+  display: grid; gap: 32px; align-items: end;
+  padding: clamp(110px, 16svh, 160px) var(--gutter) clamp(48px, 8svh, 80px);
+}
+.hist-hero h1 { font-family: var(--serif); font-weight: 400; line-height: .95; letter-spacing: -.01em; font-size: clamp(3rem, 8.4vw, 7.4rem); }
+.hist-lead { margin-top: 1.4rem; max-width: 34rem; font-size: 1.08rem; color: var(--fg-soft); }
+.hist-hero-photo { margin: 0; justify-self: end; width: 100%; max-width: 560px; }
+.hist-hero-photo img { display: block; width: 100%; height: auto; filter: grayscale(.15) contrast(1.04); box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .7); }
+.hist-hero-photo figcaption { margin-top: .6rem; font-size: .74rem; color: var(--fg-muted); }
+@media (min-width: 900px) { .hist-hero { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); min-height: 78svh; } }
+
+/* bar of chapters: stays under the menu while the chapters scroll by (historija.js marks the current one) */
+.chap-nav {
+  position: sticky; top: 64px; z-index: 30;
+  background: rgba(246, 244, 238, .95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(21, 26, 24, .08);
+}
+.chap-nav ol { list-style: none; display: flex; gap: 6px; overflow-x: auto; padding: 10px var(--gutter); scrollbar-width: none; }
+.chap-nav ol::-webkit-scrollbar { display: none; }
+.chap-nav a {
+  display: inline-flex; align-items: center; gap: .5em; min-height: 36px; padding: 0 14px; white-space: nowrap;
+  border: 1px solid rgba(21, 26, 24, .16); border-radius: 999px; color: var(--ink); font-size: .84rem; text-decoration: none;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.chap-nav a b { font-weight: 500; color: var(--sand-dark); }
+.chap-nav a:hover { border-color: var(--sand-dark); }
+.chap-nav a[aria-current="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.chap-nav a[aria-current="true"] b { color: var(--sand); }
+@media (max-width: 768px) { .chap-nav { top: 58px; } }
+
+/* a chapter: the years on the side (sticky on wide screens), the text and photos next to them */
+.ch { display: grid; gap: 24px; padding: clamp(64px, 10vw, 130px) var(--gutter); scroll-margin-top: 110px; }
+.ch > * { min-width: 0; }
+.ch-yr { font-family: var(--serif); font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: .9; color: var(--acc); }
+.ch-side .eyebrow { margin: .9rem 0 0; }
+.ch h2 { margin-bottom: 1.4rem; }
+.ch-body > p { max-width: 40rem; color: var(--fg-soft); }
+.ch-body > p + p { margin-top: 1rem; }
+.ch-body > p.lead { font-size: 1.14rem; color: var(--fg); }
+.ch-body a { color: var(--acc); }
+@media (min-width: 960px) {
+  .ch { grid-template-columns: 240px minmax(0, 1fr); gap: 64px; }
+  .ch-side { position: sticky; top: 140px; align-self: start; }
+}
+
+/* old photos: a light frame, the caption and the source under it */
+.arch { display: grid; gap: 22px; margin-top: 2.2rem; max-width: 900px; }
+@media (min-width: 640px) {
+  .arch.two { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+.ap { position: relative; margin: 0; }
+.ap-frame { padding: 10px; background: #e7e2d5; box-shadow: 0 1px 0 rgba(0, 0, 0, .05), 0 16px 32px -20px rgba(0, 0, 0, .4); }
+.ap img { display: block; width: 100%; height: auto; filter: sepia(.1) contrast(1.02); }
+.ap figcaption { margin-top: .6rem; font-size: .85rem; line-height: 1.45; color: var(--fg-muted); }
+.ap figcaption b { display: block; font-weight: 500; color: var(--fg); }
+.ap .tag {
+  position: absolute; top: 18px; left: 18px; padding: 3px 8px; background: rgba(21, 26, 24, .82); color: var(--paper);
+  font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; line-height: 1.3;
+}
+
+/* a few figures of the chapter */
+.facts { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px 24px; margin-top: 2.4rem; max-width: 900px; }
+.facts li { padding-top: .9rem; border-top: 2px solid var(--acc); }
+.facts .n { font-family: var(--serif); font-size: 2.5rem; line-height: 1; }
+.facts .n small { font-size: 1.05rem; margin-left: .15em; }
+.facts p { margin-top: .4rem; font-size: .9rem; color: var(--fg-muted); }
+
+/* sources and the note to the owners of the photos */
+.hist-sources { padding: 64px var(--gutter) 90px; }
+.hist-sources ol { max-width: 46rem; padding-left: 1.2rem; font-size: .92rem; color: var(--fg-soft); }
+.hist-sources li + li { margin-top: .45rem; }
+.hist-note { max-width: 46rem; margin-top: 1.6rem; padding-left: .9rem; border-left: 2px solid var(--acc); font-size: .85rem; color: var(--fg-muted); }
+
+footer {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 2rem;
+  padding: 40px var(--gutter) 56px; border-top: 1px solid var(--rule);
+  font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; color: var(--fg-muted);
+}
+.foot-name { font-family: var(--serif); font-size: 1.4rem; letter-spacing: .05em; text-transform: none; color: var(--fg); }
+.foot-top { margin-left: auto; color: var(--acc); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 768px) { footer { flex-direction: column; } .foot-top { margin-left: 0; } }

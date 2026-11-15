@@ -8,6 +8,7 @@ I18N.en = {
   'nav.home': 'Home',
   'nav.explore': 'Explore',
   'nav.plan': 'Visit',
+  'nav.history': 'History',
   'nav.lang': 'Language',
   'nav.menu': 'Menu',
   'nav.close': 'Close',
@@ -119,6 +120,18 @@ I18N.en = {
   'tn.now': 'Now',
   'tn.label': 'Move to compare then and now',
   'tn.title': 'Then and now',
+
+  // history page (historija.html)
+  'hist.meta': 'The history of Sanski Most from prehistory to today, in six chapters with old photographs.',
+  'hist.eyebrow': 'History',
+  'hist.title.html': 'Five thousand years<br>on the Sana',
+  'hist.lead': 'From a cave at Hrustovo to a town by a bridge: a short history of Sanski Most in six chapters, with old photographs.',
+  'hist.hero.cap': 'Sanski Most, an old photograph',
+  'hist.chapters': 'Chapters',
+  'hist.src.book': 'From the book “Sanski Most nekad i sad”',
+  'hist.sources': 'Sources',
+  'hist.src.1.html': 'Jasmin Zukanović, <em>Sanski Most nekad i sad</em> (“Sanski Most then and now”, 2024): most of the old photographs and facts on this page.',
+  'hist.note': 'If you took one of these photographs or know who did, let us know, so that we can credit it or take it down.',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
