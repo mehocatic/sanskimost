@@ -183,3 +183,38 @@
 #dial:focus-visible { outline: 1px solid var(--sand); outline-offset: 4px; }
 .edit-out { position: fixed; z-index: 2000; left: 10px; top: 70px; width: 330px; height: 300px; font: 11px/1.4 monospace; }
 
+@media not ((min-width: 900px) and (min-height: 560px)) {
+  .v-map .arh-head { position: fixed; z-index: 10; top: 0; left: 0; padding-top: 66px; pointer-events: none; }
+  .v-map .arh-head h1 { font-size: 1.35rem; max-width: none; }
+  .v-map .arh-head .eyebrow { margin-bottom: 8px; }
+  .v-map .arh-tools { position: fixed; z-index: 10; top: 122px; left: 0; padding-top: 0; }
+  .v-map .arh-chips { display: none; }
+  .v-map .arh-toggle { background: rgba(17, 22, 20, .7); }
+  #amap .leaflet-control-zoom { display: none; }
+  .apin { width: 44px; height: 44px; margin: -22px; }
+  .apin-w b { left: calc(50% + 9px); top: calc(50% - 27px); }
+  .apin-w em { top: calc(50% + 27px); font-size: .55rem; letter-spacing: .12em; }
+  .apin-w.sel .apin { width: 64px; height: 64px; margin: -32px; }
+  .apin-w.sel b { left: calc(50% + 18px); top: calc(50% - 38px); }
+  .apin-w.sel em { top: calc(50% + 40px); }
+  .pcard { left: 10px; right: 10px; top: auto; bottom: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); width: auto; height: 168px; display: grid; grid-template-columns: 118px minmax(0, 1fr); grid-template-rows: auto 1fr auto; column-gap: 14px; padding: 12px; border-radius: 16px; }
+  .pc-im { grid-row: 1 / 4; }
+  .pc-im b { font-size: 1.7rem; left: 8px; bottom: 5px; }
+  .pc-im b.s { font-size: .9rem; }
+  .pcard h2 { font-size: 1.4rem; margin: 2px 34px 0 0; }
+  .pc-cap, .pc-note { display: none; }
+  .pc-strip { margin-top: 8px; align-self: end; }
+  .pc-strip button { width: 50px; height: 50px; }
+  .pc-more { margin-top: 6px; font-size: .64rem; }
+  .pcard .pc-x { right: 4px; top: 4px; }
+  .dial { left: 20px; right: 20px; bottom: 190px; bottom: calc(190px + env(safe-area-inset-bottom)); }
+  .dial.low { bottom: 20px; }
+  .dial-now { flex-wrap: wrap; gap: 4px 12px; }
+  .dial-now b { font-size: 2.5rem; }
+  .dial-now span { flex-basis: 100%; font-size: .58rem; }
+  .play { width: 40px; height: 40px; }
+  .play::before { left: 15px; top: 12px; }
+  .play.on::before { left: 13px; top: 12px; }
+  .dial .ticks span:nth-child(6) { display: none; }
+}
+
