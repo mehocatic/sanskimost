@@ -67,6 +67,8 @@ I18N.bs = {
   'kv.quiz': 'Samo pitanja',
   'kv.bank': 'Baza ima {n} pitanja s provjerenim odgovorima i izvorom uz svaki. Pitanja se ne ponavljaju dok ne prođeš sva.',
   'kv.sharetextq': 'Moj rezultat je {n} od 1000 bodova u kvizu o Sanskom Mostu. Možeš li bolje?',
+  'kv.sources': 'Izvori pitanja',
+  'kv.srcnote': 'Dio izvora su sekundarni (Wikipedia, turistički portali). Gdje su se izvori razilazili, pitanje je izostavljeno.',
   'kv.start': 'Počni',
   'kv.best': 'Tvoj najbolji rezultat: {n}',
   'kv.score': 'Bodovi',

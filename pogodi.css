@@ -155,3 +155,12 @@
 .kv-modes { display: flex; flex-wrap: wrap; gap: 12px; }
 .kv-bank { margin: 18px 0 0; max-width: 34em; font-size: .86rem; line-height: 1.5; color: rgba(246, 244, 238, .7); }
 @media (max-width: 720px) { .kv-modes { flex-direction: column; } .kv-modes .btn.big { width: 100%; } }
+
+/* list of sources on the start screen */
+.kv-srcs { margin-top: 14px; max-width: 34em; font-size: .84rem; color: rgba(246, 244, 238, .7); }
+.kv-srcs summary { cursor: pointer; width: fit-content; letter-spacing: .12em; text-transform: uppercase; font-size: .72rem; color: rgba(246, 244, 238, .8); }
+.kv-srcs summary:hover { color: #f6f4ee; }
+.kv-srcs p { margin: 10px 0 8px; line-height: 1.5; }
+.kv-srcs ul { margin: 0; padding: 0 0 0 1.1em; line-height: 1.7; }
+.kv-srcs a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.kv-srcs a:hover { color: #f6f4ee; }

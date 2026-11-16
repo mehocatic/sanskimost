@@ -298,6 +298,9 @@
   $('kv-quiz').addEventListener('click', () => start('quiz'));
   $('kv-again').addEventListener('click', () => start(mode));
   $('kv-bank').textContent = t('kv.bank', { n: Q.length });
+  // every source the questions rest on, one link each
+  $('kv-srcl').innerHTML = Object.values(S).sort((a, b) => a.n.localeCompare(b.n, 'bs')).map(s =>
+    `<li><a href="${esc(s.u)}"${/^https?:/.test(s.u) ? ' target="_blank" rel="noopener"' : ''}>${s.n}</a></li>`).join('');
 
   addEventListener('langchange', () => {
     best();

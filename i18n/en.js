@@ -65,6 +65,8 @@ I18N.en = {
   'kv.quiz': 'Questions only',
   'kv.bank': 'The bank has {n} questions with checked answers and a source for each. Questions do not repeat until you have been through them all.',
   'kv.sharetextq': 'I scored {n} of 1000 points in the Sanski Most quiz. Can you do better?',
+  'kv.sources': 'Question sources',
+  'kv.srcnote': 'Some sources are secondary (Wikipedia, tourist portals). Where sources disagreed, the question was left out.',
   'kv.start': 'Start',
   'kv.best': 'Your best score: {n}',
   'kv.score': 'Score',
