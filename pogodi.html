@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n="kv.doctitle">Pogodi godinu &middot; Sanski Most</title>
-  <meta name="description" data-i18n-attr="content:kv.meta" content="Deset starih fotografija Sanskog Mosta. Pogodi koje godine je koja snimljena.">
+  <meta name="description" data-i18n-attr="content:kv.meta" content="Sedam starih fotografija i tri pitanja iz historije Sanskog Mosta. Provjeri koliko znaš.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sanski Most">
   <meta property="og:title" data-i18n-attr="content:kv.doctitle" content="Pogodi godinu · Sanski Most">
-  <meta property="og:description" data-i18n-attr="content:kv.meta" content="Deset starih fotografija Sanskog Mosta. Pogodi koje godine je koja snimljena.">
+  <meta property="og:description" data-i18n-attr="content:kv.meta" content="Sedam starih fotografija i tri pitanja iz historije Sanskog Mosta. Provjeri koliko znaš.">
   <meta property="og:url" content="https://visitsanskimost.netlify.app/pogodi">
   <meta property="og:image" content="https://visitsanskimost.netlify.app/photos/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -44,7 +44,7 @@
       <div class="kv-intro-txt">
         <p class="eyebrow" data-i18n="kv.eyebrow">Igra iz arhiva</p>
         <h1 data-i18n-html="kv.title.html">Pogodi <em>godinu</em></h1>
-        <p class="kv-lead" data-i18n="kv.lead">Deset starih fotografija Sanskog Mosta. Za svaku pogodi godinu kad je snimljena. Što bliže, to više bodova.</p>
+        <p class="kv-lead" data-i18n="kv.lead">Sedam starih fotografija i tri pitanja iz historije Sanskog Mosta. Pogodi godinu ili izaberi odgovor. Što bliže, to više bodova.</p>
         <button type="button" class="btn big" id="kv-start" data-i18n="kv.start">Počni</button>
         <p class="kv-best" id="kv-best" hidden></p>
       </div>
@@ -56,7 +56,10 @@
         <ol class="kv-dots" id="kv-dots" aria-hidden="true"></ol>
         <p class="kv-score"><span data-i18n="kv.score">Bodovi</span> <b id="kv-total">0</b></p>
       </div>
-      <div class="kv-photo"><figure class="print" id="kv-print"><img id="kv-img" alt=""></figure></div>
+      <div class="kv-photo">
+        <figure class="print" id="kv-print"><img id="kv-img" alt=""></figure>
+        <div class="kv-card" id="kv-card" hidden><p class="kv-card-n" id="kv-card-n"></p><p class="kv-card-q" id="kv-card-q"></p></div>
+      </div>
       <div class="kv-panel">
         <p class="kv-n" id="kv-n"></p>
         <h2 id="kv-q" data-i18n="kv.q">Koje godine je ovo snimljeno?</h2>
@@ -66,6 +69,12 @@
           <i class="kv-gap" id="kv-gap" aria-hidden="true"></i>
           <i class="kv-true" id="kv-true" aria-hidden="true"></i>
           <input type="range" id="kv-range" min="1900" max="2014" step="1" value="1957" aria-label="Godina" data-i18n-attr="aria-label:arh.year">
+        </div>
+        <div class="kv-opts" id="kv-opts" hidden>
+          <button type="button"><i>A</i><span></span></button>
+          <button type="button"><i>B</i><span></span></button>
+          <button type="button"><i>C</i><span></span></button>
+          <button type="button"><i>D</i><span></span></button>
         </div>
         <div class="kv-step" id="kv-step">
           <button type="button" id="kv-minus" aria-label="Godinu ranije" data-i18n-attr="aria-label:kv.minus">−</button>
@@ -100,6 +109,7 @@
   </main>
 
   <script defer src="arhiv-data.js"></script>
+  <script defer src="pogodi-data.js"></script>
   <script defer src="i18n/en.js"></script>
   <script defer src="i18n/bs.js"></script>
   <script defer src="i18n.js"></script>
