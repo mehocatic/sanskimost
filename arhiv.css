@@ -99,3 +99,26 @@
   .pcard { top: 164px; }
 }
 
+/* phones and tablets: the river runs down the left edge and the page scrolls normally */
+@media not ((min-width: 900px) and (min-height: 560px)) {
+  .strip { display: flex; flex-direction: column; padding: 34px var(--pad) 130px calc(var(--pad) + 26px); max-width: 720px; }
+  .strip::before { content: ""; position: absolute; left: calc(var(--pad) + 3px); top: 34px; bottom: 90px; width: 2px; border-radius: 2px; background: linear-gradient(var(--sand), var(--river) 30%, var(--river) 85%, rgba(23, 149, 160, 0)); }
+  .river, .lead { display: none; }
+  .it { position: relative; display: flex; flex-direction: column; margin-bottom: 52px; --r: var(--rm); }
+  .it::after { content: ""; position: absolute; left: -28px; top: 3px; width: 11px; height: 11px; border-radius: 50%; background: #111614; border: 2px solid var(--sand); }
+  .it .yr { order: 1; margin-bottom: 12px; font-size: .8rem; }
+  .it .print { order: 2; width: min(100%, calc(62svh * var(--ar))); }
+  .it .print img { width: 100%; height: auto; }
+  .it .cap { order: 3; margin-top: 12px; }
+  .dec { margin: 6px 0 14px -4px; }
+  .dec b { display: block; font-size: clamp(4.6rem, 22vw, 7rem); }
+  .dec.und b { font-size: clamp(2.6rem, 12vw, 4rem); }
+  .arh-end { padding: 10px 0 20px; }
+  .scrub { left: 10px; right: 10px; bottom: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); height: 64px; padding: 0; border-radius: 14px; border: 1px solid rgba(246, 244, 238, .14); background: rgba(17, 22, 20, .9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .scrub .bars { inset: 12px 12px 24px; }
+  .scrub .ticks { left: 12px; right: 12px; bottom: 7px; }
+  .scrub .ticks span:nth-child(6) { display: none; }
+  .needle { top: 8px; bottom: 22px; margin-left: 12px; }
+  .needle b { display: none; }
+}
+
