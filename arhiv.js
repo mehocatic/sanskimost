@@ -363,7 +363,38 @@
     if (b) { shown = b.dataset.f; card(); }
   });
 
+  /* ---------- the two views ---------- */
+  function setView(v, placeId) {
+    view = v;
+    stop();
+    document.body.classList.toggle('v-map', v === 'map');
+    document.body.classList.remove('sc');
+    document.querySelectorAll('.arh-toggle button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === v)));
+    $('v-time').hidden = v !== 'time';
+    $('v-map').hidden = v !== 'map';
+    scrollTo(0, 0);
+    if (v === 'map') {
+      if (!map) initMap(); else map.invalidateSize();
+      select(placeId || sel || 'prijedorska', !!placeId);
+      setHash('#karta');
+    } else {
+      setHash('');
+      layout();
+    }
+  }
+  document.querySelector('.arh-toggle').addEventListener('click', e => { const b = e.target.closest('button'); if (b && b.dataset.view !== view) setView(b.dataset.view); });
+
+  addEventListener('langchange', () => {
+    if (lb.open) lb.close();
+    buildChips();
+    buildStrip();
+    if (map) { markers.forEach((m, id) => { m.options.title = placeName(placeOf(id)); }); setYear(year); }
+  });
+
   /* ---------- start ---------- */
   buildChips();
   buildStrip();
+  const h = decodeURIComponent(location.hash);
+  if (h.startsWith('#karta')) setView('map', h.split('=')[1]);
+  else if (h.startsWith('#foto=')) openFile(h.slice(6));
 })();
