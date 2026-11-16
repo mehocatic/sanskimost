@@ -45,7 +45,7 @@
 .kv-year.done { color: var(--paper); -webkit-text-stroke: 0; }
 /* the ruler: a tick per year, a longer one with the number every ten */
 .kv-ruler { position: relative; height: 64px; margin: 0 11px; }
-.kv-ticks { position: absolute; left: 0; right: 0; top: 0; height: 100%; background: repeating-linear-gradient(90deg, rgba(246, 244, 238, .3) 0 1px, transparent 1px calc(100% / 114)); background-size: 100% 9px; background-repeat: no-repeat; }
+.kv-ticks { position: absolute; left: 0; right: 0; top: 0; height: 100%; background: repeating-linear-gradient(90deg, rgba(246, 244, 238, .3) 0 1px, transparent 1px calc(100% / var(--n, 114))); background-size: 100% 9px; background-repeat: no-repeat; }
 .kv-ticks span { position: absolute; top: 0; width: 1px; height: 18px; background: rgba(246, 244, 238, .7); }
 .kv-ticks span b { position: absolute; top: 26px; left: 50%; transform: translateX(-50%); font: 400 .64rem/1 var(--sans); letter-spacing: .12em; color: rgba(246, 244, 238, .62); font-variant-numeric: lining-nums; }
 #kv-range { -webkit-appearance: none; appearance: none; position: absolute; left: -11px; right: -11px; top: -8px; width: calc(100% + 22px); height: 44px; margin: 0; background: none; cursor: grab; }
@@ -73,6 +73,21 @@
 .kv-cap { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(246, 244, 238, .16); font-family: var(--serif); font-style: italic; font-size: 1.15rem; line-height: 1.4; color: rgba(246, 244, 238, .86); }
 .kv-ans-act { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-top: 22px; }
 
+/* a question without a photograph: a paper card in the place of the print */
+.kv-card { width: min(100%, 520px); min-height: 280px; padding: clamp(26px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center; gap: 22px; background: var(--print); color: var(--ink); box-shadow: 0 24px 60px rgba(0, 0, 0, .6); transform: rotate(-1deg); animation: kv-in .8s cubic-bezier(.2, .7, .2, 1) both; position: relative; }
+.kv-card::before { content: "?"; position: absolute; right: -16px; top: -20px; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--sand); font: 500 2rem/1 var(--serif); box-shadow: 0 10px 24px rgba(0, 0, 0, .45); }
+.kv-card-n { font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; color: rgba(14, 18, 20, .55); }
+.kv-card-q { font-family: var(--serif); font-size: clamp(1.45rem, 2.5vw, 2.05rem); line-height: 1.22; }
+.kv-year.long { font-size: clamp(3.4rem, 7vw, 6.4rem); line-height: 1.1; }
+.kv-opts { display: grid; gap: 10px; margin-top: 18px; }
+.kv-opts button { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 56px; padding: 10px 18px; text-align: left; border: 1px solid rgba(246, 244, 238, .28); border-radius: 4px; font-size: 1.02rem; transition: border-color .25s ease, background .25s ease, transform .25s ease; }
+.kv-opts button i { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(246, 244, 238, .4); font: normal .72rem/1 var(--sans); letter-spacing: .04em; }
+.kv-opts button:not(:disabled):hover { border-color: var(--sand); background: rgba(127, 214, 220, .1); transform: translateX(3px); }
+.kv-opts button:disabled { cursor: default; opacity: .55; }
+.kv-opts button.ok { opacity: 1; background: var(--sand); border-color: var(--sand); color: var(--ink); }
+.kv-opts button.ok i { border-color: var(--ink); }
+.kv-opts button.no { opacity: 1; border-color: #c9705a; color: #e8a08c; text-decoration: line-through; }
+
 /* ---------- 3. result ---------- */
 .kv-end { min-height: 100vh; min-height: 100svh; padding: 110px var(--pad) 80px; max-width: 1180px; margin: 0 auto; }
 .kv-end .eyebrow { color: var(--sand); }
@@ -91,6 +106,10 @@
 .kv-list p { margin-top: 12px; font-size: .8rem; color: rgba(246, 244, 238, .7); font-variant-numeric: lining-nums; }
 .kv-list p b { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; color: var(--paper); margin-right: 8px; }
 .kv-list p i { font-style: normal; }
+.kv-qcard { aspect-ratio: 4 / 3; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; background: var(--print); color: var(--ink); border: 5px solid var(--print); box-shadow: 0 12px 28px rgba(0, 0, 0, .5); }
+.kv-qcard span { font: 500 1.6rem/1 var(--serif); }
+.kv-qcard small { font-size: .72rem; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.kv-list li:nth-child(odd) .kv-qcard { transform: rotate(-1.2deg); } .kv-list li:nth-child(even) .kv-qcard { transform: rotate(1deg); }
 .kv-list .g i { color: var(--sand); } .kv-list .m i { color: #d9b45a; } .kv-list .b i { color: #e08a74; }
 
 @media (max-width: 899px) {
@@ -110,6 +129,10 @@
   .kv-panel h2 { font-size: 1.25rem; }
   .kv-year { font-size: clamp(4.4rem, 22vw, 6rem); margin: 4px 0 2px -2px; }
   .kv-ticks span:nth-child(even) b { display: none; }
+  .kv-card { min-height: 0; padding: 22px; gap: 12px; margin-bottom: 14px; }
+  .kv-card::before { top: auto; bottom: -20px; right: 16px; width: 46px; height: 46px; font-size: 1.6rem; }
+  .kv-opts { gap: 8px; margin-top: 12px; }
+  .kv-opts button { min-height: 52px; font-size: .98rem; }
   .kv-step { margin-top: 12px; }
   .kv-ans { margin-top: 12px; }
   .kv-cap { margin-top: 10px; padding-top: 10px; font-size: 1.05rem; }
@@ -120,5 +143,5 @@
   .kv-list p b { display: block; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .kv-fan figure, .kv-photo .print, .kv-ans, .shown .kv-true { animation: none; }
+  .kv-fan figure, .kv-photo .print, .kv-card, .kv-ans, .shown .kv-true { animation: none; }
 }
