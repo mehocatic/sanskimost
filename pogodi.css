@@ -145,3 +145,8 @@
 @media (prefers-reduced-motion: reduce) {
   .kv-fan figure, .kv-photo .print, .kv-card, .kv-ans, .shown .kv-true { animation: none; }
 }
+
+/* source of an answer */
+.kv-src{margin:.5rem 0 0;font-size:.82rem;opacity:.7;line-height:1.4}
+.kv-src a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.kv-src a:hover{opacity:1}
