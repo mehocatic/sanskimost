@@ -73,3 +73,23 @@
 .kv-cap { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(246, 244, 238, .16); font-family: var(--serif); font-style: italic; font-size: 1.15rem; line-height: 1.4; color: rgba(246, 244, 238, .86); }
 .kv-ans-act { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-top: 22px; }
 
+/* ---------- 3. result ---------- */
+.kv-end { min-height: 100vh; min-height: 100svh; padding: 110px var(--pad) 80px; max-width: 1180px; margin: 0 auto; }
+.kv-end .eyebrow { color: var(--sand); }
+.kv-final { display: flex; align-items: baseline; gap: 16px; font-family: var(--serif); font-weight: 500; line-height: .85; font-variant-numeric: lining-nums; }
+.kv-final b { font-weight: 500; font-size: clamp(6rem, 17vw, 14rem); letter-spacing: -.02em; }
+.kv-final span { font-size: clamp(1.4rem, 3vw, 2.4rem); color: rgba(246, 244, 238, .5); }
+.kv-end h2 { font-family: var(--serif); font-weight: 500; font-style: italic; font-size: clamp(1.9rem, 4vw, 3.2rem); line-height: 1.05; color: var(--sand); margin-top: 18px; }
+.kv-avg { margin-top: 10px; color: rgba(246, 244, 238, .78); }
+.kv-end-act { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 30px 0 54px; }
+.kv-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 26px 20px; }
+.kv-list a { display: block; color: inherit; text-decoration: none; }
+.kv-list img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 5px solid var(--print); box-shadow: 0 12px 28px rgba(0, 0, 0, .5); transition: transform .4s cubic-bezier(.2, .7, .2, 1); }
+.kv-list li:nth-child(odd) img { transform: rotate(-1.2deg); }
+.kv-list li:nth-child(even) img { transform: rotate(1deg); }
+.kv-list a:hover img { transform: rotate(0deg) scale(1.03); }
+.kv-list p { margin-top: 12px; font-size: .8rem; color: rgba(246, 244, 238, .7); font-variant-numeric: lining-nums; }
+.kv-list p b { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; color: var(--paper); margin-right: 8px; }
+.kv-list p i { font-style: normal; }
+.kv-list .g i { color: var(--sand); } .kv-list .m i { color: #d9b45a; } .kv-list .b i { color: #e08a74; }
+
