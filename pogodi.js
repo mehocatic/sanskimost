@@ -1,12 +1,16 @@
-// "Guess the year": ten dated photographs from arhiv-data.js, one at a time.
-// Each guess scores 100 points minus 4 for every year it is off. The best total is kept in localStorage.
+// "Guess the year": seven dated photographs from arhiv-data.js and three questions from pogodi-data.js, one at a time.
+// A year guess scores 100 points minus 100/zero for every year it is off (zero is 22% of the ruler: 25 years on the photo ruler).
+// A multiple-choice question is worth 100 or nothing. The best total is kept in localStorage.
 (() => {
-  const A = window.ARCHIVE;
+  const A = window.ARCHIVE, Q = window.KVQ;
   const $ = id => document.getElementById(id);
   const t = (k, v) => I18n.t(k, v);
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const Y0 = 1900, Y1 = 2014, ROUNDS = 10, KEY = 'sm-pogodi-best';
+  const ROUNDS = 10, PHOTOS = 7, KEY = 'sm-pogodi-best';
+  const PHOTO_SCALE = { from: 1900, to: 2014 };
+  let Y0 = PHOTO_SCALE.from, Y1 = PHOTO_SCALE.to;
   const pct = y => (y - Y0) / (Y1 - Y0) * 100;
+  const fmt = y => y < 0 ? t('kv.bce', { n: -y }) : String(y);
 
   // Left out: documents, photographs with only a rough date, and those where the year can be read in the picture itself.
   const SHOWS_YEAR = ['avion-1944', 'hamzibegova-1946', 'trnova-1957', 'prijedorska-1961', 'lovac-1968', 'poplava-1996', 'lovac-2005'];
@@ -15,8 +19,8 @@
 
   const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   // Most of the archive is from 1996 to 1998, so a plain random pick would be nearly all one decade:
-  // five from before 1990, three from the nineties, one after 2000, one from anywhere. No place and no year twice.
-  function pick() {
+  // four from before 1990, two from the nineties, one after 2000, then whatever is left. No place and no year twice.
+  function pickPhotos() {
     const out = [];
     const take = (list, n) => {
       for (const p of shuffle([...list])) {
@@ -25,12 +29,22 @@
         out.push(p); n--;
       }
     };
-    take(POOL.filter(p => p.y < 1990), 5);
-    take(POOL.filter(p => p.y >= 1990 && p.y <= 2000), 3);
+    take(POOL.filter(p => p.y < 1990), 4);
+    take(POOL.filter(p => p.y >= 1990 && p.y <= 2000), 2);
     take(POOL.filter(p => p.y > 2000), 1);
-    take(POOL, ROUNDS - out.length);
-    if (out.length < ROUNDS) shuffle([...POOL]).forEach(p => { if (out.length < ROUNDS && !out.includes(p)) out.push(p); });
-    return shuffle(out);
+    take(POOL, PHOTOS - out.length);
+    if (out.length < PHOTOS) shuffle([...POOL]).forEach(p => { if (out.length < PHOTOS && !out.includes(p)) out.push(p); });
+    return out.map(p => ({ kind: 'photo', p }));
+  }
+  // two year questions and one multiple choice, dealt in between the photographs and never next to each other
+  function pickQuestions() {
+    const y = shuffle(Q.filter(q => q.type === 'year')).slice(0, 2), c = shuffle(Q.filter(q => q.type === 'choice')).slice(0, ROUNDS - PHOTOS - 2);
+    return shuffle([...y, ...c]).map(q => ({ kind: q.type, q }));
+  }
+  function pick() {
+    const ph = shuffle(pickPhotos()), qs = pickQuestions(), out = ph.slice();
+    [2, 5, 8].slice(0, qs.length).forEach((slot, i) => out.splice(Math.min(slot + Math.floor(Math.random() * 2), out.length), 0, qs[i]));
+    return out;
   }
 
   const years = n => {
@@ -38,18 +52,18 @@
     const d = n % 10, h = n % 100;
     return t(d === 1 && h !== 11 ? 'kv.year1' : (d >= 2 && d <= 4 && (h < 12 || h > 14) ? 'kv.year2' : 'kv.yearN'), { n });
   };
-  const grade = d => d <= 3 ? 'g' : (d <= 10 ? 'm' : 'b');
-  const verdict = d => t(d === 0 ? 'kv.v.exact' : d <= 2 ? 'kv.v.close' : d <= 5 ? 'kv.v.near' : d <= 10 ? 'kv.v.ok' : d <= 20 ? 'kv.v.far' : 'kv.v.miss');
+  // a miss is judged in "photo years": the same share of the ruler counts the same on every scale
+  const grade = e => e <= 3 ? 'g' : (e <= 10 ? 'm' : 'b');
+  const verdict = (e, d) => t(d === 0 ? 'kv.v.exact' : e <= 2 ? 'kv.v.close' : e <= 5 ? 'kv.v.near' : e <= 10 ? 'kv.v.ok' : e <= 20 ? 'kv.v.far' : 'kv.v.miss');
   const rank = s => t(s >= 900 ? 'kv.r.5' : s >= 750 ? 'kv.r.4' : s >= 550 ? 'kv.r.3' : s >= 350 ? 'kv.r.2' : 'kv.r.1');
+  const esc = x => String(x).replace(/"/g, '&quot;');
 
   let set = [], at = 0, total = 0, log = [], revealed = false;
-  const range = $('kv-range'), yearEl = $('kv-year'), ruler = $('kv-ruler');
+  const range = $('kv-range'), yearEl = $('kv-year'), ruler = $('kv-ruler'), opts = [...$('kv-opts').children];
+  const cur = () => set[at];
 
   /* ---------- start ---------- */
   $('kv-fan').innerHTML = DECOR.map((f, i) => `<figure style="--r:${[-9, 5, -2][i]}deg;--dx:${[-26, 22, 0][i]}%;--dy:${[4, -8, 6][i]}%;--d:${i * .14}s"><img src="photos/arhiv/${f}.webp" alt=""></figure>`).join('');
-  let h = '';
-  for (let y = Y0; y <= Y1; y += 10) h += `<span style="left:${pct(y)}%"><b>${y}</b></span>`;
-  $('kv-ticks').innerHTML = h;
   function best() {
     let b = 0;
     try { b = +localStorage.getItem(KEY) || 0; } catch (e) { /* no storage: no best score */ }
@@ -71,88 +85,158 @@
     round();
   }
 
-  /* ---------- one photograph ---------- */
+  /* ---------- the ruler: its scale follows the question ---------- */
+  function scale(from, to) {
+    Y0 = from; Y1 = to;
+    const span = to - from;
+    const major = [10, 25, 50, 100, 250, 500].find(m => span / m <= 12) || 500;
+    const minor = major === 10 ? 1 : major / 5;
+    let h = '';
+    for (let y = Math.ceil(from / major) * major; y <= to; y += major) h += `<span style="left:${pct(y)}%"><b>${y < 0 ? '−' + -y : y}</b></span>`;
+    $('kv-ticks').innerHTML = h;
+    $('kv-ticks').style.setProperty('--n', span / minor);
+    range.min = from; range.max = to; range.step = span > 1000 ? 10 : 1;
+    range.value = Math.round((from + span * .5) / range.step) * range.step;
+  }
+
+  /* ---------- one round: a photograph, a year question or a multiple choice ---------- */
   function round() {
-    const p = set[at];
+    const r = cur();
     revealed = false;
     ruler.classList.remove('shown');
-    const img = $('kv-img'), print = $('kv-print');
+    const photo = r.kind === 'photo', pick = r.kind === 'choice';
+    const print = $('kv-print');
+    $('kv-print').hidden = !photo;
+    $('kv-card').hidden = photo;
+    $('kv-card').style.animation = 'none'; void $('kv-card').offsetWidth; $('kv-card').style.animation = '';
     print.style.animation = 'none'; void print.offsetWidth; print.style.animation = '';
     print.style.setProperty('--r', `${[-1.4, 1.2, -.8, 1.6][at % 4]}deg`);
-    img.src = `photos/arhiv/${p.f}.webp`; img.width = p.w; img.height = p.h;
-    img.alt = t('kv.alt');
-    $('kv-n').textContent = t('kv.n', { n: at + 1, total: set.length });
+    if (photo) {
+      const img = $('kv-img');
+      img.src = `photos/arhiv/${r.p.f}.webp`; img.width = r.p.w; img.height = r.p.h;
+      img.alt = t('kv.alt');
+    }
+    // the ruler is for years only; a multiple choice shows its answers instead
+    [yearEl, ruler, $('kv-step')].forEach(el => { el.hidden = pick; });
+    $('kv-opts').hidden = !pick;
+    opts.forEach(b => { b.disabled = false; b.className = ''; });
     $('kv-q').hidden = false;
-    $('kv-step').hidden = false;
     $('kv-ans').hidden = true;
-    range.disabled = false;
-    yearEl.classList.remove('done');
-    setYear(+range.value);
+    if (!pick) {
+      scale(photo ? PHOTO_SCALE.from : r.q.from, photo ? PHOTO_SCALE.to : r.q.to);
+      range.disabled = false;
+      yearEl.classList.remove('done');
+      setYear(+range.value);
+    }
+    texts();
     [...$('kv-dots').children].forEach((li, i) => li.classList.toggle('now', i === at));
     // the next photograph is fetched ahead, so it is there when asked for
-    if (set[at + 1]) new Image().src = `photos/arhiv/${set[at + 1].f}.webp`;
+    const nx = set[at + 1];
+    if (nx && nx.kind === 'photo') new Image().src = `photos/arhiv/${nx.p.f}.webp`;
+  }
+  // everything the language changes in the current round
+  function texts() {
+    const r = cur();
+    $('kv-n').textContent = t(r.kind === 'photo' ? 'kv.n' : 'kv.nq', { n: at + 1, total: set.length });
+    $('kv-q').textContent = t(r.kind === 'photo' ? 'kv.q' : r.kind === 'year' ? 'kv.q.when' : 'kv.q.pick');
+    if (r.kind !== 'photo') {
+      $('kv-card-q').textContent = t(`kv.q.${r.q.id}.q`);
+      $('kv-card-n').textContent = t('kv.qcard', { n: at + 1 });
+    }
+    if (r.kind === 'choice') opts.forEach((b, i) => { b.lastElementChild.textContent = t(`kv.q.${r.q.id}.o${i + 1}`); });
+    if (r.kind === 'year') yearEl.textContent = fmt(+range.value);
+    if (revealed) answer(log[log.length - 1]);
   }
   function setYear(y) {
     y = Math.min(Y1, Math.max(Y0, y));
     range.value = y;
-    yearEl.textContent = y;
+    yearEl.textContent = fmt(y);
+    yearEl.classList.toggle('long', y < 0);
   }
-  range.addEventListener('input', () => { yearEl.textContent = range.value; });
-  $('kv-minus').addEventListener('click', () => setYear(+range.value - 1));
-  $('kv-plus').addEventListener('click', () => setYear(+range.value + 1));
+  range.addEventListener('input', () => setYear(+range.value));
+  $('kv-minus').addEventListener('click', () => setYear(+range.value - +range.step));
+  $('kv-plus').addEventListener('click', () => setYear(+range.value + +range.step));
 
-  function reveal() {
+  function reveal(choice) {
     if (revealed) return;
     revealed = true;
-    const p = set[at], guess = +range.value, d = Math.abs(guess - p.y), pts = Math.max(0, 100 - 4 * d);
-    total += pts;
-    log.push({ p, guess, d, pts });
-    range.disabled = true;
-    // the true year drops onto the ruler; a line joins it to the guess
-    $('kv-true').style.left = `${pct(p.y)}%`;
-    const gap = $('kv-gap');
-    gap.style.left = `${pct(Math.min(guess, p.y))}%`;
-    gap.style.width = `${Math.abs(pct(guess) - pct(p.y))}%`;
-    gap.classList.toggle('rev', guess < p.y);
-    ruler.classList.add('shown');
-    count(yearEl, guess, p.y, () => yearEl.classList.add('done'));
-    count($('kv-total'), total - pts, total);
-    $('kv-dots').children[at].className = grade(d);
-    $('kv-q').hidden = true;
-    $('kv-step').hidden = true;
-    $('kv-verdict').textContent = verdict(d);
-    $('kv-pts').textContent = (d ? t('kv.off', { years: years(d), guess }) + ' · ' : '') + t('kv.pts', { n: pts });
-    $('kv-cap').textContent = t(p.cap);
-    $('kv-open').href = `arhiv#foto=${p.f}`;
-    $('kv-next').textContent = t(at === set.length - 1 ? 'kv.finish' : 'kv.next');
+    const r = cur(), pickQ = r.kind === 'choice';
+    let entry;
+    if (pickQ) {
+      const right = choice === r.q.ok;
+      entry = { r, guess: choice, d: right ? 0 : 1, e: right ? 0 : 99, pts: right ? 100 : 0 };
+      opts.forEach((b, i) => { b.disabled = true; b.classList.toggle('ok', i + 1 === r.q.ok); b.classList.toggle('no', i + 1 === choice && !right); });
+    } else {
+      const truth = r.kind === 'photo' ? r.p.y : r.q.y, guess = +range.value, d = Math.abs(guess - truth), zero = Math.round((Y1 - Y0) * .22);
+      entry = { r, guess, d, e: d * 25 / zero, pts: Math.max(0, Math.round(100 * (1 - d / zero))), truth };
+      range.disabled = true;
+      // the true year drops onto the ruler; a line joins it to the guess
+      $('kv-true').style.left = `${pct(truth)}%`;
+      const gap = $('kv-gap');
+      gap.style.left = `${pct(Math.min(guess, truth))}%`;
+      gap.style.width = `${Math.abs(pct(guess) - pct(truth))}%`;
+      gap.classList.toggle('rev', guess < truth);
+      ruler.classList.add('shown');
+      count(yearEl, guess, truth, () => yearEl.classList.add('done'), fmt);
+      $('kv-step').hidden = true;
+      $('kv-q').hidden = true;
+    }
+    total += entry.pts;
+    log.push(entry);
+    count($('kv-total'), total - entry.pts, total);
+    $('kv-dots').children[at].className = pickQ ? (entry.pts ? 'g' : 'b') : grade(entry.e);
+    answer(entry);
     $('kv-ans').hidden = false;
     $('kv-next').focus({ preventScroll: true });
   }
+  // the answer block under the ruler (or under the options)
+  function answer(x) {
+    const r = x.r, photo = r.kind === 'photo';
+    if (r.kind === 'choice') {
+      $('kv-verdict').textContent = t(x.pts ? 'kv.v.right' : 'kv.v.wrong');
+      $('kv-pts').textContent = (x.pts ? '' : t('kv.yourpick', { pick: t(`kv.q.${r.q.id}.o${x.guess}`) }) + ' · ') + t('kv.pts', { n: x.pts });
+    } else {
+      $('kv-verdict').textContent = verdict(x.e, x.d);
+      $('kv-pts').textContent = (x.d ? t('kv.off', { years: years(x.d), guess: fmt(x.guess) }) + ' · ' : '') + t('kv.pts', { n: x.pts });
+    }
+    $('kv-cap').textContent = photo ? t(r.p.cap) : t(`kv.q.${r.q.id}.a`);
+    $('kv-open').hidden = !photo;
+    if (photo) $('kv-open').href = `arhiv#foto=${r.p.f}`;
+    $('kv-next').textContent = t(at === set.length - 1 ? 'kv.finish' : 'kv.next');
+  }
   // numbers roll from one value to the other
-  function count(el, from, to, done) {
-    if (reduce || from === to) { el.textContent = to; if (done) done(); return; }
-    const t0 = performance.now(), dur = Math.min(1100, 350 + Math.abs(to - from) * 22);
+  function count(el, from, to, done, f = String) {
+    if (reduce || from === to) { el.textContent = f(to); if (done) done(); return; }
+    const t0 = performance.now(), dur = Math.min(1100, 350 + Math.min(60, Math.abs(to - from)) * 22);
     (function step(now) {
       const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-      el.textContent = Math.round(from + (to - from) * e);
+      el.textContent = f(Math.round(from + (to - from) * e));
       if (k < 1) requestAnimationFrame(step); else if (done) done();
     })(t0);
   }
-  $('kv-ok').addEventListener('click', reveal);
+  $('kv-ok').addEventListener('click', () => reveal());
+  opts.forEach((b, i) => b.addEventListener('click', () => reveal(i + 1)));
   $('kv-next').addEventListener('click', () => { if (++at < set.length) round(); else end(); });
   range.addEventListener('keydown', e => { if (e.key === 'Enter') reveal(); });
 
   /* ---------- result ---------- */
   function end() {
-    const avg = Math.round(log.reduce((s, r) => s + r.d, 0) / log.length);
+    const yrs = log.filter(x => x.r.kind !== 'choice');
+    const avg = yrs.length ? Math.round(yrs.reduce((s, x) => s + x.e, 0) / yrs.length) : 0;
     let b = best();
     if (total > b) { try { localStorage.setItem(KEY, total); } catch (e) { /* not kept */ } b = total; }
     show('kv-end');
     count($('kv-final'), 0, total);
     $('kv-rank').textContent = rank(total);
     $('kv-avg').textContent = t('kv.avg', { years: years(avg) }) + (b > total ? ' ' + t('kv.best', { n: b }) + '.' : '');
-    $('kv-list').innerHTML = log.map(r => `<li class="${grade(r.d)}"><a href="arhiv#foto=${r.p.f}"><img src="photos/arhiv/t/${r.p.f}.webp" alt="${t(r.p.cap).replace(/"/g, '&quot;')}" loading="lazy">` +
-      `<p><b>${r.p.y}</b>${t('kv.you', { guess: r.guess })} · <i>${r.d ? (r.guess > r.p.y ? '+' : '−') + r.d : '✓'}</i></p></a></li>`).join('');
+    $('kv-list').innerHTML = log.map(x => {
+      const r = x.r;
+      if (r.kind === 'photo') return `<li class="${grade(x.e)}"><a href="arhiv#foto=${r.p.f}"><img src="photos/arhiv/t/${r.p.f}.webp" alt="${esc(t(r.p.cap))}" loading="lazy">` +
+        `<p><b>${r.p.y}</b>${t('kv.you', { guess: x.guess })} · <i>${x.d ? (x.guess > r.p.y ? '+' : '−') + x.d : '✓'}</i></p></a></li>`;
+      const ans = r.kind === 'year' ? fmt(r.q.y) : t(`kv.q.${r.q.id}.o${r.q.ok}`);
+      const you = r.kind === 'year' ? t('kv.you', { guess: fmt(x.guess) }) + ' · <i>' + (x.d ? (x.guess > r.q.y ? '+' : '−') + x.d : '✓') + '</i>' : '<i>' + (x.pts ? '✓' : '×') + '</i>';
+      return `<li class="${r.kind === 'choice' ? (x.pts ? 'g' : 'b') : grade(x.e)} qi"><div class="kv-qcard"><span aria-hidden="true">?</span><small>${t(`kv.q.${r.q.id}.q`)}</small></div><p><b>${ans}</b>${you}</p></li>`;
+    }).join('');
   }
   $('kv-share').addEventListener('click', async () => {
     const btn = $('kv-share'), url = location.origin + location.pathname;
@@ -169,10 +253,7 @@
 
   addEventListener('langchange', () => {
     best();
-    if (!$('kv-round').hidden) {
-      $('kv-n').textContent = t('kv.n', { n: at + 1, total: set.length });
-      if (revealed) { const r = log[log.length - 1]; $('kv-verdict').textContent = verdict(r.d); $('kv-cap').textContent = t(r.p.cap); $('kv-pts').textContent = (r.d ? t('kv.off', { years: years(r.d), guess: r.guess }) + ' · ' : '') + t('kv.pts', { n: r.pts }); $('kv-next').textContent = t(at === set.length - 1 ? 'kv.finish' : 'kv.next'); }
-    }
+    if (!$('kv-round').hidden) texts();
     if (!$('kv-end').hidden) end();
   });
 })();
