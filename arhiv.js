@@ -51,7 +51,7 @@
   const UP = [23, 21, 24, 22], DN = [20, 18.5, 20.5], ROT = [-2.2, 1.6, -1, 2.4, -1.8, .8];
 
   function buildStrip() {
-    let h = '<svg class="river" aria-hidden="true"></svg><div class="lead"><span class="arh-hint">' + esc(t('arh.hint')) + ' →</span></div>', dec = null, undated = false;
+    let h = '<svg class="river" aria-hidden="true"></svg><div class="lead"><span class="arh-hint">' + esc(t('arh.hint')) + ' →</span><a class="arh-game" href="pogodi">' + esc(t('kv.cta')) + '</a></div>', dec = null, undated = false;
     // room for a print above and below the river, in px: the title and the themes stay clear above, the year bar below
     const H = innerHeight, line = .58 * H, capH = H >= 720 ? 62 : 0;
     const upMax = line - 54 - capH - (innerWidth >= 1200 ? 150 : 205), dnMax = H - line - 54 - capH - 108;
@@ -71,7 +71,7 @@
         `<button type="button" class="print" aria-label="${esc(capOf(p))}. ${esc(t('arh.open'))}"><img src="${full(p)}" width="${p.w}" height="${p.h}" alt="" ${i < 4 ? '' : 'loading="lazy"'} decoding="async"></button>` +
         `<span class="cap">${esc(capOf(p))}</span>${p.y ? `<span class="yr">${esc(yearOf(p))}</span>` : ''}</div>`;
     });
-    h += `<div class="arh-end"><p>${esc(t('arh.end'))}</p><button type="button" id="end-map">${esc(t('arh.end.map'))}</button></div>`;
+    h += `<div class="arh-end"><p>${esc(t('arh.end'))}</p><button type="button" id="end-map">${esc(t('arh.end.map'))}</button><a class="end-game" href="pogodi">${esc(t('kv.cta'))}</a></div>`;
     strip.innerHTML = h;
     items = [...strip.querySelectorAll('.it')];
     $('count').textContent = t('arh.count', { n: list.length });
