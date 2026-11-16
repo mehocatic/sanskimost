@@ -77,6 +77,27 @@
     </section>
   </main>
 
+  <!-- one photograph, opened -->
+  <dialog id="lb" aria-label="Fotografija" data-i18n-attr="aria-label:arh.photo">
+    <button type="button" class="lb-x" id="lb-x"><span data-i18n="arh.close">Zatvori</span> ✕</button>
+    <div class="lb-ph"><img id="lb-img" alt=""></div>
+    <div class="lb-txt">
+      <p class="lb-y" id="lb-y"></p>
+      <h2 id="lb-cap"></h2>
+      <dl id="lb-meta"></dl>
+      <div class="lb-act">
+        <button type="button" class="btn" id="lb-map" data-i18n="arh.onmap">Pokaži na karti →</button>
+        <button type="button" class="btn ghost" id="lb-share" data-i18n="arh.share">Podijeli</button>
+      </div>
+      <div class="lb-same" id="lb-same" hidden><p data-i18n="arh.same">Isto mjesto, druge godine</p><div id="lb-same-list"></div></div>
+    </div>
+    <div class="lb-nav">
+      <button type="button" id="lb-prev">← <span data-i18n="arh.prev">Prethodna</span></button>
+      <span id="lb-n"></span>
+      <button type="button" id="lb-next"><span data-i18n="arh.next">Sljedeća</span> →</button>
+    </div>
+  </dialog>
+
   <script defer src="vendor/leaflet/leaflet.js"></script>
   <script defer src="arhiv-data.js"></script>
   <script defer src="i18n/en.js"></script>
