@@ -262,6 +262,107 @@
     if (Math.abs(dx) > 60) openPhoto(at + (dx < 0 ? 1 : -1));
   });
 
+  /* ---------- 2. on the map ---------- */
+  const TOWN = [44.7658, 16.6663];
+  const placed = A.photos.filter(p => p.place);
+  const dial = $('dial'), pcard = $('pcard');
+  let map = null, year = Y1, sel = null, shown = null, timer = 0;
+  const markers = new Map();
+  const visible = id => placed.filter(p => p.place === id && (!p.y || p.y <= year));
+  const cover = ps => [...ps].reverse().find(p => p.y) || ps[0];
+
+  function icon(pl) {
+    const ps = visible(pl.id), all = placed.filter(p => p.place === pl.id), c = cover(ps.length ? ps : all);
+    return L.divIcon({
+      className: `apin-w${ps.length ? '' : ' off'}${sel === pl.id ? ' sel' : ''}`, iconSize: [60, 60], iconAnchor: [30, 30],
+      html: `<span class="apin"><img src="${thumb(c)}" alt=""></span><b>${ps.length}</b><em>${esc(placeName(pl))}</em>`
+    });
+  }
+  function initMap() {
+    const edit = new URLSearchParams(location.search).has('edit');
+    map = L.map('amap', { zoomControl: true, scrollWheelZoom: true, zoomSnap: .25 });
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    A.places.forEach(pl => {
+      if (!placed.some(p => p.place === pl.id)) return;
+      const m = L.marker(pl.coords, { icon: icon(pl), title: placeName(pl), alt: placeName(pl), keyboard: true, draggable: edit, riseOnHover: true }).addTo(map);
+      m.on('click', () => select(pl.id));
+      m.on('keypress', e => { if (e.originalEvent.key === 'Enter') select(pl.id); });
+      markers.set(pl.id, m);
+      if (edit) m.on('dragend', () => { const ll = m.getLatLng(); pl.coords = [+ll.lat.toFixed(6), +ll.lng.toFixed(6)]; editOut(); });
+    });
+    if (edit) editOut();
+    map.on('zoomend', () => $('amap').classList.toggle('near', map.getZoom() >= 16.5));
+    fitTown();
+    setYear(Y1);
+  }
+  // helper for setting the pins by hand: arhiv?edit=1#karta
+  function editOut() {
+    let ta = document.querySelector('.edit-out');
+    if (!ta) { ta = document.createElement('textarea'); ta.className = 'edit-out'; ta.readOnly = true; document.body.appendChild(ta); }
+    ta.value = A.places.map(p => `${p.id}: [${p.coords.join(', ')}]`).join('\n');
+  }
+  function fitTown() {
+    // the middle of town, where most of the pins are; the rest is a pan or a zoom away
+    const near = A.places.filter(p => markers.has(p.id) && Math.abs(p.coords[0] - TOWN[0]) < .004 && Math.abs(p.coords[1] - TOWN[1]) < .005).map(p => p.coords);
+    const w = wide.matches;
+    map.fitBounds(near, { paddingTopLeft: w ? [80, 190] : [40, 190], paddingBottomRight: w ? [Math.min(400, innerWidth * .3) + 110, 170] : [40, 330], maxZoom: 17, animate: false });
+  }
+  function refresh() {
+    markers.forEach((m, id) => m.setIcon(icon(placeOf(id))));
+  }
+  function setYear(y) {
+    year = y;
+    dial.value = y;
+    dial.style.setProperty('--p', `${pct(y)}%`);
+    $('dial-y').textContent = y;
+    $('dial-info').textContent = t('arh.dial.info', { n: placed.filter(p => !p.y || p.y <= y).length, total: placed.length });
+    refresh();
+    if (sel) card();
+  }
+  dial.addEventListener('input', () => { stop(); setYear(+dial.value); });
+  function stop() { clearInterval(timer); timer = 0; $('play').classList.remove('on'); $('play').setAttribute('aria-label', t('arh.play')); }
+  $('play').addEventListener('click', () => {
+    if (timer) { stop(); return; }
+    if (year >= Y1) setYear(Y0);
+    $('play').classList.add('on');
+    $('play').setAttribute('aria-label', t('arh.pause'));
+    timer = setInterval(() => { if (year >= Y1) stop(); else setYear(year + 1); }, 95);
+  });
+
+  function select(id, fly) {
+    sel = id; shown = null;
+    refresh();
+    card();
+    if (fly !== false && id) {
+      const pl = placeOf(id);
+      map.flyTo(pl.coords, Math.max(map.getZoom(), 16), { animate: !reduce, duration: .9 });
+    }
+  }
+  function card() {
+    const pl = sel && placeOf(sel);
+    pcard.hidden = !pl;
+    document.querySelector('.dial').classList.toggle('low', !pl);
+    if (!pl) return;
+    const all = placed.filter(p => p.place === pl.id), ps = visible(pl.id);
+    const pool = ps.length ? ps : all;
+    const p = pool.find(q => q.f === shown) || cover(pool);
+    pcard.innerHTML =
+      `<button type="button" class="pc-im" data-f="${p.f}" aria-label="${esc(capOf(p))}. ${esc(t('arh.open'))}"><img src="${full(p)}" alt=""><b${p.y && !p.yl ? '' : ' class="s"'}>${esc(yearOf(p))}</b></button>` +
+      `<h2>${esc(placeName(pl))}</h2><button type="button" class="pc-x" aria-label="${esc(t('arh.close'))}">✕</button>` +
+      `<p class="pc-cap">${esc(capOf(p))}</p>${pl.approx ? `<p class="pc-note">${esc(t('arh.approx'))}</p>` : ''}` +
+      (all.length > 1 ? `<div class="pc-strip">${all.map(q => `<button type="button" data-f="${q.f}" aria-pressed="${q === p}" aria-label="${esc(capOf(q))}"${ps.includes(q) ? '' : ' disabled style="opacity:.25"'}><img src="${thumb(q)}" alt="" loading="lazy">${q.y ? `<span>${q.y}</span>` : ''}</button>`).join('')}</div>` : '') +
+      (pl.slug ? `<a class="pc-more" href="place?slug=${pl.slug}">${esc(t('hist.see.place'))}</a>` : '');
+  }
+  pcard.addEventListener('click', e => {
+    if (e.target.closest('.pc-x')) { select(null, false); return; }
+    const im = e.target.closest('.pc-im');
+    if (im) { setCat('all'); openFile(im.dataset.f); return; }
+    const b = e.target.closest('.pc-strip button');
+    if (b) { shown = b.dataset.f; card(); }
+  });
+
   /* ---------- start ---------- */
   buildChips();
   buildStrip();
