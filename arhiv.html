@@ -64,6 +64,17 @@
         <div class="ticks" aria-hidden="true"></div>
       </div>
     </section>
+
+    <!-- 2. On the map: the same photographs by the place they show, with a year dial -->
+    <section id="v-map" hidden aria-label="Na karti" data-i18n-attr="aria-label:arh.view.map">
+      <div id="amap" role="region" aria-label="Karta starih fotografija" data-i18n-attr="aria-label:arh.map"></div>
+      <aside class="pcard" id="pcard" hidden></aside>
+      <div class="dial">
+        <p class="dial-now"><button type="button" class="play" id="play" aria-label="Pusti vrijeme" data-i18n-attr="aria-label:arh.play"></button><b id="dial-y">2014</b><span id="dial-info"></span></p>
+        <input type="range" id="dial" min="1900" max="2014" step="1" value="2014" aria-label="Godina" data-i18n-attr="aria-label:arh.year">
+        <div class="ticks" aria-hidden="true"></div>
+      </div>
+    </section>
   </main>
 
   <script defer src="vendor/leaflet/leaflet.js"></script>
