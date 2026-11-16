@@ -103,6 +103,7 @@ I18N.bs = {
   'kv.source': 'Izvor',
   'kv.nq': 'Pitanje {n} od {total}',
   'kv.qcard': 'Kartica {n}',
+  'kv.q.num': 'Koliko?',
   'kv.q.when': 'Koje godine?',
   'kv.q.pick': 'Izaberi odgovor',
   'kv.v.right': 'Tačno!',

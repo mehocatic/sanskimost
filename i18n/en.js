@@ -101,6 +101,7 @@ I18N.en = {
   'kv.source': 'Source',
   'kv.nq': 'Question {n} of {total}',
   'kv.qcard': 'Card {n}',
+  'kv.q.num': 'How much?',
   'kv.q.when': 'What year?',
   'kv.q.pick': 'Pick an answer',
   'kv.v.right': 'Correct!',
