@@ -150,3 +150,8 @@
 .kv-src{margin:.5rem 0 0;font-size:.82rem;opacity:.7;line-height:1.4}
 .kv-src a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .kv-src a:hover{opacity:1}
+
+/* two ways to play */
+.kv-modes { display: flex; flex-wrap: wrap; gap: 12px; }
+.kv-bank { margin: 18px 0 0; max-width: 34em; font-size: .86rem; line-height: 1.5; color: rgba(246, 244, 238, .7); }
+@media (max-width: 720px) { .kv-modes { flex-direction: column; } .kv-modes .btn.big { width: 100%; } }

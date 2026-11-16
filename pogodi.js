@@ -1,4 +1,5 @@
-// "Guess the year": seven dated photographs from arhiv-data.js and three questions from pogodi-data.js, one at a time.
+// "Guess the year": six dated photographs from arhiv-data.js and four questions from pogodi-data.js, one at a time.
+// A second mode plays ten questions only. Questions already answered are put off until the bank has been used up.
 // A year guess scores 100 points minus 100/zero for every year it is off (zero is 22% of the ruler: 25 years on the photo ruler).
 // A multiple-choice question is worth 100 or nothing. The best total is kept in localStorage.
 (() => {
@@ -9,7 +10,9 @@
   const T = v => Array.isArray(v) ? v[I18n.lang === 'bs' ? 0 : 1] : v;
   const S = window.KVS;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const ROUNDS = 10, PHOTOS = 7, KEY = 'sm-pogodi-best';
+  const ROUNDS = 10, PHOTOS = 6, SEEN = 'sm-pogodi-seen';
+  let mode = 'mix';
+  const KEY = () => mode === 'quiz' ? 'sm-pogodi-best-q' : 'sm-pogodi-best';
   const PHOTO_SCALE = { from: 1900, to: 2014 };
   let Y0 = PHOTO_SCALE.from, Y1 = PHOTO_SCALE.to;
   const pct = y => (y - Y0) / (Y1 - Y0) * 100;
@@ -25,7 +28,7 @@
 
   const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   // Most of the archive is from 1996 to 1998, so a plain random pick would be nearly all one decade:
-  // four from before 1990, two from the nineties, one after 2000, then whatever is left. No place and no year twice.
+  // three from before 1990, two from the nineties, one after 2000, then whatever is left. No place and no year twice.
   function pickPhotos() {
     const out = [];
     const take = (list, n) => {
@@ -35,21 +38,43 @@
         out.push(p); n--;
       }
     };
-    take(POOL.filter(p => p.y < 1990), 4);
+    take(POOL.filter(p => p.y < 1990), 3);
     take(POOL.filter(p => p.y >= 1990 && p.y <= 2000), 2);
     take(POOL.filter(p => p.y > 2000), 1);
     take(POOL, PHOTOS - out.length);
     if (out.length < PHOTOS) shuffle([...POOL]).forEach(p => { if (out.length < PHOTOS && !out.includes(p)) out.push(p); });
     return out.map(p => ({ kind: 'photo', p }));
   }
-  // two year questions and one multiple choice, dealt in between the photographs and never next to each other
-  function pickQuestions() {
-    const y = shuffle(Q.filter(q => q.t !== 'choice')).slice(0, 2), c = shuffle(Q.filter(q => q.t === 'choice')).slice(0, ROUNDS - PHOTOS - 2);
-    return shuffle([...y, ...c]).map(q => ({ kind: q.t, q }));
+  // questions answered in earlier games (kept in the browser), so a new game starts with new ones
+  const seen = () => { try { return new Set(JSON.parse(localStorage.getItem(SEEN)) || []); } catch (e) { return new Set(); } };
+  const markSeen = id => { try { const s = seen(); s.add(id); localStorage.setItem(SEEN, JSON.stringify([...s])); } catch (e) { /* not kept */ } };
+  // unanswered first, and no more than two of one subject while there is a choice
+  function chooseQ(pool, k, count) {
+    const s = seen(), out = [];
+    for (const list of [shuffle(pool.filter(q => !s.has(q.id))), shuffle(pool.filter(q => s.has(q.id)))]) {
+      for (const cap of [2, 99]) {
+        for (const q of list) {
+          if (out.length >= k) return out;
+          if (out.includes(q) || (count[q.c] || 0) >= cap) continue;
+          out.push(q); count[q.c] = (count[q.c] || 0) + 1;
+        }
+      }
+    }
+    return out;
+  }
+  // a few rulers (a year or a number) and the rest multiple choice, mixed
+  function pickQuestions(n) {
+    const s = seen();
+    if (Q.filter(q => !s.has(q.id)).length < n) { try { localStorage.removeItem(SEEN); } catch (e) { /* nothing to clear */ } }
+    const count = {}, rulers = Math.round(n * .4);
+    const r = chooseQ(Q.filter(q => q.t !== 'choice'), rulers, count), c = chooseQ(Q.filter(q => q.t === 'choice'), n - r.length, count);
+    return shuffle([...r, ...c]).map(q => ({ kind: q.t, q }));
   }
   function pick() {
-    const ph = shuffle(pickPhotos()), qs = pickQuestions(), out = ph.slice();
-    [2, 5, 8].slice(0, qs.length).forEach((slot, i) => out.splice(Math.min(slot + Math.floor(Math.random() * 2), out.length), 0, qs[i]));
+    if (mode === 'quiz') return pickQuestions(ROUNDS);
+    const ph = shuffle(pickPhotos()), qs = pickQuestions(ROUNDS - PHOTOS), out = ph.slice();
+    // questions are dealt in between the photographs, never in a block
+    [1, 3, 6, 8].slice(0, qs.length).forEach((slot, i) => out.splice(Math.min(slot + Math.floor(Math.random() * 2), out.length), 0, qs[i]));
     return out;
   }
 
@@ -74,7 +99,7 @@
   $('kv-fan').innerHTML = DECOR.map((f, i) => `<figure style="--r:${[-9, 5, -2][i]}deg;--dx:${[-26, 22, 0][i]}%;--dy:${[4, -8, 6][i]}%;--d:${i * .14}s"><img src="photos/arhiv/${f}.webp" alt=""></figure>`).join('');
   function best() {
     let b = 0;
-    try { b = +localStorage.getItem(KEY) || 0; } catch (e) { /* no storage: no best score */ }
+    try { b = +localStorage.getItem(KEY()) || 0; } catch (e) { /* no storage: no best score */ }
     $('kv-best').hidden = !b;
     $('kv-best').textContent = t('kv.best', { n: b });
     return b;
@@ -85,7 +110,9 @@
     ['kv-intro', 'kv-round', 'kv-end'].forEach(s => { $(s).hidden = s !== id; });
     scrollTo(0, 0);
   }
-  function start() {
+  function start(m) {
+    mode = m === 'quiz' ? 'quiz' : 'mix';
+    best();
     set = pick(); at = 0; total = 0; log = [];
     $('kv-total').textContent = '0';
     $('kv-dots').innerHTML = set.map(() => '<li></li>').join('');
@@ -190,6 +217,7 @@
       $('kv-step').hidden = true;
       $('kv-q').hidden = true;
     }
+    if (r.kind !== 'photo') markSeen(r.q.id);
     total += entry.pts;
     log.push(entry);
     count($('kv-total'), total - entry.pts, total);
@@ -242,7 +270,7 @@
     const yrs = log.filter(x => x.r.kind !== 'choice');
     const avg = yrs.length ? Math.round(yrs.reduce((s, x) => s + x.e, 0) / yrs.length) : 0;
     let b = best();
-    if (total > b) { try { localStorage.setItem(KEY, total); } catch (e) { /* not kept */ } b = total; }
+    if (total > b) { try { localStorage.setItem(KEY(), total); } catch (e) { /* not kept */ } b = total; }
     show('kv-end');
     count($('kv-final'), 0, total);
     $('kv-rank').textContent = rank(total);
@@ -258,7 +286,7 @@
   }
   $('kv-share').addEventListener('click', async () => {
     const btn = $('kv-share'), url = location.origin + location.pathname;
-    const text = t('kv.sharetext', { n: total });
+    const text = t(mode === 'quiz' ? 'kv.sharetextq' : 'kv.sharetext', { n: total });
     try {
       if (navigator.share) { await navigator.share({ title: t('kv.doctitle'), text, url }); return; }
       await navigator.clipboard.writeText(`${text} ${url}`);
@@ -266,11 +294,14 @@
       setTimeout(() => { btn.textContent = t('kv.share'); }, 2200);
     } catch (e) { /* share sheet closed, or copying not allowed */ }
   });
-  $('kv-start').addEventListener('click', start);
-  $('kv-again').addEventListener('click', start);
+  $('kv-start').addEventListener('click', () => start('mix'));
+  $('kv-quiz').addEventListener('click', () => start('quiz'));
+  $('kv-again').addEventListener('click', () => start(mode));
+  $('kv-bank').textContent = t('kv.bank', { n: Q.length });
 
   addEventListener('langchange', () => {
     best();
+    $('kv-bank').textContent = t('kv.bank', { n: Q.length });
     if (!$('kv-round').hidden) texts();
     if (!$('kv-end').hidden) end();
   });
