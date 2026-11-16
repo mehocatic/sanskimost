@@ -186,6 +186,19 @@
     if (it) openPhoto(+it.parentNode.dataset.i);
   });
 
+  // the bar at the bottom: press or drag to jump to a year
+  const scrub = $('scrub');
+  function scrubTo(e) {
+    const r = $('bars').getBoundingClientRect();
+    const y = Y0 + Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)) * (Y1 - Y0);
+    let i = list.findIndex(p => p.y && p.y >= y - 1);
+    if (i < 0) i = list.findIndex(p => !p.y);
+    if (i < 0) i = list.length - 1;
+    goTo(i, e.type === 'pointerdown');
+  }
+  scrub.addEventListener('pointerdown', e => { scrub.setPointerCapture(e.pointerId); scrubTo(e); });
+  scrub.addEventListener('pointermove', e => { if (scrub.hasPointerCapture(e.pointerId)) scrubTo(e); });
+
   /* ---------- start ---------- */
   buildChips();
   buildStrip();
