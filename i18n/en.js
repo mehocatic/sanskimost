@@ -10,6 +10,7 @@ I18N.en = {
   'nav.plan': 'Visit',
   'nav.history': 'History',
   'nav.archive': 'Archive',
+  'nav.quiz': 'Quiz',
   'arh.doctitle': 'Archive · Sanski Most',
   'arh.meta': 'Old photographs of Sanski Most from 1900 to 2014, through time and on the map.',
   'arh.eyebrow': 'Archive · 1900 to 2014',

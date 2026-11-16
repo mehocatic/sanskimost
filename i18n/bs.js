@@ -12,6 +12,7 @@ I18N.bs = {
   'nav.plan': 'Posjeta',
   'nav.history': 'Historija',
   'nav.archive': 'Arhiv',
+  'nav.quiz': 'Kviz',
   'arh.doctitle': 'Arhiv · Sanski Most',
   'arh.meta': 'Stare fotografije Sanskog Mosta od 1900. do 2014, kroz vrijeme i na karti.',
   'arh.eyebrow': 'Arhiv · 1900 do 2014',
