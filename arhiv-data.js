@@ -3,6 +3,23 @@
 // Places marked approx were set by eye: open arhiv?edit=1#karta, drag the pins and copy the coordinates back here.
 window.ARCHIVE = {
   places: [
+    {"id": "trg", "name": {"bs": "Gradski trg", "en": "Town square"}, "coords": [44.7653, 16.6668], "approx": true},
+    {"id": "prijedorska", "name": {"bs": "Prijedorska ulica", "en": "Prijedorska Street"}, "coords": [44.7685, 16.6655], "approx": true},
+    {"id": "hamzibegova", "name": {"bs": "Hamzibegova džamija", "en": "Hamzibeg Mosque"}, "coords": [44.7638251, 16.6648616], "slug": "hamzibegova"},
+    {"id": "most", "name": {"bs": "Gradski most", "en": "Town bridge"}, "coords": [44.764, 16.6662], "approx": true},
+    {"id": "muhici", "name": {"bs": "Mahala Muhići", "en": "Mahala Muhići"}, "coords": [44.7628, 16.663], "approx": true},
+    {"id": "zdena", "name": {"bs": "Zdena", "en": "Zdena"}, "coords": [44.77, 16.66], "approx": true},
+    {"id": "lovac", "name": {"bs": "Lovac", "en": "Lovac"}, "coords": [44.766, 16.669], "approx": true},
+    {"id": "kino", "name": {"bs": "Kino „Sana“", "en": "Sana cinema"}, "coords": [44.7655, 16.668], "approx": true},
+    {"id": "posta", "name": {"bs": "Pošta", "en": "Post office"}, "coords": [44.7662, 16.6672], "approx": true},
+    {"id": "stanica", "name": {"bs": "Željeznička stanica", "en": "Railway station"}, "coords": [44.764, 16.676], "approx": true},
+    {"id": "sokolski", "name": {"bs": "Sokolski dom", "en": "Sokol Hall"}, "coords": [44.76558562977139, 16.670158483327427], "slug": "zavnobih"},
+    {"id": "biblioteka", "name": {"bs": "Gradska biblioteka", "en": "Town library"}, "coords": [44.7649187, 16.6681266]},
+    {"id": "centar", "name": {"bs": "Centar, uz Sanu", "en": "Centre, by the Sana"}, "coords": [44.7645, 16.6652], "approx": true},
+    {"id": "blihe", "name": {"bs": "Vodopad Blihe", "en": "Bliha Waterfall"}, "coords": [44.788988, 16.5247591], "slug": "blihe"},
+    {"id": "musala", "name": {"bs": "Fatihova musala", "en": "Fatih’s Musalla"}, "coords": [44.7855807, 16.571875], "slug": "musalla"},
+    {"id": "korcanica", "name": {"bs": "Korčanica", "en": "Korčanica"}, "coords": [44.6872744, 16.4375984], "slug": "korcanica"},
+    {"id": "trnova", "name": {"bs": "Trnova", "en": "Trnova"}, "coords": [44.8025494, 16.6683527], "approx": true}
   ],
   photos: [
     {"f": "trg-1900", "y": 1900, "cat": "ulice", "cap": "hist.ul.2.a", "w": 1079, "h": 604, "place": "trg", "src": "hist.src.book", "yl": "arh.y.c1900"},
