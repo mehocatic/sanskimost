@@ -199,6 +199,69 @@
   scrub.addEventListener('pointerdown', e => { scrub.setPointerCapture(e.pointerId); scrubTo(e); });
   scrub.addEventListener('pointermove', e => { if (scrub.hasPointerCapture(e.pointerId)) scrubTo(e); });
 
+  /* ---------- one photograph, opened ---------- */
+  const lb = $('lb');
+  let at = 0;
+  function setHash(h) { history.replaceState(null, '', h || (location.pathname + location.search)); }
+  function openPhoto(i) {
+    at = (i + list.length) % list.length;
+    const p = list[at], pl = p.place && placeOf(p.place);
+    const img = $('lb-img');
+    img.style.animation = 'none'; void img.offsetWidth; img.style.animation = '';
+    img.src = full(p); img.width = p.w; img.height = p.h; img.alt = capOf(p);
+    const y = $('lb-y');
+    y.textContent = yearOf(p);
+    y.classList.toggle('s', !p.y || !!p.yl);
+    $('lb-cap').textContent = capOf(p);
+    let meta = '';
+    if (pl) meta += `<div><dt>${esc(t('arh.place'))}</dt><dd>${esc(placeName(pl))}${pl.slug ? ` · <a href="place?slug=${pl.slug}">${esc(t('hist.see.place'))}</a>` : ''}</dd></div>`;
+    if (p.src) meta += `<div><dt>${esc(t('arh.source'))}</dt><dd>${esc(srcOf(p))}</dd></div>`;
+    $('lb-meta').innerHTML = meta;
+    $('lb-meta').hidden = !meta;
+    $('lb-map').hidden = !pl;
+    const same = pl ? A.photos.filter(q => q.place === p.place && q !== p) : [];
+    $('lb-same').hidden = !same.length;
+    $('lb-same-list').innerHTML = same.map(q => `<button type="button" data-f="${q.f}" aria-label="${esc(capOf(q))}"><img src="${thumb(q)}" alt="" loading="lazy">${q.y ? `<span>${q.y}</span>` : ''}</button>`).join('');
+    $('lb-n').textContent = `${at + 1} / ${list.length}`;
+    if (!lb.open) lb.showModal();
+    lb.scrollTop = 0;
+    setHash('#foto=' + p.f);
+  }
+  function openFile(f) {
+    let i = list.findIndex(p => p.f === f);
+    if (i < 0) { setCat('all'); i = list.findIndex(p => p.f === f); }
+    if (i >= 0) openPhoto(i);
+  }
+  lb.addEventListener('close', () => setHash(view === 'map' ? '#karta' : ''));
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+  $('lb-x').addEventListener('click', () => lb.close());
+  $('lb-prev').addEventListener('click', () => openPhoto(at - 1));
+  $('lb-next').addEventListener('click', () => openPhoto(at + 1));
+  lb.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') openPhoto(at + 1);
+    if (e.key === 'ArrowLeft') openPhoto(at - 1);
+  });
+  $('lb-same-list').addEventListener('click', e => { const b = e.target.closest('button'); if (b) openFile(b.dataset.f); });
+  $('lb-map').addEventListener('click', () => { const id = list[at].place; lb.close(); setView('map', id); });
+  $('lb-share').addEventListener('click', async () => {
+    const p = list[at], url = location.href, btn = $('lb-share');
+    try {
+      if (navigator.share) { await navigator.share({ title: `${capOf(p)} · Sanski Most`, url }); return; }
+      await navigator.clipboard.writeText(url);
+      btn.textContent = t('arh.copied');
+      setTimeout(() => { btn.textContent = t('arh.share'); }, 2200);
+    } catch (e) { /* the share sheet was closed, or copying is not allowed: nothing to do */ }
+  });
+  // swipe left / right on the photograph
+  let sx = null;
+  lb.addEventListener('touchstart', e => { sx = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    if (sx == null) return;
+    const dx = e.changedTouches[0].clientX - sx;
+    sx = null;
+    if (Math.abs(dx) > 60) openPhoto(at + (dx < 0 ? 1 : -1));
+  });
+
   /* ---------- start ---------- */
   buildChips();
   buildStrip();
