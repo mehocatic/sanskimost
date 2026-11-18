@@ -298,5 +298,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Od 1925. do 1935. radio je u Sanskom Mostu kao sreski ljekar i ljekar udružene zdravstvene opštine. Liječio je radnike osigurane preko Bratinske blagajne i radio kao željeznički ljekar.',
       en: 'From 1925 to 1935 he worked in Sanski Most as district physician and physician of the joint health municipality. He treated workers insured through the Brotherhood Fund and worked as a railway doctor.' },
-    src: { label: 'Ljekarska komora RS', url: 'https://www.komoradoktorars.org/v3/kod%2034print.pdf' } }
+    src: { label: 'Ljekarska komora RS', url: 'https://www.komoradoktorars.org/v3/kod%2034print.pdf' } },
+
+  { id: 'sabanovic', cat: 'zdravstvo', kind: 'linked', name: 'Enis Šabanović',
+    role: { bs: 'Ljekar internista', en: 'Internist' },
+    text: {
+      bs: 'Ljekar iz Trnove. Do aprila 1992. bio je načelnik interne medicine u Domu zdravlja Sanski Most. Od juna do novembra 1992. bio je zatočen u logoru Manjača, a njegov položaj i zatočeništvo dokumentovani su u presudama Haškog tribunala.',
+      en: 'A physician from Trnova. Until April 1992 he headed internal medicine at the Sanski Most health centre. From June to November 1992 he was held in the Manjača camp, and his position and detention are documented in judgements of the Hague Tribunal.' },
+    src: { label: 'Haški tribunal', url: 'https://ucr.irmct.org/LegalRef/CMSDocStore/Public/BCS/Judgement/NotIndexable/IT-09-92/JUD275R0000636710.pdf' } }
 ];
