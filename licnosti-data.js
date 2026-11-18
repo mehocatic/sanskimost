@@ -358,9 +358,9 @@ window.LICNOSTI = [
     src: { label: 'Detektor', url: 'https://detektor.ba/2023/11/18/obiljezena-godisnjica-zatvaranja-logora-manjaca/' } }
 ];
 
-// Golden Lily (Zlatni ljiljan) recipients from Sanski Most, in order of award year. Source for all: Grad na devet rijeka, 26 Nov 2024.
-// The list there continues (Jasmin Keranovic (Hasan) is named in it, details not read); TODO(verify) the full list and add the rest.
-window.ZLJILJANI_SRC = 'https://gradnadevetrijeka.ba/2024/11/26/ovo-su-dobitnici-zlatnog-ljiljana-iz-sanskog-mosta/';
+// Golden Lily (Zlatni ljiljan) recipients from the pre-war municipality of Sanski Most (today Sanski Most and Ostra Luka), in order of award year.
+// Source: bs.wikipedia, Spisak dobitnika Zlatnog ljiljana (Sanski Most), 7 entries, the full list there (sent by Meho, 18 Nov 2026).
+window.ZLJILJANI_SRC = 'https://bs.wikipedia.org/wiki/Spisak_dobitnika_Zlatnog_ljiljana_(Sanski_Most)';
 window.ZLJILJANI = [
   { id: 'alihodzic', name: 'Ekrem Alihodžić', year: 1993, post: false,
     born: { bs: 'Skucani Vakuf, 9. april 1951.', en: 'Skucani Vakuf, 9 April 1951' },
