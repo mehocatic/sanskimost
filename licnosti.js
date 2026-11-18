@@ -16,44 +16,36 @@
     return e;
   };
   const data = window.LICNOSTI || [];
-  const grid = document.getElementById('lic-grid');
-  const count = document.getElementById('lic-count');
-
+  const cats = window.LICNOSTI_CATS || [];
+  const feat = window.LICNOSTI_FEAT || [];
+  const zlj = window.ZLJILJANI || [];
+  const byId = Object.fromEntries(data.map(p => [p.id, p]));
+  const catOf = id => cats.find(c => c.id === id);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const initials = n => n.split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('');
 
-  function card(p) {
-    const li = document.createElement('li');
-    li.className = 'lic-card';
-    li.dataset.cat = p.cat;
-
-    const mono = document.createElement('span');
-    mono.className = 'lic-mono';
-    mono.setAttribute('aria-hidden', 'true');
-    mono.textContent = initials(p.name);
-
-    const h = document.createElement('h3');
-    h.textContent = p.name;
-
-    const role = document.createElement('p');
-    role.className = 'lic-role';
-    role.textContent = p.role[L()] || p.role.en;
-
-    const tag = document.createElement('p');
-    tag.className = 'lic-tag ' + p.kind;
-    tag.textContent = t('lic.' + p.kind);
-
-    const txt = document.createElement('p');
-    txt.className = 'lic-text';
-    txt.textContent = p.text[L()] || p.text.en;
-
-    const a = document.createElement('a');
-    a.className = 'lic-src';
-    a.href = p.src.url;
-    if (!p.src.internal) { a.target = '_blank'; a.rel = 'noopener'; }
-    a.textContent = (p.src.internal ? '' : t('lic.source') + ': ') + p.src.label;
-
-    li.append(mono, h, role, tag, txt, a);
-    return li;
+  // ---- header: wall of names (decorative, aria-hidden) and counts
+  function wall() {
+    const box = $('lic-wall');
+    box.textContent = '';
+    const names = data.map(p => p.name).concat(zlj.map(z => z.name));
+    for (let r = 0; r < 4; r++) {
+      // each row starts at a different point of the list, so rows do not repeat each other
+      const rot = names.slice((r * 13) % names.length).concat(names.slice(0, (r * 13) % names.length));
+      const row = el('div', 'lh-row');
+      row.style.setProperty('--dur', (90 + r * 18) + 's');
+      if (r % 2) row.classList.add('rev');
+      const track = el('div', 'lh-track');
+      // two copies so the loop is seamless at -50%
+      for (let k = 0; k < 2; k++) rot.forEach((n, i) => track.appendChild(el('span', i % 7 === r ? 'hi' : '', n)));
+      row.appendChild(track);
+      box.appendChild(row);
+    }
+  }
+  function stats() {
+    $('st-p').textContent = data.length;
+    $('st-z').textContent = zlj.length;
+    $('st-f').textContent = new Set(data.map(p => p.cat)).size;
   }
 
   function render() {
