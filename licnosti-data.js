@@ -1,5 +1,6 @@
 // People of Sanski Most (licnosti.html). Every entry rests on the source named in `src`.
 // kind: 'born' = born in Sanski Most (or its villages); 'origin' = family roots in Sanski Most, born elsewhere.
+// Optional per person: photo: { src: 'photos/licnosti/<id>.webp', credit: 'Autor / izvor, licenca' } (shown in the detail panel, duotone).
 // Rules: no ethnicity, no private details, no photos of people. Ranges use "do" (no dashes).
 // kind: 'linked' = lived, worked or studied in Sanski Most (born elsewhere or birthplace not confirmed).
 // TODO(verify): Budimir (current role), Pantelic (birthplace, from one article), Alagic (from Meho's notes, see FACTS.md).
