@@ -149,5 +149,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođen u Sanskom Mostu 9. februara 1984. Drugo mjesto zauzeo je u prvoj sezoni Operacije trijumf. Bosnu i Hercegovinu predstavljao je na Pjesmi Eurovizije 2010. u Oslu s pjesmom Munja i grom i završio na sedamnaestom mjestu u finalu.',
       en: 'Born in Sanski Most on 9 February 1984. He finished second in the first season of Operacija trijumf. He represented Bosnia and Herzegovina at Eurovision 2010 in Oslo with "Munja i grom" ("Thunder and Lightning") and placed seventeenth in the final.' },
-    src: { label: 'Eurovision', url: 'https://eurovision.tv/video/bosnia-herzegovina-eurovision-song-contest-2010' } }
+    src: { label: 'Eurovision', url: 'https://eurovision.tv/video/bosnia-herzegovina-eurovision-song-contest-2010' } },
+
+  { id: 'demirovic', cat: 'sport', kind: 'origin', name: 'Ermedin Demirović',
+    role: { bs: 'Nogometaš', en: 'Footballer' },
+    text: {
+      bs: 'Rođen u Hamburgu, a porodica mu je porijeklom iz Sanskog Mosta, gdje je posjećivao rodbinu. Napadač je reprezentacije Bosne i Hercegovine. Lokalni portal Inmedia zabilježio je njegovu vezu sa Sanom još 2019, dok je igrao za St. Gallen.',
+      en: 'Born in Hamburg, with family roots in Sanski Most, where he visited relatives. He is a striker for the Bosnia and Herzegovina national team. The local portal Inmedia noted his link with the Sana as early as 2019, when he played for St. Gallen.' },
+    src: { label: 'Inmedia', url: 'https://inmedia.ba/jos-jedan-nogometni-talent-porijeklom-iz-sane/' } }
 ];
