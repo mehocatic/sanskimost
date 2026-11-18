@@ -163,5 +163,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođen 28. februara 2003. u Ljubljani. Majka mu je iz Sanskog Mosta, a otac iz Zavidovića, pa je raspuste kao dijete provodio u oba kraja. Stoper je reprezentacije Bosne i Hercegovine.',
       en: 'Born on 28 February 2003 in Ljubljana. His mother is from Sanski Most and his father from Zavidovići, so as a child he spent holidays in both places. He is a centre-back for the Bosnia and Herzegovina national team.' },
-    src: { label: 'Klix', url: 'https://www.klix.ba/sport/nogomet/tarik-muharemovic-za-klixba-krilatica-bojim-se-samo-boga-mi-se-savrseno-uklapa-s-uzorom-spahicem/260410135' } }
+    src: { label: 'Klix', url: 'https://www.klix.ba/sport/nogomet/tarik-muharemovic-za-klixba-krilatica-bojim-se-samo-boga-mi-se-savrseno-uklapa-s-uzorom-spahicem/260410135' } },
+
+  { id: 'jhandanovic', cat: 'sport', kind: 'origin', name: 'Jasmin Handanović',
+    role: { bs: 'Golman', en: 'Goalkeeper' },
+    text: {
+      bs: 'Porodica mu potiče iz Hrustova, a u izvještaju iz tog mjesta spominje se uz Samira Handanovića među golmanima porijeklom iz mjesne zajednice. Branio je za reprezentaciju Slovenije.',
+      en: 'His family comes from Hrustovo, and a report from the village lists him alongside Samir Handanović among goalkeepers with roots there. He played in goal for the Slovenia national team.' },
+    src: { label: 'Dnevni avaz', url: 'https://avaz.ba/vijesti/bih/663090/haris-seferovic-je-poslao-kuci-mbapea-pogbu-grizmana-sve-je-pocelo-u-hrustovu-kod-sanskog-mosta' } }
 ];
