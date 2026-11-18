@@ -99,9 +99,25 @@
   .it .cap { position: absolute; left: 50%; transform: translateX(-50%); width: max-content; max-width: max(100%, 280px); text-align: center; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
   .it.up .cap { bottom: calc(100% - var(--line) + 54px + var(--h) + 26px); }
   .it.dn .cap { top: calc(var(--line) + 54px + var(--h) + 24px); }
+  /* decades: each one used to have its own large numeral in the strip, and when a decade had only one or two photographs
+     the numerals ran over each other. Now one numeral stays behind the strip and its digits roll to the decade in the middle. */
   .dec { position: relative; flex: none; width: 0; }
-  .dec b { position: absolute; left: -30px; top: var(--line); font-size: min(44vh, 400px); transform: translate3d(calc(var(--x, 0) * .16px), -50%, 0); }
+  .dec:not(.und) b { display: none; }
   .dec.und { width: clamp(300px, 34vw, 520px); }
+  .dec-now {
+    position: absolute; z-index: 0; left: 50%; top: var(--line); display: flex; transform: translate(-50%, -50%);
+    font-family: var(--serif); font-weight: 500; font-size: min(44vh, 400px); line-height: 1; letter-spacing: -.02em; font-variant-numeric: lining-nums;
+    color: transparent; -webkit-text-stroke: 1px rgba(246, 244, 238, .2); pointer-events: none; transition: opacity .6s ease;
+  }
+  .dec-now.off { opacity: 0; }
+  .dec-now .dg { position: relative; display: block; overflow: hidden; padding: 0 .01em; }
+  .dec-now .dg i { display: block; font-style: normal; }
+  .dec-now .dg i + i { position: absolute; inset: 0; }
+  .dec-now .dg .in { animation: dg-in .8s cubic-bezier(.2, .7, .2, 1) both; }
+  .dec-now .dg .out { animation: dg-out .8s cubic-bezier(.2, .7, .2, 1) both; }
+  .dec-now.back .dg .in { animation-name: dg-in-b; }
+  .dec-now.back .dg .out { animation-name: dg-out-b; }
+  .strip { position: relative; z-index: 1; }
   .dec.und b { font-size: min(15vh, 130px); left: 0; transform: translateY(-50%); }
   .arh-end { position: relative; flex: none; width: min(44vw, 560px); height: 100%; }
   .arh-end > * { position: absolute; left: 4vw; }
@@ -112,6 +128,11 @@
   .arh-hint { position: absolute; left: 0; top: calc(var(--line) + 26px); white-space: nowrap; }
   .v-map .arh-chips { display: none; }
 }
+@keyframes dg-in { from { transform: translateY(70%); opacity: 0; } }
+@keyframes dg-out { to { transform: translateY(-70%); opacity: 0; } }
+@keyframes dg-in-b { from { transform: translateY(-70%); opacity: 0; } }
+@keyframes dg-out-b { to { transform: translateY(70%); opacity: 0; } }
+@media not ((min-width: 900px) and (min-height: 560px)) { .dec-now { display: none; } }
 /* roomy screens: view switch and themes in one row beside the title */
 @media (min-width: 1200px) and (min-height: 560px) {
   .arh-tools { top: 92px; flex-direction: row-reverse; align-items: center; gap: 18px; }
@@ -288,5 +309,5 @@
 /* low wide windows: no room for captions around the prints; they are in the opened photograph */
 @media (min-width: 900px) and (min-height: 560px) and (max-height: 719px) { .it .cap { display: none; } }
 @media (prefers-reduced-motion: reduce) {
-  .print, .apin, .needle, .lb-ph img, .lb-txt, .arh-head h1 { transition: none; animation: none; }
+  .print, .apin, .needle, .lb-ph img, .lb-txt, .arh-head h1, .dec-now .dg i { transition: none; animation: none; }
 }

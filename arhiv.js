@@ -150,7 +150,36 @@
     if (p) {
       needle.style.left = `${p.y ? pct(p.y) : 100}%`;
       $('needle-y').textContent = yearOf(p);
+      markBars(p.y || Y1);
+      if (wide.matches) setDecade(p.y ? Math.floor(p.y / 10) * 10 : null);
     }
+  }
+
+  // the large numeral behind the strip: only the digits that change roll, up when going forward in time, down when going back
+  const decNow = $('dec-now');
+  let decShown = null;
+  function setDecade(d) {
+    decNow.classList.toggle('off', d == null);
+    if (d == null || d === decShown) return;
+    const next = String(d).split(''), prev = decShown == null ? null : String(decShown).split('');
+    decNow.classList.toggle('back', prev != null && d < decShown);
+    if (!prev || decNow.children.length !== next.length) {
+      decNow.innerHTML = next.map(c => `<span class="dg"><i>${c}</i></span>`).join('');
+    } else {
+      [...decNow.children].forEach((dg, k) => {
+        if (next[k] === prev[k]) return;
+        [...dg.querySelectorAll('.out')].forEach(el => el.remove());
+        const old = dg.lastElementChild;
+        old.className = 'out';
+        const el = document.createElement('i');
+        el.className = 'in';
+        el.textContent = next[k];
+        dg.prepend(el); // the new digit stays in the flow, the old one lies over it and leaves
+        old.addEventListener('animationend', () => old.remove(), { once: true });
+        if (reduce) old.remove();
+      });
+    }
+    decShown = d;
   }
   function step() {
     raf = 0;
