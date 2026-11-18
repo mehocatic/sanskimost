@@ -205,5 +205,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođen u Grdanovcima kod Sanskog Mosta. Pjesnik, esejist i prevodilac, a zbirka Sarajevski rukopis nastala je iz iskustva rata u Sarajevu.',
       en: 'Born in Grdanovci near Sanski Most. A poet, essayist and translator, whose collection Sarajevski rukopis grew out of the experience of the war in Sarajevo.' },
-    src: { label: 'Matica srpska', url: 'https://www.maticasrpska.org.rs/stariSajt/casopisi/LLMS_6.pdf' } }
+    src: { label: 'Matica srpska', url: 'https://www.maticasrpska.org.rs/stariSajt/casopisi/LLMS_6.pdf' } },
+
+  { id: 'julka', cat: 'nauka', kind: 'born', name: 'Julka Popović-Srdić',
+    role: { bs: 'Učiteljica i književnica', en: 'Teacher and writer' },
+    text: {
+      bs: 'Rođena 1885. u Sanskom Mostu, gdje je i odrasla. Učiteljica i književnica, pisala je o životu žena na selu, o majčinstvu i o Petru Kočiću, a njeni tekstovi svjedoče o iskustvima krajiških žena prije Drugog svjetskog rata.',
+      en: 'Born in 1885 in Sanski Most, where she also grew up. A teacher and writer, she wrote about the lives of village women, about motherhood and about Petar Kočić, and her texts record the experience of women in the Krajina before the Second World War.' },
+    src: { label: 'Nezavisne novine', url: 'https://www.nezavisne.com/novosti/banjaluka/Istaknute-istorijske-licnosti-Banjaluke-XXXIX-Julka-Popovic-Srdic/282098' } }
 ];
