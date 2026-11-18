@@ -342,3 +342,30 @@ window.LICNOSTI = [
       en: 'A camp survivor from the village of Modra. By his own account he spent 496 days in several camps, including Manjača. He also spoke about detention in the former Simo Miljuš museum and about the fate of other detainees.' },
     src: { label: 'Detektor', url: 'https://detektor.ba/2023/11/18/obiljezena-godisnjica-zatvaranja-logora-manjaca/' } }
 ];
+
+// Golden Lily (Zlatni ljiljan) recipients from Sanski Most, in order of award year. Source for all: Grad na devet rijeka, 26 Nov 2024.
+// The list there continues (Jasmin Keranovic (Hasan) is named in it, details not read); TODO(verify) the full list and add the rest.
+window.ZLJILJANI_SRC = 'https://gradnadevetrijeka.ba/2024/11/26/ovo-su-dobitnici-zlatnog-ljiljana-iz-sanskog-mosta/';
+window.ZLJILJANI = [
+  { id: 'alihodzic', name: 'Ekrem Alihodžić', year: 1993, post: false,
+    born: { bs: 'Skucani Vakuf, 9. april 1951.', en: 'Skucani Vakuf, 9 April 1951' },
+    unit: { bs: '333. brdska brigada', en: '333rd Mountain Brigade' } },
+  { id: 'gazibera', name: 'Zlata Gazibera', year: 1994, post: false,
+    born: { bs: 'Stari Majdan, 17. maj 1957.', en: 'Stari Majdan, 17 May 1957' },
+    unit: { bs: '108. motorizovana brigada', en: '108th Motorised Brigade' },
+    note: { bs: 'Jedna od 13 žena dobitnica Zlatnog ljiljana.', en: 'One of 13 women awarded the Golden Lily.' } },
+  { id: 'hodzic', name: 'Farko Hodžić', year: 1994, post: false,
+    born: { bs: 'Sanski Most, 4. januar 1962.', en: 'Sanski Most, 4 January 1962' },
+    unit: { bs: '501. slavna motorizovana brigada', en: '501st Motorised Brigade' },
+    note: { bs: 'Orden zlatnog ljiljana sa zlatnim vijencem 1997.', en: 'Order of the Golden Lily with a Golden Wreath, 1997.' } },
+  { id: 'avdic', name: 'Velid Avdić', year: 1995, post: true,
+    born: { bs: 'Skucani Vakuf, 2. januar 1966.', en: 'Skucani Vakuf, 2 January 1966' },
+    unit: { bs: '505. viteška motorizovana brigada', en: '505th Motorised Brigade' },
+    note: { bs: 'Poginuo 20. aprila 1995. na Velića glavici kod Velike Kladuše, kao komandir voda.', en: 'Killed on 20 April 1995 at Velića glavica near Velika Kladuša, as a platoon commander.' } },
+  { id: 'hukanovic', name: 'Ifet Hukanović', year: 1995, post: false,
+    born: { bs: 'Vrhpolje, 1. mart 1963.', en: 'Vrhpolje, 1 March 1963' },
+    unit: { bs: '510. oslobodilačka brigada', en: '510th Liberation Brigade' } },
+  { id: 'kljajic', name: 'Senad Kljajić', year: 1996, post: false,
+    born: { bs: 'Hrustovo, 29. maj 1963.', en: 'Hrustovo, 29 May 1963' },
+    unit: { bs: '28. divizija', en: '28th Division' } }
+];
