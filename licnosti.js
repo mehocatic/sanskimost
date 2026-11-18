@@ -51,6 +51,61 @@
     count.textContent = t('lic.count', { n: list.length });
   }
 
+  // Golden Lily recipients: a featured block above the filtered list.
+  const zlist = document.getElementById('zlj-list');
+  const zcount = document.getElementById('zlj-count');
+  const zdata = window.ZLJILJANI || [];
+
+  function zcard(z, i) {
+    const li = document.createElement('li');
+    li.className = 'zlj-card' + (z.post ? ' is-post' : '');
+    li.style.setProperty('--i', i);
+    const rows = [
+      ['zlj-year', String(z.year)],
+      ['zlj-name', z.name],
+      ['zlj-born', z.born[L()] || z.born.en],
+      ['zlj-unit', z.unit[L()] || z.unit.en]
+    ];
+    rows.forEach(([c, v]) => {
+      const e = document.createElement(c === 'zlj-name' ? 'h3' : 'p');
+      e.className = c;
+      e.textContent = v;
+      li.appendChild(e);
+    });
+    if (z.post) {
+      const b = document.createElement('p');
+      b.className = 'zlj-post';
+      b.textContent = t('lic.zlj.post');
+      li.insertBefore(b, li.children[1]);
+    }
+    if (z.note) {
+      const n = document.createElement('p');
+      n.className = 'zlj-note';
+      n.textContent = z.note[L()] || z.note.en;
+      li.appendChild(n);
+    }
+    return li;
+  }
+
+  function renderZlj() {
+    zlist.textContent = '';
+    zdata.forEach((z, i) => zlist.appendChild(zcard(z, i)));
+    zcount.textContent = t('lic.zlj.count', { n: zdata.length });
+  }
+
+  // Cards fade in once, when they scroll into view (skipped with reduced motion or without IntersectionObserver).
+  function reveal() {
+    const cards = zlist.querySelectorAll('.zlj-card');
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    zlist.classList.add('js-reveal');
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: .25 });
+    cards.forEach(c => io.observe(c));
+  }
+
   render();
-  addEventListener('langchange', render);
+  renderZlj();
+  reveal();
+  addEventListener('langchange', () => { render(); renderZlj(); zlist.classList.remove('js-reveal'); });
 })();
