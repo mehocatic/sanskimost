@@ -311,14 +311,6 @@ body.home-page { background: var(--paper); }
 .h-more:hover { background: var(--acc); color: var(--paper); }
 @media (max-width: 768px) { .h-more { grid-column: 1; } }
 
-/* 5. Footer */
-footer {
-  background: var(--deep); display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 2rem;
-  padding: 40px var(--gutter) 56px; border-top: 1px solid var(--rule);
-  font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; color: var(--fg-muted);
-}
-.foot-name { font-family: var(--serif); font-size: 1.4rem; letter-spacing: .05em; text-transform: none; color: var(--fg); }
-.foot-top { margin-left: auto; color: var(--acc); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
 
 @media (max-width: 768px) {
   .h-name-grid, .h-centuries { grid-template-columns: minmax(0, 1fr); }
@@ -326,8 +318,6 @@ footer {
   .h-side { position: static; margin-bottom: 36px; }
   .h-now { display: none; }
   .timeline p { max-width: none; }
-  footer { flex-direction: column; }
-  .foot-top { margin-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

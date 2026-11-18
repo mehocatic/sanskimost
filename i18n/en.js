@@ -195,6 +195,8 @@ I18N.en = {
   // footer
   'footer.country': 'Bosnia and Herzegovina',
   'footer.top': 'Back to top',
+  'footer.credit': 'Design and development',
+  'footer.pages': 'Pages',
 
   // place page
   'place.meta': 'Places around Sanski Most, Bosnia and Herzegovina.',

@@ -76,14 +76,6 @@
 .hist-sources li + li { margin-top: .45rem; }
 .hist-note { max-width: 46rem; margin-top: 1.6rem; padding-left: .9rem; border-left: 2px solid var(--acc); font-size: .85rem; color: var(--fg-muted); }
 
-footer {
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 2rem;
-  padding: 40px var(--gutter) 56px; border-top: 1px solid var(--rule);
-  font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; color: var(--fg-muted);
-}
-.foot-name { font-family: var(--serif); font-size: 1.4rem; letter-spacing: .05em; text-transform: none; color: var(--fg); }
-.foot-top { margin-left: auto; color: var(--acc); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
-@media (max-width: 768px) { footer { flex-direction: column; } .foot-top { margin-left: 0; } }
 
 /* a single old photo is kept near its own size; "then and now" inside a chapter */
 .arch:not(.two) { max-width: 480px; }

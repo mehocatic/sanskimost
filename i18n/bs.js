@@ -197,6 +197,8 @@ I18N.bs = {
   // footer
   'footer.country': 'Bosna i Hercegovina',
   'footer.top': 'Na vrh',
+  'footer.credit': 'Dizajn i izrada',
+  'footer.pages': 'Stranice',
 
   // place page
   'place.meta': 'Mjesta u Sanskom Mostu i okolini, Bosna i Hercegovina.',
