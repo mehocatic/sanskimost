@@ -90,8 +90,6 @@ h2.h3 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); }
 .nav-links a:hover, .nav-links a[aria-current="page"] { opacity: 1; }
 /* the current page: a line under the word (the right inset takes off the trailing letter-spacing) */
 .nav-links a[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: .18em; bottom: 9px; height: 1px; background: currentColor; }
-/* wide screens: the town name on the left is the way home, so the Home link is only in the phone menu */
-.nav-links .nav-home { display: none; }
 .nav-toggle { display: none; }
 
 /* BS | EN (added by i18n.js), always visible */
