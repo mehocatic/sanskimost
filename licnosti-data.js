@@ -312,5 +312,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođen 30. oktobra 1930. u Sanskom Mostu, umro 2022. u Sarajevu. Preživio je holokaust i kao dječak učestvovao u partizanskom pokretu, a poslije rata postao je pilot i direktor sarajevskog aerodroma. Poznavanje ladina, jezika sefardskih Jevreja, pomoglo mu je da preživi.',
       en: 'Born on 30 October 1930 in Sanski Most, died in 2022 in Sarajevo. He survived the Holocaust and as a boy took part in the partisan movement, and after the war became a pilot and director of Sarajevo airport. Knowing Ladino, the language of Sephardic Jews, helped him survive.' },
-    src: { label: 'Jerusalem Post', url: 'https://www.jpost.com/diaspora/article-723030' } }
+    src: { label: 'Jerusalem Post', url: 'https://www.jpost.com/diaspora/article-723030' } },
+
+  { id: 'ahukanovic', cat: 'rat', kind: 'linked', name: 'Arif Hukanović',
+    role: { bs: 'Komandant odbrane Vrhpolja', en: 'Commander in the defence of Vrhpolje' },
+    text: {
+      bs: 'Bio je jedan od organizatora odbrane Vrhpolja 1992. Komandovao je jedinicom Teritorijalne odbrane Vrhpolja, a potom je bio zamjenik komandanta Ključko-sanskog bataljona.',
+      en: 'He was one of the organisers of the defence of Vrhpolje in 1992. He commanded the Vrhpolje Territorial Defence unit and later served as deputy commander of the Ključ-Sana battalion.' },
+    src: { label: 'Grad na devet rijeka', url: 'https://gradnadevetrijeka.ba/2025/06/13/sve-sto-moras-znati-o-herojskom-vrhpolju-foto-video/' } }
 ];
