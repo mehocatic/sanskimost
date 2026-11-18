@@ -51,7 +51,7 @@
   const UP = [23, 21, 24, 22], DN = [20, 18.5, 20.5], ROT = [-2.2, 1.6, -1, 2.4, -1.8, .8];
 
   function buildStrip() {
-    let h = '<svg class="river" aria-hidden="true"></svg><div class="lead"><span class="arh-hint">' + esc(t('arh.hint')) + ' →</span><a class="arh-game" href="pogodi">' + esc(t('kv.cta')) + '</a></div>', dec = null, undated = false;
+    let h = '<svg class="river" aria-hidden="true"></svg><div class="lead"><span class="arh-hint">' + esc(t('arh.hint')) + ' →</span></div>', dec = null, undated = false;
     // room for a print above and below the river, in px: the title and the themes stay clear above, the year bar below
     const H = innerHeight, line = .58 * H, capH = H >= 720 ? 62 : 0;
     const upMax = line - 54 - capH - (innerWidth >= 1200 ? 150 : 205), dnMax = H - line - 54 - capH - 108;
