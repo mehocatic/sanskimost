@@ -276,5 +276,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Filmski autor sanskog porijekla. U dokumentarcima Most i Svjedok obradio je zločine počinjene 1992. u selima oko Sanskog Mosta, a Most je dobio nagrade u Londonu i Moskvi.',
       en: 'A filmmaker with roots in Sanski Most. In the documentaries Most and Svjedok he dealt with crimes committed in 1992 in villages around Sanski Most, and Most won awards in London and Moscow.' },
-    src: { label: 'Etto', url: 'https://etto.ba/clanak/harisova-dva-dokumentarna-filma-sada-su-dio-filmskog-arhiva-austrije' } }
+    src: { label: 'Etto', url: 'https://etto.ba/clanak/harisova-dva-dokumentarna-filma-sada-su-dio-filmskog-arhiva-austrije' } },
+
+  { id: 'tabakovic', cat: 'kultura', kind: 'linked', name: 'Emir Tabaković',
+    role: { bs: 'Radijski novinar', en: 'Radio journalist' },
+    text: {
+      bs: 'Učestvovao je u poslijeratnoj obnovi Radio Sane. Ostavio je zapis o ponovnom pokretanju programa 13. januara 1996. i obraćanju slušaocima riječima Ovdje Radio Sana.',
+      en: 'He took part in the post-war revival of Radio Sana. He left a record of the programme starting again on 13 January 1996 and of addressing listeners with the words Ovdje Radio Sana.' },
+    src: { label: 'Inmedia', url: 'https://inmedia.ba/1996-godina-ovdje-radio-sana-emir-tabakovic/' } }
 ];
