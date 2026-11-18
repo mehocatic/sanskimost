@@ -262,5 +262,12 @@ window.LICNOSTI = [
     text: {
       bs: 'S Džaferom Cerićem bio je među osnivačima sanske kolonije naive. Autor je ciklusa od 14 slika Križni put Isusa Krista, koji se čuva u crkvi Uznesenja Blažene Djevice Marije u Sanskom Mostu.',
       en: 'With Džafer Cerić he was among the founders of the Sanski Most naive art colony. He is the author of a cycle of 14 paintings, the Way of the Cross, kept in the church of the Assumption of the Blessed Virgin Mary in Sanski Most.' },
-    src: { label: 'Al Jazeera Balkans', url: 'https://balkans.aljazeera.net/amp/teme/2017/8/27/ozivljavanje-prve-kolonije-naive-u-bih' } }
+    src: { label: 'Al Jazeera Balkans', url: 'https://balkans.aljazeera.net/amp/teme/2017/8/27/ozivljavanje-prve-kolonije-naive-u-bih' } },
+
+  { id: 'hadzija', cat: 'kultura', kind: 'born', name: 'Hadžija Hadžibajramović',
+    role: { bs: 'Glumica i direktorica pozorišta', en: 'Actress and theatre director' },
+    text: {
+      bs: 'Rođena 1942. u Sanskom Mostu. Diplomirala je matematiku i fiziku, a karijeru je posvetila pozorištu: bila je glumica i dugogodišnja direktorica Narodnog pozorišta Mostar.',
+      en: 'Born in 1942 in Sanski Most. She graduated in mathematics and physics and devoted her career to the theatre, as an actress and for many years director of the National Theatre Mostar.' },
+    src: { label: 'Dnevni avaz', url: 'https://avaz.ba/vijesti/kultura/699945/preminula-glumica-i-dugogodisnja-direktorica-narodnog-pozorista-mostar' } }
 ];
