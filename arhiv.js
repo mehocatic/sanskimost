@@ -90,13 +90,26 @@
     items.forEach(el => io.observe(el));
   }
 
+  let barEls = [], barAt = null;
+  // bars up to the year in the middle are lit, the ones around it brightest
+  function markBars(y) {
+    if (y === barAt) return;
+    barAt = y;
+    barEls.forEach(el => {
+      const by = +el.dataset.y;
+      el.classList.toggle('past', y != null && by <= y);
+      el.classList.toggle('near', y != null && Math.abs(by - y) <= 3);
+    });
+  }
   function buildBars() {
     let b = '';
     for (let y = Y0; y < Y1; y += 2) {
       const n = list.filter(p => p.y && (p.y === y || p.y === y + 1 || (y === Y1 - 2 && p.y === Y1))).length;
-      b += `<i style="height:${n ? Math.min(100, 16 + n * 6) : 0}%"${n > 4 ? ' class="h"' : ''}></i>`;
+      b += `<i data-y="${y}" style="height:${n ? Math.min(100, 18 + n * 7) : 0}%"></i>`;
     }
     $('bars').innerHTML = b;
+    barEls = [...$('bars').children];
+    barAt = null;
   }
 
   function layout() {
@@ -197,7 +210,19 @@
     goTo(i, e.type === 'pointerdown');
   }
   scrub.addEventListener('pointerdown', e => { scrub.setPointerCapture(e.pointerId); scrubTo(e); });
-  scrub.addEventListener('pointermove', e => { if (scrub.hasPointerCapture(e.pointerId)) scrubTo(e); });
+  scrub.addEventListener('pointermove', e => {
+    if (scrub.hasPointerCapture(e.pointerId)) scrubTo(e);
+    if (e.pointerType !== 'mouse') return;
+    const r = $('bars').getBoundingClientRect(), k = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    ghost.style.left = `${k * 100}%`;
+    ghost.firstElementChild.textContent = Math.round(Y0 + k * (Y1 - Y0));
+    scrub.classList.add('hov');
+  });
+  scrub.addEventListener('pointerleave', () => scrub.classList.remove('hov'));
+  const ghost = $('ghost');
+  // the bar steps aside when the footer comes up, so the two never lie over each other
+  const foot = document.querySelector('.site-foot');
+  if (foot && 'IntersectionObserver' in window) new IntersectionObserver(es => scrub.classList.toggle('away', es[0].isIntersecting)).observe(foot);
 
   /* ---------- one photograph, opened ---------- */
   const lb = $('lb');
