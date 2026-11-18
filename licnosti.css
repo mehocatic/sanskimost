@@ -1,0 +1,56 @@
+/* People page (licnosti.html): a dark header, a bar of field filters, a grid of cards, a note about what is still missing. */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.lic-page main { background: var(--paper); }
+
+.lic-hero {
+  position: relative; overflow: hidden;
+  padding: clamp(120px, 18svh, 190px) var(--gutter) clamp(56px, 9svh, 100px);
+  background: radial-gradient(ellipse 60% 70% at 85% 30%, rgba(23, 149, 160, .12), rgba(23, 149, 160, 0) 70%), var(--deep);
+}
+.lic-hero h1 { font-family: var(--serif); font-weight: 400; line-height: .95; letter-spacing: -.01em; font-size: clamp(3.4rem, 10vw, 8.6rem); }
+.lic-lead { margin-top: 1.3rem; max-width: 34rem; font-size: 1.08rem; color: var(--fg-soft); }
+
+.lic-body { padding: clamp(40px, 7svh, 80px) var(--gutter) clamp(70px, 11svh, 130px); }
+.lic-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 28px; margin-bottom: clamp(26px, 4svh, 44px); }
+.lic-count { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-muted); }
+.lic-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.lic-chip {
+  min-height: 44px; padding: 0 1.1rem; border: 1px solid var(--rule); border-radius: 999px; background: transparent; color: var(--fg);
+  font: inherit; font-size: .78rem; letter-spacing: .08em; cursor: pointer; transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.lic-chip:hover { border-color: var(--acc); }
+.lic-chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.lic-grid { list-style: none; display: grid; grid-template-columns: 1fr; gap: clamp(14px, 2vw, 22px); }
+@media (min-width: 700px) { .lic-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .lic-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.lic-card {
+  position: relative; display: flex; flex-direction: column; padding: clamp(20px, 2.4vw, 28px);
+  background: var(--mist); border: 1px solid var(--rule); border-radius: 4px;
+  transition: transform .3s ease, border-color .3s ease;
+}
+.lic-card:hover { transform: translateY(-3px); border-color: var(--acc); }
+.lic-mono {
+  align-self: flex-start; display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 1rem; border-radius: 50%;
+  border: 1px solid var(--acc); color: var(--acc); font-family: var(--serif); font-size: 1.35rem; letter-spacing: .02em;
+}
+.lic-card h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 2.4vw, 2.1rem); line-height: 1.05; }
+.lic-role { margin-top: .35rem; font-size: .9rem; color: var(--fg-soft); }
+.lic-tag { margin-top: .7rem; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--acc); }
+.lic-tag.origin { color: var(--fg-muted); }
+.lic-text { margin-top: .9rem; font-size: .95rem; line-height: 1.6; color: var(--fg-soft); }
+.lic-src { margin-top: auto; padding-top: 1.1rem; font-size: .74rem; letter-spacing: .08em; color: var(--fg-muted); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.lic-src:hover { color: var(--acc); }
+
+.lic-note { max-width: 40rem; margin-top: clamp(48px, 8svh, 90px); padding-top: clamp(28px, 4svh, 44px); border-top: 1px solid var(--rule); }
+.lic-note h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.lic-note p { margin-top: .9rem; color: var(--fg-soft); }
+.lic-mail {
+  display: inline-flex; align-items: center; min-height: 48px; margin-top: 1.4rem; padding: 0 1.4rem;
+  border: 1px solid var(--acc); border-radius: 999px; color: var(--fg); text-decoration: none; font-size: .76rem; letter-spacing: .2em; text-transform: uppercase;
+  transition: background .25s ease, color .25s ease;
+}
+.lic-mail:hover { background: var(--acc); color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) { .lic-card, .lic-chip { transition: none; } .lic-card:hover { transform: none; } }

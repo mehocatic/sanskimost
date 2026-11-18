@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ličnosti · Sanski Most</title>
+  <meta name="description" data-i18n-attr="content:lic.meta" content="Ljudi iz Sanskog Mosta i sa korijenima u njemu: sportisti, političari, pisci, naučnici i muzičari, s izvorom uz svaku ličnost.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sanski Most">
+  <meta property="og:title" content="Ličnosti · Sanski Most">
+  <meta property="og:description" data-i18n-attr="content:lic.meta" content="Ljudi iz Sanskog Mosta i sa korijenima u njemu: sportisti, političari, pisci, naučnici i muzičari, s izvorom uz svaku ličnost.">
+  <meta property="og:url" content="https://visitsanskimost.netlify.app/licnosti">
+  <meta property="og:image" content="https://visitsanskimost.netlify.app/photos/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="bs_BA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://visitsanskimost.netlify.app/photos/og.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/fonts/fonts.css">
+  <script defer src="lib.js"></script>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="licnosti.css">
+</head>
+<body id="top" class="on-deep lic-page">
+
+  <nav class="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+    <a class="nav-logo" href="./">Sanski Most</a>
+    <div class="nav-links" id="nav-links">
+      <a class="nav-home" href="./" data-i18n="nav.home">Home</a>
+      <a href="explore" data-i18n="nav.explore">Explore</a>
+      <a href="historija" data-i18n="nav.history">History</a>
+      <a href="licnosti" aria-current="page" data-i18n="nav.people">People</a>
+      <a href="arhiv" data-i18n="nav.archive">Arhiv</a>
+      <a href="pogodi" data-i18n="nav.quiz">Kviz</a>
+      <a href="plan" data-i18n="nav.plan">Visit</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="t-open" data-i18n="nav.menu">Menu</span><span class="t-close" data-i18n="nav.close">Close</span></button>
+  </nav>
+
+  <main>
+    <header class="lic-hero on-deep">
+      <p class="eyebrow" data-i18n="lic.eyebrow">Sanjani</p>
+      <h1 data-i18n="lic.title">Ličnosti</h1>
+      <p class="lic-lead" data-i18n="lic.lead">Ljudi iz Sanskog Mosta i oni čiji su korijeni ovdje.</p>
+    </header>
+
+    <section class="lic-body on-paper" aria-labelledby="lic-filter-label">
+      <div class="lic-bar">
+        <p class="lic-count" id="lic-count" aria-live="polite"></p>
+        <div class="lic-chips" id="lic-chips" role="group" aria-labelledby="lic-filter-label">
+          <span id="lic-filter-label" class="sr-only" data-i18n="lic.filter">Filter po oblasti</span>
+        </div>
+      </div>
+      <ul class="lic-grid" id="lic-grid"></ul>
+
+      <aside class="lic-note">
+        <h2 data-i18n="lic.note.h">Lista nije gotova</h2>
+        <p data-i18n="lic.note.p">Za sada su ovdje samo ljudi za koje smo našli provjerene podatke. Nedostaju ljekari, profesori, glumci, logoraši i mnogi drugi. Znate li nekoga ko treba biti na listi, javite se, a mi ćemo provjeriti i dodati.</p>
+        <a class="lic-mail" href="https://www.mehocatic.com" rel="noopener" target="_blank" data-i18n="lic.note.a">Javite se</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-foot on-deep">
+    <div class="sf-brand">
+      <p class="foot-name">Sanski Most</p>
+      <p class="sf-country" data-i18n="footer.country">Bosna i Hercegovina</p>
+    </div>
+    <nav class="sf-links" aria-label="Stranice" data-i18n-attr="aria-label:footer.pages">
+      <a href="./" data-i18n="nav.home">Početna</a>
+      <a href="explore" data-i18n="nav.explore">Istraži</a>
+      <a href="historija" data-i18n="nav.history">Historija</a>
+      <a href="licnosti" data-i18n="nav.people">Ličnosti</a>
+      <a href="arhiv" data-i18n="nav.archive">Arhiv</a>
+      <a href="pogodi" data-i18n="nav.quiz">Kviz</a>
+      <a href="plan" data-i18n="nav.plan">Posjeta</a>
+    </nav>
+    <div class="sf-base">
+      <p class="sf-credit"><span data-i18n="footer.credit">Dizajn i izrada</span> <a href="https://www.mehocatic.com" rel="noopener" target="_blank">Meho Ćatić <span class="sf-url">mehocatic.com</span></a></p>
+      <a href="#top" class="foot-top" data-i18n="footer.top">Na vrh</a>
+    </div>
+  </footer>
+
+  <script defer src="licnosti-data.js"></script>
+  <script defer src="i18n/en.js"></script>
+  <script defer src="i18n/bs.js"></script>
+  <script defer src="i18n.js"></script>
+  <script defer src="licnosti.js"></script>
+  <script defer src="nav.js"></script>
+</body>
+</html>
