@@ -326,5 +326,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Preživio je strijeljanje zatočenika u logoru Sanakeram na području Sanskog Mosta u oktobru 1995, kao jedini preživjeli iz grupe, kad je imao 25 godina. O zločinu je svjedočio, a njegovo ime zabilježeno je u izvještaju o presudi Kantonalnog suda u Bihaću iz 2011.',
       en: 'He survived the shooting of detainees at the Sanakeram camp in the Sanski Most area in October 1995, as the only survivor of the group, at the age of 25. He testified about the crime, and his name is recorded in the report on the 2011 verdict of the Cantonal Court in Bihać.' },
-    src: { label: 'Inmedia', url: 'https://inmedia.ba/prezivio-strijeljanje-u-sanakeramu-svjedocenje-aziza-catica/' } }
+    src: { label: 'Inmedia', url: 'https://inmedia.ba/prezivio-strijeljanje-u-sanakeramu-svjedocenje-aziza-catica/' } },
+
+  { id: 'begic', cat: 'rat', kind: 'linked', name: 'Rajif Begić',
+    role: { bs: 'Preživjeli i svjedok', en: 'Survivor and witness' },
+    text: {
+      bs: 'Preživio je strijeljanje na Vrhpoljskom mostu 31. maja 1992. Pred sudom je svjedočio o odvođenju muškaraca iz Gornjih i Donjih Begića i o njihovom ubistvu.',
+      en: 'He survived the shooting on the Vrhpolje bridge on 31 May 1992. In court he testified about the taking away of men from Gornji and Donji Begići and about their killing.' },
+    src: { label: 'Sense centar', url: 'https://www.arhiva.sensecentar.org/vijesti.php?aid=2093' } }
 ];
