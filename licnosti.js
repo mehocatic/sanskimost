@@ -206,13 +206,30 @@
     }
     document.documentElement.classList.add('js-rv');
     const io = new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    }), { threshold: .25 });
-    cards.forEach(c => io.observe(c));
+      if (!e.isIntersecting) return;
+      e.target.classList.add(e.target === lily ? 'is-drawn' : 'in');
+      io.unobserve(e.target);
+    }), { threshold: .2, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(e => io.observe(e));
+    if (!lily.classList.contains('is-drawn')) io.observe(lily);
   }
 
-  render();
-  renderZlj();
-  reveal();
-  addEventListener('langchange', () => { render(); renderZlj(); zlist.classList.remove('js-reveal'); });
+  function renderAll() {
+    wall();
+    stats();
+    renderZlj();
+    renderFeat();
+    renderIdx();
+    if (cur) fill(cur);
+    reveal();
+  }
+  renderAll();
+  addEventListener('langchange', () => {
+    renderAll();
+    document.querySelectorAll('.rv').forEach(e => e.classList.add('in')); // no second fade after a language switch
+  });
+
+  // a link to #<id> opens that person
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (byId[h]) open(h);
 })();
