@@ -269,5 +269,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođena 1942. u Sanskom Mostu. Diplomirala je matematiku i fiziku, a karijeru je posvetila pozorištu: bila je glumica i dugogodišnja direktorica Narodnog pozorišta Mostar.',
       en: 'Born in 1942 in Sanski Most. She graduated in mathematics and physics and devoted her career to the theatre, as an actress and for many years director of the National Theatre Mostar.' },
-    src: { label: 'Dnevni avaz', url: 'https://avaz.ba/vijesti/kultura/699945/preminula-glumica-i-dugogodisnja-direktorica-narodnog-pozorista-mostar' } }
+    src: { label: 'Dnevni avaz', url: 'https://avaz.ba/vijesti/kultura/699945/preminula-glumica-i-dugogodisnja-direktorica-narodnog-pozorista-mostar' } },
+
+  { id: 'hbilajbegovic', cat: 'kultura', kind: 'origin', name: 'Haris Bilajbegović',
+    role: { bs: 'Filmski autor', en: 'Filmmaker' },
+    text: {
+      bs: 'Filmski autor sanskog porijekla. U dokumentarcima Most i Svjedok obradio je zločine počinjene 1992. u selima oko Sanskog Mosta, a Most je dobio nagrade u Londonu i Moskvi.',
+      en: 'A filmmaker with roots in Sanski Most. In the documentaries Most and Svjedok he dealt with crimes committed in 1992 in villages around Sanski Most, and Most won awards in London and Moscow.' },
+    src: { label: 'Etto', url: 'https://etto.ba/clanak/harisova-dva-dokumentarna-filma-sada-su-dio-filmskog-arhiva-austrije' } }
 ];
