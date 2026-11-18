@@ -126,7 +126,7 @@ I18N.en = {
 
   // closing lines of the hero
   'intro.text.html': 'Nine rivers.<br>One town.',
-  'intro.sub': 'Sanski Most has a medieval fortress, caves, a mosque with four minarets and a waterfall of about 56 m.',
+  'intro.sub': 'Kamengrad, first mentioned in 1374. Hrustovača cave, with traces of the Vučedol culture. The Hamzibeg Mosque with four minarets, and Bliha Waterfall, about 56\u00a0m high.',
 
   // places carousel
   'places.eyebrow': 'Places',

@@ -128,7 +128,7 @@ I18N.bs = {
 
   // closing lines of the hero
   'intro.text.html': 'Devet rijeka.<br>Jedan grad.',
-  'intro.sub': 'Sanski Most ima srednjovjekovnu tvrđavu, pećine, džamiju s četiri munare i vodopad visok oko 56 m.',
+  'intro.sub': 'Kamengrad, prvi put spomenut 1374. Hrustovačka pećina, s tragovima vučedolske kulture. Hamzibegova džamija s četiri munare i vodopad Blihe, visok oko 56\u00a0m.',
 
   // places carousel
   'places.eyebrow': 'Mjesta',
@@ -514,7 +514,7 @@ I18N.bs = {
   places: {
     'blihe': {
       name: 'Vodopad Blihe',
-      short: 'Zaštićeni spomenik prirode gdje rijeka Bliha pada oko 56 m.',
+      short: 'Zaštićeni spomenik prirode gdje rijeka Bliha pada oko 56\u00a0m.',
       long: 'Vodopad Blihe, kod mještana poznat kao Blihin skok, nalazi se oko 14 km od Sanskog Mosta. Ovdje rijeka Bliha pada oko 56 m. Zaštićen je kao spomenik prirode.\n\nPlaninarska staza „Cvjetna“, duga oko 15 km, povezuje Kamengrad, vodopad i izletište Jasice.',
       see: []
     },
