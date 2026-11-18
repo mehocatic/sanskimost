@@ -8,7 +8,8 @@ window.LICNOSTI_CATS = [
   { id: 'nauka', bs: 'Nauka i književnost', en: 'Science and literature' },
   { id: 'muzika', bs: 'Muzika', en: 'Music' },
   { id: 'rat', bs: 'Rat i odbrana', en: 'War and defence' },
-  { id: 'kultura', bs: 'Umjetnost i mediji', en: 'Art and media' }
+  { id: 'kultura', bs: 'Umjetnost i mediji', en: 'Art and media' },
+  { id: 'zdravstvo', bs: 'Zdravstvo', en: 'Health' }
 ];
 
 window.LICNOSTI = [
@@ -283,5 +284,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Učestvovao je u poslijeratnoj obnovi Radio Sane. Ostavio je zapis o ponovnom pokretanju programa 13. januara 1996. i obraćanju slušaocima riječima Ovdje Radio Sana.',
       en: 'He took part in the post-war revival of Radio Sana. He left a record of the programme starting again on 13 January 1996 and of addressing listeners with the words Ovdje Radio Sana.' },
-    src: { label: 'Inmedia', url: 'https://inmedia.ba/1996-godina-ovdje-radio-sana-emir-tabakovic/' } }
+    src: { label: 'Inmedia', url: 'https://inmedia.ba/1996-godina-ovdje-radio-sana-emir-tabakovic/' } },
+
+  { id: 'biscevic', cat: 'zdravstvo', kind: 'linked', name: 'Faik Biščević Fajko',
+    role: { bs: 'Stomatolog', en: 'Dentist' },
+    text: {
+      bs: 'Prema porodičnoj biografiji, bio je prvi sanski diplomirani zubar. Fakultet je završio 1962, a njegova biografija bilježi početke stručne stomatološke zaštite u Sanskom Mostu.',
+      en: 'According to a family biography he was the first qualified dentist from Sanski Most. He graduated in 1962, and his biography records the beginnings of professional dental care in the town.' },
+    src: { label: 'Porodična biografija', url: 'https://nedimbiscevic.info/biografija/' } }
 ];
