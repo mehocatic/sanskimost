@@ -311,3 +311,9 @@
 @media (prefers-reduced-motion: reduce) {
   .print, .apin, .needle, .lb-ph img, .lb-txt, .arh-head h1, .dec-now .dg i { transition: none; animation: none; }
 }
+
+/* footer: under the map it would cover the map, so it is shown only with the photographs through time; room for the year bar */
+.arhiv-page .site-foot { background: #0d1110; }
+.scrub { transition: opacity .35s ease, translate .35s ease; }
+.scrub.away { opacity: 0; translate: 0 20px; pointer-events: none; }
+.v-map .site-foot { display: none; }
