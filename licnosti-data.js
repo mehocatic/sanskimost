@@ -17,6 +17,16 @@ window.LICNOSTI_CATS = [
   { id: 'zdravstvo', bs: 'Zdravstvo', en: 'Health' }
 ];
 
+// Highlights on the People page: one figure each, taken from the text of that person's entry (no new facts here).
+window.LICNOSTI_FEAT = [
+  { id: 'zoric', n: '2016', bs: 'Olimpijsko srebro u Riju', en: 'Olympic silver in Rio' },
+  { id: 'milka', n: '8', bs: 'Paraolimpijskih medalja', en: 'Paralympic medals' },
+  { id: 'vukic', n: '1975', bs: 'Titula šahovskog velemajstora', en: 'Chess grandmaster title' },
+  { id: 'brajic', n: '2010', bs: 'Eurovizija za Bosnu i Hercegovinu', en: 'Eurovision for Bosnia and Herzegovina' },
+  { id: 'ibrisagic', n: '10', bs: 'Godina u Evropskom parlamentu', en: 'Years in the European Parliament' },
+  { id: 'ivanc', n: '2011', bs: 'Historija muzike u Bosni i Hercegovini', en: 'History of Music in Bosnia and Herzegovina' }
+];
+
 window.LICNOSTI = [
   { id: 'vukic', cat: 'sport', kind: 'born', name: 'Milan Vukić',
     role: { bs: 'Šahovski velemajstor', en: 'Chess grandmaster' },
