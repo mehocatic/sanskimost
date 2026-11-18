@@ -212,5 +212,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođena 1885. u Sanskom Mostu, gdje je i odrasla. Učiteljica i književnica, pisala je o životu žena na selu, o majčinstvu i o Petru Kočiću, a njeni tekstovi svjedoče o iskustvima krajiških žena prije Drugog svjetskog rata.',
       en: 'Born in 1885 in Sanski Most, where she also grew up. A teacher and writer, she wrote about the lives of village women, about motherhood and about Petar Kočić, and her texts record the experience of women in the Krajina before the Second World War.' },
-    src: { label: 'Nezavisne novine', url: 'https://www.nezavisne.com/novosti/banjaluka/Istaknute-istorijske-licnosti-Banjaluke-XXXIX-Julka-Popovic-Srdic/282098' } }
+    src: { label: 'Nezavisne novine', url: 'https://www.nezavisne.com/novosti/banjaluka/Istaknute-istorijske-licnosti-Banjaluke-XXXIX-Julka-Popovic-Srdic/282098' } },
+
+  { id: 'jasarevic', cat: 'nauka', kind: 'born', name: 'Senudin Jašarević',
+    role: { bs: 'Novinar i pisac', en: 'Journalist and writer' },
+    text: {
+      bs: 'Rođen iznad učionice u Hrustovu, gdje mu je otac bio učitelj. Bio je prvi direktor Unsko-sanskih novina Krajina, a poslije je vodio RTV Unsko-sanskog kantona.',
+      en: 'Born above a classroom in Hrustovo, where his father was a teacher. He was the first director of the Una-Sana daily Krajina and later headed RTV of the Una-Sana Canton.' },
+    src: { label: 'Una-sana Krajina', url: 'https://usnkrajina.ba/clanak/senudin-jasarevic-roden-iznad-ucionice-a-cijeli-zivot-proveo-izmedu-vojske-novina-i-knjizevnosti/1050' } }
 ];
