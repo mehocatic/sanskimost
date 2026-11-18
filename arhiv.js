@@ -386,7 +386,7 @@
   });
 
   function select(id, fly) {
-    sel = id; shown = null;
+    sel = id; shown = null; railX = 0;
     refresh();
     card();
     if (fly !== false && id) {
@@ -406,8 +406,41 @@
       `<button type="button" class="pc-im" data-f="${p.f}" aria-label="${esc(capOf(p))}. ${esc(t('arh.open'))}"><img src="${full(p)}" alt=""><b${p.y && !p.yl ? '' : ' class="s"'}>${esc(yearOf(p))}</b></button>` +
       `<h2>${esc(placeName(pl))}</h2><button type="button" class="pc-x" aria-label="${esc(t('arh.close'))}">✕</button>` +
       `<p class="pc-cap">${esc(capOf(p))}</p>${pl.approx ? `<p class="pc-note">${esc(t('arh.approx'))}</p>` : ''}` +
-      (all.length > 1 ? `<div class="pc-strip">${all.map(q => `<button type="button" data-f="${q.f}" aria-pressed="${q === p}" aria-label="${esc(capOf(q))}"${ps.includes(q) ? '' : ' disabled style="opacity:.25"'}><img src="${thumb(q)}" alt="" loading="lazy">${q.y ? `<span>${q.y}</span>` : ''}</button>`).join('')}</div>` : '') +
+      (all.length > 1 ? `<div class="pc-rail"><div class="pc-strip">${all.map(q => `<button type="button" data-f="${q.f}" aria-pressed="${q === p}" aria-label="${esc(capOf(q))}"${ps.includes(q) ? '' : ' disabled'}><img src="${thumb(q)}" alt="" loading="lazy">${q.y ? `<span>${q.y}</span>` : ''}</button>`).join('')}</div>` +
+        `<button type="button" class="pc-arr prev" aria-label="${esc(t('arh.prev'))}" tabindex="-1"></button><button type="button" class="pc-arr next" aria-label="${esc(t('arh.next'))}" tabindex="-1"></button><i class="pc-bar" aria-hidden="true"><b></b></i></div>` : '') +
       (pl.slug ? `<a class="pc-more" href="place?slug=${pl.slug}">${esc(t('hist.see.place'))}</a>` : '');
+    thumbRail(pcard.querySelector('.pc-rail'));
+  }
+  // the row of small photographs: no browser scrollbar; arrows at the ends, a thin bar that shows where you are,
+  // a mouse wheel moves it sideways and the chosen photograph is brought into view
+  let railX = 0;
+  function thumbRail(r) {
+    if (!r) return;
+    const s = r.querySelector('.pc-strip'), bar = r.querySelector('.pc-bar b');
+    const paint = () => {
+      const max = s.scrollWidth - s.clientWidth;
+      r.classList.toggle('fits', max <= 1);
+      r.classList.toggle('at-start', s.scrollLeft <= 1);
+      r.classList.toggle('at-end', s.scrollLeft >= max - 1);
+      const w = s.clientWidth / s.scrollWidth;
+      bar.style.width = `${w * 100}%`;
+      bar.style.transform = `translateX(${max > 0 ? (s.scrollLeft / max) * (1 / w - 1) * 100 : 0}%)`;
+    };
+    s.scrollLeft = railX; // the row stays where it was when another photograph of the same place is chosen
+    const on = s.querySelector('[aria-pressed="true"]');
+    if (on && (on.offsetLeft < s.scrollLeft || on.offsetLeft + on.offsetWidth > s.scrollLeft + s.clientWidth)) s.scrollLeft = on.offsetLeft - (s.clientWidth - on.offsetWidth) / 2;
+    s.addEventListener('scroll', () => { railX = s.scrollLeft; paint(); }, { passive: true });
+    s.addEventListener('wheel', e => {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX) || s.scrollWidth <= s.clientWidth) return;
+      e.preventDefault();
+      s.scrollLeft += e.deltaY;
+    }, { passive: false });
+    r.querySelectorAll('.pc-arr').forEach(b => b.addEventListener('click', e => {
+      e.stopPropagation();
+      s.scrollBy({ left: (b.classList.contains('next') ? 1 : -1) * s.clientWidth * .8, behavior: reduce ? 'auto' : 'smooth' });
+    }));
+    paint();
+    requestAnimationFrame(paint); // once the card has its final size
   }
   pcard.addEventListener('click', e => {
     if (e.target.closest('.pc-x')) { select(null, false); return; }

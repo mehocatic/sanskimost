@@ -202,9 +202,39 @@
 .pcard h2 { font-family: var(--serif); font-weight: 500; font-size: 1.8rem; line-height: 1.05; margin: 14px 34px 2px 0; }
 .pc-note { font-size: .74rem; color: rgba(246, 244, 238, .62); }
 .pc-cap { font-size: .86rem; line-height: 1.5; color: rgba(246, 244, 238, .8); margin-top: 6px; }
-.pc-strip { display: flex; gap: 8px; margin-top: 14px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 4px; }
-.pc-strip button { position: relative; flex: none; width: 62px; height: 62px; padding: 0; border-radius: 8px; overflow: hidden; border: 2px solid transparent; opacity: .7; transition: opacity .25s ease, border-color .25s ease; }
-.pc-strip button[aria-pressed="true"] { border-color: var(--sand); opacity: 1; }
+/* the row of small photographs of one place (arhiv.js: rail) */
+.pc-rail { position: relative; margin-top: 14px; padding-bottom: 12px; }
+.pc-strip {
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; scroll-snap-type: x proximity;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+}
+.pc-strip::-webkit-scrollbar { display: none; }
+.pc-rail.at-start .pc-strip { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent 100%); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent 100%); }
+.pc-rail.at-end .pc-strip { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28px); mask-image: linear-gradient(90deg, transparent 0, #000 28px); }
+.pc-rail.fits .pc-strip, .pc-rail.at-start.at-end .pc-strip { -webkit-mask-image: none; mask-image: none; }
+.pc-strip button { position: relative; flex: none; width: 62px; height: 62px; padding: 0; border-radius: 8px; overflow: hidden; scroll-snap-align: start; opacity: .62; transition: opacity .25s ease, transform .25s ease; }
+.pc-strip button::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(246, 244, 238, .14); transition: box-shadow .25s ease; }
+.pc-strip button:hover:not(:disabled) { opacity: .9; }
+.pc-strip button[aria-pressed="true"] { opacity: 1; }
+.pc-strip button[aria-pressed="true"]::after { box-shadow: inset 0 0 0 2px var(--sand); }
+.pc-strip button:disabled { opacity: .22; cursor: default; filter: grayscale(1); }
+.pc-strip button:focus-visible { outline: 2px solid var(--sand); outline-offset: -2px; }
+.pc-arr {
+  position: absolute; top: 31px; z-index: 2; width: 30px; height: 30px; margin-top: -15px; border-radius: 50%;
+  background: rgba(246, 244, 238, .92) !important; color: var(--ink) !important; box-shadow: 0 4px 14px rgba(0, 0, 0, .45);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.pc-arr::before { content: ""; position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; }
+.pc-arr.prev { left: -6px; }
+.pc-arr.next { right: -6px; }
+.pc-arr.prev::before { transform: translate(-30%, -50%) rotate(135deg); }
+.pc-arr.next::before { transform: translate(-70%, -50%) rotate(-45deg); }
+.pc-arr:hover { transform: scale(1.08); }
+.pc-rail.at-start .pc-arr.prev, .pc-rail.at-end .pc-arr.next, .pc-rail.fits .pc-arr { opacity: 0; pointer-events: none; }
+.pc-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 2px; background: rgba(246, 244, 238, .12); overflow: hidden; }
+.pc-bar b { display: block; height: 100%; border-radius: inherit; background: var(--sand); transition: transform .15s linear; }
+.pc-rail.fits .pc-bar { display: none; }
 .pc-strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .pc-strip span { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 0 2px; font-size: .6rem; text-align: center; background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)); font-variant-numeric: lining-nums; }
 .pc-more { margin-top: 12px; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sand); text-decoration: none; }
@@ -247,8 +277,11 @@
   .pc-im b.s { font-size: .9rem; }
   .pcard h2 { font-size: 1.4rem; margin: 2px 34px 0 0; }
   .pc-cap, .pc-note { display: none; }
-  .pc-strip { margin-top: 8px; align-self: end; }
+  .pc-rail { margin-top: 8px; align-self: end; min-width: 0; padding-bottom: 8px; }
   .pc-strip button { width: 50px; height: 50px; }
+  .pc-arr { top: 25px; width: 26px; height: 26px; margin-top: -13px; }
+  .pc-arr.prev { left: -4px; }
+  .pc-arr.next { right: -4px; }
   .pc-more { margin-top: 6px; font-size: .64rem; }
   .pcard .pc-x { right: 4px; top: 4px; }
   .dial { left: 20px; right: 20px; bottom: 190px; bottom: calc(190px + env(safe-area-inset-bottom)); }
