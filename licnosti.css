@@ -1,5 +1,4 @@
 /* People page (licnosti.html): a dark header, a bar of field filters, a grid of cards, a note about what is still missing. */
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .lic-page main { background: var(--paper); }
 
 .lic-hero {
@@ -13,13 +12,6 @@
 .lic-body { padding: clamp(40px, 7svh, 80px) var(--gutter) clamp(70px, 11svh, 130px); }
 .lic-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 28px; margin-bottom: clamp(26px, 4svh, 44px); }
 .lic-count { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-muted); }
-.lic-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.lic-chip {
-  min-height: 44px; padding: 0 1.1rem; border: 1px solid var(--rule); border-radius: 999px; background: transparent; color: var(--fg);
-  font: inherit; font-size: .78rem; letter-spacing: .08em; cursor: pointer; transition: background .2s ease, color .2s ease, border-color .2s ease;
-}
-.lic-chip:hover { border-color: var(--acc); }
-.lic-chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
 .lic-grid { list-style: none; display: grid; grid-template-columns: 1fr; gap: clamp(14px, 2vw, 22px); }
 @media (min-width: 700px) { .lic-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -53,4 +45,4 @@
 }
 .lic-mail:hover { background: var(--acc); color: var(--ink); }
 
-@media (prefers-reduced-motion: reduce) { .lic-card, .lic-chip { transition: none; } .lic-card:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .lic-card { transition: none; } .lic-card:hover { transform: none; } }

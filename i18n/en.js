@@ -16,7 +16,6 @@ I18N.en = {
   'lic.eyebrow': 'Sanjani',
   'lic.title': 'People',
   'lic.lead': 'People from Sanski Most and those whose roots are here.',
-  'lic.filter': 'Filter by field',
   'lic.born': 'From Sanski Most',
   'lic.origin': 'Roots in Sanski Most',
   'lic.source': 'Source',

@@ -18,7 +18,6 @@ I18N.bs = {
   'lic.eyebrow': 'Sanjani',
   'lic.title': 'Ličnosti',
   'lic.lead': 'Ljudi iz Sanskog Mosta i oni čiji su korijeni ovdje.',
-  'lic.filter': 'Filter po oblasti',
   'lic.born': 'Iz Sanskog Mosta',
   'lic.origin': 'Korijeni u Sanskom Mostu',
   'lic.source': 'Izvor',
