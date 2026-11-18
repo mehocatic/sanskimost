@@ -1,8 +1,20 @@
-// People page (licnosti.html): cards built from licnosti-data.js, filtered by field.
-// Texts come from the data file (bs/en pairs); only the page chrome uses i18n keys. Re-rendered on "langchange".
+// People page (licnosti.html). Everything is built from licnosti-data.js:
+//  - a header with a slowly moving wall of all names and three counts,
+//  - the Golden Lily recipients as a memorial roll (each row opens with <details>, no JS needed for that),
+//  - a few highlights with one figure each,
+//  - everyone else as an index grouped by field, each name opens a detail panel (<dialog>).
+// Texts are bs/en pairs in the data; only the page chrome uses i18n keys. Everything re-renders on "langchange".
 (() => {
   const L = () => (window.I18n && I18n.lang) || 'bs';
   const t = (k, v) => (window.I18n ? I18n.t(k, v) : k);
+  const tx = o => (o && (o[L()] || o.en)) || '';
+  const $ = id => document.getElementById(id);
+  const el = (tag, cls, text) => {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  };
   const data = window.LICNOSTI || [];
   const grid = document.getElementById('lic-grid');
   const count = document.getElementById('lic-count');
