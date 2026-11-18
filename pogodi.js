@@ -75,7 +75,13 @@
   }
   function pick() {
     if (mode === 'quiz') return pickQuestions(len);
-    if (mode === 'surv') return pickQuestions(Math.min(Q.length, 80));
+    // three mistakes: answers to pick only; a ruler guess is rarely spot on, so it would cost lives unfairly
+    if (mode === 'surv') {
+      const choice = Q.filter(q => q.t === 'choice');
+      const s = seen();
+      if (choice.filter(q => !s.has(q.id)).length < 20) { try { localStorage.removeItem(SEEN); } catch (e) { /* nothing to clear */ } }
+      return chooseQ(choice, Math.min(choice.length, 80), {}).map(q => ({ kind: q.t, q }));
+    }
     const ph = shuffle(pickPhotos()), qs = pickQuestions(ROUNDS - PHOTOS), out = ph.slice();
     // questions are dealt in between the photographs, never in a block
     [1, 3, 6, 8].slice(0, qs.length).forEach((slot, i) => out.splice(Math.min(slot + Math.floor(Math.random() * 2), out.length), 0, qs[i]));
