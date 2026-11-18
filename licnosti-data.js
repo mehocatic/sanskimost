@@ -198,5 +198,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Osnovnu i srednju školu završio je u Sanskom Mostu. Historičar je na Institutu za historiju Univerziteta u Sarajevu, a autor je knjige Bosansko Kraljevstvo i Srpska Despotovina (1402 do 1459).',
       en: 'He finished primary and secondary school in Sanski Most. He is a historian at the Institute for History of the University of Sarajevo and the author of the book Bosansko Kraljevstvo i Srpska Despotovina (1402 to 1459).' },
-    src: { label: 'Institut za historiju', url: 'https://iis.unsa.ba/osoblje/enes-dedic/' } }
+    src: { label: 'Institut za historiju', url: 'https://iis.unsa.ba/osoblje/enes-dedic/' } },
+
+  { id: 'tontic', cat: 'nauka', kind: 'born', name: 'Stevan Tontić',
+    role: { bs: 'Pjesnik i prevodilac', en: 'Poet and translator' },
+    text: {
+      bs: 'Rođen u Grdanovcima kod Sanskog Mosta. Pjesnik, esejist i prevodilac, a zbirka Sarajevski rukopis nastala je iz iskustva rata u Sarajevu.',
+      en: 'Born in Grdanovci near Sanski Most. A poet, essayist and translator, whose collection Sarajevski rukopis grew out of the experience of the war in Sarajevo.' },
+    src: { label: 'Matica srpska', url: 'https://www.maticasrpska.org.rs/stariSajt/casopisi/LLMS_6.pdf' } }
 ];
