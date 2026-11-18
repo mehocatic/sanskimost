@@ -12,7 +12,7 @@ window.LICNOSTI_CATS = [
   { id: 'politika', bs: 'Politika', en: 'Politics' },
   { id: 'nauka', bs: 'Nauka i književnost', en: 'Science and literature' },
   { id: 'muzika', bs: 'Muzika', en: 'Music' },
-  { id: 'rat', bs: 'Rat i odbrana', en: 'War and defence' },
+  { id: 'rat', bs: 'Rat i sjećanje', en: 'War and memory' },
   { id: 'kultura', bs: 'Umjetnost i mediji', en: 'Art and media' },
   { id: 'zdravstvo', bs: 'Zdravstvo', en: 'Health' }
 ];
