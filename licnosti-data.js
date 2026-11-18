@@ -219,5 +219,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođen iznad učionice u Hrustovu, gdje mu je otac bio učitelj. Bio je prvi direktor Unsko-sanskih novina Krajina, a poslije je vodio RTV Unsko-sanskog kantona.',
       en: 'Born above a classroom in Hrustovo, where his father was a teacher. He was the first director of the Una-Sana daily Krajina and later headed RTV of the Una-Sana Canton.' },
-    src: { label: 'Una-sana Krajina', url: 'https://usnkrajina.ba/clanak/senudin-jasarevic-roden-iznad-ucionice-a-cijeli-zivot-proveo-izmedu-vojske-novina-i-knjizevnosti/1050' } }
+    src: { label: 'Una-sana Krajina', url: 'https://usnkrajina.ba/clanak/senudin-jasarevic-roden-iznad-ucionice-a-cijeli-zivot-proveo-izmedu-vojske-novina-i-knjizevnosti/1050' } },
+
+  { id: 'ikurtovic', cat: 'muzika', kind: 'linked', name: 'Ismet Kurtović',
+    role: { bs: 'Pjevač i kompozitor', en: 'Singer and composer' },
+    text: {
+      bs: 'Rođen u Srnetici, a u Sanski Most porodica mu se preselila kad je imao oko pet godina. Tu je počeo školovanje i prva muzička iskustva. Frontmen je grupe Drugi način, a s bratom Fikretom stvorio je pjesmu Sano moja, sanjam te.',
+      en: 'Born in Srnetica, he moved to Sanski Most with his family at about five years old. There he began school and gained his first musical experience. He is the frontman of the band Drugi način and, with his brother Fikret, created the song Sano moja, sanjam te.' },
+    src: { label: 'Telegraf', url: 'https://www.telegraf.rs/pop-i-kultura/muzika/3436999-ismet-kurtovic-drugi-nacin-veliki-intervju' } }
 ];
