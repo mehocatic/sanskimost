@@ -233,5 +233,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Napisao je tekstove pjesama Mojoj dragoj BiH i Piši mi grupe Drugi način, a Sano moja, sanjam te i otpjevao. U Sanskom Mostu vodio je ustanovu Kult media, a s Amirom Talićem i drugima potpisao je knjigu Sanska posla (2018).',
       en: 'He wrote the lyrics of Mojoj dragoj BiH and Piši mi for the band Drugi način, and also sang Sano moja, sanjam te. In Sanski Most he ran the institution Kult media, and with Amir Talić and others he co-wrote the book Sanska posla (2018).' },
-    src: { label: 'Grad na devet rijeka', url: 'https://gradnadevetrijeka.ba/2024/07/05/video-da-li-je-ovo-najljepsa-pjesma-o-sanskom-mostu/' } }
+    src: { label: 'Grad na devet rijeka', url: 'https://gradnadevetrijeka.ba/2024/07/05/video-da-li-je-ovo-najljepsa-pjesma-o-sanskom-mostu/' } },
+
+  { id: 'kazic', cat: 'muzika', kind: 'born', name: 'Amir Kazić Leo',
+    role: { bs: 'Pjevač', en: 'Singer' },
+    text: {
+      bs: 'Prema vlastitom kazivanju, rođen je u Tomini. Prva muzička iskustva stekao je u Kulturnom društvu Grmeč, kroz folklor, hor i tamburaški orkestar, a u srednjoj školi svirao je u bendu Elektronci. Kasnije je otišao u Istru i tamo izgradio karijeru.',
+      en: 'By his own account he was born in Tomina. He had his first musical experience at the Grmeč cultural society, through folklore, choir and a tamburitza orchestra, and played in the band Elektronci at secondary school. He later moved to Istria and built his career there.' },
+    src: { label: 'Klix', url: 'https://www.klix.ba/magazin/muzika/amir-kazic-leo-u-mojim-pocecima-bilo-je-mnogo-teze-doci-do-publike-danas-mladi-ne-moraju-ni-izaci-iz-sobe/260419010' } }
 ];
