@@ -319,5 +319,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Bio je jedan od organizatora odbrane Vrhpolja 1992. Komandovao je jedinicom Teritorijalne odbrane Vrhpolja, a potom je bio zamjenik komandanta Ključko-sanskog bataljona.',
       en: 'He was one of the organisers of the defence of Vrhpolje in 1992. He commanded the Vrhpolje Territorial Defence unit and later served as deputy commander of the Ključ-Sana battalion.' },
-    src: { label: 'Grad na devet rijeka', url: 'https://gradnadevetrijeka.ba/2025/06/13/sve-sto-moras-znati-o-herojskom-vrhpolju-foto-video/' } }
+    src: { label: 'Grad na devet rijeka', url: 'https://gradnadevetrijeka.ba/2025/06/13/sve-sto-moras-znati-o-herojskom-vrhpolju-foto-video/' } },
+
+  { id: 'catic', cat: 'rat', kind: 'linked', name: 'Aziz Ćatić',
+    role: { bs: 'Preživjeli i svjedok', en: 'Survivor and witness' },
+    text: {
+      bs: 'Preživio je strijeljanje zatočenika u logoru Sanakeram na području Sanskog Mosta u oktobru 1995, kao jedini preživjeli iz grupe, kad je imao 25 godina. O zločinu je svjedočio, a njegovo ime zabilježeno je u izvještaju o presudi Kantonalnog suda u Bihaću iz 2011.',
+      en: 'He survived the shooting of detainees at the Sanakeram camp in the Sanski Most area in October 1995, as the only survivor of the group, at the age of 25. He testified about the crime, and his name is recorded in the report on the 2011 verdict of the Cantonal Court in Bihać.' },
+    src: { label: 'Inmedia', url: 'https://inmedia.ba/prezivio-strijeljanje-u-sanakeramu-svjedocenje-aziza-catica/' } }
 ];
