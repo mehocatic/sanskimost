@@ -170,5 +170,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Porodica mu potiče iz Hrustova, a u izvještaju iz tog mjesta spominje se uz Samira Handanovića među golmanima porijeklom iz mjesne zajednice. Branio je za reprezentaciju Slovenije.',
       en: 'His family comes from Hrustovo, and a report from the village lists him alongside Samir Handanović among goalkeepers with roots there. He played in goal for the Slovenia national team.' },
-    src: { label: 'Dnevni avaz', url: 'https://avaz.ba/vijesti/bih/663090/haris-seferovic-je-poslao-kuci-mbapea-pogbu-grizmana-sve-je-pocelo-u-hrustovu-kod-sanskog-mosta' } }
+    src: { label: 'Dnevni avaz', url: 'https://avaz.ba/vijesti/bih/663090/haris-seferovic-je-poslao-kuci-mbapea-pogbu-grizmana-sve-je-pocelo-u-hrustovu-kod-sanskog-mosta' } },
+
+  { id: 'hasanbeg', cat: 'politika', kind: 'born', name: 'Hasan-beg Čekić',
+    role: { bs: 'Upravitelj i gradonačelnik', en: 'Administrator and mayor' },
+    text: {
+      bs: 'Bio je sanski upravitelj, a kasnije gradonačelnik. Jedan je od predvodnika otpora austrougarskoj okupaciji 1878, a zabilježena je i njegova uloga u podizanju i održavanju drvenog mosta preko Sane.',
+      en: 'He was the administrator of Sanski Most and later its mayor. He was one of the leaders of resistance to the Austro-Hungarian occupation in 1878, and his part in building and maintaining the wooden bridge over the Sana is on record.' },
+    src: { label: 'Stav (arhiv)', url: 'https://arhiv.stav.ba/ko-su-bile-vodje-otpora-u-krajini-i-kakva-je-njihova-sudbina/' } }
 ];
