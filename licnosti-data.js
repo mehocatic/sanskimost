@@ -255,5 +255,12 @@ window.LICNOSTI = [
     text: {
       bs: 'S Perom Mandićem bio je među osnivačima sanske kolonije naive, iz koje su nastala međunarodna Ljetnja drugovanja na Sani. Učesnici kolonije ostavili su gradu više od 500 slika i skulptura, a velik dio zbirke stradao je u ratu. Cerić je 2017. izložbom obilježio četiri decenije umjetničkog rada.',
       en: 'With Pero Mandić he was among the founders of the Sanski Most naive art colony, which gave rise to the international Summer Gatherings on the Sana. Participants left the town more than 500 paintings and sculptures, and much of the collection was lost in the war. In 2017 Cerić marked four decades of his art with an exhibition.' },
+    src: { label: 'Al Jazeera Balkans', url: 'https://balkans.aljazeera.net/amp/teme/2017/8/27/ozivljavanje-prve-kolonije-naive-u-bih' } },
+
+  { id: 'mandic', cat: 'kultura', kind: 'linked', name: 'Pero Mandić',
+    role: { bs: 'Slikar', en: 'Painter' },
+    text: {
+      bs: 'S Džaferom Cerićem bio je među osnivačima sanske kolonije naive. Autor je ciklusa od 14 slika Križni put Isusa Krista, koji se čuva u crkvi Uznesenja Blažene Djevice Marije u Sanskom Mostu.',
+      en: 'With Džafer Cerić he was among the founders of the Sanski Most naive art colony. He is the author of a cycle of 14 paintings, the Way of the Cross, kept in the church of the Assumption of the Blessed Virgin Mary in Sanski Most.' },
     src: { label: 'Al Jazeera Balkans', url: 'https://balkans.aljazeera.net/amp/teme/2017/8/27/ozivljavanje-prve-kolonije-naive-u-bih' } }
 ];
