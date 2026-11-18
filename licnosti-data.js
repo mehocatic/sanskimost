@@ -305,5 +305,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Ljekar iz Trnove. Do aprila 1992. bio je načelnik interne medicine u Domu zdravlja Sanski Most. Od juna do novembra 1992. bio je zatočen u logoru Manjača, a njegov položaj i zatočeništvo dokumentovani su u presudama Haškog tribunala.',
       en: 'A physician from Trnova. Until April 1992 he headed internal medicine at the Sanski Most health centre. From June to November 1992 he was held in the Manjača camp, and his position and detention are documented in judgements of the Hague Tribunal.' },
-    src: { label: 'Haški tribunal', url: 'https://ucr.irmct.org/LegalRef/CMSDocStore/Public/BCS/Judgement/NotIndexable/IT-09-92/JUD275R0000636710.pdf' } }
+    src: { label: 'Haški tribunal', url: 'https://ucr.irmct.org/LegalRef/CMSDocStore/Public/BCS/Judgement/NotIndexable/IT-09-92/JUD275R0000636710.pdf' } },
+
+  { id: 'albahari', cat: 'rat', kind: 'born', name: 'Moris Albahari',
+    role: { bs: 'Partizan i pilot', en: 'Partisan and pilot' },
+    text: {
+      bs: 'Rođen 30. oktobra 1930. u Sanskom Mostu, umro 2022. u Sarajevu. Preživio je holokaust i kao dječak učestvovao u partizanskom pokretu, a poslije rata postao je pilot i direktor sarajevskog aerodroma. Poznavanje ladina, jezika sefardskih Jevreja, pomoglo mu je da preživi.',
+      en: 'Born on 30 October 1930 in Sanski Most, died in 2022 in Sarajevo. He survived the Holocaust and as a boy took part in the partisan movement, and after the war became a pilot and director of Sarajevo airport. Knowing Ladino, the language of Sephardic Jews, helped him survive.' },
+    src: { label: 'Jerusalem Post', url: 'https://www.jpost.com/diaspora/article-723030' } }
 ];
