@@ -135,11 +135,76 @@
     $('lic-count').textContent = t('lic.count', { n: data.length });
   }
 
-  // Cards fade in once, when they scroll into view (skipped with reduced motion or without IntersectionObserver).
+  // ---- detail panel
+  const dlg = $('lic-dlg');
+  let cur = null;
+  function fill(id) {
+    const p = byId[id];
+    if (!p) return;
+    cur = id;
+    const fig = $('dlg-fig');
+    if (p.photo && p.photo.src) {
+      $('dlg-img').src = p.photo.src;
+      $('dlg-img').alt = p.name;
+      $('dlg-cap').textContent = p.photo.credit || '';
+      fig.hidden = false;
+    } else {
+      fig.hidden = true;
+      $('dlg-img').removeAttribute('src');
+    }
+    $('dlg-mono').textContent = initials(p.name);
+    $('dlg-cat').textContent = tx(catOf(p.cat));
+    $('dlg-name').textContent = p.name;
+    $('dlg-role').textContent = tx(p.role);
+    const tag = $('dlg-tag');
+    tag.className = 'dlg-tag ' + p.kind;
+    tag.textContent = t('lic.' + p.kind);
+    $('dlg-text').textContent = tx(p.text);
+    const a = $('dlg-src');
+    a.href = p.src.url;
+    if (p.src.internal) { a.removeAttribute('target'); a.removeAttribute('rel'); }
+    else { a.target = '_blank'; a.rel = 'noopener'; }
+    a.textContent = (p.src.internal ? '' : t('lic.source') + ': ') + p.src.label;
+    dlg.querySelector('.dlg-in').scrollTop = 0;
+  }
+  function open(id) {
+    fill(id);
+    if (!dlg.open) {
+      dlg.showModal();
+      document.documentElement.classList.add('dlg-open');
+    }
+    history.replaceState(null, '', '#' + id);
+  }
+  function step(d) {
+    const i = order.indexOf(cur);
+    if (i < 0) return;
+    fill(order[(i + d + order.length) % order.length]);
+    history.replaceState(null, '', '#' + cur);
+  }
+  $('dlg-x').addEventListener('click', () => dlg.close());
+  $('dlg-prev').addEventListener('click', () => step(-1));
+  $('dlg-next').addEventListener('click', () => step(1));
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); }); // click on the backdrop
+  dlg.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+  dlg.addEventListener('close', () => {
+    document.documentElement.classList.remove('dlg-open');
+    cur = null;
+    history.replaceState(null, '', location.pathname + location.search);
+  });
+
+  // ---- reveal on scroll, lily drawn when its section comes in
   function reveal() {
-    const cards = zlist.querySelectorAll('.zlj-card');
-    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    zlist.classList.add('js-reveal');
+    const items = document.querySelectorAll('.rv:not(.in)');
+    const lily = $('zlj-lily');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(e => e.classList.add('in'));
+      lily.classList.add('is-drawn');
+      return;
+    }
+    document.documentElement.classList.add('js-rv');
     const io = new IntersectionObserver(es => es.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
     }), { threshold: .25 });
