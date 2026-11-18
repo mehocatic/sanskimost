@@ -226,5 +226,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođen u Srnetici, a u Sanski Most porodica mu se preselila kad je imao oko pet godina. Tu je počeo školovanje i prva muzička iskustva. Frontmen je grupe Drugi način, a s bratom Fikretom stvorio je pjesmu Sano moja, sanjam te.',
       en: 'Born in Srnetica, he moved to Sanski Most with his family at about five years old. There he began school and gained his first musical experience. He is the frontman of the band Drugi način and, with his brother Fikret, created the song Sano moja, sanjam te.' },
-    src: { label: 'Telegraf', url: 'https://www.telegraf.rs/pop-i-kultura/muzika/3436999-ismet-kurtovic-drugi-nacin-veliki-intervju' } }
+    src: { label: 'Telegraf', url: 'https://www.telegraf.rs/pop-i-kultura/muzika/3436999-ismet-kurtovic-drugi-nacin-veliki-intervju' } },
+
+  { id: 'fkurtovic', cat: 'muzika', kind: 'linked', name: 'Fikret Kurtović Fifi',
+    role: { bs: 'Tekstopisac', en: 'Lyricist' },
+    text: {
+      bs: 'Napisao je tekstove pjesama Mojoj dragoj BiH i Piši mi grupe Drugi način, a Sano moja, sanjam te i otpjevao. U Sanskom Mostu vodio je ustanovu Kult media, a s Amirom Talićem i drugima potpisao je knjigu Sanska posla (2018).',
+      en: 'He wrote the lyrics of Mojoj dragoj BiH and Piši mi for the band Drugi način, and also sang Sano moja, sanjam te. In Sanski Most he ran the institution Kult media, and with Amir Talić and others he co-wrote the book Sanska posla (2018).' },
+    src: { label: 'Grad na devet rijeka', url: 'https://gradnadevetrijeka.ba/2024/07/05/video-da-li-je-ovo-najljepsa-pjesma-o-sanskom-mostu/' } }
 ];
