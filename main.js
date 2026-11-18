@@ -173,29 +173,51 @@
     hNow.classList.toggle('s', yr.textContent.trim().length > 4);
     showFrame(cur);
   }
-  // wide screens: the photo of the entry that is reached, beside the list; the new one fades in over the old one.
-  // An entry without a photo leaves the frame empty, so no photo is ever shown next to a year it does not belong to.
+  // Wide screens: the photo of the entry that is reached sits beside the list.
+  // Two image layers take turns: the new photo is decoded first and only then fades in over the old one,
+  // and a change waits until the reached entry has stayed the same for a moment, so a quick scroll through
+  // several entries does not start several fades at once. The photos are loaded before the list comes on screen.
+  // An entry without a photo leaves the frame empty, so no photo is shown next to a year it does not belong to.
   const frame = document.getElementById('h-frame'), frameIm = frame.querySelector('.h-frame-im'), frameCap = frame.querySelector('figcaption');
-  let frameFor = null;
+  const layers = [document.createElement('img'), document.createElement('img')];
+  layers.forEach(l => { l.alt = ''; l.decoding = 'async'; frameIm.appendChild(l); });
+  let front = 0, frameFor = null, frameTimer = 0;
+  const wideTl = window.matchMedia('(min-width: 769px)');
   function showFrame(li) {
     if (li === frameFor) return;
     frameFor = li;
+    clearTimeout(frameTimer);
+    frameTimer = setTimeout(() => paintFrame(li), reduce ? 0 : 160);
+  }
+  function paintFrame(li) {
+    if (!wideTl.matches) return;
     const img = li.querySelector('.tl-photo img'), cap = li.querySelector('.tl-photo figcaption');
     frame.classList.toggle('empty', !img);
     frameCap.textContent = cap ? cap.textContent : '';
-    if (!img) return;
-    const el = document.createElement('img');
-    el.src = img.currentSrc || img.src;
-    el.alt = '';
-    el.decoding = 'async';
-    el.style.objectPosition = img.style.objectPosition;
-    // tall photos and old drawings would be cut badly as a landscape; they are shown whole on a soft ground
-    if (img.width / img.height < 1.05) el.className = 'whole';
-    const old = [...frameIm.children];
-    frameIm.appendChild(el);
-    const done = () => { el.classList.add('in'); old.forEach(o => { o.classList.remove('in'); setTimeout(() => o.remove(), 700); }); };
-    if (el.complete) requestAnimationFrame(done); else { el.onload = done; el.onerror = done; }
+    if (!img) { layers.forEach(l => l.classList.remove('in')); return; }
+    const src = img.currentSrc || img.src, cur = layers[front];
+    if (cur.dataset.src === src && cur.classList.contains('in')) return;
+    const next = layers[1 - front];
+    next.classList.remove('in');
+    next.dataset.src = src;
+    next.src = src;
+    next.style.objectPosition = img.style.objectPosition;
+    next.classList.toggle('whole', img.dataset.fit === 'contain'); // the old map is shown whole, photos fill the frame
+    const go = () => {
+      if (frameFor !== li || next.dataset.src !== src) return; // another entry was reached in the meantime
+      next.classList.add('in');
+      cur.classList.remove('in');
+      front = 1 - front;
+    };
+    (next.decode ? next.decode() : Promise.resolve()).then(go, go);
   }
+  // load the photos of the list shortly before it comes on screen, so they are ready when their entry is reached
+  const preload = () => timeline.querySelectorAll('.tl-photo img').forEach(img => { const p = new Image(); p.decoding = 'async'; p.src = img.currentSrc || img.src; });
+  if ('IntersectionObserver' in window) {
+    const po = new IntersectionObserver(es => { if (es[0].isIntersecting) { preload(); po.disconnect(); } }, { rootMargin: '900px 0px' });
+    po.observe(timeline);
+  } else preload();
+  wideTl.addEventListener('change', () => { frameFor = null; markNow(); });
   addEventListener('langchange', () => { frameFor = null; markNow(); });
   if (animate) {
     gsap.fromTo(tlLine, { scaleY: 0 }, {

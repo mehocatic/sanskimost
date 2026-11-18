@@ -235,10 +235,12 @@ body.home-page { background: var(--paper); }
 .h-frame { display: none; }
 @media (min-width: 769px) {
   .timeline .tl-photo { display: none; }
-  .timeline li { padding-bottom: clamp(30px, 5svh, 52px); }
+  /* more room per entry, so each photo stays beside the list for a while */
+  .timeline li { padding-bottom: clamp(56px, 14svh, 140px); }
   .h-frame { display: block; margin-top: clamp(18px, 3svh, 32px); max-width: 520px; }
   .h-frame-im { position: relative; aspect-ratio: 4 / 3; max-height: 40svh; border-radius: 16px; overflow: hidden; background: var(--mist); transition: opacity .5s ease; }
-  .h-frame-im img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.04); filter: saturate(.84) contrast(1.03); transition: opacity .7s ease, transform 1.4s cubic-bezier(.2, .7, .2, 1); }
+  .h-frame-im img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.03); filter: saturate(.84) contrast(1.03); transition: opacity .6s ease, transform 1.2s cubic-bezier(.2, .7, .2, 1); }
+  .h-frame-im img:not([src]) { display: none; }
   .h-frame-im img.whole { object-fit: contain; padding: 14px; }
   .h-frame-im img.in { opacity: 1; transform: none; }
   .h-frame.empty .h-frame-im { opacity: .5; }
