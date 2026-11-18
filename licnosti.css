@@ -30,7 +30,7 @@
 .lic-card h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 2.4vw, 2.1rem); line-height: 1.05; }
 .lic-role { margin-top: .35rem; font-size: .9rem; color: var(--fg-soft); }
 .lic-tag { margin-top: .7rem; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--acc); }
-.lic-tag.origin { color: var(--fg-muted); }
+.lic-tag.origin, .lic-tag.linked { color: var(--fg-muted); }
 .lic-text { margin-top: .9rem; font-size: .95rem; line-height: 1.6; color: var(--fg-soft); }
 .lic-src { margin-top: auto; padding-top: 1.1rem; font-size: .74rem; letter-spacing: .08em; color: var(--fg-muted); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .lic-src:hover { color: var(--acc); }

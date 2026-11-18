@@ -20,6 +20,7 @@ I18N.bs = {
   'lic.lead': 'Ljudi iz Sanskog Mosta i oni čiji su korijeni ovdje.',
   'lic.born': 'Iz Sanskog Mosta',
   'lic.origin': 'Korijeni u Sanskom Mostu',
+  'lic.linked': 'Povezan sa Sanskim Mostom',
   'lic.source': 'Izvor',
   'lic.count': '{n} ličnosti',
   'lic.note.h': 'Lista nije gotova',

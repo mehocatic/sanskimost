@@ -18,6 +18,7 @@ I18N.en = {
   'lic.lead': 'People from Sanski Most and those whose roots are here.',
   'lic.born': 'From Sanski Most',
   'lic.origin': 'Roots in Sanski Most',
+  'lic.linked': 'Connected to Sanski Most',
   'lic.source': 'Source',
   'lic.count': '{n} people',
   'lic.note.h': 'The list is not finished',

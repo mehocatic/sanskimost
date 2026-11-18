@@ -28,7 +28,7 @@
 
     const tag = document.createElement('p');
     tag.className = 'lic-tag ' + p.kind;
-    tag.textContent = t(p.kind === 'born' ? 'lic.born' : 'lic.origin');
+    tag.textContent = t('lic.' + p.kind);
 
     const txt = document.createElement('p');
     txt.className = 'lic-text';
