@@ -156,5 +156,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođen u Hamburgu, a porodica mu je porijeklom iz Sanskog Mosta, gdje je posjećivao rodbinu. Napadač je reprezentacije Bosne i Hercegovine. Lokalni portal Inmedia zabilježio je njegovu vezu sa Sanom još 2019, dok je igrao za St. Gallen.',
       en: 'Born in Hamburg, with family roots in Sanski Most, where he visited relatives. He is a striker for the Bosnia and Herzegovina national team. The local portal Inmedia noted his link with the Sana as early as 2019, when he played for St. Gallen.' },
-    src: { label: 'Inmedia', url: 'https://inmedia.ba/jos-jedan-nogometni-talent-porijeklom-iz-sane/' } }
+    src: { label: 'Inmedia', url: 'https://inmedia.ba/jos-jedan-nogometni-talent-porijeklom-iz-sane/' } },
+
+  { id: 'muharemovic', cat: 'sport', kind: 'origin', name: 'Tarik Muharemović',
+    role: { bs: 'Nogometaš', en: 'Footballer' },
+    text: {
+      bs: 'Rođen 28. februara 2003. u Ljubljani. Majka mu je iz Sanskog Mosta, a otac iz Zavidovića, pa je raspuste kao dijete provodio u oba kraja. Stoper je reprezentacije Bosne i Hercegovine.',
+      en: 'Born on 28 February 2003 in Ljubljana. His mother is from Sanski Most and his father from Zavidovići, so as a child he spent holidays in both places. He is a centre-back for the Bosnia and Herzegovina national team.' },
+    src: { label: 'Klix', url: 'https://www.klix.ba/sport/nogomet/tarik-muharemovic-za-klixba-krilatica-bojim-se-samo-boga-mi-se-savrseno-uklapa-s-uzorom-spahicem/260410135' } }
 ];
