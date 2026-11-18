@@ -333,5 +333,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Preživio je strijeljanje na Vrhpoljskom mostu 31. maja 1992. Pred sudom je svjedočio o odvođenju muškaraca iz Gornjih i Donjih Begića i o njihovom ubistvu.',
       en: 'He survived the shooting on the Vrhpolje bridge on 31 May 1992. In court he testified about the taking away of men from Gornji and Donji Begići and about their killing.' },
-    src: { label: 'Sense centar', url: 'https://www.arhiva.sensecentar.org/vijesti.php?aid=2093' } }
+    src: { label: 'Sense centar', url: 'https://www.arhiva.sensecentar.org/vijesti.php?aid=2093' } },
+
+  { id: 'kugic', cat: 'rat', kind: 'linked', name: 'Senad Kugić',
+    role: { bs: 'Logoraš', en: 'Camp survivor' },
+    text: {
+      bs: 'Logoraš iz sela Modra. Prema vlastitom iskazu, proveo je 496 dana u više logora, uključujući Manjaču. Govorio je i o zatočenju u nekadašnjem muzeju Simo Miljuš i o sudbini drugih zatočenika.',
+      en: 'A camp survivor from the village of Modra. By his own account he spent 496 days in several camps, including Manjača. He also spoke about detention in the former Simo Miljuš museum and about the fate of other detainees.' },
+    src: { label: 'Detektor', url: 'https://detektor.ba/2023/11/18/obiljezena-godisnjica-zatvaranja-logora-manjaca/' } }
 ];
