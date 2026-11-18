@@ -10,9 +10,12 @@
   const T = v => Array.isArray(v) ? v[I18n.lang === 'bs' ? 0 : 1] : v;
   const S = window.KVS;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const ROUNDS = 10, PHOTOS = 6, SEEN = 'sm-pogodi-seen';
-  let mode = 'mix';
-  const KEY = () => mode === 'quiz' ? 'sm-pogodi-best-q' : 'sm-pogodi-best';
+  const ROUNDS = 10, PHOTOS = 6, SEEN = 'sm-pogodi-seen', LIVES = 3;
+  // mix: photos and questions; quiz: 10 or 20 questions; surv: questions until the third mistake
+  let mode = 'mix', len = 10, lives = LIVES;
+  const KEY = () => mode === 'surv' ? 'sm-pogodi-best-s' : mode === 'quiz' ? (len === 20 ? 'sm-pogodi-best-q20' : 'sm-pogodi-best-q') : 'sm-pogodi-best';
+  // the most a game can give; a game until three mistakes has no top
+  const MAX = () => mode === 'surv' ? 0 : set.length * 100;
   const PHOTO_SCALE = { from: 1900, to: 2014 };
   let Y0 = PHOTO_SCALE.from, Y1 = PHOTO_SCALE.to;
   const pct = y => (y - Y0) / (Y1 - Y0) * 100;
@@ -71,7 +74,8 @@
     return shuffle([...r, ...c]).map(q => ({ kind: q.t, q }));
   }
   function pick() {
-    if (mode === 'quiz') return pickQuestions(ROUNDS);
+    if (mode === 'quiz') return pickQuestions(len);
+    if (mode === 'surv') return pickQuestions(Math.min(Q.length, 80));
     const ph = shuffle(pickPhotos()), qs = pickQuestions(ROUNDS - PHOTOS), out = ph.slice();
     // questions are dealt in between the photographs, never in a block
     [1, 3, 6, 8].slice(0, qs.length).forEach((slot, i) => out.splice(Math.min(slot + Math.floor(Math.random() * 2), out.length), 0, qs[i]));
@@ -86,7 +90,8 @@
   // a miss is judged in "photo years": the same share of the ruler counts the same on every scale
   const grade = e => e <= 3 ? 'g' : (e <= 10 ? 'm' : 'b');
   const verdict = (e, d) => t(d === 0 ? 'kv.v.exact' : e <= 2 ? 'kv.v.close' : e <= 5 ? 'kv.v.near' : e <= 10 ? 'kv.v.ok' : e <= 20 ? 'kv.v.far' : 'kv.v.miss');
-  const rank = s => t(s >= 900 ? 'kv.r.5' : s >= 750 ? 'kv.r.4' : s >= 550 ? 'kv.r.3' : s >= 350 ? 'kv.r.2' : 'kv.r.1');
+  // the same names for every length: the share of the most a game can give (three mistakes: the number of right answers)
+  const rank = s => { const k = mode === 'surv' ? Math.min(1, s / 1500) * 1000 : s / (MAX() || 1000) * 1000; return t(k >= 900 ? 'kv.r.5' : k >= 750 ? 'kv.r.4' : k >= 550 ? 'kv.r.3' : k >= 350 ? 'kv.r.2' : 'kv.r.1'); };
   // a value of one particular question, whichever question is on the screen
   const fmtq = (v, q) => { const u = UNIT; UNIT = q.t === 'num' ? q.u : ''; const s = fmt(v); UNIT = u; return s; };
   const esc = x => String(x).replace(/"/g, '&quot;');
@@ -111,11 +116,13 @@
     scrollTo(0, 0);
   }
   function start(m) {
-    mode = m === 'quiz' ? 'quiz' : 'mix';
+    mode = ['quiz', 'surv'].includes(m) ? m : 'mix';
     best();
-    set = pick(); at = 0; total = 0; log = [];
+    set = pick(); at = 0; total = 0; log = []; lives = LIVES;
     $('kv-total').textContent = '0';
-    $('kv-dots').innerHTML = set.map(() => '<li></li>').join('');
+    // three mistakes: three lives instead of a dot per question
+    $('kv-dots').innerHTML = mode === 'surv' ? '<li class="life"></li>'.repeat(LIVES) : set.map(() => '<li></li>').join('');
+    $('kv-dots').classList.toggle('lives', mode === 'surv');
     show('kv-round');
     round();
   }
@@ -165,7 +172,7 @@
       setYear(+range.value);
     }
     texts();
-    [...$('kv-dots').children].forEach((li, i) => li.classList.toggle('now', i === at));
+    if (mode !== 'surv') [...$('kv-dots').children].forEach((li, i) => li.classList.toggle('now', i === at));
     // the next photograph is fetched ahead, so it is there when asked for
     const nx = set[at + 1];
     if (nx && nx.kind === 'photo') new Image().src = `photos/arhiv/${nx.p.f}.webp`;
@@ -173,7 +180,7 @@
   // everything the language changes in the current round
   function texts() {
     const r = cur();
-    $('kv-n').textContent = t(r.kind === 'photo' ? 'kv.n' : 'kv.nq', { n: at + 1, total: set.length });
+    $('kv-n').textContent = mode === 'surv' ? t('kv.nsurv', { n: at + 1, lives }) : t(r.kind === 'photo' ? 'kv.n' : 'kv.nq', { n: at + 1, total: set.length });
     $('kv-q').textContent = t(r.kind === 'photo' ? 'kv.q' : r.kind === 'year' ? 'kv.q.when' : r.kind === 'num' ? 'kv.q.num' : 'kv.q.pick');
     if (r.kind !== 'photo') {
       $('kv-card-q').textContent = T(r.q.q);
@@ -221,7 +228,11 @@
     total += entry.pts;
     log.push(entry);
     count($('kv-total'), total - entry.pts, total);
-    $('kv-dots').children[at].className = pickQ ? (entry.pts ? 'g' : 'b') : grade(entry.e);
+    const miss = pickQ ? !entry.pts : grade(entry.e) === 'b';
+    if (mode === 'surv') {
+      // a wrong answer, or a guess far off, costs a life
+      if (miss) { lives--; $('kv-dots').children[lives].className = 'life lost'; }
+    } else $('kv-dots').children[at].className = pickQ ? (entry.pts ? 'g' : 'b') : grade(entry.e);
     answer(entry);
     $('kv-ans').hidden = false;
     $('kv-next').focus({ preventScroll: true });
@@ -240,7 +251,7 @@
     source(photo ? null : S[r.q.s]);
     $('kv-open').hidden = !photo;
     if (photo) $('kv-open').href = `arhiv#foto=${r.p.f}`;
-    $('kv-next').textContent = t(at === set.length - 1 ? 'kv.finish' : 'kv.next');
+    $('kv-next').textContent = t(last() ? 'kv.finish' : 'kv.next');
   }
   // where the answer comes from: a link under the explanation
   function source(s) {
@@ -262,7 +273,8 @@
   }
   $('kv-ok').addEventListener('click', () => reveal());
   opts.forEach((b, i) => b.addEventListener('click', () => reveal(i + 1)));
-  $('kv-next').addEventListener('click', () => { if (++at < set.length) round(); else end(); });
+  const last = () => at === set.length - 1 || (mode === 'surv' && lives <= 0);
+  $('kv-next').addEventListener('click', () => { if (!last()) { at++; round(); } else end(); });
   range.addEventListener('keydown', e => { if (e.key === 'Enter') reveal(); });
 
   /* ---------- result ---------- */
@@ -272,9 +284,12 @@
     let b = best();
     if (total > b) { try { localStorage.setItem(KEY(), total); } catch (e) { /* not kept */ } b = total; }
     show('kv-end');
+    const right = log.filter(x => x.r.kind === 'choice' ? x.pts : grade(x.e) !== 'b').length;
     count($('kv-final'), 0, total);
+    $('kv-max').textContent = mode === 'surv' ? t('kv.ptsword') : `/ ${MAX()}`;
     $('kv-rank').textContent = rank(total);
-    $('kv-avg').textContent = t('kv.avg', { years: years(avg) }) + (b > total ? ' ' + t('kv.best', { n: b }) + '.' : '');
+    $('kv-avg').textContent = [mode === 'surv' ? t('kv.right', { n: right }) + '.' : '', yrs.length ? t('kv.avg', { years: years(avg) }) : '', b > total ? t('kv.best', { n: b }) + '.' : ''].filter(Boolean).join(' ');
+    card(right);
     $('kv-list').innerHTML = log.map(x => {
       const r = x.r;
       if (r.kind === 'photo') return `<li class="${grade(x.e)}"><a href="arhiv#foto=${r.p.f}"><img src="photos/arhiv/t/${r.p.f}.webp" alt="${esc(t(r.p.cap))}" loading="lazy">` +
@@ -284,10 +299,57 @@
       return `<li class="${r.kind === 'choice' ? (x.pts ? 'g' : 'b') : grade(x.e)} qi"><div class="kv-qcard"><span aria-hidden="true">?</span><small>${T(r.q.q)}</small></div><p><b>${ans}</b>${you}</p></li>`;
     }).join('');
   }
+  /* ---------- the result as a picture (1080 x 1350, the size of a post; a story crops it well) ---------- */
+  let shot = null; // the last picture, as a PNG blob
+  async function card(right) {
+    const W = 1080, H = 1350, c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const g = c.getContext('2d');
+    try { await Promise.all(['500 120px "Cormorant Garamond"', 'italic 500 60px "Cormorant Garamond"', '400 30px Inter'].map(f => document.fonts.load(f))); } catch (e) { /* the fallback fonts are fine */ }
+    g.fillStyle = '#111614'; g.fillRect(0, 0, W, H);
+    // an old photograph of the game in the upper half, as a print with a paper border
+    const p = (log.find(x => x.r.kind === 'photo') || {}).r;
+    const src = `photos/arhiv/${p ? p.p.f : DECOR[0]}.webp`;
+    await new Promise(res => {
+      const im = new Image();
+      im.onload = () => {
+        g.save(); g.translate(W / 2, 390); g.rotate(-0.03);
+        const w = 760, h = Math.min(520, w * im.height / im.width), r = Math.max(w / im.width, h / im.height);
+        g.shadowColor = 'rgba(0,0,0,.55)'; g.shadowBlur = 50; g.shadowOffsetY = 24;
+        g.fillStyle = '#efe9db'; g.fillRect(-w / 2 - 16, -h / 2 - 16, w + 32, h + 32);
+        g.shadowColor = 'transparent';
+        g.beginPath(); g.rect(-w / 2, -h / 2, w, h); g.clip();
+        g.drawImage(im, -im.width * r / 2, -im.height * r / 2, im.width * r, im.height * r);
+        g.restore(); res();
+      };
+      im.onerror = res;
+      im.src = src;
+    });
+    g.textAlign = 'center';
+    g.fillStyle = '#7fd6dc'; g.font = '400 26px Inter';
+    g.fillText(t(mode === 'surv' ? 'kv.surv' : mode === 'quiz' ? 'kv.quiz' : 'kv.title.plain').toUpperCase().split('').join(String.fromCharCode(8202)), W / 2, 760);
+    // Inter for the figure: the serif has old-style figures, and a canvas cannot switch them to lining ones
+    g.fillStyle = '#f6f4ee'; g.font = '400 210px Inter, system-ui, sans-serif';
+    g.fillText(String(total), W / 2, 980);
+    g.fillStyle = 'rgba(246,244,238,.6)'; g.font = '400 34px Inter';
+    g.fillText(mode === 'surv' ? t('kv.right', { n: right }) : t('kv.of', { n: MAX() }), W / 2, 1040);
+    g.fillStyle = '#f6f4ee'; g.font = 'italic 500 64px "Cormorant Garamond", Georgia, serif';
+    g.fillText(rank(total), W / 2, 1150);
+    g.fillStyle = 'rgba(246,244,238,.5)'; g.font = '400 28px Inter';
+    g.fillText('visitsanskimost.netlify.app/pogodi', W / 2, 1270);
+    shot = await new Promise(res => c.toBlob(res, 'image/png'));
+    const url = shot ? URL.createObjectURL(shot) : c.toDataURL('image/png');
+    $('kv-shot').src = url;
+    $('kv-shot').alt = t('kv.shot.alt', { n: total });
+    $('kv-dl').href = url;
+  }
   $('kv-share').addEventListener('click', async () => {
     const btn = $('kv-share'), url = location.origin + location.pathname;
-    const text = t(mode === 'quiz' ? 'kv.sharetextq' : 'kv.sharetext', { n: total });
+    const text = mode === 'surv' ? t('kv.sharetexts', { n: total }) : t(mode === 'quiz' ? 'kv.sharetextq' : 'kv.sharetext', { n: total, max: MAX() });
     try {
+      // phones: the picture goes with the text into the share sheet (Instagram, WhatsApp, Viber ...)
+      const file = shot && new File([shot], 'sanski-most-kviz.png', { type: 'image/png' });
+      if (file && navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: t('kv.doctitle'), text: `${text} ${url}` }); return; }
       if (navigator.share) { await navigator.share({ title: t('kv.doctitle'), text, url }); return; }
       await navigator.clipboard.writeText(`${text} ${url}`);
       btn.textContent = t('kv.copied');
@@ -296,6 +358,13 @@
   });
   $('kv-start').addEventListener('click', () => start('mix'));
   $('kv-quiz').addEventListener('click', () => start('quiz'));
+  $('kv-surv').addEventListener('click', () => start('surv'));
+  document.querySelector('.kv-len').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    len = +b.dataset.len;
+    document.querySelectorAll('.kv-len button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  });
   $('kv-again').addEventListener('click', () => start(mode));
   $('kv-bank').textContent = t('kv.bank', { n: Q.length });
   // every source the questions rest on, one link each

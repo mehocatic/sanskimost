@@ -49,6 +49,13 @@
         <div class="kv-modes">
           <button type="button" class="btn big" id="kv-start" data-i18n="kv.start">Počni</button>
           <button type="button" class="btn big ghost" id="kv-quiz" data-i18n="kv.quiz">Samo pitanja</button>
+          <button type="button" class="btn big ghost" id="kv-surv" data-i18n="kv.surv">Do 3 greške</button>
+        </div>
+        <!-- how many questions in "only questions" -->
+        <div class="kv-len" role="group" aria-label="Broj pitanja" data-i18n-attr="aria-label:kv.len">
+          <span data-i18n="kv.len">Broj pitanja</span>
+          <button type="button" data-len="10" aria-pressed="true">10</button>
+          <button type="button" data-len="20" aria-pressed="false">20</button>
         </div>
         <p class="kv-bank" id="kv-bank"></p>
         <details class="kv-srcs">
@@ -107,11 +114,14 @@
     <!-- 3. result -->
     <section class="kv-end" id="kv-end" hidden>
       <p class="eyebrow" data-i18n="kv.result">Rezultat</p>
-      <p class="kv-final"><b id="kv-final">0</b><span>/ 1000</span></p>
+      <p class="kv-final"><b id="kv-final">0</b><span id="kv-max">/ 1000</span></p>
       <h2 id="kv-rank"></h2>
       <p class="kv-avg" id="kv-avg"></p>
+      <!-- the result as a picture, for stories and chats (pogodi.js: card) -->
+      <figure class="kv-shot"><img id="kv-shot" alt="" width="1080" height="1350"></figure>
       <div class="kv-end-act">
         <button type="button" class="btn big" id="kv-share" data-i18n="kv.share">Podijeli rezultat</button>
+        <a class="btn big ghost" id="kv-dl" download="sanski-most-kviz.png" data-i18n="kv.dl">Preuzmi sliku</a>
         <button type="button" class="btn big ghost" id="kv-again" data-i18n="kv.again">Igraj ponovo</button>
         <a class="kv-link" href="arhiv" data-i18n="kv.toarchive">Otvori cijeli arhiv →</a>
       </div>
