@@ -4,27 +4,10 @@
   const L = () => (window.I18n && I18n.lang) || 'bs';
   const t = (k, v) => (window.I18n ? I18n.t(k, v) : k);
   const data = window.LICNOSTI || [];
-  const cats = window.LICNOSTI_CATS || [];
   const grid = document.getElementById('lic-grid');
-  const chips = document.getElementById('lic-chips');
   const count = document.getElementById('lic-count');
-  let current = 'all';
 
   const initials = n => n.split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('');
-
-  function renderChips() {
-    chips.querySelectorAll('button').forEach(b => b.remove());
-    [{ id: 'all', bs: 'Sve', en: 'All' }, ...cats].forEach(c => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'lic-chip';
-      b.dataset.cat = c.id;
-      b.textContent = c[L()] || c.en;
-      b.setAttribute('aria-pressed', String(c.id === current));
-      b.addEventListener('click', () => { current = c.id; render(); });
-      chips.appendChild(b);
-    });
-  }
 
   function card(p) {
     const li = document.createElement('li');
@@ -62,9 +45,8 @@
   }
 
   function render() {
-    renderChips();
     grid.textContent = '';
-    const list = data.filter(p => current === 'all' || p.cat === current);
+    const list = data;
     list.forEach(p => grid.appendChild(card(p)));
     count.textContent = t('lic.count', { n: list.length });
   }
