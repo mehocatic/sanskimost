@@ -184,5 +184,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođen 20. augusta 1949. u Kruharima kod Sanskog Mosta, umro 14. maja 2021. u Sarajevu. U mladosti je svirao u orkestru KUD Grmeč i u sanskoj grupi Boemi. Bio je profesor emeritus i dekan Muzičke akademije Univerziteta u Sarajevu, a napisao je Historiju muzike u Bosni i Hercegovini (2011).',
       en: 'Born on 20 August 1949 in Kruhari near Sanski Most, died on 14 May 2021 in Sarajevo. In his youth he played in the KUD Grmeč orchestra and in the Sanski Most band Boemi. He was professor emeritus and dean of the Academy of Music of the University of Sarajevo, and wrote the History of Music in Bosnia and Herzegovina (2011).' },
-    src: { label: 'Muzička akademija Sarajevo', url: 'https://www.mas.unsa.ba/en/node/454' } }
+    src: { label: 'Muzička akademija Sarajevo', url: 'https://www.mas.unsa.ba/en/node/454' } },
+
+  { id: 'abilajbegovic', cat: 'nauka', kind: 'born', name: 'Asim Bilajbegović',
+    role: { bs: 'Geodet i profesor', en: 'Geodesist and professor' },
+    text: {
+      bs: 'Rođen u Sanskom Mostu, gdje je počeo školovanje. Od 1985. do 1987. bio je dekan Geodetskog fakulteta u Zagrebu, predavao je u Dresdenu, a među pionirima je primjene GPS tehnologije u geodeziji u Bosni i Hercegovini i Hrvatskoj.',
+      en: 'Born in Sanski Most, where he began his schooling. From 1985 to 1987 he was dean of the Faculty of Geodesy in Zagreb, he taught in Dresden, and he was among the pioneers of GPS in geodesy in Bosnia and Herzegovina and Croatia.' },
+    src: { label: 'Univerzitet u Sarajevu', url: 'https://www.unsa.ba/node/4619' } }
 ];
