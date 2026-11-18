@@ -1,13 +1,43 @@
-/* People page (licnosti.html): a dark header, a bar of field filters, a grid of cards, a note about what is still missing. */
+/* People page (licnosti.html).
+   1. Header: a wall of names behind the title, three counts, jump links.
+   2. Golden Lilies: a dark memorial with a drawn lily and a roll of names (gold, restrained).
+   3. Highlights: six people, one large figure each.
+   4. Index: everyone by field, chapter heading on the left (sticky on desktop), names on the right.
+   5. Detail panel: <dialog>, a side panel on desktop and a bottom sheet on phones. */
 .lic-page main { background: var(--paper); }
+.lic-page { --gold: #d4af5a; --gold-l: #f1dc9e; --gold-d: #8f6a22; }
+.sec-head { max-width: 46rem; margin-bottom: clamp(32px, 6svh, 64px); }
+.sec-head h2 { font-family: var(--serif); font-weight: 400; line-height: 1; letter-spacing: -.01em; font-size: clamp(2.5rem, 6vw, 4.6rem); }
 
-.lic-hero {
-  position: relative; overflow: hidden;
-  padding: clamp(120px, 18svh, 190px) var(--gutter) clamp(56px, 9svh, 100px);
-  background: radial-gradient(ellipse 60% 70% at 85% 30%, rgba(23, 149, 160, .12), rgba(23, 149, 160, 0) 70%), var(--deep);
+/* ---------- 1. header */
+.lh { position: relative; overflow: hidden; min-height: min(100svh, 920px); display: flex; align-items: flex-end; padding: clamp(120px, 20svh, 200px) var(--gutter) clamp(48px, 9svh, 96px); background: var(--deep); }
+.lh-wall {
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: clamp(6px, 1.4svh, 18px); pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 62%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 62%, transparent 100%);
 }
-.lic-hero h1 { font-family: var(--serif); font-weight: 400; line-height: .95; letter-spacing: -.01em; font-size: clamp(3.4rem, 10vw, 8.6rem); }
-.lic-lead { margin-top: 1.3rem; max-width: 34rem; font-size: 1.08rem; color: var(--fg-soft); }
+.lh-row { overflow: hidden; white-space: nowrap; }
+.lh-track { display: inline-flex; gap: .9em; font-family: var(--serif); font-size: clamp(2.2rem, 6.4vw, 6rem); line-height: 1.08; color: rgba(246, 244, 238, .075); animation: lh-move var(--dur, 100s) linear infinite; }
+.lh-row.rev .lh-track { animation-direction: reverse; }
+.lh-track span::after { content: "·"; margin-left: .9em; color: rgba(127, 214, 220, .14); }
+.lh-track .hi { color: rgba(127, 214, 220, .24); font-style: italic; }
+@keyframes lh-move { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.lh::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 70% 60% at 20% 85%, rgba(21, 26, 24, .92), rgba(21, 26, 24, 0) 70%); }
+.lh-in { position: relative; z-index: 1; max-width: 60rem; }
+.lh h1 { font-family: var(--serif); font-weight: 400; line-height: .88; letter-spacing: -.02em; font-size: clamp(4.2rem, 15vw, 12rem); }
+.lh-lead { margin-top: 1.2rem; max-width: 30rem; font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: var(--fg-soft); }
+.lh-stats { list-style: none; display: flex; flex-wrap: wrap; gap: 18px clamp(28px, 5vw, 64px); margin-top: clamp(28px, 5svh, 48px); }
+.lh-stats li { display: flex; flex-direction: column; }
+.lh-stats b { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5vw, 3.8rem); line-height: 1; color: var(--acc); }
+.lh-stats span { margin-top: .35rem; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-muted); }
+.lh-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: clamp(26px, 4svh, 40px); }
+.lh-jump a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 1.1rem; border: 1px solid var(--rule); border-radius: 999px;
+  color: var(--fg); text-decoration: none; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+.lh-jump a:first-child { border-color: rgba(212, 175, 90, .55); color: var(--gold-l); }
+.lh-jump a:hover { border-color: var(--acc); background: rgba(246, 244, 238, .06); }
+.lh-jump a:first-child:hover { border-color: var(--gold); background: rgba(212, 175, 90, .1); }
 
 .lic-body { padding: clamp(40px, 7svh, 80px) var(--gutter) clamp(70px, 11svh, 130px); }
 .lic-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 28px; margin-bottom: clamp(26px, 4svh, 44px); }
