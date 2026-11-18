@@ -163,8 +163,9 @@ h2.h3 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); }
 }
 .site-foot .foot-name { font-family: var(--serif); font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1; color: var(--fg); }
 .sf-country { margin-top: .6rem; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
-.sf-links { display: grid; grid-template-columns: repeat(3, auto); gap: 4px 36px; align-content: start; }
-.sf-links a { display: inline-flex; align-items: center; min-height: 40px; color: var(--fg-soft); text-decoration: none; font-size: .9rem; transition: color .2s ease; }
+/* the pages in one row, beside the town name */
+.sf-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; align-self: end; column-gap: clamp(18px, 2.4vw, 36px); }
+.sf-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--fg-soft); text-decoration: none; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; white-space: nowrap; transition: color .2s ease; }
 .sf-links a:hover { color: var(--acc); }
 .sf-base {
   grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px;
@@ -176,6 +177,7 @@ h2.h3 { font-size: clamp(2.4rem, 5.4vw, 4.8rem); }
 .site-foot .foot-top { display: inline-flex; align-items: center; min-height: 44px; color: var(--acc); text-decoration: none; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
 @media (max-width: 768px) {
   .site-foot { grid-template-columns: minmax(0, 1fr); }
-  .sf-links { grid-template-columns: repeat(2, auto); justify-content: start; }
+  /* phones: the six pages do not fit one row, so they sit in an even grid of three */
+  .sf-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 12px; }
   .sf-base { flex-direction: column; align-items: flex-start; }
 }
