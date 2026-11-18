@@ -127,6 +127,7 @@
     { from: 2, to: 5, k: 'plan.y.spring', slug: 'bobijasko-oko' },
     { from: 5, to: 8, k: 'plan.y.summer', slug: 'dabarska' },
     { from: 6.05, to: null, k: 'plan.y.musalla', slug: 'musalla' },
+    { from: 6 + 19.5 / 31, to: null, k: 'plan.y.sana', img: 'photos/arhiv/plivanje.webp' },
     { from: 9 + 9.5 / 31, to: null, k: 'plan.y.oct' }
   ].filter(m => !m.slug || bySlug[m.slug]);
   function buildYear() {
@@ -146,8 +147,9 @@
     // each moment with the photo of its place; the day without a place gets its date, large
     box.querySelectorAll('.yr-list li').forEach((li, i) => {
       const m = YEAR[i];
-      const ph = make(m.slug ? 'a' : 'div', 'yr-photo');
+      const ph = make(m.slug ? 'a' : 'div', 'yr-photo' + (m.img ? ' has-img' : ''));
       if (m.slug) { ph.href = href(m.slug); ph.setAttribute('tabindex', '-1'); ph.setAttribute('aria-hidden', 'true'); ph.appendChild(cover(m.slug)); }
+      else if (m.img) { ph.setAttribute('aria-hidden', 'true'); ph.innerHTML = `<img src="${m.img}" alt="" loading="lazy">`; }
       else { ph.setAttribute('aria-hidden', 'true'); ph.innerHTML = I18n.lang === 'bs' ? '<b>10.<small>X</small></b>' : '<b>10<small>Oct</small></b>'; }
       li.prepend(ph);
     });
