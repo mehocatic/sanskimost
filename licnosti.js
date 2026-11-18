@@ -96,25 +96,43 @@
       li.appendChild(b);
       ul.appendChild(li);
     });
-    if (z.post) {
-      const b = document.createElement('p');
-      b.className = 'zlj-post';
-      b.textContent = t('lic.zlj.post');
-      li.insertBefore(b, li.children[1]);
-    }
-    if (z.note) {
-      const n = document.createElement('p');
-      n.className = 'zlj-note';
-      n.textContent = z.note[L()] || z.note.en;
-      li.appendChild(n);
-    }
-    return li;
   }
 
-  function renderZlj() {
-    zlist.textContent = '';
-    zdata.forEach((z, i) => zlist.appendChild(zcard(z, i)));
-    zcount.textContent = t('lic.zlj.count', { n: zdata.length });
+  // ---- index by field
+  let order = [];
+  function renderIdx() {
+    const box = $('lic-idx');
+    box.textContent = '';
+    order = [];
+    let n = 0;
+    cats.forEach(c => {
+      const list = data.filter(p => p.cat === c.id);
+      if (!list.length) return;
+      n++;
+      const sec = el('section', 'ch');
+      sec.setAttribute('aria-labelledby', 'ch-' + c.id);
+      const head = el('header', 'ch-head');
+      const h = el('h3', 'ch-title', tx(c));
+      h.id = 'ch-' + c.id;
+      head.append(el('span', 'ch-n', String(n).padStart(2, '0')), h, el('span', 'ch-count', t('lic.count', { n: list.length })));
+      const ul = el('ul', 'ch-list');
+      list.forEach(p => {
+        order.push(p.id);
+        const li = el('li');
+        const b = el('button', 'pr');
+        b.type = 'button';
+        b.setAttribute('aria-haspopup', 'dialog');
+        const meta = el('span', 'pr-meta');
+        meta.append(el('span', 'pr-role', tx(p.role)), el('span', 'pr-tag ' + p.kind, t('lic.' + p.kind)));
+        b.append(el('span', 'pr-name', p.name), meta, el('span', 'pr-arrow'));
+        b.addEventListener('click', () => open(p.id));
+        li.appendChild(b);
+        ul.appendChild(li);
+      });
+      sec.append(head, ul);
+      box.appendChild(sec);
+    });
+    $('lic-count').textContent = t('lic.count', { n: data.length });
   }
 
   // Cards fade in once, when they scroll into view (skipped with reduced motion or without IntersectionObserver).
