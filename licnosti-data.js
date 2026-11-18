@@ -240,5 +240,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Prema vlastitom kazivanju, rođen je u Tomini. Prva muzička iskustva stekao je u Kulturnom društvu Grmeč, kroz folklor, hor i tamburaški orkestar, a u srednjoj školi svirao je u bendu Elektronci. Kasnije je otišao u Istru i tamo izgradio karijeru.',
       en: 'By his own account he was born in Tomina. He had his first musical experience at the Grmeč cultural society, through folklore, choir and a tamburitza orchestra, and played in the band Elektronci at secondary school. He later moved to Istria and built his career there.' },
-    src: { label: 'Klix', url: 'https://www.klix.ba/magazin/muzika/amir-kazic-leo-u-mojim-pocecima-bilo-je-mnogo-teze-doci-do-publike-danas-mladi-ne-moraju-ni-izaci-iz-sobe/260419010' } }
+    src: { label: 'Klix', url: 'https://www.klix.ba/magazin/muzika/amir-kazic-leo-u-mojim-pocecima-bilo-je-mnogo-teze-doci-do-publike-danas-mladi-ne-moraju-ni-izaci-iz-sobe/260419010' } },
+
+  { id: 'zonic', cat: 'muzika', kind: 'linked', name: 'Šejla Zonić',
+    role: { bs: 'Pjevačica', en: 'Singer' },
+    text: {
+      bs: 'Rođena u Njemačkoj, a djetinjstvo je provela u Sanskom Mostu, u Gornjem Kamengradu. Pohađala je muzičku školu, a pobjednica je takmičenja Zvezde Granda u sezoni 2023/24.',
+      en: 'Born in Germany, she spent her childhood in Sanski Most, in Gornji Kamengrad. She attended music school and won the competition Zvezde Granda in the 2023/24 season.' },
+    src: { label: 'Kurir', url: 'https://www.kurir.rs/stars/4400503/sejla-zonic-je-najobrazovanija-takmicarka-zvezda-granda' } }
 ];
