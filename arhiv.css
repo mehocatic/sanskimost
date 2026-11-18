@@ -260,7 +260,8 @@
 @media not ((min-width: 900px) and (min-height: 560px)) {
   .v-map .arh-head { position: fixed; z-index: 10; top: 0; left: 0; padding-top: 66px; pointer-events: none; }
   .v-map .arh-head h1 { font-size: 1.35rem; max-width: none; }
-  .v-map .arh-head .eyebrow { margin-bottom: 8px; }
+  /* one line, so the title never slides under the view switch below it */
+  .v-map .arh-head .eyebrow { margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: .2em; font-size: .66rem; }
   .v-map .arh-tools { position: fixed; z-index: 10; top: 122px; left: 0; padding-top: 0; }
   .v-map .arh-chips { display: none; }
   .v-map .arh-toggle { background: rgba(17, 22, 20, .7); }
