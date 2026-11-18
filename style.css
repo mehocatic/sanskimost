@@ -58,7 +58,7 @@ body.home-page { background: var(--paper); }
   left: 0; right: 0;
   text-align: center;
   font-family: "Cormorant Garamond", Georgia, serif;
-  letter-spacing: .35em;
+  letter-spacing: .2em;
   text-transform: uppercase;
   pointer-events: none;
 }
@@ -142,7 +142,7 @@ body.home-page { background: var(--paper); }
   max-height: 0; opacity: 0; overflow: hidden;
   transition: max-height .5s ease, opacity .5s ease, margin .5s ease;
 }
-.card .more { display: block; margin-top: .9rem; font-size: .7rem; letter-spacing: .25em; text-transform: uppercase; color: rgba(246, 244, 238, .86); }
+.card .more { display: block; margin-top: .9rem; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(246, 244, 238, .86); }
 /* last card: everything else is on the map */
 .card-all { background: var(--deep); }
 .card-all::after { display: none; }
@@ -190,7 +190,7 @@ body.home-page { background: var(--paper); }
 /* a) the name: the Latin word large, in the colour of water, beside the text */
 .h-name-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 6vw; align-items: end; margin-top: clamp(28px, 5svh, 56px); }
 .h-word-big { display: block; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(8rem, 21vw, 19rem); line-height: .8; color: var(--river); padding-bottom: .1em; }
-.h-word-cap { display: block; margin-top: 1rem; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--fg-muted); }
+.h-word-cap { display: block; margin-top: 1rem; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-muted); }
 .big-text { font-family: var(--serif); font-size: clamp(1.6rem, 2.7vw, 2.5rem); line-height: 1.24; max-width: 24em; }
 .big-text em { color: var(--acc); }
 .h-chain { list-style: none; display: flex; flex-wrap: wrap; gap: .8rem 0; margin-top: clamp(24px, 4svh, 44px); font-family: var(--serif); font-size: clamp(1.25rem, 1.8vw, 1.6rem); line-height: 1.1; }
@@ -340,7 +340,7 @@ html.lenis, html.lenis body { height: auto; }
 .view-cursor span {
   position: absolute; left: -43px; top: -43px; width: 86px; height: 86px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(246, 244, 238, .94); color: var(--ink); font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; padding-left: .22em;
+  background: rgba(246, 244, 238, .94); color: var(--ink); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; padding-left: .2em;
   transform: scale(0); transition: transform .35s cubic-bezier(.2, .7, .2, 1);
 }
 .view-cursor.on span { transform: scale(1); }

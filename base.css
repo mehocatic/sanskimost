@@ -34,7 +34,7 @@ body { font-family: var(--sans); font-size: 1rem; line-height: 1.6; overflow-x: 
 em { font-style: italic; }
 
 .eyebrow {
-  font-size: .75rem; letter-spacing: .3em; text-transform: uppercase;
+  font-size: .75rem; letter-spacing: .2em; text-transform: uppercase;
   color: var(--acc); margin-bottom: 1.2rem;
 }
 h2 {

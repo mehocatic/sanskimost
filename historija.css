@@ -168,7 +168,7 @@
   box-shadow: 0 1px 0 rgba(0, 0, 0, .04), 0 18px 34px -22px rgba(0, 0, 0, .45);
   font-variant-numeric: tabular-nums;
 }
-.ledger-to { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--fg-muted); }
+.ledger-to { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-muted); }
 .ledger-t { font-family: var(--serif); font-size: 1.7rem; line-height: 1.1; margin: .2rem 0 1rem; }
 .ledger ol { list-style: none; }
 .ledger li { display: flex; align-items: baseline; gap: 8px; line-height: 30px; font-size: .92rem; }
@@ -228,7 +228,7 @@
 .ul-h { display: grid; gap: 4px 24px; align-items: end; max-width: 980px; }
 .ul-h h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: .95; }
 .ul-h p { color: var(--fg-soft); max-width: 34rem; font-size: .95rem; }
-.ul-span { font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; color: var(--acc); }
+.ul-span { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--acc); }
 @media (min-width: 900px) { .ul-h { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .ul-h .ul-span { grid-column: 1 / -1; } }
 
 /* the time line: a row that scrolls sideways, the line runs through the year marks */

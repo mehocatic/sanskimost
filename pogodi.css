@@ -39,7 +39,7 @@
 .kv-photo img { display: block; max-width: 100%; max-height: min(66vh, 640px); width: auto; height: auto; border-width: 10px; }
 @keyframes kv-in { from { opacity: 0; transform: rotate(3deg) translateY(40px) scale(.95); } }
 .kv-panel { align-self: center; max-width: 520px; }
-.kv-n { font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--sand); margin-bottom: 12px; font-variant-numeric: lining-nums; }
+.kv-n { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--sand); margin-bottom: 12px; font-variant-numeric: lining-nums; }
 .kv-panel h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.5rem, 2.2vw, 2rem); line-height: 1.1; color: rgba(246, 244, 238, .9); }
 .kv-year { font-family: var(--serif); font-weight: 500; font-size: clamp(5.6rem, 11vw, 10.5rem); line-height: .9; margin: 10px 0 6px -4px; color: transparent; -webkit-text-stroke: 1.4px var(--sand); font-variant-numeric: lining-nums tabular-nums; transition: color .5s ease; }
 .kv-year.done { color: var(--paper); -webkit-text-stroke: 0; }
@@ -76,7 +76,7 @@
 /* a question without a photograph: a paper card in the place of the print */
 .kv-card { width: min(100%, 520px); min-height: 280px; padding: clamp(26px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center; gap: 22px; background: var(--print); color: var(--ink); box-shadow: 0 24px 60px rgba(0, 0, 0, .6); transform: rotate(-1deg); animation: kv-in .8s cubic-bezier(.2, .7, .2, 1) both; position: relative; }
 .kv-card::before { content: "?"; position: absolute; right: -16px; top: -20px; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--sand); font: 500 2rem/1 var(--serif); box-shadow: 0 10px 24px rgba(0, 0, 0, .45); }
-.kv-card-n { font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; color: rgba(14, 18, 20, .55); }
+.kv-card-n { font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(14, 18, 20, .55); }
 .kv-card-q { font-family: var(--serif); font-size: clamp(1.45rem, 2.5vw, 2.05rem); line-height: 1.22; }
 .kv-year.long { font-size: clamp(3.4rem, 7vw, 6.4rem); line-height: 1.1; }
 .kv-opts { display: grid; gap: 10px; margin-top: 18px; }

@@ -35,7 +35,7 @@ body { color: var(--fg); min-height: 100svh; }
 .explore-main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; border-top: 1px solid var(--rule); }
 #map { height: 100%; background: var(--mist); z-index: 0; }
 .poi-list { overflow-y: auto; border-left: 1px solid var(--rule); padding: 20px 0 28px; overscroll-behavior: contain; }
-.poi-list h2 { font-family: var(--sans); font-weight: 400; font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; line-height: 1.4; color: var(--acc); padding: 0 20px 10px; }
+.poi-list h2 { font-family: var(--sans); font-weight: 400; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; line-height: 1.4; color: var(--acc); padding: 0 20px 10px; }
 .poi-count { letter-spacing: .1em; color: var(--fg-muted); }
 .route-missing { padding: 0 20px 12px; font-size: .85rem; color: var(--fg-muted); }
 .route-missing[hidden] { display: none; }

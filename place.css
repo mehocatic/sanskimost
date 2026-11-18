@@ -86,7 +86,7 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
 .place-facts[hidden] { display: none; }
 .place-facts dl { display: flex; flex-wrap: wrap; gap: .8rem 2rem; }
 .place-facts dl > div[hidden] { display: none; }
-.place-facts dt { font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: var(--acc); }
+.place-facts dt { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--acc); }
 .place-facts dd { margin: .2rem 0 0; font-family: var(--serif); font-size: 1.7rem; line-height: 1.1; }
 .facts-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: 0 1.1rem; border: 1px solid var(--acc); color: var(--fg); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; }
 .facts-link:hover { background: var(--acc); color: var(--paper); }
@@ -106,10 +106,10 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
 .detail-note:empty { display: none; }
 .place-tn { margin-top: 2.4rem; }
 .place-tn[hidden] { display: none; }
-.place-tn h2 { font-family: var(--sans); font-size: .75rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; line-height: 1.4; color: var(--acc); margin-bottom: .9rem; }
+.place-tn h2 { font-family: var(--sans); font-size: .75rem; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; line-height: 1.4; color: var(--acc); margin-bottom: .9rem; }
 .detail-see { margin-top: 2.4rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); }
 .detail-see[hidden] { display: none; }
-.detail-see h2 { font-family: var(--sans); font-size: .75rem; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; line-height: 1.4; color: var(--acc); margin-bottom: .9rem; }
+.detail-see h2 { font-family: var(--sans); font-size: .75rem; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; line-height: 1.4; color: var(--acc); margin-bottom: .9rem; }
 .detail-see ul { list-style: none; }
 .detail-see li { color: var(--fg-soft); font-size: .95rem; padding: .35rem 0 .35rem 1rem; position: relative; }
 .detail-see a { display: inline-block; padding: .7rem 0; margin: -.7rem 0; color: inherit; text-decoration: underline; text-decoration-color: var(--acc); text-underline-offset: .2em; }
@@ -121,7 +121,7 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
 .place-pager[hidden] { display: none; }
 .pager-link { display: block; min-height: 44px; padding: clamp(36px, 8svh, 90px) var(--gutter); color: inherit; text-decoration: none; }
 .pager-link + .pager-link { border-left: 1px solid rgba(246, 244, 238, .16); text-align: right; }
-.pager-link .pl { display: block; font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: var(--sand); margin-bottom: .8rem; }
+.pager-link .pl { display: block; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--sand); margin-bottom: .8rem; }
 .pager-link .pn { display: block; font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3.4rem); line-height: 1; transition: color .3s ease; overflow-wrap: anywhere; }
 .pager-link:hover .pn { color: var(--sand); }
 
@@ -136,7 +136,7 @@ body:not(.hero-page) .slide:first-child .slide-open { view-transition-name: plac
 .lb-prev { left: 14px; top: 50%; margin-top: -22px; }
 .lb-next { right: 14px; top: 50%; margin-top: -22px; }
 .lb-btn[hidden] { display: none; }
-.lb-count { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; font-size: .8rem; letter-spacing: .25em; color: rgba(246, 244, 238, .66); }
+.lb-count { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; font-size: .8rem; letter-spacing: .2em; color: rgba(246, 244, 238, .66); }
 /* under the photo: the photo credit (author, license, source) from places.js; hidden when the photo has none */
 .lb-meta { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 48px; text-align: center; }
 .lb-credit { margin-top: .2rem; font-size: .72rem; line-height: 1.4; color: rgba(246, 244, 238, .6); }
