@@ -40,20 +40,54 @@
   </nav>
 
   <main>
-    <header class="lic-hero on-deep">
-      <p class="eyebrow" data-i18n="lic.eyebrow">Sanjani</p>
-      <h1 data-i18n="lic.title">Ličnosti</h1>
-      <p class="lic-lead" data-i18n="lic.lead">Ljudi iz Sanskog Mosta i oni čiji su korijeni ovdje.</p>
+    <header class="lh on-deep">
+      <div class="lh-wall" id="lic-wall" aria-hidden="true"></div>
+      <div class="lh-in">
+        <p class="eyebrow" data-i18n="lic.eyebrow">Sanjani</p>
+        <h1 data-i18n="lic.title">Ličnosti</h1>
+        <p class="lh-lead" data-i18n="lic.lead">Ljudi iz Sanskog Mosta i oni čiji su korijeni ovdje.</p>
+        <ul class="lh-stats">
+          <li><b id="st-p"></b><span data-i18n="lic.stat.people">ličnosti</span></li>
+          <li><b id="st-z"></b><span data-i18n="lic.stat.lilies">Zlatnih ljiljana</span></li>
+          <li><b id="st-f"></b><span data-i18n="lic.stat.fields">oblasti</span></li>
+        </ul>
+        <nav class="lh-jump" aria-label="Na ovoj stranici" data-i18n-attr="aria-label:lic.jump">
+          <a href="#zlatni-ljiljani" data-i18n="lic.zlj.title">Zlatni ljiljani Sanskog Mosta</a>
+          <a href="#izdvojeno" data-i18n="lic.feat.eyebrow">Izdvojeno</a>
+          <a href="#svi" data-i18n="lic.idx.title">Ljudi po oblastima</a>
+        </nav>
+      </div>
     </header>
 
     <section class="zlj on-deep" id="zlatni-ljiljani" aria-labelledby="zlj-title">
-      <svg class="zlj-mark" viewBox="0 0 200 230" aria-hidden="true" focusable="false"><use href="#zlj-lily"/></svg>
-      <div class="zlj-head">
-        <svg class="zlj-lily" viewBox="0 0 200 230" aria-hidden="true" focusable="false"><use href="#zlj-lily" fill="url(#zlj-gold)"/></svg>
-        <p class="eyebrow zlj-eyebrow" data-i18n="lic.zlj.eyebrow">Najviše ratno priznanje</p>
-        <h2 id="zlj-title" data-i18n="lic.zlj.title">Zlatni ljiljani Sanskog Mosta</h2>
-        <p class="zlj-lead" data-i18n="lic.zlj.lead">Zlatni ljiljan je najviše ratno priznanje Armije Republike Bosne i Hercegovine iz rata od 1992. do 1995.</p>
-        <p class="zlj-sub" data-i18n="lic.zlj.sub">Ljiljan je hiljadu godina simbol Bosne.</p>
+      <div class="zlj-grid">
+        <div class="zlj-side">
+          <svg class="zlj-lily" id="zlj-lily" viewBox="0 0 200 240" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="zlj-gold" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f6e3a8"/><stop offset=".5" stop-color="#d4af5a"/><stop offset="1" stop-color="#8f6a22"/>
+              </linearGradient>
+              <radialGradient id="zlj-halo"><stop offset="0" stop-color="#d4af5a" stop-opacity=".32"/><stop offset="1" stop-color="#d4af5a" stop-opacity="0"/></radialGradient>
+            </defs>
+            <circle class="zlj-halo" cx="100" cy="118" r="100" fill="url(#zlj-halo)"/>
+            <g class="zlj-shape">
+              <path pathLength="1" d="M100 8C112 34 124 62 120 92C117 114 108 130 100 146C92 130 83 114 80 92C76 62 88 34 100 8Z"/>
+              <path pathLength="1" d="M106 138C112 108 134 84 160 82C184 80 198 98 192 120C188 136 172 144 160 138C170 134 176 124 172 114C166 102 150 102 140 112C130 122 126 134 124 144Z"/>
+              <path pathLength="1" d="M94 138C88 108 66 84 40 82C16 80 2 98 8 120C12 136 28 144 40 138C30 134 24 124 28 114C34 102 50 102 60 112C70 122 74 134 76 144Z"/>
+              <path pathLength="1" d="M62 146H138Q142 146 142 150V158Q142 162 138 162H62Q58 162 58 158V150Q58 146 62 146Z"/>
+              <path pathLength="1" d="M100 166C106 184 110 204 100 232C90 204 94 184 100 166Z"/>
+              <path pathLength="1" d="M110 166C122 182 140 190 160 186C150 200 126 202 110 178Z"/>
+              <path pathLength="1" d="M90 166C78 182 60 190 40 186C50 200 74 202 90 178Z"/>
+            </g>
+            <path class="zlj-rib" pathLength="1" d="M100 34V132"/>
+          </svg>
+          <p class="eyebrow zlj-eyebrow" data-i18n="lic.zlj.eyebrow">Najviše ratno priznanje</p>
+          <h2 id="zlj-title" data-i18n="lic.zlj.title">Zlatni ljiljani Sanskog Mosta</h2>
+          <p class="zlj-lead" data-i18n="lic.zlj.lead">Zlatni ljiljan je najviše ratno priznanje Armije Republike Bosne i Hercegovine iz rata od 1992. do 1995.</p>
+          <p class="zlj-sub" data-i18n="lic.zlj.sub">Ljiljan je hiljadu godina simbol Bosne.</p>
+          <p class="zlj-foot"><span id="zlj-count"></span> <span data-i18n="lic.zlj.open">Popis obuhvata prijeratnu općinu Sanski Most, danas Sanski Most i Oštra Luka.</span> <a href="https://bs.wikipedia.org/wiki/Spisak_dobitnika_Zlatnog_ljiljana_(Sanski_Most)" target="_blank" rel="noopener" data-i18n="lic.zlj.src">Izvor: Wikipedia</a></p>
+        </div>
+        <ol class="zlj-roll" id="zlj-list"></ol>
       </div>
       <ol class="zlj-list" id="zlj-list"></ol>
       <p class="zlj-foot"><span id="zlj-count"></span> <span data-i18n="lic.zlj.open">Popis nije potpun, dopunjavamo ga.</span> <a href="https://gradnadevetrijeka.ba/2024/11/26/ovo-su-dobitnici-zlatnog-ljiljana-iz-sanskog-mosta/" target="_blank" rel="noopener" data-i18n="lic.zlj.src">Izvor: Grad na devet rijeka</a></p>
