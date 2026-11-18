@@ -48,33 +48,53 @@
     $('st-f').textContent = new Set(data.map(p => p.cat)).size;
   }
 
-  function render() {
-    grid.textContent = '';
-    const list = data;
-    list.forEach(p => grid.appendChild(card(p)));
-    count.textContent = t('lic.count', { n: list.length });
+  // ---- Golden Lily roll
+  function renderZlj() {
+    const ol = $('zlj-list');
+    ol.textContent = '';
+    zlj.forEach((z, i) => {
+      const li = el('li', 'zr rv');
+      li.style.setProperty('--i', i);
+      const d = el('details');
+      const s = el('summary');
+      const mid = el('span', 'zr-mid');
+      mid.appendChild(el('span', 'zr-name', z.name));
+      const meta = el('span', 'zr-meta', tx(z.born).split(',')[0]);
+      if (z.post) meta.appendChild(el('span', 'zr-post', t('lic.zlj.post')));
+      mid.appendChild(meta);
+      s.append(el('span', 'zr-year', String(z.year)), mid, el('span', 'zr-icon'));
+      const more = el('div', 'zr-more');
+      const dl = el('dl');
+      [['lic.zlj.born', tx(z.born)], ['lic.zlj.unit', tx(z.unit)]].forEach(([k, v]) => {
+        const row = el('div');
+        row.append(el('dt', null, t(k)), el('dd', null, v));
+        dl.appendChild(row);
+      });
+      more.appendChild(dl);
+      if (z.note) more.appendChild(el('p', 'zr-note', tx(z.note)));
+      d.append(s, more);
+      li.appendChild(d);
+      ol.appendChild(li);
+    });
+    $('zlj-count').textContent = t('lic.zlj.count', { n: zlj.length });
   }
 
-  // Golden Lily recipients: a featured block above the filtered list.
-  const zlist = document.getElementById('zlj-list');
-  const zcount = document.getElementById('zlj-count');
-  const zdata = window.ZLJILJANI || [];
-
-  function zcard(z, i) {
-    const li = document.createElement('li');
-    li.className = 'zlj-card' + (z.post ? ' is-post' : '');
-    li.style.setProperty('--i', i);
-    const rows = [
-      ['zlj-year', String(z.year)],
-      ['zlj-name', z.name],
-      ['zlj-born', z.born[L()] || z.born.en],
-      ['zlj-unit', z.unit[L()] || z.unit.en]
-    ];
-    rows.forEach(([c, v]) => {
-      const e = document.createElement(c === 'zlj-name' ? 'h3' : 'p');
-      e.className = c;
-      e.textContent = v;
-      li.appendChild(e);
+  // ---- highlights
+  function renderFeat() {
+    const ul = $('lic-feat');
+    ul.textContent = '';
+    feat.forEach((f, i) => {
+      const p = byId[f.id];
+      if (!p) return;
+      const li = el('li', 'rv');
+      li.style.setProperty('--i', i);
+      const b = el('button', 'lf');
+      b.type = 'button';
+      b.setAttribute('aria-haspopup', 'dialog');
+      b.append(el('span', 'lf-n', f.n), el('span', 'lf-l', tx(f)), el('span', 'lf-name', p.name), el('span', 'lf-role', tx(p.role)));
+      b.addEventListener('click', () => open(p.id));
+      li.appendChild(b);
+      ul.appendChild(li);
     });
     if (z.post) {
       const b = document.createElement('p');
