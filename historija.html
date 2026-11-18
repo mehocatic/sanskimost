@@ -40,16 +40,30 @@
   <main>
     <!-- The page tells the history in chapters (section.ch). The bar of chapters under the header is built by historija.js
          from the sections. Facts and old photos: mostly J. Zukanović, "Sanski Most nekad i sad" (2024); see the sources at the end. -->
+    <!-- header: the title over a large outlined "5000", and a small pile of old prints from the book that fan out on load -->
     <header class="hist-hero on-deep">
+      <p class="hh-big" aria-hidden="true">5000</p>
       <div class="hist-hero-text">
         <p class="eyebrow" data-i18n="hist.eyebrow">Historija</p>
         <h1 data-i18n-html="hist.title.html">Pet hiljada godina<br>uz Sanu</h1>
         <p class="hist-lead" data-i18n="hist.lead">Od pećine u Hrustovu do grada uz most: kratka historija Sanskog Mosta u osam poglavlja, sa starim fotografijama.</p>
+        <dl class="hh-facts">
+          <div><dt data-i18n="hist.hero.from">od</dt><dd data-i18n-html="hist.hero.from.v">~2600. <small>p. n. e.</small></dd></div>
+          <div><dt data-i18n="hist.hero.ch">poglavlja</dt><dd>8</dd></div>
+        </dl>
+        <a class="hh-start" href="#prahistorija"><span data-i18n="hist.hero.start">Počnite čitati</span> <span aria-hidden="true">↓</span></a>
       </div>
-      <figure class="hist-hero-photo">
-        <img src="photos/arhiv/sanski-most-stari.webp" alt="" width="642" height="420">
-        <figcaption><span data-i18n="hist.hero.cap">Sanski Most, stara fotografija</span> · <span data-i18n="hist.src.book">Iz knjige „Sanski Most nekad i sad“</span></figcaption>
-      </figure>
+      <div class="hh-pile">
+        <figure class="hh-print p2" aria-hidden="true"><img src="photos/arhiv/musala-razglednica.webp" alt="" width="679" height="470"></figure>
+        <figure class="hh-print p3" aria-hidden="true"><img src="photos/arhiv/fudbal-ekipa.webp" alt="" width="1344" height="768"></figure>
+        <figure class="hh-print p4" aria-hidden="true"><img src="photos/arhiv/trg-1900.webp" alt="" width="1079" height="604"></figure>
+        <figure class="hh-print p1 hist-hero-photo">
+          <img src="photos/arhiv/sanski-most-stari.webp" alt="" width="642" height="420">
+          <figcaption><span data-i18n="hist.hero.cap">Sanski Most, stara fotografija</span> · <span data-i18n="hist.src.book">Iz knjige „Sanski Most nekad i sad“</span></figcaption>
+        </figure>
+      </div>
+      <!-- the Sana runs along the bottom of the header, into the chapters -->
+      <svg class="hh-river" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 C 160 14 300 50 470 32 S 800 12 980 30 S 1300 48 1440 26"/><path d="M0 34 C 160 14 300 50 470 32 S 800 12 980 30 S 1300 48 1440 26"/></svg>
     </header>
 
     <nav class="chap-nav" id="chap-nav" aria-label="Poglavlja" data-i18n-attr="aria-label:hist.chapters"><ol id="chap-list"></ol></nav>
