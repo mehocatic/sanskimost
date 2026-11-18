@@ -7,7 +7,8 @@ window.LICNOSTI_CATS = [
   { id: 'politika', bs: 'Politika', en: 'Politics' },
   { id: 'nauka', bs: 'Nauka i književnost', en: 'Science and literature' },
   { id: 'muzika', bs: 'Muzika', en: 'Music' },
-  { id: 'rat', bs: 'Rat i odbrana', en: 'War and defence' }
+  { id: 'rat', bs: 'Rat i odbrana', en: 'War and defence' },
+  { id: 'kultura', bs: 'Umjetnost i mediji', en: 'Art and media' }
 ];
 
 window.LICNOSTI = [
@@ -247,5 +248,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođena u Njemačkoj, a djetinjstvo je provela u Sanskom Mostu, u Gornjem Kamengradu. Pohađala je muzičku školu, a pobjednica je takmičenja Zvezde Granda u sezoni 2023/24.',
       en: 'Born in Germany, she spent her childhood in Sanski Most, in Gornji Kamengrad. She attended music school and won the competition Zvezde Granda in the 2023/24 season.' },
-    src: { label: 'Kurir', url: 'https://www.kurir.rs/stars/4400503/sejla-zonic-je-najobrazovanija-takmicarka-zvezda-granda' } }
+    src: { label: 'Kurir', url: 'https://www.kurir.rs/stars/4400503/sejla-zonic-je-najobrazovanija-takmicarka-zvezda-granda' } },
+
+  { id: 'ceric', cat: 'kultura', kind: 'linked', name: 'Džafer Cerić',
+    role: { bs: 'Slikar', en: 'Painter' },
+    text: {
+      bs: 'S Perom Mandićem bio je među osnivačima sanske kolonije naive, iz koje su nastala međunarodna Ljetnja drugovanja na Sani. Učesnici kolonije ostavili su gradu više od 500 slika i skulptura, a velik dio zbirke stradao je u ratu. Cerić je 2017. izložbom obilježio četiri decenije umjetničkog rada.',
+      en: 'With Pero Mandić he was among the founders of the Sanski Most naive art colony, which gave rise to the international Summer Gatherings on the Sana. Participants left the town more than 500 paintings and sculptures, and much of the collection was lost in the war. In 2017 Cerić marked four decades of his art with an exhibition.' },
+    src: { label: 'Al Jazeera Balkans', url: 'https://balkans.aljazeera.net/amp/teme/2017/8/27/ozivljavanje-prve-kolonije-naive-u-bih' } }
 ];
