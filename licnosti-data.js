@@ -177,5 +177,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Bio je sanski upravitelj, a kasnije gradonačelnik. Jedan je od predvodnika otpora austrougarskoj okupaciji 1878, a zabilježena je i njegova uloga u podizanju i održavanju drvenog mosta preko Sane.',
       en: 'He was the administrator of Sanski Most and later its mayor. He was one of the leaders of resistance to the Austro-Hungarian occupation in 1878, and his part in building and maintaining the wooden bridge over the Sana is on record.' },
-    src: { label: 'Stav (arhiv)', url: 'https://arhiv.stav.ba/ko-su-bile-vodje-otpora-u-krajini-i-kakva-je-njihova-sudbina/' } }
+    src: { label: 'Stav (arhiv)', url: 'https://arhiv.stav.ba/ko-su-bile-vodje-otpora-u-krajini-i-kakva-je-njihova-sudbina/' } },
+
+  { id: 'ivanc', cat: 'nauka', kind: 'born', name: 'Ivan Čavlović',
+    role: { bs: 'Muzikolog i kompozitor', en: 'Musicologist and composer' },
+    text: {
+      bs: 'Rođen 20. augusta 1949. u Kruharima kod Sanskog Mosta, umro 14. maja 2021. u Sarajevu. U mladosti je svirao u orkestru KUD Grmeč i u sanskoj grupi Boemi. Bio je profesor emeritus i dekan Muzičke akademije Univerziteta u Sarajevu, a napisao je Historiju muzike u Bosni i Hercegovini (2011).',
+      en: 'Born on 20 August 1949 in Kruhari near Sanski Most, died on 14 May 2021 in Sarajevo. In his youth he played in the KUD Grmeč orchestra and in the Sanski Most band Boemi. He was professor emeritus and dean of the Academy of Music of the University of Sarajevo, and wrote the History of Music in Bosnia and Herzegovina (2011).' },
+    src: { label: 'Muzička akademija Sarajevo', url: 'https://www.mas.unsa.ba/en/node/454' } }
 ];
