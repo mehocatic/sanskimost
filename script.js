@@ -117,21 +117,88 @@ function tick() {
   title.style.transform = `translateY(${-t * 40}px) scale(${1 + t * 0.04})`;
   hint.style.opacity = 0.8 * (1 - clamp01(current / 0.06));
 
-  // Last part of the scroll: the lower half of the frame darkens and the closing lines rise in over it.
-  // They stay until the page scrolls on; the caption in the corner leaves so the two do not overlap.
-  const e = clamp01((current - 0.76) / 0.12);
+  // Second half of the scroll: the lower part of the frame darkens and the closing lines are written in, letter by letter,
+  // first the large line, then the small one. The letters follow the scroll (back up, they go again), and once written
+  // the lines stay for the rest of the hero. The caption in the corner leaves first so the two do not overlap.
+  const e = clamp01((current - 0.48) / 0.12);
   fade.style.opacity = e;
   // once the hero starts to leave the screen the lines go, so they never slide under the menu
   const rect = scene.getBoundingClientRect();
   const leave = clamp01((window.innerHeight - rect.bottom) / (window.innerHeight * 0.4));
-  heroEnd.style.opacity = e * (1 - leave);
-  heroEnd.style.transform = `translateY(${(1 - e) * 28}px)`;
-  caption.style.opacity = 1 - clamp01((current - 0.68) / 0.08);
+  heroEnd.style.opacity = (current > 0.46 ? 1 : 0) * (1 - leave);
+  eyebrow.style.opacity = clamp01((current - 0.5) / 0.06);
+  write(bigChars, current, 0.52, 0.72, 0.06);
+  write(subChars, current, 0.66, 0.86, 0.035);
+  caption.style.opacity = 1 - clamp01((current - 0.4) / 0.08);
 
   requestAnimationFrame(tick);
 }
 
 window.addEventListener('resize', resize);
+
+// The closing lines, cut into letters (inside words, so a line never breaks in the middle of a word).
+// Screen readers get the whole text from a hidden copy; the letters are only for the eye.
+const eyebrow = heroEnd.querySelector('.hero-end-eyebrow');
+let bigChars = [], subChars = [];
+function splitLetters(el) {
+  const src = el.cloneNode(true);
+  const out = document.createElement('span');
+  out.setAttribute('aria-hidden', 'true');
+  const chars = [];
+  const walk = (from, to) => from.childNodes.forEach(n => {
+    if (n.nodeType === 3) {
+      n.textContent.split(/([ \t\n]+)/).forEach(part => {
+        if (!part) return;
+        if (/^[ \t\n]+$/.test(part)) { to.appendChild(document.createTextNode(' ')); return; }
+        const w = document.createElement('span');
+        w.className = 'hw';
+        for (const ch of part) {
+          const c = document.createElement('span');
+          c.className = 'hc';
+          c.textContent = ch;
+          c._v = -1; // last value written, so unchanged letters are not touched every frame
+          w.appendChild(c);
+          chars.push(c);
+        }
+        to.appendChild(w);
+      });
+    } else if (n.nodeName === 'BR') {
+      to.appendChild(document.createElement('br'));
+    } else {
+      const copy = n.cloneNode(false);
+      to.appendChild(copy);
+      walk(n, copy);
+    }
+  });
+  walk(src, out);
+  const hidden = document.createElement('span');
+  hidden.className = 'vh';
+  hidden.textContent = src.textContent;
+  el.replaceChildren(hidden, out);
+  return chars;
+}
+function splitHero() {
+  bigChars = splitLetters(document.getElementById('intro-text'));
+  subChars = splitLetters(document.getElementById('intro-sub'));
+}
+// letter i of n appears between `from` and `to`, each over `dur` of the scroll
+function write(chars, p, from, to, dur) {
+  const n = chars.length;
+  for (let i = 0; i < n; i++) {
+    const start = from + (to - from - dur) * (n > 1 ? i / (n - 1) : 0);
+    let v = REDUCED ? (p >= from ? 1 : 0) : clamp01((p - start) / dur);
+    v = Math.round(v * 100) / 100;
+    const c = chars[i];
+    if (v === c._v) continue;
+    c._v = v;
+    c.style.opacity = v;
+    c.style.transform = v === 1 ? '' : `translateY(${(1 - v) * 0.45}em)`;
+    c.style.filter = v === 1 || v === 0 ? '' : `blur(${(1 - v) * 6}px)`;
+  }
+}
+splitHero();
+// a new language puts the plain text back (i18n.js), so it is cut again
+addEventListener('langchange', splitHero);
 
 firstPass().then(() => {
   resize();
