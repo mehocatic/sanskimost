@@ -121,22 +121,38 @@
     return li;
   }));
 
-  /* ---------- when: two moments, each with the photo of its place ---------- */
-  const WHEN = [
-    { slug: 'bobijasko-oko', t: 'plan.when.bobijasko' },
-    { slug: 'musalla', t: 'plan.when.musalla' }
-  ].filter(w => bySlug[w.slug]);
-  $('plan-when').replaceChildren(...WHEN.map(w => {
-    const el = make('article', 'season');
-    const ph = make('a', 'season-photo', { href: href(w.slug) });
-    ph.setAttribute('tabindex', '-1');
-    ph.setAttribute('aria-hidden', 'true');
-    ph.appendChild(cover(w.slug));
-    const body = make('div', 'season-body');
-    body.append(make('a', 'season-place', { pf: `${w.slug}:name`, href: href(w.slug) }), make('p', 'season-text', { t: w.t }));
-    el.append(ph, body);
-    return el;
-  }));
+  /* ---------- the year on one line: twelve months, a band for a season, a dot for a day ---------- */
+  // from / to are months (0 = January) with a fraction for the day; a moment with to == null is one day
+  const YEAR = [
+    { from: 2, to: 5, k: 'plan.y.spring', slug: 'bobijasko-oko' },
+    { from: 5, to: 8, k: 'plan.y.summer', slug: 'dabarska' },
+    { from: 6.05, to: null, k: 'plan.y.musalla', slug: 'musalla' },
+    { from: 9 + 9.5 / 31, to: null, k: 'plan.y.oct' }
+  ].filter(m => !m.slug || bySlug[m.slug]);
+  function buildYear() {
+    const box = $('plan-year');
+    // written out, not from Intl: browsers without Bosnian locale data would show "M01"
+    const months = I18n.lang === 'bs' ? ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'] : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const now = new Date().getMonth();
+    const pc = m => (m / 12 * 100).toFixed(3) + '%';
+    box.innerHTML =
+      `<ol class="yr-months" aria-hidden="true">${months.map((m, i) => `<li${i === now ? ' class="now"' : ''}>${m}</li>`).join('')}</ol>` +
+      `<div class="yr-line" aria-hidden="true">${YEAR.map((m, i) => m.to == null
+        ? `<i class="yr-dot" style="left:${pc(m.from)}"><b>${i + 1}</b></i>`
+        : `<i class="yr-band" style="left:${pc(m.from)};width:${pc(m.to - m.from)}"><b>${i + 1}</b></i>`).join('')}` +
+      `<i class="yr-today" style="left:${pc(now + new Date().getDate() / 31)}"></i></div>` +
+      `<ol class="yr-list">${YEAR.map((m, i) => `<li><span class="yr-n" aria-hidden="true">${i + 1}</span><div><p class="yr-when" data-t="${m.k}.when"></p><p class="yr-what" data-t="${m.k}"></p>` +
+        `${m.slug ? `<a class="yr-place" href="${href(m.slug)}" data-pf="${m.slug}:name"></a>` : ''}</div></li>`).join('')}</ol>`;
+    // each moment with the photo of its place; the day without a place gets its date, large
+    box.querySelectorAll('.yr-list li').forEach((li, i) => {
+      const m = YEAR[i];
+      const ph = make(m.slug ? 'a' : 'div', 'yr-photo');
+      if (m.slug) { ph.href = href(m.slug); ph.setAttribute('tabindex', '-1'); ph.setAttribute('aria-hidden', 'true'); ph.appendChild(cover(m.slug)); }
+      else { ph.setAttribute('aria-hidden', 'true'); ph.innerHTML = I18n.lang === 'bs' ? '<b>10.<small>X</small></b>' : '<b>10<small>Oct</small></b>'; }
+      li.prepend(ph);
+    });
+  }
+  buildYear();
 
   /* ---------- routes: a fan of the stops' photos, then the stops ---------- */
   $('plan-routes').replaceChildren(...ROUTES.map((r, i) => {
@@ -212,12 +228,6 @@
       })
     });
 
-    // when: the photos move a little slower than the page, the text slides in beside them
-    document.querySelectorAll('.season').forEach(el => {
-      gsap.fromTo(el.querySelector('.season-photo img'), { yPercent: -8 }, { yPercent: 8, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
-      gsap.from(el.querySelector('.season-body'), { opacity: 0, y: 40, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 75%' } });
-      gsap.fromTo(el.querySelector('.season-photo'), { clipPath: 'inset(0 0 0 100%)' }, { clipPath: 'inset(0 0 0 0%)', duration: 1.3, ease: 'power3.inOut', scrollTrigger: { trigger: el, start: 'top 80%' } });
-    });
 
     // routes: the cards come up one after another and their photos fan out
     ScrollTrigger.batch('.rcard', {
@@ -228,6 +238,9 @@
       })
     });
 
+    gsap.from('.yr-band, .yr-dot', { opacity: 0, scale: .6, duration: .8, ease: 'power3.out', stagger: .12, scrollTrigger: { trigger: '#plan-year', start: 'top 80%' } });
+    gsap.from('.yr-list li', { opacity: 0, y: 24, duration: .9, ease: 'power3.out', stagger: .1, scrollTrigger: { trigger: '.yr-list', start: 'top 85%' } });
+
     gsap.from('.cta-btn', { opacity: 0, y: 20, duration: .9, ease: 'power2.out', scrollTrigger: { trigger: '.plan-cta', start: 'top 70%' } });
 
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
@@ -235,6 +248,7 @@
   }
 
   addEventListener('langchange', () => {
+    buildYear();
     fill();
     if (animate) ScrollTrigger.refresh(); else layoutJourney();
   });

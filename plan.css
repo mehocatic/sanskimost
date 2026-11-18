@@ -108,17 +108,37 @@ html.lenis, html.lenis body { height: auto; }
 
 /* ---------- when ---------- */
 #sec-when { padding-top: clamp(70px, 12svh, 130px); padding-bottom: clamp(70px, 12svh, 130px); }
-.seasons { display: grid; gap: clamp(48px, 8svh, 90px); }
-.season { display: grid; gap: 22px; }
-.season-photo { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #232a27; }
-.season-photo img { width: 100%; height: 120%; margin-top: -10%; object-fit: cover; }
-.season-place { display: inline-flex; align-items: center; min-height: 44px; font-size: .75rem; letter-spacing: .3em; text-transform: uppercase; color: var(--acc); text-decoration: none; }
-.season-place:hover { text-decoration: underline; }
-.season-text { font-family: var(--serif); font-size: clamp(1.6rem, 2.8vw, 2.5rem); line-height: 1.2; max-width: 22ch; }
-@media (min-width: 900px) {
-  .seasons { grid-template-columns: 1fr 1fr; column-gap: clamp(40px, 6vw, 110px); align-items: start; }
-  .season:nth-child(2) { margin-top: 18svh; }
-  .season-photo { aspect-ratio: 4 / 5; }
+/* the year on one line (plan.js: buildYear): months, bands for seasons, dots for days, and today */
+.year { margin-top: clamp(10px, 2svh, 24px); }
+.yr-months { list-style: none; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.yr-months li { padding: 0 0 10px 8px; border-left: 1px solid var(--rule); font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--fg-muted); }
+.yr-months li.now { color: var(--acc); font-weight: 500; }
+.yr-line { position: relative; height: 34px; border-radius: 999px; background: rgba(21, 26, 24, .06); }
+.yr-band, .yr-dot { position: absolute; top: 5px; height: 24px; display: grid; place-items: center; font-style: normal; }
+.yr-band { border-radius: 999px; background: linear-gradient(90deg, rgba(23, 149, 160, .22), rgba(23, 149, 160, .38)); box-shadow: inset 0 0 0 1px rgba(23, 149, 160, .35); }
+.yr-dot { width: 24px; margin-left: -12px; border-radius: 50%; background: var(--sand-dark); box-shadow: 0 0 0 5px rgba(15, 122, 133, .16); }
+.yr-band b, .yr-dot b { font-size: .68rem; font-weight: 500; font-variant-numeric: lining-nums; color: var(--ink); }
+.yr-dot b { color: var(--paper); }
+.yr-today { position: absolute; top: -6px; bottom: -6px; width: 2px; margin-left: -1px; border-radius: 2px; background: var(--ink); opacity: .55; }
+.yr-list { list-style: none; display: grid; gap: 22px; margin-top: 36px; }
+.yr-list li { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 14px; align-items: start; align-content: start; }
+.yr-photo { grid-column: 1 / -1; display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 14px; background: #232a27; }
+a.yr-photo > * { width: 100%; height: 100%; }
+.yr-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
+a.yr-photo:hover img { transform: scale(1.05); }
+div.yr-photo { display: grid; place-items: center; background: var(--deep); color: var(--paper); }
+div.yr-photo b { font-family: var(--serif); font-weight: 500; font-size: clamp(4.5rem, 7vw, 6.5rem); line-height: 1; font-variant-numeric: lining-nums; }
+div.yr-photo small { margin-left: .1em; font-size: .45em; color: var(--river-light); }
+.yr-n { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--acc); color: var(--acc); font-size: .74rem; font-variant-numeric: lining-nums; }
+.yr-when { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--acc); }
+.yr-what { margin-top: .3rem; font-family: var(--serif); font-size: clamp(1.25rem, 1.7vw, 1.5rem); line-height: 1.25; max-width: 30ch; }
+.yr-place { display: inline-flex; align-items: center; min-height: 40px; font-size: .78rem; color: var(--fg-soft); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+.yr-place:hover { color: var(--acc); }
+@media (min-width: 900px) { .yr-list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; } }
+@media (max-width: 599px) {
+  .yr-photo { aspect-ratio: 16 / 9; }
+  .yr-months li { padding-left: 3px; font-size: .56rem; letter-spacing: .04em; }
+  .yr-list { grid-template-columns: 1fr; }
 }
 
 /* ---------- routes ---------- */
