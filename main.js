@@ -171,7 +171,32 @@
     hNow.textContent = yr.textContent;
     // anything longer than a plain year (a range, a century) is set smaller so it stays on one line
     hNow.classList.toggle('s', yr.textContent.trim().length > 4);
+    showFrame(cur);
   }
+  // wide screens: the photo of the entry that is reached, beside the list; the new one fades in over the old one.
+  // An entry without a photo leaves the frame empty, so no photo is ever shown next to a year it does not belong to.
+  const frame = document.getElementById('h-frame'), frameIm = frame.querySelector('.h-frame-im'), frameCap = frame.querySelector('figcaption');
+  let frameFor = null;
+  function showFrame(li) {
+    if (li === frameFor) return;
+    frameFor = li;
+    const img = li.querySelector('.tl-photo img'), cap = li.querySelector('.tl-photo figcaption');
+    frame.classList.toggle('empty', !img);
+    frameCap.textContent = cap ? cap.textContent : '';
+    if (!img) return;
+    const el = document.createElement('img');
+    el.src = img.currentSrc || img.src;
+    el.alt = '';
+    el.decoding = 'async';
+    el.style.objectPosition = img.style.objectPosition;
+    // tall photos and old drawings would be cut badly as a landscape; they are shown whole on a soft ground
+    if (img.width / img.height < 1.05) el.className = 'whole';
+    const old = [...frameIm.children];
+    frameIm.appendChild(el);
+    const done = () => { el.classList.add('in'); old.forEach(o => { o.classList.remove('in'); setTimeout(() => o.remove(), 700); }); };
+    if (el.complete) requestAnimationFrame(done); else { el.onload = done; el.onerror = done; }
+  }
+  addEventListener('langchange', () => { frameFor = null; markNow(); });
   if (animate) {
     gsap.fromTo(tlLine, { scaleY: 0 }, {
       scaleY: 1, ease: 'none',
