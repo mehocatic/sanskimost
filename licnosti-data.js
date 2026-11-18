@@ -291,5 +291,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Prema porodičnoj biografiji, bio je prvi sanski diplomirani zubar. Fakultet je završio 1962, a njegova biografija bilježi početke stručne stomatološke zaštite u Sanskom Mostu.',
       en: 'According to a family biography he was the first qualified dentist from Sanski Most. He graduated in 1962, and his biography records the beginnings of professional dental care in the town.' },
-    src: { label: 'Porodična biografija', url: 'https://nedimbiscevic.info/biografija/' } }
+    src: { label: 'Porodična biografija', url: 'https://nedimbiscevic.info/biografija/' } },
+
+  { id: 'pisteljic', cat: 'zdravstvo', kind: 'linked', name: 'Slavko Pišteljić',
+    role: { bs: 'Ljekar', en: 'Physician' },
+    text: {
+      bs: 'Od 1925. do 1935. radio je u Sanskom Mostu kao sreski ljekar i ljekar udružene zdravstvene opštine. Liječio je radnike osigurane preko Bratinske blagajne i radio kao željeznički ljekar.',
+      en: 'From 1925 to 1935 he worked in Sanski Most as district physician and physician of the joint health municipality. He treated workers insured through the Brotherhood Fund and worked as a railway doctor.' },
+    src: { label: 'Ljekarska komora RS', url: 'https://www.komoradoktorars.org/v3/kod%2034print.pdf' } }
 ];
