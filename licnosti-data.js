@@ -191,5 +191,12 @@ window.LICNOSTI = [
     text: {
       bs: 'Rođen u Sanskom Mostu, gdje je počeo školovanje. Od 1985. do 1987. bio je dekan Geodetskog fakulteta u Zagrebu, predavao je u Dresdenu, a među pionirima je primjene GPS tehnologije u geodeziji u Bosni i Hercegovini i Hrvatskoj.',
       en: 'Born in Sanski Most, where he began his schooling. From 1985 to 1987 he was dean of the Faculty of Geodesy in Zagreb, he taught in Dresden, and he was among the pioneers of GPS in geodesy in Bosnia and Herzegovina and Croatia.' },
-    src: { label: 'Univerzitet u Sarajevu', url: 'https://www.unsa.ba/node/4619' } }
+    src: { label: 'Univerzitet u Sarajevu', url: 'https://www.unsa.ba/node/4619' } },
+
+  { id: 'dedic', cat: 'nauka', kind: 'linked', name: 'Enes Dedić',
+    role: { bs: 'Historičar', en: 'Historian' },
+    text: {
+      bs: 'Osnovnu i srednju školu završio je u Sanskom Mostu. Historičar je na Institutu za historiju Univerziteta u Sarajevu, a autor je knjige Bosansko Kraljevstvo i Srpska Despotovina (1402 do 1459).',
+      en: 'He finished primary and secondary school in Sanski Most. He is a historian at the Institute for History of the University of Sarajevo and the author of the book Bosansko Kraljevstvo i Srpska Despotovina (1402 to 1459).' },
+    src: { label: 'Institut za historiju', url: 'https://iis.unsa.ba/osoblje/enes-dedic/' } }
 ];
