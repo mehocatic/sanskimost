@@ -23,7 +23,7 @@ I18N.bs = {
   'bio.besic.text': "Rođen je 12. marta 1961. u Sanskom Mostu. U Sarajevu je 1984. nastupio za jugoslavensku hokejašku reprezentaciju na Zimskim olimpijskim igrama.",
   // City photographs and memoir
   'grad.gimnazija-na-sani': "Gimnazija na obali Sane, kolaž pogleda na školu i njenu okolinu",
-  'grad.na-zaledjenoj-sani': "Na ledu, ispred mosta na Sani",
+  'grad.na-zaledjenoj-sani': "Na ledu, ispred mosta na Sani, oko 1985.",
   'grad.grad-u-sumrak': "Večernja šetnja u Sanskom Mostu",
   'grad.gradski-most-obala': "Gradski most s obale",
   'grad.gradski-most-rijeka': "Stubovi Gradskog mosta nad Sanom",
@@ -535,7 +535,7 @@ I18N.bs = {
   'hist.ul.5.g': 'Glavna ulica, 3. 4. 1997.',
   'hist.ul.5.h': 'Crkva, 4. 4. 1997.',
   'hist.ul.5.i': 'Sana, 4. 4. 1997.',
-  'hist.ul.6': 'Hotel „Lovac“',
+  'hist.ul.6': 'Lovac',
   'hist.ul.6.span': '06 · 1968, 2005',
   'hist.ul.6.p': 'Stari „Lovac“ uz slap 1968. i gradilište nove zgrade u novembru 2005.',
   'hist.ul.6.a': '„Lovac“, 1968.',
@@ -545,8 +545,8 @@ I18N.bs = {
   'hist.src.mostbook': 'Većina fotografija iz knjige „Sanski Most nekad i sad“',
   'hist.5.f.fudbal2': 'Nogometna ekipa u prugastim dresovima',
   'hist.5.f.most2': 'Betonski gradski most preko Sane',
-  'hist.5.f.rat1': 'Partizani u Sanskom Mostu, Drugi svjetski rat',
-  'hist.5.f.rat2': 'Na željezničkoj stanici, Drugi svjetski rat',
+  'hist.5.f.rat1': 'Partizani u Sanskom Mostu, oko 1941.',
+  'hist.5.f.rat2': 'Na željezničkoj stanici, oko 1941.',
   'hist.src.5.html': '„Zajednica“, br. 6 (august 1968), stranica „August u Sanskom Mostu“: program kina „Sana“, biblioteka i čitaonice.',
   'hist.src.6.html': 'Edin Šarčević: fotografije grada iz 1996-1998, s datumima na stranicama albuma.',
   'hist.src.7.html': 'Računi Društvenog doma iz 1958. i 1959. i zapis o stolaru Miji Kosorčiću.',
@@ -572,7 +572,7 @@ I18N.bs = {
   'hist.src.8.html': 'Općina Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">„Historija općine Sanski Most“</a>: srednji vijek, osmanski period, kotar 1910. i 1914., srez između dva rata i opis iz Enciklopedije Jugoslavije (1968).',
   'hist.zv.5.i': 'Gradnja munare u Šehovcima',
   'hist.ul.2.f': 'Gradski trg, stara razglednica',
-  'hist.ul.5.z': 'Iza gradske biblioteke, prema stadionu Partizana',
+  'hist.ul.5.z': 'Jugobanka',
 
   // explore page
   'explore.doctitle': 'Istraži · Sanski Most',

@@ -21,7 +21,7 @@ I18N.en = {
   'bio.besic.text': "Born in Sanski Most on 12 March 1961, he played ice hockey for Yugoslavia at the 1984 Winter Olympics in Sarajevo.",
   // City photographs and memoir
   'grad.gimnazija-na-sani': "The grammar school on the Sana, a collage of the school and its surroundings",
-  'grad.na-zaledjenoj-sani': "On the ice by the bridge over the Sana",
+  'grad.na-zaledjenoj-sani': "On the ice by the bridge over the Sana, around 1985",
   'grad.grad-u-sumrak': "An evening walk in Sanski Most",
   'grad.gradski-most-obala': "The Town Bridge from the riverbank",
   'grad.gradski-most-rijeka': "The piers of the Town Bridge over the Sana",
@@ -533,7 +533,7 @@ I18N.en = {
   'hist.ul.5.g': 'The main street, 3 April 1997',
   'hist.ul.5.h': 'The church, 4 April 1997',
   'hist.ul.5.i': 'The Sana, 4 April 1997',
-  'hist.ul.6': 'The “Lovac” hotel',
+  'hist.ul.6': 'Lovac',
   'hist.ul.6.span': '06 · 1968, 2005',
   'hist.ul.6.p': 'The old “Lovac” by the weir in 1968, and the site of the new building in November 2005.',
   'hist.ul.6.a': '“Lovac”, 1968',
@@ -543,8 +543,8 @@ I18N.en = {
   'hist.src.mostbook': 'Most of the photographs from the book “Sanski Most nekad i sad”',
   'hist.5.f.fudbal2': 'A football team in striped shirts',
   'hist.5.f.most2': 'The concrete town bridge over the Sana',
-  'hist.5.f.rat1': 'Partisans in Sanski Most, Second World War',
-  'hist.5.f.rat2': 'At the railway station, Second World War',
+  'hist.5.f.rat1': 'Partisans in Sanski Most, around 1941',
+  'hist.5.f.rat2': 'At the railway station, around 1941',
   'hist.src.5.html': '“Zajednica”, no. 6 (August 1968), the page “August u Sanskom Mostu”: the programme of the “Sana” cinema, the library and the reading rooms.',
   'hist.src.6.html': 'Edin Šarčević: photographs of the town from 1996-1998, dated on the album pages.',
   'hist.src.7.html': 'Receipts of the Društveni dom from 1958 and 1959, and a note on the carpenter Mijo Kosorčić.',
@@ -570,7 +570,7 @@ I18N.en = {
   'hist.src.8.html': 'Municipality of Sanski Most, <a href="https://sanskimost.gov.ba/historija-opcine-sanski-most/" rel="noopener">“Historija općine Sanski Most”</a>: the Middle Ages, the Ottoman period, the district in 1910 and 1914, the srez between the wars and the entry in the Encyclopaedia of Yugoslavia (1968).',
   'hist.zv.5.i': 'Building the minaret at Šehovci',
   'hist.ul.2.f': 'The town square, an old postcard',
-  'hist.ul.5.z': 'Behind the town library, towards the Partizan stadium',
+  'hist.ul.5.z': 'Jugobanka',
 
   // explore page
   'explore.doctitle': 'Explore · Sanski Most',
