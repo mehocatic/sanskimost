@@ -65,7 +65,7 @@ const PLACES = [
     // (Stari Majdan, Sanski Most "Vakuf"). Neither is in FACTS.md, so both sentences were taken off the site (EN and BS).
     // TODO(verify): the text also names the Babonić Blagajski princes, a nahija under a dizdar, the lower town Donji Grad (Palanka) and walls
     // of 5 to 7 m; none of it is in FACTS.md either. Left on the site from the earlier session, to be confirmed or cut.
-    see: [null, null],
+    see: ["musalla", "blihe"],
     photos: [
       pic("kamengrad.webp"),
       pic("kamengrad2.webp"), // a drawing, not a photo
@@ -77,7 +77,7 @@ const PLACES = [
   {
     slug: "musalla",
     // coords: not set here. In OpenStreetMap it is node 519029537 (amenity=place_of_worship, "Fatihova Musalla"), and poi.js uses it for the map.
-    see: [null],
+    see: ["kamengrad"],
     photos: [
       pic("musalla.webp", { author: "Almedin Handanovic" }), // author: EXIF Artist tag of the file (Copyright tag says "Gorsak na salasu", not a license)
       pic("musalla2.webp"),
