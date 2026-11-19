@@ -82,7 +82,7 @@ window.ARCHIVE = {
     {"f": "poplava-2014-kamion", "y": 2014, "cat": "poplave", "cap": "hist.6.g15", "w": 800, "h": 600},
     {"f": "poplava-2014-konj", "y": 2014, "cat": "poplave", "cap": "hist.6.g14", "w": 800, "h": 444},
     {"f": "sana-2014", "y": 2014, "cat": "poplave", "cap": "hist.6.g3", "w": 640, "h": 480, "place": "most"},
-    {"f": "biblioteka-1970", "y": null, "cat": "ulice", "cap": "hist.ul.5.z", "w": 838, "h": 855, "place": "biblioteka"},
+    {"f": "biblioteka-1970", "y": null, "cat": "ulice", "cap": "hist.ul.5.z", "w": 838, "h": 855},
     {"f": "fudbal-ekipa", "y": null, "cat": "ljudi", "cap": "hist.5.f.fudbal", "w": 1344, "h": 768, "src": "hist.src.book"},
     {"f": "fudbal-ekipa2", "y": null, "cat": "ljudi", "cap": "hist.5.f.fudbal2", "w": 1248, "h": 832},
     {"f": "korcanica-hotel", "y": null, "cat": "ulice", "cap": "arh.c.korhotel", "w": 768, "h": 720, "place": "korcanica"},
