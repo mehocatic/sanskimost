@@ -186,8 +186,8 @@ window.LICNOSTI = [
   { id: 'demirovic', cat: 'sport', kind: 'origin', name: 'Ermedin Demirović',
     role: { bs: 'Nogometaš', en: 'Footballer' },
     text: {
-      bs: 'Rođen u Hamburgu, a porodica mu je porijeklom iz Sanskog Mosta, gdje je posjećivao rodbinu. Napadač je reprezentacije Bosne i Hercegovine. Lokalni portal Inmedia zabilježio je njegovu vezu sa Sanom još 2019, dok je igrao za St. Gallen.',
-      en: 'Born in Hamburg, with family roots in Sanski Most, where he visited relatives. He is a striker for the Bosnia and Herzegovina national team. The local portal Inmedia noted his link with the Sana as early as 2019, when he played for St. Gallen.' },
+      bs: 'Rođen u Hamburgu, a porodica mu je porijeklom iz Sanskog Mosta, gdje je posjećivao rodbinu. Napadač je reprezentacije Bosne i Hercegovine.',
+      en: 'Born in Hamburg, with family roots in Sanski Most, where he visited relatives. He is a striker for the Bosnia and Herzegovina national team.' },
     src: { label: 'Inmedia', url: 'https://inmedia.ba/jos-jedan-nogometni-talent-porijeklom-iz-sane/' } },
 
   { id: 'muharemovic', cat: 'sport', kind: 'origin', name: 'Tarik Muharemović',
