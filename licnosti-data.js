@@ -8,6 +8,7 @@
 // Held back on purpose (Meho to decide): Enver Burnic, Adil Draganovic (ICTY witnesses), Rezak Hukanovic (birthplace sources disagree), Amir Talic (not confirmed), Hamza-beg (already in Historija).
 // Catic, Begic and Kugic (survivors and witnesses) were added with Meho's approval on 18 Nov 2026; they rest on the sources named in the entries only, TODO(verify).
 window.LICNOSTI_CATS = [
+  { id: 'bastina', key: 'lic.heritage' },
   { id: 'sport', bs: 'Sport', en: 'Sport' },
   { id: 'politika', bs: 'Politika', en: 'Politics' },
   { id: 'nauka', bs: 'Nauka i književnost', en: 'Science and literature' },
@@ -28,11 +29,25 @@ window.LICNOSTI_FEAT = [
 ];
 
 window.LICNOSTI = [
+  { id: 'sinanovic', name: 'Samir Sinanović', cat: 'kultura', kind: 'linked', copyKey: 'bio.sinanovic',
+    src: { label: 'Reprezent', url: 'https://reprezent.ba/na-ljeto-promocija-fotomonografije-sanski-most-grad-u-ogledalu-od-rijeka/' } },
+  { id: 'cikan', name: 'Hasan Hadžić Čikan', cat: 'sport', kind: 'linked', copyKey: 'bio.cikan',
+    src: { label: 'USN Krajina', url: 'https://usnkrajina.com.ba/sanski-most-u-ponedeljak-starta-novogodisnji-malonogometni-turnir-nagradni-fond-12-000-km-izvlacenje-parova-08-decembra/' } },
+  { id: 'beno', name: 'Benjamin Ključanin', cat: 'sport', kind: 'linked', copyKey: 'bio.beno',
+    src: { label: 'Faktor / NK Podgrmeč', url: 'https://faktor.ba/sport/fudbal/u-49-godini-preminuo-benjamin-kljucanin-bivsi-trener-podgrmeca-i-jedinstva/102439' } },
+  { id: 'zukanovic', name: 'Jasmin Zukanović', cat: 'nauka', kind: 'linked', copyKey: 'bio.zukanovic',
+    src: { label: 'Nezavisne novine', url: 'https://www.nezavisne.com/kultura/knjizevnost/Promocija-knjige-Jasmina-Zukanovica-Proslost-Sanskog-Mosta-kroz-stare-fotografije/676099' } },
+  { id: 'haskic', name: 'Safija Haskić', cat: 'bastina', kind: 'born', copyKey: 'bio.haskic',
+    src: { label: 'Nezavisne novine', url: 'https://www.nezavisne.com/zivot-stil/zivot/Sanjanka-oformila-mali-muzej-Bosanska-kuca-cuva-duh-proslosti/733053' } },
+  { id: 'zukic', name: 'Zijad Zukić', cat: 'bastina', kind: 'linked', copyKey: 'bio.zukic',
+    src: { label: 'Nezavisne novine', url: 'https://www.nezavisne.com/novosti/drustvo/Preminuo-poznati-sanski-remenar/880510' } },
+  { id: 'besic', name: 'Mustafa Bešić', cat: 'sport', kind: 'born', copyKey: 'bio.besic',
+    src: { label: 'Olympedia', url: 'https://www.olympedia.org/athletes/84085' } },
   { id: 'vukic', cat: 'sport', kind: 'born', name: 'Milan Vukić',
     role: { bs: 'Šahovski velemajstor', en: 'Chess grandmaster' },
     text: {
-      bs: 'Rođen u Sanskom Mostu 19. augusta 1942. Titulu velemajstora dobio je 1975. godine. Dugo je igrao za sarajevski Željezničar, a opisuju ga kao vjerovatno najboljeg blic igrača na Balkanu. Prvak Bosne i Hercegovine bio je 2005.',
-      en: 'Born in Sanski Most on 19 August 1942. He became a grandmaster in 1975 and played for years for Željezničar of Sarajevo. He is described as probably the best blitz player in the Balkans, and was Bosnian champion in 2005.' },
+      bs: 'Rođen u Sanskom Mostu 19. augusta 1942. Titulu velemajstora dobio je 1975. godine. Igrao je za sarajevski Željezničar. Prvak Bosne i Hercegovine bio je 2005.',
+      en: 'Born in Sanski Most on 19 August 1942. He became a grandmaster in 1975 and played for years for Željezničar of Sarajevo. He won the national championship of Bosnia and Herzegovina in 2005.' },
     src: { label: 'Chessgames', url: 'https://www.chessgames.com/perl/chessplayer?pid=14954' } },
 
   { id: 'zoric', cat: 'sport', kind: 'born', name: 'Milenko Zorić',
@@ -73,8 +88,8 @@ window.LICNOSTI = [
   { id: 'seferovic', cat: 'sport', kind: 'origin', name: 'Haris Seferović',
     role: { bs: 'Fudbaler', en: 'Footballer' },
     text: {
-      bs: 'Porijeklom iz Hrustova. Porodica se krajem osamdesetih preselila u Švicarsku, za čiju reprezentaciju igra. Nastupao je za Grasshoppers, Fiorentinu, Real Sociedad, Eintracht iz Frankfurta i Benficu.',
-      en: 'His family comes from Hrustovo and moved to Switzerland in the late 1980s. He plays for the Swiss national team and has played for Grasshoppers, Fiorentina, Real Sociedad, Eintracht Frankfurt and Benfica.' },
+      bs: 'Porijeklom iz Hrustova. Porodica se krajem osamdesetih preselila u Švicarsku, za čiju je reprezentaciju nastupao. Nastupao je za Grasshoppers, Fiorentinu, Real Sociedad, Eintracht iz Frankfurta i Benficu.',
+      en: 'His family comes from Hrustovo and moved to Switzerland in the late 1980s. He represented Switzerland and played for Grasshoppers, Fiorentina, Real Sociedad, Eintracht Frankfurt and Benfica.' },
     src: { label: 'InMedia', url: 'https://www.inmedia.ba/fudbaleri-porijeklom-iz-sanskog-mosta-od-bilbije-preko-handanovica-do-brace-milinkovic-savic-i-seferovica/' } },
 
   { id: 'ilicic', cat: 'sport', kind: 'origin', name: 'Josip Iličić',
@@ -84,7 +99,7 @@ window.LICNOSTI = [
       en: 'Born in Prijedor, with family roots in the village of Škrljevita near Sanski Most. A Slovenia international who played for Fiorentina and Atalanta.' },
     src: { label: 'InMedia', url: 'https://www.inmedia.ba/nogometas-fiorentine-josip-ilicic-porijeklom-iz-sanskog-mosta/' } },
 
-  { id: 'ibricic', cat: 'sport', kind: 'origin', name: 'Senijad Ibričić',
+  { id: 'ibricic', cat: 'sport', kind: 'linked', name: 'Senijad Ibričić',
     role: { bs: 'Fudbaler', en: 'Footballer' },
     text: {
       bs: 'Rođen u Kotor Varošu, a prve fudbalske korake napravio je u sanskom FK Podgrmeč. Igrao je za reprezentaciju Bosne i Hercegovine te za Zagreb, Hajduk i Domžale.',
