@@ -104,6 +104,8 @@ const PLACES = [
       pic("hamzibegova3.webp"),
       pic("hamzibegova4.webp"),
       // TODO(verify): from Meho's notes from the book; the book is the source, the photographer is not known
+      pic("arhiv/sanski-most-1938.webp", { archive: "1938" }),
+      pic("arhiv/most-1939.webp", { archive: "1939", source: BOOK }),
       pic("arhiv/hamzibegova-1946.webp", { archive: "1946", source: BOOK }),
       // the mosque being built, April 1998; the album pages are signed "Foto: Edin Šarčević" (one also "Copyright © by Edin Šarčević").
       // The printed caption of one page says 10 April 1997, the handwritten date and the other pages say 10 April 1998; the site uses 1998.
@@ -126,7 +128,7 @@ const PLACES = [
     // The book describes the monument as a "split flower bud", which is what the two semicircular walls in the photos are.
     // The material and the "underground museum" of an earlier text are left out until a source settles them.
     // Left out: the book says the battle for the wounded on the Neretva started from here; no second source.
-    see: [null],
+    see: ["grmec-forest"],
     photos: [
       pic("korcanica.jpg"),
       pic("korcanica2.jpg"),
