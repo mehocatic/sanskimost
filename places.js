@@ -208,13 +208,14 @@ const PLACES = [
     // centre (44.7658, 16.6663), 3.2 km from Korčanica and 2.3 km from Bobijaško oko. The text says about 17 km (rounded).
     // OSM has no forest element here (natural=wood, landuse=forest, protected_area and names with Bobij / Prašum / Grmeč searched on 2026-10-25).
     coords: [44.684125390645384, 16.478326730966664],
-    km: 17, // FACTS.md: about 17 km from town
+    km: 17,
+    kmKey: "place.km.air",
     see: ["korcanica", "bobijasko-oko"],
     photos: [
-      pic("grmec.jpg"),
+      pic("grmec.jpg", { captionKey: "photo.grmec.view" }),
       // photos/grmec2.jpg (in originals/) is a duplicate of grmec.jpg (same photo, 1 px taller)
       // note: none of these photos shows the primeval forest itself (a viewpoint with a table, and a rocky gorge)
-      pic("grmec3.webp")
+      pic("grmec3.webp", { captionKey: "photo.grmec.gorge" })
     ]
   },
   {
