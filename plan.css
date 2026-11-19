@@ -180,6 +180,15 @@ div.yr-photo small { margin-left: .1em; font-size: .45em; color: var(--river-lig
 @media (min-width: 900px) { .sum-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); } .sum-pics { min-height: 600px; } }
 @media (max-width: 599px) { .sum-pics { min-height: 340px; } }
 
+.summer-album { min-height: 0; display: grid; grid-template-columns: 1fr 1.25fr; align-items: end; gap: 22px 14px; }
+.summer-album figure { position: static; width: auto; margin: 0; transform: none; min-width: 0; }
+.summer-album img { display: block; max-width: 100%; height: auto; border: 0; }
+.summer-album figcaption { margin-top: .5rem; font-size: .78rem; line-height: 1.45; color: var(--fg-muted); }
+.summer-album .evening-walk { grid-row: span 2; align-self: center; }
+.summer-album .sum-pic.a { max-width: 11rem; }
+.summer-album .summer-dives { grid-column: 2; }
+.summer-album .sum-pic.b { grid-column: 1 / -1; width: 70%; justify-self: end; }
+
 /* ---------- where to stay ---------- */
 .stay-grid { display: grid; gap: clamp(36px, 5vw, 80px); }
 .stay-nums { display: grid; gap: 0; border-top: 1px solid var(--rule); align-self: start; }
