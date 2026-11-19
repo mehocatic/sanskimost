@@ -62,7 +62,12 @@
   const track = document.getElementById('track');
   const bar = document.getElementById('places-bar');
 
-  PLACES.forEach(p => {
+  // Order of the cards on the home page (places.js keeps its own order for the map and the routes):
+  // the waterfall first, then the places listed here, everything else after them, the primeval forest last.
+  const HOME_ORDER = ['blihe', 'hamzibegova', 'korcanica', 'bobijasko-oko', 'hrustovacka', 'dabarska', 'turbe-alagic'];
+  const HOME_LAST = ['grmec-forest'];
+  const homeRank = p => HOME_LAST.includes(p.slug) ? 1e6 : HOME_ORDER.includes(p.slug) ? HOME_ORDER.indexOf(p.slug) : 1e3;
+  [...PLACES].sort((a, b) => homeRank(a) - homeRank(b)).forEach(p => { // sort is stable: the rest keep their order
     const slot = document.createElement('article');
     slot.className = 'slot';
     slot.dataset.slug = p.slug;
