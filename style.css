@@ -254,7 +254,7 @@ body.home-page { background: var(--paper); }
   .h-side.no-photo .h-now { font-size: clamp(7rem, 17vw, 15rem); }
   .h-side.no-photo .h-now.s { font-size: clamp(3.4rem, 7vw, 6.4rem); }
 }
-@media (prefers-reduced-motion: reduce) { .h-frame-im img { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .h-frame-im img, .h-frame, .h-frame-im, .h-now { transition: none; } }
 @media (prefers-reduced-motion: reduce) { .timeline li, .timeline li::before { transition: none; } }
 
 /* Numbers: a grid of tiles, each figure with a small drawing or a photo of what it counts */
