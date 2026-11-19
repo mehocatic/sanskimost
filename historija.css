@@ -325,3 +325,35 @@
 .zv-more { margin-top: .8rem !important; font-size: .85rem; }
 .zv-more a, .tl figcaption a { color: var(--acc); }
 .zv { scroll-margin-top: 120px; }
+
+/* Local photographs keep their original proportions, including scans and collages. */
+.town-print { margin: 0; min-width: 0; }
+.town-print img { display: block; max-width: 100%; height: auto; }
+.town-print figcaption { margin-top: .6rem; font-size: .82rem; line-height: 1.45; color: var(--fg-muted); }
+.school-layout, .river-pair, .film-sequence { display: grid; gap: clamp(1rem, 3vw, 2.5rem); align-items: center; }
+.school-layout { max-width: 60rem; }
+.school-layout figure { padding: clamp(10px, 1.5vw, 20px); background: #f8f5ed; box-shadow: 0 15px 38px -28px #22312c; }
+.school-layout .quote { margin-top: 1.5rem; }
+.memoir { max-width: 60rem; margin-top: 2rem; border-block: 1px solid var(--rule); }
+.memoir summary { padding: 1rem .2rem; color: var(--acc); cursor: pointer; font-weight: 500; }
+.memoir-body, .memoir-sign { max-width: 64ch; margin-inline: auto; }
+.memoir .memoir-body p { margin: 0 0 1.2em; line-height: 1.7; }
+.memoir-body p:first-child { font-family: var(--serif); font-size: 1.65rem; line-height: 1.15; }
+.memoir-sign { padding-bottom: 2rem; font-style: italic; }
+.bank-story { max-width: 65ch; }
+.news-clipping { margin-top: 2.5rem; max-width: 50rem; }
+.news-clipping img { border: 6px solid #f8f5ed; }
+.news-clipping a { color: var(--acc); }
+.news-clipping figcaption a { display: inline-flex; align-items: center; min-height: 44px; }
+.film-sequence { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 1rem; }
+.film-sequence figure:first-child { grid-column: 1 / -1; }
+.river-pair { grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); }
+.bridge-lead { max-width: 56rem; margin: 1.4rem 0; }
+.bridge-views { display: grid; grid-auto-flow: column; grid-auto-columns: min(76vw, 18rem); gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; scrollbar-color: var(--acc) transparent; }
+.bridge-views figure { scroll-snap-align: start; }
+@media (min-width: 760px) {
+  .school-layout { grid-template-columns: minmax(0, .95fr) minmax(0, 1fr); }
+  .film-sequence { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); }
+  .film-sequence figure:first-child { grid-column: 1; grid-row: span 2; align-self: center; }
+  .bridge-views { grid-auto-flow: row; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
