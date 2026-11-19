@@ -243,9 +243,13 @@ body.home-page { background: var(--paper); }
   .h-frame-im img:not([src]) { display: none; }
   .h-frame-im img.whole { object-fit: contain; padding: 14px; }
   .h-frame-im img.in { opacity: 1; transform: none; }
-  .h-frame.empty .h-frame-im { opacity: .5; }
   .h-frame.empty .h-frame-im img { opacity: 0; }
   .h-frame figcaption { min-height: 1.4em; }
+  /* An entry without a photo: the frame folds away instead of standing empty, and the year grows into the room it leaves */
+  .h-frame { transition: opacity .5s ease; }
+  .h-frame-im { transition: opacity .5s ease, max-height .7s cubic-bezier(.2, .7, .2, 1), margin .7s cubic-bezier(.2, .7, .2, 1); }
+  .h-frame.empty { opacity: 0; }
+  .h-frame.empty .h-frame-im { max-height: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .h-frame-im img { transition: none; } }
 @media (prefers-reduced-motion: reduce) { .timeline li, .timeline li::before { transition: none; } }
