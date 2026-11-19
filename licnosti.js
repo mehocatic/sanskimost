@@ -7,7 +7,8 @@
 (() => {
   const L = () => (window.I18n && I18n.lang) || 'bs';
   const t = (k, v) => (window.I18n ? I18n.t(k, v) : k);
-  const tx = o => (o && (o[L()] || o.en)) || '';
+  const tx = o => o && o.key ? t(o.key) : (o && (o[L()] || o.en)) || '';
+  const biography = (p, field) => p.copyKey ? t(p.copyKey + '.' + field) : tx(p[field]);
   const $ = id => document.getElementById(id);
   const el = (tag, cls, text) => {
     const e = document.createElement(tag);
@@ -91,7 +92,7 @@
       const b = el('button', 'lf');
       b.type = 'button';
       b.setAttribute('aria-haspopup', 'dialog');
-      b.append(el('span', 'lf-n', f.n), el('span', 'lf-l', tx(f)), el('span', 'lf-name', p.name), el('span', 'lf-role', tx(p.role)));
+      b.append(el('span', 'lf-n', f.n), el('span', 'lf-l', tx(f)), el('span', 'lf-name', p.name), el('span', 'lf-role', biography(p, 'role')));
       b.addEventListener('click', () => open(p.id));
       li.appendChild(b);
       ul.appendChild(li);
@@ -123,7 +124,7 @@
         b.type = 'button';
         b.setAttribute('aria-haspopup', 'dialog');
         const meta = el('span', 'pr-meta');
-        meta.append(el('span', 'pr-role', tx(p.role)), el('span', 'pr-tag ' + p.kind, t('lic.' + p.kind)));
+        meta.append(el('span', 'pr-role', biography(p, 'role')), el('span', 'pr-tag ' + p.kind, t('lic.' + p.kind)));
         b.append(el('span', 'pr-name', p.name), meta, el('span', 'pr-arrow'));
         b.addEventListener('click', () => open(p.id));
         li.appendChild(b);
@@ -155,11 +156,11 @@
     $('dlg-mono').textContent = initials(p.name);
     $('dlg-cat').textContent = tx(catOf(p.cat));
     $('dlg-name').textContent = p.name;
-    $('dlg-role').textContent = tx(p.role);
+    $('dlg-role').textContent = biography(p, 'role');
     const tag = $('dlg-tag');
     tag.className = 'dlg-tag ' + p.kind;
     tag.textContent = t('lic.' + p.kind);
-    $('dlg-text').textContent = tx(p.text);
+    $('dlg-text').textContent = biography(p, 'text');
     const a = $('dlg-src');
     a.href = p.src.url;
     if (p.src.internal) { a.removeAttribute('target'); a.removeAttribute('rel'); }
