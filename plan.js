@@ -170,7 +170,7 @@
       if (!bySlug[s.slug]) return;
       const st = make('li');
       st.appendChild(make('a', null, { pf: `${s.slug}:name`, href: href(s.slug) }));
-      if (s.km) st.appendChild(make('span', 'rc-km', { t: 'routes.km', tv: { km: s.km } }));
+      if (s.km) st.appendChild(make('span', 'rc-km', { t: bySlug[s.slug].kmKey || 'routes.km', tv: { km: s.km } }));
       stops.appendChild(st);
     });
     body.appendChild(stops);
