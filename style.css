@@ -250,6 +250,9 @@ body.home-page { background: var(--paper); }
   .h-frame-im { transition: opacity .5s ease, max-height .7s cubic-bezier(.2, .7, .2, 1), margin .7s cubic-bezier(.2, .7, .2, 1); }
   .h-frame.empty { opacity: 0; }
   .h-frame.empty .h-frame-im { max-height: 0; }
+  .h-now { transition: font-size .6s cubic-bezier(.2, .7, .2, 1); }
+  .h-side.no-photo .h-now { font-size: clamp(7rem, 17vw, 15rem); }
+  .h-side.no-photo .h-now.s { font-size: clamp(3.4rem, 7vw, 6.4rem); }
 }
 @media (prefers-reduced-motion: reduce) { .h-frame-im img { transition: none; } }
 @media (prefers-reduced-motion: reduce) { .timeline li, .timeline li::before { transition: none; } }
