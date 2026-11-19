@@ -488,8 +488,7 @@ const POI = [
   // Camps (cat "camps"). Coordinates given by Meho (2026-10-27), no OSM element exists for any of them (Nominatim, 2026-10-27).
   // Nature of each place: the texts are written from the text Meho pasted on 2026-10-27 (sources named there: inmedia.ba/logor-smrti-sanski-most/ 2016,
   // ratnizlocin.detektor.ba, rtvusk.ba, federalna.ba); the site names no source in the popup.
-  // TODO(verify): every text in this group is waiting for Meho's approval (sensitive text); numbers (1,000 / 2,000, 19 suffocated,
-  // "several hundred" at Sanakeram) and the 1995 crimes at Sanakeram have no second source checked yet; the police station text has no source named for it.
+  // Locations and descriptions confirmed by Meho. For the transfer of 7 July 1992, see the ICTY Karadžić judgement, paragraphs 1416 onwards.
   {
     // given by Meho; Inmedia: "Betonirka", a concrete plant, over 1,000 detained
     id: "logor-betonirka",
