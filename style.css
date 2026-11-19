@@ -233,6 +233,7 @@ body.home-page { background: var(--paper); }
 .tl-photo img { width: 100%; aspect-ratio: 16 / 10; height: auto; object-fit: cover; display: block; border-radius: 14px; background: var(--mist); filter: saturate(.84) contrast(1.03); }
 .tl-photo figcaption, .h-frame figcaption { margin-top: .55rem; font-size: .78rem; line-height: 1.4; color: var(--fg-muted); }
 .h-frame { display: none; }
+.tl-photo img[data-fit="contain"] { object-fit: contain; }
 @media (min-width: 769px) {
   .timeline .tl-photo { display: none; }
   /* more room per entry, so each photo stays beside the list for a while */
