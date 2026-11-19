@@ -28,3 +28,9 @@ Kratak izvještaj:
 - šta je promijenjeno
 - popis fajlova
 - prijedlog commita
+
+## Hero frejmovi
+- Scroll video su frejmovi u `frames-v2/` (desktop, 220) i `frames-m-v2/` (mobitel, 110); brojevi su u `data-frames` i `data-frames-m` na canvasu u `index.html`.
+- Novi set: `tools/extract-frames.sh <video> [start_s] [length_s]`, pa upisati nove brojeve u `index.html`.
+- Izvorni klip je prvu sekundu mutan, zato se počinje od 41. sekunde.
+- `script.js` miješa dva susjedna frejma, pa nije potrebno više frejmova da bi kretanje bilo glatko.
