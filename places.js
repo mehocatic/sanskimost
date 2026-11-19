@@ -180,10 +180,9 @@ const PLACES = [
     // coords: OpenStreetMap way 1202275847 (natural=water, "Bobijaško oko"), point given is the way’s search position
     coords: [44.7016006, 16.4632008],
     km: 20, // FACTS.md: about 20 km from town
-    // TODO(verify): bobijasko-oko2.jpg (a river that runs under a rock arch, from above) may show the Dabar spring and not the shaft.
+    // TODO(verify): identify bobijasko-oko2.webp before using it here or at the Dabar spring.
     photos: [
       pic("bobijasko-oko.webp"),
-      pic("bobijasko-oko2.webp"),
       pic("bobijasko-oko3.jpg"),
       pic("bobijasko-oko4.webp")
     ]
