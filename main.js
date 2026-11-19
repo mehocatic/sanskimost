@@ -198,6 +198,8 @@
     if (!wideTl.matches) return;
     const img = li.querySelector('.tl-photo img'), cap = li.querySelector('.tl-photo figcaption');
     frame.classList.toggle('empty', !img);
+    // no photo for this entry: the frame folds away and the year takes its place (see .h-side.no-photo in style.css)
+    frame.closest('.h-side').classList.toggle('no-photo', !img);
     frameCap.textContent = cap ? cap.textContent : '';
     if (!img) { layers.forEach(l => l.classList.remove('in')); return; }
     const src = img.currentSrc || img.src, cur = layers[front];
