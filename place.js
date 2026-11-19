@@ -45,6 +45,7 @@
 
   const p = PLACES[index];
   const name = () => I18n.place(p, 'name');
+  const photoLabel = entry => entry.captionKey ? I18n.t(entry.captionKey) : entry.alt || name();
 
   const entries = (p.photos || []).map(photoEntry).filter(e => e.src);
 
@@ -109,8 +110,7 @@
     btn.type = 'button';
     btn.className = 'slide-open';
     item.btn = btn;
-    if (entry.alt) btn.dataset.alt = entry.alt;
-    btn.appendChild(photo(pickSrc(entry), entry.alt || name(), () => {
+    btn.appendChild(photo(pickSrc(entry), photoLabel(entry), () => {
       // missing file: take the slide out and stop offering it in the viewer
       dropItem(item);
       fig.remove();
@@ -118,6 +118,13 @@
     }, true, { natural: true }));
     btn.addEventListener('click', () => openLightbox(item));
     fig.appendChild(btn);
+    if (entry.captionKey) {
+      const caption = document.createElement('figcaption');
+      caption.className = 'slide-caption';
+      caption.dataset.i18n = entry.captionKey;
+      caption.textContent = photoLabel(entry);
+      fig.appendChild(caption);
+    }
     // an old photo, postcard or document: a small label on the slide (the year from places.js, or "Archive")
     if (entry.archive) {
       const tag = document.createElement('span');
@@ -287,23 +294,25 @@
     $('pager-prev').querySelector('.pn').textContent = I18n.place(prev, 'name');
     $('pager-next').querySelector('.pn').textContent = I18n.place(next, 'name');
 
-    if (hasKm) $('fact-dist-v').textContent = I18n.t('place.km', { km: p.km });
+    if (hasKm) $('fact-dist-v').textContent = I18n.t(p.kmKey || 'place.km', { km: p.km });
     if (hasAlt) $('fact-alt-v').textContent = I18n.t('place.alt', { m: p.alt });
     if (hasPos) {
       $('place-map').setAttribute('aria-label', I18n.t('place.map.label', { name: nm }));
       if (miniMarker) { miniMarker.options.title = miniMarker.options.alt = nm; const el = miniMarker.getElement(); if (el) el.title = nm; }
     }
-    items.forEach(it => { if (it.btn) it.btn.setAttribute('aria-label', I18n.t('place.photo', { name: it.entry.alt || nm, i: it.n, n: entries.length })); });
+    items.forEach(it => {
+      if (!it.btn) return;
+      const label = photoLabel(it.entry);
+      it.btn.setAttribute('aria-label', I18n.t('place.photo', { name: label, i: it.n, n: entries.length }));
+      const img = it.btn.querySelector('img');
+      if (img) img.alt = label;
+    });
     document.querySelectorAll('.slide-tag').forEach(tag => {
       const it = items.find(x => x.btn && x.btn.parentNode === tag.parentNode);
       const a = it && it.entry.archive;
       tag.textContent = typeof a === 'string' ? a : I18n.t('place.archive');
     });
-    document.querySelectorAll('.slider-track img').forEach(img => {
-      const b = img.closest('.slide-open');
-      img.alt = (b && b.dataset.alt) || nm;
-    });
-    if (!lb.hidden) { lbImg.alt = items[lbIndex].entry.alt || nm; showMeta(items[lbIndex].entry); }
+    if (!lb.hidden) { lbImg.alt = photoLabel(items[lbIndex].entry); showMeta(items[lbIndex].entry); }
   }
 
   /* ---------- full-screen photo viewer ---------- */
@@ -319,7 +328,7 @@
     // a smaller file on phones when places.js gives a srcset; the photo is always shown whole (object-fit: contain)
     if (e.srcset) { lbImg.sizes = '100vw'; lbImg.srcset = e.srcset; } else lbImg.removeAttribute('srcset');
     lbImg.src = items[lbIndex].src;
-    lbImg.alt = e.alt || name();
+    lbImg.alt = photoLabel(e);
     lbCount.textContent = `${lbIndex + 1} / ${m}`;
     lbPrev.hidden = lbNext.hidden = m < 2;
     showMeta(e);
@@ -349,8 +358,12 @@
       lbCredit.append(`${I18n.t('lb.source')}: ${e.source}`);
       parts.push(e.source);
     }
-    lbCredit.hidden = !parts.length;
-    lb.classList.toggle('has-meta', !!parts.length);
+    if (e.captionKey) {
+      if (lbCredit.hasChildNodes()) lbCredit.prepend(' · ');
+      lbCredit.prepend(I18n.t(e.captionKey));
+    }
+    lbCredit.hidden = !lbCredit.hasChildNodes();
+    lb.classList.toggle('has-meta', !lbCredit.hidden);
   }
   function openLightbox(item) {
     lbOpener = item.btn;
