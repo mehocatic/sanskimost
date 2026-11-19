@@ -108,8 +108,19 @@ function tick() {
   current += (target - current) * (REDUCED ? 1 : 0.12);
   if (Math.abs(target - current) < 0.0001) current = target;
 
-  const index = nearest(Math.min(FRAME_COUNT - 1, Math.round(current * (FRAME_COUNT - 1))));
-  if (index !== lastDrawn && index >= 0) { draw(index); lastDrawn = index; }
+  // Between two frames the lower one is drawn and the next one is laid over it with alpha = the fraction,
+  // so the picture moves continuously instead of in steps (the alpha is rounded to 1/16 to avoid pointless redraws)
+  const pos = Math.min(FRAME_COUNT - 1, current * (FRAME_COUNT - 1));
+  const lo = Math.floor(pos);
+  const a = REDUCED ? 0 : Math.round((pos - lo) * 16) / 16;
+  const i0 = nearest(lo);
+  const i1 = a ? nearest(Math.min(FRAME_COUNT - 1, lo + 1)) : i0;
+  const key = i0 + '|' + i1 + '|' + a;
+  if (key !== lastDrawn && i0 >= 0) {
+    draw(i0);
+    if (a && i1 !== i0) { ctx.globalAlpha = a; draw(i1); ctx.globalAlpha = 1; }
+    lastDrawn = key;
+  }
 
   // Title fades and drifts out over the first ~25% of the scroll
   const t = clamp01(current / 0.25);
