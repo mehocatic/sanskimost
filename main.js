@@ -13,7 +13,7 @@
   }
 
   /* ---------- smooth scroll (Lenis) driving ScrollTrigger ---------- */
-  if (animate && window.Lenis) {
+  if (animate && window.Lenis && window.matchMedia('(pointer: fine) and (hover: hover)').matches) {
     const lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1 });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(t => lenis.raf(t * 1000));
