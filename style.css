@@ -2,9 +2,6 @@
   --bg: var(--deep);
 }
 
-/* height the phone toolbar can cover (large minus small viewport); 0 where the units are equal */
-:root { --bar: calc(100lvh - 100svh); }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body { background: var(--bg); color: var(--paper); }
