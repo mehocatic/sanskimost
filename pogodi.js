@@ -16,7 +16,7 @@
   const KEY = () => mode === 'surv' ? 'sm-pogodi-best-s' : mode === 'quiz' ? (len === 20 ? 'sm-pogodi-best-q20' : 'sm-pogodi-best-q') : 'sm-pogodi-best';
   // the most a game can give; a game until three mistakes has no top
   const MAX = () => mode === 'surv' ? 0 : set.length * 100;
-  const PHOTO_SCALE = { from: 1900, to: 2014 };
+  const PHOTO_SCALE = { from: 1900, to: A.endYear };
   let Y0 = PHOTO_SCALE.from, Y1 = PHOTO_SCALE.to;
   const pct = y => (y - Y0) / (Y1 - Y0) * 100;
   // a ruler holds years or, when the question has a unit, plain numbers (km, m, inhabitants)
