@@ -41,7 +41,50 @@ window.KVS = {"opc1":{"n":"Općina Sanski Most: Historija općine","u":"https://
   "banja":{"n":"RTV Sana: Banja Sanska Ilidža otvorila vrata posjetiocima","u":"https://sanartv.ba/banja-sanska-ilidza-otvorila-vrata-posjetiocima/"},
   "radio":{"n":"Wikipedia: Radio Sana","u":"https://en.wikipedia.org/wiki/Radio_Sana"},
   "rtv":{"n":"Wikipedia: RTV Sana","u":"https://en.wikipedia.org/wiki/RTV_Sana"}};
+Object.assign(window.KVS, {
+  "mulezmost": {"n":"Furaj.ba","u":"https://furaj.ba/wp-content/uploads/2024/10/Furajba-40-web-2.pdf"},
+  "emiruspon": {"n":"Dnevni avaz","u":"https://www.avaz.ba/lifestyle/putovanja/925433/planinar-i-zaljubljenik-u-prirodu-iz-sanskog-mosta-emir-music-osvojio-monblan"},
+  "ocimaljubavi": {"n":"Zavičajni muzej Travnik","u":"https://muzejtravnik.ba/obiljezavanje-1-marta-dana-nezavisnosti-bosne-i-hercegovine-promocija-fotomonografije-samira-sinanovica-bosna-i-hercegovina-ocima-ljubavi/"},
+  "galerijafaber": {"n":"Umjetnička galerija BiH","u":"https://ugbih.ba/?p=8730"},
+  "peticabliha": {"n":"Nezavisne novine","u":"https://www.nezavisne.com/novosti/gradovi/Sanska-petica-opravdala-ocekivanja-Istrcao-trku-gurajuci-bebu-u-kolicima/931129"},
+  "sanskafoto": {"n":"Nezavisne novine","u":"https://www.nezavisne.com/kultura/knjizevnost/Promocija-knjige-Jasmina-Zukanovica-Proslost-Sanskog-Mosta-kroz-stare-fotografije/676099"},
+  "petica": {
+    "n": "Moje trčanje",
+    "u": "https://trcanje.net/arhiva/52757"
+  },
+  "petrez": {
+    "n": "Inmedia",
+    "u": "https://inmedia.ba/sanska-petica-sanjani-na-domacem-terenu/"
+  },
+  "homofaber": {
+    "n": "SBS Bosnian",
+    "u": "https://www.youtube.com/watch?v=4cTKcjyADeo"
+  },
+  "maraton26": {
+    "n": "FMKS",
+    "u": "https://fmks.gov.ba/wp-content/uploads/2026/09/V.-broj-1103-2026-4.pdf"
+  },
+  "vodeneigre": {
+    "n": "Nezavisne novine",
+    "u": "https://www.nezavisne.com/novosti/gradovi/Otvoreno-Ljeto-na-Sani-Ove-godine-nece-ucestvovati-zvucna-imena/916157"
+  }
+});
+function recentQuestion(id, category, correct) {
+  const pair = field => ['bs', 'en'].map(lang => window.I18N[lang]['kv.' + id + '.' + field]);
+  return { id, t: 'choice', recent: true, c: category, ok: correct, o: [0, 1, 2, 3].map(i => pair('o' + i)), q: pair('q'), a: pair('a'), s: id };
+}
 window.KVQ = [
+  recentQuestion('mulezmost', 'priroda', 3),
+  recentQuestion('emiruspon', 'ljudi', 2),
+  recentQuestion('ocimaljubavi', 'ljudi', 1),
+  recentQuestion('galerijafaber', 'dogadjaji', 4),
+  recentQuestion('peticabliha', 'dogadjaji', 3),
+  recentQuestion('sanskafoto', 'ljudi', 2),
+  recentQuestion('petica', 'dogadjaji', 4),
+  recentQuestion('petrez', 'ljudi', 2),
+  recentQuestion('homofaber', 'ljudi', 2),
+  recentQuestion('maraton26', 'ljudi', 3),
+  recentQuestion('vodeneigre', 'dogadjaji', 1),
   {"id":"devet","t":"choice","c":"priroda","ok":3,"o":["6","7","8","9"],"q":["Sanski Most se zove grad na devet rijeka. Koliko je rječica uz Sanu?","Sanski Most is called the town on nine rivers. How many smaller rivers run alongside the Sana?"],"a":["Osam: Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka i Kozica. Sa Sanom to je devet.","Eight: the Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka and Kozica. With the Sana that makes nine."],"s":"opc2"},
   {"id":"nijeriv","t":"choice","c":"priroda","ok":2,"o":["Zdena","Una","Japra","Dabar"],"q":["Koja od ovih rijeka nije među devet sanskih rijeka?","Which of these rivers is not among the nine rivers of Sanski Most?"],"a":["Una. Uz Sanu su to Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka i Kozica.","The Una. Besides the Sana they are the Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka and Kozica."],"s":"opc2"},
   {"id":"najduza","t":"choice","c":"priroda","ok":4,"o":["Bliha","Japra","Dabar","Sana"],"q":["Koja je najduža od devet rijeka koje teku kroz Sanski Most?","Which is the longest of the nine rivers that flow through Sanski Most?"],"a":["Sana. Ostale su kratke kraške ili brdske rječice.","The Sana. The others are short karst or hill streams."],"s":"sana"},
