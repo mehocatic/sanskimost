@@ -1,6 +1,7 @@
-# Statički sajt: nema build koraka, objavljuje se korijen repozitorija.
+# Statički sajt. Pri objavi se priprema samo javna konfiguracija kviza.
 [build]
   publish = "."
+  command = "node tools/quiz-config.mjs"
   # Netlify preskače build (exit 0) osim ako poruka zadnjeg commita sadrži [deploy].
   # Tako obični pushevi ne troše kredite; objava se radi namjerno.
   ignore = "git log -1 --pretty=%B | grep -qi '\\[deploy\\]' && exit 1 || exit 0"
@@ -9,3 +10,15 @@
   for = "/photos/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+[[redirects]]
+  from = "/supabase/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.env*"
+  to = "/404.html"
+  status = 404
+  force = true
