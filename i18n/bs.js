@@ -41,6 +41,7 @@ I18N.bs = {
   'kv.sanskafoto.o1': "Jasmin Zukanović",
   'kv.sanskafoto.o2': "Enes Kišević",
   'kv.sanskafoto.o3': "Amir Talić",
+  'arh.c.bliha-jesen': "Vodopad Blihe u oktobru",
   'arh.c.bliha-ljeto': "Vodopad Blihe u julu",
   'arh.c.musalla-ljeto': "Fatihova musalla u Donjem Kamengradu",
   'kv.petica.q': "Koje je godine održana prva međunarodna utrka Sanska petica?",

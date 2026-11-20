@@ -39,6 +39,7 @@ I18N.en = {
   'kv.sanskafoto.o1': "Jasmin Zukanović",
   'kv.sanskafoto.o2': "Enes Kišević",
   'kv.sanskafoto.o3': "Amir Talić",
+  'arh.c.bliha-jesen': "Bliha Waterfall in October",
   'arh.c.bliha-ljeto': "Bliha Waterfall in July",
   'arh.c.musalla-ljeto': "Fatih’s Musalla in Donji Kamengrad",
   'kv.petica.q': "In which year was the first international Sanska petica race held?",
