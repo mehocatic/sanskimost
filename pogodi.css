@@ -122,6 +122,8 @@
   .kv-intro .btn.big { width: 100%; }
   .kv-round { display: flex; flex-direction: column; padding: 70px var(--pad) 24px; }
   .kv-top { padding-bottom: 12px; }
+  .kv-dots:not(.lives) { min-width: 0; flex: 1; gap: 3px; }
+  .kv-dots:not(.lives) li { min-width: 0; }
   .kv-photo { flex: none; padding: 6px 0 14px; }
   .kv-photo img { max-height: 36svh; border-width: 7px; }
   .kv-panel { align-self: stretch; max-width: none; }
@@ -129,6 +131,7 @@
   .kv-panel h2 { font-size: 1.25rem; }
   .kv-year { font-size: clamp(4.4rem, 22vw, 6rem); margin: 4px 0 2px -2px; }
   .kv-ticks span:nth-child(even) b { display: none; }
+  .kv-ticks span.scale-end b { display: block; }
   .kv-card { min-height: 0; padding: 22px; gap: 12px; margin-bottom: 14px; }
   .kv-card::before { top: auto; bottom: -20px; right: 16px; width: 46px; height: 46px; font-size: 1.6rem; }
   .kv-opts { gap: 8px; margin-top: 12px; }
