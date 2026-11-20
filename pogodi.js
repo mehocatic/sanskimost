@@ -41,9 +41,10 @@
         out.push(p); n--;
       }
     };
-    take(POOL.filter(p => p.y < 1990), 3);
+    take(POOL.filter(p => p.y > 2014), 1);
+    take(POOL.filter(p => p.y < 1990), 2);
     take(POOL.filter(p => p.y >= 1990 && p.y <= 2000), 2);
-    take(POOL.filter(p => p.y > 2000), 1);
+    take(POOL.filter(p => p.y > 2000 && p.y <= 2014), 1);
     take(POOL, PHOTOS - out.length);
     if (out.length < PHOTOS) shuffle([...POOL]).forEach(p => { if (out.length < PHOTOS && !out.includes(p)) out.push(p); });
     return out.map(p => ({ kind: 'photo', p }));
