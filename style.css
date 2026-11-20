@@ -16,7 +16,7 @@ body.home-page { background: var(--paper); }
   position: sticky;
   top: 0;
   height: 100vh;
-  height: 100lvh; /* large viewport: stays full height when the phone's toolbar collapses, so no blank strip appears below */
+  height: 100svh;
   width: 100%;
   overflow: hidden;
 }
