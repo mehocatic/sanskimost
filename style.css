@@ -352,7 +352,7 @@ body.home-page { background: var(--paper); }
 }
 
 /* Hero caption */
-#hero-caption { position: absolute; left: var(--gutter, 24px); bottom: calc(5vh + var(--bar, 0px)); z-index: 1; font-family: "Cormorant Garamond", Georgia, serif; font-size: .95rem; letter-spacing: .12em; color: rgba(246, 244, 238, .6); pointer-events: none; }
+#hero-caption { position: absolute; left: var(--gutter, 24px); bottom: 5svh; z-index: 1; font-family: "Cormorant Garamond", Georgia, serif; font-size: .95rem; letter-spacing: .12em; color: rgba(246, 244, 238, .6); pointer-events: none; }
 
 /* Line-by-line heading reveal: each line sits in a mask so it can rise from below; the padding keeps descenders visible */
 .ln-mask { padding-bottom: .14em; margin-bottom: -.14em; }
