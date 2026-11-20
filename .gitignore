@@ -5,3 +5,9 @@ poi-todo.md
 originals/
 camps-diff.txt
 .claude/
+
+.env
+.env.*
+!.env.example
+/quiz-config.js
+/supabase/.temp/
