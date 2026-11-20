@@ -77,7 +77,6 @@
       li.appendChild(d);
       ol.appendChild(li);
     });
-    $('zlj-count').textContent = t('lic.zlj.count', { n: zlj.length });
   }
 
   // ---- highlights
