@@ -7,6 +7,7 @@
 
   if (animate) {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true });
     if (window.SplitText) gsap.registerPlugin(SplitText);
     root.classList.add('js-anim');
   }
