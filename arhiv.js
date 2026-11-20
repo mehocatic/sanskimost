@@ -330,8 +330,9 @@
 
   function icon(pl) {
     const ps = visible(pl.id), all = placed.filter(p => p.place === pl.id), c = cover(ps.length ? ps : all);
+    const offset = pl.id === 'zdena' ? -50 : pl.id === 'lovac' ? 50 : 0;
     return L.divIcon({
-      className: `apin-w${ps.length ? '' : ' off'}${sel === pl.id ? ' sel' : ''}`, iconSize: [60, 60], iconAnchor: [30, 30],
+      className: `apin-w${ps.length ? '' : ' off'}${sel === pl.id ? ' sel' : ''}`, iconSize: [60, 60], iconAnchor: [30 - offset, 30],
       html: `<span class="apin"><img src="${thumb(c)}" alt=""></span><b>${ps.length}</b><em>${esc(placeName(pl))}</em>`
     });
   }
