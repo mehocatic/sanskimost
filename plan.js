@@ -7,6 +7,7 @@
   const animate = !reduce && !!(window.gsap && window.ScrollTrigger);
   if (animate) {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true });
     document.documentElement.classList.add('js-anim');
     if (window.Lenis) {
       const lenis = new Lenis({ lerp: 0.1 });
