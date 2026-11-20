@@ -68,7 +68,7 @@ body.home-page { background: var(--paper); }
 @keyframes pulse { 0%,100% { transform: scaleY(.3); opacity: .4; } 50% { transform: scaleY(1); opacity: 1; } }
 
 /* closing lines of the hero, bottom left, over the last frames */
-#hero-end { position: absolute; left: var(--gutter); right: var(--gutter); bottom: calc(clamp(48px, 9svh, 96px) + var(--bar, 0px)); opacity: 0; pointer-events: none; }
+#hero-end { position: absolute; left: var(--gutter); right: var(--gutter); bottom: clamp(48px, 9svh, 96px); opacity: 0; pointer-events: none; }
 /* letters of the closing lines (script.js); a word holds its letters together so lines break between words */
 #hero-end .hw { display: inline-block; white-space: nowrap; }
 #hero-end .hc { display: inline-block; opacity: 0; will-change: opacity, transform; }
