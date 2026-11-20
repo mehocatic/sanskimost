@@ -39,6 +39,7 @@ I18N.en = {
   'kv.sanskafoto.o1': "Jasmin Zukanović",
   'kv.sanskafoto.o2': "Enes Kišević",
   'kv.sanskafoto.o3': "Amir Talić",
+  'arh.c.bliha-ljeto': "Bliha Waterfall in July",
   'arh.c.musalla-ljeto': "Fatih’s Musalla in Donji Kamengrad",
   'kv.petica.q': "In which year was the first international Sanska petica race held?",
   'kv.petica.a': "Sana Athletics Club organised the first race on 4 October 2025.",
