@@ -5,6 +5,12 @@
 // are Bosnian, condensed from his text; the English ones in en.js are translations for review.
 window.I18N = window.I18N || {};
 I18N.bs = {
+  'kv.mulezmost.q': "Koja je planina 2024. dobila viseći most uz feratu?",
+  'kv.mulezmost.a': "Most na Muležu pruža pogled prema kanjonu Sane.",
+  'kv.mulezmost.o0': "Grmeč",
+  'kv.mulezmost.o1': "Kozara",
+  'kv.mulezmost.o2': "Mulež",
+  'kv.mulezmost.o3': "Vlašić",
   'lic.heritage': 'Zanati i baština',
   'hist.war90s': '1990-e',
   'bio.sinanovic.role': "Fotograf",

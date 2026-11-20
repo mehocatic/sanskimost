@@ -3,6 +3,12 @@
 // Keys ending in .html may contain markup (<br>, <em>).
 window.I18N = window.I18N || {};
 I18N.en = {
+  'kv.mulezmost.q': "Which mountain gained a suspension bridge beside its via ferrata in 2024?",
+  'kv.mulezmost.a': "The bridge on Mulež looks out towards the Sana canyon.",
+  'kv.mulezmost.o0': "Grmeč",
+  'kv.mulezmost.o1': "Kozara",
+  'kv.mulezmost.o2': "Mulež",
+  'kv.mulezmost.o3': "Vlašić",
   'lic.heritage': 'Crafts and heritage',
   'hist.war90s': '1990s',
   'bio.sinanovic.role': "Photographer",
