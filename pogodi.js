@@ -26,7 +26,7 @@
 
   // Left out: documents, photographs with only a rough date, and those where the year can be read in the picture itself.
   const SHOWS_YEAR = ['avion-1944', 'hamzibegova-1946', 'trnova-1957', 'prijedorska-1961', 'lovac-1968', 'poplava-1996', 'lovac-2005'];
-  const POOL = A.photos.filter(p => p.y && !p.yl && p.cat !== 'dokumenti' && !SHOWS_YEAR.includes(p.f));
+  const POOL = A.photos.filter(p => p.quiz !== false && p.y && !p.yl && p.cat !== 'dokumenti' && !SHOWS_YEAR.includes(p.f));
   const DECOR = ['stari-grad-sana', 'plivanje2', 'zaledjena-sana'];
 
   const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
