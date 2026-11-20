@@ -143,7 +143,12 @@
     const major = [10, 25, 50, 100, 250, 500].find(m => span / m <= 12) || 500;
     const minor = major === 10 ? 1 : major / 5;
     let h = '';
-    for (let y = Math.ceil(from / major) * major; y <= to; y += major) h += `<span style="left:${pct(y)}%"><b>${UNIT ? nf(y) : (y < 0 ? '−' + -y : y)}</b></span>`;
+    const photoScale = from === PHOTO_SCALE.from && to === PHOTO_SCALE.to && !UNIT;
+    for (let y = Math.ceil(from / major) * major; y <= to; y += major) {
+      if (photoScale && to - y < major / 2) break;
+      h += `<span style="left:${pct(y)}%"><b>${UNIT ? nf(y) : (y < 0 ? '−' + -y : y)}</b></span>`;
+    }
+    if (photoScale) h += '<span class="scale-end" style="left:100%"><b>' + to + '</b></span>';
     $('kv-ticks').innerHTML = h;
     $('kv-ticks').style.setProperty('--n', span / minor);
     range.min = from; range.max = to; range.step = span > 1000 ? 10 : 1;
