@@ -55,7 +55,7 @@ function backgroundPass() {
   const next = () => {
     if (!queue.length) { if (!running) canvas.dataset.loaded = 'all'; return; }
     running++;
-    load(queue.shift()).then(() => { running--; next(); });
+    load(queue.shift()).then(() => { running--; scheduleFrame(); next(); });
   };
   for (let k = 0; k < 4; k++) next();
 }
@@ -72,7 +72,7 @@ function nearest(i) {
 let lastW = 0, lastH = 0;
 function resize() {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  // the stage is 100lvh, so its height does not change when the phone toolbar shows or hides
+  // The stage uses the small viewport height so browser toolbars do not resize the scene.
   const w = stage.clientWidth || window.innerWidth, h = stage.clientHeight || window.innerHeight;
   if (w === lastW && h === lastH) return;
   lastW = w; lastH = h;
@@ -93,7 +93,7 @@ function draw(i) {
 function scrollProgress() {
   const rect = scene.getBoundingClientRect();
   const scrollable = scene.offsetHeight - stage.offsetHeight;
-  return Math.min(1, Math.max(0, -rect.top / scrollable));
+  return scrollable > 0 ? Math.min(1, Math.max(0, -rect.top / scrollable)) : 0;
 }
 
 const clamp01 = v => Math.min(1, Math.max(0, v));
@@ -101,9 +101,11 @@ const clamp01 = v => Math.min(1, Math.max(0, v));
 let target = 0;   // where the scroll wants us to be
 let current = 0;  // where we actually are (eased)
 let lastDrawn = -1;
+let animationFrame = 0;
 
 // Easing toward the target makes mouse-wheel "steps" feel like continuous camera motion
 function tick() {
+  animationFrame = 0;
   target = scrollProgress();
   current += (target - current) * (REDUCED ? 1 : 0.12);
   if (Math.abs(target - current) < 0.0001) current = target;
@@ -142,10 +144,14 @@ function tick() {
   write(subChars, current, 0.66, 0.86, 0.035);
   caption.style.opacity = 1 - clamp01((current - 0.4) / 0.08);
 
-  requestAnimationFrame(tick);
+  if (current !== target) animationFrame = requestAnimationFrame(tick);
 }
 
-window.addEventListener('resize', resize);
+function scheduleFrame() {
+  if (!animationFrame) animationFrame = requestAnimationFrame(tick);
+}
+window.addEventListener('scroll', scheduleFrame, { passive: true });
+window.addEventListener('resize', () => { resize(); scheduleFrame(); });
 
 // The closing lines, cut into letters (inside words, so a line never breaks in the middle of a word).
 // Screen readers get the whole text from a hidden copy; the letters are only for the eye.
@@ -216,6 +222,6 @@ firstPass().then(() => {
   draw(nearest(0));
   loader.classList.add('done');
   canvas.dataset.loaded = 'first';
-  requestAnimationFrame(tick);
+  scheduleFrame();
   backgroundPass();
 });
