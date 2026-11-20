@@ -2,6 +2,7 @@
 // y: year (null = undated), yl: i18n key of a looser year label, cap: i18n key of the caption, src: i18n key or plain text.
 // Places marked approx were set by eye: open arhiv?edit=1#karta, drag the pins and copy the coordinates back here.
 window.ARCHIVE = {
+  endYear: new Date().getFullYear(),
   places: [
     {"id": "trg", "name": {"bs": "Gradski trg", "en": "Town square"}, "coords": [44.7653, 16.6668], "approx": true},
     {"id": "prijedorska", "name": {"bs": "Prijedorska ulica", "en": "Prijedorska Street"}, "coords": [44.7685, 16.6655], "approx": true},
@@ -82,6 +83,9 @@ window.ARCHIVE = {
     {"f": "poplava-2014-kamion", "y": 2014, "cat": "poplave", "cap": "hist.6.g15", "w": 800, "h": 600},
     {"f": "poplava-2014-konj", "y": 2014, "cat": "poplave", "cap": "hist.6.g14", "w": 800, "h": 444},
     {"f": "sana-2014", "y": 2014, "cat": "poplave", "cap": "hist.6.g3", "w": 640, "h": 480, "place": "most"},
+    {"f": "musalla-ljeto", "y": 2018, "cat": "ulice", "cap": "arh.c.musalla-ljeto", "w": 853, "h": 1280, "place": "musala", "src": "Almedin Handanovic"},
+    {"f": "bliha-ljeto", "y": 2019, "cat": "sana", "cap": "arh.c.bliha-ljeto", "w": 1280, "h": 853, "place": "blihe"},
+    {"f": "bliha-jesen", "y": 2021, "cat": "sana", "cap": "arh.c.bliha-jesen", "w": 960, "h": 1280, "place": "blihe", "quiz": false, "src": "Đana Talić · Wikimedia Commons · CC0"},
     {"f": "biblioteka-1970", "y": null, "cat": "ulice", "cap": "hist.ul.5.z", "w": 838, "h": 855},
     {"f": "fudbal-ekipa", "y": null, "cat": "ljudi", "cap": "hist.5.f.fudbal", "w": 1344, "h": 768, "src": "hist.src.book"},
     {"f": "fudbal-ekipa2", "y": null, "cat": "ljudi", "cap": "hist.5.f.fudbal2", "w": 1248, "h": 832},
