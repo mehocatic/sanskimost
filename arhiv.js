@@ -8,7 +8,7 @@
   const t = (k, v) => I18n.t(k, v);
   const wide = window.matchMedia('(min-width: 900px) and (min-height: 560px)');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const Y0 = 1900, Y1 = 2014, TICKS = [1900, 1920, 1940, 1960, 1980, 2000, 2014];
+  const Y0 = 1900, Y1 = A.endYear, TICKS = [1900, 1920, 1940, 1960, 1980, 2000, Y1];
   const CATS = ['ulice', 'sana', 'ljudi', 'poplave', 'dokumenti'];
   const pct = y => (Math.min(Y1, Math.max(Y0, y)) - Y0) / (Y1 - Y0) * 100;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -320,6 +320,9 @@
   const TOWN = [44.7658, 16.6663];
   const placed = A.photos.filter(p => p.place);
   const dial = $('dial'), pcard = $('pcard');
+  dial.max = Y1;
+  dial.value = Y1;
+  $('dial-y').textContent = Y1;
   let map = null, year = Y1, sel = null, shown = null, timer = 0;
   const markers = new Map();
   const visible = id => placed.filter(p => p.place === id && (!p.y || p.y <= year));
