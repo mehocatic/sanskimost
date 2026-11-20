@@ -60,7 +60,7 @@ body.home-page { background: var(--paper); }
   pointer-events: none;
 }
 
-#scroll-hint { bottom: calc(6vh + var(--bar, 0px)); font-size: .85rem; opacity: .8; }
+#scroll-hint { bottom: 6svh; font-size: .85rem; opacity: .8; }
 #scroll-hint::after {
   content: ""; display: block; width: 1px; height: 42px; margin: 12px auto 0;
   background: var(--paper); transform-origin: top; animation: pulse 2s ease-in-out infinite;
