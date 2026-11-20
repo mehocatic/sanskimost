@@ -209,8 +209,6 @@ I18N.bs = {
   'lic.zlj.sub': 'Ljiljan je hiljadu godina simbol Bosne.',
   'lic.zlj.post': 'Posthumno',
   'lic.zlj.count': '{n} dobitnika.',
-  'lic.zlj.open': 'Popis obuhvata prijeratnu općinu Sanski Most, danas Sanski Most i Oštra Luka.',
-  'lic.zlj.src': 'Izvor: Wikipedia',
   'lic.stat.people': 'ličnosti',
   'lic.stat.lilies': 'Zlatnih ljiljana',
   'lic.stat.fields': 'oblasti',

@@ -207,8 +207,6 @@ I18N.en = {
   'lic.zlj.sub': 'The lily has been a symbol of Bosnia for a thousand years.',
   'lic.zlj.post': 'Posthumous',
   'lic.zlj.count': '{n} recipients.',
-  'lic.zlj.open': 'The list covers the pre-war municipality of Sanski Most, today Sanski Most and Oštra Luka.',
-  'lic.zlj.src': 'Source: Wikipedia',
   'lic.stat.people': 'people',
   'lic.stat.lilies': 'Golden Lilies',
   'lic.stat.fields': 'fields',
