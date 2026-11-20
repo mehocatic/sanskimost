@@ -124,7 +124,7 @@
         b.type = 'button';
         b.setAttribute('aria-haspopup', 'dialog');
         const meta = el('span', 'pr-meta');
-        meta.append(el('span', 'pr-role', biography(p, 'role')), el('span', 'pr-tag ' + p.kind, t('lic.' + p.kind)));
+        meta.appendChild(el('span', 'pr-role', biography(p, 'role')));
         b.append(el('span', 'pr-name', p.name), meta, el('span', 'pr-arrow'));
         b.addEventListener('click', () => open(p.id));
         li.appendChild(b);
