@@ -69,22 +69,25 @@ Object.assign(window.KVS, {
     "u": "https://www.nezavisne.com/novosti/gradovi/Otvoreno-Ljeto-na-Sani-Ove-godine-nece-ucestvovati-zvucna-imena/916157"
   }
 });
-function recentQuestion(id, category, correct) {
+function translatedQuestion(id, category, correct, source = id) {
   const pair = field => ['bs', 'en'].map(lang => window.I18N[lang]['kv.' + id + '.' + field]);
-  return { id, t: 'choice', recent: true, c: category, ok: correct, o: [0, 1, 2, 3].map(i => pair('o' + i)), q: pair('q'), a: pair('a'), s: id };
+  return { id, t: 'choice', recent: source === id, c: category, ok: correct, o: [0, 1, 2, 3].map(i => pair('o' + i)), q: pair('q'), a: pair('a'), s: source };
 }
 window.KVQ = [
-  recentQuestion('mulezmost', 'priroda', 3),
-  recentQuestion('emiruspon', 'ljudi', 2),
-  recentQuestion('ocimaljubavi', 'ljudi', 1),
-  recentQuestion('galerijafaber', 'dogadjaji', 4),
-  recentQuestion('peticabliha', 'dogadjaji', 3),
-  recentQuestion('sanskafoto', 'ljudi', 2),
-  recentQuestion('petica', 'dogadjaji', 4),
-  recentQuestion('petrez', 'ljudi', 2),
-  recentQuestion('homofaber', 'ljudi', 2),
-  recentQuestion('maraton26', 'ljudi', 3),
-  recentQuestion('vodeneigre', 'dogadjaji', 1),
+  translatedQuestion('dzekoposjeta', 'dogadjaji', 2, 'hist'),
+  translatedQuestion('trkeulice', 'dogadjaji', 3, 'hist'),
+  translatedQuestion('ligaprvak', 'dogadjaji', 1, 'hist'),
+  translatedQuestion('mulezmost', 'priroda', 3),
+  translatedQuestion('emiruspon', 'ljudi', 2),
+  translatedQuestion('ocimaljubavi', 'ljudi', 1),
+  translatedQuestion('galerijafaber', 'dogadjaji', 4),
+  translatedQuestion('peticabliha', 'dogadjaji', 3),
+  translatedQuestion('sanskafoto', 'ljudi', 2),
+  translatedQuestion('petica', 'dogadjaji', 4),
+  translatedQuestion('petrez', 'ljudi', 2),
+  translatedQuestion('homofaber', 'ljudi', 2),
+  translatedQuestion('maraton26', 'ljudi', 3),
+  translatedQuestion('vodeneigre', 'dogadjaji', 1),
   {"id":"devet","t":"choice","c":"priroda","ok":3,"o":["6","7","8","9"],"q":["Sanski Most se zove grad na devet rijeka. Koliko je rječica uz Sanu?","Sanski Most is called the town on nine rivers. How many smaller rivers run alongside the Sana?"],"a":["Osam: Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka i Kozica. Sa Sanom to je devet.","Eight: the Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka and Kozica. With the Sana that makes nine."],"s":"opc2"},
   {"id":"nijeriv","t":"choice","c":"priroda","ok":2,"o":["Zdena","Una","Japra","Dabar"],"q":["Koja od ovih rijeka nije među devet sanskih rijeka?","Which of these rivers is not among the nine rivers of Sanski Most?"],"a":["Una. Uz Sanu su to Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka i Kozica.","The Una. Besides the Sana they are the Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka and Kozica."],"s":"opc2"},
   {"id":"najduza","t":"choice","c":"priroda","ok":4,"o":["Bliha","Japra","Dabar","Sana"],"q":["Koja je najduža od devet rijeka koje teku kroz Sanski Most?","Which is the longest of the nine rivers that flow through Sanski Most?"],"a":["Sana. Ostale su kratke kraške ili brdske rječice.","The Sana. The others are short karst or hill streams."],"s":"sana"},

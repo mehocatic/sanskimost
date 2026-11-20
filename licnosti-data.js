@@ -31,7 +31,7 @@ window.LICNOSTI_FEAT = [
 window.LICNOSTI = [
   { id: 'sinanovic', name: 'Samir Sinanović', cat: 'kultura', kind: 'linked', copyKey: 'bio.sinanovic',
     src: { label: 'SBS Bosanski', url: 'https://www.sbs.com.au/language/bosnian/bs/podcast-episode/samir-sinanovic-o-novoj-knjizi-umjetnicke-fotografije-homo-faber/8imex1vbw' } },
-  { id: 'cikan', name: 'Hasan Hadžić Čikan', cat: 'sport', kind: 'linked', copyKey: 'bio.cikan',
+  { id: 'cikan', name: 'Hasan Hadžić Ćikan', cat: 'sport', kind: 'linked', copyKey: 'bio.cikan',
     src: { label: 'USN Krajina', url: 'https://usnkrajina.com.ba/sanski-most-u-ponedeljak-starta-novogodisnji-malonogometni-turnir-nagradni-fond-12-000-km-izvlacenje-parova-08-decembra/' } },
   { id: 'beno', name: 'Benjamin Ključanin', cat: 'sport', kind: 'linked', copyKey: 'bio.beno',
     src: { label: 'Faktor / NK Podgrmeč', url: 'https://faktor.ba/sport/fudbal/u-49-godini-preminuo-benjamin-kljucanin-bivsi-trener-podgrmeca-i-jedinstva/102439' } },

@@ -357,3 +357,8 @@
   .film-sequence figure:first-child { grid-column: 1; grid-row: span 2; align-self: center; }
   .bridge-views { grid-auto-flow: row; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
+
+#opcinska-liga table { width: 100%; max-width: 34rem; border-collapse: collapse; margin: 1.5rem 0; font-variant-numeric: tabular-nums; }
+#opcinska-liga caption { text-align: left; font-weight: 600; margin-bottom: .6rem; }
+#opcinska-liga th, #opcinska-liga td { text-align: left; padding: .4rem .3rem; border-bottom: 1px solid currentColor; }
+#opcinska-liga tr > :last-child { text-align: right; }
