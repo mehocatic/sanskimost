@@ -41,6 +41,7 @@ I18N.bs = {
   'kv.sanskafoto.o1': "Jasmin Zukanović",
   'kv.sanskafoto.o2': "Enes Kišević",
   'kv.sanskafoto.o3': "Amir Talić",
+  'arh.c.musalla-ljeto': "Fatihova musalla u Donjem Kamengradu",
   'kv.petica.q': "Koje je godine održana prva međunarodna utrka Sanska petica?",
   'kv.petica.a': "Atletski klub Sana organizovao je prvu utrku 4. oktobra 2025.",
   'kv.petica.o0': "2022",
