@@ -30,7 +30,7 @@ window.LICNOSTI_FEAT = [
 
 window.LICNOSTI = [
   { id: 'sinanovic', name: 'Samir Sinanović', cat: 'kultura', kind: 'linked', copyKey: 'bio.sinanovic',
-    src: { label: 'Reprezent', url: 'https://reprezent.ba/na-ljeto-promocija-fotomonografije-sanski-most-grad-u-ogledalu-od-rijeka/' } },
+    src: { label: 'SBS Bosanski', url: 'https://www.sbs.com.au/language/bosnian/bs/podcast-episode/samir-sinanovic-o-novoj-knjizi-umjetnicke-fotografije-homo-faber/8imex1vbw' } },
   { id: 'cikan', name: 'Hasan Hadžić Čikan', cat: 'sport', kind: 'linked', copyKey: 'bio.cikan',
     src: { label: 'USN Krajina', url: 'https://usnkrajina.com.ba/sanski-most-u-ponedeljak-starta-novogodisnji-malonogometni-turnir-nagradni-fond-12-000-km-izvlacenje-parova-08-decembra/' } },
   { id: 'beno', name: 'Benjamin Ključanin', cat: 'sport', kind: 'linked', copyKey: 'bio.beno',

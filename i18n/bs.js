@@ -77,7 +77,7 @@ I18N.bs = {
   'lic.heritage': 'Zanati i baština',
   'hist.war90s': '1990-e',
   'bio.sinanovic.role': "Fotograf",
-  'bio.sinanovic.text': "Autor je fotomonografije „Sanski Most, grad u ogledalu od rijeka“. Knjigu o gradu, njegovim rijekama i ljudima objavila je RTV Sana na bosanskom, engleskom i njemačkom jeziku.",
+  'bio.sinanovic.text': "Fotograf iz Sanskog Mosta i autor fotomonografija „Bosna i Hercegovina očima ljubavi“ i „Sanski Most, grad u ogledalu od rijeka“. U knjizi „Homo faber“ (2025) fotografiše ljude koji rade i žive na marginama društva.",
   'bio.cikan.role': "Mali nogomet",
   'bio.cikan.text': "Na sanskom novogodišnjem turniru u malom nogometu nagrada za najboljeg strijelca nosila je Čikanovo ime. Najbolji igrač istog turnira primao je nagradu nazvanu po Benjaminu Ključaninu.",
   'bio.beno.role': "Nogometaš i trener",

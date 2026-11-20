@@ -75,7 +75,7 @@ I18N.en = {
   'lic.heritage': 'Crafts and heritage',
   'hist.war90s': '1990s',
   'bio.sinanovic.role': "Photographer",
-  'bio.sinanovic.text': "His photo book “Sanski Most, grad u ogledalu od rijeka” portrays the town, its rivers and its people. RTV Sana published it in Bosnian, English and German.",
+  'bio.sinanovic.text': "A photographer from Sanski Most, he is the author of the photo books Bosna i Hercegovina očima ljubavi and Sanski Most, grad u ogledalu od rijeka. In Homo faber (2025), he photographs people who live and work on the margins of society.",
   'bio.cikan.role': "Indoor football",
   'bio.cikan.text': "The top scorer at the Sanski Most New Year indoor football tournament received an award named after Čikan. The award for the tournament’s best player bore the name of Benjamin Ključanin.",
   'bio.beno.role': "Footballer and coach",
