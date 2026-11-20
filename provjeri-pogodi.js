@@ -4,7 +4,9 @@
 // Sokolski dom kao zgrada zasjedanja ZAVNOBiH-a (nije potvrđeno), sve s neusaglašenim podacima.
 // Svako pitanje mora imati oba jezika, izvor iz KVS, ispravan tačan odgovor i raspon u kojem je rješenje.
 const fs = require('fs'), vm = require('vm');
-const ctx = { window: {} };
+const ctx = {};
+ctx.window = ctx;
+for (const lang of ['bs', 'en']) vm.runInNewContext(fs.readFileSync(__dirname + '/i18n/' + lang + '.js', 'utf8'), ctx);
 vm.runInNewContext(fs.readFileSync(__dirname + '/pogodi-data.js', 'utf8'), ctx);
 const Q = ctx.window.KVQ, S = ctx.window.KVS, bad = [], ids = new Set(), cats = {};
 const two = v => Array.isArray(v) && v.length === 2 && v.every(x => typeof x === 'string' && x.trim());
