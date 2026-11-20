@@ -5,6 +5,15 @@
 .pogodi-page .btn.big.ghost:hover { background: rgba(246, 244, 238, .08); }
 .kv-link { font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: var(--sand); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
 #kv { --pad: clamp(20px, 4vw, 64px); }
+#kv-competition, #kv-submit { margin-block: 1.5rem; border-top: 1px solid #fff3; padding-top: 1.25rem; max-width: 38rem; }
+#kv-competition h2 { font: 500 2rem/1.15 var(--serif); }
+#kv-competition p, #kv-submit label { display: block; margin: .65rem 0 1rem; line-height: 1.5; }
+#kv-submit input { display: block; width: min(100%, 22rem); min-height: 46px; border: 1px solid #fff6; border-radius: .5rem; padding: .6rem; background: #192320; color: inherit; font: inherit; margin-bottom: 1rem; }
+#kv-board summary { cursor: pointer; padding: 1rem 0; color: var(--sand); }
+#kv-board ol { padding-left: 1.8rem; }
+#kv-board li { padding: .45rem .25rem; border-bottom: 1px solid #fff2; overflow-wrap: anywhere; }
+#kv-board li b { float: right; margin-left: 1rem; }
+#kv-network { margin: 1rem 0; line-height: 1.5; color: var(--sand); }
 #kv .print { cursor: default; }
 #kv .print:hover { transform: rotate(var(--r)); }
 

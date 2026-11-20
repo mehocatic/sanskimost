@@ -13,7 +13,9 @@
   const ROUNDS = 10, PHOTOS = 6, SEEN = 'sm-pogodi-seen', LIVES = 3;
   // mix: photos and questions; quiz: 10 or 20 questions; surv: questions until the third mistake
   let mode = 'mix', len = 10, lives = LIVES;
-  const KEY = () => mode === 'surv' ? 'sm-pogodi-best-s' : mode === 'quiz' ? (len === 20 ? 'sm-pogodi-best-q20' : 'sm-pogodi-best-q') : 'sm-pogodi-best';
+  const ranked = window.QuizRanked;
+  let pending = false;
+  const KEY = () => mode === 'ranked' ? 'sm-pogodi-ranked-' + len : mode === 'surv' ? 'sm-pogodi-best-s' : mode === 'quiz' ? (len === 20 ? 'sm-pogodi-best-q20' : 'sm-pogodi-best-q') : 'sm-pogodi-best';
   // the most a game can give; a game until three mistakes has no top
   const MAX = () => mode === 'surv' ? 0 : set.length * 100;
   const PHOTO_SCALE = { from: 1900, to: A.endYear };
@@ -124,10 +126,23 @@
     ['kv-intro', 'kv-round', 'kv-end'].forEach(s => { $(s).hidden = s !== id; });
     scrollTo(0, 0);
   }
-  function start(m) {
-    mode = ['quiz', 'surv'].includes(m) ? m : 'mix';
+  async function start(m) {
+    if (pending) return;
+    ranked.status();
+    let remote;
+    if (m === 'ranked') {
+      pending = true;
+      const controls = [...document.querySelectorAll('#kv-intro button, #kv-end button')];
+      controls.forEach(b => { b.disabled = true; });
+      try { remote = await ranked.start(len); }
+      catch (e) {
+        ranked.status(e.message === 'daily_limit' ? 'limit' : e.message === 'storage' ? 'storage' : 'netError');
+        return;
+      } finally { pending = false; controls.forEach(b => { b.disabled = false; }); }
+    }
+    mode = m;
     best();
-    set = pick(); at = 0; total = 0; log = []; lives = LIVES;
+    set = remote || pick(); at = 0; total = 0; log = []; lives = LIVES;
     $('kv-total').textContent = '0';
     // three mistakes: three lives instead of a dot per question
     $('kv-dots').innerHTML = mode === 'surv' ? '<li class="life"></li>'.repeat(LIVES) : set.map(() => '<li></li>').join('');
@@ -214,10 +229,25 @@
   $('kv-minus').addEventListener('click', () => setYear(+range.value - +range.step));
   $('kv-plus').addEventListener('click', () => setYear(+range.value + +range.step));
 
-  function reveal(choice) {
-    if (revealed) return;
-    revealed = true;
+  async function reveal(choice) {
+    if (revealed || pending) return;
     const r = cur(), pickQ = r.kind === 'choice';
+    if (mode === 'ranked') {
+      if (!choice) return;
+      pending = true;
+      opts.forEach(b => { b.disabled = true; });
+      try {
+        const result = await ranked.answer(at + 1, choice);
+        Object.assign(r.q, {ok:result.ok, a:result.a, source:result.source});
+        choice = result.choice;
+        ranked.status();
+      } catch {
+        ranked.status('netError');
+        opts.forEach(b => { b.disabled = false; });
+        return;
+      } finally { pending = false; }
+    }
+    revealed = true;
     let entry;
     if (pickQ) {
       const right = choice === r.q.ok;
@@ -262,7 +292,7 @@
       $('kv-pts').textContent = (x.d ? t('kv.off', { years: r.kind === 'num' ? `${nf(x.d)} ${r.q.u}` : years(x.d), guess: fmt(x.guess) }) + ' · ' : '') + t('kv.pts', { n: x.pts });
     }
     $('kv-cap').textContent = photo ? t(r.p.cap) : T(r.q.a);
-    source(photo ? null : S[r.q.s]);
+    source(photo ? null : r.q.source || S[r.q.s]);
     $('kv-open').hidden = !photo;
     if (photo) $('kv-open').href = `arhiv#foto=${r.p.f}`;
     $('kv-next').textContent = t(last() ? 'kv.finish' : 'kv.next');
@@ -298,6 +328,7 @@
     let b = best();
     if (total > b) { try { localStorage.setItem(KEY(), total); } catch (e) { /* not kept */ } b = total; }
     show('kv-end');
+    if (mode === 'ranked') ranked.finish();
     const right = log.filter(x => x.r.kind === 'choice' ? x.pts : grade(x.e) !== 'b').length;
     count($('kv-final'), 0, total);
     $('kv-max').textContent = mode === 'surv' ? t('kv.ptsword') : `/ ${MAX()}`;
@@ -341,7 +372,7 @@
     });
     g.textAlign = 'center';
     g.fillStyle = '#7fd6dc'; g.font = '400 26px Inter';
-    g.fillText(t(mode === 'surv' ? 'kv.surv' : mode === 'quiz' ? 'kv.quiz' : 'kv.title.plain').toUpperCase().split('').join(String.fromCharCode(8202)), W / 2, 760);
+    g.fillText(t(mode === 'surv' ? 'kv.surv' : mode === 'ranked' ? 'kv.competition' : mode === 'quiz' ? 'kv.quiz' : 'kv.title.plain').toUpperCase().split('').join(String.fromCharCode(8202)), W / 2, 760);
     // Inter for the figure: the serif has old-style figures, and a canvas cannot switch them to lining ones
     g.fillStyle = '#f6f4ee'; g.font = '400 210px Inter, system-ui, sans-serif';
     g.fillText(String(total), W / 2, 980);
@@ -372,11 +403,13 @@
   });
   $('kv-start').addEventListener('click', () => start('mix'));
   $('kv-quiz').addEventListener('click', () => start('quiz'));
+  $('kv-ranked').addEventListener('click', () => start('ranked'));
   $('kv-surv').addEventListener('click', () => start('surv'));
   document.querySelector('.kv-len').addEventListener('click', e => {
     const b = e.target.closest('button');
     if (!b) return;
     len = +b.dataset.len;
+    ranked.select(len);
     document.querySelectorAll('.kv-len button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
   });
   $('kv-again').addEventListener('click', () => start(mode));

@@ -59,6 +59,12 @@
           <button type="button" data-len="20" aria-pressed="false">20</button>
         </div>
         <p class="kv-bank" id="kv-bank"></p>
+        <section id="kv-competition" hidden>
+          <h2 data-i18n="kv.competition"></h2>
+          <p data-i18n="kv.daily"></p>
+          <button type="button" class="btn big" id="kv-ranked" data-i18n="kv.compete"></button>
+          <details id="kv-board"><summary data-i18n="kv.board"></summary><ol></ol><p role="status"></p></details>
+        </section>
         <details class="kv-srcs">
           <summary data-i18n="kv.sources">Izvori pitanja</summary>
           <p data-i18n="kv.srcnote">Dio izvora su sekundarni (Wikipedia, turistički portali). Gdje su se izvori razilazili, pitanje je izostavljeno.</p>
@@ -118,6 +124,12 @@
       <p class="kv-final"><b id="kv-final">0</b><span id="kv-max">/ 1000</span></p>
       <h2 id="kv-rank"></h2>
       <p class="kv-avg" id="kv-avg"></p>
+      <section id="kv-submit" hidden>
+        <form><label for="kv-name" data-i18n="kv.nickname"></label>
+          <input id="kv-name" required maxlength="40" autocomplete="off">
+          <button class="btn big" data-i18n="kv.publish"></button>
+        </form>
+      </section>
       <!-- the result as a picture, for stories and chats (pogodi.js: card) -->
       <figure class="kv-shot"><img id="kv-shot" alt="" width="1080" height="1350"></figure>
       <div class="kv-end-act">
@@ -128,6 +140,7 @@
       </div>
       <ol class="kv-list" id="kv-list"></ol>
     </section>
+    <p id="kv-network" role="status" hidden></p>
   </main>
 
   <footer class="site-foot on-deep">
@@ -155,6 +168,8 @@
   <script defer src="i18n/bs.js"></script>
   <script defer src="pogodi-data.js"></script>
   <script defer src="i18n.js"></script>
+  <script defer src="quiz-config.js"></script>
+  <script defer src="quiz-ranked.js"></script>
   <script defer src="pogodi.js"></script>
   <script defer src="nav.js"></script>
 </body>
