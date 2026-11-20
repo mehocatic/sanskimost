@@ -71,7 +71,9 @@
     const s = seen();
     if (Q.filter(q => !s.has(q.id)).length < n) { try { localStorage.removeItem(SEEN); } catch (e) { /* nothing to clear */ } }
     const count = {}, rulers = Math.round(n * .4);
-    const r = chooseQ(Q.filter(q => q.t !== 'choice'), rulers, count), c = chooseQ(Q.filter(q => q.t === 'choice'), n - r.length, count);
+    const r = chooseQ(Q.filter(q => q.t !== 'choice'), rulers, count);
+    const c = chooseQ(Q.filter(q => q.recent), Math.max(1, Math.floor(n / 5)), count);
+    c.push(...chooseQ(Q.filter(q => q.t === 'choice' && !c.includes(q)), n - r.length - c.length, count));
     return shuffle([...r, ...c]).map(q => ({ kind: q.t, q }));
   }
   function pick() {
