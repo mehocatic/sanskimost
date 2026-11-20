@@ -3,6 +3,18 @@
 // Keys ending in .html may contain markup (<br>, <em>).
 window.I18N = window.I18N || {};
 I18N.en = {
+  'kv.competition': "Knowledge challenge",
+  'kv.daily': "Play 10 or 20 questions. Each day this browser gets three ranked games of each length.",
+  'kv.compete': "Play a ranked game",
+  'kv.board': "Leaderboard",
+  'kv.nickname': "Name or nickname for the public leaderboard",
+  'kv.publish': "Publish score",
+  'kv.boardEmpty': "No scores have been published yet.",
+  'kv.netError': "Could not reach the quiz. Please try again.",
+  'kv.limit': "You have used today’s attempts for this quiz length.",
+  'kv.published': "Your score is on the leaderboard.",
+  'kv.storage': "Enable browser storage to play a daily ranked game.",
+  'kv.size': "{n} questions",
   'kv.ligaprvak.q': "Who won the first official municipal football championship in 1979/80?",
   'kv.ligaprvak.a': "Radnički from Zdena earned 33 points, two more than Jedinstvo from Tomina.",
   'kv.ligaprvak.o0': "Radnički Zdena",

@@ -5,6 +5,18 @@
 // are Bosnian, condensed from his text; the English ones in en.js are translations for review.
 window.I18N = window.I18N || {};
 I18N.bs = {
+  'kv.competition': "Takmičenje u znanju",
+  'kv.daily': "Igraj 10 ili 20 pitanja. Svaki dan imaš po tri takmičarske igre za obje dužine na ovom pregledniku.",
+  'kv.compete': "Igraj za rang-listu",
+  'kv.board': "Rang-lista",
+  'kv.nickname': "Ime ili nadimak za javnu rang-listu",
+  'kv.publish': "Objavi rezultat",
+  'kv.boardEmpty': "Još nema objavljenih rezultata.",
+  'kv.netError': "Veza s kvizom nije uspjela. Pokušaj ponovo.",
+  'kv.limit': "Danas si iskoristio sve pokušaje za ovu dužinu kviza.",
+  'kv.published': "Rezultat je objavljen.",
+  'kv.storage': "Za dnevne pokušaje omogući lokalnu pohranu u pregledniku.",
+  'kv.size': "{n} pitanja",
   'kv.ligaprvak.q': "Ko je osvojio prvo službeno prvenstvo općinske nogometne lige 1979/80?",
   'kv.ligaprvak.a': "Radnički iz Zdene osvojio je 33 boda, dva više od Jedinstva iz Tomine.",
   'kv.ligaprvak.o0': "Radnički Zdena",
