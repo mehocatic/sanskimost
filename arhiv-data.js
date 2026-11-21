@@ -170,6 +170,7 @@ window.ARCHIVE = {
     {"f": "slet-1962", "y": 1962, "cat": "ljudi", "cap": "arh.c.slet-1962", "w": 1600, "h": 1003, "quiz": false},
     {"f": "stafeta-mladosti", "y": null, "cat": "ljudi", "cap": "arh.c.stafeta-mladosti", "w": 720, "h": 441, "quiz": false},
     {"f": "cirin-voz-a", "y": null, "cat": "ulice", "cap": "arh.c.cirin-voz-a", "w": 700, "h": 495, "place": "stanica", "quiz": false},
-    {"f": "cirin-voz-b", "y": null, "cat": "ulice", "cap": "arh.c.cirin-voz-b", "w": 700, "h": 495, "place": "stanica", "quiz": false}
+    {"f": "cirin-voz-b", "y": null, "cat": "ulice", "cap": "arh.c.cirin-voz-b", "w": 700, "h": 495, "place": "stanica", "quiz": false},
+    {"f": "stanica-zgrada", "y": null, "cat": "ulice", "cap": "arh.c.stanica-zgrada", "w": 720, "h": 477, "place": "stanica", "quiz": false}
   ]
 };

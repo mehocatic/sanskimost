@@ -325,6 +325,7 @@ I18N.en = {
   'arh.c.stafeta-mladosti': 'A welcome beside a car marked “Štafeta mladosti”. According to the note with the photo, Tito was passing through town.',
   'arh.c.cirin-voz-a': 'A steam locomotive of the narrow-gauge line (“Ćiro”), side view',
   'arh.c.cirin-voz-b': 'A locomotive with wagons at the station',
+  'arh.c.stanica-zgrada': 'The Sanski Most railway station building, two small locomotives in front',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',
