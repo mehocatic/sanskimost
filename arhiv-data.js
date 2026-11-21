@@ -182,6 +182,7 @@ window.ARCHIVE = {
     {"f": "srusen-most-1943", "y": 1943, "cat": "sana", "cap": "arh.c.srusen-most-1943", "w": 1280, "h": 871, "place": "most", "quiz": false},
     {"f": "razglednica-spomenik", "y": null, "cat": "ulice", "cap": "arh.c.razglednica-spomenik", "w": 1300, "h": 890, "src": "hist.src.postcard", "quiz": false},
     {"f": "razglednica-pozdrav-a", "y": null, "cat": "ulice", "cap": "arh.c.razglednica-pozdrav-a", "w": 1300, "h": 890, "src": "hist.src.postcard", "quiz": false},
-    {"f": "razglednica-pozdrav-b", "y": null, "cat": "ulice", "cap": "arh.c.razglednica-pozdrav-b", "w": 1300, "h": 890, "src": "hist.src.postcard", "quiz": false}
+    {"f": "razglednica-pozdrav-b", "y": null, "cat": "ulice", "cap": "arh.c.razglednica-pozdrav-b", "w": 1300, "h": 890, "src": "hist.src.postcard", "quiz": false},
+    {"f": "novi-most-2012-a", "y": 2012, "cat": "sana", "cap": "arh.c.novi-most-2012-a", "w": 960, "h": 720, "place": "most", "quiz": false}
   ]
 };
