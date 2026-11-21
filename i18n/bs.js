@@ -322,6 +322,7 @@ I18N.bs = {
   'arh.c.most-hotel-1970': 'Gradski most i hotel u izgradnji, oko 1970.',
   'arh.c.docek-1972': 'Doček na mostu. Prema opisu uz fotografiju, Tito je 1972. boravio u gradu, na putu na otvaranje spomenika na Kozari.',
   'arh.c.glas-trgovine': 'Niz radnji na trgu, s natpisom „Glas“',
+  'arh.c.autobus-sip-1966': 'Autobus ŠIP-a ispred općine, 5. marta 1966.',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',

@@ -165,6 +165,7 @@ window.ARCHIVE = {
     {"f": "poplava-1976", "y": 1976, "cat": "poplave", "cap": "arh.c.poplava-1976", "w": 934, "h": 535, "quiz": false},
     {"f": "most-hotel-1970", "y": 1970, "cat": "ulice", "cap": "arh.c.most-hotel-1970", "w": 1130, "h": 750, "place": "most", "yl": "arh.y.c1970", "quiz": false},
     {"f": "docek-1972", "y": 1972, "cat": "ljudi", "cap": "arh.c.docek-1972", "w": 820, "h": 585, "place": "most", "yl": "arh.y.c1972", "quiz": false},
-    {"f": "glas-trgovine", "y": null, "cat": "ulice", "cap": "arh.c.glas-trgovine", "w": 955, "h": 571, "quiz": false}
+    {"f": "glas-trgovine", "y": null, "cat": "ulice", "cap": "arh.c.glas-trgovine", "w": 955, "h": 571, "quiz": false},
+    {"f": "autobus-sip-1966", "y": 1966, "cat": "ljudi", "cap": "arh.c.autobus-sip-1966", "w": 720, "h": 441, "quiz": false}
   ]
 };
