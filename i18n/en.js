@@ -335,6 +335,7 @@ I18N.en = {
   'arh.c.poplava-2014-ulica': 'A flooded street',
   'arh.c.srusen-most-1943': 'The destroyed town bridge, 1943',
   'arh.c.razglednica-spomenik': 'A postcard: the monument, the hotel, the square and a street',
+  'arh.c.razglednica-pozdrav-a': 'A postcard “Greetings from Sanski Most”: the monument, the bridge and the hotel',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',

@@ -337,6 +337,7 @@ I18N.bs = {
   'arh.c.poplava-2014-ulica': 'Poplavljena ulica',
   'arh.c.srusen-most-1943': 'Srušeni gradski most, 1943.',
   'arh.c.razglednica-spomenik': 'Razglednica: spomenik, hotel, trg i ulica',
+  'arh.c.razglednica-pozdrav-a': 'Razglednica „Pozdrav iz Sanskog Mosta“: spomenik, most i hotel',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
