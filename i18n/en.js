@@ -319,6 +319,7 @@ I18N.en = {
   'arh.c.poplava-1976': 'The flood of 21 to 23 July 1976. According to the note with the photo, the street is Alagića sokak.',
   'arh.c.most-hotel-1970': 'The town bridge and the hotel under construction, around 1970',
   'arh.c.docek-1972': 'A welcome on the bridge. According to the note with the photo, Tito stayed in town in 1972, on his way to the opening of the monument on Kozara.',
+  'arh.c.glas-trgovine': 'A row of shops on the square, one with the sign “Glas”',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',
