@@ -364,6 +364,9 @@
     $('kv-avg').textContent = [mode === 'surv' ? t('kv.right', { n: right }) + '.' : '', yrs.length ? t('kv.avg', { years: years(avg) }) : '', b > total ? t('kv.best', { n: b }) + '.' : ''].filter(Boolean).join(' ');
     const photo = log.find(x => x.r.kind === 'photo');
     renderCard({game:mode, score:total, max:MAX(), photo:photo ? photo.r.p.f : DECOR[0], lang:I18n.lang});
+    renderList();
+  }
+  function renderList() {
     $('kv-list').innerHTML = log.map(x => {
       const r = x.r;
       if (r.kind === 'photo') return `<li class="${grade(x.e)}"><a href="arhiv#foto=${r.p.f}"><img src="photos/arhiv/t/${r.p.f}.webp" alt="${esc(t(r.p.cap))}" loading="lazy">` +
