@@ -345,6 +345,7 @@ I18N.en = {
   'arh.c.novi-most-2013-a': 'Work on the approach to the bridge, an excavator and workers',
   'arh.c.novi-most-2013-b': 'The railing and the pavement of the new bridge',
   'arh.c.novi-most-2013-c': 'The new bridge railing, looking along the river',
+  'arh.c.novi-most-2013-d': 'The railing and the pavement, not yet finished',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',

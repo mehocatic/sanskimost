@@ -347,6 +347,7 @@ I18N.bs = {
   'arh.c.novi-most-2013-a': 'Radovi na prilazu mostu, bager i radnici',
   'arh.c.novi-most-2013-b': 'Ograda i nogostup novog mosta',
   'arh.c.novi-most-2013-c': 'Nova ograda mosta, pogled uz rijeku',
+  'arh.c.novi-most-2013-d': 'Ograda i nogostup, još bez završne obrade',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
