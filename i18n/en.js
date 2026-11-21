@@ -3,6 +3,14 @@
 // Keys ending in .html may contain markup (<br>, <em>).
 window.I18N = window.I18N || {};
 I18N.en = {
+  'kv.menuTitle': "The <em>Sanski Most</em> quiz",
+  'kv.choose': "Choose a game",
+  'kv.mix': "Photos and questions",
+  'kv.practice': "Practise",
+  'kv.help.mix': "Guess the year of six archive photos and answer four questions.",
+  'kv.help.quiz': "Choose 10 or 20 questions about Sanski Most.",
+  'kv.help.surv': "Choose from four answers. The game ends after your third mistake or after 80 questions.",
+  'kv.modeLimit': "This browser gets three attempts per day for this leaderboard.",
   'kv.competition': "Knowledge challenge",
   'kv.daily': "Play 10 or 20 questions. Each day this browser gets three ranked games of each length.",
   'kv.compete': "Play a ranked game",

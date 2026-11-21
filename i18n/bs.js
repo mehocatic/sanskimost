@@ -5,6 +5,14 @@
 // are Bosnian, condensed from his text; the English ones in en.js are translations for review.
 window.I18N = window.I18N || {};
 I18N.bs = {
+  'kv.menuTitle': "Kviz o <em>Sanskom Mostu</em>",
+  'kv.choose': "Izaberi igru",
+  'kv.mix': "Fotografije i pitanja",
+  'kv.practice': "Vježbaj",
+  'kv.help.mix': "Pogodi godinu na šest fotografija iz arhiva i odgovori na četiri pitanja.",
+  'kv.help.quiz': "Izaberi 10 ili 20 pitanja o Sanskom Mostu.",
+  'kv.help.surv': "Biraj između četiri odgovora. Igra završava trećom greškom ili nakon 80 pitanja.",
+  'kv.modeLimit': "Za ovu rang-listu imaš tri pokušaja dnevno na ovom pregledniku.",
   'kv.competition': "Takmičenje u znanju",
   'kv.daily': "Igraj 10 ili 20 pitanja. Svaki dan imaš po tri takmičarske igre za obje dužine na ovom pregledniku.",
   'kv.compete': "Igraj za rang-listu",
