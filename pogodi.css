@@ -199,3 +199,10 @@
   .kv-end .kv-shot { grid-column: 2; grid-row: 1 / span 5; margin-top: 0; }
   .kv-end .kv-list { grid-column: 1 / -1; }
 }
+.kv-picker { border: 0; padding: 0; margin: 0; min-width: 0; }
+.kv-picker legend { margin-bottom: .75rem; font-size: .8rem; letter-spacing: .08em; }
+.kv-picker button { padding: .75rem 1rem; min-height: 44px; border-radius: .6rem; border: 1px solid #fff4; text-align: left; }
+.kv-picker button[aria-pressed="true"] { color: var(--ink); background: var(--paper); border-color: var(--paper); }
+#kv-description { max-width: 45ch; margin: 1rem 0; }
+.kv-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.25rem; }
+#kv [hidden] { display: none !important; }
