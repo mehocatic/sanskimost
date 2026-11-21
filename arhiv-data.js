@@ -174,6 +174,7 @@ window.ARCHIVE = {
     {"f": "stanica-zgrada", "y": null, "cat": "ulice", "cap": "arh.c.stanica-zgrada", "w": 720, "h": 477, "place": "stanica", "quiz": false},
     {"f": "gimnazija-drveni-most", "y": null, "cat": "ulice", "cap": "arh.c.gimnazija-drveni-most", "w": 853, "h": 596, "quiz": false},
     {"f": "docek-hadzije-1968", "y": 1968, "cat": "ljudi", "cap": "arh.c.docek-hadzije-1968", "w": 824, "h": 567, "quiz": false},
-    {"f": "trg-zastave", "y": null, "cat": "ljudi", "cap": "arh.c.trg-zastave", "w": 740, "h": 494, "place": "trg", "quiz": false}
+    {"f": "trg-zastave", "y": null, "cat": "ljudi", "cap": "arh.c.trg-zastave", "w": 740, "h": 494, "place": "trg", "quiz": false},
+    {"f": "poplava-2014-kolibica", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-kolibica", "w": 1600, "h": 1200, "quiz": false}
   ]
 };
