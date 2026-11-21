@@ -303,6 +303,7 @@ I18N.en = {
   'arh.c.zavljudi': 'A group of townspeople in front of the building',
   'arh.c.poplava-valjak': 'A flooded street, with a road roller on the left',
   'arh.c.poplava-odozgo': 'Flooded streets and houses, seen from above',
+  'arh.c.masinski-most-1956': 'The Mašinski railway bridge, 1956',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',
