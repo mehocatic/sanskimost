@@ -333,6 +333,7 @@ I18N.bs = {
   'arh.c.trg-zastave': 'Okupljeni građani na trgu, u Ključkoj ulici, sa zastavama na zgradi',
   'arh.c.poplava-2014-kolibica': 'Drvena kolibica u vodi do krova',
   'arh.c.poplava-2014-most-a': 'Visoka voda uz pješački most',
+  'arh.c.poplava-2014-most-b': 'Pješački most i zgrade uz rijeku za vrijeme poplave',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',

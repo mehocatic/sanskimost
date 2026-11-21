@@ -176,6 +176,7 @@ window.ARCHIVE = {
     {"f": "docek-hadzije-1968", "y": 1968, "cat": "ljudi", "cap": "arh.c.docek-hadzije-1968", "w": 824, "h": 567, "quiz": false},
     {"f": "trg-zastave", "y": null, "cat": "ljudi", "cap": "arh.c.trg-zastave", "w": 740, "h": 494, "place": "trg", "quiz": false},
     {"f": "poplava-2014-kolibica", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-kolibica", "w": 1600, "h": 1200, "quiz": false},
-    {"f": "poplava-2014-most-a", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-most-a", "w": 1600, "h": 1200, "quiz": false}
+    {"f": "poplava-2014-most-a", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-most-a", "w": 1600, "h": 1200, "quiz": false},
+    {"f": "poplava-2014-most-b", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-most-b", "w": 1600, "h": 1200, "quiz": false}
   ]
 };
