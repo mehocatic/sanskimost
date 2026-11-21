@@ -29,5 +29,6 @@ insert into quiz_private.photos(id,taken_year) values
 ('izbori-1996',1996),
 ('kino-sana-1996',1996),
 ('posta-1996',1996),
-('sana-hotel-1996',1996);
+('sana-hotel-1996',1996),
+('zdena-1996',1996);
 commit;
