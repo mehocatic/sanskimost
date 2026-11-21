@@ -328,6 +328,7 @@ I18N.bs = {
   'arh.c.cirin-voz-a': 'Parna lokomotiva uskotračne pruge („Ćiro“), bočni pogled',
   'arh.c.cirin-voz-b': 'Lokomotiva s vagonima na stanici',
   'arh.c.stanica-zgrada': 'Zgrada željezničke stanice Sanski Most, ispred dvije male lokomotive',
+  'arh.c.gimnazija-drveni-most': 'Zgrada stare gimnazije i drveni most preko Sane',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',

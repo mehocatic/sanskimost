@@ -326,6 +326,7 @@ I18N.en = {
   'arh.c.cirin-voz-a': 'A steam locomotive of the narrow-gauge line (“Ćiro”), side view',
   'arh.c.cirin-voz-b': 'A locomotive with wagons at the station',
   'arh.c.stanica-zgrada': 'The Sanski Most railway station building, two small locomotives in front',
+  'arh.c.gimnazija-drveni-most': 'The old grammar school and the wooden bridge over the Sana',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',
