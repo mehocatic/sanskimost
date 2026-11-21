@@ -13,7 +13,7 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ROUNDS = 10, PHOTOS = 6, SEEN = 'sm-pogodi-seen', LIVES = 3;
   // mix: photos and questions; quiz: 10 or 20 questions; surv: questions until the third mistake
-  let mode = 'mix', len = 10, lives = LIVES;
+  let mode = 'daily', len = 10, lives = LIVES;
   const ranked = window.QuizRanked;
   let pending = false, competitive = false;
   const gameSize = () => mode === 'surv' ? 80 : mode === 'mix' ? 10 : mode === 'daily' ? 3 : len;
