@@ -167,6 +167,7 @@ window.ARCHIVE = {
     {"f": "docek-1972", "y": 1972, "cat": "ljudi", "cap": "arh.c.docek-1972", "w": 820, "h": 585, "place": "most", "yl": "arh.y.c1972", "quiz": false},
     {"f": "glas-trgovine", "y": null, "cat": "ulice", "cap": "arh.c.glas-trgovine", "w": 955, "h": 571, "quiz": false},
     {"f": "autobus-sip-1966", "y": 1966, "cat": "ljudi", "cap": "arh.c.autobus-sip-1966", "w": 720, "h": 441, "quiz": false},
-    {"f": "slet-1962", "y": 1962, "cat": "ljudi", "cap": "arh.c.slet-1962", "w": 1600, "h": 1003, "quiz": false}
+    {"f": "slet-1962", "y": 1962, "cat": "ljudi", "cap": "arh.c.slet-1962", "w": 1600, "h": 1003, "quiz": false},
+    {"f": "stafeta-mladosti", "y": null, "cat": "ljudi", "cap": "arh.c.stafeta-mladosti", "w": 720, "h": 441, "quiz": false}
   ]
 };

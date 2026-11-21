@@ -322,6 +322,7 @@ I18N.en = {
   'arh.c.glas-trgovine': 'A row of shops on the square, one with the sign “Glas”',
   'arh.c.autobus-sip-1966': 'A ŠIP bus in front of the municipal building, 5 March 1966',
   'arh.c.slet-1962': 'Marchers at the 1962 slet, a gymnastic festival',
+  'arh.c.stafeta-mladosti': 'A welcome beside a car marked “Štafeta mladosti”. According to the note with the photo, Tito was passing through town.',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',

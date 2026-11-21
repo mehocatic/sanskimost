@@ -324,6 +324,7 @@ I18N.bs = {
   'arh.c.glas-trgovine': 'Niz radnji na trgu, s natpisom „Glas“',
   'arh.c.autobus-sip-1966': 'Autobus ŠIP-a ispred općine, 5. marta 1966.',
   'arh.c.slet-1962': 'Defile učesnika sleta, 1962.',
+  'arh.c.stafeta-mladosti': 'Doček uz automobil s natpisom „Štafeta mladosti“. Prema opisu uz fotografiju, kroz grad je tada prolazio Tito.',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
