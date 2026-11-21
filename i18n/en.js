@@ -332,6 +332,7 @@ I18N.en = {
   'arh.c.poplava-2014-kolibica': 'A wooden hut in water up to its roof',
   'arh.c.poplava-2014-most-a': 'High water by the footbridge',
   'arh.c.poplava-2014-most-b': 'The footbridge and the buildings by the river during the flood',
+  'arh.c.poplava-2014-ulica': 'A flooded street',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',
