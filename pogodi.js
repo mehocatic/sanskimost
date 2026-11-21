@@ -1,4 +1,5 @@
 // "Guess the year": six dated photographs from arhiv-data.js and four questions from pogodi-data.js, one at a time.
+// The daily challenge is one photograph and two questions, the same for everyone that day, played once (result and streak stay in the browser).
 // A second mode plays ten questions only. Questions already answered are put off until the bank has been used up.
 // A year guess scores 100 points minus 100/zero for every year it is off (zero is 22% of the ruler: 25 years on the photo ruler).
 // A multiple-choice question is worth 100 or nothing. The best total is kept in localStorage.
@@ -79,7 +80,27 @@
     c.push(...chooseQ(Q.filter(q => q.t === 'choice' && !c.includes(q)), n - r.length - c.length, count));
     return shuffle([...r, ...c]).map(q => ({ kind: q.t, q }));
   }
+  /* ---------- daily challenge ---------- */
+  const DKEY = 'sm-pogodi-daily', DMAX = 300;
+  const today = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Sarajevo' }).format(new Date());
+  const dayIdx = d => Math.floor(Date.parse(d + 'T00:00:00Z') / 864e5);
+  const dayNo = () => Math.max(1, dayIdx(today()) - dayIdx('2026-11-21') + 1);
+  const dailyRec = () => { try { return JSON.parse(localStorage.getItem(DKEY)); } catch (e) { return null; } };
+  const playedToday = () => { const r = dailyRec(); return !!r && r.day === today(); };
+  const streakNow = () => { const r = dailyRec(); return r && dayIdx(today()) - dayIdx(r.day) <= 1 ? r.streak : 0; };
+  // a photograph and two questions of different subjects, drawn from the date, so everyone gets the same three
+  function pickDaily() {
+    let seed = (dayIdx(today()) * 2654435761) >>> 0;
+    const rnd = () => { seed = (seed + 0x6D2B79F5) | 0; let x = Math.imul(seed ^ seed >>> 15, 1 | seed); x = x + Math.imul(x ^ x >>> 7, 61 | x) ^ x; return ((x ^ x >>> 14) >>> 0) / 4294967296; };
+    const one = list => list[Math.floor(rnd() * list.length)];
+    const byKey = k => (a, b) => a[k] < b[k] ? -1 : a[k] > b[k] ? 1 : 0;
+    const photo = one([...POOL].sort(byKey('f')));
+    const pool = Q.filter(q => q.t === 'choice').sort(byKey('id'));
+    const a = one(pool), b = one(pool.filter(q => q.c !== a.c));
+    return [{ kind: 'photo', p: photo }, { kind: 'choice', q: a }, { kind: 'choice', q: b }];
+  }
   function pick() {
+    if (mode === 'daily') return pickDaily();
     if (mode === 'quiz') return pickQuestions(len);
     // three mistakes: answers to pick only; a ruler guess is rarely spot on, so it would cost lives unfairly
     if (mode === 'surv') {
