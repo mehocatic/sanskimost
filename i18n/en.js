@@ -29,6 +29,8 @@ I18N.en = {
   'kv.help.daily': "One photograph and two questions, the same for every player. A new challenge each day, played once a day.",
   'kv.playDaily': "Play today's challenge",
   'kv.viewDaily': "See today's result",
+  'kv.streak': "Day streak: {n}",
+  'kv.dailyDone': "The next challenge is tomorrow.",
   'kv.ligaprvak.q': "Who won the first official municipal football championship in 1979/80?",
   'kv.ligaprvak.a': "Radnički from Zdena earned 33 points, two more than Jedinstvo from Tomina.",
   'kv.ligaprvak.o0': "Radnički Zdena",

@@ -31,6 +31,8 @@ I18N.bs = {
   'kv.help.daily': "Jedna fotografija i dva pitanja, ista za sve igrače. Novi izazov je svaki dan, a igra se jednom dnevno.",
   'kv.playDaily': "Igraj današnji izazov",
   'kv.viewDaily': "Pogledaj današnji rezultat",
+  'kv.streak': "Niz dana: {n}",
+  'kv.dailyDone': "Novi izazov je sutra.",
   'kv.ligaprvak.q': "Ko je osvojio prvo službeno prvenstvo općinske nogometne lige 1979/80?",
   'kv.ligaprvak.a': "Radnički iz Zdene osvojio je 33 boda, dva više od Jedinstva iz Tomine.",
   'kv.ligaprvak.o0': "Radnički Zdena",
