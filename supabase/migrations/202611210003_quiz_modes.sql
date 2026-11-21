@@ -13,5 +13,6 @@ alter table quiz_private.photos enable row level security;
 revoke all on quiz_private.photos from public,anon,authenticated;
 insert into quiz_private.photos(id,taken_year) values
 ('spomenik-1915',1915),
-('crkva-sasina-1938',1938);
+('crkva-sasina-1938',1938),
+('kuca-progomolje-1938',1938);
 commit;
