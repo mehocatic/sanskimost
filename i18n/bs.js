@@ -330,6 +330,7 @@ I18N.bs = {
   'arh.c.stanica-zgrada': 'Zgrada željezničke stanice Sanski Most, ispred dvije male lokomotive',
   'arh.c.gimnazija-drveni-most': 'Zgrada stare gimnazije i drveni most preko Sane',
   'arh.c.docek-hadzije-1968': 'Doček hadžije Muharema Zukića, 1968.',
+  'arh.c.trg-zastave': 'Okupljeni građani na trgu, u Ključkoj ulici, sa zastavama na zgradi',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
