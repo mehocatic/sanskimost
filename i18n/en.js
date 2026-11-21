@@ -312,6 +312,7 @@ I18N.en = {
   'arh.c.kruzni-tok': 'Paving a roundabout in town',
   'arh.c.kino-sana-razglednica': 'The Sana cinema on an old postcard',
   'arh.c.trg-cvjetnjak': 'The square with a flower bed, a tall building behind',
+  'arh.c.sip-dzamija-kuce': 'Across the Sana: the ŠIP building, a mosque and old Bosnian houses',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',

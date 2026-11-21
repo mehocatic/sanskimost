@@ -314,6 +314,7 @@ I18N.bs = {
   'arh.c.kruzni-tok': 'Asfaltiranje kružnog toka u gradu',
   'arh.c.kino-sana-razglednica': 'Kino „Sana“ na staroj razglednici',
   'arh.c.trg-cvjetnjak': 'Trg s cvjetnjakom, u pozadini visoka zgrada',
+  'arh.c.sip-dzamija-kuce': 'Pogled preko Sane: zgrada ŠIP-a, džamija i stare bosanske kuće',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
