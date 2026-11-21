@@ -88,5 +88,6 @@ revoke all on function public.quiz_start(uuid,integer,boolean) from public, auth
 grant execute on function public.quiz_start(uuid,integer,boolean) to anon;
 
 insert into quiz_private.questions (id,category,kind,question_bs,question_en,scale_min,scale_max,target,unit,explanation_bs,explanation_en,source_name,source_url) values
-('blihamon', 'priroda', 'year', 'Koje je godine vodopad Blihe proglašen prirodnim spomenikom?', 'In what year was the Bliha waterfall declared a natural monument?', 1930, 2000, 1965, null, '1965.', '1965.', 'Wikipedia: Bliha Falls', 'https://en.wikipedia.org/wiki/Bliha_Falls');
+('blihamon', 'priroda', 'year', 'Koje je godine vodopad Blihe proglašen prirodnim spomenikom?', 'In what year was the Bliha waterfall declared a natural monument?', 1930, 2000, 1965, null, '1965.', '1965.', 'Wikipedia: Bliha Falls', 'https://en.wikipedia.org/wiki/Bliha_Falls'),
+('povrsina', 'priroda', 'num', 'Kolika je površina općine Sanski Most?', 'What is the area of the Sanski Most municipality?', 300, 1300, 781, 'km²', '781,17 km² prema podacima općine. Samo gradsko naselje zauzima 12,90 km².', '781.17 km² according to the municipality. The town itself covers 12.90 km².', 'Općina Sanski Most: Otkrijte Sanski Most', 'https://sanskimost.gov.ba/otkrijte-sanski-most-biser-krajine-koji-spaja-prirodu-i-tradiciju/');
 commit;
