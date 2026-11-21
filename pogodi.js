@@ -16,8 +16,8 @@
   let mode = 'mix', len = 10, lives = LIVES;
   const ranked = window.QuizRanked;
   let pending = false, competitive = false;
-  const gameSize = () => mode === 'surv' ? 80 : mode === 'mix' ? 10 : len;
-  const KEY = () => competitive ? 'sm-pogodi-ranked-' + (mode === 'quiz' ? len : mode) : mode === 'surv' ? 'sm-pogodi-best-s' : mode === 'quiz' ? (len === 20 ? 'sm-pogodi-best-q20' : 'sm-pogodi-best-q') : 'sm-pogodi-best';
+  const gameSize = () => mode === 'surv' ? 80 : mode === 'mix' ? 10 : mode === 'daily' ? 3 : len;
+  const KEY = () => mode === 'daily' ? 'sm-pogodi-best-d' : competitive ? 'sm-pogodi-ranked-' + (mode === 'quiz' ? len : mode) : mode === 'surv' ? 'sm-pogodi-best-s' : mode === 'quiz' ? (len === 20 ? 'sm-pogodi-best-q20' : 'sm-pogodi-best-q') : 'sm-pogodi-best';
   // the most a game can give; a game until three mistakes has no top
   const MAX = () => mode === 'surv' ? 0 : set.length * 100;
   const PHOTO_SCALE = { from: 1900, to: A.endYear };
@@ -152,6 +152,7 @@
   async function start(forBoard) {
     if (pending) return;
     ranked.status();
+    if (mode === 'daily' && playedToday()) { competitive = false; log = []; endDaily(); return; }
     let remote;
     if (forBoard) {
       pending = true;
@@ -296,7 +297,7 @@
       $('kv-q').hidden = true;
     }
     if (serverPoints !== undefined) entry.pts = serverPoints;
-    if (r.kind !== 'photo') markSeen(r.q.id);
+    if (r.kind !== 'photo' && mode !== 'daily') markSeen(r.q.id);
     total += entry.pts;
     log.push(entry);
     count($('kv-total'), total - entry.pts, total);
