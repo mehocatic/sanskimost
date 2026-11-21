@@ -336,6 +336,7 @@ I18N.bs = {
   'arh.c.poplava-2014-most-b': 'Pješački most i zgrade uz rijeku za vrijeme poplave',
   'arh.c.poplava-2014-ulica': 'Poplavljena ulica',
   'arh.c.srusen-most-1943': 'Srušeni gradski most, 1943.',
+  'arh.c.razglednica-spomenik': 'Razglednica: spomenik, hotel, trg i ulica',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
