@@ -59,5 +59,6 @@ insert into quiz_private.photos(id,taken_year) values
 ('poplava-2014-b',2014),
 ('poplava-2014-kamion',2014),
 ('poplava-2014-konj',2014),
-('sana-2014',2014);
+('sana-2014',2014),
+('musalla-ljeto',2018);
 commit;
