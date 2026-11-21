@@ -151,6 +151,7 @@ window.ARCHIVE = {
     {"f": "zupe-sana-mren", "y": null, "cat": "dokumenti", "cap": "hist.2.f.map", "w": 658, "h": 736, "src": "hist.src.kres"},
     {"f": "poplava-valjak", "y": null, "cat": "poplave", "cap": "arh.c.poplava-valjak", "w": 1600, "h": 1100, "src": "SanUM", "quiz": false},
     {"f": "poplava-odozgo", "y": null, "cat": "poplave", "cap": "arh.c.poplava-odozgo", "w": 1600, "h": 1081, "src": "SanUM", "quiz": false},
-    {"f": "masinski-most-1956", "y": 1956, "cat": "sana", "cap": "arh.c.masinski-most-1956", "w": 1416, "h": 1004, "src": "SanUM", "quiz": false}
+    {"f": "masinski-most-1956", "y": 1956, "cat": "sana", "cap": "arh.c.masinski-most-1956", "w": 1416, "h": 1004, "src": "SanUM", "quiz": false},
+    {"f": "centar-cvijece", "y": null, "cat": "ulice", "cap": "arh.c.centar-cvijece", "w": 720, "h": 507, "src": "SanUM", "quiz": false}
   ]
 };
