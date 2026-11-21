@@ -309,6 +309,7 @@ I18N.en = {
   'arh.c.sana-led-a': 'The frozen Sana, a mosque with four minarets in the distance',
   'arh.c.sana-led-b': 'A boat on the frozen Sana',
   'arh.c.sana-led-c': 'Snow on the bank of the Sana',
+  'arh.c.kruzni-tok': 'Paving a roundabout in town',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',

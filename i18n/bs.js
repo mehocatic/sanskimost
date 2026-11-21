@@ -311,6 +311,7 @@ I18N.bs = {
   'arh.c.sana-led-a': 'Zaleđena Sana, u daljini džamija s četiri minareta',
   'arh.c.sana-led-b': 'Čamac na zaleđenoj Sani',
   'arh.c.sana-led-c': 'Snijeg na obali Sane',
+  'arh.c.kruzni-tok': 'Asfaltiranje kružnog toka u gradu',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
