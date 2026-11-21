@@ -351,6 +351,8 @@
 
   /* ---------- result ---------- */
   function end() {
+    if (mode === 'daily') return endDaily();
+    $('kv-shot').parentElement.hidden = false; $('kv-dl').hidden = false; $('kv-again').hidden = false;
     const yrs = log.filter(x => x.r.kind !== 'choice');
     const avg = yrs.length ? Math.round(yrs.reduce((s, x) => s + x.e, 0) / yrs.length) : 0;
     let b = best();
@@ -376,6 +378,26 @@
       return `<li class="${r.kind === 'choice' ? (x.pts ? 'g' : 'b') : grade(x.e)} qi"><div class="kv-qcard"><span aria-hidden="true">?</span><small>${T(r.q.q)}</small></div><p><b>${ans}</b>${you}</p></li>`;
     }).join('');
   }
+  function endDaily() {
+    const day = today();
+    let rec = dailyRec();
+    if ((!rec || rec.day !== day) && log.length) {
+      const streak = rec && dayIdx(day) - dayIdx(rec.day) === 1 ? rec.streak + 1 : 1;
+      rec = { day, n: dayNo(), score: total, streak, marks: log.map(x => x.r.kind === 'choice' ? (x.pts ? 'g' : 'b') : grade(x.e)).join('') };
+      try { localStorage.setItem(DKEY, JSON.stringify(rec)); } catch (e) { /* not kept */ }
+    }
+    if (!rec || rec.day !== day) return;
+    show('kv-end');
+    $('kv-shot').parentElement.hidden = true; $('kv-dl').hidden = true; $('kv-again').hidden = true;
+    $('kv-share-link').hidden = true; $('kv-share-status').textContent = '';
+    count($('kv-final'), 0, rec.score);
+    $('kv-max').textContent = '/ ' + DMAX;
+    $('kv-rank').textContent = t(rankKey(rec.score, 'daily', DMAX));
+    $('kv-avg').textContent = dailyMarks(rec) + ' · ' + t('kv.streak', { n: rec.streak }) + '. ' + t('kv.dailyDone');
+    renderList();
+  }
+  const MARK = { g: '🟩', m: '🟨', b: '🟥' };
+  const dailyMarks = r => [...r.marks].map(c => MARK[c]).join('');
   /* ---------- the result as a picture (1080 x 1350, the size of a post; a story crops it well) ---------- */
   let sharedResult = null, shareUrl = '', imageUrl = '', renderId = 0;
   const publicQuiz = document.querySelector('meta[property="og:url"]').content;
