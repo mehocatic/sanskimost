@@ -49,5 +49,6 @@ insert into quiz_private.photos(id,taken_year) values
 ('dzamija-gradnja-b',1998),
 ('dzamija-gradnja-c',1998),
 ('dzamija-gradnja-d',1998),
-('dzamija-ulica-1998',1998);
+('dzamija-ulica-1998',1998),
+('muhici-1998-a',1998);
 commit;
