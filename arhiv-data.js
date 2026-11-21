@@ -149,6 +149,7 @@ window.ARCHIVE = {
     {"f": "zaledjena-sana", "y": null, "cat": "sana", "cap": "hist.6.g4", "w": 710, "h": 538},
     {"f": "zavnobih-ljudi", "y": null, "cat": "ljudi", "cap": "arh.c.zavljudi", "w": 800, "h": 466, "place": "sokolski"},
     {"f": "zupe-sana-mren", "y": null, "cat": "dokumenti", "cap": "hist.2.f.map", "w": 658, "h": 736, "src": "hist.src.kres"},
-    {"f": "poplava-valjak", "y": null, "cat": "poplave", "cap": "arh.c.poplava-valjak", "w": 1600, "h": 1100, "src": "SanUM", "quiz": false}
+    {"f": "poplava-valjak", "y": null, "cat": "poplave", "cap": "arh.c.poplava-valjak", "w": 1600, "h": 1100, "src": "SanUM", "quiz": false},
+    {"f": "poplava-odozgo", "y": null, "cat": "poplave", "cap": "arh.c.poplava-odozgo", "w": 1600, "h": 1081, "src": "SanUM", "quiz": false}
   ]
 };
