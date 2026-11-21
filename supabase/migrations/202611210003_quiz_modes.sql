@@ -42,5 +42,6 @@ insert into quiz_private.photos(id,taken_year) values
 ('prijedorska-1997-d',1997),
 ('sana-1997',1997),
 ('ulica-1997-a',1997),
-('ulica-1997-b',1997);
+('ulica-1997-b',1997),
+('zuta-zgrada-1997',1997);
 commit;
