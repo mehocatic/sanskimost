@@ -11,4 +11,6 @@ alter table quiz_private.results drop constraint results_score_check,
 create table quiz_private.photos (id text primary key, taken_year integer not null);
 alter table quiz_private.photos enable row level security;
 revoke all on quiz_private.photos from public,anon,authenticated;
+insert into quiz_private.photos(id,taken_year) values
+('spomenik-1915',1915);
 commit;
