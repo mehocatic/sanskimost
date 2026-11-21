@@ -398,6 +398,15 @@
   }
   const MARK = { g: '🟩', m: '🟨', b: '🟥' };
   const dailyMarks = r => [...r.marks].map(c => MARK[c]).join('');
+  async function shareText() {
+    const r = dailyRec(), text = t('kv.dailyShare', { n: r.n, marks: dailyMarks(r), score: r.score, max: DMAX, streak: r.streak, url: publicQuiz });
+    if (navigator.share) {
+      try { await navigator.share({ text }); return; }
+      catch (error) { if (error.name === 'AbortError') return; }
+    }
+    try { await navigator.clipboard.writeText(text); $('kv-share-status').textContent = t('kv.textCopied'); }
+    catch { $('kv-share-status').textContent = t('kv.shareFail'); }
+  }
   /* ---------- the result as a picture (1080 x 1350, the size of a post; a story crops it well) ---------- */
   let sharedResult = null, shareUrl = '', imageUrl = '', renderId = 0;
   const publicQuiz = document.querySelector('meta[property="og:url"]').content;
@@ -476,6 +485,7 @@
     $('kv-dl').removeAttribute('aria-disabled');
   }
   $('kv-share').addEventListener('click', async () => {
+    if (mode === 'daily') return shareText();
     const url = shareUrl;
     if (!url) return;
     if (navigator.share) {
