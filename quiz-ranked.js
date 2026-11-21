@@ -4,7 +4,7 @@ window.QuizRanked = (() => {
   const $ = id => document.getElementById(id);
   const board = $('kv-board'), form = $('kv-submit').querySelector('form');
   const t = (key, vars) => I18n.t('kv.' + key, vars);
-  let token, size = 10, message = '', boardRequest = 0;
+  let token, mode = 'mix', size = 10, message = '', boardRequest = 0;
 
   async function rpc(method, data) {
     const response = await fetch(config.url + '/rest/v1/rpc/quiz_' + method, {
@@ -29,10 +29,10 @@ window.QuizRanked = (() => {
     const list = board.querySelector('ol'), note = board.querySelector('p');
     list.replaceChildren();
     note.textContent = '';
-    board.querySelector('summary').textContent = t('board') + ' · ' + t('size', {n:size});
+    board.querySelector('summary').textContent = t('board') + ' · ' + (mode === 'quiz' ? t('quiz') + ' · ' + t('size', {n:size}) : t(mode));
     if (!board.open) return;
     try {
-      const rows = await rpc('board', {p_size:size});
+      const rows = await rpc('board', {p_size:size,p_mode:mode});
       if (request !== boardRequest) return;
       rows.forEach(({display_name, score}) => {
         const item = document.createElement('li');
@@ -44,7 +44,7 @@ window.QuizRanked = (() => {
       if (!rows.length) note.textContent = t('boardEmpty');
     } catch { if (request === boardRequest) note.textContent = t('netError'); }
   }
-  async function start(count) {
+  async function start(selected,count) {
     let player;
     try {
       player = localStorage.getItem('kv-player');
@@ -53,14 +53,23 @@ window.QuizRanked = (() => {
         localStorage.setItem('kv-player',player);
       }
     } catch { throw new Error('storage'); }
-    const game = await rpc('start', {p_player:player,p_size:count});
+    const game = await rpc('start', {p_player:player,p_size:count,p_scales:true,p_mode:selected});
     token = game.token;
+    mode = selected;
     size = count;
     form.reset();
     form.hidden = false;
-    return game.questions.map(row => ({kind:'choice', q:{
-      id:row.id, t:'choice', q:row.q, o:row.bs.map((v,i) => [v,row.en[i]])
-    }}));
+    return game.questions.map(row => {
+      if (row.kind === 'photo') {
+        const photo = window.ARCHIVE.photos.find(p => p.f === row.photo);
+        if (!photo) throw new Error('unknown_photo');
+        return {kind:'photo', p:{...photo}, to:row.to};
+      }
+      const q = {id:row.id, t:row.kind, q:row.q};
+      if (row.kind === 'choice') q.o = row.bs.map((v,i) => [v,row.en[i]]);
+      else Object.assign(q, {f:row.f, to:row.to, u:row.u});
+      return {kind:row.kind, q};
+    });
   }
   function finish() {
     $('kv-submit').hidden = false;
@@ -84,10 +93,12 @@ window.QuizRanked = (() => {
   });
   board.addEventListener('toggle', refresh);
   if (config) {
+    $('kv-ranked').hidden = false;
     $('kv-competition').hidden = false;
     refresh();
     addEventListener('langchange', () => { status(message); refresh(); });
   }
   return {start, finish, status, answer:(round,choice) => rpc('answer',{p_token:token,p_round:round,p_choice:choice}),
-    select(count) { size = count; if (config) refresh(); }};
+    menu() { token = null; $('kv-submit').hidden = true; $('kv-competition').append(board); status(); },
+    select(selected,count) { mode = selected; size = count; if (config) refresh(); }};
 })();
