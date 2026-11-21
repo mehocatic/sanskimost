@@ -757,7 +757,7 @@ I18N.en = {
   'hist.5.f.fudbal2': 'A football team in striped shirts',
   'hist.5.f.most2': 'The concrete town bridge over the Sana',
   'hist.5.f.rat1': 'Military and political leaders in Sanski Most, 1943 or 1944. From the left: Šefket Maglajlić, Slavko Rodić, Ilija Došen and the fighter Rodić.',
-  'hist.5.f.rat2': 'At the railway station, around 1941',
+  'hist.5.f.rat2': 'Šefket Maglajlić and Slavko Rodić at the railway station in Sanski Most, 1944',
   'hist.src.5.html': '“Zajednica”, no. 6 (August 1968), the page “August u Sanskom Mostu”: the programme of the “Sana” cinema, the library and the reading rooms.',
   'hist.src.6.html': 'Edin Šarčević: photographs of the town from 1996-1998, dated on the album pages.',
   'hist.src.7.html': 'Receipts of the Društveni dom from 1958 and 1959, and a note on the carpenter Mijo Kosorčić.',

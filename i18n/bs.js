@@ -759,7 +759,7 @@ I18N.bs = {
   'hist.5.f.fudbal2': 'Nogometna ekipa u prugastim dresovima',
   'hist.5.f.most2': 'Betonski gradski most preko Sane',
   'hist.5.f.rat1': 'Vojno-politički rukovodioci u Sanskom Mostu, 1943. ili 1944. Slijeva: Šefket Maglajlić, Slavko Rodić, Ilija Došen i borac Rodić.',
-  'hist.5.f.rat2': 'Na željezničkoj stanici, oko 1941.',
+  'hist.5.f.rat2': 'Šefket Maglajlić i Slavko Rodić na željezničkoj stanici u Sanskom Mostu, 1944.',
   'hist.src.5.html': '„Zajednica“, br. 6 (august 1968), stranica „August u Sanskom Mostu“: program kina „Sana“, biblioteka i čitaonice.',
   'hist.src.6.html': 'Edin Šarčević: fotografije grada iz 1996-1998, s datumima na stranicama albuma.',
   'hist.src.7.html': 'Računi Društvenog doma iz 1958. i 1959. i zapis o stolaru Miji Kosorčiću.',
