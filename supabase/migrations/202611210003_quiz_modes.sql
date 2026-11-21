@@ -19,5 +19,6 @@ insert into quiz_private.photos(id,taken_year) values
 ('most-1939',1939),
 ('sokolski-dom',1939),
 ('blihe-1942',1942),
-('munara-sehovci-1962',1962);
+('munara-sehovci-1962',1962),
+('setnja-1972',1972);
 commit;
