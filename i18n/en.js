@@ -342,6 +342,7 @@ I18N.en = {
   'arh.c.novi-most-2012-c': 'Building the new bridge, 24 November 2012',
   'arh.c.novi-most-2012-d': 'Formwork and reinforcement of the deck',
   'arh.c.novi-most-2012-e': 'The deck under construction, looking along the bridge',
+  'arh.c.novi-most-2013-a': 'Work on the approach to the bridge, an excavator and workers',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',

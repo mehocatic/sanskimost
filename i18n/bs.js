@@ -344,6 +344,7 @@ I18N.bs = {
   'arh.c.novi-most-2012-c': 'Gradnja novog mosta, 24. novembra 2012.',
   'arh.c.novi-most-2012-d': 'Oplata i armatura kolovozne ploče',
   'arh.c.novi-most-2012-e': 'Kolovozna ploča u izradi, pogled niz most',
+  'arh.c.novi-most-2013-a': 'Radovi na prilazu mostu, bager i radnici',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
