@@ -157,6 +157,7 @@ window.ARCHIVE = {
     {"f": "sana-led-a", "y": null, "cat": "sana", "cap": "arh.c.sana-led-a", "w": 1500, "h": 1000, "src": "Foto: Grgić", "quiz": false},
     {"f": "sana-led-b", "y": null, "cat": "sana", "cap": "arh.c.sana-led-b", "w": 1000, "h": 1500, "src": "Foto: Grgić", "quiz": false},
     {"f": "sana-led-c", "y": null, "cat": "sana", "cap": "arh.c.sana-led-c", "w": 1000, "h": 1500, "src": "Foto: Grgić", "quiz": false},
-    {"f": "kruzni-tok", "y": null, "cat": "ulice", "cap": "arh.c.kruzni-tok", "w": 1600, "h": 1067, "quiz": false}
+    {"f": "kruzni-tok", "y": null, "cat": "ulice", "cap": "arh.c.kruzni-tok", "w": 1600, "h": 1067, "quiz": false},
+    {"f": "kino-sana-razglednica", "y": null, "cat": "ulice", "cap": "arh.c.kino-sana-razglednica", "w": 892, "h": 631, "place": "kino", "src": "hist.src.postcard", "quiz": false}
   ]
 };
