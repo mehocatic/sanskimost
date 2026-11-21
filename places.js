@@ -270,5 +270,16 @@ const PLACES = [
       // the mark "#ArchitectonicTravels" is on the photograph itself and was left there; TODO(verify): author and license
       pic("susnjar.webp", { author: "ArchitectonicTravels", alt: "Obelisk memorijalnog kompleksa Šušnjar" })
     ]
+  },
+  {
+    slug: "stari-majdan-most",
+    // coords: not known (no marker). TODO(verify): the location of the bridge, its age and the year it was declared a monument
+    // (the Commission to Preserve National Monuments declared a "Rimski most" on the river Orlja a historic monument in 2011; not confirmed to be this bridge).
+    // TODO(verify): the source text (KONS, Pečenković) dates the town both to the middle of the 18th century and says that in the first half of
+    // the 18th century it had 2 large and 3 small cannons and 300 border guards; the cannon sentence was left out because of that.
+    see: ["kamengrad"],
+    photos: [
+      pic("stari-majdan-most.webp", { alt: "Kameni most u Starom Majdanu" }) // 1600 x 1200; author not known (TODO(verify))
+    ]
   }
 ];
