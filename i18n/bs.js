@@ -316,6 +316,7 @@ I18N.bs = {
   'arh.c.trg-cvjetnjak': 'Trg s cvjetnjakom, u pozadini visoka zgrada',
   'arh.c.sip-dzamija-kuce': 'Pogled preko Sane: zgrada ŠIP-a, džamija i stare bosanske kuće',
   'arh.c.pumpa-vedro-polje': 'Prva benzinska pumpa na Vedrom polju',
+  'arh.c.poplava-1976': 'Poplava od 21. do 23. jula 1976. Prema opisu uz fotografiju, ulica je Alagića sokak.',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',

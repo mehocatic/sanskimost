@@ -314,6 +314,7 @@ I18N.en = {
   'arh.c.trg-cvjetnjak': 'The square with a flower bed, a tall building behind',
   'arh.c.sip-dzamija-kuce': 'Across the Sana: the ŠIP building, a mosque and old Bosnian houses',
   'arh.c.pumpa-vedro-polje': 'The first petrol station at Vedro polje',
+  'arh.c.poplava-1976': 'The flood of 21 to 23 July 1976. According to the note with the photo, the street is Alagića sokak.',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',

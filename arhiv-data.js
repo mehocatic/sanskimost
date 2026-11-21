@@ -161,6 +161,7 @@ window.ARCHIVE = {
     {"f": "kino-sana-razglednica", "y": null, "cat": "ulice", "cap": "arh.c.kino-sana-razglednica", "w": 892, "h": 631, "place": "kino", "src": "hist.src.postcard", "quiz": false},
     {"f": "trg-cvjetnjak", "y": null, "cat": "ulice", "cap": "arh.c.trg-cvjetnjak", "w": 820, "h": 607, "place": "trg", "quiz": false},
     {"f": "sip-dzamija-kuce", "y": null, "cat": "sana", "cap": "arh.c.sip-dzamija-kuce", "w": 896, "h": 548, "quiz": false},
-    {"f": "pumpa-vedro-polje", "y": null, "cat": "ulice", "cap": "arh.c.pumpa-vedro-polje", "w": 1035, "h": 565, "quiz": false}
+    {"f": "pumpa-vedro-polje", "y": null, "cat": "ulice", "cap": "arh.c.pumpa-vedro-polje", "w": 1035, "h": 565, "quiz": false},
+    {"f": "poplava-1976", "y": 1976, "cat": "poplave", "cap": "arh.c.poplava-1976", "w": 934, "h": 535, "quiz": false}
   ]
 };
