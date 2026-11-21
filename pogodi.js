@@ -137,6 +137,12 @@
   /* ---------- start ---------- */
   $('kv-fan').innerHTML = DECOR.map((f, i) => `<figure style="--r:${[-9, 5, -2][i]}deg;--dx:${[-26, 22, 0][i]}%;--dy:${[4, -8, 6][i]}%;--d:${i * .14}s"><img src="photos/arhiv/${f}.webp" alt=""></figure>`).join('');
   function best() {
+    if (mode === 'daily') {
+      const n = streakNow();
+      $('kv-best').hidden = !n;
+      $('kv-best').textContent = t('kv.streak', { n });
+      return 0;
+    }
     let b = 0;
     try { b = +localStorage.getItem(KEY()) || 0; } catch (e) { /* no storage: no best score */ }
     $('kv-best').hidden = !b;
@@ -517,7 +523,11 @@
     lengthPicker.hidden = mode !== 'quiz';
     document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
     $('kv-description').textContent = t('kv.help.' + mode);
-    ranked.select(mode,gameSize());
+    $('kv-practice').textContent = t(mode === 'daily' ? (playedToday() ? 'kv.viewDaily' : 'kv.playDaily') : 'kv.practice');
+    // the daily challenge has no server board
+    const board = mode !== 'daily' && !!window.quizConfig;
+    $('kv-ranked').hidden = !board; $('kv-competition').hidden = !board; $('kv-practice').classList.toggle('ghost', board);
+    if (mode !== 'daily') ranked.select(mode,gameSize());
     best();
   }
   document.querySelector('.kv-modes').addEventListener('click', e => {
