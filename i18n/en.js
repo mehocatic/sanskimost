@@ -313,6 +313,7 @@ I18N.en = {
   'arh.c.kino-sana-razglednica': 'The Sana cinema on an old postcard',
   'arh.c.trg-cvjetnjak': 'The square with a flower bed, a tall building behind',
   'arh.c.sip-dzamija-kuce': 'Across the Sana: the ŠIP building, a mosque and old Bosnian houses',
+  'arh.c.pumpa-vedro-polje': 'The first petrol station at Vedro polje',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',
