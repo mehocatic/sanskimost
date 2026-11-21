@@ -45,26 +45,30 @@
       <div class="kv-fan" id="kv-fan" aria-hidden="true"></div>
       <div class="kv-intro-txt">
         <p class="eyebrow" data-i18n="kv.eyebrow">Igra iz arhiva</p>
-        <h1 data-i18n-html="kv.title.html">Pogodi <em>godinu</em></h1>
-        <p class="kv-lead" data-i18n="kv.lead">Sedam starih fotografija i tri pitanja iz historije Sanskog Mosta. Pogodi godinu ili izaberi odgovor. Što bliže, to više bodova.</p>
-        <div class="kv-modes">
-          <button type="button" class="btn big" id="kv-start" data-i18n="kv.start">Počni</button>
-          <button type="button" class="btn big ghost" id="kv-quiz" data-i18n="kv.quiz">Samo pitanja</button>
-          <button type="button" class="btn big ghost" id="kv-surv" data-i18n="kv.surv">Do 3 greške</button>
-        </div>
-        <!-- how many questions in "only questions" -->
-        <div class="kv-len" role="group" aria-label="Broj pitanja" data-i18n-attr="aria-label:kv.len">
+        <h1 data-i18n-html="kv.menuTitle">Kviz o <em>Sanskom Mostu</em></h1>
+        <fieldset class="kv-picker">
+          <legend data-i18n="kv.choose">Izaberi igru</legend>
+          <div class="kv-modes">
+            <button type="button" data-mode="mix" aria-pressed="true" data-i18n="kv.mix">Fotografije i pitanja</button>
+            <button type="button" data-mode="quiz" aria-pressed="false" data-i18n="kv.quiz">Samo pitanja</button>
+            <button type="button" data-mode="surv" aria-pressed="false" data-i18n="kv.surv">Do 3 greške</button>
+          </div>
+        </fieldset>
+        <p class="kv-lead" id="kv-description"></p>
+        <div class="kv-len" role="group" data-i18n-attr="aria-label:kv.len" hidden>
           <span data-i18n="kv.len">Broj pitanja</span>
           <button type="button" data-len="10" aria-pressed="true">10</button>
           <button type="button" data-len="20" aria-pressed="false">20</button>
         </div>
-        <p class="kv-bank" id="kv-bank"></p>
-        <section id="kv-competition" hidden>
-          <h2 data-i18n="kv.competition"></h2>
-          <p data-i18n="kv.daily"></p>
-          <button type="button" class="btn big" id="kv-ranked" data-i18n="kv.compete"></button>
+        <div class="kv-actions">
+          <button type="button" class="btn big ghost" id="kv-practice" data-i18n="kv.practice">Vježbaj</button>
+          <button type="button" class="btn big" id="kv-ranked" data-i18n="kv.compete" hidden></button>
+        </div>
+        <div id="kv-competition" hidden>
+          <p data-i18n="kv.modeLimit"></p>
           <details id="kv-board"><summary data-i18n="kv.board"></summary><ol></ol><p role="status"></p></details>
-        </section>
+        </div>
+        <p class="kv-bank" id="kv-bank"></p>
         <details class="kv-srcs">
           <summary data-i18n="kv.sources">Izvori pitanja</summary>
           <p data-i18n="kv.srcnote">Dio izvora su sekundarni (Wikipedia, turistički portali). Gdje su se izvori razilazili, pitanje je izostavljeno.</p>
@@ -135,9 +139,12 @@
       <div class="kv-end-act">
         <button type="button" class="btn big" id="kv-share" data-i18n="kv.share">Podijeli rezultat</button>
         <a class="btn big ghost" id="kv-dl" download="sanski-most-kviz.png" data-i18n="kv.dl">Preuzmi sliku</a>
+        <button type="button" class="btn big ghost" id="kv-menu" data-i18n="kv.choose"></button>
         <button type="button" class="btn big ghost" id="kv-again" data-i18n="kv.again">Igraj ponovo</button>
         <a class="kv-link" href="arhiv" data-i18n="kv.toarchive">Otvori cijeli arhiv →</a>
       </div>
+      <p id="kv-share-status" role="status"></p>
+      <input id="kv-share-link" type="url" readonly hidden data-i18n-attr="aria-label:kv.resultLink">
       <ol class="kv-list" id="kv-list"></ol>
     </section>
     <p id="kv-network" role="status" hidden></p>
