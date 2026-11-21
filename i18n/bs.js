@@ -351,6 +351,7 @@ I18N.bs = {
   'arh.c.novi-most-2013-e': 'Armatura i betoniranje kolovoza',
   'arh.c.delegati-zavnobih-opis': 'Opis fotografije: delegati na putu na Drugo zasjedanje ZAVNOBiH-a u Sanskom Mostu, 1944.',
   'arh.c.delegati-zavnobih': 'Delegati na putu na Drugo zasjedanje ZAVNOBiH-a, 1944. Prema opisu: Vojislav Kecmanović, Vaso Butoran, Jakov Grgurić i Soja Ćopić, majka Branka Ćopića.',
+  'arh.c.rodic-1944': 'Slavko Rodić, komandant 5. divizije, maj 1944.',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
