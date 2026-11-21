@@ -309,6 +309,7 @@ I18N.bs = {
   'arh.c.centar-cvijece': 'Ulica u centru grada, cvijeće u prvom planu',
   'arh.c.izvor-sane-mracaj': 'Pećina Mračaj kod izvora Sane, u uglu snimak ronilaca',
   'arh.c.sana-led-a': 'Zaleđena Sana, u daljini džamija s četiri minareta',
+  'arh.c.sana-led-b': 'Čamac na zaleđenoj Sani',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
