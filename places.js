@@ -200,7 +200,9 @@ const PLACES = [
       pic("mulez2.jpg"),
       pic("mulez3.jpg"),
       pic("mulez4.webp"),
-      pic("mulez5.webp")
+      pic("mulez5.webp"),
+      // a view over the valley from a ridge, kept with the "SanUM" mark it came with; TODO(verify): confirm that the view is from Mulež and who owns the photo
+      pic("mulez-pogled.webp", { author: "SanUM", alt: "Pogled s planine na dolinu" })
     ]
   },
   {
