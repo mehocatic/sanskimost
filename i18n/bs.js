@@ -5,6 +5,8 @@
 // are Bosnian, condensed from his text; the English ones in en.js are translations for review.
 window.I18N = window.I18N || {};
 I18N.bs = {
+  'kv.linkCopied': 'Link do slike rezultata je kopiran.',
+  'kv.resultLink': 'Link do slike rezultata',
   'kv.menuTitle': "Kviz o <em>Sanskom Mostu</em>",
   'kv.choose': "Izaberi igru",
   'kv.mix': "Fotografije i pitanja",

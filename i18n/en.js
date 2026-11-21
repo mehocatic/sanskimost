@@ -3,6 +3,8 @@
 // Keys ending in .html may contain markup (<br>, <em>).
 window.I18N = window.I18N || {};
 I18N.en = {
+  'kv.linkCopied': 'Result card link copied.',
+  'kv.resultLink': 'Result card link',
   'kv.menuTitle': "The <em>Sanski Most</em> quiz",
   'kv.choose': "Choose a game",
   'kv.mix': "Photos and questions",
