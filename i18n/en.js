@@ -984,6 +984,12 @@ I18N.en = {
       short: 'A memorial to the victims of fascist terror and the fighters of the National Liberation War, on the southern slope of the Šušnjar hill, about a kilometre from town.',
       long: 'The complex lies on the southern slope of the Šušnjar rise, about a kilometre from Sanski Most, near the old Orthodox, Catholic and Jewish cemeteries.\n\nIt was built in the 1970s as a memorial to the victims of fascist terror and to the fighters of the National Liberation War from the town and its surroundings. The main design was drawn up in 1970 in Sarajevo by the ŽTP Bureau for Studies and Design, and the complex is the work of Petar Krstić.\n\nIt consists of an entrance area, a memorial park and a raised central area with an obelisk. The park has grassed mounds about a metre and a half high and paths of concrete slabs, with aluminium plates bearing names.\n\nThe obelisk is 15 metres high and irregular in shape. Its structure is made of steel girders, clad in thin aluminium plates. The whole site is fenced, with trees planted along its edge.\n\nAfter it was built, a cultural event was held here every year on 2 August.',
       see: []
+    },
+    'stari-majdan-most': {
+      name: 'The bridge in Stari Majdan',
+      short: 'A stone bridge in Stari Majdan, known as the Roman bridge; a historic monument.',
+      long: 'In Stari Majdan there is a stone arched bridge known as the Roman bridge. It is listed as a historic monument.\n\nThe place is tied to mining. Iron ore was dug here even before Ottoman rule, and a smelter and a mint worked beside the mine. The Ottomans restored the processing of ore around 1571, and the works made mostly cannonballs and rifle barrels.\n\nThe town of Stari Majdan was built in the middle of the 18th century. The seat of the captaincy and the kadi district was moved to it from Kamengrad, and the fortress kept a permanent garrison until the 1830s.',
+      see: ['Kamengrad Fortress, from where the seat was moved.']
     }
   }
 };

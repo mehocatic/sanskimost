@@ -985,6 +985,12 @@ I18N.bs = {
       short: 'Spomenik žrtvama fašističkog terora i borcima NOR-a, na južnoj padini brežuljka Šušnjar, oko kilometar od grada.',
       long: 'Kompleks je na južnoj padini uzvišenja Šušnjar, oko kilometar od Sanskog Mosta, blizu starog pravoslavnog, katoličkog i jevrejskog groblja.\n\nPodignut je sedamdesetih godina kao spomenik žrtvama fašističkog terora i borcima narodnooslobodilačkog rata iz grada i okoline. Glavni projekat izradio je 1970. u Sarajevu Biro za studije i projektovanje ŽTP-a, a autor kompleksa je Petar Krstić.\n\nČine ga ulazni dio, spomen-park i uzdignut središnji prostor s obeliskom. U parku su zatravnjene humke visoke oko metar i po i staze od betonskih ploča, na kojima su aluminijske pločice s imenima.\n\nObelisk je visok 15 metara, nepravilnog oblika. Nosivu konstrukciju čine čelični nosači, a oblogu tanke aluminijske ploče. Cijeli prostor je ograđen, a uz rub je zasađeno drveće.\n\nNakon gradnje se na ovom mjestu svakog 2. augusta održavala kulturna manifestacija.',
       see: []
+    },
+    'stari-majdan-most': {
+      name: 'Most u Starom Majdanu',
+      short: 'Kameni most u Starom Majdanu, poznat kao Rimski most; historijski spomenik.',
+      long: 'U Starom Majdanu je kameni most s lukovima, poznat kao Rimski most. Vodi se kao historijski spomenik.\n\nMjesto je vezano za rudarstvo. Željezna ruda vadila se ovdje i prije osmanske vlasti, a uz rudnik su radile topionica i kovnica. Osmanlije su preradu rude obnovile oko 1571, a najviše su se izrađivala topovska đulad i puščane cijevi.\n\nGrad Stari Majdan podignut je sredinom 18. stoljeća. U njega je iz Kamengrada preseljeno sjedište kapetanije i kadiluka, a tvrđava je do tridesetih godina 19. stoljeća imala stalnu posadu.',
+      see: ['Tvrđava Kamengrad, odakle je sjedište preseljeno.']
     }
   }
 };
