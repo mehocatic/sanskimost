@@ -307,6 +307,7 @@ I18N.bs = {
   'arh.c.poplava-odozgo': 'Poplavljene ulice i kuće, pogled odozgo',
   'arh.c.masinski-most-1956': 'Željeznički Mašinski most, 1956.',
   'arh.c.centar-cvijece': 'Ulica u centru grada, cvijeće u prvom planu',
+  'arh.c.izvor-sane-mracaj': 'Pećina Mračaj kod izvora Sane, u uglu snimak ronilaca',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',

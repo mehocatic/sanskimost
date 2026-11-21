@@ -152,6 +152,7 @@ window.ARCHIVE = {
     {"f": "poplava-valjak", "y": null, "cat": "poplave", "cap": "arh.c.poplava-valjak", "w": 1600, "h": 1100, "src": "SanUM", "quiz": false},
     {"f": "poplava-odozgo", "y": null, "cat": "poplave", "cap": "arh.c.poplava-odozgo", "w": 1600, "h": 1081, "src": "SanUM", "quiz": false},
     {"f": "masinski-most-1956", "y": 1956, "cat": "sana", "cap": "arh.c.masinski-most-1956", "w": 1416, "h": 1004, "src": "SanUM", "quiz": false},
-    {"f": "centar-cvijece", "y": null, "cat": "ulice", "cap": "arh.c.centar-cvijece", "w": 720, "h": 507, "src": "SanUM", "quiz": false}
+    {"f": "centar-cvijece", "y": null, "cat": "ulice", "cap": "arh.c.centar-cvijece", "w": 720, "h": 507, "src": "SanUM", "quiz": false},
+    {"f": "izvor-sane-mracaj", "y": null, "cat": "sana", "cap": "arh.c.izvor-sane-mracaj", "w": 1499, "h": 1000, "quiz": false}
   ]
 };
