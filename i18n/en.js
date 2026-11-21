@@ -301,6 +301,7 @@ I18N.en = {
   'arh.c.korhotel': 'Korčanica, old photograph',
   'arh.c.korrazg': 'Korčanica, old postcard',
   'arh.c.zavljudi': 'A group of townspeople in front of the building',
+  'arh.c.poplava-valjak': 'A flooded street, with a road roller on the left',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',
