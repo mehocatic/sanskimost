@@ -181,6 +181,7 @@ window.ARCHIVE = {
     {"f": "poplava-2014-ulica", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-ulica", "w": 1200, "h": 1600, "quiz": false},
     {"f": "srusen-most-1943", "y": 1943, "cat": "sana", "cap": "arh.c.srusen-most-1943", "w": 1280, "h": 871, "place": "most", "quiz": false},
     {"f": "razglednica-spomenik", "y": null, "cat": "ulice", "cap": "arh.c.razglednica-spomenik", "w": 1300, "h": 890, "src": "hist.src.postcard", "quiz": false},
-    {"f": "razglednica-pozdrav-a", "y": null, "cat": "ulice", "cap": "arh.c.razglednica-pozdrav-a", "w": 1300, "h": 890, "src": "hist.src.postcard", "quiz": false}
+    {"f": "razglednica-pozdrav-a", "y": null, "cat": "ulice", "cap": "arh.c.razglednica-pozdrav-a", "w": 1300, "h": 890, "src": "hist.src.postcard", "quiz": false},
+    {"f": "razglednica-pozdrav-b", "y": null, "cat": "ulice", "cap": "arh.c.razglednica-pozdrav-b", "w": 1300, "h": 890, "src": "hist.src.postcard", "quiz": false}
   ]
 };
