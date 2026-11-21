@@ -332,6 +332,7 @@ I18N.bs = {
   'arh.c.docek-hadzije-1968': 'Doček hadžije Muharema Zukića, 1968.',
   'arh.c.trg-zastave': 'Okupljeni građani na trgu, u Ključkoj ulici, sa zastavama na zgradi',
   'arh.c.poplava-2014-kolibica': 'Drvena kolibica u vodi do krova',
+  'arh.c.poplava-2014-most-a': 'Visoka voda uz pješački most',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
