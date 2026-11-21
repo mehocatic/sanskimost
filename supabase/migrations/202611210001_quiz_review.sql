@@ -8,4 +8,7 @@ update quiz_private.questions set question_bs = 'Koje je godine u Sanskom Mostu 
 update quiz_private.questions set options_bs = '["Amela Trožić", "Šejla Zonić", "Hadžija Hadžibajramović", "Anna Ibrisagic"]'::jsonb,
   options_en = '["Amela Trožić", "Šejla Zonić", "Hadžija Hadžibajramović", "Anna Ibrisagic"]'::jsonb where id = 'ibris';
 
+update quiz_private.questions set options_bs = '["Džafer Cerić", "Milan Vukić", "Vukašin Brajić", "Enver Redžić"]'::jsonb,
+  options_en = '["Džafer Cerić", "Milan Vukić", "Vukašin Brajić", "Enver Redžić"]'::jsonb where id = 'brajic';
+
 commit;
