@@ -192,6 +192,7 @@ window.ARCHIVE = {
     {"f": "novi-most-2013-b", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-b", "w": 960, "h": 720, "place": "most", "quiz": false},
     {"f": "novi-most-2013-c", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-c", "w": 960, "h": 720, "place": "most", "quiz": false},
     {"f": "novi-most-2013-d", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-d", "w": 960, "h": 720, "place": "most", "quiz": false},
-    {"f": "novi-most-2013-e", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-e", "w": 720, "h": 960, "place": "most", "quiz": false}
+    {"f": "novi-most-2013-e", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-e", "w": 720, "h": 960, "place": "most", "quiz": false},
+    {"f": "delegati-zavnobih-opis", "y": 1944, "cat": "dokumenti", "cap": "arh.c.delegati-zavnobih-opis", "w": 1600, "h": 552, "src": "Foto-služba Muzeja narodne revolucije BiH, Sarajevo", "quiz": false}
   ]
 };
