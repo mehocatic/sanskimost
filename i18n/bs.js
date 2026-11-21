@@ -979,6 +979,12 @@ I18N.bs = {
       short: 'Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944.',
       long: 'Drugo zasjedanje ZAVNOBiH-a održano je u Sanskom Mostu od 30. juna do 2. jula 1944. Na njemu je proglašena ravnopravnost Srba, Muslimana (Bošnjaka) i Hrvata, te Bosna i Hercegovina kao država u okviru jugoslavenske federacije.\n\nZasjedanje je održano u Sokolskom domu, koji su građani i općina izgradili 1939, među prvima takve vrste u Bosni i Hercegovini. U njemu je 1. jula donesena Deklaracija o pravima građana u Bosni i Hercegovini. Ona se nadovezala na zaključke prvog zasjedanja, održanog 25. novembra 1943. u Mrkonjić Gradu, a na osnovu tih zaključaka ustrojena je poslijeratna Socijalistička Republika Bosna i Hercegovina.\n\nZgrada je 1995. zapaljena, a zatim srušena. Projekt njene revitalizacije, kao nacionalnog spomenika, ugovoren je između Zavoda za zaštitu kulturnog naslijeđa Unsko-sanskog kantona i izvođača radova.',
       see: []
+    },
+    'susnjar': {
+      name: 'Memorijalni kompleks Šušnjar',
+      short: 'Spomenik žrtvama fašističkog terora i borcima NOR-a, na južnoj padini brežuljka Šušnjar, oko kilometar od grada.',
+      long: 'Kompleks je na južnoj padini uzvišenja Šušnjar, oko kilometar od Sanskog Mosta, blizu starog pravoslavnog, katoličkog i jevrejskog groblja.\n\nPodignut je sedamdesetih godina kao spomenik žrtvama fašističkog terora i borcima narodnooslobodilačkog rata iz grada i okoline. Glavni projekat izradio je 1970. u Sarajevu Biro za studije i projektovanje ŽTP-a, a autor kompleksa je Petar Krstić.\n\nČine ga ulazni dio, spomen-park i uzdignut središnji prostor s obeliskom. U parku su zatravnjene humke visoke oko metar i po i staze od betonskih ploča, na kojima su aluminijske pločice s imenima.\n\nObelisk je visok 15 metara, nepravilnog oblika. Nosivu konstrukciju čine čelični nosači, a oblogu tanke aluminijske ploče. Cijeli prostor je ograđen, a uz rub je zasađeno drveće.\n\nNakon gradnje se na ovom mjestu svakog 2. augusta održavala kulturna manifestacija.',
+      see: []
     }
   }
 };

@@ -978,6 +978,12 @@ I18N.en = {
       short: 'The second session of ZAVNOBiH was held in Sanski Most from 30 June to 2 July 1944.',
       long: 'The second session of ZAVNOBiH was held in Sanski Most from 30 June to 2 July 1944. It declared the equality of Serbs, Muslims (Bosniaks) and Croats, and Bosnia and Herzegovina as a state within the Yugoslav federation.\n\nThe session was held in the Sokolski dom (Sokol hall), which the townspeople and the municipality built in 1939, one of the first of its kind in Bosnia and Herzegovina. There, on 1 July, it adopted the Declaration on the Rights of Citizens in Bosnia and Herzegovina. It built on the conclusions of the first session, held on 25 November 1943 in Mrkonjić Grad, and the post-war Socialist Republic of Bosnia and Herzegovina was organised on the basis of those conclusions.\n\nIn 1995 the building was set on fire and then demolished. A project to revitalise it, as a national monument, has been contracted between the Institute for the Protection of Cultural Heritage of Una-Sana Canton and a contractor.',
       see: []
+    },
+    'susnjar': {
+      name: 'Šušnjar Memorial Complex',
+      short: 'A memorial to the victims of fascist terror and the fighters of the National Liberation War, on the southern slope of the Šušnjar hill, about a kilometre from town.',
+      long: 'The complex lies on the southern slope of the Šušnjar rise, about a kilometre from Sanski Most, near the old Orthodox, Catholic and Jewish cemeteries.\n\nIt was built in the 1970s as a memorial to the victims of fascist terror and to the fighters of the National Liberation War from the town and its surroundings. The main design was drawn up in 1970 in Sarajevo by the ŽTP Bureau for Studies and Design, and the complex is the work of Petar Krstić.\n\nIt consists of an entrance area, a memorial park and a raised central area with an obelisk. The park has grassed mounds about a metre and a half high and paths of concrete slabs, with aluminium plates bearing names.\n\nThe obelisk is 15 metres high and irregular in shape. Its structure is made of steel girders, clad in thin aluminium plates. The whole site is fenced, with trees planted along its edge.\n\nAfter it was built, a cultural event was held here every year on 2 August.',
+      see: []
     }
   }
 };
