@@ -327,6 +327,7 @@ I18N.en = {
   'arh.c.cirin-voz-b': 'A locomotive with wagons at the station',
   'arh.c.stanica-zgrada': 'The Sanski Most railway station building, two small locomotives in front',
   'arh.c.gimnazija-drveni-most': 'The old grammar school and the wooden bridge over the Sana',
+  'arh.c.docek-hadzije-1968': 'A welcome for the hajji Muharem Zukić, 1968',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',

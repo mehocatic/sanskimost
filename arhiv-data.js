@@ -172,6 +172,7 @@ window.ARCHIVE = {
     {"f": "cirin-voz-a", "y": null, "cat": "ulice", "cap": "arh.c.cirin-voz-a", "w": 700, "h": 495, "place": "stanica", "quiz": false},
     {"f": "cirin-voz-b", "y": null, "cat": "ulice", "cap": "arh.c.cirin-voz-b", "w": 700, "h": 495, "place": "stanica", "quiz": false},
     {"f": "stanica-zgrada", "y": null, "cat": "ulice", "cap": "arh.c.stanica-zgrada", "w": 720, "h": 477, "place": "stanica", "quiz": false},
-    {"f": "gimnazija-drveni-most", "y": null, "cat": "ulice", "cap": "arh.c.gimnazija-drveni-most", "w": 853, "h": 596, "quiz": false}
+    {"f": "gimnazija-drveni-most", "y": null, "cat": "ulice", "cap": "arh.c.gimnazija-drveni-most", "w": 853, "h": 596, "quiz": false},
+    {"f": "docek-hadzije-1968", "y": 1968, "cat": "ljudi", "cap": "arh.c.docek-hadzije-1968", "w": 824, "h": 567, "quiz": false}
   ]
 };
