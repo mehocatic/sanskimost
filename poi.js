@@ -400,6 +400,7 @@ const POI = [
   {
     // OSM way 459823166 (historic=memorial_site, leisure=park), way centre; M1, name:en in OSM
     id: "susnjar-memorijalni-kompleks",
+    slug: "susnjar",
     cat: "memorials",
     coords: [44.7622452, 16.6836748],
     name: { en: "Šušnjar Memorial Complex", bs: "Memorijalni kompleks Šušnjar" },
