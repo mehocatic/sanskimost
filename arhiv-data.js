@@ -186,6 +186,7 @@ window.ARCHIVE = {
     {"f": "novi-most-2012-a", "y": 2012, "cat": "sana", "cap": "arh.c.novi-most-2012-a", "w": 960, "h": 720, "place": "most", "quiz": false},
     {"f": "novi-most-2012-b", "y": 2012, "cat": "sana", "cap": "arh.c.novi-most-2012-b", "w": 960, "h": 720, "place": "most", "quiz": false},
     {"f": "novi-most-2012-c", "y": 2012, "cat": "sana", "cap": "arh.c.novi-most-2012-c", "w": 1600, "h": 1200, "place": "most", "quiz": false},
-    {"f": "novi-most-2012-d", "y": 2012, "cat": "sana", "cap": "arh.c.novi-most-2012-d", "w": 960, "h": 541, "place": "most", "quiz": false}
+    {"f": "novi-most-2012-d", "y": 2012, "cat": "sana", "cap": "arh.c.novi-most-2012-d", "w": 960, "h": 541, "place": "most", "quiz": false},
+    {"f": "novi-most-2012-e", "y": 2012, "cat": "sana", "cap": "arh.c.novi-most-2012-e", "w": 960, "h": 541, "place": "most", "quiz": false}
   ]
 };
