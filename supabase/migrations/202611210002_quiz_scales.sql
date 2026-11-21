@@ -87,5 +87,6 @@ end $$;
 revoke all on function public.quiz_start(uuid,integer,boolean) from public, authenticated;
 grant execute on function public.quiz_start(uuid,integer,boolean) to anon;
 
-notify pgrst, 'reload schema';
+insert into quiz_private.questions (id,category,kind,question_bs,question_en,scale_min,scale_max,target,unit,explanation_bs,explanation_en,source_name,source_url) values
+('blihamon', 'priroda', 'year', 'Koje je godine vodopad Blihe proglašen prirodnim spomenikom?', 'In what year was the Bliha waterfall declared a natural monument?', 1930, 2000, 1965, null, '1965.', '1965.', 'Wikipedia: Bliha Falls', 'https://en.wikipedia.org/wiki/Bliha_Falls');
 commit;
