@@ -1,0 +1,11 @@
+begin;
+alter table quiz_private.attempts
+  add column mode text not null default 'quiz' check (mode in ('quiz','mix','surv')),
+  add column mistakes integer not null default 0 check (mistakes between 0 and 3),
+  add column photo_max integer;
+alter table quiz_private.attempts drop constraint attempts_score_check,
+  add check(score between 0 and 8000);
+alter table quiz_private.results drop constraint results_score_check,
+  add check(score between 0 and 8000);
+
+commit;
