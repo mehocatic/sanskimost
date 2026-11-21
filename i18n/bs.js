@@ -341,6 +341,7 @@ I18N.bs = {
   'arh.c.razglednica-pozdrav-b': 'Razglednica „Pozdrav iz Sanskog Mosta“ s četiri prizora',
   'arh.c.novi-most-2012-a': 'Gradnja novog mosta: stubovi i oplata kolovozne ploče',
   'arh.c.novi-most-2012-b': 'Betoniranje kolovoza, u pozadini džamija',
+  'arh.c.novi-most-2012-c': 'Gradnja novog mosta, 24. novembra 2012.',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',
