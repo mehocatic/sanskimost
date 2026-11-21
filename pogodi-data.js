@@ -46,7 +46,6 @@ Object.assign(window.KVS, {
   "emiruspon": {"n":"Dnevni avaz","u":"https://www.avaz.ba/lifestyle/putovanja/925433/planinar-i-zaljubljenik-u-prirodu-iz-sanskog-mosta-emir-music-osvojio-monblan"},
   "ocimaljubavi": {"n":"Zavičajni muzej Travnik","u":"https://muzejtravnik.ba/obiljezavanje-1-marta-dana-nezavisnosti-bosne-i-hercegovine-promocija-fotomonografije-samira-sinanovica-bosna-i-hercegovina-ocima-ljubavi/"},
   "galerijafaber": {"n":"Umjetnička galerija BiH","u":"https://ugbih.ba/?p=8730"},
-  "peticabliha": {"n":"Nezavisne novine","u":"https://www.nezavisne.com/novosti/gradovi/Sanska-petica-opravdala-ocekivanja-Istrcao-trku-gurajuci-bebu-u-kolicima/931129"},
   "sanskafoto": {"n":"Nezavisne novine","u":"https://www.nezavisne.com/kultura/knjizevnost/Promocija-knjige-Jasmina-Zukanovica-Proslost-Sanskog-Mosta-kroz-stare-fotografije/676099"},
   "petica": {
     "n": "Moje trčanje",
@@ -63,10 +62,6 @@ Object.assign(window.KVS, {
   "maraton26": {
     "n": "FMKS",
     "u": "https://fmks.gov.ba/wp-content/uploads/2026/09/V.-broj-1103-2026-4.pdf"
-  },
-  "vodeneigre": {
-    "n": "Nezavisne novine",
-    "u": "https://www.nezavisne.com/novosti/gradovi/Otvoreno-Ljeto-na-Sani-Ove-godine-nece-ucestvovati-zvucna-imena/916157"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -81,13 +76,11 @@ window.KVQ = [
   translatedQuestion('emiruspon', 'ljudi', 2),
   translatedQuestion('ocimaljubavi', 'ljudi', 1),
   translatedQuestion('galerijafaber', 'dogadjaji', 4),
-  translatedQuestion('peticabliha', 'dogadjaji', 3),
   translatedQuestion('sanskafoto', 'ljudi', 2),
   translatedQuestion('petica', 'dogadjaji', 4),
   translatedQuestion('petrez', 'ljudi', 2),
   translatedQuestion('homofaber', 'ljudi', 2),
   translatedQuestion('maraton26', 'ljudi', 3),
-  translatedQuestion('vodeneigre', 'dogadjaji', 1),
   {"id":"devet","t":"choice","c":"priroda","ok":3,"o":["6","7","8","9"],"q":["Sanski Most se zove grad na devet rijeka. Koliko je rječica uz Sanu?","Sanski Most is called the town on nine rivers. How many smaller rivers run alongside the Sana?"],"a":["Osam: Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka i Kozica. Sa Sanom to je devet.","Eight: the Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka and Kozica. With the Sana that makes nine."],"s":"opc2"},
   {"id":"nijeriv","t":"choice","c":"priroda","ok":2,"o":["Zdena","Una","Japra","Dabar"],"q":["Koja od ovih rijeka nije među devet sanskih rijeka?","Which of these rivers is not among the nine rivers of Sanski Most?"],"a":["Una. Uz Sanu su to Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka i Kozica.","The Una. Besides the Sana they are the Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka and Kozica."],"s":"opc2"},
   {"id":"najduza","t":"choice","c":"priroda","ok":4,"o":["Bliha","Japra","Dabar","Sana"],"q":["Koja je najduža od devet rijeka koje teku kroz Sanski Most?","Which is the longest of the nine rivers that flow through Sanski Most?"],"a":["Sana. Ostale su kratke kraške ili brdske rječice.","The Sana. The others are short karst or hill streams."],"s":"sana"},
@@ -223,11 +216,11 @@ window.KVQ = [
   {"id":"venecija","t":"choice","c":"znamenitosti","ok":2,"o":[["Prag","Prague"],["Venecija","Venice"],["Amsterdam","Amsterdam"],["Firenca","Florence"]],"q":["S kojim se gradom poredi riječni dio Sanskog Mosta, pa ga zovu malom ...?","With which city is the riverside part of Sanski Most compared, so that it is called little ...?"],"a":["S Venecijom, pa se taj dio grada naziva malom Venecijom.","With Venice, so that part of the town is called little Venice."],"s":"danas"},
   {"id":"trgadresa","t":"choice","c":"znamenitosti","ok":3,"o":[["Trg slobode","Freedom Square"],["Trg oslobodilaca","Liberators Square"],["Trg ljiljana","Lily Square"],["Trg ćuprije","Bridge Square"]],"q":["Na kojem se trgu nalazi zgrada Općine Sanski Most?","On which square is the building of the Sanski Most municipality?"],"a":["Na Trgu ljiljana 1.","At Trg ljiljana 1."],"s":"opc1"},
   {"id":"vukic","t":"choice","c":"ljudi","ok":2,"o":["Enver Redžić","Milan Vukić","Vukašin Brajić","Anna Ibrisagic"],"q":["Ko je od ovih šahovski velemajstor iz Sanskog Mosta?","Which of these is a chess grandmaster from Sanski Most?"],"a":["Milan Vukić.","Milan Vukić."],"s":"wiki"},
-  {"id":"ibris","t":"choice","c":"ljudi","ok":4,"o":["Milan Vukić","Enver Redžić","Kemal Malovčić","Anna Ibrisagic"],"q":["Ko je od ovih švedska političarka iz Sanskog Mosta?","Which of these is a Swedish politician from Sanski Most?"],"a":["Anna Ibrisagic.","Anna Ibrisagic."],"s":"wiki"},
+  translatedQuestion('ibris', 'ljudi', 4, 'wiki'),
   {"id":"zoric","t":"choice","c":"ljudi","ok":3,"o":["Milan Vukić","Enver Redžić","Milenko Zorić","Đuro Utješanović"],"q":["Ko je od ovih osvojio srebrnu medalju na Olimpijskim igrama 2016. u kanuu?","Which of these won a silver medal in canoeing at the 2016 Olympic Games?"],"a":["Milenko Zorić, kanuist sprinter, iz Sanskog Mosta.","Milenko Zorić, a sprint canoeist from Sanski Most."],"s":"wiki"},
   {"id":"redzic","t":"choice","c":"ljudi","ok":1,"o":["Enver Redžić","Milan Vukić","Milenko Zorić","Vukašin Brajić"],"q":["Ko je od ovih historičar iz Sanskog Mosta?","Which of these is a historian from Sanski Most?"],"a":["Enver Redžić.","Enver Redžić."],"s":"wiki"},
   {"id":"utjesanovic","t":"choice","c":"ljudi","ok":4,"o":["Milan Vukić","Enver Redžić","Milenko Zorić","Đuro Utješanović"],"q":["Ko je od ovih glumac iz Sanskog Mosta?","Which of these is an actor from Sanski Most?"],"a":["Đuro Utješanović.","Đuro Utješanović."],"s":"wiki"},
-  {"id":"brajic","t":"choice","c":"ljudi","ok":3,"o":["Mehmed Alagić","Milan Vukić","Vukašin Brajić","Enver Redžić"],"q":["Ko je od ovih pjevač iz Sanskog Mosta?","Which of these is a singer from Sanski Most?"],"a":["Vukašin Brajić.","Vukašin Brajić."],"s":"wiki"},
+  translatedQuestion('brajic', 'ljudi', 3, 'wiki'),
   {"id":"podgrmec","t":"year","c":"ljudi","y":1944,"f":1900,"to":2000,"q":["Koje je godine, 4. aprila, osnovan NK Podgrmeč iz Sanskog Mosta?","In what year, on 4 April, was NK Podgrmeč of Sanski Most founded?"],"a":["1944.","1944."],"s":"podg"},
   {"id":"podgboje","t":"choice","c":"ljudi","ok":2,"o":[["Crveno-bijele","Red and white"],["Zeleno-žute","Green and yellow"],["Plavo-bijele","Blue and white"],["Crno-bijele","Black and white"]],"q":["Koje su boje kluba NK Podgrmeč?","What are the colours of NK Podgrmeč?"],"a":["Zelena i žuta.","Green and yellow."],"s":"podg"},
   {"id":"zkk","t":"choice","c":"ljudi","ok":2,"o":[["Rukomet","Handball"],["Košarka","Basketball"],["Odbojka","Volleyball"],["Vaterpolo","Water polo"]],"q":["Kojim se sportom bavio ŽKK Sana, koji je od 1985. do 1995. igrao u republičkoj ligi BiH?","Which sport did ŽKK Sana play, which competed in the BiH republic league from 1985 to 1995?"],"a":["Košarkom. ŽKK znači ženski košarkaški klub.","Basketball. ŽKK stands for women's basketball club."],"s":"opc2"},
