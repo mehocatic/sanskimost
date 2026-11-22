@@ -3,7 +3,7 @@
 //   - licnosti-data.js and i18n give the names, roles, biographies and sources, photos/licnosti/ the portraits,
 //   - the people go in the order of the fields, taking turns between the outer and the inner wall,
 //   - a click on the focused portrait opens the biography in a dialog (previous / next go through the list order),
-//   - the Gallery / List switch shows everyone as a grid, grouped by field.
+//   - without WebGL (or when the context is lost) everyone is shown as a grid, grouped by field; there is no switch to it.
 (() => {
   const $ = id => document.getElementById(id);
   const t = (k, v) => I18n.t(k, v);
@@ -33,7 +33,7 @@
   const mqMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
   const gui = $('gui'), host = $('host'), list = $('list'), lb = $('lb');
-  let stage = null, view = 'gallery', focused = false, opened = -1, noGL = false;
+  let stage = null, focused = false, opened = -1;
 
   /* ---------- text that changes with the state ---------- */
   function setHints() {
@@ -42,7 +42,7 @@
     $('hint2').textContent = t(`hod.hint.${k}2`);
   }
 
-  /* ---------- the list: everyone by field ---------- */
+  /* ---------- the list (only without WebGL): everyone by field ---------- */
   const portrait = (it, cls) => it.photo
     ? `<img class="${cls}" src="${full(it.p)}" width="${it.width}" height="${it.height}" alt="" loading="lazy" decoding="async">`
     : `<span class="${cls} mono" aria-hidden="true">${esc(initials(it.p.name))}</span>`;
@@ -58,25 +58,6 @@
   }
   $('list-grid').addEventListener('click', e => { const b = e.target.closest('.list-card'); if (b) openPhoto(+b.dataset.i); });
 
-  /* ---------- gallery or list ---------- */
-  function setView(v) {
-    view = v;
-    const isList = v === 'list';
-    list.classList.toggle('open', isList);
-    list.setAttribute('aria-hidden', String(!isList));
-    gui.classList.toggle('hidden', isList);
-    $('t-gallery').classList.toggle('active', !isList);
-    $('t-gallery').setAttribute('aria-selected', String(!isList));
-    $('t-list').classList.toggle('active', isList);
-    $('t-list').setAttribute('aria-selected', String(isList));
-    if (stage) stage.overlay = isList || lb.open;
-    if (!isList && stage && focused) stage.stepBack();
-    if (isList) list.scrollTop = 0;
-  }
-  $('t-gallery').addEventListener('click', () => setView('gallery'));
-  $('l-gallery').addEventListener('click', () => { if (!noGL) setView('gallery'); });
-  $('t-list').addEventListener('click', () => setView('list'));
-  $('enter').addEventListener('click', () => setView('list'));
   $('prev').addEventListener('click', () => stage && stage.step(-1));
   $('next').addEventListener('click', () => stage && stage.step(1));
 
@@ -121,13 +102,13 @@
   });
   lb.addEventListener('close', () => {
     opened = -1; setHash('');
-    if (stage) stage.overlay = view === 'list';
+    if (stage) stage.overlay = false;
   });
   lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
   $('lb-x').addEventListener('click', () => lb.close());
 
   addEventListener('langchange', () => {
-    setHints(); fillDialog(); buildList();
+    setHints(); fillDialog(); if (list.classList.contains('open')) buildList();
     if (stage) stage.redrawAllLabels();
   });
 
@@ -637,14 +618,14 @@
 
   // without WebGL (or when the context is lost) only the list is left
   function showNoGL() {
-    noGL = true;
-    $('l-gallery').hidden = true;
     stage = null;
-    setView('list');
+    buildList();
+    list.classList.add('open');
+    list.setAttribute('aria-hidden', 'false');
+    gui.classList.add('hidden');
   }
 
   /* ---------- go ---------- */
-  buildList();
   setHints();
   if (!PRINTS.length) { showNoGL(); return; }
   startScene().then(ok => {
