@@ -523,8 +523,9 @@
     });
     const board = !!window.quizConfig;
     $('kv-ranked').hidden = !board; $('kv-competition').hidden = !board; $('kv-practice').classList.toggle('ghost', board);
-    if (mode !== 'daily') ranked.select(mode,gameSize());
-    best();
+    $('kv-dock-btn').textContent = t('kv.playMode', { mode: gameName() });
+    ranked.select(mode, gameSize());
+    dailyLine();
   }
   document.querySelector('.kv-modes').addEventListener('click', e => {
     const button = e.target.closest('[data-mode]');
