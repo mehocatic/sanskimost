@@ -104,6 +104,10 @@ window.QuizRanked = (() => {
     // your own line, in pencil: your best for this game on this browser
     const best = personalBest(), me = line(list.length, 'me');
     me.append(span('n', t('chr.you')), span('w', best ? t('chr.best') : t('chr.notYet')), span('s', best || ''));
+    lines.append(me);
+    note.textContent = best && full && best <= last ? t('chr.gap', {pts: points(last + 1 - best)})
+      : !best && full ? t('chr.min', {n: last}) : t('chr.room');
+  }
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
