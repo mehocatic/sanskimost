@@ -184,7 +184,7 @@ window.QuizRanked = (() => {
   if (config) {
     $('kv-ranked').hidden = false;
     $('kv-competition').hidden = false;
-    refresh();
+    chron.hidden = false;
     addEventListener('langchange', () => { status(message); refresh(); });
   }
   return {start, finish, status, answer:(round,choice) => rpc('answer',{p_token:token,p_round:round,p_choice:choice}),
