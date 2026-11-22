@@ -44,6 +44,11 @@ window.QuizRanked = (() => {
     return node;
   };
   // a round rubber stamp: the title of the score runs along the ring, the place sits in the middle
+  function stamp(place, score) {
+    const title = api.title(score, mode, size);
+    const svg = el('svg', {viewBox: '0 0 120 120', class: 'kv-stamp', role: 'img', 'aria-label': t('chr.stamp', {n: place, title})});
+    const g = el('g', {filter: 'url(#kv-ink)'});
+    g.append(el('circle', {cx: 60, cy: 60, r: 57, fill: 'none', stroke: 'currentColor', 'stroke-width': 2.6}),
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
