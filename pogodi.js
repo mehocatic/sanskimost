@@ -540,6 +540,11 @@
     const p = {};
     new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Sarajevo', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' })
       .formatToParts(new Date()).forEach(x => { p[x.type] = +x.value; });
+    const s = 86400 - (p.hour * 3600 + p.minute * 60 + p.second), pad = n => String(n).padStart(2, '0');
+    return pad(Math.floor(s / 3600)) + ':' + pad(Math.floor(s / 60) % 60) + ':' + pad(s % 60);
+  }
+  function dailyLine() {
+    const n = streakNow();
   $('kv-practice').addEventListener('click', () => start(false));
   $('kv-ranked').addEventListener('click', () => start(true));
   $('kv-menu').addEventListener('click', () => {
