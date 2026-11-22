@@ -335,8 +335,8 @@
   // where the answer comes from: a link under the explanation
   function source(s) {
     const el = $('kv-src');
-    el.hidden = !s;
-    if (!s) return;
+    el.hidden = !s || !s.u;
+    if (!s || !s.u) return;
     const ext = /^https?:/.test(s.u);
     el.innerHTML = `${t('kv.source')}: <a href="${esc(s.u)}"${ext ? ' target="_blank" rel="noopener"' : ''}>${s.n}</a>`;
   }
