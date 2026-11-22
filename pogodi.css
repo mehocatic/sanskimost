@@ -215,6 +215,11 @@
   .kv-fan figure { width: 130px; }
   .kv-fan img { border-width: 5px; }
   .kv-fan figure::after { width: 40px; height: 40px; font-size: 1.4rem; right: -10px; bottom: -14px; }
+  .kv-intro h1 { margin-bottom: 20px; }
+  .kv-intro .btn.big { padding: 0 20px; }
+  .kv-chron-home { margin-top: 46px; padding-top: 0; }
+  .kv-more { margin-top: 36px; }
+  .kv-sheet { --pl: 44px; --pr: 14px; padding-top: 22px; rotate: 0deg; }
   .kv-round { display: flex; flex-direction: column; padding: 70px var(--pad) 24px; }
   .kv-top { padding-bottom: 12px; }
   .kv-dots:not(.lives) { min-width: 0; flex: 1; gap: 3px; }
