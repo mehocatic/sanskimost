@@ -20,6 +20,9 @@
 /* three prints fanned out above the title, the last with a question mark */
 .kv-fan { position: relative; height: 160px; max-width: 520px; margin-bottom: 16px; }
 .kv-fan figure { position: absolute; left: 50%; top: 50%; width: 180px; translate: -50% -50%; transform: rotate(var(--r)) translate(var(--dx), var(--dy)); animation: kv-deal .9s cubic-bezier(.2, .7, .2, 1) both, kv-bob 6s ease-in-out infinite; animation-delay: var(--d), calc(1s + var(--d) * 4); }
+.kv-fan img { display: block; width: 100%; height: auto; border: 7px solid var(--print); box-shadow: 0 20px 44px rgba(0, 0, 0, .6); filter: sepia(.25); transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.kv-fan figure:hover img { transform: scale(1.05) rotate(1deg); }
+.kv-fan figure::after { content: "?"; position: absolute; right: -14px; bottom: -18px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--sand); color: var(--ink); font: 500 1.8rem/1 var(--serif); box-shadow: 0 10px 24px rgba(0, 0, 0, .5); animation: kv-ping 2.4s ease-out 1.4s infinite; }
 .kv-fan figure:not(:last-child)::after { display: none; }
 @keyframes kv-deal { from { opacity: 0; transform: rotate(0deg) translate(0, 60px) scale(.9); } }
 
