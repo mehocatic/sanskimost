@@ -535,6 +535,11 @@
     ranked.status();
     updateMenu();
   });
+  // the daily challenge: its number, the streak and the time to the next one (midnight in Sarajevo)
+  function untilNext() {
+    const p = {};
+    new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Sarajevo', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' })
+      .formatToParts(new Date()).forEach(x => { p[x.type] = +x.value; });
   $('kv-practice').addEventListener('click', () => start(false));
   $('kv-ranked').addEventListener('click', () => start(true));
   $('kv-menu').addEventListener('click', () => {
