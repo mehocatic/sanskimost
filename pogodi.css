@@ -35,6 +35,11 @@
 .kv-modes button { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; width: 100%; min-height: 56px; padding: 8px 20px; border: 1px solid rgba(255, 255, 255, .27); border-radius: 12px; text-align: left; transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s cubic-bezier(.2, .7, .2, 1); }
 .kv-modes b { font-weight: 500; font-size: 1rem; }
 .kv-modes small { font-size: .8rem; opacity: .72; }
+.kv-modes button:hover { border-color: var(--sand); transform: translateX(3px); }
+.kv-modes button[aria-pressed="true"] { background: var(--paper); border-color: var(--paper); color: var(--ink); transform: none; }
+.kv-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; max-width: 540px; }
+.kv-actions .btn { flex: 1 1 140px; }
+#kv-ranked { flex: 1.6 1 220px; }
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
