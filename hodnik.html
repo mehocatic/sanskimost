@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="hod.doctitle">Hodnik sjećanja &middot; Sanski Most</title>
+  <meta name="description" data-i18n-attr="content:hod.meta" content="Šetnja kroz odabrane fotografije Sanskog Mosta, od 1900. godine nadalje.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sanski Most">
+  <meta property="og:title" data-i18n-attr="content:hod.doctitle" content="Hodnik sjećanja · Sanski Most">
+  <meta property="og:description" data-i18n-attr="content:hod.meta" content="Šetnja kroz odabrane fotografije Sanskog Mosta, od 1900. godine nadalje.">
+  <meta property="og:url" content="https://visitsanskimost.netlify.app/hodnik">
+  <meta property="og:image" content="https://visitsanskimost.netlify.app/photos/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="bs_BA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://visitsanskimost.netlify.app/photos/og.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/fonts/fonts.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="hodnik.css">
+</head>
+<body id="top" class="hodnik-page">
+
+  <nav class="site-nav" aria-label="Glavni meni" data-i18n-attr="aria-label:nav.label">
+    <a class="nav-logo" href="./">Sanski Most</a>
+    <div class="nav-links" id="nav-links">
+      <a class="nav-home" href="./" data-i18n="nav.home">Početna</a>
+      <a href="explore" data-i18n="nav.explore">Istraži</a>
+      <a href="historija" data-i18n="nav.history">Historija</a>
+      <a href="licnosti" data-i18n="nav.people">Ličnosti</a>
+      <a href="arhiv" data-i18n="nav.archive">Arhiv</a>
+      <a href="hodnik" aria-current="page" data-i18n="nav.corridor">Hodnik</a>
+      <a href="pogodi" data-i18n="nav.quiz">Kviz</a>
+      <a href="plan" data-i18n="nav.plan">Posjeta</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="t-open" data-i18n="nav.menu">Meni</span><span class="t-close" data-i18n="nav.close">Zatvori</span></button>
+  </nav>
+
+  <main id="hod" class="on-paper">
+    <!-- the corridor: a Three.js scene in #mount (hodnik.js) -->
+    <div class="gallery-host" id="host" role="img" aria-label="Hodnik s fotografijama" data-i18n-attr="aria-label:hod.stage">
+      <div class="canvas-mount" id="mount"></div>
+      <div class="veil" id="veil"></div>
+      <div class="open-pill" id="pill" aria-hidden="true" data-i18n="hod.pill">Otvori fotografiju</div>
+    </div>
+
+    <div class="gui" id="gui">
+      <div class="arrows">
+        <button type="button" class="arrow-btn" id="prev" aria-label="Prethodna fotografija" data-i18n-attr="aria-label:hod.prev">
+          <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></svg>
+        </button>
+        <button type="button" class="arrow-btn" id="next" aria-label="Sljedeća fotografija" data-i18n-attr="aria-label:hod.next">
+          <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+        </button>
+      </div>
+
+      <div class="hint" aria-live="polite">
+        <span class="mask"><span class="rise" style="--mi: 0" id="hint1"></span></span>
+        <span class="mask"><span class="rise" style="--mi: 1" id="hint2"></span></span>
+      </div>
+
+      <div class="toggle" role="tablist" aria-label="Prikaz" data-i18n-attr="aria-label:hod.view">
+        <button type="button" role="tab" class="toggle-btn active" id="t-gallery" aria-selected="true" data-i18n="hod.gallery">Galerija</button>
+        <button type="button" role="tab" class="toggle-btn" id="t-list" aria-selected="false" data-i18n="hod.listbtn">Lista</button>
+      </div>
+
+      <div class="caption">
+        <span class="mask kicker-mask"><span class="rise kicker" style="--mi: 2" data-i18n="hod.kicker">Upravo prolazite kroz</span></span>
+        <div class="headline-row">
+          <h1 class="headline"><span class="mask"><span class="rise" style="--mi: 3" data-i18n="hod.headline">Hodnik sjećanja</span></span></h1>
+          <button type="button" class="enter-link" id="enter"><span class="mask"><span class="rise enter-inner" style="--mi: 4" data-i18n="hod.enter">Istraži arhiv →</span></span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- the same photographs as a list -->
+    <section class="list-section" id="list" aria-hidden="true">
+      <div class="list-header">
+        <h2 class="list-heading" data-i18n="hod.listhead">Hodnik sjećanja, arhiv</h2>
+        <div class="list-toggle" role="tablist" aria-label="Prikaz" data-i18n-attr="aria-label:hod.view">
+          <button type="button" role="tab" class="toggle-btn" id="l-gallery" aria-selected="false" data-i18n="hod.gallery">Galerija</button>
+          <button type="button" role="tab" class="toggle-btn active" aria-selected="true" data-i18n="hod.listbtn">Lista</button>
+        </div>
+      </div>
+      <div class="list-grid" id="list-grid"></div>
+    </section>
+  </main>
+
+  <!-- one photograph, opened -->
+  <dialog id="lb" aria-label="Fotografija" data-i18n-attr="aria-label:arh.photo">
+    <button type="button" class="lb-x" id="lb-x"><span data-i18n="arh.close">Zatvori</span> ✕</button>
+    <div class="lb-ph"><img id="lb-img" alt=""></div>
+    <div class="lb-txt">
+      <p class="lb-y" id="lb-y"></p>
+      <h2 id="lb-cap"></h2>
+      <dl id="lb-meta"></dl>
+      <a class="btn" id="lb-arh" href="arhiv" data-i18n="hod.archive">Otvori u arhivu →</a>
+    </div>
+  </dialog>
+
+  <script defer src="arhiv-data.js"></script>
+  <script defer src="i18n/en.js"></script>
+  <script defer src="i18n/bs.js"></script>
+  <script defer src="i18n.js"></script>
+  <script defer src="hodnik.js"></script>
+  <script defer src="nav.js"></script>
+</body>
+</html>
