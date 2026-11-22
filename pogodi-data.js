@@ -184,6 +184,10 @@ Object.assign(window.KVS, {
   "l-jasarevic": {
     "n": "Una-sana Krajina (Senudin Jašarević)",
     "u": "https://usnkrajina.ba/clanak/senudin-jasarevic-roden-iznad-ucionice-a-cijeli-zivot-proveo-izmedu-vojske-novina-i-knjizevnosti/1050"
+  },
+  "l-ikurtovic": {
+    "n": "Telegraf (Ismet Kurtović)",
+    "u": "https://www.telegraf.rs/pop-i-kultura/muzika/3436999-ismet-kurtovic-drugi-nacin-veliki-intervju"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -448,5 +452,6 @@ window.KVQ = [
   {"id":"julkapis","t":"choice","c":"ljudi","ok":3,"o":[["O Branku Ćopiću","O Branku Ćopiću"],["O Ivi Andriću","O Ivi Andriću"],["O Petru Kočiću","O Petru Kočiću"],["O Mešu Selimoviću","O Mešu Selimoviću"]],"q":["O kome je među ostalim pisala Julka Popović-Srdić?","Whom, among others, did Julka Popović-Srdić write about?"],"a":["Pisala je o životu žena na selu, o majčinstvu i o Petru Kočiću.","She wrote about village women, motherhood and Petar Kočić."],"s":"l-julka"},
   {"id":"julkarod","t":"choice","c":"ljudi","ok":4,"o":[["1865","1865"],["1905","1905"],["1925","1925"],["1885","1885"]],"q":["Koje je godine rođena učiteljica i književnica Julka Popović-Srdić?","In what year was the teacher and writer Julka Popović-Srdić born?"],"a":["Rođena je 1885. u Sanskom Mostu.","She was born in Sanski Most in 1885."],"s":"l-julka"},
   {"id":"jasarkr","t":"choice","c":"ljudi","ok":2,"o":[["Oslobođenja","Oslobođenja"],["Unsko-sanskih novina Krajina","Unsko-sanskih novina Krajina"],["Dnevnog avaza","Dnevnog avaza"],["Nezavisnih novina","Nezavisnih novina"]],"q":["Čiji je prvi direktor bio Senudin Jašarević?","Of which newspaper was Senudin Jašarević the first director?"],"a":["Bio je prvi direktor Unsko-sanskih novina Krajina.","He was the first director of the Una-Sana daily Krajina."],"s":"l-jasarevic"},
-  {"id":"jasarrod","t":"choice","c":"ljudi","ok":2,"o":[["Dabar","Dabar"],["Hrustovo","Hrustovo"],["Trnova","Trnova"],["Fajtovci","Fajtovci"]],"q":["U kojem je selu Senudin Jašarević rođen iznad učionice?","In which village was Senudin Jašarević born above a classroom?"],"a":["Otac mu je bio učitelj u Hrustovu.","His father was a teacher in Hrustovo."],"s":"l-jasarevic"}
+  {"id":"jasarrod","t":"choice","c":"ljudi","ok":2,"o":[["Dabar","Dabar"],["Hrustovo","Hrustovo"],["Trnova","Trnova"],["Fajtovci","Fajtovci"]],"q":["U kojem je selu Senudin Jašarević rođen iznad učionice?","In which village was Senudin Jašarević born above a classroom?"],"a":["Otac mu je bio učitelj u Hrustovu.","His father was a teacher in Hrustovo."],"s":"l-jasarevic"},
+  {"id":"kurtgrp","t":"choice","c":"ljudi","ok":3,"o":[["Južni Vetar","Južni Vetar"],["Elektronci","Elektronci"],["Drugi način","Drugi način"],["Boemi","Boemi"]],"q":["Koje je grupe Ismet Kurtović frontmen?","Which band is Ismet Kurtović the frontman of?"],"a":["Frontmen je grupe Drugi način.","He is the frontman of the band Drugi način."],"s":"l-ikurtovic"}
 ];
