@@ -355,6 +355,7 @@ I18N.bs = {
   'arh.c.rodic-1944': 'Slavko Rodić, komandant 5. divizije, maj 1944.',
   'arh.c.rekord-golf-a': 'Sana Retro Festival: pokušaj rekorda u broju osoba u jednom Golfu 2, u toku popunjavanja automobila',
   'arh.c.rekord-golf-b': 'Golf 2 na crvenom tepihu usred publike, Sana Retro Festival, 31. jula 2026.',
+  'arh.c.rekord-golf-potvrda': 'Certifikat WRCAC iz Londona od 2. novembra 2026: 20 odraslih osoba u jednom Volkswagenu Golf Mk2, Oldtimer klub 1912',
   'kv.doctitle': 'Pogodi godinu · Sanski Most',
   'kv.meta': 'Šest starih fotografija i četiri pitanja iz historije Sanskog Mosta, ili samo pitanja. Provjeri koliko znaš.',
   'kv.cta': 'Igra: pogodi godinu →',

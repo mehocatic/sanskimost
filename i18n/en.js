@@ -353,6 +353,7 @@ I18N.en = {
   'arh.c.rodic-1944': 'Slavko Rodić, commander of the 5th Division, May 1944',
   'arh.c.rekord-golf-a': 'Sana Retro Festival: the attempt at a record for people in one Golf Mk2, as the car is being filled',
   'arh.c.rekord-golf-b': 'The Golf Mk2 on a red carpet amid the crowd, Sana Retro Festival, 31 July 2026',
+  'arh.c.rekord-golf-potvrda': 'The WRCAC certificate from London of 2 November 2026: 20 adults in one Volkswagen Golf Mk2, Oldtimer Club 1912',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',
