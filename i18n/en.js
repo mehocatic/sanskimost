@@ -15,7 +15,7 @@ I18N.en = {
   'kv.modeLimit': "This browser gets three attempts per day for this chronicle.",
   'kv.competition': "Knowledge challenge",
   'kv.daily': "Play 10 or 20 questions. Each day this browser gets three ranked games of each length.",
-  'kv.compete': "Play a ranked game",
+  'kv.compete': "Play for the chronicle",
   'kv.board': "Leaderboard",
   'kv.nickname': "Name or nickname for the public leaderboard",
   'kv.publish': "Publish score",
