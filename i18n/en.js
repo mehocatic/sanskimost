@@ -12,7 +12,7 @@ I18N.en = {
   'kv.help.mix': "Guess the year of six archive photos and answer four questions.",
   'kv.help.quiz': "Choose 10 or 20 questions about Sanski Most.",
   'kv.help.surv': "Choose from four answers. The game ends after your third mistake or after 80 questions.",
-  'kv.modeLimit': "This browser gets three attempts per day for this leaderboard.",
+  'kv.modeLimit': "This browser gets three attempts per day for this chronicle.",
   'kv.competition': "Knowledge challenge",
   'kv.daily': "Play 10 or 20 questions. Each day this browser gets three ranked games of each length.",
   'kv.compete': "Play a ranked game",
