@@ -550,6 +550,8 @@
     $('kv-daily-go').textContent = t(playedToday() ? 'kv.dailySee' : 'kv.dailyGo');
     $('kv-daily').setAttribute('aria-label', $('kv-daily-t').textContent + ', ' + t(playedToday() ? 'kv.viewDaily' : 'kv.playDaily'));
   }
+  setInterval(() => { if (!$('kv-intro').hidden) dailyLine(); }, 1000);
+  $('kv-daily').addEventListener('click', () => { if (pending) return; mode = 'daily'; start(false); });
   $('kv-practice').addEventListener('click', () => start(false));
   $('kv-ranked').addEventListener('click', () => start(true));
   $('kv-menu').addEventListener('click', () => {
