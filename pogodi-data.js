@@ -180,6 +180,10 @@ Object.assign(window.KVS, {
   "l-julka": {
     "n": "Nezavisne novine (Julka Popović-Srdić)",
     "u": "https://www.nezavisne.com/novosti/banjaluka/Istaknute-istorijske-licnosti-Banjaluke-XXXIX-Julka-Popovic-Srdic/282098"
+  },
+  "l-jasarevic": {
+    "n": "Una-sana Krajina (Senudin Jašarević)",
+    "u": "https://usnkrajina.ba/clanak/senudin-jasarevic-roden-iznad-ucionice-a-cijeli-zivot-proveo-izmedu-vojske-novina-i-knjizevnosti/1050"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -442,5 +446,6 @@ window.KVQ = [
   {"id":"tonticzb","t":"choice","c":"ljudi","ok":3,"o":[["Sanski zapisi","Sanski zapisi"],["Grmečki stihovi","Grmečki stihovi"],["Sarajevski rukopis","Sarajevski rukopis"],["Ratni dnevnik","Ratni dnevnik"]],"q":["Koja je zbirka Stevana Tontića nastala iz iskustva rata u Sarajevu?","Which of Stevan Tontić’s collections grew out of the experience of war in Sarajevo?"],"a":["Zbirka Sarajevski rukopis nastala je iz iskustva rata u Sarajevu.","The collection Sarajevski rukopis grew out of the war in Sarajevo."],"s":"l-tontic"},
   {"id":"tonticrod","t":"choice","c":"ljudi","ok":2,"o":[["Kruhari","Kruhari"],["Grdanovci","Grdanovci"],["Dabar","Dabar"],["Srnetica","Srnetica"]],"q":["U kojem je selu kod Sanskog Mosta rođen pjesnik Stevan Tontić?","In which village near Sanski Most was the poet Stevan Tontić born?"],"a":["Rođen je u Grdanovcima.","He was born in Grdanovci."],"s":"l-tontic"},
   {"id":"julkapis","t":"choice","c":"ljudi","ok":3,"o":[["O Branku Ćopiću","O Branku Ćopiću"],["O Ivi Andriću","O Ivi Andriću"],["O Petru Kočiću","O Petru Kočiću"],["O Mešu Selimoviću","O Mešu Selimoviću"]],"q":["O kome je među ostalim pisala Julka Popović-Srdić?","Whom, among others, did Julka Popović-Srdić write about?"],"a":["Pisala je o životu žena na selu, o majčinstvu i o Petru Kočiću.","She wrote about village women, motherhood and Petar Kočić."],"s":"l-julka"},
-  {"id":"julkarod","t":"choice","c":"ljudi","ok":4,"o":[["1865","1865"],["1905","1905"],["1925","1925"],["1885","1885"]],"q":["Koje je godine rođena učiteljica i književnica Julka Popović-Srdić?","In what year was the teacher and writer Julka Popović-Srdić born?"],"a":["Rođena je 1885. u Sanskom Mostu.","She was born in Sanski Most in 1885."],"s":"l-julka"}
+  {"id":"julkarod","t":"choice","c":"ljudi","ok":4,"o":[["1865","1865"],["1905","1905"],["1925","1925"],["1885","1885"]],"q":["Koje je godine rođena učiteljica i književnica Julka Popović-Srdić?","In what year was the teacher and writer Julka Popović-Srdić born?"],"a":["Rođena je 1885. u Sanskom Mostu.","She was born in Sanski Most in 1885."],"s":"l-julka"},
+  {"id":"jasarkr","t":"choice","c":"ljudi","ok":2,"o":[["Oslobođenja","Oslobođenja"],["Unsko-sanskih novina Krajina","Unsko-sanskih novina Krajina"],["Dnevnog avaza","Dnevnog avaza"],["Nezavisnih novina","Nezavisnih novina"]],"q":["Čiji je prvi direktor bio Senudin Jašarević?","Of which newspaper was Senudin Jašarević the first director?"],"a":["Bio je prvi direktor Unsko-sanskih novina Krajina.","He was the first director of the Una-Sana daily Krajina."],"s":"l-jasarevic"}
 ];
