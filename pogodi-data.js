@@ -208,6 +208,10 @@ Object.assign(window.KVS, {
   "l-mandic": {
     "n": "Al Jazeera Balkans (Pero Mandić)",
     "u": "https://balkans.aljazeera.net/amp/teme/2017/8/27/ozivljavanje-prve-kolonije-naive-u-bih"
+  },
+  "l-hadzija": {
+    "n": "Dnevni avaz (Hadžija Hadžibajramović)",
+    "u": "https://avaz.ba/vijesti/kultura/699945/preminula-glumica-i-dugogodisnja-direktorica-narodnog-pozorista-mostar"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -483,5 +487,6 @@ window.KVQ = [
   {"id":"cericdr","t":"choice","c":"ljudi","ok":2,"o":[["Galerija u Sanskom Mostu","A gallery in Sanski Most"],["Međunarodna Ljetnja drugovanja na Sani","The international Summer Gatherings on the Sana"],["Muzička akademija","A music academy"],["Sanska petica","The Sanska petica race"]],"q":["Šta je nastalo iz sanske kolonije naive koju su osnovali Cerić i Mandić?","What grew out of the Sanski Most naive art colony founded by Cerić and Mandić?"],"a":["Iz kolonije su nastala međunarodna Ljetnja drugovanja na Sani.","The colony gave rise to the international Summer Gatherings on the Sana."],"s":"l-ceric"},
   {"id":"cericdjela","t":"choice","c":"ljudi","ok":2,"o":[["Oko 50","About 50"],["Više od 500","More than 500"],["Više od 2.000","More than 2,000"],["Oko 100","About 100"]],"q":["Koliko je slika i skulptura, prema izvoru, učesnici kolonije naive ostavili gradu?","According to the source, how many paintings and sculptures did the colony’s participants leave the town?"],"a":["Ostavili su gradu više od 500 slika i skulptura.","They left the town more than 500 paintings and sculptures."],"s":"l-ceric"},
   {"id":"mandickp","t":"choice","c":"ljudi","ok":1,"o":[["14","14"],["7","7"],["12","12"],["20","20"]],"q":["Koliko slika ima ciklus Križni put Isusa Krista Pere Mandića?","How many paintings does Pero Mandić’s cycle of the Way of the Cross have?"],"a":["Ciklus ima 14 slika.","The cycle has 14 paintings."],"s":"l-mandic"},
-  {"id":"mandicc","t":"choice","c":"ljudi","ok":1,"o":[["U crkvi Uznesenja Blažene Djevice Marije","In the church of the Assumption of the Blessed Virgin Mary"],["U crkvi sv. Ilije","In the church of St Elijah"],["U crkvi sv. Petra","In the church of St Peter"],["U crkvi sv. Nikole","In the church of St Nicholas"]],"q":["U kojoj se crkvi u Sanskom Mostu čuva Mandićev Križni put?","In which church in Sanski Most is Mandić’s Way of the Cross kept?"],"a":["Čuva se u crkvi Uznesenja Blažene Djevice Marije.","It is kept in the church of the Assumption of the Blessed Virgin Mary."],"s":"l-mandic"}
+  {"id":"mandicc","t":"choice","c":"ljudi","ok":1,"o":[["U crkvi Uznesenja Blažene Djevice Marije","In the church of the Assumption of the Blessed Virgin Mary"],["U crkvi sv. Ilije","In the church of St Elijah"],["U crkvi sv. Petra","In the church of St Peter"],["U crkvi sv. Nikole","In the church of St Nicholas"]],"q":["U kojoj se crkvi u Sanskom Mostu čuva Mandićev Križni put?","In which church in Sanski Most is Mandić’s Way of the Cross kept?"],"a":["Čuva se u crkvi Uznesenja Blažene Djevice Marije.","It is kept in the church of the Assumption of the Blessed Virgin Mary."],"s":"l-mandic"},
+  {"id":"hadzijapoz","t":"choice","c":"ljudi","ok":2,"o":[["Narodno pozorište Sarajevo","Narodno pozorište Sarajevo"],["Narodno pozorište Mostar","Narodno pozorište Mostar"],["Narodno pozorište Tuzla","Narodno pozorište Tuzla"],["Narodno pozorište Banja Luka","Narodno pozorište Banja Luka"]],"q":["Koje je pozorište dugogodišnja direktorica bila Hadžija Hadžibajramović?","Which theatre was Hadžija Hadžibajramović director of for many years?"],"a":["Bila je glumica i dugogodišnja direktorica Narodnog pozorišta Mostar.","She was an actress and for many years director of the National Theatre Mostar."],"s":"l-hadzija"}
 ];
