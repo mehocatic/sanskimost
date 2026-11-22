@@ -124,6 +124,10 @@ window.QuizRanked = (() => {
   if ('IntersectionObserver' in window) {
     const seen = new IntersectionObserver(entries => {
       if (entries.some(e => e.isIntersecting)) { sheet.classList.add('in'); seen.disconnect(); }
+    }, {threshold: .15});
+    seen.observe(sheet);
+  } else sheet.classList.add('in');
+
     let player;
     try {
       player = localStorage.getItem('kv-player');
