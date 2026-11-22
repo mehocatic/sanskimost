@@ -196,6 +196,7 @@ window.ARCHIVE = {
     {"f": "delegati-zavnobih-opis", "y": 1944, "cat": "dokumenti", "cap": "arh.c.delegati-zavnobih-opis", "w": 1600, "h": 552, "src": "Foto-služba Muzeja narodne revolucije BiH, Sarajevo", "quiz": false},
     {"f": "delegati-zavnobih", "y": 1944, "cat": "ljudi", "cap": "arh.c.delegati-zavnobih", "w": 1600, "h": 1123, "src": "Foto-služba Muzeja narodne revolucije BiH, Sarajevo", "quiz": false},
     {"f": "rodic-1944", "y": 1944, "cat": "ljudi", "cap": "arh.c.rodic-1944", "w": 1065, "h": 821, "src": "Muzej revolucije naroda Jugoslavije", "quiz": false},
-    {"f": "rekord-golf-a", "y": 2026, "cat": "ljudi", "cap": "arh.c.rekord-golf-a", "w": 1280, "h": 880, "quiz": false}
+    {"f": "rekord-golf-a", "y": 2026, "cat": "ljudi", "cap": "arh.c.rekord-golf-a", "w": 1280, "h": 880, "quiz": false},
+    {"f": "rekord-golf-b", "y": 2026, "cat": "ljudi", "cap": "arh.c.rekord-golf-b", "w": 1280, "h": 880, "quiz": false}
   ]
 };
