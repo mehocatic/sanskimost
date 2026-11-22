@@ -120,7 +120,10 @@ window.QuizRanked = (() => {
       note.textContent = t('netError');
     }
   }
-  async function start(selected,count) {
+  // the ink and the stamps wait until the page is in view
+  if ('IntersectionObserver' in window) {
+    const seen = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { sheet.classList.add('in'); seen.disconnect(); }
     let player;
     try {
       player = localStorage.getItem('kv-player');
