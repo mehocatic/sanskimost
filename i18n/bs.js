@@ -293,6 +293,7 @@ I18N.bs = {
   'arh.doctitle': 'Arhiv · Sanski Most',
   'arh.meta': 'Fotografije Sanskog Mosta kroz vrijeme i na karti, od 1900. godine nadalje.',
   'arh.eyebrow': 'Arhiv · od 1900.',
+  'arh.corridor': 'Prošetaj hodnikom →',
   'arh.title.html': "Sanski Most na <em>fotografijama</em>",
   'arh.view': 'Prikaz',
   'arh.view.time': 'Kroz vrijeme',
