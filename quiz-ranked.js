@@ -187,7 +187,8 @@ window.QuizRanked = (() => {
     chron.hidden = false;
     addEventListener('langchange', () => { status(message); refresh(); });
   }
-  return {start, finish, status, answer:(round,choice) => rpc('answer',{p_token:token,p_round:round,p_choice:choice}),
-    menu() { token = null; $('kv-submit').hidden = true; $('kv-competition').append(board); status(); },
-    select(selected,count) { mode = selected; size = count; if (config) refresh(); }};
+  return Object.assign(api, {start, finish, status,
+    answer: (round, choice) => rpc('answer', {p_token: token, p_round: round, p_choice: choice}),
+    menu() { token = null; mine = null; $('kv-submit').hidden = true; $('kv-chron-home').prepend(chron); status(); if (config) refresh(); },
+    select(selected, count) { mode = selected; size = count; if (config) refresh(); }});
 })();
