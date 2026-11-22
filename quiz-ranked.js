@@ -160,7 +160,9 @@ window.QuizRanked = (() => {
   function finish(score) {
     mine = {score};
     $('kv-submit').hidden = false;
-    $('kv-submit').append(board);
+    form.hidden = false;
+    $('kv-chron-slot').append(chron);
+    refresh();
   }
   form.addEventListener('submit', async event => {
     event.preventDefault();
