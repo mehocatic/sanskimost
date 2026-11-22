@@ -240,6 +240,10 @@ Object.assign(window.KVS, {
   "kons": {
     "n": "Zavod za zaštitu kulturnog naslijeđa Bihać: popisni registar",
     "u": "http://old.kons.gov.ba/"
+  },
+  "tz": {
+    "n": "Turistička zajednica Sanski Most: Planiraj posjetu",
+    "u": "https://exploresanskimost.ba/planiraj-posjetu"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -525,5 +529,6 @@ window.KVQ = [
   {"id":"haskickuca","t":"choice","c":"ljudi","ok":3,"o":[["Stara čaršija","Stara čaršija"],["Zavičajna soba","Zavičajna soba"],["Bosanska kuća","Bosanska kuća"],["Sanska avlija","Sanska avlija"]],"q":["Kako se zove zbirka koju je Safija Haskić uredila u Sanskom Mostu?","What is the collection that Safija Haskić arranged in Sanski Most called?"],"a":["Uredila je zbirku Bosanska kuća.","She created the collection “Bosanska kuća”."],"s":"l-haskic"},
   {"id":"zukicremen","t":"choice","c":"ljudi","ok":1,"o":[["Ručno je izrađivao sedla i konjsku opremu","He made saddles and horse harness by hand"],["Popravljao je satove","He repaired watches"],["Pekao je hljeb","He baked bread"],["Kovao je potkovice","He forged horseshoes"]],"q":["Čime se bavio Zijad Zukić u radnji na sanskoj pijaci?","What did Zijad Zukić make in his workshop at the Sanski Most market?"],"a":["Ručno je izrađivao sedla, amove i kajase.","He made saddles, harnesses and reins by hand."],"s":"l-zukic"},
   {"id":"susnjaral","t":"choice","c":"znamenitosti","ok":3,"o":[["Od bijelog kamena","Od bijelog kamena"],["Od bakra","Od bakra"],["Od tankih aluminijskih ploča","Od tankih aluminijskih ploča"],["Od betona","Od betona"]],"q":["Od kojeg je materijala obloga obeliska na Šušnjaru?","What is the obelisk at Šušnjar clad in?"],"a":["Nosiva konstrukcija je od čeličnih nosača, a obloga od aluminijskih ploča.","The structure is of steel girders, clad in aluminium plates."],"s":"spom"},
-  {"id":"majdan1571","t":"choice","c":"historija","ok":1,"o":[["1571","1571"],["1463","1463"],["1498","1498"],["1717","1717"]],"q":["Oko koje su godine Osmanlije obnovile preradu željezne rude u Starom Majdanu?","Around which year did the Ottomans restore ore processing at Stari Majdan?"],"a":["Najviše su se izrađivala topovska đulad i puščane cijevi.","The works made mostly cannonballs and rifle barrels."],"s":"kons"}
+  {"id":"majdan1571","t":"choice","c":"historija","ok":1,"o":[["1571","1571"],["1463","1463"],["1498","1498"],["1717","1717"]],"q":["Oko koje su godine Osmanlije obnovile preradu željezne rude u Starom Majdanu?","Around which year did the Ottomans restore ore processing at Stari Majdan?"],"a":["Najviše su se izrađivala topovska đulad i puščane cijevi.","The works made mostly cannonballs and rifle barrels."],"s":"kons"},
+  {"id":"tzlezaji","t":"choice","c":"dogadjaji","ok":1,"o":[["279","279"],["89","89"],["150","150"],["420","420"]],"q":["Koliko registrovanih ležaja ima Sanski Most prema Turističkoj zajednici?","How many registered beds does Sanski Most have, according to the Tourist Board?"],"a":["U smještaju su hoteli, moteli, apartmani i sobe.","Accommodation includes hotels, motels, apartments and rooms."],"s":"tz"}
 ];
