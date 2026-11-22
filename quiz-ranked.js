@@ -1,3 +1,5 @@
+// Ranked games and the town chronicle (the leaderboard): a register page with one name per line,
+// written by hand, and a stamp with the title of the score for the first three.
 // The attempt token stays in memory. Only the random daily-limit identifier is persisted.
 window.QuizRanked = (() => {
   const config = window.quizConfig;
