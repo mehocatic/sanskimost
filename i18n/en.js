@@ -64,6 +64,7 @@ I18N.en = {
   'kv.dailyNew': "new in {time}",
   'kv.dailyGo': "Play →",
   'kv.dailySee': "Result →",
+  'kv.playMode': "Play: {mode}",
   'kv.ligaprvak.q': "Who won the first official municipal football championship in 1979/80?",
   'kv.ligaprvak.a': "Radnički from Zdena earned 33 points, two more than Jedinstvo from Tomina.",
   'kv.ligaprvak.o0': "Radnički Zdena",
