@@ -358,7 +358,7 @@ I18N.en = {
   'kv.title.html': 'Guess the <em>year</em>',
   'kv.lead': 'Six old photographs and four questions about the history and nature of Sanski Most. Guess the year or the number, or pick an answer. The closer you are, the more points you get.',
   'kv.quiz': 'Questions only',
-  'kv.bank': 'The bank has {n} questions with checked answers and a source for each. Questions do not repeat until you have been through them all.',
+  'kv.bank': 'The bank has {n} questions with checked answers, and most have a source. Questions do not repeat until you have been through them all.',
   'kv.sharetextq': 'I scored {n} of {max} points in the Sanski Most quiz. Can you do better?',
   'kv.sources': 'Question sources',
   'kv.srcnote': 'Some sources are secondary (Wikipedia, tourist portals). Where sources disagreed, the question was left out.',

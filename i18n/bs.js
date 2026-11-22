@@ -360,7 +360,7 @@ I18N.bs = {
   'kv.title.html': 'Pogodi <em>godinu</em>',
   'kv.lead': 'Šest starih fotografija i četiri pitanja o historiji i prirodi Sanskog Mosta. Pogodi godinu ili broj, ili izaberi odgovor. Što bliže, to više bodova.',
   'kv.quiz': 'Samo pitanja',
-  'kv.bank': 'Baza ima {n} pitanja s provjerenim odgovorima i izvorom uz svaki. Pitanja se ne ponavljaju dok ne prođeš sva.',
+  'kv.bank': 'Baza ima {n} pitanja s provjerenim odgovorima, a uz većinu je naveden izvor. Pitanja se ne ponavljaju dok ne prođeš sva.',
   'kv.sharetextq': 'Moj rezultat je {n} od {max} bodova u kvizu o Sanskom Mostu. Možeš li bolje?',
   'kv.sources': 'Izvori pitanja',
   'kv.srcnote': 'Dio izvora su sekundarni (Wikipedia, turistički portali). Gdje su se izvori razilazili, pitanje je izostavljeno.',
