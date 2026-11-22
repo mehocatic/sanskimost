@@ -14,7 +14,7 @@ for (const q of Q) {
   const e = m => bad.push(`${q.id}: ${m}`);
   if (ids.has(q.id)) e('id se ponavlja'); ids.add(q.id);
   cats[q.c] = (cats[q.c] || 0) + 1;
-  if (!S[q.s]) e('nema izvora ' + q.s);
+  if (!q.nosrc && !S[q.s]) e('nema izvora ' + q.s);
   if (!two(q.q) || !two(q.a)) e('nedostaje tekst na jednom jeziku');
   if (q.t === 'choice') {
     if (!Array.isArray(q.o) || q.o.length !== 4) e('treba tačno 4 odgovora');
