@@ -112,7 +112,9 @@ window.QuizRanked = (() => {
     const request = ++boardRequest;
     $('kv-chr-mode').textContent = t('chr.top', {mode: modeName()});
     try {
-      const rows = await rpc('board', {p_size:size,p_mode:mode});
+      const rows = await rpc('board', {p_size: size, p_mode: mode});
+      if (request === boardRequest) render(rows);
+    } catch {
       if (request !== boardRequest) return;
       rows.forEach(({display_name, score}) => {
         const item = document.createElement('li');
