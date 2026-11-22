@@ -135,7 +135,7 @@ window.QuizRanked = (() => {
       player = localStorage.getItem('kv-player');
       if (!player) {
         player = crypto.randomUUID();
-        localStorage.setItem('kv-player',player);
+        localStorage.setItem('kv-player', player);
       }
     } catch { throw new Error('storage'); }
     const game = await rpc('start', {p_player:player,p_size:count,p_scales:true,p_mode:selected});
