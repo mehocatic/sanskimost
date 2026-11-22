@@ -176,6 +176,10 @@ Object.assign(window.KVS, {
   "l-tontic": {
     "n": "Matica srpska (Stevan Tontić)",
     "u": "https://www.maticasrpska.org.rs/stariSajt/casopisi/LLMS_6.pdf"
+  },
+  "l-julka": {
+    "n": "Nezavisne novine (Julka Popović-Srdić)",
+    "u": "https://www.nezavisne.com/novosti/banjaluka/Istaknute-istorijske-licnosti-Banjaluke-XXXIX-Julka-Popovic-Srdic/282098"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -436,5 +440,6 @@ window.KVQ = [
   {"id":"bilajdekan","t":"choice","c":"ljudi","ok":1,"o":[["U Zagrebu","U Zagrebu"],["U Sarajevu","U Sarajevu"],["U Beogradu","U Beogradu"],["U Ljubljani","U Ljubljani"]],"q":["U kojem je gradu Bilajbegović bio dekan Geodetskog fakulteta 1985. do 1987?","In which city was Bilajbegović dean of the Faculty of Geodesy from 1985 to 1987?"],"a":["Bio je dekan Geodetskog fakulteta u Zagrebu.","He was dean of the Faculty of Geodesy in Zagreb."],"s":"l-abilajbegovic"},
   {"id":"dedickn","t":"choice","c":"ljudi","ok":2,"o":[["Sanski Most u srednjem vijeku","Sanski Most u srednjem vijeku"],["Bosansko Kraljevstvo i Srpska Despotovina (1402 do 1459)","Bosansko Kraljevstvo i Srpska Despotovina (1402 do 1459)"],["Bosanski sandžak","Bosanski sandžak"],["Povijest Krajine","Povijest Krajine"]],"q":["Koju je knjigu napisao historičar Enes Dedić iz Sanskog Mosta?","Which book did the historian Enes Dedić from Sanski Most write?"],"a":["Autor je knjige Bosansko Kraljevstvo i Srpska Despotovina (1402 do 1459).","He is the author of the book Bosansko Kraljevstvo i Srpska Despotovina (1402 to 1459)."],"s":"l-dedic"},
   {"id":"tonticzb","t":"choice","c":"ljudi","ok":3,"o":[["Sanski zapisi","Sanski zapisi"],["Grmečki stihovi","Grmečki stihovi"],["Sarajevski rukopis","Sarajevski rukopis"],["Ratni dnevnik","Ratni dnevnik"]],"q":["Koja je zbirka Stevana Tontića nastala iz iskustva rata u Sarajevu?","Which of Stevan Tontić’s collections grew out of the experience of war in Sarajevo?"],"a":["Zbirka Sarajevski rukopis nastala je iz iskustva rata u Sarajevu.","The collection Sarajevski rukopis grew out of the war in Sarajevo."],"s":"l-tontic"},
-  {"id":"tonticrod","t":"choice","c":"ljudi","ok":2,"o":[["Kruhari","Kruhari"],["Grdanovci","Grdanovci"],["Dabar","Dabar"],["Srnetica","Srnetica"]],"q":["U kojem je selu kod Sanskog Mosta rođen pjesnik Stevan Tontić?","In which village near Sanski Most was the poet Stevan Tontić born?"],"a":["Rođen je u Grdanovcima.","He was born in Grdanovci."],"s":"l-tontic"}
+  {"id":"tonticrod","t":"choice","c":"ljudi","ok":2,"o":[["Kruhari","Kruhari"],["Grdanovci","Grdanovci"],["Dabar","Dabar"],["Srnetica","Srnetica"]],"q":["U kojem je selu kod Sanskog Mosta rođen pjesnik Stevan Tontić?","In which village near Sanski Most was the poet Stevan Tontić born?"],"a":["Rođen je u Grdanovcima.","He was born in Grdanovci."],"s":"l-tontic"},
+  {"id":"julkapis","t":"choice","c":"ljudi","ok":3,"o":[["O Branku Ćopiću","O Branku Ćopiću"],["O Ivi Andriću","O Ivi Andriću"],["O Petru Kočiću","O Petru Kočiću"],["O Mešu Selimoviću","O Mešu Selimoviću"]],"q":["O kome je među ostalim pisala Julka Popović-Srdić?","Whom, among others, did Julka Popović-Srdić write about?"],"a":["Pisala je o životu žena na selu, o majčinstvu i o Petru Kočiću.","She wrote about village women, motherhood and Petar Kočić."],"s":"l-julka"}
 ];
