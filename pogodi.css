@@ -100,6 +100,11 @@
 /* the stamps reach over the lines around them, as on real paper, but each stays readable */
 .kv-stamp { position: absolute; top: 50%; z-index: 2; width: 72px; height: 72px; margin-top: -36px; color: #9c3b2c; opacity: .86; pointer-events: none; }
 .kv-line:nth-child(1) .kv-stamp { right: 35%; rotate: -14deg; width: 76px; height: 76px; margin-top: -38px; }
+.kv-line:nth-child(2) .kv-stamp { right: 15%; rotate: 9deg; }
+.kv-line:nth-child(3) .kv-stamp { right: 38%; rotate: -6deg; }
+.kv-line.edit .kv-stamp { right: 17%; rotate: -9deg; }
+/* ink is written, the stamps come down one after another */
+@keyframes kv-write { from { clip-path: inset(-.5em 100% -.5em -.5em); } to { clip-path: inset(-.5em -.5em -.5em -.5em); } }
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
