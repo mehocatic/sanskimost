@@ -62,28 +62,18 @@
         <span class="mask"><span class="rise" style="--mi: 1" id="hint2"></span></span>
       </div>
 
-      <div class="toggle" role="tablist" aria-label="Prikaz" data-i18n-attr="aria-label:hod.view">
-        <button type="button" role="tab" class="toggle-btn active" id="t-gallery" aria-selected="true" data-i18n="hod.gallery">Galerija</button>
-        <button type="button" role="tab" class="toggle-btn" id="t-list" aria-selected="false" data-i18n="hod.listbtn">Lista</button>
-      </div>
-
       <div class="caption">
         <span class="mask kicker-mask"><span class="rise kicker" style="--mi: 2" data-i18n="hod.kicker">Upravo prolazite kroz</span></span>
         <div class="headline-row">
           <h1 class="headline"><span class="mask"><span class="rise" style="--mi: 3" data-i18n="hod.headline">Hodnik ličnosti</span></span></h1>
-          <button type="button" class="enter-link" id="enter"><span class="mask"><span class="rise enter-inner" style="--mi: 4" data-i18n="hod.enter">Svi po oblastima →</span></span></button>
         </div>
       </div>
     </div>
 
-    <!-- the same people as a list, by field -->
+    <!-- only without WebGL: the same people as a list, by field (there is no switch to it) -->
     <section class="list-section" id="list" aria-hidden="true">
       <div class="list-header">
         <h2 class="list-heading" data-i18n="hod.listhead">Ličnosti po oblastima</h2>
-        <div class="list-toggle" role="tablist" aria-label="Prikaz" data-i18n-attr="aria-label:hod.view">
-          <button type="button" role="tab" class="toggle-btn" id="l-gallery" aria-selected="false" data-i18n="hod.gallery">Galerija</button>
-          <button type="button" role="tab" class="toggle-btn active" aria-selected="true" data-i18n="hod.listbtn">Lista</button>
-        </div>
       </div>
       <div class="list-grid" id="list-grid"></div>
       <aside class="lic-note">
