@@ -554,6 +554,9 @@
   $('kv-daily').addEventListener('click', () => { if (pending) return; mode = 'daily'; start(false); });
   $('kv-practice').addEventListener('click', () => start(false));
   $('kv-ranked').addEventListener('click', () => start(true));
+  $('kv-dock-btn').addEventListener('click', () => start(!!window.quizConfig));
+  // the bar at the bottom of a phone shows once the play buttons are scrolled away
+  if ('IntersectionObserver' in window) {
   $('kv-menu').addEventListener('click', () => {
     if (sharedResult) {
       sharedResult = null;
