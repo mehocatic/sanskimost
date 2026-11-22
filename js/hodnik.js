@@ -1,41 +1,33 @@
-// Hodnik sjećanja: the round corridor of the "Hodnik historije" project (Three.js, vendor/three.module.min.js, the same version r160),
-// ported to plain JavaScript. The scene, the walk and the focus glide are the original ones; what hangs in it is read from the archive:
-//   - arhiv-data.js and i18n give the photographs, the captions and the sources (nothing is copied here, only the two selections below),
-//   - the outer wall holds the selection in hodnik-izbor.md in the order of the years, the inner wall holds 24 more,
-//   - a click on the focused photograph opens it in a dialog, with a link to the same photograph in the archive,
-//   - the Gallery / List switch shows the same photographs as a grid.
+// Hodnik ličnosti: the round corridor of the "Hodnik historije" project (Three.js, vendor/three.module.min.js, the same version r160),
+// ported to plain JavaScript. The scene, the walk and the focus glide are the original ones; what hangs in it are the people of Sanski Most:
+//   - licnosti-data.js and i18n give the names, roles, biographies and sources, photos/licnosti/ the portraits,
+//   - the people go in the order of the fields, taking turns between the outer and the inner wall,
+//   - a click on the focused portrait opens the biography in a dialog (previous / next go through the list order),
+//   - the Gallery / List switch shows everyone as a grid, grouped by field.
 (() => {
-  const A = window.ARCHIVE;
   const $ = id => document.getElementById(id);
   const t = (k, v) => I18n.t(k, v);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-  const OUTER = [
-    'trg-1900', 'spomenik-1915', 'sanski-most-1938', 'most-1939', 'sokolski-dom', 'srusen-most-1943',
-    'delegati-zavnobih', 'rat-1944-b', 'avion-1944', 'hamzibegova-1946', 'masinski-most-1956', 'trnova-1957',
-    'prijedorska-1961', 'slet-1962', 'autobus-sip-1966', 'lovac-1968', 'most-hotel-1970', 'trg-1970',
-    'docek-1972', 'prijedorska-1976', 'korida-1986', 'sana-hotel-1996', 'prijedorska-1997-b', 'most-1997',
-    'dzamija-gradnja-b', 'novi-most-2012-c', 'poplava-2014-a', 'sana-led-a', 'stari-grad-sana', 'rekord-golf-b'
-  ];
-  const INNER = [
-    'kuca-progomolje-1938', 'rudnik-lokomotiva', 'izlet-posta-1970', 'setnja-1972', 'slet-1975', 'plivaci-2',
-    'izbori-1996', 'zdena-most-1996', 'sana-1997', 'crkva-1997', 'hotel-asi-1997', 'ulica-1997-a',
-    'dzamija-ulica-1998', 'lovac-2005', 'trke-1', 'novi-most-2013-b', 'poplava-2014-kolibica', 'poplava-2014-most-a',
-    'musalla-ljeto', 'bliha-ljeto', 'bliha-jesen', 'sana-led-b', 'zaledjena-sana', 'splaviste-caplje'
-  ];
-  const find = id => A.photos.find(p => p.f === id);
-  const outerP = OUTER.map(find).filter(Boolean), innerP = INNER.map(find).filter(Boolean);
+  // everyone in the order of the fields, then the order of the data file; the walls take turns, so both walls go through the fields together
+  const CATS = window.LICNOSTI_CATS || [], SIZES = window.LICNOSTI_PHOTOS || {};
+  const ALL = CATS.flatMap(c => (window.LICNOSTI || []).filter(p => p.cat === c.id));
+  const outerP = ALL.filter((p, i) => i % 2 === 0), innerP = ALL.filter((p, i) => i % 2 === 1);
   const OUTER_COUNT = outerP.length, INNER_COUNT = innerP.length;
-  const PRINTS = [...outerP, ...innerP].map((p, i) => ({ index: i, p, width: p.w, height: p.h }));
+  // without a portrait (Hasan-beg Cekic, Arif Hukanovic): a card with the initials, 3:4
+  const PRINTS = [...outerP, ...innerP].map((p, i) => {
+    const sz = SIZES[p.id];
+    return { index: i, p, photo: !!sz, width: sz ? sz[0] : 600, height: sz ? sz[1] : 800 };
+  });
 
-  const full = p => `photos/arhiv/${p.f}.webp`;
-  const thumb = p => `photos/arhiv/t/${p.f}.webp`;
-  const yearOf = p => p.yl ? t(p.yl) : (p.y ? String(p.y) : t('arh.undated'));
-  const capOf = p => t(p.cap);
-  const srcOf = p => !p.src ? '' : (p.src.startsWith('hist.') ? t(p.src) : p.src);
-  const placeOf = id => A.places.find(x => x.id === id);
-  const placeName = pl => pl.name[I18n.lang] || pl.name.bs;
-  const headOf = p => (p.place && placeOf(p.place)) ? placeName(placeOf(p.place)) : t('arh.cat.' + p.cat);
+  const full = p => `photos/licnosti/${p.id}.webp`;
+  const thumb = p => `photos/licnosti/t/${p.id}.webp`;
+  const L = () => I18n.lang;
+  const tx = o => o && o.key ? t(o.key) : (o && (o[L()] || o.en)) || '';
+  const bio = (p, field) => p.copyKey ? t(p.copyKey + '.' + field) : tx(p[field]);
+  const roleOf = p => bio(p, 'role');
+  const catOf = p => tx(CATS.find(c => c.id === p.cat));
+  const initials = n => n.split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('');
 
   const mqSmall = matchMedia('(max-width: 819px), (orientation: portrait) and (max-width: 1100px), (orientation: landscape) and (max-height: 500px)');
   const mqMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -50,11 +42,19 @@
     $('hint2').textContent = t(`hod.hint.${k}2`);
   }
 
-  /* ---------- the list ---------- */
+  /* ---------- the list: everyone by field ---------- */
+  const portrait = (it, cls) => it.photo
+    ? `<img class="${cls}" src="${full(it.p)}" width="${it.width}" height="${it.height}" alt="" loading="lazy" decoding="async">`
+    : `<span class="${cls} mono" aria-hidden="true">${esc(initials(it.p.name))}</span>`;
   function buildList() {
-    $('list-grid').innerHTML = PRINTS.map(it =>
-      `<button type="button" class="list-card" data-i="${it.index}"><span class="list-img-wrap"><img class="list-img" src="${full(it.p)}" alt="" loading="lazy" decoding="async"></span>` +
-      `<span class="list-title">${esc(capOf(it.p))}</span><span class="list-artist">${esc(headOf(it.p))}</span><span class="list-year">${esc(yearOf(it.p))}</span></button>`).join('');
+    $('list-grid').innerHTML = CATS.map(c => {
+      const items = PRINTS.filter(it => it.p.cat === c.id);
+      if (!items.length) return '';
+      return `<section class="list-cat" aria-labelledby="lc-${c.id}"><h3 class="list-cat-h" id="lc-${c.id}">${esc(tx(c))} <span>${esc(t('lic.count', { n: items.length }))}</span></h3><div class="list-cards">` +
+        items.map(it => `<button type="button" class="list-card" data-i="${it.index}"><span class="list-img-wrap">${portrait(it, 'list-img')}</span>` +
+          `<span class="list-title">${esc(it.p.name)}</span><span class="list-artist">${esc(roleOf(it.p))}</span></button>`).join('') +
+        '</div></section>';
+    }).join('');
   }
   $('list-grid').addEventListener('click', e => { const b = e.target.closest('.list-card'); if (b) openPhoto(+b.dataset.i); });
 
@@ -80,32 +80,45 @@
   $('prev').addEventListener('click', () => stage && stage.step(-1));
   $('next').addEventListener('click', () => stage && stage.step(1));
 
-  /* ---------- one photograph, opened ---------- */
+  /* ---------- one person, opened ---------- */
   const setHash = h => history.replaceState(null, '', h || (location.pathname + location.search));
   function fillDialog() {
     if (opened < 0) return;
-    const p = PRINTS[opened].p, pl = p.place && placeOf(p.place);
-    const img = $('lb-img');
-    img.src = full(p); img.width = p.w; img.height = p.h; img.alt = capOf(p);
-    const y = $('lb-y');
-    y.textContent = yearOf(p);
-    y.classList.toggle('s', !p.y || !!p.yl);
-    $('lb-cap').textContent = capOf(p);
-    let meta = '';
-    if (pl) meta += `<div><dt>${esc(t('arh.place'))}</dt><dd>${esc(placeName(pl))}${pl.slug ? ` · <a href="place?slug=${pl.slug}">${esc(t('hist.see.place'))}</a>` : ''}</dd></div>`;
-    if (p.src) meta += `<div><dt>${esc(t('arh.source'))}</dt><dd>${esc(srcOf(p))}</dd></div>`;
-    $('lb-meta').innerHTML = meta;
-    $('lb-meta').hidden = !meta;
-    $('lb-arh').href = `arhiv#foto=${p.f}`;
+    const it = PRINTS[opened], p = it.p;
+    const img = $('lb-img'), mono = $('lb-mono');
+    img.hidden = !it.photo; mono.hidden = it.photo;
+    if (it.photo) { img.src = full(p); img.width = it.width; img.height = it.height; img.alt = p.name; }
+    else { img.removeAttribute('src'); mono.textContent = initials(p.name); }
+    $('lb-cat').textContent = catOf(p);
+    $('lb-name').textContent = p.name;
+    $('lb-role').textContent = roleOf(p);
+    const tag = $('lb-tag');
+    tag.className = 'lb-tag ' + p.kind;
+    tag.textContent = t('lic.' + p.kind);
+    $('lb-text').textContent = bio(p, 'text');
+    const a = $('lb-src');
+    a.href = p.src.url;
+    if (p.src.internal) { a.removeAttribute('target'); a.removeAttribute('rel'); }
+    else { a.target = '_blank'; a.rel = 'noopener'; }
+    a.textContent = (p.src.internal ? '' : t('lic.source') + ': ') + p.src.label;
   }
   function openPhoto(i) {
     opened = i;
     fillDialog();
     if (!lb.open) lb.showModal();
-    lb.scrollTop = 0;
+    lb.scrollTop = 0; $('lb-txt').scrollTop = 0;
     if (stage) stage.overlay = true;
-    setHash('#foto=' + PRINTS[i].p.f);
+    setHash('#' + PRINTS[i].p.id);
   }
+  // previous / next in the order of the list (by field)
+  const ORDER = CATS.flatMap(c => PRINTS.filter(it => it.p.cat === c.id).map(it => it.index));
+  const stepPerson = d => { const k = ORDER.indexOf(opened); if (k >= 0) openPhoto(ORDER[(k + d + ORDER.length) % ORDER.length]); };
+  $('lb-prev').addEventListener('click', () => stepPerson(-1));
+  $('lb-next').addEventListener('click', () => stepPerson(1));
+  lb.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') stepPerson(-1);
+    if (e.key === 'ArrowRight') stepPerson(1);
+  });
   lb.addEventListener('close', () => {
     opened = -1; setHash('');
     if (stage) stage.overlay = view === 'list';
@@ -131,14 +144,14 @@
     const STEP = (2 * Math.PI) / OUTER_COUNT;
 
     // frame size on the wall (world units, not pixels): a photograph is never shown above its natural size on a normal screen
+    // a small portrait gets a smaller frame: about 190 px to a unit when a frame is in focus on a desktop screen
     function frameDims(print) {
       const aspect = print.width / print.height;
-      if (aspect >= 1) {
-        const pw = Math.min(2.32, 1.38 * aspect);
-        return { pw, ph: pw / aspect };
-      }
-      const ph = 1.95;
-      return { pw: Math.max(.86, ph * aspect), ph };
+      let pw, ph;
+      if (aspect >= 1) { pw = Math.min(2.32, 1.38 * aspect); ph = pw / aspect; }
+      else { ph = 1.95; pw = ph * aspect; }
+      const k = print.photo ? Math.min(1, print.height / 190 / ph) : 1;
+      return { pw: pw * k, ph: ph * k };
     }
 
     class Stage {
@@ -209,7 +222,7 @@
         manager.onError = () => { texLoaded = true; tryLaunch(); };
         const thumbLoader = new THREE.TextureLoader(manager);
         const thumbs = PRINTS.map(pr => {
-          const tex = thumbLoader.load(thumb(pr.p));
+          const tex = pr.photo ? thumbLoader.load(thumb(pr.p)) : this.monogram(pr);
           tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = maxAniso;
           this.disposables.push(tex);
           return tex;
@@ -302,6 +315,23 @@
         return { haloTex, shadowTex };
       }
 
+      // a card with the initials, for a person without a portrait (drawn again once the fonts are in)
+      monogram(pr) {
+        const c = document.createElement('canvas'); c.width = 480; c.height = 640;
+        const tex = new THREE.CanvasTexture(c);
+        (this.monos = this.monos || []).push({ c, tex, name: pr.p.name });
+        this.drawMonogram(c, pr.p.name);
+        return tex;
+      }
+      drawMonogram(c, name) {
+        const x = c.getContext('2d');
+        x.fillStyle = '#F6EAD8'; x.fillRect(0, 0, c.width, c.height);
+        x.strokeStyle = 'rgba(58, 53, 80, 0.18)'; x.lineWidth = 3; x.strokeRect(28, 28, c.width - 56, c.height - 56);
+        x.fillStyle = 'rgba(58, 53, 80, 0.72)'; x.textAlign = 'center'; x.textBaseline = 'middle';
+        x.font = '500 190px "Cormorant Garamond", Georgia, serif';
+        x.fillText(initials(name), c.width / 2, c.height / 2 + 6);
+      }
+
       createLabels(maxAniso) {
         this.labels = PRINTS.map(pr => {
           const canvas = document.createElement('canvas'); canvas.width = 640; canvas.height = 260;
@@ -317,10 +347,10 @@
           ctx.clearRect(0, 0, 640, 260);
           ctx.fillStyle = '#3A3550';
           ctx.font = '500 56px "Cormorant Garamond", Georgia, serif';
-          ctx.fillText(headOf(p), 30, 66, 580);
-          // the caption on two lines at most (the whole text is in the dialog)
+          ctx.fillText(p.name, 30, 66, 580);
+          // the role on two lines at most (the whole text is in the dialog)
           ctx.font = 'italic 400 38px "Cormorant Garamond", Georgia, serif';
-          const words = capOf(p).split(' '), lines = [''];
+          const words = roleOf(p).split(' '), lines = [''];
           for (const wd of words) {
             const tryLine = lines[lines.length - 1] ? lines[lines.length - 1] + ' ' + wd : wd;
             if (ctx.measureText(tryLine).width <= 580) lines[lines.length - 1] = tryLine;
@@ -331,9 +361,10 @@
           lines.forEach((ln, k) => ctx.fillText(ln, 30, 114 + k * 38));
           ctx.fillStyle = 'rgba(58, 53, 80, 0.7)';
           ctx.font = '500 24px Inter, system-ui, sans-serif';
-          ctx.fillText(`${yearOf(p).toUpperCase()} · ${t('nav.archive').toUpperCase()}`, 30, 232, 580);
+          ctx.fillText(catOf(p).toUpperCase(), 30, 232, 580);
           item.tex.needsUpdate = true;
         }
+        for (const m of this.monos || []) { this.drawMonogram(m.c, m.name); m.tex.needsUpdate = true; }
       }
 
       buildPrintGroups(scene, thumbs, haloTex, shadowTex) {
@@ -382,6 +413,7 @@
         const th = this.pose.th;
         for (const e of this.entries) {
           let d = Math.abs(this.shortestNear(e.angle, th) - th);
+          if (!PRINTS[e.printIndex].photo) continue;
           const need = e === this.focusedEntry || d < 1.2;
           if (need && !e.full && !e.loading) {
             e.loading = true;
@@ -617,7 +649,9 @@
   if (!PRINTS.length) { showNoGL(); return; }
   startScene().then(ok => {
     if (!ok) { gui.classList.add('intro-done'); showNoGL(); return; }
-    const m = location.hash.match(/^#foto=(.+)$/);
-    if (m) { const i = PRINTS.findIndex(p => p.p.f === m[1]); if (i >= 0) openPhoto(i); }
+    // a link to hodnik#<id> opens that person
+    const h = decodeURIComponent(location.hash.slice(1));
+    const i = PRINTS.findIndex(it => it.p.id === h);
+    if (i >= 0) openPhoto(i);
   });
 })();
