@@ -1,7 +1,7 @@
-// DRAFT of new quiz questions (22 Nov 2026). NOT loaded by any page and NOT in pogodi-data.js.
-// Format as in pogodi-data.js, answers inline as [bosnian, english]. Meho reviews pogodi-nova-pitanja.md first.
+// DRAFT of new quiz questions (22 Nov 2026). NOT loaded by any page and NOT in js/data/pogodi-data.js.
+// Format as in js/data/pogodi-data.js, answers inline as [bosnian, english]. Meho reviews pogodi-nova-pitanja.md first.
 // Sources not yet in KVS are in KVS_NEW. A question with the source "facts" has no link yet (TODO(verify)).
-// To use a question: copy it into pogodi-data.js, add its source to KVS, keep BS and EN, run node provjeri-pogodi.js.
+// To use a question: copy it into js/data/pogodi-data.js, add its source to KVS, keep BS and EN, run node tools/provjeri-pogodi.js.
 // The ranked games read their questions from Supabase (quiz_private.questions), so each approved question also needs a migration.
 window.KVS_NEW = {
  "l-cikan": {
