@@ -224,6 +224,10 @@ Object.assign(window.KVS, {
   "l-pisteljic": {
     "n": "Ljekarska komora RS (Slavko Pišteljić)",
     "u": "https://www.komoradoktorars.org/v3/kod%2034print.pdf"
+  },
+  "l-sinanovic": {
+    "n": "SBS Bosanski (Samir Sinanović)",
+    "u": "https://www.sbs.com.au/language/bosnian/bs/podcast-episode/samir-sinanovic-o-novoj-knjizi-umjetnicke-fotografije-homo-faber/8imex1vbw"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -504,5 +508,6 @@ window.KVQ = [
   {"id":"hadzijadip","t":"choice","c":"ljudi","ok":2,"o":[["Historiju i geografiju","History and geography"],["Matematiku i fiziku","Mathematics and physics"],["Pravo","Law"],["Medicinu","Medicine"]],"q":["Šta je Hadžija Hadžibajramović diplomirala prije pozorišta?","What did Hadžija Hadžibajramović graduate in before the theatre?"],"a":["Diplomirala je matematiku i fiziku.","She graduated in mathematics and physics."],"s":"l-hadzija"},
   {"id":"tabakovic96","t":"choice","c":"ljudi","ok":3,"o":[["Dobro jutro, Sanski Most","Dobro jutro, Sanski Most"],["Ovdje Sana","Ovdje Sana"],["Ovdje Radio Sana","Ovdje Radio Sana"],["Slušate Radio Sanu","Slušate Radio Sanu"]],"q":["Kojih je riječi počinjalo obraćanje slušaocima Radio Sane po ponovnom pokretanju programa 1996?","With which words did Radio Sana address listeners when the programme restarted in 1996?"],"a":["Program je ponovo pokrenut 13. januara 1996.","The programme restarted on 13 January 1996."],"s":"l-tabakovic"},
   {"id":"biscevic62","t":"choice","c":"ljudi","ok":2,"o":[["1952","1952"],["1962","1962"],["1958","1958"],["1970","1970"]],"q":["Koje je godine Faik Biščević, prvi sanski diplomirani zubar, završio fakultet?","In what year did Faik Biščević, the first qualified dentist from Sanski Most, graduate?"],"a":["Fakultet je završio 1962.","He graduated in 1962."],"s":"l-biscevic"},
-  {"id":"pisteljic","t":"choice","c":"ljudi","ok":1,"o":[["Sreski ljekar","District physician"],["Gradonačelnik","Mayor"],["Učitelj","Teacher"],["Apotekar","Pharmacist"]],"q":["Koju je dužnost u Sanskom Mostu od 1925. do 1935. obavljao Slavko Pišteljić?","What post did Slavko Pišteljić hold in Sanski Most from 1925 to 1935?"],"a":["Radio je kao sreski ljekar i ljekar udružene zdravstvene općine.","He worked as district physician and physician of the joint health municipality."],"s":"l-pisteljic"}
+  {"id":"pisteljic","t":"choice","c":"ljudi","ok":1,"o":[["Sreski ljekar","District physician"],["Gradonačelnik","Mayor"],["Učitelj","Teacher"],["Apotekar","Pharmacist"]],"q":["Koju je dužnost u Sanskom Mostu od 1925. do 1935. obavljao Slavko Pišteljić?","What post did Slavko Pišteljić hold in Sanski Most from 1925 to 1935?"],"a":["Radio je kao sreski ljekar i ljekar udružene zdravstvene općine.","He worked as district physician and physician of the joint health municipality."],"s":"l-pisteljic"},
+  {"id":"sinanovicknj","t":"choice","c":"ljudi","ok":1,"o":[["Sanski Most, grad u ogledalu od rijeka","Sanski Most, grad u ogledalu od rijeka"],["Sanski Most nekad i sad","Sanski Most nekad i sad"],["Grad na devet rijeka","Grad na devet rijeka"],["Sanski Most očima ljubavi","Sanski Most očima ljubavi"]],"q":["Kako se zove Sinanovićeva fotomonografija o Sanskom Mostu?","What is Sinanović’s photo book about Sanski Most called?"],"a":["Autor je i knjige Sanski Most, grad u ogledalu od rijeka.","He is also the author of “Sanski Most, grad u ogledalu od rijeka”."],"s":"l-sinanovic"}
 ];
