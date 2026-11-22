@@ -200,6 +200,10 @@ Object.assign(window.KVS, {
   "l-zonic": {
     "n": "Kurir (Šejla Zonić)",
     "u": "https://www.kurir.rs/stars/4400503/sejla-zonic-je-najobrazovanija-takmicarka-zvezda-granda"
+  },
+  "l-ceric": {
+    "n": "Al Jazeera Balkans (Džafer Cerić)",
+    "u": "https://balkans.aljazeera.net/amp/teme/2017/8/27/ozivljavanje-prve-kolonije-naive-u-bih"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -471,5 +475,6 @@ window.KVQ = [
   {"id":"kazicistra","t":"choice","c":"ljudi","ok":3,"o":[["U Slavoniji","U Slavoniji"],["U Dalmaciji","U Dalmaciji"],["U Istri","U Istri"],["U Vojvodini","U Vojvodini"]],"q":["U kojoj je regiji Amir Kazić Leo izgradio karijeru?","In which region did Amir Kazić Leo build his career?"],"a":["Kasnije je otišao u Istru i tamo izgradio karijeru.","He later moved to Istria and built his career there."],"s":"l-kazic"},
   {"id":"kaziczvd","t":"choice","c":"ljudi","ok":2,"o":[["Boemi","Boemi"],["Elektronci","Elektronci"],["Drugi način","Drugi način"],["Grmeč","Grmeč"]],"q":["Kako se zvao bend u kojem je Kazić svirao u srednjoj školi?","What was the band he played in at secondary school called?"],"a":["U srednjoj školi svirao je u bendu Elektronci.","At secondary school he played in the band Elektronci."],"s":"l-kazic"},
   {"id":"zonicbaza","t":"choice","c":"ljudi","ok":3,"o":[["Operaciju trijumf","Operaciju trijumf"],["Pinkove zvezde","Pinkove zvezde"],["Zvezde Granda","Zvezde Granda"],["Idol","Idol"]],"q":["Koje je takmičenje Šejla Zonić osvojila u sezoni 2023/24?","Which competition did Šejla Zonić win in the 2023/24 season?"],"a":["Pobjednica je takmičenja Zvezde Granda u sezoni 2023/24.","She won the competition Zvezde Granda in 2023/24."],"s":"l-zonic"},
-  {"id":"zonicdjet","t":"choice","c":"ljudi","ok":2,"o":[["U Hrustovu","U Hrustovu"],["U Gornjem Kamengradu","U Gornjem Kamengradu"],["U Trnovi","U Trnovi"],["U Muhićima","U Muhićima"]],"q":["U kojem je dijelu Sanskog Mosta Šejla Zonić provela djetinjstvo?","In which part of Sanski Most did Šejla Zonić spend her childhood?"],"a":["Djetinjstvo je provela u Gornjem Kamengradu.","She spent her childhood in Gornji Kamengrad."],"s":"l-zonic"}
+  {"id":"zonicdjet","t":"choice","c":"ljudi","ok":2,"o":[["U Hrustovu","U Hrustovu"],["U Gornjem Kamengradu","U Gornjem Kamengradu"],["U Trnovi","U Trnovi"],["U Muhićima","U Muhićima"]],"q":["U kojem je dijelu Sanskog Mosta Šejla Zonić provela djetinjstvo?","In which part of Sanski Most did Šejla Zonić spend her childhood?"],"a":["Djetinjstvo je provela u Gornjem Kamengradu.","She spent her childhood in Gornji Kamengrad."],"s":"l-zonic"},
+  {"id":"cericdr","t":"choice","c":"ljudi","ok":2,"o":[["Galerija u Sanskom Mostu","A gallery in Sanski Most"],["Međunarodna Ljetnja drugovanja na Sani","The international Summer Gatherings on the Sana"],["Muzička akademija","A music academy"],["Sanska petica","The Sanska petica race"]],"q":["Šta je nastalo iz sanske kolonije naive koju su osnovali Cerić i Mandić?","What grew out of the Sanski Most naive art colony founded by Cerić and Mandić?"],"a":["Iz kolonije su nastala međunarodna Ljetnja drugovanja na Sani.","The colony gave rise to the international Summer Gatherings on the Sana."],"s":"l-ceric"}
 ];
