@@ -54,7 +54,7 @@ window.QuizRanked = (() => {
     const path = el('textPath', {href: '#kv-ring', textLength: 278});
     path.textContent = (title.length > 24 ? title + ' · ' : title + ' · Sanski Most · ').toUpperCase();
     ring.append(path);
-    const num = el('text', {x: 60, y: 72, 'text-anchor': 'middle', 'font-family': 'Cormorant Garamond, serif', 'font-style': 'italic', 'font-size': 36, fill: 'currentColor'});
+    const num = el('text', {x: 60, y: 72, 'text-anchor': 'middle', 'font-family': 'EB Garamond, serif', 'font-style': 'italic', 'font-size': 36, fill: 'currentColor'});
     num.textContent = place + '.';
     g.append(ring, num);
     svg.append(g);
