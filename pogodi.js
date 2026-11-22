@@ -13,7 +13,8 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ROUNDS = 10, PHOTOS = 6, SEEN = 'sm-pogodi-seen', LIVES = 3;
   // mix: photos and questions; quiz: 10 or 20 questions; surv: questions until the third mistake
-  let mode = 'daily', len = 10, lives = LIVES;
+  // the daily challenge is started from its own line; lastMode is the game chosen in the list, to come back to
+  let mode = 'mix', len = 10, lives = LIVES, lastMode = 'mix';
   const ranked = window.QuizRanked;
   let pending = false, competitive = false;
   const gameSize = () => mode === 'surv' ? 80 : mode === 'mix' ? 10 : mode === 'daily' ? 3 : len;
