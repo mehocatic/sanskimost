@@ -519,6 +519,9 @@
     // the list of games and the tabs of the chronicle are the same choice
     document.querySelectorAll('#kv-intro [data-mode]').forEach(b => {
       const on = b.dataset.mode === mode && (!b.dataset.len || +b.dataset.len === len);
+      b.setAttribute(b.getAttribute('role') === 'tab' ? 'aria-selected' : 'aria-pressed', String(on));
+    });
+    const board = !!window.quizConfig;
     $('kv-ranked').hidden = !board; $('kv-competition').hidden = !board; $('kv-practice').classList.toggle('ghost', board);
     if (mode !== 'daily') ranked.select(mode,gameSize());
     best();
