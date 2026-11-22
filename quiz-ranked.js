@@ -175,6 +175,7 @@ window.QuizRanked = (() => {
       await rpc('publish', {p_token: game, p_name: input.value.trim()});
       if (game !== token) return;
       form.hidden = true;
+      mine = null;
       status('published');
       board.open = true;
       refresh();
