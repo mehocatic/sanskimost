@@ -164,6 +164,10 @@ Object.assign(window.KVS, {
   "l-ivanc": {
     "n": "Muzička akademija Sarajevo (Ivan Čavlović)",
     "u": "https://www.mas.unsa.ba/en/node/454"
+  },
+  "l-abilajbegovic": {
+    "n": "Univerzitet u Sarajevu (Asim Bilajbegović)",
+    "u": "https://www.unsa.ba/node/4619"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -419,5 +423,6 @@ window.KVQ = [
   {"id":"hasanbegmost","t":"choice","c":"ljudi","ok":4,"o":[["Hamzibegove džamije","The Hamzibeg Mosque"],["Kamengrada","Kamengrad fortress"],["Pruge Prijedor, Lička Kaldrma","The Prijedor to Lička Kaldrma railway"],["Drvenog mosta preko Sane","The wooden bridge over the Sana"]],"q":["Uz čije se podizanje i održavanje veže Hasan-beg Čekić?","What is Hasan-beg Čekić linked to building and maintaining?"],"a":["Zabilježena je njegova uloga u podizanju i održavanju drvenog mosta.","His part in building and maintaining the wooden bridge is on record."],"s":"l-hasanbeg"},
   {"id":"cavlovickn","t":"choice","c":"ljudi","ok":4,"o":[["Muziku Krajine","Muziku Krajine"],["Bosanski sevdah","Bosanski sevdah"],["Muzičku kulturu Sane","Muzičku kulturu Sane"],["Historiju muzike u Bosni i Hercegovini","Historiju muzike u Bosni i Hercegovini"]],"q":["Koju je knjigu Ivan Čavlović napisao 2011?","Which book did Ivan Čavlović write in 2011?"],"a":["Napisao je Historiju muzike u Bosni i Hercegovini (2011).","He wrote the History of Music in Bosnia and Herzegovina (2011)."],"s":"l-ivanc"},
   {"id":"cavlovicrod","t":"choice","c":"ljudi","ok":4,"o":[["Tomina","Tomina"],["Vrhpolje","Vrhpolje"],["Lušci Palanka","Lušci Palanka"],["Kruhari","Kruhari"]],"q":["U kojem je mjestu kod Sanskog Mosta rođen Ivan Čavlović?","In which place near Sanski Most was Ivan Čavlović born?"],"a":["Rođen je 20. augusta 1949. u Kruharima.","He was born on 20 August 1949 in Kruhari."],"s":"l-ivanc"},
-  {"id":"cavlovicbend","t":"choice","c":"ljudi","ok":2,"o":[["Elektronci","Elektronci"],["Boemi","Boemi"],["Drugi način","Drugi način"],["Južni Vetar","Južni Vetar"]],"q":["U kojoj je sanskoj grupi u mladosti svirao Ivan Čavlović?","In which Sanski Most band did Ivan Čavlović play in his youth?"],"a":["U mladosti je svirao u orkestru KUD Grmeč i u grupi Boemi.","In his youth he played in the KUD Grmeč orchestra and in the band Boemi."],"s":"l-ivanc"}
+  {"id":"cavlovicbend","t":"choice","c":"ljudi","ok":2,"o":[["Elektronci","Elektronci"],["Boemi","Boemi"],["Drugi način","Drugi način"],["Južni Vetar","Južni Vetar"]],"q":["U kojoj je sanskoj grupi u mladosti svirao Ivan Čavlović?","In which Sanski Most band did Ivan Čavlović play in his youth?"],"a":["U mladosti je svirao u orkestru KUD Grmeč i u grupi Boemi.","In his youth he played in the KUD Grmeč orchestra and in the band Boemi."],"s":"l-ivanc"},
+  {"id":"bilajgps","t":"choice","c":"ljudi","ok":4,"o":[["Radar","Radar"],["Laser za bušenje","Laser za bušenje"],["Satelitsku televiziju","Satelitsku televiziju"],["GPS","GPS"]],"q":["Koju je tehnologiju Asim Bilajbegović među prvima primijenio u geodeziji u BiH i Hrvatskoj?","Which technology did Asim Bilajbegović help introduce to geodesy in Bosnia and Herzegovina and Croatia?"],"a":["Među pionirima je primjene GPS-a u geodeziji.","He was among the pioneers of GPS in geodesy."],"s":"l-abilajbegovic"}
 ];
