@@ -68,6 +68,10 @@ Object.assign(window.KVS, {
   "l-albahari": {
     "n": "Jerusalem Post (Moris Albahari)",
     "u": "https://www.jpost.com/diaspora/article-723030"
+  },
+  "l-hasanbeg": {
+    "n": "Stav (arhiv) (Hasan-beg Čekić)",
+    "u": "https://arhiv.stav.ba/ko-su-bile-vodje-otpora-u-krajini-i-kakva-je-njihova-sudbina/"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -267,5 +271,6 @@ window.KVQ = [
   {"id":"hrust2014","t":"choice","c":"znamenitosti","ok":3,"o":[["2003","2003"],["2008","2008"],["2014","2014"],["2020","2020"]],"q":["Koje je godine Hrustovačka pećina proglašena nacionalnim spomenikom?","In what year was Hrustovačka cave declared a national monument?"],"a":["Nacionalni spomenik je od 2014.","It has been a national monument since 2014."],"nosrc":true},
   {"id":"kamen2008","t":"choice","c":"znamenitosti","ok":4,"o":[["1998","1998"],["2003","2003"],["2014","2014"],["2008","2008"]],"q":["Koje je godine tvrđava Kamengrad proglašena nacionalnim spomenikom?","In what year was Kamengrad fortress declared a national monument?"],"a":["Nacionalni spomenik je od 2008.","It has been a national monument since 2008."],"nosrc":true},
   {"id":"kamenopsada","t":"choice","c":"znamenitosti","ok":2,"o":[["3","3"],["11","11"],["7","7"],["25","25"]],"q":["Koliko je godina, prema legendi, trajala opsada Kamengrada?","According to legend, how many years did the siege of Kamengrad last?"],"a":["Prema legendi opsada je trajala 11 godina.","According to legend the siege lasted 11 years."],"nosrc":true},
-  {"id":"musala2003","t":"choice","c":"znamenitosti","ok":4,"o":[["1992","1992"],["2008","2008"],["2014","2014"],["2003","2003"]],"q":["Koje je godine Fatihova musala proglašena nacionalnim spomenikom?","In what year was Fatih’s Musalla declared a national monument?"],"a":["Nacionalni spomenik je od 2003.","It has been a national monument since 2003."],"nosrc":true}
+  {"id":"musala2003","t":"choice","c":"znamenitosti","ok":4,"o":[["1992","1992"],["2008","2008"],["2014","2014"],["2003","2003"]],"q":["Koje je godine Fatihova musala proglašena nacionalnim spomenikom?","In what year was Fatih’s Musalla declared a national monument?"],"a":["Nacionalni spomenik je od 2003.","It has been a national monument since 2003."],"nosrc":true},
+  {"id":"hasanbegopor","t":"choice","c":"historija","ok":1,"o":[["Austrougarskoj","The Austro-Hungarian"],["Osmanskoj","The Ottoman"],["Njemačkoj","The German"],["Mletačkoj","The Venetian"]],"q":["Čijoj se okupaciji 1878. opirao Hasan-beg Čekić?","Whose occupation in 1878 did Hasan-beg Čekić resist?"],"a":["Bio je jedan od predvodnika otpora austrougarskoj okupaciji 1878.","He was one of the leaders of resistance to the Austro-Hungarian occupation in 1878."],"s":"l-hasanbeg"}
 ];
