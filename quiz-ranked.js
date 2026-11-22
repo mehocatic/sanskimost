@@ -181,7 +181,6 @@ window.QuizRanked = (() => {
     } catch { if (game === token) status('netError'); }
     finally { button.disabled = false; }
   });
-  board.addEventListener('toggle', refresh);
   if (config) {
     $('kv-ranked').hidden = false;
     $('kv-competition').hidden = false;
