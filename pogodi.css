@@ -85,6 +85,11 @@
 .kv-line:nth-child(4n+3) .w { color: #2d4fa8; font-weight: 500; }
 .kv-line:nth-child(4n) .w { color: #4a4740; font-weight: 600; }
 .kv-line:nth-child(5n+1) { --tilt: -2deg; }
+.kv-line:nth-child(5n+2) { --tilt: 1.5deg; --x: 6px; }
+.kv-line:nth-child(5n+3) { --tilt: -1deg; --x: 2px; }
+.kv-line:nth-child(5n+4) { --tilt: 2deg; --x: 10px; }
+.kv-line:nth-child(5n) { --tilt: -1.5deg; --x: 4px; }
+.kv-line.me .w, .kv-line.me .s { color: #6b675d; font-weight: 400; rotate: 0deg; }
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
