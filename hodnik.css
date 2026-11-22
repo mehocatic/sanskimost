@@ -1,0 +1,18 @@
+/* Hodnik sjećanja: the look of the original "Hodnik historije" (warm walls, gold frames) in the fonts of this site (Cormorant Garamond, Inter), scoped to this page.
+   The scene is drawn by hodnik.js; this file styles what lies over it: the title, the arrows, the hint, the Gallery / List switch, the list and the dialog. */
+
+.hodnik-page {
+  --wall: #FFF9EC; --page: #FFF9EF; --ink: #3A3550; --ink-60: rgba(58, 53, 80, .6); --ink-35: rgba(58, 53, 80, .35);
+  --h-serif: var(--serif); --h-mono: var(--sans); --h-cond: var(--serif);
+  --u: min(calc(100vw / 1440), calc(100vh / 900)); --w: calc(100vw / 1440);
+  height: 100%; overflow: hidden; background: var(--wall); color: var(--ink);
+}
+@media (max-width: 819px), (orientation: portrait) and (max-width: 1100px), (orientation: landscape) and (max-height: 500px) {
+  .hodnik-page { --u: 1px; --w: 1px; }
+}
+html:has(.hodnik-page) { height: 100%; overflow: hidden; }
+:where(.hodnik-page) button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+.hodnik-page [hidden] { display: none !important; }
+
+#hod { position: fixed; inset: 0; background: var(--wall); color: var(--ink); }
+
