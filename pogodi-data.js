@@ -192,6 +192,10 @@ Object.assign(window.KVS, {
   "l-fkurtovic": {
     "n": "Grad na devet rijeka (Fikret Kurtović Fifi)",
     "u": "https://gradnadevetrijeka.ba/2024/07/05/video-da-li-je-ovo-najljepsa-pjesma-o-sanskom-mostu/"
+  },
+  "l-kazic": {
+    "n": "Klix (Amir Kazić Leo)",
+    "u": "https://www.klix.ba/magazin/muzika/amir-kazic-leo-u-mojim-pocecima-bilo-je-mnogo-teze-doci-do-publike-danas-mladi-ne-moraju-ni-izaci-iz-sobe/260419010"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -459,5 +463,6 @@ window.KVQ = [
   {"id":"jasarrod","t":"choice","c":"ljudi","ok":2,"o":[["Dabar","Dabar"],["Hrustovo","Hrustovo"],["Trnova","Trnova"],["Fajtovci","Fajtovci"]],"q":["U kojem je selu Senudin Jašarević rođen iznad učionice?","In which village was Senudin Jašarević born above a classroom?"],"a":["Otac mu je bio učitelj u Hrustovu.","His father was a teacher in Hrustovo."],"s":"l-jasarevic"},
   {"id":"kurtgrp","t":"choice","c":"ljudi","ok":3,"o":[["Južni Vetar","Južni Vetar"],["Elektronci","Elektronci"],["Drugi način","Drugi način"],["Boemi","Boemi"]],"q":["Koje je grupe Ismet Kurtović frontmen?","Which band is Ismet Kurtović the frontman of?"],"a":["Frontmen je grupe Drugi način.","He is the frontman of the band Drugi način."],"s":"l-ikurtovic"},
   {"id":"kurtpjesma","t":"choice","c":"ljudi","ok":4,"o":[["Sano, voda hladna","Sano, voda hladna"],["Plavo oko Sane","Plavo oko Sane"],["Sanski most","Sanski most"],["Sano moja, sanjam te","Sano moja, sanjam te"]],"q":["Koju su pjesmu o Sani stvorili braća Ismet i Fikret Kurtović?","Which song about the Sana did the brothers Ismet and Fikret Kurtović create?"],"a":["S bratom Fikretom stvorio je pjesmu Sano moja, sanjam te.","With his brother Fikret he created the song “Sano moja, sanjam te”."],"s":"l-ikurtovic"},
-  {"id":"kurtknjiga","t":"choice","c":"ljudi","ok":4,"o":[["Sanske priče","Sanske priče"],["Dani uz Sanu","Dani uz Sanu"],["Grad na devet rijeka","Grad na devet rijeka"],["Sanska posla","Sanska posla"]],"q":["Kako se zove knjiga iz 2018. koju je Fikret Kurtović Fifi potpisao s Amirom Talićem i drugima?","What is the 2018 book that Fikret Kurtović Fifi co-wrote with Amir Talić and others called?"],"a":["Knjiga se zove Sanska posla (2018).","The book is called Sanska posla (2018)."],"s":"l-fkurtovic"}
+  {"id":"kurtknjiga","t":"choice","c":"ljudi","ok":4,"o":[["Sanske priče","Sanske priče"],["Dani uz Sanu","Dani uz Sanu"],["Grad na devet rijeka","Grad na devet rijeka"],["Sanska posla","Sanska posla"]],"q":["Kako se zove knjiga iz 2018. koju je Fikret Kurtović Fifi potpisao s Amirom Talićem i drugima?","What is the 2018 book that Fikret Kurtović Fifi co-wrote with Amir Talić and others called?"],"a":["Knjiga se zove Sanska posla (2018).","The book is called Sanska posla (2018)."],"s":"l-fkurtovic"},
+  {"id":"kazicistra","t":"choice","c":"ljudi","ok":3,"o":[["U Slavoniji","U Slavoniji"],["U Dalmaciji","U Dalmaciji"],["U Istri","U Istri"],["U Vojvodini","U Vojvodini"]],"q":["U kojoj je regiji Amir Kazić Leo izgradio karijeru?","In which region did Amir Kazić Leo build his career?"],"a":["Kasnije je otišao u Istru i tamo izgradio karijeru.","He later moved to Istria and built his career there."],"s":"l-kazic"}
 ];
