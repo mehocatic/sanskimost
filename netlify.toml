@@ -11,6 +11,17 @@
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
+# Frejmovi i vendor se mijenjaju samo novim folderom (frames-v3 ...), pa je dug keš siguran.
+[[headers]]
+  for = "/frames-v2/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/frames-m-v2/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 [[redirects]]
   from = "/supabase/*"
   to = "/404.html"
