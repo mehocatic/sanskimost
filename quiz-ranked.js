@@ -177,7 +177,6 @@ window.QuizRanked = (() => {
       form.hidden = true;
       mine = null;
       status('published');
-      board.open = true;
       refresh();
     } catch { if (game === token) status('netError'); }
     finally { button.disabled = false; }
