@@ -60,20 +60,10 @@
             <button type="button" class="btn big" id="kv-ranked" data-i18n="kv.compete" hidden>Igraj za hroniku</button>
             <button type="button" class="btn big ghost" id="kv-practice" data-i18n="kv.practice">Vježbaj</button>
           </div>
-        </fieldset>
-        <p class="kv-lead" id="kv-description"></p>
-        <div class="kv-len" role="group" data-i18n-attr="aria-label:kv.len" hidden>
-          <span data-i18n="kv.len">Broj pitanja</span>
-          <button type="button" data-len="10" aria-pressed="true">10</button>
-          <button type="button" data-len="20" aria-pressed="false">20</button>
-        </div>
-        <div class="kv-actions">
-          <button type="button" class="btn big ghost" id="kv-practice">Vježbaj</button>
-          <button type="button" class="btn big" id="kv-ranked" data-i18n="kv.compete" hidden></button>
-        </div>
-        <div id="kv-competition" hidden>
-          <p data-i18n="kv.modeLimit"></p>
-          <details id="kv-board"><summary data-i18n="kv.board"></summary><ol></ol><p role="status"></p></details>
+          <p class="kv-limit" id="kv-competition" data-i18n="kv.modeLimit" hidden></p>
+          <!-- the daily challenge, one line -->
+          <button type="button" class="kv-daily" id="kv-daily">
+            <span class="kv-daily-print" aria-hidden="true"><span>?</span></span>
         </div>
         <p class="kv-bank" id="kv-bank"></p>
         <details class="kv-srcs">
