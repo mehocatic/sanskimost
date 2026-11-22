@@ -232,6 +232,10 @@ Object.assign(window.KVS, {
   "l-haskic": {
     "n": "Nezavisne novine (Safija Haskić)",
     "u": "https://www.nezavisne.com/zivot-stil/zivot/Sanjanka-oformila-mali-muzej-Bosanska-kuca-cuva-duh-proslosti/733053"
+  },
+  "l-zukic": {
+    "n": "Nezavisne novine (Zijad Zukić)",
+    "u": "https://www.nezavisne.com/novosti/drustvo/Preminuo-poznati-sanski-remenar/880510"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -514,5 +518,6 @@ window.KVQ = [
   {"id":"biscevic62","t":"choice","c":"ljudi","ok":2,"o":[["1952","1952"],["1962","1962"],["1958","1958"],["1970","1970"]],"q":["Koje je godine Faik Biščević, prvi sanski diplomirani zubar, završio fakultet?","In what year did Faik Biščević, the first qualified dentist from Sanski Most, graduate?"],"a":["Fakultet je završio 1962.","He graduated in 1962."],"s":"l-biscevic"},
   {"id":"pisteljic","t":"choice","c":"ljudi","ok":1,"o":[["Sreski ljekar","District physician"],["Gradonačelnik","Mayor"],["Učitelj","Teacher"],["Apotekar","Pharmacist"]],"q":["Koju je dužnost u Sanskom Mostu od 1925. do 1935. obavljao Slavko Pišteljić?","What post did Slavko Pišteljić hold in Sanski Most from 1925 to 1935?"],"a":["Radio je kao sreski ljekar i ljekar udružene zdravstvene općine.","He worked as district physician and physician of the joint health municipality."],"s":"l-pisteljic"},
   {"id":"sinanovicknj","t":"choice","c":"ljudi","ok":1,"o":[["Sanski Most, grad u ogledalu od rijeka","Sanski Most, grad u ogledalu od rijeka"],["Sanski Most nekad i sad","Sanski Most nekad i sad"],["Grad na devet rijeka","Grad na devet rijeka"],["Sanski Most očima ljubavi","Sanski Most očima ljubavi"]],"q":["Kako se zove Sinanovićeva fotomonografija o Sanskom Mostu?","What is Sinanović’s photo book about Sanski Most called?"],"a":["Autor je i knjige Sanski Most, grad u ogledalu od rijeka.","He is also the author of “Sanski Most, grad u ogledalu od rijeka”."],"s":"l-sinanovic"},
-  {"id":"haskickuca","t":"choice","c":"ljudi","ok":3,"o":[["Stara čaršija","Stara čaršija"],["Zavičajna soba","Zavičajna soba"],["Bosanska kuća","Bosanska kuća"],["Sanska avlija","Sanska avlija"]],"q":["Kako se zove zbirka koju je Safija Haskić uredila u Sanskom Mostu?","What is the collection that Safija Haskić arranged in Sanski Most called?"],"a":["Uredila je zbirku Bosanska kuća.","She created the collection “Bosanska kuća”."],"s":"l-haskic"}
+  {"id":"haskickuca","t":"choice","c":"ljudi","ok":3,"o":[["Stara čaršija","Stara čaršija"],["Zavičajna soba","Zavičajna soba"],["Bosanska kuća","Bosanska kuća"],["Sanska avlija","Sanska avlija"]],"q":["Kako se zove zbirka koju je Safija Haskić uredila u Sanskom Mostu?","What is the collection that Safija Haskić arranged in Sanski Most called?"],"a":["Uredila je zbirku Bosanska kuća.","She created the collection “Bosanska kuća”."],"s":"l-haskic"},
+  {"id":"zukicremen","t":"choice","c":"ljudi","ok":1,"o":[["Ručno je izrađivao sedla i konjsku opremu","He made saddles and horse harness by hand"],["Popravljao je satove","He repaired watches"],["Pekao je hljeb","He baked bread"],["Kovao je potkovice","He forged horseshoes"]],"q":["Čime se bavio Zijad Zukić u radnji na sanskoj pijaci?","What did Zijad Zukić make in his workshop at the Sanski Most market?"],"a":["Ručno je izrađivao sedla, amove i kajase.","He made saddles, harnesses and reins by hand."],"s":"l-zukic"}
 ];
