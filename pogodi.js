@@ -557,6 +557,9 @@
   $('kv-dock-btn').addEventListener('click', () => start(!!window.quizConfig));
   // the bar at the bottom of a phone shows once the play buttons are scrolled away
   if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => { $('kv-dock').classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0); })
+      .observe($('kv-actions'));
+  }
   $('kv-menu').addEventListener('click', () => {
     if (sharedResult) {
       sharedResult = null;
