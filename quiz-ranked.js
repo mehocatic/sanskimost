@@ -49,6 +49,11 @@ window.QuizRanked = (() => {
     const svg = el('svg', {viewBox: '0 0 120 120', class: 'kv-stamp', role: 'img', 'aria-label': t('chr.stamp', {n: place, title})});
     const g = el('g', {filter: 'url(#kv-ink)'});
     g.append(el('circle', {cx: 60, cy: 60, r: 57, fill: 'none', stroke: 'currentColor', 'stroke-width': 2.6}),
+      el('circle', {cx: 60, cy: 60, r: 33, fill: 'none', stroke: 'currentColor', 'stroke-width': 1.2}));
+    const ring = el('text', {'font-family': 'Inter, sans-serif', 'font-size': 9, 'font-weight': 500, 'letter-spacing': 1, fill: 'currentColor'});
+    const path = el('textPath', {href: '#kv-ring', textLength: 278});
+    path.textContent = (title.length > 24 ? title + ' · ' : title + ' · Sanski Most · ').toUpperCase();
+    ring.append(path);
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
