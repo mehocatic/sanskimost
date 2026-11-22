@@ -148,6 +148,10 @@ Object.assign(window.KVS, {
   "l-redzic": {
     "n": "Wikipedia (Enver Redžić)",
     "u": "https://en.wikipedia.org/wiki/Enver_Red%C5%BEi%C4%87"
+  },
+  "l-kljucanin": {
+    "n": "Traduki (Zilhad Ključanin)",
+    "u": "https://database.traduki.eu/?p=6481"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -391,5 +395,6 @@ window.KVQ = [
   {"id":"halimun","t":"choice","c":"ljudi","ok":2,"o":[["U New Yorku","U New Yorku"],["U Beču","U Beču"],["U Ženevi","U Ženevi"],["U Briselu","U Briselu"]],"q":["U kojem je gradu Halimović bio stalni predstavnik BiH pri Ujedinjenim nacijama?","In which city was Halimović Bosnia and Herzegovina’s permanent representative to the UN?"],"a":["Poslije ministarske dužnosti bio je stalni predstavnik BiH pri UN-u u Beču.","After his ministerial post he was permanent representative to the UN in Vienna."],"s":"l-halimovic"},
   {"id":"redzicrod","t":"choice","c":"ljudi","ok":2,"o":[["Hrustovo","Hrustovo"],["Stari Majdan","Stari Majdan"],["Lušci Palanka","Lušci Palanka"],["Vrhpolje","Vrhpolje"]],"q":["U kojem je mjestu kod Sanskog Mosta rođen historičar Enver Redžić?","In which place near Sanski Most was the historian Enver Redžić born?"],"a":["Rođen je 4. maja 1915. u Starom Majdanu.","He was born on 4 May 1915 in Stari Majdan."],"s":"l-redzic"},
   {"id":"redzicsv","t":"choice","c":"ljudi","ok":2,"o":[["Veselin Masleša","Veselin Masleša"],["Svjetlost","Svjetlost"],["Oslobođenje","Oslobođenje"],["Mladost","Mladost"]],"q":["Koju je izdavačku kuću osnovao Enver Redžić?","Which publishing house did Enver Redžić found?"],"a":["Osnivač je izdavačke kuće Svjetlost.","He was the founder of the publishing house Svjetlost."],"s":"l-redzic"},
-  {"id":"redzicz","t":"choice","c":"ljudi","ok":1,"o":[["ZAVNOBiH-a","ZAVNOBiH-a"],["ZAVNOH-a","ZAVNOH-a"],["ZAVNOS-a","ZAVNOS-a"],["Predsjedništva SFRJ","Predsjedništva SFRJ"]],"q":["Čiji je član Redžić bio u Drugom svjetskom ratu, uz AVNOJ?","Which body was Redžić a member of in the Second World War, besides AVNOJ?"],"a":["Bio je član ZAVNOBiH-a i AVNOJ-a.","He was a member of ZAVNOBiH and AVNOJ."],"s":"l-redzic"}
+  {"id":"redzicz","t":"choice","c":"ljudi","ok":1,"o":[["ZAVNOBiH-a","ZAVNOBiH-a"],["ZAVNOH-a","ZAVNOH-a"],["ZAVNOS-a","ZAVNOS-a"],["Predsjedništva SFRJ","Predsjedništva SFRJ"]],"q":["Čiji je član Redžić bio u Drugom svjetskom ratu, uz AVNOJ?","Which body was Redžić a member of in the Second World War, besides AVNOJ?"],"a":["Bio je član ZAVNOBiH-a i AVNOJ-a.","He was a member of ZAVNOBiH and AVNOJ."],"s":"l-redzic"},
+  {"id":"kljucaninnagr","t":"choice","c":"ljudi","ok":1,"o":[["Max Dizdar","Max Dizdar"],["Meša Selimović","Meša Selimović"],["Ivo Andrić","Ivo Andrić"],["Branko Ćopić","Branko Ćopić"]],"q":["Koju je nagradu Zilhad Ključanin dobio 1983. i 1985?","Which award did Zilhad Ključanin win in 1983 and 1985?"],"a":["Dobitnik je nagrade Max Dizdar.","He won the Max Dizdar award."],"s":"l-kljucanin"}
 ];
