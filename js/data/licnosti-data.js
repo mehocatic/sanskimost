@@ -1,11 +1,14 @@
-// People of Sanski Most (licnosti.html). Every entry rests on the source named in `src`.
-// kind: 'born' = born in Sanski Most (or its villages); 'origin' = family roots in Sanski Most, born elsewhere.
-// Optional per person: photo: { src: 'photos/licnosti/<id>.webp', credit: 'Autor / izvor, licenca' } (shown in the detail panel, duotone).
-// Rules: no ethnicity, no private details, no photos of people. Ranges use "do" (no dashes).
-// kind: 'linked' = lived, worked or studied in Sanski Most (born elsewhere or birthplace not confirmed).
-// TODO(verify): Budimir (current role), Pantelic (birthplace, from one article), Alagic (from Meho's notes, see FACTS.md).
-// TODO(verify), added 18 Nov 2026 from Meho's JSON (poznate_osobe_sanski_most.json), each checked against at least one source: Muharemovic (mother from Sanski Most, klix only), Demirovic and Jasmin Handanovic (one article each), Sabanovic (ICTY transcripts, camp text: Meho to approve), Fikret Kurtovic, Kazic, Tabakovic, Biscevic, Pisteljic, Cerić, Mandic, H. Bilajbegovic (single source each).
-// Held back on purpose (Meho to decide): Enver Burnic, Adil Draganovic (ICTY witnesses), Rezak Hukanovic (birthplace sources disagree), Amir Talic (not confirmed), Hamza-beg (already in Historija).
+// People of Sanski Most, shown in the corridor (hodnik.html, js/hodnik.js). Every entry rests on the source named in `src`.
+// kind: 'born' = born in Sanski Most (or its villages); 'origin' = family roots in Sanski Most, born elsewhere;
+// 'linked' = lived, worked or studied in Sanski Most (born elsewhere or birthplace not confirmed).
+// Rules: no ethnicity, no private details. Ranges use "do" (no dashes).
+// Portraits: photos/licnosti/<id>.webp (at most 900 px) and photos/licnosti/t/<id>.webp (at most 320 px), made from Meho's folder
+// (22 Nov 2026, originals in originals/licnosti/). Sizes in LICNOSTI_PHOTOS below. TODO(verify): author and licence of each portrait are not recorded yet.
+// No portrait yet: Hasan-beg Cekic, Arif Hukanovic (the corridor shows their initials).
+// Removed on 22 Nov 2026 at Meho's request: Politics (except Hasan-beg Cekic, now under heritage) and Health.
+// TODO(verify): Pantelic (birthplace, from one article), Alagic (from Meho's notes, see FACTS.md).
+// TODO(verify), added 18 Nov 2026 from Meho's JSON (poznate_osobe_sanski_most.json), each checked against at least one source: Muharemovic (mother from Sanski Most, klix only), Demirovic and Jasmin Handanovic (one article each), Fikret Kurtovic, Kazic, Tabakovic, Cerić, Mandic, H. Bilajbegovic (single source each).
+// Held back on purpose (Meho to decide): Enver Burnic, Adil Draganovic (ICTY witnesses), Rezak Hukanovic (birthplace sources disagree), Hamza-beg (already in Historija).
 // Catic, Begic and Kugic (survivors and witnesses) were added with Meho's approval on 18 Nov 2026; they rest on the sources named in the entries only, TODO(verify).
 window.LICNOSTI_CATS = [
   { id: 'bastina', key: 'lic.heritage' },
