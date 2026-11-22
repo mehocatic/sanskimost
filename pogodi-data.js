@@ -104,6 +104,10 @@ Object.assign(window.KVS, {
   "l-pantelic": {
     "n": "Mondo.ba (Ilija Pantelić)",
     "u": "https://mondo.ba/Sport/Fudbal/a1119416/Fudbaleri-porijeklom-iz-Sanskog-Mosta.html"
+  },
+  "l-handanovic": {
+    "n": "Mondo.ba (Samir Handanović)",
+    "u": "https://mondo.ba/Sport/Fudbal/a1119416/Fudbaleri-porijeklom-iz-Sanskog-Mosta.html"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -322,5 +326,6 @@ window.KVQ = [
   {"id":"nikolaklub","t":"choice","c":"ljudi","ok":2,"o":[["Podgrmeč","Podgrmeč"],["Radnički Zdena","Radnički Zdena"],["Famos","Famos"],["Sloga","Sloga"]],"q":["U kojem je klubu Nikola Milinković počeo karijeru?","At which club did Nikola Milinković start his career?"],"a":["Karijeru je počeo u Radničkom iz Zdene.","He began at Radnički Zdena."],"s":"l-nikola"},
   {"id":"nikolasin","t":"choice","c":"ljudi","ok":2,"o":[["Marko i Luka","Marko i Luka"],["Sergej i Vanja","Sergej i Vanja"],["Nikola i Ilija","Nikola i Ilija"],["Dušan i Stefan","Dušan i Stefan"]],"q":["Koji su sinovi Nikole Milinkovića reprezentativci Srbije?","Which sons of Nikola Milinković play for the Serbia national team?"],"a":["Sergej i Vanja Milinković-Savić su reprezentativci Srbije.","Sergej and Vanja Milinković-Savić are Serbia internationals."],"s":"l-nikola"},
   {"id":"pantelicsela","t":"choice","c":"ljudi","ok":3,"o":[["Lušci Palanka","Lušci Palanka"],["Tomina","Tomina"],["Kozica","Kozica"],["Modra","Modra"]],"q":["U kojem je selu na Grmeču rođen golman Ilija Pantelić?","In which village on Grmeč was the goalkeeper Ilija Pantelić born?"],"a":["Rođen je u Kozici na Grmeču.","He was born in Kozica on Grmeč."],"s":"l-pantelic"},
-  {"id":"pantelicpsg","t":"choice","c":"ljudi","ok":2,"o":[["Lyon","Lyon"],["Paris Saint-Germain","Paris Saint-Germain"],["Monaco","Monaco"],["Nantes","Nantes"]],"q":["Za koji je francuski klub, uz Marseille, branio Ilija Pantelić?","For which French club, besides Marseille, did Ilija Pantelić keep goal?"],"a":["Branio je za Vojvodinu, Bastiu, Paris Saint-Germain i Marseille.","He kept goal for Vojvodina, Bastia, Paris Saint-Germain and Marseille."],"s":"l-pantelic"}
+  {"id":"pantelicpsg","t":"choice","c":"ljudi","ok":2,"o":[["Lyon","Lyon"],["Paris Saint-Germain","Paris Saint-Germain"],["Monaco","Monaco"],["Nantes","Nantes"]],"q":["Za koji je francuski klub, uz Marseille, branio Ilija Pantelić?","For which French club, besides Marseille, did Ilija Pantelić keep goal?"],"a":["Branio je za Vojvodinu, Bastiu, Paris Saint-Germain i Marseille.","He kept goal for Vojvodina, Bastia, Paris Saint-Germain and Marseille."],"s":"l-pantelic"},
+  {"id":"handaklub","t":"choice","c":"ljudi","ok":2,"o":[["Juventus","Juventus"],["Inter","Inter"],["Milan","Milan"],["Roma","Roma"]],"q":["Za koji je klub dugo branio Samir Handanović, porijeklom iz Hrustova?","Which club did Samir Handanović, whose family comes from Hrustovo, long keep goal for?"],"a":["Dugogodišnji je golman milanskog Intera.","He was for many years the goalkeeper of Inter Milan."],"s":"l-handanovic"}
 ];
