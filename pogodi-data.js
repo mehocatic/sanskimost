@@ -84,6 +84,10 @@ Object.assign(window.KVS, {
   "l-beno": {
     "n": "Faktor / NK Podgrmeč (Benjamin Ključanin)",
     "u": "https://faktor.ba/sport/fudbal/u-49-godini-preminuo-benjamin-kljucanin-bivsi-trener-podgrmeca-i-jedinstva/102439"
+  },
+  "l-vukic": {
+    "n": "Chessgames (Milan Vukić)",
+    "u": "https://www.chessgames.com/perl/chessplayer?pid=14954"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -289,5 +293,6 @@ window.KVQ = [
   {"id":"danopcine","t":"choice","c":"dogadjaji","ok":1,"o":[["10. oktobar","10 October"],["20. juli","20 July"],["7. mart","7 March"],["2. august","2 August"]],"q":["Koji se datum u Sanskom Mostu obilježava kao Dan oslobođenja i Dan općine?","Which date is marked in Sanski Most as Liberation Day and Municipality Day?"],"a":["Operacija Sana 95 završila je ulaskom u grad 9. i 10. oktobra 1995.","Operation Sana 95 ended with the entry into town on 9 and 10 October 1995."],"s":"datumi"},
   {"id":"nadimakcikan","t":"choice","c":"ljudi","ok":3,"o":[["Ćiro","Ćiro"],["Čika","Čika"],["Ćikan","Ćikan"],["Ćaća","Ćaća"]],"q":["Pod kojim nadimkom je poznat nogometaš Podgrmeča Hasan Hadžić?","By what nickname was the Podgrmeč footballer Hasan Hadžić known?"],"a":["Hasan Hadžić, zvani Ćikan, igrao je za Podgrmeč.","Hasan Hadžić, known as Ćikan, played for Podgrmeč."],"s":"l-cikan"},
   {"id":"cikannagrada","t":"choice","c":"ljudi","ok":2,"o":[["Milana Vukića","Milana Vukića"],["Hasana Hadžića Ćikana","Hasana Hadžića Ćikana"],["Mustafe Bešića","Mustafe Bešića"],["Ilije Pantelića","Ilije Pantelića"]],"q":["Čije ime nosi nagrada za najboljeg strijelca sanskog novogodišnjeg turnira?","Whose name does the top scorer award of the town’s New Year tournament carry?"],"a":["Nagrada za najboljeg strijelca turnira nosi ime Hasana Hadžića Ćikana.","The top scorer award of the tournament is named after Hasan Hadžić Ćikan."],"s":"l-cikan"},
-  {"id":"benojedinstvo","t":"choice","c":"ljudi","ok":2,"o":[["Krajišnik","Krajišnik"],["Jedinstvo","Jedinstvo"],["Sloga","Sloga"],["Radnik","Radnik"]],"q":["Koji je bihaćki klub trenirao Benjamin Ključanin, uz Podgrmeč?","Which Bihać club did Benjamin Ključanin coach, besides Podgrmeč?"],"a":["Ključanin je igrao za Podgrmeč, vodio ga kao trener, a trenirao je i bihaćko Jedinstvo.","Ključanin played for Podgrmeč, coached it, and also coached Jedinstvo in Bihać."],"s":"l-beno"}
+  {"id":"benojedinstvo","t":"choice","c":"ljudi","ok":2,"o":[["Krajišnik","Krajišnik"],["Jedinstvo","Jedinstvo"],["Sloga","Sloga"],["Radnik","Radnik"]],"q":["Koji je bihaćki klub trenirao Benjamin Ključanin, uz Podgrmeč?","Which Bihać club did Benjamin Ključanin coach, besides Podgrmeč?"],"a":["Ključanin je igrao za Podgrmeč, vodio ga kao trener, a trenirao je i bihaćko Jedinstvo.","Ključanin played for Podgrmeč, coached it, and also coached Jedinstvo in Bihać."],"s":"l-beno"},
+  {"id":"vukic1975","t":"choice","c":"ljudi","ok":2,"o":[["1965","1965"],["1975","1975"],["1982","1982"],["1990","1990"]],"q":["Koje je godine Milan Vukić dobio titulu šahovskog velemajstora?","In what year did Milan Vukić become a chess grandmaster?"],"a":["Vukić je titulu velemajstora dobio 1975.","Vukić became a grandmaster in 1975."],"s":"l-vukic"}
 ];
