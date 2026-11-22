@@ -64,6 +64,11 @@ window.QuizRanked = (() => {
     const li = document.createElement('li');
     li.className = 'kv-line' + (cls ? ' ' + cls : '');
     li.style.setProperty('--i', i);
+    return li;
+  }
+  const span = (cls, text) => { const s = document.createElement('span'); s.className = cls; s.textContent = text; return s; };
+  function render(rows) {
+    const typed = $('kv-name') ? $('kv-name').value : '';
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
