@@ -156,7 +156,9 @@ window.QuizRanked = (() => {
       return {kind: row.kind, q};
     });
   }
-  function finish() {
+  // the end of a ranked game: the chronicle opens at the place of the score, with an empty line for the name
+  function finish(score) {
+    mine = {score};
     $('kv-submit').hidden = false;
     $('kv-submit').append(board);
   }
