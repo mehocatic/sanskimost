@@ -219,7 +219,7 @@
         this.failsafe = setTimeout(() => { if (!launched && !this.destroyed) { launched = true; this.redrawAllLabels(); this.beginOpening(); } }, 4000);
         const fontsReady = () => { if (this.destroyed) return; this.redrawAllLabels(); fontsLoaded = true; tryLaunch(); };
         Promise.all([
-          document.fonts.load('500 56px "Cormorant Garamond"', 'čćšžđ'), document.fonts.load('italic 400 38px "Cormorant Garamond"', 'čćšžđ'), document.fonts.load('500 24px Inter', 'čćšžđ'),
+          document.fonts.load('500 56px "EB Garamond"', 'čćšžđ'), document.fonts.load('italic 400 38px "EB Garamond"', 'čćšžđ'), document.fonts.load('500 24px Inter', 'čćšžđ'),
         ]).then(() => document.fonts.ready).then(fontsReady, fontsReady);
 
         this.onResize = () => this.handleResize();
@@ -309,7 +309,7 @@
         x.fillStyle = '#F6EAD8'; x.fillRect(0, 0, c.width, c.height);
         x.strokeStyle = 'rgba(58, 53, 80, 0.18)'; x.lineWidth = 3; x.strokeRect(28, 28, c.width - 56, c.height - 56);
         x.fillStyle = 'rgba(58, 53, 80, 0.72)'; x.textAlign = 'center'; x.textBaseline = 'middle';
-        x.font = '500 190px "Cormorant Garamond", Georgia, serif';
+        x.font = '500 190px "EB Garamond", Georgia, serif';
         x.fillText(initials(name), c.width / 2, c.height / 2 + 6);
       }
 
@@ -327,10 +327,10 @@
           const p = PRINTS[item.index].p, ctx = item.canvas.getContext('2d');
           ctx.clearRect(0, 0, 640, 260);
           ctx.fillStyle = '#3A3550';
-          ctx.font = '500 56px "Cormorant Garamond", Georgia, serif';
+          ctx.font = '500 56px "EB Garamond", Georgia, serif';
           ctx.fillText(p.name, 30, 66, 580);
           // the role on two lines at most (the whole text is in the dialog)
-          ctx.font = 'italic 400 38px "Cormorant Garamond", Georgia, serif';
+          ctx.font = 'italic 400 38px "EB Garamond", Georgia, serif';
           const words = roleOf(p).split(' '), lines = [''];
           for (const wd of words) {
             const tryLine = lines[lines.length - 1] ? lines[lines.length - 1] + ' ' + wd : wd;
