@@ -80,6 +80,10 @@ Object.assign(window.KVS, {
   "l-cikan": {
     "n": "USN Krajina (Hasan Hadžić Ćikan)",
     "u": "https://usnkrajina.com.ba/sanski-most-u-ponedeljak-starta-novogodisnji-malonogometni-turnir-nagradni-fond-12-000-km-izvlacenje-parova-08-decembra/"
+  },
+  "l-beno": {
+    "n": "Faktor / NK Podgrmeč (Benjamin Ključanin)",
+    "u": "https://faktor.ba/sport/fudbal/u-49-godini-preminuo-benjamin-kljucanin-bivsi-trener-podgrmeca-i-jedinstva/102439"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -284,5 +288,6 @@ window.KVQ = [
   {"id":"golf2","t":"choice","c":"dogadjaji","ok":2,"o":[["12","12"],["20","20"],["16","16"],["26","26"]],"q":["Koliko je osoba 31. jula 2026. na Sana Retro Festivalu stalo u jedan Volkswagen Golf Mk2, što je potvrdila agencija WRCAC?","How many people fitted into one Volkswagen Golf Mk2 at the Sana Retro Festival on 31 July 2026, as confirmed by the agency WRCAC?"],"a":["Rekord je postavio Oldtimer klub 1912 Sanski Most. Certifikat agencije WRCAC iz Londona izdat je 2. novembra 2026.","The record was set by the Oldtimer Club 1912 Sanski Most. The WRCAC agency in London issued the certificate on 2 November 2026."],"recent":true,"s":"golf"},
   {"id":"danopcine","t":"choice","c":"dogadjaji","ok":1,"o":[["10. oktobar","10 October"],["20. juli","20 July"],["7. mart","7 March"],["2. august","2 August"]],"q":["Koji se datum u Sanskom Mostu obilježava kao Dan oslobođenja i Dan općine?","Which date is marked in Sanski Most as Liberation Day and Municipality Day?"],"a":["Operacija Sana 95 završila je ulaskom u grad 9. i 10. oktobra 1995.","Operation Sana 95 ended with the entry into town on 9 and 10 October 1995."],"s":"datumi"},
   {"id":"nadimakcikan","t":"choice","c":"ljudi","ok":3,"o":[["Ćiro","Ćiro"],["Čika","Čika"],["Ćikan","Ćikan"],["Ćaća","Ćaća"]],"q":["Pod kojim nadimkom je poznat nogometaš Podgrmeča Hasan Hadžić?","By what nickname was the Podgrmeč footballer Hasan Hadžić known?"],"a":["Hasan Hadžić, zvani Ćikan, igrao je za Podgrmeč.","Hasan Hadžić, known as Ćikan, played for Podgrmeč."],"s":"l-cikan"},
-  {"id":"cikannagrada","t":"choice","c":"ljudi","ok":2,"o":[["Milana Vukića","Milana Vukića"],["Hasana Hadžića Ćikana","Hasana Hadžića Ćikana"],["Mustafe Bešića","Mustafe Bešića"],["Ilije Pantelića","Ilije Pantelića"]],"q":["Čije ime nosi nagrada za najboljeg strijelca sanskog novogodišnjeg turnira?","Whose name does the top scorer award of the town’s New Year tournament carry?"],"a":["Nagrada za najboljeg strijelca turnira nosi ime Hasana Hadžića Ćikana.","The top scorer award of the tournament is named after Hasan Hadžić Ćikan."],"s":"l-cikan"}
+  {"id":"cikannagrada","t":"choice","c":"ljudi","ok":2,"o":[["Milana Vukića","Milana Vukića"],["Hasana Hadžića Ćikana","Hasana Hadžića Ćikana"],["Mustafe Bešića","Mustafe Bešića"],["Ilije Pantelića","Ilije Pantelića"]],"q":["Čije ime nosi nagrada za najboljeg strijelca sanskog novogodišnjeg turnira?","Whose name does the top scorer award of the town’s New Year tournament carry?"],"a":["Nagrada za najboljeg strijelca turnira nosi ime Hasana Hadžića Ćikana.","The top scorer award of the tournament is named after Hasan Hadžić Ćikan."],"s":"l-cikan"},
+  {"id":"benojedinstvo","t":"choice","c":"ljudi","ok":2,"o":[["Krajišnik","Krajišnik"],["Jedinstvo","Jedinstvo"],["Sloga","Sloga"],["Radnik","Radnik"]],"q":["Koji je bihaćki klub trenirao Benjamin Ključanin, uz Podgrmeč?","Which Bihać club did Benjamin Ključanin coach, besides Podgrmeč?"],"a":["Ključanin je igrao za Podgrmeč, vodio ga kao trener, a trenirao je i bihaćko Jedinstvo.","Ključanin played for Podgrmeč, coached it, and also coached Jedinstvo in Bihać."],"s":"l-beno"}
 ];
