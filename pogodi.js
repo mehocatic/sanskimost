@@ -511,7 +511,10 @@
     $('kv-rank').textContent = t(rankKey(sharedResult.score,sharedResult.game,sharedResult.max));
     renderCard(sharedResult);
   }
-  const lengthPicker = document.querySelector('.kv-len');
+  /* ---------- start screen: one choice drives the play buttons and the chronicle ---------- */
+  // the title on a stamp in the chronicle, by the same scale as at the end of a game
+  ranked.title = (score, game, size) => t(rankKey(score, game, game === 'surv' ? 0 : size * 100));
+  const gameName = () => mode === 'quiz' ? t('kv.row.q' + len) : t('kv.' + mode);
   function updateMenu() {
     lengthPicker.hidden = mode !== 'quiz';
     document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
