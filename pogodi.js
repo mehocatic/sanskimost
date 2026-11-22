@@ -530,7 +530,8 @@
   $('kv-intro').addEventListener('click', e => {
     const button = e.target.closest('[data-mode]');
     if (!button || pending) return;
-    mode = button.dataset.mode;
+    mode = lastMode = button.dataset.mode;
+    if (button.dataset.len) len = +button.dataset.len;
     ranked.status();
     updateMenu();
   });
