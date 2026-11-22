@@ -592,7 +592,6 @@
     `<li><a href="${esc(s.u)}"${/^https?:/.test(s.u) ? ' target="_blank" rel="noopener"' : ''}>${s.n}</a></li>`).join('');
 
   addEventListener('langchange', () => {
-    best();
     $('kv-bank').textContent = t('kv.bank', { n: Q.length });
     if (!$('kv-intro').hidden) updateMenu();
     if (!$('kv-round').hidden) texts();
