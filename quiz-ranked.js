@@ -84,6 +84,11 @@ window.QuizRanked = (() => {
         Object.assign(input, {id: 'kv-name', required: true, maxLength: 40, autocomplete: 'off', value: typed, placeholder: t('chr.name')});
         input.setAttribute('form', 'kv-form');
         input.setAttribute('aria-label', t('nickname'));
+        li.append(input);
+        if (at < 10) li.append(stamp(i + 1, r.score));
+      } else {
+        const name = span('w', r.name);
+        if (r.name.length > 16) name.classList.add('long');
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
