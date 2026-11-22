@@ -172,7 +172,7 @@ window.QuizRanked = (() => {
     button.disabled = true;
     const game = token;
     try {
-      await rpc('publish',{p_token:game,p_name:input.value.trim()});
+      await rpc('publish', {p_token: game, p_name: input.value.trim()});
       if (game !== token) return;
       form.hidden = true;
       status('published');
