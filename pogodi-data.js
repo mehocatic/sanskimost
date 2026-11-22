@@ -88,6 +88,10 @@ Object.assign(window.KVS, {
   "l-vukic": {
     "n": "Chessgames (Milan Vukić)",
     "u": "https://www.chessgames.com/perl/chessplayer?pid=14954"
+  },
+  "l-zoric": {
+    "n": "Olympedia (Milenko Zorić)",
+    "u": "https://www.olympedia.org/athletes/122421"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -296,5 +300,6 @@ window.KVQ = [
   {"id":"benojedinstvo","t":"choice","c":"ljudi","ok":2,"o":[["Krajišnik","Krajišnik"],["Jedinstvo","Jedinstvo"],["Sloga","Sloga"],["Radnik","Radnik"]],"q":["Koji je bihaćki klub trenirao Benjamin Ključanin, uz Podgrmeč?","Which Bihać club did Benjamin Ključanin coach, besides Podgrmeč?"],"a":["Ključanin je igrao za Podgrmeč, vodio ga kao trener, a trenirao je i bihaćko Jedinstvo.","Ključanin played for Podgrmeč, coached it, and also coached Jedinstvo in Bihać."],"s":"l-beno"},
   {"id":"vukic1975","t":"choice","c":"ljudi","ok":2,"o":[["1965","1965"],["1975","1975"],["1982","1982"],["1990","1990"]],"q":["Koje je godine Milan Vukić dobio titulu šahovskog velemajstora?","In what year did Milan Vukić become a chess grandmaster?"],"a":["Vukić je titulu velemajstora dobio 1975.","Vukić became a grandmaster in 1975."],"s":"l-vukic"},
   {"id":"vukickp","t":"choice","c":"ljudi","ok":1,"o":[["Željezničar","Željezničar"],["Bosna","Bosna"],["Slavija","Slavija"],["Famos","Famos"]],"q":["Za koji sarajevski klub je Milan Vukić dugo igrao?","Which Sarajevo club did Milan Vukić play for?"],"a":["Vukić je igrao za sarajevski Željezničar.","Vukić played for Željezničar of Sarajevo."],"s":"l-vukic"},
-  {"id":"vukic2005","t":"choice","c":"ljudi","ok":3,"o":[["1995","1995"],["2001","2001"],["2005","2005"],["2010","2010"]],"q":["Koje je godine Milan Vukić bio prvak Bosne i Hercegovine u šahu?","In what year was Milan Vukić chess champion of Bosnia and Herzegovina?"],"a":["Prvak BiH bio je 2005.","He won the national championship in 2005."],"s":"l-vukic"}
+  {"id":"vukic2005","t":"choice","c":"ljudi","ok":3,"o":[["1995","1995"],["2001","2001"],["2005","2005"],["2010","2010"]],"q":["Koje je godine Milan Vukić bio prvak Bosne i Hercegovine u šahu?","In what year was Milan Vukić chess champion of Bosnia and Herzegovina?"],"a":["Prvak BiH bio je 2005.","He won the national championship in 2005."],"s":"l-vukic"},
+  {"id":"zoricdisc","t":"choice","c":"ljudi","ok":2,"o":[["K-1 200 m","K-1 200 m"],["K-2 1000 m","K-2 1000 m"],["K-4 500 m","K-4 500 m"],["C-2 1000 m","C-2 1000 m"]],"q":["U kojoj je disciplini Milenko Zorić osvojio olimpijsko srebro u Riju 2016?","In which event did Milenko Zorić win Olympic silver in Rio 2016?"],"a":["Zorić je u dvosjedu K-2 1000 m osvojio srebro s Markom Tomićevićem.","Zorić won silver in the K-2 1000 m with Marko Tomićević."],"s":"l-zoric"}
 ];
