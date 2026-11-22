@@ -220,6 +220,10 @@ Object.assign(window.KVS, {
   "l-biscevic": {
     "n": "Porodična biografija (Faik Biščević Fajko)",
     "u": "https://nedimbiscevic.info/biografija/"
+  },
+  "l-pisteljic": {
+    "n": "Ljekarska komora RS (Slavko Pišteljić)",
+    "u": "https://www.komoradoktorars.org/v3/kod%2034print.pdf"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -499,5 +503,6 @@ window.KVQ = [
   {"id":"hadzijapoz","t":"choice","c":"ljudi","ok":2,"o":[["Narodno pozorište Sarajevo","Narodno pozorište Sarajevo"],["Narodno pozorište Mostar","Narodno pozorište Mostar"],["Narodno pozorište Tuzla","Narodno pozorište Tuzla"],["Narodno pozorište Banja Luka","Narodno pozorište Banja Luka"]],"q":["Koje je pozorište dugogodišnja direktorica bila Hadžija Hadžibajramović?","Which theatre was Hadžija Hadžibajramović director of for many years?"],"a":["Bila je glumica i dugogodišnja direktorica Narodnog pozorišta Mostar.","She was an actress and for many years director of the National Theatre Mostar."],"s":"l-hadzija"},
   {"id":"hadzijadip","t":"choice","c":"ljudi","ok":2,"o":[["Historiju i geografiju","History and geography"],["Matematiku i fiziku","Mathematics and physics"],["Pravo","Law"],["Medicinu","Medicine"]],"q":["Šta je Hadžija Hadžibajramović diplomirala prije pozorišta?","What did Hadžija Hadžibajramović graduate in before the theatre?"],"a":["Diplomirala je matematiku i fiziku.","She graduated in mathematics and physics."],"s":"l-hadzija"},
   {"id":"tabakovic96","t":"choice","c":"ljudi","ok":3,"o":[["Dobro jutro, Sanski Most","Dobro jutro, Sanski Most"],["Ovdje Sana","Ovdje Sana"],["Ovdje Radio Sana","Ovdje Radio Sana"],["Slušate Radio Sanu","Slušate Radio Sanu"]],"q":["Kojih je riječi počinjalo obraćanje slušaocima Radio Sane po ponovnom pokretanju programa 1996?","With which words did Radio Sana address listeners when the programme restarted in 1996?"],"a":["Program je ponovo pokrenut 13. januara 1996.","The programme restarted on 13 January 1996."],"s":"l-tabakovic"},
-  {"id":"biscevic62","t":"choice","c":"ljudi","ok":2,"o":[["1952","1952"],["1962","1962"],["1958","1958"],["1970","1970"]],"q":["Koje je godine Faik Biščević, prvi sanski diplomirani zubar, završio fakultet?","In what year did Faik Biščević, the first qualified dentist from Sanski Most, graduate?"],"a":["Fakultet je završio 1962.","He graduated in 1962."],"s":"l-biscevic"}
+  {"id":"biscevic62","t":"choice","c":"ljudi","ok":2,"o":[["1952","1952"],["1962","1962"],["1958","1958"],["1970","1970"]],"q":["Koje je godine Faik Biščević, prvi sanski diplomirani zubar, završio fakultet?","In what year did Faik Biščević, the first qualified dentist from Sanski Most, graduate?"],"a":["Fakultet je završio 1962.","He graduated in 1962."],"s":"l-biscevic"},
+  {"id":"pisteljic","t":"choice","c":"ljudi","ok":1,"o":[["Sreski ljekar","District physician"],["Gradonačelnik","Mayor"],["Učitelj","Teacher"],["Apotekar","Pharmacist"]],"q":["Koju je dužnost u Sanskom Mostu od 1925. do 1935. obavljao Slavko Pišteljić?","What post did Slavko Pišteljić hold in Sanski Most from 1925 to 1935?"],"a":["Radio je kao sreski ljekar i ljekar udružene zdravstvene općine.","He worked as district physician and physician of the joint health municipality."],"s":"l-pisteljic"}
 ];
