@@ -196,6 +196,10 @@ Object.assign(window.KVS, {
   "l-kazic": {
     "n": "Klix (Amir Kazić Leo)",
     "u": "https://www.klix.ba/magazin/muzika/amir-kazic-leo-u-mojim-pocecima-bilo-je-mnogo-teze-doci-do-publike-danas-mladi-ne-moraju-ni-izaci-iz-sobe/260419010"
+  },
+  "l-zonic": {
+    "n": "Kurir (Šejla Zonić)",
+    "u": "https://www.kurir.rs/stars/4400503/sejla-zonic-je-najobrazovanija-takmicarka-zvezda-granda"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -465,5 +469,6 @@ window.KVQ = [
   {"id":"kurtpjesma","t":"choice","c":"ljudi","ok":4,"o":[["Sano, voda hladna","Sano, voda hladna"],["Plavo oko Sane","Plavo oko Sane"],["Sanski most","Sanski most"],["Sano moja, sanjam te","Sano moja, sanjam te"]],"q":["Koju su pjesmu o Sani stvorili braća Ismet i Fikret Kurtović?","Which song about the Sana did the brothers Ismet and Fikret Kurtović create?"],"a":["S bratom Fikretom stvorio je pjesmu Sano moja, sanjam te.","With his brother Fikret he created the song “Sano moja, sanjam te”."],"s":"l-ikurtovic"},
   {"id":"kurtknjiga","t":"choice","c":"ljudi","ok":4,"o":[["Sanske priče","Sanske priče"],["Dani uz Sanu","Dani uz Sanu"],["Grad na devet rijeka","Grad na devet rijeka"],["Sanska posla","Sanska posla"]],"q":["Kako se zove knjiga iz 2018. koju je Fikret Kurtović Fifi potpisao s Amirom Talićem i drugima?","What is the 2018 book that Fikret Kurtović Fifi co-wrote with Amir Talić and others called?"],"a":["Knjiga se zove Sanska posla (2018).","The book is called Sanska posla (2018)."],"s":"l-fkurtovic"},
   {"id":"kazicistra","t":"choice","c":"ljudi","ok":3,"o":[["U Slavoniji","U Slavoniji"],["U Dalmaciji","U Dalmaciji"],["U Istri","U Istri"],["U Vojvodini","U Vojvodini"]],"q":["U kojoj je regiji Amir Kazić Leo izgradio karijeru?","In which region did Amir Kazić Leo build his career?"],"a":["Kasnije je otišao u Istru i tamo izgradio karijeru.","He later moved to Istria and built his career there."],"s":"l-kazic"},
-  {"id":"kaziczvd","t":"choice","c":"ljudi","ok":2,"o":[["Boemi","Boemi"],["Elektronci","Elektronci"],["Drugi način","Drugi način"],["Grmeč","Grmeč"]],"q":["Kako se zvao bend u kojem je Kazić svirao u srednjoj školi?","What was the band he played in at secondary school called?"],"a":["U srednjoj školi svirao je u bendu Elektronci.","At secondary school he played in the band Elektronci."],"s":"l-kazic"}
+  {"id":"kaziczvd","t":"choice","c":"ljudi","ok":2,"o":[["Boemi","Boemi"],["Elektronci","Elektronci"],["Drugi način","Drugi način"],["Grmeč","Grmeč"]],"q":["Kako se zvao bend u kojem je Kazić svirao u srednjoj školi?","What was the band he played in at secondary school called?"],"a":["U srednjoj školi svirao je u bendu Elektronci.","At secondary school he played in the band Elektronci."],"s":"l-kazic"},
+  {"id":"zonicbaza","t":"choice","c":"ljudi","ok":3,"o":[["Operaciju trijumf","Operaciju trijumf"],["Pinkove zvezde","Pinkove zvezde"],["Zvezde Granda","Zvezde Granda"],["Idol","Idol"]],"q":["Koje je takmičenje Šejla Zonić osvojila u sezoni 2023/24?","Which competition did Šejla Zonić win in the 2023/24 season?"],"a":["Pobjednica je takmičenja Zvezde Granda u sezoni 2023/24.","She won the competition Zvezde Granda in 2023/24."],"s":"l-zonic"}
 ];
