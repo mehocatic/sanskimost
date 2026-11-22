@@ -111,6 +111,8 @@
 .kv-stamp { animation: kv-stamp .5s cubic-bezier(.3, 1.4, .5, 1) both; animation-delay: calc(1.3s + var(--i) * .28s); }
 .kv-sheet:not(.in) .kv-line * { animation-play-state: paused; }
 
+.kv-dock { display: none; }
+
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
 .kv-top { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 18px; }
