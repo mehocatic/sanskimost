@@ -142,7 +142,7 @@ window.QuizRanked = (() => {
     token = game.token;
     mode = selected;
     size = count;
-    form.reset();
+    mine = null;
     form.hidden = false;
     return game.questions.map(row => {
       if (row.kind === 'photo') {
