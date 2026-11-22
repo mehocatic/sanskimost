@@ -92,6 +92,10 @@ Object.assign(window.KVS, {
   "l-zoric": {
     "n": "Olympedia (Milenko Zorić)",
     "u": "https://www.olympedia.org/athletes/122421"
+  },
+  "l-milka": {
+    "n": "Paralympic.org (Milka Milinković)",
+    "u": "https://www.paralympic.org/news/milka-milinkovic-dies-62"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -303,5 +307,6 @@ window.KVQ = [
   {"id":"vukic2005","t":"choice","c":"ljudi","ok":3,"o":[["1995","1995"],["2001","2001"],["2005","2005"],["2010","2010"]],"q":["Koje je godine Milan Vukić bio prvak Bosne i Hercegovine u šahu?","In what year was Milan Vukić chess champion of Bosnia and Herzegovina?"],"a":["Prvak BiH bio je 2005.","He won the national championship in 2005."],"s":"l-vukic"},
   {"id":"zoricdisc","t":"choice","c":"ljudi","ok":2,"o":[["K-1 200 m","K-1 200 m"],["K-2 1000 m","K-2 1000 m"],["K-4 500 m","K-4 500 m"],["C-2 1000 m","C-2 1000 m"]],"q":["U kojoj je disciplini Milenko Zorić osvojio olimpijsko srebro u Riju 2016?","In which event did Milenko Zorić win Olympic silver in Rio 2016?"],"a":["Zorić je u dvosjedu K-2 1000 m osvojio srebro s Markom Tomićevićem.","Zorić won silver in the K-2 1000 m with Marko Tomićević."],"s":"l-zoric"},
   {"id":"zoricdrzava","t":"choice","c":"ljudi","ok":1,"o":[["Srbiju","Srbiju"],["Bosnu i Hercegovinu","Bosnu i Hercegovinu"],["Hrvatsku","Hrvatsku"],["Crnu Goru","Crnu Goru"]],"q":["Za koju je državu Zorić osvojio srebro u Riju?","For which country did Zorić win silver in Rio?"],"a":["Za Srbiju je osvojio srebro u Riju 2016.","He won silver for Serbia in Rio in 2016."],"s":"l-zoric"},
-  {"id":"zorice","t":"choice","c":"ljudi","ok":2,"o":[["1979","1979"],["1989","1989"],["1984","1984"],["1994","1994"]],"q":["Koje je godine Milenko Zorić rođen u Sanskom Mostu?","In what year was Milenko Zorić born in Sanski Most?"],"a":["Rođen je 2. aprila 1989.","He was born on 2 April 1989."],"s":"l-zoric"}
+  {"id":"zorice","t":"choice","c":"ljudi","ok":2,"o":[["1979","1979"],["1989","1989"],["1984","1984"],["1994","1994"]],"q":["Koje je godine Milenko Zorić rođen u Sanskom Mostu?","In what year was Milenko Zorić born in Sanski Most?"],"a":["Rođen je 2. aprila 1989.","He was born on 2 April 1989."],"s":"l-zoric"},
+  {"id":"milkamed","t":"choice","c":"ljudi","ok":2,"o":[["3","3"],["8","8"],["5","5"],["12","12"]],"q":["Koliko je paraolimpijskih medalja osvojila Milka Milinković?","How many Paralympic medals did Milka Milinković win?"],"a":["Osam medalja na deset paraolimpijskih igara, najviše među hrvatskim paraolimpijcima.","Eight medals at ten Paralympic Games, the most among Croatian Paralympians."],"s":"l-milka"}
 ];
