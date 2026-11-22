@@ -60,6 +60,11 @@
 /* index tabs cut from paper: the open one is the page's own paper, the others older and a little crooked */
 .kv-tabs { display: flex; align-items: flex-end; gap: 3px; padding: 0 8px; }
 .kv-tabs button { position: relative; flex: 1 1 auto; min-width: 0; height: 42px; padding: 0 9px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font: italic 400 1.08rem/1 var(--serif); color: #3d392f; background: linear-gradient(#d9d0ba, #c6bca3); clip-path: polygon(7px 0, calc(100% - 7px) 0, 100% 100%, 0 100%); transform-origin: bottom; transition: height .25s ease, filter .25s ease; }
+.kv-tabs button:nth-child(1) { rotate: -1.2deg; }
+.kv-tabs button:nth-child(2) { rotate: .8deg; }
+.kv-tabs button:nth-child(3) { rotate: -.6deg; }
+.kv-tabs button:nth-child(4) { rotate: 1deg; }
+.kv-tabs button:hover { filter: brightness(1.06); }
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
