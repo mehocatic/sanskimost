@@ -124,7 +124,7 @@
     try {
       const probe = document.createElement('canvas');
       if (!(probe.getContext('webgl2') || probe.getContext('webgl'))) throw new Error('no webgl');
-      THREE = await import('./vendor/three.module.min.js');
+      THREE = await import('../vendor/three.module.min.js');
     } catch (e) { return false; }
 
     const OUTER_RADIUS = 18, INNER_RADIUS = 12.2, WALL_HEIGHT = 6.2, PY = 1.95;
