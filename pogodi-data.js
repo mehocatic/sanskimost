@@ -116,6 +116,10 @@ Object.assign(window.KVS, {
   "l-ilicic": {
     "n": "InMedia (Josip Iličić)",
     "u": "https://www.inmedia.ba/nogometas-fiorentine-josip-ilicic-porijeklom-iz-sanskog-mosta/"
+  },
+  "l-ibricic": {
+    "n": "Mondo.ba (Senijad Ibričić)",
+    "u": "https://mondo.ba/Sport/Fudbal/a1119416/Fudbaleri-porijeklom-iz-Sanskog-Mosta.html"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -340,5 +344,6 @@ window.KVQ = [
   {"id":"seferrep","t":"choice","c":"ljudi","ok":4,"o":[["Njemačke","Njemačke"],["Austrije","Austrije"],["Bosne i Hercegovine","Bosne i Hercegovine"],["Švicarske","Švicarske"]],"q":["Za koju je reprezentaciju nastupao Haris Seferović, porijeklom iz Hrustova?","Which national team did Haris Seferović, whose family comes from Hrustovo, play for?"],"a":["Porodica mu se krajem osamdesetih preselila u Švicarsku, za čiju je reprezentaciju nastupao.","His family moved to Switzerland in the late 1980s, and he played for the Swiss national team."],"s":"l-seferovic"},
   {"id":"seferklub","t":"choice","c":"ljudi","ok":1,"o":[["Benfica","Benfica"],["Barcelona","Barcelona"],["Ajax","Ajax"],["Celtic","Celtic"]],"q":["Za koji je od ovih klubova nastupao Haris Seferović?","Which of these clubs did Haris Seferović play for?"],"a":["Nastupao je za Grasshoppers, Fiorentinu, Real Sociedad, Eintracht i Benficu.","He played for Grasshoppers, Fiorentina, Real Sociedad, Eintracht Frankfurt and Benfica."],"s":"l-seferovic"},
   {"id":"ilicicgrad","t":"choice","c":"ljudi","ok":1,"o":[["Prijedoru","Prijedoru"],["Sanskom Mostu","Sanskom Mostu"],["Ključu","Ključu"],["Bihaću","Bihaću"]],"q":["U kojem je gradu rođen Josip Iličić, porijeklom iz sela Škrljevita?","In which town was Josip Iličić, whose family roots are in Škrljevita, born?"],"a":["Rođen je u Prijedoru, a porijeklom je iz Škrljevite kod Sanskog Mosta.","He was born in Prijedor, with roots in Škrljevita near Sanski Most."],"s":"l-ilicic"},
-  {"id":"ilicicklub","t":"choice","c":"ljudi","ok":1,"o":[["Atalantu","Atalantu"],["Napoli","Napoli"],["Torino","Torino"],["Lazio","Lazio"]],"q":["Za koji je italijanski klub, uz Fiorentinu, igrao Josip Iličić?","For which Italian club, besides Fiorentina, did Josip Iličić play?"],"a":["Igrao je za Fiorentinu i Atalantu.","He played for Fiorentina and Atalanta."],"s":"l-ilicic"}
+  {"id":"ilicicklub","t":"choice","c":"ljudi","ok":1,"o":[["Atalantu","Atalantu"],["Napoli","Napoli"],["Torino","Torino"],["Lazio","Lazio"]],"q":["Za koji je italijanski klub, uz Fiorentinu, igrao Josip Iličić?","For which Italian club, besides Fiorentina, did Josip Iličić play?"],"a":["Igrao je za Fiorentinu i Atalantu.","He played for Fiorentina and Atalanta."],"s":"l-ilicic"},
+  {"id":"ibricicklub","t":"choice","c":"ljudi","ok":1,"o":[["FK Podgrmeč","FK Podgrmeč"],["FK Sana","FK Sana"],["FK Famos","FK Famos"],["FK Trnova","FK Trnova"]],"q":["U kojem je sanskom klubu Senijad Ibričić napravio prve fudbalske korake?","At which Sanski Most club did Senijad Ibričić take his first football steps?"],"a":["Prve korake napravio je u sanskom FK Podgrmeč.","He took his first steps at FK Podgrmeč in Sanski Most."],"s":"l-ibricic"}
 ];
