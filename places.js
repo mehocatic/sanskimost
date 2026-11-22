@@ -263,9 +263,9 @@ const PLACES = [
     coords: [44.7622452, 16.6836748],
     // Facts: Meho's text, which follows the register of the Institute for the Protection of Cultural Heritage Bihać (KONS). Sources disagree on the year
     // of completion (1970 in spomenikdatabase.org and Wikipedia, 1971 in spomenicinob.info), so the page says only "the 1970s" and 1970 for the design.
-    // TODO(verify): the same text has paragraphs on the executions of May and August 1941 and on changes made to the memorial during the 1990s war
-    // (a concrete cross, name plates removed, the entrance plaque). They are NOT on the site: the 1941 entry was removed on 2026-10-24, the numbers differ,
-    // and the sentences are sensitive. Add them only with Meho's approval and a second source.
+    // Meho (2026-11-22) asked for the changes made to the memorial during the war to be on the page, and for the Bosniaks among the fallen to be named.
+    // The page says it briefly and without numbers of victims. Source of the changes: the KONS register text (Pečenković) and one interview (istinomjer.ba);
+    // no independent second source was found, so the note names both. The executions of 1941 are deliberately not described (Meho: nothing too dark).
     photos: [
       // the mark "#ArchitectonicTravels" is on the photograph itself and was left there; TODO(verify): author and license
       pic("susnjar.webp", { author: "ArchitectonicTravels", alt: "Obelisk memorijalnog kompleksa Šušnjar" })
