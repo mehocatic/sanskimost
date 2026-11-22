@@ -110,11 +110,7 @@ window.QuizRanked = (() => {
   }
   async function refresh() {
     const request = ++boardRequest;
-    const list = board.querySelector('ol'), note = board.querySelector('p');
-    list.replaceChildren();
-    note.textContent = '';
-    board.querySelector('summary').textContent = t('board') + ' · ' + (mode === 'quiz' ? t('quiz') + ' · ' + t('size', {n:size}) : t(mode));
-    if (!board.open) return;
+    $('kv-chr-mode').textContent = t('chr.top', {mode: modeName()});
     try {
       const rows = await rpc('board', {p_size:size,p_mode:mode});
       if (request !== boardRequest) return;
