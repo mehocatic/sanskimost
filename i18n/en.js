@@ -351,6 +351,7 @@ I18N.en = {
   'arh.c.delegati-zavnobih-opis': 'The note to the photograph: delegates on their way to the Second Session of ZAVNOBiH in Sanski Most, 1944',
   'arh.c.delegati-zavnobih': 'Delegates on their way to the Second Session of ZAVNOBiH, 1944. According to the note: Vojislav Kecmanović, Vaso Butoran, Jakov Grgurić and Soja Ćopić, the mother of Branko Ćopić.',
   'arh.c.rodic-1944': 'Slavko Rodić, commander of the 5th Division, May 1944',
+  'arh.c.rekord-golf-a': 'Sana Retro Festival: the attempt at a record for people in one Golf Mk2, as the car is being filled',
   'kv.doctitle': 'Guess the year · Sanski Most',
   'kv.meta': 'Six old photographs and four questions about Sanski Most, or questions only. See how much you know.',
   'kv.cta': 'Game: guess the year →',

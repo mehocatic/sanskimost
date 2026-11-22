@@ -195,6 +195,7 @@ window.ARCHIVE = {
     {"f": "novi-most-2013-e", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-e", "w": 720, "h": 960, "place": "most", "quiz": false},
     {"f": "delegati-zavnobih-opis", "y": 1944, "cat": "dokumenti", "cap": "arh.c.delegati-zavnobih-opis", "w": 1600, "h": 552, "src": "Foto-služba Muzeja narodne revolucije BiH, Sarajevo", "quiz": false},
     {"f": "delegati-zavnobih", "y": 1944, "cat": "ljudi", "cap": "arh.c.delegati-zavnobih", "w": 1600, "h": 1123, "src": "Foto-služba Muzeja narodne revolucije BiH, Sarajevo", "quiz": false},
-    {"f": "rodic-1944", "y": 1944, "cat": "ljudi", "cap": "arh.c.rodic-1944", "w": 1065, "h": 821, "src": "Muzej revolucije naroda Jugoslavije", "quiz": false}
+    {"f": "rodic-1944", "y": 1944, "cat": "ljudi", "cap": "arh.c.rodic-1944", "w": 1065, "h": 821, "src": "Muzej revolucije naroda Jugoslavije", "quiz": false},
+    {"f": "rekord-golf-a", "y": 2026, "cat": "ljudi", "cap": "arh.c.rekord-golf-a", "w": 1280, "h": 880, "quiz": false}
   ]
 };
