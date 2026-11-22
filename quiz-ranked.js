@@ -138,7 +138,7 @@ window.QuizRanked = (() => {
         localStorage.setItem('kv-player', player);
       }
     } catch { throw new Error('storage'); }
-    const game = await rpc('start', {p_player:player,p_size:count,p_scales:true,p_mode:selected});
+    const game = await rpc('start', {p_player: player, p_size: count, p_scales: true, p_mode: selected});
     token = game.token;
     mode = selected;
     size = count;
