@@ -45,6 +45,11 @@
 /* the daily challenge, one line */
 .kv-daily { display: flex; align-items: center; gap: 16px; width: 100%; max-width: 540px; margin-top: 24px; padding: 16px 0; border-top: 1px solid rgba(246, 244, 238, .16); border-bottom: 1px solid rgba(246, 244, 238, .16); text-align: left; }
 .kv-daily-print { flex: none; width: 42px; height: 52px; padding: 3px 3px 10px; box-sizing: border-box; background: var(--print); box-shadow: 0 8px 18px rgba(0, 0, 0, .45); animation: kv-sway 4s ease-in-out infinite; }
+.kv-daily-print span { display: grid; place-items: center; height: 100%; background: #23201b; color: var(--print); font: 500 1.4rem/1 var(--serif); }
+.kv-daily-txt { flex: 1; min-width: 0; }
+.kv-daily-txt b { display: block; font: 500 1.4rem/1.1 var(--serif); }
+.kv-daily-txt small { display: block; margin-top: 5px; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(246, 244, 238, .66); font-variant-numeric: tabular-nums; }
+.kv-daily-go { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--sand); white-space: nowrap; transition: color .25s ease; }
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
