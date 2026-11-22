@@ -34,3 +34,12 @@ Kratak izvještaj:
 - Novi set: `tools/extract-frames.sh <video> [start_s] [length_s]`, pa upisati nove brojeve u `index.html`.
 - Izvorni klip je prvu sekundu mutan, zato se počinje od 41. sekunde.
 - `script.js` miješa dva susjedna frejma, pa nije potrebno više frejmova da bi kretanje bilo glatko.
+
+## Struktura
+- HTML stranice su u korijenu da adrese ostanu iste (`explore`, `place`, `pogodi` ...).
+- `css/`: stilovi (`base.css` je zajednički, ostali su po stranici).
+- `js/`: skripte po stranici i zajedničke (`lib`, `i18n`, `nav`, `fx`, `sound`).
+- `js/data/`: podaci (`places`, `poi`, `routes`, `arhiv-data`, `licnosti-data`, `pogodi-data`). `quiz-config.js` se generira pri objavi i nije u gitu.
+- `i18n/`, `vendor/`, `photos/`, `frames-v2/`, `frames-m-v2/`: kao i prije.
+- `docs/`: radni dokumenti i nacrti. `tools/`: skripte za frejmove, kviz-config i provjeru kviza (`node tools/provjeri-pogodi.js`).
+- Dinamički uvozi iz `js/` ka `vendor/` pišu se kao `../vendor/...`.
