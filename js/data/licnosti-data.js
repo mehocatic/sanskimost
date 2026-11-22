@@ -322,6 +322,56 @@ window.LICNOSTI = [
     src: { label: 'Detektor', url: 'https://detektor.ba/2023/11/18/obiljezena-godisnjica-zatvaranja-logora-manjaca/' } }
 ];
 
+// Portrait sizes (width, height in pixels of photos/licnosti/<id>.webp).
+window.LICNOSTI_PHOTOS = {
+  kazic: [600, 900],
+  hadzija: [900, 469],
+  ivanc: [900, 525],
+  albahari: [800, 474],
+  kugic: [900, 506],
+  tontic: [890, 606],
+  redzic: [247, 386],
+  talic: [399, 501],
+  abilajbegovic: [500, 671],
+  catic: [650, 362],
+  beno: [900, 650],
+  ceric: [678, 452],
+  burnic: [365, 547],
+  tabakovic: [900, 509],
+  dedic: [900, 582],
+  demirovic: [387, 516],
+  fkurtovic: [739, 415],
+  alagic: [597, 900],
+  seferovic: [900, 600],
+  hbilajbegovic: [900, 675],
+  pantelic: [459, 480],
+  ikurtovic: [452, 678],
+  jhandanovic: [600, 900],
+  zukanovic: [900, 600],
+  ilicic: [900, 503],
+  julka: [900, 541],
+  malovcic: [447, 447],
+  vukic: [450, 600],
+  zoric: [600, 400],
+  milka: [675, 900],
+  besic: [900, 619],
+  nikola: [467, 657],
+  mandic: [591, 900],
+  begic: [500, 333],
+  haskic: [900, 628],
+  handanovic: [900, 600],
+  sinanovic: [900, 506],
+  sansky: [860, 793],
+  zonic: [872, 900],
+  ibricic: [900, 600],
+  jasarevic: [900, 506],
+  muharemovic: [402, 497],
+  brajic: [495, 619],
+  zukic: [754, 498],
+  kljucanin: [900, 506],
+  cikan: [235, 194]
+};
+
 // Golden Lily (Zlatni ljiljan) recipients from the pre-war municipality of Sanski Most (today Sanski Most and Ostra Luka), in order of award year.
 // Source: bs.wikipedia, Spisak dobitnika Zlatnog ljiljana (Sanski Most), 7 entries, the full list there (sent by Meho, 18 Nov 2026).
 window.ZLJILJANI_SRC = 'https://bs.wikipedia.org/wiki/Spisak_dobitnika_Zlatnog_ljiljana_(Sanski_Most)';
