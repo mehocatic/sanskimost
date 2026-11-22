@@ -39,6 +39,11 @@ window.QuizRanked = (() => {
   const modeName = () => mode === 'quiz' ? t('row.q' + size) : t(mode);
   const personalBest = () => { try { return +localStorage.getItem('sm-pogodi-ranked-' + (mode === 'quiz' ? size : mode)) || 0; } catch { return 0; } };
   const el = (name, attrs = {}) => {
+    const node = document.createElementNS(SVG, name);
+    Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
+    return node;
+  };
+  // a round rubber stamp: the title of the score runs along the ring, the place sits in the middle
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
