@@ -33,12 +33,12 @@ function load(i) {
   });
 }
 
-// Progressive loading. First pass: every 4th frame (and the last one); the page starts when it is in.
-// Then the rest arrive in the background, the in-between frames first (2, 6, 10 ...), then the odd ones,
+// Progressive loading. First pass: every 8th frame (and the last one); the page starts when it is in.
+// Then the rest arrive in the background, the in-between frames first (4, 12 ... then 2, 6, 10 ...), then the odd ones,
 // so the motion gets smoother step by step. Until a frame is in, its nearest loaded neighbour is drawn.
 function firstPass() {
   const idx = [];
-  for (let i = 0; i < FRAME_COUNT; i += 4) idx.push(i);
+  for (let i = 0; i < FRAME_COUNT; i += 8) idx.push(i);
   if (idx[idx.length - 1] !== FRAME_COUNT - 1) idx.push(FRAME_COUNT - 1);
   let done = 0;
   return Promise.all(idx.map(i => load(i).then(() => {
@@ -48,6 +48,7 @@ function firstPass() {
 
 function backgroundPass() {
   const queue = [];
+  for (let i = 4; i < FRAME_COUNT; i += 8) queue.push(i);
   for (let i = 2; i < FRAME_COUNT; i += 4) queue.push(i);
   for (let i = 1; i < FRAME_COUNT; i += 2) if (!frames[i]) queue.push(i);
   // a few requests at a time so the order above holds and the rest of the page is not starved
