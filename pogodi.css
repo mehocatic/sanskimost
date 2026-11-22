@@ -9,8 +9,9 @@
 #kv .print { cursor: default; }
 #kv .print:hover { transform: rotate(var(--r)); }
 
-/* ---------- 1. start ---------- */
-.kv-intro { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 4vw; padding: 110px var(--pad) 60px; }
+/* ---------- 1. start: the choice, the play button and the town chronicle ---------- */
+.kv-intro { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 460px); grid-template-areas: "home chron" "more chron"; align-items: start; column-gap: clamp(40px, 5vw, 88px); max-width: 1360px; margin: 0 auto; padding: 82px var(--pad) 72px; }
+.kv-home { grid-area: home; min-width: 0; }
 .kv-intro .eyebrow { color: var(--sand); }
 .kv-intro h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(3.6rem, 9vw, 8.6rem); line-height: .88; letter-spacing: -.02em; margin-bottom: 28px; }
 .kv-intro h1 em { display: block; color: transparent; -webkit-text-stroke: 1.4px var(--sand); }
