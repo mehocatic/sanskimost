@@ -9,6 +9,6 @@ camps-diff.txt
 .env
 .env.*
 !.env.example
-/quiz-config.js
+/js/data/quiz-config.js
 /supabase/.temp/
 /Claude outputs/
