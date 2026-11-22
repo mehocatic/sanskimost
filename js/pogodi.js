@@ -442,7 +442,7 @@
     const W = 1080, H = 1350, c = document.createElement('canvas');
     c.width = W; c.height = H;
     const g = c.getContext('2d');
-    try { await Promise.all(['500 120px "Cormorant Garamond"', 'italic 500 60px "Cormorant Garamond"', '400 30px Inter'].map(f => document.fonts.load(f))); } catch (e) { /* the fallback fonts are fine */ }
+    try { await Promise.all(['500 120px "EB Garamond"', 'italic 500 60px "EB Garamond"', '400 30px Inter'].map(f => document.fonts.load(f))); } catch (e) { /* the fallback fonts are fine */ }
     g.fillStyle = '#111614'; g.fillRect(0, 0, W, H);
     // an old photograph of the game in the upper half, as a print with a paper border
     const src = 'photos/arhiv/' + photo + '.webp';
@@ -469,7 +469,7 @@
     g.fillText(String(score), W / 2, 980);
     g.fillStyle = 'rgba(246,244,238,.6)'; g.font = '400 34px Inter';
     g.fillText(game === 'surv' ? label('kv.right', { n: score / 100 }) : label('kv.of', { n: max }), W / 2, 1040);
-    g.fillStyle = '#f6f4ee'; g.font = 'italic 500 64px "Cormorant Garamond", Georgia, serif';
+    g.fillStyle = '#f6f4ee'; g.font = 'italic 500 64px "EB Garamond", Georgia, serif';
     g.fillText(rankName, W / 2, 1150);
     g.fillStyle = 'rgba(246,244,238,.5)'; g.font = '400 28px Inter';
     g.fillText('visitsanskimost.netlify.app/pogodi', W / 2, 1270);
