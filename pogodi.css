@@ -231,7 +231,7 @@
   /* the question and its answers sit in the middle of the screen, nearer the thumb */
   .kv-photo { flex: none; padding: 6px 0 14px; margin-top: auto; }
   .kv-photo img { max-height: 36svh; border-width: 7px; }
-  .kv-panel { align-self: stretch; max-width: none; }
+  .kv-panel { align-self: stretch; max-width: none; margin-bottom: auto; }
   .kv-n { margin-bottom: 6px; }
   .kv-panel h2 { font-size: 1.25rem; }
   .kv-year { font-size: clamp(4.4rem, 22vw, 6rem); margin: 4px 0 2px -2px; }
