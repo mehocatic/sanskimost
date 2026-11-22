@@ -7,7 +7,7 @@ Označi stavku kad je urađena.
 - [x] **Nova migracija pitanja (primijenjena 22.11.2026., baza ima 289 aktivnih pitanja):** `supabase/migrations/202611220001_quiz_new_questions.sql` (109 pitanja i izmjena teksta pitanja o Blihi). Zalijepiti cijeli fajl u Supabase SQL Editor i pokrenuti. Može se pokrenuti više puta bez duplikata.
 - [ ] **Supabase migracije.** Migracija `supabase/migrations/202611210003_quiz_modes.sql` (načini igre) mora biti primijenjena na bazi. Provjera: na živom sajtu otvori /pogodi i probaj "Igraj za rang-listu" u sva tri načina (Fotografije i pitanja, Samo pitanja, Do 3 greške).
 - [ ] **Telefon.** Odigraj dnevni izazov i otvori /arhiv na pravom telefonu. Provjeri i dijeljenje rezultata (Viber, WhatsApp).
-- [ ] **Adresa.** Ostajemo na `sanausrcu.netlify.app` ili preimenovati projekat (Site configuration, Change project name). Nakon odluke zamijeniti staru adresu `visitsanskimost.netlify.app` u: `og:url` i slikama u HTML fajlovima, `sitemap.xml`, `robots.txt`, `pogodi.js` (tekst na kartici rezultata).
+- [x] **Adresa.** Ostajemo na `sanausrcu.netlify.app` (22. 11. 2026). Stara adresa `visitsanskimost.netlify.app` je zamijenjena u `og:url` i slikama u HTML fajlovima, `sitemap.xml`, `robots.txt` i `pogodi.js` (tekst na kartici rezultata). Ako se projekat kasnije preimenuje, zamijeniti `sanausrcu.netlify.app` na istim mjestima.
 
 ## Netlify
 - [ ] **Pravilo objave.** Build radi samo ako zadnji commit sadrži `[deploy]` (pravilo u `netlify.toml`). Zadnji commit s tom oznakom objavljuje sve prije sebe. Preporuka: objavljivati u grupama, ne svaki commit.
