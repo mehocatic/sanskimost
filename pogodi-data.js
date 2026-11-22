@@ -212,6 +212,10 @@ Object.assign(window.KVS, {
   "l-hadzija": {
     "n": "Dnevni avaz (Hadžija Hadžibajramović)",
     "u": "https://avaz.ba/vijesti/kultura/699945/preminula-glumica-i-dugogodisnja-direktorica-narodnog-pozorista-mostar"
+  },
+  "l-tabakovic": {
+    "n": "Inmedia (Emir Tabaković)",
+    "u": "https://inmedia.ba/1996-godina-ovdje-radio-sana-emir-tabakovic/"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -489,5 +493,6 @@ window.KVQ = [
   {"id":"mandickp","t":"choice","c":"ljudi","ok":1,"o":[["14","14"],["7","7"],["12","12"],["20","20"]],"q":["Koliko slika ima ciklus Križni put Isusa Krista Pere Mandića?","How many paintings does Pero Mandić’s cycle of the Way of the Cross have?"],"a":["Ciklus ima 14 slika.","The cycle has 14 paintings."],"s":"l-mandic"},
   {"id":"mandicc","t":"choice","c":"ljudi","ok":1,"o":[["U crkvi Uznesenja Blažene Djevice Marije","In the church of the Assumption of the Blessed Virgin Mary"],["U crkvi sv. Ilije","In the church of St Elijah"],["U crkvi sv. Petra","In the church of St Peter"],["U crkvi sv. Nikole","In the church of St Nicholas"]],"q":["U kojoj se crkvi u Sanskom Mostu čuva Mandićev Križni put?","In which church in Sanski Most is Mandić’s Way of the Cross kept?"],"a":["Čuva se u crkvi Uznesenja Blažene Djevice Marije.","It is kept in the church of the Assumption of the Blessed Virgin Mary."],"s":"l-mandic"},
   {"id":"hadzijapoz","t":"choice","c":"ljudi","ok":2,"o":[["Narodno pozorište Sarajevo","Narodno pozorište Sarajevo"],["Narodno pozorište Mostar","Narodno pozorište Mostar"],["Narodno pozorište Tuzla","Narodno pozorište Tuzla"],["Narodno pozorište Banja Luka","Narodno pozorište Banja Luka"]],"q":["Koje je pozorište dugogodišnja direktorica bila Hadžija Hadžibajramović?","Which theatre was Hadžija Hadžibajramović director of for many years?"],"a":["Bila je glumica i dugogodišnja direktorica Narodnog pozorišta Mostar.","She was an actress and for many years director of the National Theatre Mostar."],"s":"l-hadzija"},
-  {"id":"hadzijadip","t":"choice","c":"ljudi","ok":2,"o":[["Historiju i geografiju","History and geography"],["Matematiku i fiziku","Mathematics and physics"],["Pravo","Law"],["Medicinu","Medicine"]],"q":["Šta je Hadžija Hadžibajramović diplomirala prije pozorišta?","What did Hadžija Hadžibajramović graduate in before the theatre?"],"a":["Diplomirala je matematiku i fiziku.","She graduated in mathematics and physics."],"s":"l-hadzija"}
+  {"id":"hadzijadip","t":"choice","c":"ljudi","ok":2,"o":[["Historiju i geografiju","History and geography"],["Matematiku i fiziku","Mathematics and physics"],["Pravo","Law"],["Medicinu","Medicine"]],"q":["Šta je Hadžija Hadžibajramović diplomirala prije pozorišta?","What did Hadžija Hadžibajramović graduate in before the theatre?"],"a":["Diplomirala je matematiku i fiziku.","She graduated in mathematics and physics."],"s":"l-hadzija"},
+  {"id":"tabakovic96","t":"choice","c":"ljudi","ok":3,"o":[["Dobro jutro, Sanski Most","Dobro jutro, Sanski Most"],["Ovdje Sana","Ovdje Sana"],["Ovdje Radio Sana","Ovdje Radio Sana"],["Slušate Radio Sanu","Slušate Radio Sanu"]],"q":["Kojih je riječi počinjalo obraćanje slušaocima Radio Sane po ponovnom pokretanju programa 1996?","With which words did Radio Sana address listeners when the programme restarted in 1996?"],"a":["Program je ponovo pokrenut 13. januara 1996.","The programme restarted on 13 January 1996."],"s":"l-tabakovic"}
 ];
