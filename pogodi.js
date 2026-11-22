@@ -573,14 +573,10 @@
     updateMenu();
   });
   updateMenu();
-  document.querySelector('.kv-len').addEventListener('click', e => {
-    const b = e.target.closest('button');
-    if (!b) return;
-    len = +b.dataset.len;
-    ranked.status();
-    updateMenu();
-    document.querySelectorAll('.kv-len button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-  });
+  // paper grain for the chronicle, drawn once
+  try {
+    const c = document.createElement('canvas'), g = c.getContext('2d');
+    c.width = c.height = 140;
   $('kv-again').addEventListener('click', () => start(competitive));
   $('kv-bank').textContent = t('kv.bank', { n: Q.length });
   // every source the questions rest on, one link each
