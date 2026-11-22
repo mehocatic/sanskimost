@@ -23,7 +23,7 @@ window.QuizRanked = (() => {
   function status(key = '') {
     message = key;
     if (key) {
-      const anchor = !$('kv-round').hidden ? $('kv-opts') : !$('kv-end').hidden ? $('kv-submit') : $('kv-ranked');
+      const anchor = !$('kv-round').hidden ? $('kv-opts') : !$('kv-end').hidden ? $('kv-submit') : $('kv-actions');
       anchor.after($('kv-network'));
     }
     $('kv-network').textContent = key ? t(key) : '';
