@@ -527,7 +527,7 @@
     ranked.select(mode, gameSize());
     dailyLine();
   }
-  document.querySelector('.kv-modes').addEventListener('click', e => {
+  $('kv-intro').addEventListener('click', e => {
     const button = e.target.closest('[data-mode]');
     if (!button || pending) return;
     mode = button.dataset.mode;
