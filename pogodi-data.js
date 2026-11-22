@@ -156,6 +156,10 @@ Object.assign(window.KVS, {
   "l-malovcic": {
     "n": "Wikipedia (Kemal Malovčić)",
     "u": "https://en.wikipedia.org/wiki/Kemal_Malov%C4%8Di%C4%87"
+  },
+  "l-brajic": {
+    "n": "Eurovision (Vukašin Brajić)",
+    "u": "https://eurovision.tv/video/bosnia-herzegovina-eurovision-song-contest-2010"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -403,5 +407,6 @@ window.KVQ = [
   {"id":"kljucaninnagr","t":"choice","c":"ljudi","ok":1,"o":[["Max Dizdar","Max Dizdar"],["Meša Selimović","Meša Selimović"],["Ivo Andrić","Ivo Andrić"],["Branko Ćopić","Branko Ćopić"]],"q":["Koju je nagradu Zilhad Ključanin dobio 1983. i 1985?","Which award did Zilhad Ključanin win in 1983 and 1985?"],"a":["Dobitnik je nagrade Max Dizdar.","He won the Max Dizdar award."],"s":"l-kljucanin"},
   {"id":"kljucaninrod","t":"choice","c":"ljudi","ok":2,"o":[["Dabar","Dabar"],["Trnova","Trnova"],["Škrljevita","Škrljevita"],["Fajtovci","Fajtovci"]],"q":["U kojem je mjestu kod Sanskog Mosta rođen 1960. Zilhad Ključanin?","In which place near Sanski Most was Zilhad Ključanin born in 1960?"],"a":["Rođen je 1960. u Trnovi.","He was born in Trnova in 1960."],"s":"l-kljucanin"},
   {"id":"malovjuzni","t":"choice","c":"ljudi","ok":3,"o":[["Grupe Indexi","Grupe Indexi"],["Grupe Bijelo dugme","Grupe Bijelo dugme"],["Grupe Južni Vetar","Grupe Južni Vetar"],["Grupe Plavi orkestar","Grupe Plavi orkestar"]],"q":["Čiji je član bio Kemal Malovčić osamdesetih?","Which band was Kemal Malovčić a member of in the 1980s?"],"a":["Osamdesetih je bio član grupe Južni Vetar.","In the 1980s he was a member of the band Južni Vetar."],"s":"l-malovcic"},
-  {"id":"malovdiskos","t":"choice","c":"ljudi","ok":2,"o":[["Jugoton","Jugoton"],["Diskos","Diskos"],["Suzy","Suzy"],["PGP RTB","PGP RTB"]],"q":["Za koju je izdavačku kuću Malovčić objavio prvi singl?","For which label did Malovčić release his first single?"],"a":["Prvi singl objavio je za Diskos.","He released his first single on Diskos."],"s":"l-malovcic"}
+  {"id":"malovdiskos","t":"choice","c":"ljudi","ok":2,"o":[["Jugoton","Jugoton"],["Diskos","Diskos"],["Suzy","Suzy"],["PGP RTB","PGP RTB"]],"q":["Za koju je izdavačku kuću Malovčić objavio prvi singl?","For which label did Malovčić release his first single?"],"a":["Prvi singl objavio je za Diskos.","He released his first single on Diskos."],"s":"l-malovcic"},
+  {"id":"brajicmj","t":"choice","c":"ljudi","ok":4,"o":[["Peto","Peto"],["Dvanaesto","Dvanaesto"],["Dvadeseto","Dvadeseto"],["Sedamnaesto","Sedamnaesto"]],"q":["Koje je mjesto Vukašin Brajić zauzeo u finalu Eurovizije 2010?","What place did Vukašin Brajić take in the 2010 Eurovision final?"],"a":["Završio je na sedamnaestom mjestu u finalu.","He placed seventeenth in the final."],"s":"l-brajic"}
 ];
