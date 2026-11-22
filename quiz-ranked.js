@@ -34,6 +34,11 @@ window.QuizRanked = (() => {
   const points = n => {
     if (I18n.lang !== 'bs') return t(n === 1 ? 'bod1' : 'bodN', {n});
     const d = n % 10, h = n % 100;
+    return t(d === 1 && h !== 11 ? 'bod1' : d >= 2 && d <= 4 && (h < 12 || h > 14) ? 'bod2' : 'bodN', {n});
+  };
+  const modeName = () => mode === 'quiz' ? t('row.q' + size) : t(mode);
+  const personalBest = () => { try { return +localStorage.getItem('sm-pogodi-ranked-' + (mode === 'quiz' ? size : mode)) || 0; } catch { return 0; } };
+  const el = (name, attrs = {}) => {
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
