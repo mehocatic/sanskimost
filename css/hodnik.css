@@ -43,7 +43,7 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
 .arrow-btn:hover { background: var(--ink); color: var(--wall); }
 .arrow-svg { width: calc(20 * var(--u)); height: calc(20 * var(--u)); }
 
-.hint { position: absolute; right: calc(27 * var(--u)); bottom: calc(229 * var(--u)); text-align: right; font-family: var(--h-mono); font-size: max(11px, calc(10 * var(--u))); letter-spacing: .12em; line-height: 1.65; text-transform: uppercase; }
+.hint { position: absolute; right: calc(27 * var(--u)); bottom: calc(174 * var(--u)); text-align: right; font-family: var(--h-mono); font-size: max(11px, calc(10 * var(--u))); letter-spacing: .12em; line-height: 1.65; text-transform: uppercase; }
 
 
 .caption { position: absolute; left: calc(25 * var(--u)); right: calc(25 * var(--u)); bottom: calc(30 * var(--u)); }
