@@ -607,7 +607,7 @@ I18N.en = {
   'hist.src.book': 'From the book “Sanski Most nekad i sad”',
   'hist.sources': 'Sources',
   'hist.src.census.html': "Institute of History, <a href=\"https://prilozi.iis.unsa.ba/wp-content/uploads/2023/05/prilozi_35.pdf\">Prilozi 35</a>. Town population figures from the 1910 and 1921 censuses.",
-  'hist.src.1.html': "<a href=\"licnosti#zukanovic\">Jasmin Zukanović</a>, <em>Sanski Most nekad i sad</em>. The source of most of the historical photographs in these chapters.",
+  'hist.src.1.html': "<a href=\"hodnik#zukanovic\">Jasmin Zukanović</a>, <em>Sanski Most nekad i sad</em>. The source of most of the historical photographs in these chapters.",
   'hist.1.chip': 'Prehistory',
   'hist.1.title': 'The first people',
   'hist.1.yr.html': '~2600<br>BC',

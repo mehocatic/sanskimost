@@ -609,7 +609,7 @@ I18N.bs = {
   'hist.src.book': 'Iz knjige „Sanski Most nekad i sad“',
   'hist.sources': 'Izvori',
   'hist.src.census.html': "Institut za istoriju, <a href=\"https://prilozi.iis.unsa.ba/wp-content/uploads/2023/05/prilozi_35.pdf\">Prilozi 35</a>. Podaci o stanovništvu grada prema popisima 1910. i 1921.",
-  'hist.src.1.html': "<a href=\"licnosti#zukanovic\">Jasmin Zukanović</a>, <em>Sanski Most nekad i sad</em>. Izvor za većinu starih fotografija u ovim poglavljima.",
+  'hist.src.1.html': "<a href=\"hodnik#zukanovic\">Jasmin Zukanović</a>, <em>Sanski Most nekad i sad</em>. Izvor za većinu starih fotografija u ovim poglavljima.",
   'hist.1.chip': 'Prahistorija',
   'hist.1.title': 'Prvi stanovnici',
   'hist.1.yr.html': '~2600<br>pr. n. e.',
