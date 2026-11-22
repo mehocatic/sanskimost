@@ -140,6 +140,10 @@ Object.assign(window.KVS, {
   "l-ibrisagic": {
     "n": "Riksdagen (Anna Ibrisagic)",
     "u": "https://www.riksdagen.se/en/members-and-parties/member/anna-ibrisagic_9e76df5e-9ed0-4504-99bd-b54ea205d5e8/"
+  },
+  "l-halimovic": {
+    "n": "UN Vienna (Sanjin Halimović)",
+    "u": "https://unis.unvienna.org/unis/en/pressrels/2015/unisbio1087.html"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -378,5 +382,6 @@ window.KVQ = [
   {"id":"alagicdan","t":"choice","c":"dogadjaji","ok":4,"o":[["8. jula","8 July"],["10. oktobra","10 October"],["20. jula","20 July"],["7. marta","7 March"]],"q":["Kojeg se datuma obilježava godišnjica smrti generala Alagića?","On which date is the anniversary of General Alagić’s death marked?"],"a":["Umro je 7. marta 2003. u Sanskom Mostu.","He died on 7 March 2003 in Sanski Most."],"s":"datumi"},
   {"id":"ibrisstr","t":"choice","c":"ljudi","ok":2,"o":[["Socijaldemokratima","Socijaldemokratima"],["Moderatnoj stranci","Moderatnoj stranci"],["Zelenima","Zelenima"],["Liberalima","Liberalima"]],"q":["Kojoj stranci pripada Anna Ibrisagic?","Which party does Anna Ibrisagic belong to?"],"a":["Članica je Moderatne stranke (Moderaterna).","She is a member of the Moderate Party."],"s":"l-ibrisagic"},
   {"id":"ibrisep","t":"choice","c":"ljudi","ok":4,"o":[["1994 do 2004","1994 to 2004"],["2009 do 2019","2009 to 2019"],["2014 do 2024","2014 to 2024"],["2004 do 2014","2004 to 2014"]],"q":["Od koje do koje godine je Anna Ibrisagic bila u Evropskom parlamentu?","In which years was Anna Ibrisagic in the European Parliament?"],"a":["U Evropskom parlamentu bila je od 2004. do 2014.","She sat in the European Parliament from 2004 to 2014."],"s":"l-ibrisagic"},
-  {"id":"ibrisrod","t":"choice","c":"ljudi","ok":4,"o":[["1957","1957"],["1962","1962"],["1973","1973"],["1967","1967"]],"q":["Koje je godine rođena Anna Ibrisagic?","In what year was Anna Ibrisagic born?"],"a":["Rođena je u Sanskom Mostu 23. maja 1967.","She was born in Sanski Most on 23 May 1967."],"s":"l-ibrisagic"}
+  {"id":"ibrisrod","t":"choice","c":"ljudi","ok":4,"o":[["1957","1957"],["1962","1962"],["1973","1973"],["1967","1967"]],"q":["Koje je godine rođena Anna Ibrisagic?","In what year was Anna Ibrisagic born?"],"a":["Rođena je u Sanskom Mostu 23. maja 1967.","She was born in Sanski Most on 23 May 1967."],"s":"l-ibrisagic"},
+  {"id":"halimnac","t":"choice","c":"ljudi","ok":1,"o":[["2011","2011"],["2008","2008"],["2014","2014"],["2016","2016"]],"q":["Do koje je godine Sanjin Halimović bio načelnik općine Sanski Most?","Until which year was Sanjin Halimović mayor of Sanski Most?"],"a":["Načelnik općine bio je od 2004. do 2011.","He was mayor from 2004 to 2011."],"s":"l-halimovic"}
 ];
