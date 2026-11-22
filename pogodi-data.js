@@ -124,6 +124,10 @@ Object.assign(window.KVS, {
   "l-burnic": {
     "n": "RTV USK (Dženis Burnić)",
     "u": "https://www.rtvusk.ba/clanak/ljeto-na-sani-dzenisu-burnicu-prireden-nezaboravan-docek-u-sanskom-mostu/16581"
+  },
+  "l-demirovic": {
+    "n": "Inmedia (Ermedin Demirović)",
+    "u": "https://inmedia.ba/jos-jedan-nogometni-talent-porijeklom-iz-sane/"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -352,5 +356,6 @@ window.KVQ = [
   {"id":"ibricicklub","t":"choice","c":"ljudi","ok":1,"o":[["FK Podgrmeč","FK Podgrmeč"],["FK Sana","FK Sana"],["FK Famos","FK Famos"],["FK Trnova","FK Trnova"]],"q":["U kojem je sanskom klubu Senijad Ibričić napravio prve fudbalske korake?","At which Sanski Most club did Senijad Ibričić take his first football steps?"],"a":["Prve korake napravio je u sanskom FK Podgrmeč.","He took his first steps at FK Podgrmeč in Sanski Most."],"s":"l-ibricic"},
   {"id":"burnicgrad","t":"choice","c":"ljudi","ok":3,"o":[["Hamburgu","Hamburgu"],["Kölnu","Kölnu"],["Hammu","Hammu"],["Münchenu","Münchenu"]],"q":["U kojem je njemačkom gradu rođen Dženis Burnić, čiji je otac iz Sanskog Mosta?","In which German town was Dženis Burnić, whose father is from Sanski Most, born?"],"a":["Rođen je u Hammu u Njemačkoj.","He was born in Hamm, Germany."],"s":"l-burnic"},
   {"id":"burnicsp","t":"choice","c":"ljudi","ok":2,"o":[["Evropskom prvenstvu","The European Championship"],["Svjetskom prvenstvu","The World Cup"],["Olimpijskim igrama","The Olympic Games"],["Mediteranskim igrama","The Mediterranean Games"]],"q":["Na kojem je takmičenju Dženis Burnić 2026. nastupio za Bosnu i Hercegovinu?","At which competition did Dženis Burnić play for Bosnia and Herzegovina in 2026?"],"a":["Nastupio je na Svjetskom prvenstvu 2026.","He played at the 2026 World Cup."],"recent":true,"s":"l-burnic"},
-  {"id":"burnicljns","t":"choice","c":"ljudi","ok":4,"o":[["Galaja","Galaja"],["Sana retro festival","Sana retro festival"],["Dani općine","Dani općine"],["Ljeto na Sani","Ljeto na Sani"]],"q":["U okviru koje je manifestacije Burnić u julu 2026. dočekan na gradskom Trgu?","During which event was Burnić welcomed on the town square in July 2026?"],"a":["Doček je bio u okviru manifestacije Ljeto na Sani.","The welcome was part of Ljeto na Sani."],"s":"l-burnic"}
+  {"id":"burnicljns","t":"choice","c":"ljudi","ok":4,"o":[["Galaja","Galaja"],["Sana retro festival","Sana retro festival"],["Dani općine","Dani općine"],["Ljeto na Sani","Ljeto na Sani"]],"q":["U okviru koje je manifestacije Burnić u julu 2026. dočekan na gradskom Trgu?","During which event was Burnić welcomed on the town square in July 2026?"],"a":["Doček je bio u okviru manifestacije Ljeto na Sani.","The welcome was part of Ljeto na Sani."],"s":"l-burnic"},
+  {"id":"demirovicgrad","t":"choice","c":"ljudi","ok":2,"o":[["Hammu","Hammu"],["Hamburgu","Hamburgu"],["Berlinu","Berlinu"],["Frankfurtu","Frankfurtu"]],"q":["U kojem je njemačkom gradu rođen napadač Ermedin Demirović?","In which German city was the striker Ermedin Demirović born?"],"a":["Rođen je u Hamburgu, a porodica mu je iz Sanskog Mosta.","He was born in Hamburg; his family comes from Sanski Most."],"s":"l-demirovic"}
 ];
