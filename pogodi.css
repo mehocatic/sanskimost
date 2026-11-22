@@ -105,6 +105,11 @@
 .kv-line.edit .kv-stamp { right: 17%; rotate: -9deg; }
 /* ink is written, the stamps come down one after another */
 @keyframes kv-write { from { clip-path: inset(-.5em 100% -.5em -.5em); } to { clip-path: inset(-.5em -.5em -.5em -.5em); } }
+@keyframes kv-stamp { 0% { opacity: 0; transform: scale(2.3); } 55% { opacity: .95; transform: scale(.9); } 75% { transform: scale(1.04); } 100% { opacity: .86; transform: scale(1); } }
+.kv-line .w, .kv-line .s, .kv-line.edit input { animation: kv-write .9s cubic-bezier(.5, .1, .3, 1) both; animation-delay: calc(.25s + var(--i) * .11s); }
+.kv-line .s { animation-delay: calc(.4s + var(--i) * .11s); }
+.kv-stamp { animation: kv-stamp .5s cubic-bezier(.3, 1.4, .5, 1) both; animation-delay: calc(1.3s + var(--i) * .28s); }
+.kv-sheet:not(.in) .kv-line * { animation-play-state: paused; }
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
