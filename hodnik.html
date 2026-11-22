@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="hod.doctitle">Hodnik sjećanja &middot; Sanski Most</title>
-  <meta name="description" data-i18n-attr="content:hod.meta" content="Šetnja kroz odabrane fotografije Sanskog Mosta, od 1900. godine nadalje.">
+  <title data-i18n="hod.doctitle">Hodnik ličnosti &middot; Sanski Most</title>
+  <meta name="description" data-i18n-attr="content:hod.meta" content="Ličnosti Sanskog Mosta u hodniku s portretima: sport, nauka i književnost, muzika, umjetnost, baština i sjećanje na rat. Kratke biografije s izvorima.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sanski Most">
-  <meta property="og:title" data-i18n-attr="content:hod.doctitle" content="Hodnik sjećanja · Sanski Most">
-  <meta property="og:description" data-i18n-attr="content:hod.meta" content="Šetnja kroz odabrane fotografije Sanskog Mosta, od 1900. godine nadalje.">
+  <meta property="og:title" data-i18n-attr="content:hod.doctitle" content="Hodnik ličnosti · Sanski Most">
+  <meta property="og:description" data-i18n-attr="content:hod.meta" content="Ličnosti Sanskog Mosta u hodniku s portretima: sport, nauka i književnost, muzika, umjetnost, baština i sjećanje na rat. Kratke biografije s izvorima.">
   <meta property="og:url" content="https://visitsanskimost.netlify.app/hodnik">
   <meta property="og:image" content="https://visitsanskimost.netlify.app/photos/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -41,18 +41,18 @@
 
   <main id="hod" class="on-paper">
     <!-- the corridor: a Three.js scene in #mount (hodnik.js) -->
-    <div class="gallery-host" id="host" role="img" aria-label="Hodnik s fotografijama" data-i18n-attr="aria-label:hod.stage">
+    <div class="gallery-host" id="host" role="img" aria-label="Hodnik s portretima" data-i18n-attr="aria-label:hod.stage">
       <div class="canvas-mount" id="mount"></div>
       <div class="veil" id="veil"></div>
-      <div class="open-pill" id="pill" aria-hidden="true" data-i18n="hod.pill">Otvori fotografiju</div>
+      <div class="open-pill" id="pill" aria-hidden="true" data-i18n="hod.pill">Otvori biografiju</div>
     </div>
 
     <div class="gui" id="gui">
       <div class="arrows">
-        <button type="button" class="arrow-btn" id="prev" aria-label="Prethodna fotografija" data-i18n-attr="aria-label:hod.prev">
+        <button type="button" class="arrow-btn" id="prev" aria-label="Prethodni portret" data-i18n-attr="aria-label:hod.prev">
           <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></svg>
         </button>
-        <button type="button" class="arrow-btn" id="next" aria-label="Sljedeća fotografija" data-i18n-attr="aria-label:hod.next">
+        <button type="button" class="arrow-btn" id="next" aria-label="Sljedeći portret" data-i18n-attr="aria-label:hod.next">
           <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
         </button>
       </div>
@@ -70,38 +70,49 @@
       <div class="caption">
         <span class="mask kicker-mask"><span class="rise kicker" style="--mi: 2" data-i18n="hod.kicker">Upravo prolazite kroz</span></span>
         <div class="headline-row">
-          <h1 class="headline"><span class="mask"><span class="rise" style="--mi: 3" data-i18n="hod.headline">Hodnik sjećanja</span></span></h1>
-          <button type="button" class="enter-link" id="enter"><span class="mask"><span class="rise enter-inner" style="--mi: 4" data-i18n="hod.enter">Istraži arhiv →</span></span></button>
+          <h1 class="headline"><span class="mask"><span class="rise" style="--mi: 3" data-i18n="hod.headline">Hodnik ličnosti</span></span></h1>
+          <button type="button" class="enter-link" id="enter"><span class="mask"><span class="rise enter-inner" style="--mi: 4" data-i18n="hod.enter">Svi po oblastima →</span></span></button>
         </div>
       </div>
     </div>
 
-    <!-- the same photographs as a list -->
+    <!-- the same people as a list, by field -->
     <section class="list-section" id="list" aria-hidden="true">
       <div class="list-header">
-        <h2 class="list-heading" data-i18n="hod.listhead">Hodnik sjećanja, arhiv</h2>
+        <h2 class="list-heading" data-i18n="hod.listhead">Ličnosti po oblastima</h2>
         <div class="list-toggle" role="tablist" aria-label="Prikaz" data-i18n-attr="aria-label:hod.view">
           <button type="button" role="tab" class="toggle-btn" id="l-gallery" aria-selected="false" data-i18n="hod.gallery">Galerija</button>
           <button type="button" role="tab" class="toggle-btn active" aria-selected="true" data-i18n="hod.listbtn">Lista</button>
         </div>
       </div>
       <div class="list-grid" id="list-grid"></div>
+      <aside class="lic-note">
+        <h2 data-i18n="lic.note.h">Predloži ličnost</h2>
+        <p data-i18n="lic.note.p">Pošalji ime, opis doprinosa Sanskom Mostu i izvor.</p>
+        <a class="lic-mail" href="https://www.mehocatic.com" rel="noopener" target="_blank" data-i18n="lic.note.a">Javite se</a>
+      </aside>
     </section>
   </main>
 
-  <!-- one photograph, opened -->
-  <dialog id="lb" aria-label="Fotografija" data-i18n-attr="aria-label:arh.photo">
+  <!-- one person, opened -->
+  <dialog id="lb" aria-labelledby="lb-name">
     <button type="button" class="lb-x" id="lb-x"><span data-i18n="arh.close">Zatvori</span> ✕</button>
-    <div class="lb-ph"><img id="lb-img" alt=""></div>
-    <div class="lb-txt">
-      <p class="lb-y" id="lb-y"></p>
-      <h2 id="lb-cap"></h2>
-      <dl id="lb-meta"></dl>
-      <a class="btn" id="lb-arh" href="arhiv" data-i18n="hod.archive">Otvori u arhivu →</a>
+    <div class="lb-ph"><img id="lb-img" alt=""><span class="lb-mono mono" id="lb-mono" aria-hidden="true" hidden></span></div>
+    <div class="lb-txt" id="lb-txt">
+      <p class="lb-cat" id="lb-cat"></p>
+      <h2 id="lb-name"></h2>
+      <p class="lb-role" id="lb-role"></p>
+      <p class="lb-tag" id="lb-tag"></p>
+      <p class="lb-text" id="lb-text"></p>
+      <a class="lb-src" id="lb-src" target="_blank" rel="noopener"></a>
+      <div class="lb-nav">
+        <button type="button" id="lb-prev"><span aria-hidden="true">&larr;</span> <span data-i18n="lic.prev">Prethodna</span></button>
+        <button type="button" id="lb-next"><span data-i18n="lic.next">Sljedeća</span> <span aria-hidden="true">&rarr;</span></button>
+      </div>
     </div>
   </dialog>
 
-  <script defer src="js/data/arhiv-data.js"></script>
+  <script defer src="js/data/licnosti-data.js"></script>
   <script defer src="i18n/en.js"></script>
   <script defer src="i18n/bs.js"></script>
   <script defer src="js/i18n.js"></script>
