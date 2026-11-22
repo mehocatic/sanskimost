@@ -69,6 +69,11 @@ window.QuizRanked = (() => {
   const span = (cls, text) => { const s = document.createElement('span'); s.className = cls; s.textContent = text; return s; };
   function render(rows) {
     const typed = $('kv-name') ? $('kv-name').value : '';
+    lines.replaceChildren();
+    const list = rows.map(r => ({name: r.display_name, score: r.score}));
+    // a new score goes after the equal ones, as the server orders them by time
+    const at = mine ? list.filter(r => r.score >= mine.score).length : -1;
+    if (mine) list.splice(at, 0, {me: true, score: mine.score});
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
