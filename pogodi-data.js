@@ -96,6 +96,10 @@ Object.assign(window.KVS, {
   "l-milka": {
     "n": "Paralympic.org (Milka Milinković)",
     "u": "https://www.paralympic.org/news/milka-milinkovic-dies-62"
+  },
+  "l-nikola": {
+    "n": "Wikipedia (Nikola Milinković)",
+    "u": "https://en.wikipedia.org/wiki/Nikola_Milinkovi%C4%87"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -310,5 +314,6 @@ window.KVQ = [
   {"id":"zorice","t":"choice","c":"ljudi","ok":2,"o":[["1979","1979"],["1989","1989"],["1984","1984"],["1994","1994"]],"q":["Koje je godine Milenko Zorić rođen u Sanskom Mostu?","In what year was Milenko Zorić born in Sanski Most?"],"a":["Rođen je 2. aprila 1989.","He was born on 2 April 1989."],"s":"l-zoric"},
   {"id":"milkamed","t":"choice","c":"ljudi","ok":2,"o":[["3","3"],["8","8"],["5","5"],["12","12"]],"q":["Koliko je paraolimpijskih medalja osvojila Milka Milinković?","How many Paralympic medals did Milka Milinković win?"],"a":["Osam medalja na deset paraolimpijskih igara, najviše među hrvatskim paraolimpijcima.","Eight medals at ten Paralympic Games, the most among Croatian Paralympians."],"s":"l-milka"},
   {"id":"milkadisc","t":"choice","c":"ljudi","ok":1,"o":[["Bacanje koplja i kugle","Javelin and shot put"],["Plivanje i trčanje","Swimming and running"],["Stolni tenis i streljaštvo","Table tennis and shooting"],["Skok u dalj i skok u vis","Long jump and high jump"]],"q":["U kojim se disciplinama takmičila Milka Milinković?","In which events did Milka Milinković compete?"],"a":["Takmičila se u bacanju koplja i kugle.","She competed in javelin and shot put."],"s":"l-milka"},
-  {"id":"milkarod","t":"choice","c":"ljudi","ok":1,"o":[["Dabar","Dabar"],["Hrustovo","Hrustovo"],["Kamengrad","Kamengrad"],["Trnova","Trnova"]],"q":["U kojem je selu kod Sanskog Mosta rođena Milka Milinković?","In which village near Sanski Most was Milka Milinković born?"],"a":["Rođena je 7. aprila 1955. u Dabru.","She was born on 7 April 1955 in Dabar."],"s":"l-milka"}
+  {"id":"milkarod","t":"choice","c":"ljudi","ok":1,"o":[["Dabar","Dabar"],["Hrustovo","Hrustovo"],["Kamengrad","Kamengrad"],["Trnova","Trnova"]],"q":["U kojem je selu kod Sanskog Mosta rođena Milka Milinković?","In which village near Sanski Most was Milka Milinković born?"],"a":["Rođena je 7. aprila 1955. u Dabru.","She was born on 7 April 1955 in Dabar."],"s":"l-milka"},
+  {"id":"nikolaklub","t":"choice","c":"ljudi","ok":2,"o":[["Podgrmeč","Podgrmeč"],["Radnički Zdena","Radnički Zdena"],["Famos","Famos"],["Sloga","Sloga"]],"q":["U kojem je klubu Nikola Milinković počeo karijeru?","At which club did Nikola Milinković start his career?"],"a":["Karijeru je počeo u Radničkom iz Zdene.","He began at Radnički Zdena."],"s":"l-nikola"}
 ];
