@@ -99,6 +99,11 @@ window.QuizRanked = (() => {
     const full = rows.length >= 10, last = full ? rows[9].score : 0;
     if (mine) {
       note.textContent = at >= 10 ? t('chr.out', {pts: points(last + 1 - mine.score)}) : '';
+      return;
+    }
+    // your own line, in pencil: your best for this game on this browser
+    const best = personalBest(), me = line(list.length, 'me');
+    me.append(span('n', t('chr.you')), span('w', best ? t('chr.best') : t('chr.notYet')), span('s', best || ''));
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
