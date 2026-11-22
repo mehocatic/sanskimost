@@ -567,6 +567,7 @@
       $('kv-again').hidden = false;
     }
     competitive = false;
+    if (mode === 'daily') mode = lastMode;
     ranked.menu();
     show('kv-intro');
     updateMenu();
