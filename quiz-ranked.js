@@ -148,7 +148,7 @@ window.QuizRanked = (() => {
       if (row.kind === 'photo') {
         const photo = window.ARCHIVE.photos.find(p => p.f === row.photo);
         if (!photo) throw new Error('unknown_photo');
-        return {kind:'photo', p:{...photo}, to:row.to};
+        return {kind: 'photo', p: {...photo}, to: row.to};
       }
       const q = {id:row.id, t:row.kind, q:row.q};
       if (row.kind === 'choice') q.o = row.bs.map((v,i) => [v,row.en[i]]);
