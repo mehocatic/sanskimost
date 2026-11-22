@@ -76,6 +76,10 @@ Object.assign(window.KVS, {
   "golf": {
     "n": "Oslobođenje: Sanski Most ušao u svjetsku knjigu rekorda zahvaljujući popularnom Golfu 2 (6. 11. 2026.)",
     "u": "https://www.oslobodjenje.ba/magazin/zanimljivosti/sanski-most-usao-u-svjetsku-knjigu-rekorda-zahvaljujuci-popularnom-golfu-2/"
+  },
+  "l-cikan": {
+    "n": "USN Krajina (Hasan Hadžić Ćikan)",
+    "u": "https://usnkrajina.com.ba/sanski-most-u-ponedeljak-starta-novogodisnji-malonogometni-turnir-nagradni-fond-12-000-km-izvlacenje-parova-08-decembra/"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -278,5 +282,6 @@ window.KVQ = [
   {"id":"musala2003","t":"choice","c":"znamenitosti","ok":4,"o":[["1992","1992"],["2008","2008"],["2014","2014"],["2003","2003"]],"q":["Koje je godine Fatihova musala proglašena nacionalnim spomenikom?","In what year was Fatih’s Musalla declared a national monument?"],"a":["Nacionalni spomenik je od 2003.","It has been a national monument since 2003."],"nosrc":true},
   {"id":"hasanbegopor","t":"choice","c":"historija","ok":1,"o":[["Austrougarskoj","The Austro-Hungarian"],["Osmanskoj","The Ottoman"],["Njemačkoj","The German"],["Mletačkoj","The Venetian"]],"q":["Čijoj se okupaciji 1878. opirao Hasan-beg Čekić?","Whose occupation in 1878 did Hasan-beg Čekić resist?"],"a":["Bio je jedan od predvodnika otpora austrougarskoj okupaciji 1878.","He was one of the leaders of resistance to the Austro-Hungarian occupation in 1878."],"s":"l-hasanbeg"},
   {"id":"golf2","t":"choice","c":"dogadjaji","ok":2,"o":[["12","12"],["20","20"],["16","16"],["26","26"]],"q":["Koliko je osoba 31. jula 2026. na Sana Retro Festivalu stalo u jedan Volkswagen Golf Mk2, što je potvrdila agencija WRCAC?","How many people fitted into one Volkswagen Golf Mk2 at the Sana Retro Festival on 31 July 2026, as confirmed by the agency WRCAC?"],"a":["Rekord je postavio Oldtimer klub 1912 Sanski Most. Certifikat agencije WRCAC iz Londona izdat je 2. novembra 2026.","The record was set by the Oldtimer Club 1912 Sanski Most. The WRCAC agency in London issued the certificate on 2 November 2026."],"recent":true,"s":"golf"},
-  {"id":"danopcine","t":"choice","c":"dogadjaji","ok":1,"o":[["10. oktobar","10 October"],["20. juli","20 July"],["7. mart","7 March"],["2. august","2 August"]],"q":["Koji se datum u Sanskom Mostu obilježava kao Dan oslobođenja i Dan općine?","Which date is marked in Sanski Most as Liberation Day and Municipality Day?"],"a":["Operacija Sana 95 završila je ulaskom u grad 9. i 10. oktobra 1995.","Operation Sana 95 ended with the entry into town on 9 and 10 October 1995."],"s":"datumi"}
+  {"id":"danopcine","t":"choice","c":"dogadjaji","ok":1,"o":[["10. oktobar","10 October"],["20. juli","20 July"],["7. mart","7 March"],["2. august","2 August"]],"q":["Koji se datum u Sanskom Mostu obilježava kao Dan oslobođenja i Dan općine?","Which date is marked in Sanski Most as Liberation Day and Municipality Day?"],"a":["Operacija Sana 95 završila je ulaskom u grad 9. i 10. oktobra 1995.","Operation Sana 95 ended with the entry into town on 9 and 10 October 1995."],"s":"datumi"},
+  {"id":"nadimakcikan","t":"choice","c":"ljudi","ok":3,"o":[["Ćiro","Ćiro"],["Čika","Čika"],["Ćikan","Ćikan"],["Ćaća","Ćaća"]],"q":["Pod kojim nadimkom je poznat nogometaš Podgrmeča Hasan Hadžić?","By what nickname was the Podgrmeč footballer Hasan Hadžić known?"],"a":["Hasan Hadžić, zvani Ćikan, igrao je za Podgrmeč.","Hasan Hadžić, known as Ćikan, played for Podgrmeč."],"s":"l-cikan"}
 ];
