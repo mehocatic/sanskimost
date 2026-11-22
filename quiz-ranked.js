@@ -89,6 +89,11 @@ window.QuizRanked = (() => {
       } else {
         const name = span('w', r.name);
         if (r.name.length > 16) name.classList.add('long');
+        li.append(name);
+        if (i < 3) li.append(stamp(i + 1, r.score));
+      }
+      li.append(span('s', r.score));
+      lines.append(li);
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
