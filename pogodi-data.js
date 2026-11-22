@@ -152,6 +152,10 @@ Object.assign(window.KVS, {
   "l-kljucanin": {
     "n": "Traduki (Zilhad Ključanin)",
     "u": "https://database.traduki.eu/?p=6481"
+  },
+  "l-malovcic": {
+    "n": "Wikipedia (Kemal Malovčić)",
+    "u": "https://en.wikipedia.org/wiki/Kemal_Malov%C4%8Di%C4%87"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -397,5 +401,6 @@ window.KVQ = [
   {"id":"redzicsv","t":"choice","c":"ljudi","ok":2,"o":[["Veselin Masleša","Veselin Masleša"],["Svjetlost","Svjetlost"],["Oslobođenje","Oslobođenje"],["Mladost","Mladost"]],"q":["Koju je izdavačku kuću osnovao Enver Redžić?","Which publishing house did Enver Redžić found?"],"a":["Osnivač je izdavačke kuće Svjetlost.","He was the founder of the publishing house Svjetlost."],"s":"l-redzic"},
   {"id":"redzicz","t":"choice","c":"ljudi","ok":1,"o":[["ZAVNOBiH-a","ZAVNOBiH-a"],["ZAVNOH-a","ZAVNOH-a"],["ZAVNOS-a","ZAVNOS-a"],["Predsjedništva SFRJ","Predsjedništva SFRJ"]],"q":["Čiji je član Redžić bio u Drugom svjetskom ratu, uz AVNOJ?","Which body was Redžić a member of in the Second World War, besides AVNOJ?"],"a":["Bio je član ZAVNOBiH-a i AVNOJ-a.","He was a member of ZAVNOBiH and AVNOJ."],"s":"l-redzic"},
   {"id":"kljucaninnagr","t":"choice","c":"ljudi","ok":1,"o":[["Max Dizdar","Max Dizdar"],["Meša Selimović","Meša Selimović"],["Ivo Andrić","Ivo Andrić"],["Branko Ćopić","Branko Ćopić"]],"q":["Koju je nagradu Zilhad Ključanin dobio 1983. i 1985?","Which award did Zilhad Ključanin win in 1983 and 1985?"],"a":["Dobitnik je nagrade Max Dizdar.","He won the Max Dizdar award."],"s":"l-kljucanin"},
-  {"id":"kljucaninrod","t":"choice","c":"ljudi","ok":2,"o":[["Dabar","Dabar"],["Trnova","Trnova"],["Škrljevita","Škrljevita"],["Fajtovci","Fajtovci"]],"q":["U kojem je mjestu kod Sanskog Mosta rođen 1960. Zilhad Ključanin?","In which place near Sanski Most was Zilhad Ključanin born in 1960?"],"a":["Rođen je 1960. u Trnovi.","He was born in Trnova in 1960."],"s":"l-kljucanin"}
+  {"id":"kljucaninrod","t":"choice","c":"ljudi","ok":2,"o":[["Dabar","Dabar"],["Trnova","Trnova"],["Škrljevita","Škrljevita"],["Fajtovci","Fajtovci"]],"q":["U kojem je mjestu kod Sanskog Mosta rođen 1960. Zilhad Ključanin?","In which place near Sanski Most was Zilhad Ključanin born in 1960?"],"a":["Rođen je 1960. u Trnovi.","He was born in Trnova in 1960."],"s":"l-kljucanin"},
+  {"id":"malovjuzni","t":"choice","c":"ljudi","ok":3,"o":[["Grupe Indexi","Grupe Indexi"],["Grupe Bijelo dugme","Grupe Bijelo dugme"],["Grupe Južni Vetar","Grupe Južni Vetar"],["Grupe Plavi orkestar","Grupe Plavi orkestar"]],"q":["Čiji je član bio Kemal Malovčić osamdesetih?","Which band was Kemal Malovčić a member of in the 1980s?"],"a":["Osamdesetih je bio član grupe Južni Vetar.","In the 1980s he was a member of the band Južni Vetar."],"s":"l-malovcic"}
 ];
