@@ -254,6 +254,10 @@
   .kv-modes button { min-height: 52px; padding: 8px 18px; }
   .kv-modes small { display: none; }
 }
+@media (max-width: 400px) {
+  .kv-tabs { padding: 0 4px; }
+  .kv-tabs button { padding: 0 6px; font-size: .92rem; }
+}
 @media (prefers-reduced-motion: reduce) {
   .kv-fan figure, .kv-photo .print, .kv-card, .kv-ans, .shown .kv-true { animation: none; }
 }
