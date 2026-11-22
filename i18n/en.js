@@ -281,7 +281,6 @@ I18N.en = {
   'arh.doctitle': 'Archive · Sanski Most',
   'arh.meta': 'Photographs of Sanski Most from 1900 onwards, on a timeline and a map.',
   'arh.eyebrow': 'Archive · since 1900',
-  'arh.corridor': 'Walk the corridor →',
   'arh.title.html': "Sanski Most in <em>photographs</em>",
   'arh.view': 'View',
   'arh.view.time': 'Through time',
