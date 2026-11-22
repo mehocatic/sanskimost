@@ -128,6 +128,8 @@ window.QuizRanked = (() => {
     seen.observe(sheet);
   } else sheet.classList.add('in');
 
+  /* ---------- a ranked game ---------- */
+  async function start(selected, count) {
     let player;
     try {
       player = localStorage.getItem('kv-player');
