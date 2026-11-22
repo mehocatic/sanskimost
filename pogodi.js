@@ -358,7 +358,7 @@
     let b = best();
     if (total > b) { try { localStorage.setItem(KEY(), total); } catch (e) { /* not kept */ } b = total; }
     show('kv-end');
-    if (competitive) ranked.finish();
+    if (competitive) ranked.finish(total);
     const right = log.filter(x => x.r.kind === 'choice' ? x.pts : grade(x.e) !== 'b').length;
     count($('kv-final'), 0, total);
     $('kv-max').textContent = mode === 'surv' ? t('kv.ptsword') : `/ ${MAX()}`;
