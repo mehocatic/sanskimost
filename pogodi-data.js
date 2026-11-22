@@ -112,6 +112,10 @@ Object.assign(window.KVS, {
   "l-seferovic": {
     "n": "InMedia (Haris Seferović)",
     "u": "https://www.inmedia.ba/fudbaleri-porijeklom-iz-sanskog-mosta-od-bilbije-preko-handanovica-do-brace-milinkovic-savic-i-seferovica/"
+  },
+  "l-ilicic": {
+    "n": "InMedia (Josip Iličić)",
+    "u": "https://www.inmedia.ba/nogometas-fiorentine-josip-ilicic-porijeklom-iz-sanskog-mosta/"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -334,5 +338,6 @@ window.KVQ = [
   {"id":"handaklub","t":"choice","c":"ljudi","ok":2,"o":[["Juventus","Juventus"],["Inter","Inter"],["Milan","Milan"],["Roma","Roma"]],"q":["Za koji je klub dugo branio Samir Handanović, porijeklom iz Hrustova?","Which club did Samir Handanović, whose family comes from Hrustovo, long keep goal for?"],"a":["Dugogodišnji je golman milanskog Intera.","He was for many years the goalkeeper of Inter Milan."],"s":"l-handanovic"},
   {"id":"handarep","t":"choice","c":"ljudi","ok":3,"o":[["Bosne i Hercegovine","Bosne i Hercegovine"],["Hrvatske","Hrvatske"],["Slovenije","Slovenije"],["Srbije","Srbije"]],"q":["Koju je reprezentaciju branio Samir Handanović?","Which national team did Samir Handanović play for?"],"a":["Reprezentativac je Slovenije.","He is a Slovenia international."],"s":"l-handanovic"},
   {"id":"seferrep","t":"choice","c":"ljudi","ok":4,"o":[["Njemačke","Njemačke"],["Austrije","Austrije"],["Bosne i Hercegovine","Bosne i Hercegovine"],["Švicarske","Švicarske"]],"q":["Za koju je reprezentaciju nastupao Haris Seferović, porijeklom iz Hrustova?","Which national team did Haris Seferović, whose family comes from Hrustovo, play for?"],"a":["Porodica mu se krajem osamdesetih preselila u Švicarsku, za čiju je reprezentaciju nastupao.","His family moved to Switzerland in the late 1980s, and he played for the Swiss national team."],"s":"l-seferovic"},
-  {"id":"seferklub","t":"choice","c":"ljudi","ok":1,"o":[["Benfica","Benfica"],["Barcelona","Barcelona"],["Ajax","Ajax"],["Celtic","Celtic"]],"q":["Za koji je od ovih klubova nastupao Haris Seferović?","Which of these clubs did Haris Seferović play for?"],"a":["Nastupao je za Grasshoppers, Fiorentinu, Real Sociedad, Eintracht i Benficu.","He played for Grasshoppers, Fiorentina, Real Sociedad, Eintracht Frankfurt and Benfica."],"s":"l-seferovic"}
+  {"id":"seferklub","t":"choice","c":"ljudi","ok":1,"o":[["Benfica","Benfica"],["Barcelona","Barcelona"],["Ajax","Ajax"],["Celtic","Celtic"]],"q":["Za koji je od ovih klubova nastupao Haris Seferović?","Which of these clubs did Haris Seferović play for?"],"a":["Nastupao je za Grasshoppers, Fiorentinu, Real Sociedad, Eintracht i Benficu.","He played for Grasshoppers, Fiorentina, Real Sociedad, Eintracht Frankfurt and Benfica."],"s":"l-seferovic"},
+  {"id":"ilicicgrad","t":"choice","c":"ljudi","ok":1,"o":[["Prijedoru","Prijedoru"],["Sanskom Mostu","Sanskom Mostu"],["Ključu","Ključu"],["Bihaću","Bihaću"]],"q":["U kojem je gradu rođen Josip Iličić, porijeklom iz sela Škrljevita?","In which town was Josip Iličić, whose family roots are in Škrljevita, born?"],"a":["Rođen je u Prijedoru, a porijeklom je iz Škrljevite kod Sanskog Mosta.","He was born in Prijedor, with roots in Škrljevita near Sanski Most."],"s":"l-ilicic"}
 ];
