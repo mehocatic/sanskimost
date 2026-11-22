@@ -14,6 +14,7 @@
 .arh-head .eyebrow { color: var(--sand); margin-bottom: 14px; }
 .arh-head h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.3rem, 4.4vw, 4.2rem); line-height: .96; letter-spacing: -.01em; max-width: 11em; }
 .arh-head h1 em { color: var(--sand); }
+.arh-corr { display: inline-block; margin-top: 14px; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sand); border-bottom: 1px solid currentColor; padding-bottom: 2px; pointer-events: auto; }
 .arh-tools { display: flex; flex-direction: column; gap: 14px; padding: 22px 0 0 var(--pad); }
 .arh-toggle { align-self: flex-start; display: flex; padding: 4px; border: 1px solid rgba(246, 244, 238, .22); border-radius: 99px; }
 .arh-toggle button { min-height: 40px; padding: 0 20px; border-radius: 99px; font-size: .8rem; letter-spacing: .06em; opacity: .75; transition: background .3s ease, color .3s ease, opacity .3s ease; }
