@@ -17,7 +17,7 @@ I18N.bs = {
   'kv.modeLimit': "Za ovu hroniku imaš tri pokušaja dnevno na ovom pregledniku.",
   'kv.competition': "Takmičenje u znanju",
   'kv.daily': "Igraj 10 ili 20 pitanja. Svaki dan imaš po tri takmičarske igre za obje dužine na ovom pregledniku.",
-  'kv.compete': "Igraj za rang-listu",
+  'kv.compete': "Igraj za hroniku",
   'kv.board': "Rang-lista",
   'kv.nickname': "Ime ili nadimak za javnu rang-listu",
   'kv.publish': "Objavi rezultat",
