@@ -138,3 +138,10 @@ html[lang="en"] .headline { font-size: calc(128 * var(--u)); }
   .arrows { left: auto; right: 16px; bottom: 18px; }
   .toggle { top: 76px; right: 16px; bottom: auto; }
 }
+@media (prefers-reduced-motion: reduce) {
+  .rise { transform: none; }
+  .gui.intro-done .rise { animation: none; }
+  .veil, .canvas-mount, .list-section, .gui { transition: none; }
+}
+#lb h2 + .btn, #lb dl[hidden] + .btn { margin-top: 24px; }
+#lb dl:not([hidden]) + .btn { margin-top: 0; }
