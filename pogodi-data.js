@@ -168,6 +168,10 @@ Object.assign(window.KVS, {
   "l-abilajbegovic": {
     "n": "Univerzitet u Sarajevu (Asim Bilajbegović)",
     "u": "https://www.unsa.ba/node/4619"
+  },
+  "l-dedic": {
+    "n": "Institut za historiju (Enes Dedić)",
+    "u": "https://iis.unsa.ba/osoblje/enes-dedic/"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -425,5 +429,6 @@ window.KVQ = [
   {"id":"cavlovicrod","t":"choice","c":"ljudi","ok":4,"o":[["Tomina","Tomina"],["Vrhpolje","Vrhpolje"],["Lušci Palanka","Lušci Palanka"],["Kruhari","Kruhari"]],"q":["U kojem je mjestu kod Sanskog Mosta rođen Ivan Čavlović?","In which place near Sanski Most was Ivan Čavlović born?"],"a":["Rođen je 20. augusta 1949. u Kruharima.","He was born on 20 August 1949 in Kruhari."],"s":"l-ivanc"},
   {"id":"cavlovicbend","t":"choice","c":"ljudi","ok":2,"o":[["Elektronci","Elektronci"],["Boemi","Boemi"],["Drugi način","Drugi način"],["Južni Vetar","Južni Vetar"]],"q":["U kojoj je sanskoj grupi u mladosti svirao Ivan Čavlović?","In which Sanski Most band did Ivan Čavlović play in his youth?"],"a":["U mladosti je svirao u orkestru KUD Grmeč i u grupi Boemi.","In his youth he played in the KUD Grmeč orchestra and in the band Boemi."],"s":"l-ivanc"},
   {"id":"bilajgps","t":"choice","c":"ljudi","ok":4,"o":[["Radar","Radar"],["Laser za bušenje","Laser za bušenje"],["Satelitsku televiziju","Satelitsku televiziju"],["GPS","GPS"]],"q":["Koju je tehnologiju Asim Bilajbegović među prvima primijenio u geodeziji u BiH i Hrvatskoj?","Which technology did Asim Bilajbegović help introduce to geodesy in Bosnia and Herzegovina and Croatia?"],"a":["Među pionirima je primjene GPS-a u geodeziji.","He was among the pioneers of GPS in geodesy."],"s":"l-abilajbegovic"},
-  {"id":"bilajdekan","t":"choice","c":"ljudi","ok":1,"o":[["U Zagrebu","U Zagrebu"],["U Sarajevu","U Sarajevu"],["U Beogradu","U Beogradu"],["U Ljubljani","U Ljubljani"]],"q":["U kojem je gradu Bilajbegović bio dekan Geodetskog fakulteta 1985. do 1987?","In which city was Bilajbegović dean of the Faculty of Geodesy from 1985 to 1987?"],"a":["Bio je dekan Geodetskog fakulteta u Zagrebu.","He was dean of the Faculty of Geodesy in Zagreb."],"s":"l-abilajbegovic"}
+  {"id":"bilajdekan","t":"choice","c":"ljudi","ok":1,"o":[["U Zagrebu","U Zagrebu"],["U Sarajevu","U Sarajevu"],["U Beogradu","U Beogradu"],["U Ljubljani","U Ljubljani"]],"q":["U kojem je gradu Bilajbegović bio dekan Geodetskog fakulteta 1985. do 1987?","In which city was Bilajbegović dean of the Faculty of Geodesy from 1985 to 1987?"],"a":["Bio je dekan Geodetskog fakulteta u Zagrebu.","He was dean of the Faculty of Geodesy in Zagreb."],"s":"l-abilajbegovic"},
+  {"id":"dedickn","t":"choice","c":"ljudi","ok":2,"o":[["Sanski Most u srednjem vijeku","Sanski Most u srednjem vijeku"],["Bosansko Kraljevstvo i Srpska Despotovina (1402 do 1459)","Bosansko Kraljevstvo i Srpska Despotovina (1402 do 1459)"],["Bosanski sandžak","Bosanski sandžak"],["Povijest Krajine","Povijest Krajine"]],"q":["Koju je knjigu napisao historičar Enes Dedić iz Sanskog Mosta?","Which book did the historian Enes Dedić from Sanski Most write?"],"a":["Autor je knjige Bosansko Kraljevstvo i Srpska Despotovina (1402 do 1459).","He is the author of the book Bosansko Kraljevstvo i Srpska Despotovina (1402 to 1459)."],"s":"l-dedic"}
 ];
