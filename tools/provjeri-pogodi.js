@@ -1,13 +1,13 @@
-// Provjera baze pitanja: node provjeri-pogodi.js
-// Baza (pogodi-data.js) je provjerena prema stranicama iz popisa KVS (općina, Wikipedia, Zemaljski muzej, Parlament BiH i dr.).
+// Provjera baze pitanja: node tools/provjeri-pogodi.js
+// Baza (js/data/pogodi-data.js) je provjerena prema stranicama iz popisa KVS (općina, Wikipedia, Zemaljski muzej, Parlament BiH i dr.).
 // Dio izvora je sekundaran. Namjerno izostavljeno: ratni zločini i brojevi žrtava, datum osmanskog osvajanja (izvori se razilaze),
 // Sokolski dom kao zgrada zasjedanja ZAVNOBiH-a (nije potvrđeno), sve s neusaglašenim podacima.
 // Svako pitanje mora imati oba jezika, izvor iz KVS, ispravan tačan odgovor i raspon u kojem je rješenje.
 const fs = require('fs'), vm = require('vm');
 const ctx = {};
 ctx.window = ctx;
-for (const lang of ['bs', 'en']) vm.runInNewContext(fs.readFileSync(__dirname + '/i18n/' + lang + '.js', 'utf8'), ctx);
-vm.runInNewContext(fs.readFileSync(__dirname + '/pogodi-data.js', 'utf8'), ctx);
+for (const lang of ['bs', 'en']) vm.runInNewContext(fs.readFileSync(__dirname + '/../i18n/' + lang + '.js', 'utf8'), ctx);
+vm.runInNewContext(fs.readFileSync(__dirname + '/../js/data/pogodi-data.js', 'utf8'), ctx);
 const Q = ctx.window.KVQ, S = ctx.window.KVS, bad = [], ids = new Set(), cats = {};
 const two = v => Array.isArray(v) && v.length === 2 && v.every(x => typeof x === 'string' && x.trim());
 for (const q of Q) {
