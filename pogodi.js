@@ -581,6 +581,10 @@
     for (let i = 0; i < img.data.length; i += 4) {
       const v = Math.random();
       img.data.set([104, 86, 56, v < .55 ? 0 : (v - .55) * 70], i);
+    }
+    g.putImageData(img, 0, 0);
+    $('kv-sheet').style.setProperty('--grain', `url(${c.toDataURL()})`);
+  } catch (e) { /* plain paper */ }
   $('kv-again').addEventListener('click', () => start(competitive));
   $('kv-bank').textContent = t('kv.bank', { n: Q.length });
   // every source the questions rest on, one link each
