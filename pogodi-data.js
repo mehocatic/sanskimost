@@ -160,6 +160,10 @@ Object.assign(window.KVS, {
   "l-brajic": {
     "n": "Eurovision (Vukašin Brajić)",
     "u": "https://eurovision.tv/video/bosnia-herzegovina-eurovision-song-contest-2010"
+  },
+  "l-ivanc": {
+    "n": "Muzička akademija Sarajevo (Ivan Čavlović)",
+    "u": "https://www.mas.unsa.ba/en/node/454"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -412,5 +416,6 @@ window.KVQ = [
   {"id":"brajicpj","t":"choice","c":"ljudi","ok":1,"o":[["Munja i grom","Munja i grom"],["Sunce moje","Sunce moje"],["Lijepa Ana","Lijepa Ana"],["Moja bol","Moja bol"]],"q":["Koju je pjesmu Brajić otpjevao na Euroviziji 2010?","Which song did Brajić sing at Eurovision 2010?"],"a":["Pjesma se zvala Munja i grom.","The song was “Munja i grom”."],"s":"l-brajic"},
   {"id":"brajicgr","t":"choice","c":"ljudi","ok":2,"o":[["Stockholmu","Stockholmu"],["Oslu","Oslu"],["Kopenhagenu","Kopenhagenu"],["Helsinkiju","Helsinkiju"]],"q":["U kojem je gradu održana Pjesma Eurovizije 2010?","In which city was Eurovision 2010 held?"],"a":["Brajić je nastupio u Oslu.","Brajić performed in Oslo."],"s":"l-brajic"},
   {"id":"brajicot","t":"choice","c":"ljudi","ok":4,"o":[["Zvezde Granda","Zvezde Granda"],["Idol","Idol"],["X Factor","X Factor"],["Operacija trijumf","Operacija trijumf"]],"q":["U kojoj je emisiji Vukašin Brajić bio drugi u prvoj sezoni?","In which show did Vukašin Brajić finish second in its first season?"],"a":["Drugo mjesto zauzeo je u prvoj sezoni Operacije trijumf.","He finished second in the first season of Operacija trijumf."],"s":"l-brajic"},
-  {"id":"hasanbegmost","t":"choice","c":"ljudi","ok":4,"o":[["Hamzibegove džamije","The Hamzibeg Mosque"],["Kamengrada","Kamengrad fortress"],["Pruge Prijedor, Lička Kaldrma","The Prijedor to Lička Kaldrma railway"],["Drvenog mosta preko Sane","The wooden bridge over the Sana"]],"q":["Uz čije se podizanje i održavanje veže Hasan-beg Čekić?","What is Hasan-beg Čekić linked to building and maintaining?"],"a":["Zabilježena je njegova uloga u podizanju i održavanju drvenog mosta.","His part in building and maintaining the wooden bridge is on record."],"s":"l-hasanbeg"}
+  {"id":"hasanbegmost","t":"choice","c":"ljudi","ok":4,"o":[["Hamzibegove džamije","The Hamzibeg Mosque"],["Kamengrada","Kamengrad fortress"],["Pruge Prijedor, Lička Kaldrma","The Prijedor to Lička Kaldrma railway"],["Drvenog mosta preko Sane","The wooden bridge over the Sana"]],"q":["Uz čije se podizanje i održavanje veže Hasan-beg Čekić?","What is Hasan-beg Čekić linked to building and maintaining?"],"a":["Zabilježena je njegova uloga u podizanju i održavanju drvenog mosta.","His part in building and maintaining the wooden bridge is on record."],"s":"l-hasanbeg"},
+  {"id":"cavlovickn","t":"choice","c":"ljudi","ok":4,"o":[["Muziku Krajine","Muziku Krajine"],["Bosanski sevdah","Bosanski sevdah"],["Muzičku kulturu Sane","Muzičku kulturu Sane"],["Historiju muzike u Bosni i Hercegovini","Historiju muzike u Bosni i Hercegovini"]],"q":["Koju je knjigu Ivan Čavlović napisao 2011?","Which book did Ivan Čavlović write in 2011?"],"a":["Napisao je Historiju muzike u Bosni i Hercegovini (2011).","He wrote the History of Music in Bosnia and Herzegovina (2011)."],"s":"l-ivanc"}
 ];
