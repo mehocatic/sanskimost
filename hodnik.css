@@ -28,3 +28,38 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
 .open-pill { position: fixed; z-index: 12; background: #1e1b2b; color: #fff; font-family: var(--h-mono); font-size: max(11px, calc(10 * var(--u))); letter-spacing: .14em; line-height: 1; text-transform: uppercase; padding: calc(7 * var(--u)) calc(13 * var(--u)); border-radius: 99px; white-space: nowrap; transform: translate(-50%, -50%); pointer-events: none; opacity: 0; transition: opacity .12s ease; }
 .open-pill.visible { opacity: 1; }
 
+/* over the scene */
+.gui { position: fixed; inset: 0; z-index: 20; pointer-events: none; opacity: 1; visibility: visible; transition: opacity .3s ease, visibility .3s ease; }
+.gui.hidden { opacity: 0; visibility: hidden; }
+.gui button { pointer-events: auto; }
+.gui.hidden button { pointer-events: none; }
+.mask { display: block; overflow: hidden; }
+.rise { display: block; transform: translateY(105%); }
+.gui.intro-done .rise { animation: maskRise 1000ms cubic-bezier(.2, .7, .2, 1) calc(250ms + var(--mi) * 60ms) both; }
+@keyframes maskRise { from { transform: translateY(105%); } to { transform: translateY(0); } }
+
+.arrows { position: absolute; left: calc(27 * var(--u)); top: calc(262 * var(--u)); display: flex; flex-direction: column; gap: calc(10 * var(--u)); }
+.arrow-btn { width: max(24px, calc(50 * var(--u))); height: max(24px, calc(50 * var(--u))); border: 1.5px solid var(--ink); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); background: transparent; transition: background .25s ease, color .25s ease; }
+.arrow-btn:hover { background: var(--ink); color: var(--wall); }
+.arrow-svg { width: calc(20 * var(--u)); height: calc(20 * var(--u)); }
+
+.hint { position: absolute; right: calc(27 * var(--u)); bottom: calc(229 * var(--u)); text-align: right; font-family: var(--h-mono); font-size: max(11px, calc(10 * var(--u))); letter-spacing: .12em; line-height: 1.65; text-transform: uppercase; }
+
+.toggle, .list-toggle { display: inline-flex; border: 1px solid var(--ink-35); border-radius: 99px; padding: calc(2 * var(--u)); gap: calc(2 * var(--u)); }
+.toggle { position: absolute; right: calc(29 * var(--u)); bottom: calc(174 * var(--u)); pointer-events: auto; }
+.toggle-btn { font-family: var(--h-mono); font-size: max(11px, calc(9.5 * var(--u))); letter-spacing: .12em; text-transform: uppercase; height: max(24px, calc(22 * var(--u))); padding: 0 calc(14 * var(--u)); border-radius: 99px; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); transition: background .2s ease, color .2s ease; }
+.toggle-btn.active { background: var(--ink); color: var(--wall); }
+
+.caption { position: absolute; left: calc(25 * var(--u)); right: calc(25 * var(--u)); bottom: calc(30 * var(--u)); }
+.kicker-mask { width: max-content; margin: 0 0 calc(10 * var(--u)) calc(3 * var(--u)); }
+.kicker { font-family: var(--h-mono); font-size: max(11px, calc(11.5 * var(--u))); letter-spacing: .14em; text-transform: uppercase; }
+.headline-row { display: flex; align-items: flex-end; flex-wrap: wrap; gap: calc(28 * var(--u)); }
+.headline { margin: 0; font-family: var(--h-cond); font-weight: 500; font-size: calc(150 * var(--u)); line-height: .9; letter-spacing: -.015em; white-space: nowrap; }
+/* room above the capitals for the accent of Ć, which the mask would otherwise cut off */
+.headline .mask { padding-top: .22em; margin-top: -.22em; }
+.enter-link { margin-bottom: calc(8 * var(--u)); min-height: 24px; display: inline-flex; align-items: flex-end; font-family: var(--h-mono); font-size: max(11px, calc(11 * var(--u))); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+.enter-inner { border-bottom: 1px solid var(--ink); padding-bottom: calc(2 * var(--u)); }
+@media (min-width: 820px) and (max-aspect-ratio: 1/1) { .headline { font-size: calc(124 * var(--u)); } }
+/* the English title is longer: smaller, so it stays clear of the switch on the right */
+html[lang="en"] .headline { font-size: calc(128 * var(--u)); }
+
