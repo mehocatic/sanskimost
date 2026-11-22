@@ -132,6 +132,10 @@ Object.assign(window.KVS, {
   "l-muharemovic": {
     "n": "Klix (Tarik Muharemović)",
     "u": "https://www.klix.ba/sport/nogomet/tarik-muharemovic-za-klixba-krilatica-bojim-se-samo-boga-mi-se-savrseno-uklapa-s-uzorom-spahicem/260410135"
+  },
+  "l-alagic": {
+    "n": "Mehmed Alagić (Mehmed Alagić)",
+    "u": "place?slug=turbe-alagic"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -364,5 +368,6 @@ window.KVQ = [
   {"id":"demirovicgrad","t":"choice","c":"ljudi","ok":2,"o":[["Hammu","Hammu"],["Hamburgu","Hamburgu"],["Berlinu","Berlinu"],["Frankfurtu","Frankfurtu"]],"q":["U kojem je njemačkom gradu rođen napadač Ermedin Demirović?","In which German city was the striker Ermedin Demirović born?"],"a":["Rođen je u Hamburgu, a porodica mu je iz Sanskog Mosta.","He was born in Hamburg; his family comes from Sanski Most."],"s":"l-demirovic"},
   {"id":"muharemgrad","t":"choice","c":"ljudi","ok":1,"o":[["Ljubljani","Ljubljani"],["Zagrebu","Zagrebu"],["Beču","Beču"],["Sarajevu","Sarajevu"]],"q":["U kojem je gradu rođen Tarik Muharemović, čija je majka iz Sanskog Mosta?","In which city was Tarik Muharemović, whose mother is from Sanski Most, born?"],"a":["Rođen je 28. februara 2003. u Ljubljani.","He was born on 28 February 2003 in Ljubljana."],"s":"l-muharemovic"},
   {"id":"muharempoz","t":"choice","c":"ljudi","ok":2,"o":[["Golman","Golman"],["Stoper","Stoper"],["Napadač","Napadač"],["Krilni igrač","Krilni igrač"]],"q":["Na kojoj poziciji igra Tarik Muharemović za reprezentaciju BiH?","In which position does Tarik Muharemović play for the national team?"],"a":["Stoper je reprezentacije BiH.","He is a centre-back for the national team."],"s":"l-muharemovic"},
-  {"id":"muharemotac","t":"choice","c":"ljudi","ok":2,"o":[["Iz Sanskog Mosta","Iz Sanskog Mosta"],["Iz Zavidovića","Iz Zavidovića"],["Iz Tuzle","Iz Tuzle"],["Iz Mostara","Iz Mostara"]],"q":["Odakle je otac Tarika Muharemovića?","Where is Tarik Muharemović’s father from?"],"a":["Majka mu je iz Sanskog Mosta, a otac iz Zavidovića.","His mother is from Sanski Most and his father from Zavidovići."],"s":"l-muharemovic"}
+  {"id":"muharemotac","t":"choice","c":"ljudi","ok":2,"o":[["Iz Sanskog Mosta","Iz Sanskog Mosta"],["Iz Zavidovića","Iz Zavidovića"],["Iz Tuzle","Iz Tuzle"],["Iz Mostara","Iz Mostara"]],"q":["Odakle je otac Tarika Muharemovića?","Where is Tarik Muharemović’s father from?"],"a":["Majka mu je iz Sanskog Mosta, a otac iz Zavidovića.","His mother is from Sanski Most and his father from Zavidovići."],"s":"l-muharemovic"},
+  {"id":"alagicrod","t":"choice","c":"ljudi","ok":2,"o":[["Hrustovo","Hrustovo"],["Fajtovci","Fajtovci"],["Kamengrad","Kamengrad"],["Trnova","Trnova"]],"q":["U kojem je selu rođen general Mehmed Alagić?","In which village was General Mehmed Alagić born?"],"a":["Rođen je 8. jula 1947. u Fajtovcima.","He was born on 8 July 1947 in Fajtovci."],"s":"l-alagic"}
 ];
