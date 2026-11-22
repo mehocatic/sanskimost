@@ -472,7 +472,7 @@
     g.fillStyle = '#f6f4ee'; g.font = 'italic 500 64px "EB Garamond", Georgia, serif';
     g.fillText(rankName, W / 2, 1150);
     g.fillStyle = 'rgba(246,244,238,.5)'; g.font = '400 28px Inter';
-    g.fillText('visitsanskimost.netlify.app/pogodi', W / 2, 1270);
+    g.fillText('sanausrcu.netlify.app/pogodi', W / 2, 1270);
     const png = await new Promise(resolve => c.toBlob(resolve, 'image/png'));
     if (id !== renderId) return;
     if (imageUrl) URL.revokeObjectURL(imageUrl);
