@@ -136,6 +136,10 @@ Object.assign(window.KVS, {
   "l-alagic": {
     "n": "Mehmed Alagić (Mehmed Alagić)",
     "u": "place?slug=turbe-alagic"
+  },
+  "l-ibrisagic": {
+    "n": "Riksdagen (Anna Ibrisagic)",
+    "u": "https://www.riksdagen.se/en/members-and-parties/member/anna-ibrisagic_9e76df5e-9ed0-4504-99bd-b54ea205d5e8/"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -371,5 +375,6 @@ window.KVQ = [
   {"id":"muharemotac","t":"choice","c":"ljudi","ok":2,"o":[["Iz Sanskog Mosta","Iz Sanskog Mosta"],["Iz Zavidovića","Iz Zavidovića"],["Iz Tuzle","Iz Tuzle"],["Iz Mostara","Iz Mostara"]],"q":["Odakle je otac Tarika Muharemovića?","Where is Tarik Muharemović’s father from?"],"a":["Majka mu je iz Sanskog Mosta, a otac iz Zavidovića.","His mother is from Sanski Most and his father from Zavidovići."],"s":"l-muharemovic"},
   {"id":"alagicrod","t":"choice","c":"ljudi","ok":2,"o":[["Hrustovo","Hrustovo"],["Fajtovci","Fajtovci"],["Kamengrad","Kamengrad"],["Trnova","Trnova"]],"q":["U kojem je selu rođen general Mehmed Alagić?","In which village was General Mehmed Alagić born?"],"a":["Rođen je 8. jula 1947. u Fajtovcima.","He was born on 8 July 1947 in Fajtovci."],"s":"l-alagic"},
   {"id":"alagicsahr","t":"choice","c":"ljudi","ok":3,"o":[["Na Šušnjaru","On Šušnjar"],["Na Hamzibegovoj džamiji","At the Hamzibeg Mosque"],["Na haremu džamije u Fajtovcima","In the grounds of the Fajtovci mosque"],["U Kamengradu","In Kamengrad"]],"q":["Gdje je sahranjen general Mehmed Alagić?","Where is General Mehmed Alagić buried?"],"a":["Sahranjen je na haremu džamije u Fajtovcima.","He is buried in the grounds of the Fajtovci mosque."],"s":"l-alagic"},
-  {"id":"alagicdan","t":"choice","c":"dogadjaji","ok":4,"o":[["8. jula","8 July"],["10. oktobra","10 October"],["20. jula","20 July"],["7. marta","7 March"]],"q":["Kojeg se datuma obilježava godišnjica smrti generala Alagića?","On which date is the anniversary of General Alagić’s death marked?"],"a":["Umro je 7. marta 2003. u Sanskom Mostu.","He died on 7 March 2003 in Sanski Most."],"s":"datumi"}
+  {"id":"alagicdan","t":"choice","c":"dogadjaji","ok":4,"o":[["8. jula","8 July"],["10. oktobra","10 October"],["20. jula","20 July"],["7. marta","7 March"]],"q":["Kojeg se datuma obilježava godišnjica smrti generala Alagića?","On which date is the anniversary of General Alagić’s death marked?"],"a":["Umro je 7. marta 2003. u Sanskom Mostu.","He died on 7 March 2003 in Sanski Most."],"s":"datumi"},
+  {"id":"ibrisstr","t":"choice","c":"ljudi","ok":2,"o":[["Socijaldemokratima","Socijaldemokratima"],["Moderatnoj stranci","Moderatnoj stranci"],["Zelenima","Zelenima"],["Liberalima","Liberalima"]],"q":["Kojoj stranci pripada Anna Ibrisagic?","Which party does Anna Ibrisagic belong to?"],"a":["Članica je Moderatne stranke (Moderaterna).","She is a member of the Moderate Party."],"s":"l-ibrisagic"}
 ];
