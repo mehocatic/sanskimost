@@ -228,7 +228,8 @@
   .kv-top { padding-bottom: 12px; }
   .kv-dots:not(.lives) { min-width: 0; flex: 1; gap: 3px; }
   .kv-dots:not(.lives) li { min-width: 0; }
-  .kv-photo { flex: none; padding: 6px 0 14px; }
+  /* the question and its answers sit in the middle of the screen, nearer the thumb */
+  .kv-photo { flex: none; padding: 6px 0 14px; margin-top: auto; }
   .kv-photo img { max-height: 36svh; border-width: 7px; }
   .kv-panel { align-self: stretch; max-width: none; }
   .kv-n { margin-bottom: 6px; }
