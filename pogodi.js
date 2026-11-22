@@ -145,6 +145,7 @@
 
   function show(id) {
     ['kv-intro', 'kv-round', 'kv-end'].forEach(s => { $(s).hidden = s !== id; });
+    $('kv-dock').hidden = id !== 'kv-intro';
     scrollTo(0, 0);
   }
   async function start(forBoard) {
