@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ličnosti · Sanski Most</title>
-  <meta name="description" data-i18n-attr="content:lic.meta" content="Ličnosti povezane sa Sanskim Mostom kroz sport, kulturu, nauku, zanate i javni život. Biografije s izvorima i pregled dobitnika Zlatnog ljiljana.">
+  <title data-i18n="lic.doctitle">Zlatni ljiljani · Sanski Most</title>
+  <meta name="description" data-i18n-attr="content:lic.meta" content="Dobitnici Zlatnog ljiljana iz predratne općine Sanski Most, s godinom priznanja, mjestom rođenja i jedinicom.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sanski Most">
-  <meta property="og:title" content="Ličnosti · Sanski Most">
-  <meta property="og:description" data-i18n-attr="content:lic.meta" content="Ličnosti povezane sa Sanskim Mostom kroz sport, kulturu, nauku, zanate i javni život. Biografije s izvorima i pregled dobitnika Zlatnog ljiljana.">
+  <meta property="og:title" data-i18n-attr="content:lic.doctitle" content="Zlatni ljiljani · Sanski Most">
+  <meta property="og:description" data-i18n-attr="content:lic.meta" content="Dobitnici Zlatnog ljiljana iz predratne općine Sanski Most, s godinom priznanja, mjestom rođenja i jedinicom.">
   <meta property="og:url" content="https://visitsanskimost.netlify.app/licnosti">
   <meta property="og:image" content="https://visitsanskimost.netlify.app/photos/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -41,26 +41,7 @@
   </nav>
 
   <main>
-    <header class="lh on-deep">
-      <div class="lh-wall" id="lic-wall" aria-hidden="true"></div>
-      <div class="lh-in">
-        <p class="eyebrow" data-i18n="lic.eyebrow">Sanjani</p>
-        <h1 data-i18n="lic.title">Ličnosti</h1>
-        <p class="lh-lead" data-i18n="lic.lead">Ljudi koji su u Sanskom Mostu odrasli, radili ili ostavili trag, kao i oni čije su porodice iz ovog kraja.</p>
-        <ul class="lh-stats">
-          <li><b id="st-p"></b><span data-i18n="lic.stat.people">ličnosti</span></li>
-          <li><b id="st-z"></b><span data-i18n="lic.stat.lilies">Zlatnih ljiljana</span></li>
-          <li><b id="st-f"></b><span data-i18n="lic.stat.fields">oblasti</span></li>
-        </ul>
-        <nav class="lh-jump" aria-label="Na ovoj stranici" data-i18n-attr="aria-label:lic.jump">
-          <a href="#zlatni-ljiljani" data-i18n="lic.zlj.title">Zlatni ljiljani Sanskog Mosta</a>
-          <a href="#izdvojeno" data-i18n="lic.feat.eyebrow">Izdvojeno</a>
-          <a href="#svi" data-i18n="lic.idx.title">Ljudi po oblastima</a>
-        </nav>
-      </div>
-    </header>
-
-    <section class="zlj on-deep" id="zlatni-ljiljani" aria-labelledby="zlj-title">
+    <section class="zlj zlj-page on-deep" id="zlatni-ljiljani" aria-labelledby="zlj-title">
       <div class="zlj-grid">
         <div class="zlj-side">
           <svg class="zlj-lily" id="zlj-lily" viewBox="0 0 200 240" aria-hidden="true" focusable="false">
@@ -83,54 +64,16 @@
             <path class="zlj-rib" pathLength="1" d="M100 34V132"/>
           </svg>
           <p class="eyebrow zlj-eyebrow" data-i18n="lic.zlj.eyebrow">Najviše ratno priznanje</p>
-          <h2 id="zlj-title" data-i18n="lic.zlj.title">Zlatni ljiljani Sanskog Mosta</h2>
+          <h1 id="zlj-title" data-i18n="lic.zlj.title">Zlatni ljiljani Sanskog Mosta</h1>
           <p class="zlj-lead" data-i18n="lic.zlj.lead">Zlatni ljiljan je najviše ratno priznanje Armije Republike Bosne i Hercegovine iz rata od 1992. do 1995.</p>
           <p class="zlj-sub" data-i18n="lic.zlj.sub">Ljiljan je hiljadu godina simbol Bosne.</p>
+          <p class="zlj-foot"><span id="zlj-count"></span> <a id="zlj-src" href="#" rel="noopener" target="_blank"></a></p>
+          <a class="zlj-people" href="hodnik" data-i18n="lic.zlj.people">Ličnosti Sanskog Mosta su u Hodniku →</a>
         </div>
         <ol class="zlj-roll" id="zlj-list"></ol>
       </div>
     </section>
-
-    <section class="lf-sec on-paper" id="izdvojeno" aria-labelledby="feat-title">
-      <header class="sec-head">
-        <p class="eyebrow" data-i18n="lic.feat.eyebrow">Izdvojeno</p>
-        <h2 id="feat-title" data-i18n="lic.feat.title">Iz Sanskog Mosta u svijet</h2>
-      </header>
-      <ul class="lf-grid" id="lic-feat"></ul>
-    </section>
-
-    <section class="idx on-mist" id="svi" aria-labelledby="idx-title">
-      <header class="sec-head">
-        <p class="eyebrow" data-i18n="lic.idx.eyebrow">Svi</p>
-        <h2 id="idx-title" data-i18n="lic.idx.title">Ljudi po oblastima</h2>
-        <p class="idx-count" id="lic-count" aria-live="polite"></p>
-      </header>
-      <div class="idx-body" id="lic-idx"></div>
-      <aside class="lic-note">
-        <h2 data-i18n="lic.note.h">Predloži ličnost</h2>
-        <p data-i18n="lic.note.p">Pošalji ime, opis doprinosa Sanskom Mostu i izvor.</p>
-        <a class="lic-mail" href="https://www.mehocatic.com" rel="noopener" target="_blank" data-i18n="lic.note.a">Javite se</a>
-      </aside>
-    </section>
   </main>
-
-  <dialog class="dlg on-deep" id="lic-dlg" aria-labelledby="dlg-name">
-    <div class="dlg-in">
-      <button class="dlg-x" id="dlg-x" type="button" aria-label="Zatvori" data-i18n-attr="aria-label:lic.close"><span aria-hidden="true"></span></button>
-      <figure class="dlg-fig" id="dlg-fig" hidden><img id="dlg-img" alt=""><figcaption id="dlg-cap"></figcaption></figure>
-      <span class="dlg-mono" id="dlg-mono" aria-hidden="true"></span>
-      <p class="dlg-cat" id="dlg-cat"></p>
-      <h2 class="dlg-name" id="dlg-name"></h2>
-      <p class="dlg-role" id="dlg-role"></p>
-      <p class="dlg-tag" id="dlg-tag"></p>
-      <p class="dlg-text" id="dlg-text"></p>
-      <a class="dlg-src" id="dlg-src" target="_blank" rel="noopener"></a>
-      <div class="dlg-nav">
-        <button type="button" id="dlg-prev"><span aria-hidden="true">&larr;</span> <span data-i18n="lic.prev">Prethodna</span></button>
-        <button type="button" id="dlg-next"><span data-i18n="lic.next">Sljedeća</span> <span aria-hidden="true">&rarr;</span></button>
-      </div>
-    </div>
-  </dialog>
 
   <footer class="site-foot on-deep">
     <div class="sf-brand">
