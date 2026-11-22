@@ -13,8 +13,7 @@ window.LICNOSTI_CATS = [
   { id: 'nauka', bs: 'Nauka i književnost', en: 'Science and literature' },
   { id: 'muzika', bs: 'Muzika', en: 'Music' },
   { id: 'rat', bs: 'Rat i sjećanje', en: 'War and memory' },
-  { id: 'kultura', bs: 'Umjetnost i mediji', en: 'Art and media' },
-  { id: 'zdravstvo', bs: 'Zdravstvo', en: 'Health' }
+  { id: 'kultura', bs: 'Umjetnost i mediji', en: 'Art and media' }
 ];
 
 // Highlights on the People page: one figure each, taken from the text of that person's entry (no new facts here).
@@ -293,27 +292,6 @@ window.LICNOSTI = [
       bs: 'Učestvovao je u poslijeratnoj obnovi Radio Sane. Ostavio je zapis o ponovnom pokretanju programa 13. januara 1996. i obraćanju slušaocima riječima Ovdje Radio Sana.',
       en: 'He took part in the post-war revival of Radio Sana. He left a record of the programme starting again on 13 January 1996 and of addressing listeners with the words Ovdje Radio Sana.' },
     src: { label: 'Inmedia', url: 'https://inmedia.ba/1996-godina-ovdje-radio-sana-emir-tabakovic/' } },
-
-  { id: 'biscevic', cat: 'zdravstvo', kind: 'linked', name: 'Faik Biščević Fajko',
-    role: { bs: 'Stomatolog', en: 'Dentist' },
-    text: {
-      bs: 'Prema porodičnoj biografiji, bio je prvi sanski diplomirani zubar. Fakultet je završio 1962, a njegova biografija bilježi početke stručne stomatološke zaštite u Sanskom Mostu.',
-      en: 'According to a family biography he was the first qualified dentist from Sanski Most. He graduated in 1962, and his biography records the beginnings of professional dental care in the town.' },
-    src: { label: 'Porodična biografija', url: 'https://nedimbiscevic.info/biografija/' } },
-
-  { id: 'pisteljic', cat: 'zdravstvo', kind: 'linked', name: 'Slavko Pišteljić',
-    role: { bs: 'Ljekar', en: 'Physician' },
-    text: {
-      bs: 'Od 1925. do 1935. radio je u Sanskom Mostu kao sreski ljekar i ljekar udružene zdravstvene opštine. Liječio je radnike osigurane preko Bratinske blagajne i radio kao željeznički ljekar.',
-      en: 'From 1925 to 1935 he worked in Sanski Most as district physician and physician of the joint health municipality. He treated workers insured through the Brotherhood Fund and worked as a railway doctor.' },
-    src: { label: 'Ljekarska komora RS', url: 'https://www.komoradoktorars.org/v3/kod%2034print.pdf' } },
-
-  { id: 'sabanovic', cat: 'zdravstvo', kind: 'linked', name: 'Enis Šabanović',
-    role: { bs: 'Ljekar internista', en: 'Internist' },
-    text: {
-      bs: 'Ljekar iz Trnove. Do aprila 1992. bio je načelnik interne medicine u Domu zdravlja Sanski Most. Od juna do novembra 1992. bio je zatočen u logoru Manjača, a njegov položaj i zatočeništvo dokumentovani su u presudama Haškog tribunala.',
-      en: 'A physician from Trnova. Until April 1992 he headed internal medicine at the Sanski Most health centre. From June to November 1992 he was held in the Manjača camp, and his position and detention are documented in judgements of the Hague Tribunal.' },
-    src: { label: 'Haški tribunal', url: 'https://ucr.irmct.org/LegalRef/CMSDocStore/Public/BCS/Judgement/NotIndexable/IT-09-92/JUD275R0000636710.pdf' } },
 
   { id: 'albahari', cat: 'rat', kind: 'born', name: 'Moris Albahari',
     role: { bs: 'Partizan i pilot', en: 'Partisan and pilot' },
