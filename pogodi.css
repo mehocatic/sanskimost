@@ -250,6 +250,10 @@
   .kv-list { grid-template-columns: 1fr 1fr; gap: 22px 14px; }
   .kv-list p b { display: block; }
 }
+@media (max-width: 599px) {
+  .kv-modes button { min-height: 52px; padding: 8px 18px; }
+  .kv-modes small { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .kv-fan figure, .kv-photo .print, .kv-card, .kv-ans, .shown .kv-true { animation: none; }
 }
