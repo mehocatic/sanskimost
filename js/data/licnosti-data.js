@@ -10,7 +10,6 @@
 window.LICNOSTI_CATS = [
   { id: 'bastina', key: 'lic.heritage' },
   { id: 'sport', bs: 'Sport', en: 'Sport' },
-  { id: 'politika', bs: 'Politika', en: 'Politics' },
   { id: 'nauka', bs: 'Nauka i književnost', en: 'Science and literature' },
   { id: 'muzika', bs: 'Muzika', en: 'Music' },
   { id: 'rat', bs: 'Rat i sjećanje', en: 'War and memory' },
@@ -120,27 +119,6 @@ window.LICNOSTI = [
       en: 'Born on 8 July 1947 in Fajtovci, died on 7 March 2003 in Sanski Most. A corps commander in the ARBiH. He entered Sanski Most with the 5th Corps on 9 and 10 October 1995 and after the war was the first mayor. He is buried in the grounds of the Fajtovci mosque.' },
     src: { label: 'Mehmed Alagić', url: 'place?slug=turbe-alagic', internal: true } },
 
-  { id: 'ibrisagic', cat: 'politika', kind: 'born', name: 'Anna Ibrisagic',
-    role: { bs: 'Političarka u Švedskoj', en: 'Swedish politician' },
-    text: {
-      bs: 'Rođena u Sanskom Mostu 23. maja 1967. Članica Moderatne stranke (Moderaterna). U švedskom parlamentu bila je od 2002. do 2004, a u Evropskom parlamentu od 2004. do 2014.',
-      en: 'Born in Sanski Most on 23 May 1967. A member of the Moderate Party. She sat in the Swedish parliament from 2002 to 2004 and in the European Parliament from 2004 to 2014.' },
-    src: { label: 'Riksdagen', url: 'https://www.riksdagen.se/en/members-and-parties/member/anna-ibrisagic_9e76df5e-9ed0-4504-99bd-b54ea205d5e8/' } },
-
-  { id: 'halimovic', cat: 'politika', kind: 'born', name: 'Sanjin Halimović',
-    role: { bs: 'Političar, doktor veterinarskih nauka', en: 'Politician, doctor of veterinary science' },
-    text: {
-      bs: 'Rođen u Sanskom Mostu 31. maja 1969. Bio je načelnik općine od 2004. do 2011, federalni ministar razvoja, poduzetništva i obrta od 2011. do 2015, a zatim stalni predstavnik Bosne i Hercegovine pri Ujedinjenim nacijama u Beču.',
-      en: 'Born in Sanski Most on 31 May 1969. He was mayor from 2004 to 2011, Federation minister of development, entrepreneurship and crafts from 2011 to 2015, and then Bosnia and Herzegovina\'s permanent representative to the UN in Vienna.' },
-    src: { label: 'UN Vienna', url: 'https://unis.unvienna.org/unis/en/pressrels/2015/unisbio1087.html' } },
-
-  { id: 'budimir', cat: 'politika', kind: 'born', name: 'Željko Budimir',
-    role: { bs: 'Pravnik, ministar u Vladi RS', en: 'Lawyer, minister in the RS government' },
-    text: {
-      bs: 'Rođen u Sanskom Mostu 1977. Diplomirao je na Pravnom fakultetu u Banjoj Luci. Obavljao je ministarske dužnosti u Vladi Republike Srpske.',
-      en: 'Born in Sanski Most in 1977. He graduated from the Faculty of Law in Banja Luka and has held ministerial posts in the government of Republika Srpska.' },
-    src: { label: 'MUP RS', url: 'https://mup.vladars.rs/eng/ministarstvo/ministar' } },
-
   { id: 'redzic', cat: 'nauka', kind: 'born', name: 'Enver Redžić',
     role: { bs: 'Historičar, akademik', en: 'Historian, academician' },
     text: {
@@ -204,7 +182,7 @@ window.LICNOSTI = [
       en: 'His family comes from Hrustovo, and a report from the village lists him alongside Samir Handanović among goalkeepers with roots there. He played in goal for the Slovenia national team.' },
     src: { label: 'Dnevni avaz', url: 'https://avaz.ba/vijesti/bih/663090/haris-seferovic-je-poslao-kuci-mbapea-pogbu-grizmana-sve-je-pocelo-u-hrustovu-kod-sanskog-mosta' } },
 
-  { id: 'hasanbeg', cat: 'politika', kind: 'born', name: 'Hasan-beg Čekić',
+  { id: 'hasanbeg', cat: 'bastina', kind: 'born', name: 'Hasan-beg Čekić',
     role: { bs: 'Upravitelj i gradonačelnik', en: 'Administrator and mayor' },
     text: {
       bs: 'Bio je sanski upravitelj, a kasnije gradonačelnik. Jedan je od predvodnika otpora austrougarskoj okupaciji 1878, a zabilježena je i njegova uloga u podizanju i održavanju drvenog mosta preko Sane.',
