@@ -79,6 +79,11 @@ window.QuizRanked = (() => {
     list.forEach((r, i) => {
       const li = line(i, r.me ? 'edit' : i < 3 ? 'top' : '');
       li.append(span('n', r.me && at >= 10 ? '–' : (i + 1) + '.'));
+      if (r.me) {
+        const input = document.createElement('input');
+        Object.assign(input, {id: 'kv-name', required: true, maxLength: 40, autocomplete: 'off', value: typed, placeholder: t('chr.name')});
+        input.setAttribute('form', 'kv-form');
+        input.setAttribute('aria-label', t('nickname'));
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
