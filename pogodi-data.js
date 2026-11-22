@@ -100,6 +100,10 @@ Object.assign(window.KVS, {
   "l-nikola": {
     "n": "Wikipedia (Nikola Milinković)",
     "u": "https://en.wikipedia.org/wiki/Nikola_Milinkovi%C4%87"
+  },
+  "l-pantelic": {
+    "n": "Mondo.ba (Ilija Pantelić)",
+    "u": "https://mondo.ba/Sport/Fudbal/a1119416/Fudbaleri-porijeklom-iz-Sanskog-Mosta.html"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -316,5 +320,6 @@ window.KVQ = [
   {"id":"milkadisc","t":"choice","c":"ljudi","ok":1,"o":[["Bacanje koplja i kugle","Javelin and shot put"],["Plivanje i trčanje","Swimming and running"],["Stolni tenis i streljaštvo","Table tennis and shooting"],["Skok u dalj i skok u vis","Long jump and high jump"]],"q":["U kojim se disciplinama takmičila Milka Milinković?","In which events did Milka Milinković compete?"],"a":["Takmičila se u bacanju koplja i kugle.","She competed in javelin and shot put."],"s":"l-milka"},
   {"id":"milkarod","t":"choice","c":"ljudi","ok":1,"o":[["Dabar","Dabar"],["Hrustovo","Hrustovo"],["Kamengrad","Kamengrad"],["Trnova","Trnova"]],"q":["U kojem je selu kod Sanskog Mosta rođena Milka Milinković?","In which village near Sanski Most was Milka Milinković born?"],"a":["Rođena je 7. aprila 1955. u Dabru.","She was born on 7 April 1955 in Dabar."],"s":"l-milka"},
   {"id":"nikolaklub","t":"choice","c":"ljudi","ok":2,"o":[["Podgrmeč","Podgrmeč"],["Radnički Zdena","Radnički Zdena"],["Famos","Famos"],["Sloga","Sloga"]],"q":["U kojem je klubu Nikola Milinković počeo karijeru?","At which club did Nikola Milinković start his career?"],"a":["Karijeru je počeo u Radničkom iz Zdene.","He began at Radnički Zdena."],"s":"l-nikola"},
-  {"id":"nikolasin","t":"choice","c":"ljudi","ok":2,"o":[["Marko i Luka","Marko i Luka"],["Sergej i Vanja","Sergej i Vanja"],["Nikola i Ilija","Nikola i Ilija"],["Dušan i Stefan","Dušan i Stefan"]],"q":["Koji su sinovi Nikole Milinkovića reprezentativci Srbije?","Which sons of Nikola Milinković play for the Serbia national team?"],"a":["Sergej i Vanja Milinković-Savić su reprezentativci Srbije.","Sergej and Vanja Milinković-Savić are Serbia internationals."],"s":"l-nikola"}
+  {"id":"nikolasin","t":"choice","c":"ljudi","ok":2,"o":[["Marko i Luka","Marko i Luka"],["Sergej i Vanja","Sergej i Vanja"],["Nikola i Ilija","Nikola i Ilija"],["Dušan i Stefan","Dušan i Stefan"]],"q":["Koji su sinovi Nikole Milinkovića reprezentativci Srbije?","Which sons of Nikola Milinković play for the Serbia national team?"],"a":["Sergej i Vanja Milinković-Savić su reprezentativci Srbije.","Sergej and Vanja Milinković-Savić are Serbia internationals."],"s":"l-nikola"},
+  {"id":"pantelicsela","t":"choice","c":"ljudi","ok":3,"o":[["Lušci Palanka","Lušci Palanka"],["Tomina","Tomina"],["Kozica","Kozica"],["Modra","Modra"]],"q":["U kojem je selu na Grmeču rođen golman Ilija Pantelić?","In which village on Grmeč was the goalkeeper Ilija Pantelić born?"],"a":["Rođen je u Kozici na Grmeču.","He was born in Kozica on Grmeč."],"s":"l-pantelic"}
 ];
