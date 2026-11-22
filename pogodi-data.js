@@ -204,6 +204,10 @@ Object.assign(window.KVS, {
   "l-ceric": {
     "n": "Al Jazeera Balkans (Džafer Cerić)",
     "u": "https://balkans.aljazeera.net/amp/teme/2017/8/27/ozivljavanje-prve-kolonije-naive-u-bih"
+  },
+  "l-mandic": {
+    "n": "Al Jazeera Balkans (Pero Mandić)",
+    "u": "https://balkans.aljazeera.net/amp/teme/2017/8/27/ozivljavanje-prve-kolonije-naive-u-bih"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -477,5 +481,6 @@ window.KVQ = [
   {"id":"zonicbaza","t":"choice","c":"ljudi","ok":3,"o":[["Operaciju trijumf","Operaciju trijumf"],["Pinkove zvezde","Pinkove zvezde"],["Zvezde Granda","Zvezde Granda"],["Idol","Idol"]],"q":["Koje je takmičenje Šejla Zonić osvojila u sezoni 2023/24?","Which competition did Šejla Zonić win in the 2023/24 season?"],"a":["Pobjednica je takmičenja Zvezde Granda u sezoni 2023/24.","She won the competition Zvezde Granda in 2023/24."],"s":"l-zonic"},
   {"id":"zonicdjet","t":"choice","c":"ljudi","ok":2,"o":[["U Hrustovu","U Hrustovu"],["U Gornjem Kamengradu","U Gornjem Kamengradu"],["U Trnovi","U Trnovi"],["U Muhićima","U Muhićima"]],"q":["U kojem je dijelu Sanskog Mosta Šejla Zonić provela djetinjstvo?","In which part of Sanski Most did Šejla Zonić spend her childhood?"],"a":["Djetinjstvo je provela u Gornjem Kamengradu.","She spent her childhood in Gornji Kamengrad."],"s":"l-zonic"},
   {"id":"cericdr","t":"choice","c":"ljudi","ok":2,"o":[["Galerija u Sanskom Mostu","A gallery in Sanski Most"],["Međunarodna Ljetnja drugovanja na Sani","The international Summer Gatherings on the Sana"],["Muzička akademija","A music academy"],["Sanska petica","The Sanska petica race"]],"q":["Šta je nastalo iz sanske kolonije naive koju su osnovali Cerić i Mandić?","What grew out of the Sanski Most naive art colony founded by Cerić and Mandić?"],"a":["Iz kolonije su nastala međunarodna Ljetnja drugovanja na Sani.","The colony gave rise to the international Summer Gatherings on the Sana."],"s":"l-ceric"},
-  {"id":"cericdjela","t":"choice","c":"ljudi","ok":2,"o":[["Oko 50","About 50"],["Više od 500","More than 500"],["Više od 2.000","More than 2,000"],["Oko 100","About 100"]],"q":["Koliko je slika i skulptura, prema izvoru, učesnici kolonije naive ostavili gradu?","According to the source, how many paintings and sculptures did the colony’s participants leave the town?"],"a":["Ostavili su gradu više od 500 slika i skulptura.","They left the town more than 500 paintings and sculptures."],"s":"l-ceric"}
+  {"id":"cericdjela","t":"choice","c":"ljudi","ok":2,"o":[["Oko 50","About 50"],["Više od 500","More than 500"],["Više od 2.000","More than 2,000"],["Oko 100","About 100"]],"q":["Koliko je slika i skulptura, prema izvoru, učesnici kolonije naive ostavili gradu?","According to the source, how many paintings and sculptures did the colony’s participants leave the town?"],"a":["Ostavili su gradu više od 500 slika i skulptura.","They left the town more than 500 paintings and sculptures."],"s":"l-ceric"},
+  {"id":"mandickp","t":"choice","c":"ljudi","ok":1,"o":[["14","14"],["7","7"],["12","12"],["20","20"]],"q":["Koliko slika ima ciklus Križni put Isusa Krista Pere Mandića?","How many paintings does Pero Mandić’s cycle of the Way of the Cross have?"],"a":["Ciklus ima 14 slika.","The cycle has 14 paintings."],"s":"l-mandic"}
 ];
