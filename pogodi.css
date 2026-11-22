@@ -279,12 +279,6 @@
 .kv-srcs a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .kv-srcs a:hover { color: #f6f4ee; }
 
-/* how many questions in "only questions": 10 or 20 */
-.kv-len { display: flex; align-items: center; gap: 6px; margin-top: 14px; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(246, 244, 238, .7); }
-.kv-len span { margin-right: 6px; }
-.kv-len button { min-width: 48px; min-height: 40px; border-radius: 99px; border: 1px solid rgba(246, 244, 238, .22); font-size: .86rem; letter-spacing: .04em; transition: background .2s ease, color .2s ease, border-color .2s ease; }
-.kv-len button[aria-pressed="true"] { background: var(--paper); border-color: var(--paper); color: var(--ink); }
-
 /* three mistakes: the lives in the top bar */
 .kv-dots.lives { gap: 10px; }
 .kv-dots.lives li { width: 14px; height: 14px; border-radius: 50%; background: var(--sand); box-shadow: 0 0 0 4px rgba(127, 214, 220, .16); transition: background .4s ease, box-shadow .4s ease, transform .4s cubic-bezier(.2, .7, .2, 1); }
