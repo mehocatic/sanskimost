@@ -108,6 +108,10 @@ Object.assign(window.KVS, {
   "l-handanovic": {
     "n": "Mondo.ba (Samir Handanović)",
     "u": "https://mondo.ba/Sport/Fudbal/a1119416/Fudbaleri-porijeklom-iz-Sanskog-Mosta.html"
+  },
+  "l-seferovic": {
+    "n": "InMedia (Haris Seferović)",
+    "u": "https://www.inmedia.ba/fudbaleri-porijeklom-iz-sanskog-mosta-od-bilbije-preko-handanovica-do-brace-milinkovic-savic-i-seferovica/"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -328,5 +332,6 @@ window.KVQ = [
   {"id":"pantelicsela","t":"choice","c":"ljudi","ok":3,"o":[["Lušci Palanka","Lušci Palanka"],["Tomina","Tomina"],["Kozica","Kozica"],["Modra","Modra"]],"q":["U kojem je selu na Grmeču rođen golman Ilija Pantelić?","In which village on Grmeč was the goalkeeper Ilija Pantelić born?"],"a":["Rođen je u Kozici na Grmeču.","He was born in Kozica on Grmeč."],"s":"l-pantelic"},
   {"id":"pantelicpsg","t":"choice","c":"ljudi","ok":2,"o":[["Lyon","Lyon"],["Paris Saint-Germain","Paris Saint-Germain"],["Monaco","Monaco"],["Nantes","Nantes"]],"q":["Za koji je francuski klub, uz Marseille, branio Ilija Pantelić?","For which French club, besides Marseille, did Ilija Pantelić keep goal?"],"a":["Branio je za Vojvodinu, Bastiu, Paris Saint-Germain i Marseille.","He kept goal for Vojvodina, Bastia, Paris Saint-Germain and Marseille."],"s":"l-pantelic"},
   {"id":"handaklub","t":"choice","c":"ljudi","ok":2,"o":[["Juventus","Juventus"],["Inter","Inter"],["Milan","Milan"],["Roma","Roma"]],"q":["Za koji je klub dugo branio Samir Handanović, porijeklom iz Hrustova?","Which club did Samir Handanović, whose family comes from Hrustovo, long keep goal for?"],"a":["Dugogodišnji je golman milanskog Intera.","He was for many years the goalkeeper of Inter Milan."],"s":"l-handanovic"},
-  {"id":"handarep","t":"choice","c":"ljudi","ok":3,"o":[["Bosne i Hercegovine","Bosne i Hercegovine"],["Hrvatske","Hrvatske"],["Slovenije","Slovenije"],["Srbije","Srbije"]],"q":["Koju je reprezentaciju branio Samir Handanović?","Which national team did Samir Handanović play for?"],"a":["Reprezentativac je Slovenije.","He is a Slovenia international."],"s":"l-handanovic"}
+  {"id":"handarep","t":"choice","c":"ljudi","ok":3,"o":[["Bosne i Hercegovine","Bosne i Hercegovine"],["Hrvatske","Hrvatske"],["Slovenije","Slovenije"],["Srbije","Srbije"]],"q":["Koju je reprezentaciju branio Samir Handanović?","Which national team did Samir Handanović play for?"],"a":["Reprezentativac je Slovenije.","He is a Slovenia international."],"s":"l-handanovic"},
+  {"id":"seferrep","t":"choice","c":"ljudi","ok":4,"o":[["Njemačke","Njemačke"],["Austrije","Austrije"],["Bosne i Hercegovine","Bosne i Hercegovine"],["Švicarske","Švicarske"]],"q":["Za koju je reprezentaciju nastupao Haris Seferović, porijeklom iz Hrustova?","Which national team did Haris Seferović, whose family comes from Hrustovo, play for?"],"a":["Porodica mu se krajem osamdesetih preselila u Švicarsku, za čiju je reprezentaciju nastupao.","His family moved to Switzerland in the late 1980s, and he played for the Swiss national team."],"s":"l-seferovic"}
 ];
