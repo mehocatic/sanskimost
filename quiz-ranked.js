@@ -167,6 +167,7 @@ window.QuizRanked = (() => {
   form.addEventListener('submit', async event => {
     event.preventDefault();
     const input = $('kv-name'), button = form.querySelector('button');
+    if (!input) return;
     if (!input.value.trim()) { input.value = ''; input.reportValidity(); return; }
     button.disabled = true;
     const game = token;
