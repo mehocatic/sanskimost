@@ -70,6 +70,11 @@
 .kv-sheet { --pl: 46px; --pr: 18px; position: relative; padding: 24px var(--pr) 18px var(--pl); color: #1b1b1d; background-color: var(--print); background-image: var(--grain, none), linear-gradient(90deg, transparent 35px, rgba(156, 59, 44, .4) 35px 36px, transparent 36px); border-radius: 0 0 3px 3px; box-shadow: 0 30px 60px rgba(0, 0, 0, .6), 0 2px 4px rgba(0, 0, 0, .3), inset 0 0 50px rgba(120, 95, 50, .16); rotate: .3deg; }
 .kv-sheet-k { text-align: center; font-size: .62rem; letter-spacing: .32em; text-transform: uppercase; color: #55524a; }
 #kv .kv-sheet h2 { margin-top: 4px; text-align: center; font: italic 400 clamp(2.2rem, 4vw, 2.7rem)/1 var(--serif); color: #1b1b1d; }
+.kv-sheet-m { margin-top: 10px; padding-top: 8px; border-top: 3px double #1b1b1d; text-align: center; font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: #55524a; }
+/* the ruling belongs to the list, so every line holds one name */
+.kv-lines { list-style: none; margin: 14px calc(-1 * var(--pr)) 0 calc(-1 * var(--pl)); padding: 0 var(--pr) 0 var(--pl); background: repeating-linear-gradient(180deg, transparent 0 43px, rgba(15, 122, 133, .25) 43px 44px); }
+.kv-line { position: relative; display: flex; align-items: flex-end; gap: 10px; height: 44px; padding-bottom: 3px; font-family: Caveat, cursive; }
+.kv-line .n { position: absolute; left: calc(7px - var(--pl)); bottom: 6px; width: 24px; text-align: right; font-weight: 500; font-size: 1.35rem; line-height: 1; color: #9c3b2c; }
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
