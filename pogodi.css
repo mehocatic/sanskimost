@@ -95,6 +95,11 @@
 .kv-line.edit input { flex: 1; min-width: 0; padding: 0 0 0 6px; border: 0; border-radius: 0; background: none; font: 700 2rem/1.05 Caveat, cursive; color: #233f8c; rotate: -1deg; transform-origin: left bottom; }
 .kv-line.edit input::placeholder { color: rgba(35, 63, 140, .45); }
 .kv-line.edit input:focus { outline: none; box-shadow: 0 2px 0 #233f8c; }
+.kv-note { margin-top: 6px; font: 500 1.3rem/1.2 Caveat, cursive; color: #55524a; rotate: -1deg; }
+.kv-note:empty { display: none; }
+/* the stamps reach over the lines around them, as on real paper, but each stays readable */
+.kv-stamp { position: absolute; top: 50%; z-index: 2; width: 72px; height: 72px; margin-top: -36px; color: #9c3b2c; opacity: .86; pointer-events: none; }
+.kv-line:nth-child(1) .kv-stamp { right: 35%; rotate: -14deg; width: 76px; height: 76px; margin-top: -38px; }
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
