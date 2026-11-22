@@ -94,6 +94,11 @@ window.QuizRanked = (() => {
       }
       li.append(span('s', r.score));
       lines.append(li);
+    });
+    if (!list.length) lines.append(Object.assign(line(0, 'empty'), {textContent: t('boardEmpty')}));
+    const full = rows.length >= 10, last = full ? rows[9].score : 0;
+    if (mine) {
+      note.textContent = at >= 10 ? t('chr.out', {pts: points(last + 1 - mine.score)}) : '';
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
