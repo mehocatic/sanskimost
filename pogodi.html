@@ -73,6 +73,11 @@
       <!-- the town chronicle: a page of a register, one name per line (quiz-ranked.js) -->
       <div class="kv-chron-home" id="kv-chron-home">
         <section class="kv-chron" id="kv-chron" aria-labelledby="kv-chr-title" hidden>
+          <div class="kv-tabs" role="tablist" data-i18n-attr="aria-label:kv.choose">
+            <button type="button" role="tab" aria-controls="kv-sheet" data-mode="mix" aria-selected="true" data-i18n="kv.tab.mix">Foto i pitanja</button>
+            <button type="button" role="tab" aria-controls="kv-sheet" data-mode="quiz" data-len="10" aria-selected="false" data-i18n="kv.tab.q10">10 pitanja</button>
+            <button type="button" role="tab" aria-controls="kv-sheet" data-mode="quiz" data-len="20" aria-selected="false" data-i18n="kv.tab.q20">20 pitanja</button>
+            <button type="button" role="tab" aria-controls="kv-sheet" data-mode="surv" aria-selected="false" data-i18n="kv.tab.surv">3 greške</button>
         <p class="kv-bank" id="kv-bank"></p>
         <details class="kv-srcs">
           <summary data-i18n="kv.sources">Izvori pitanja</summary>
