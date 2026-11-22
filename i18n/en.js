@@ -254,6 +254,7 @@ I18N.en = {
   'nav.plan': 'Visit',
   'nav.history': 'History',
   'nav.archive': 'Archive',
+  'nav.corridor': 'Corridor',
   'nav.quiz': 'Quiz',
   'nav.people': 'People',
   'lic.meta': "People connected to Sanski Most through sport, culture, scholarship, crafts and public life. Biographies with sources and a roll of Golden Lily recipients.",
