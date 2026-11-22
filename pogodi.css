@@ -25,6 +25,11 @@
 .kv-fan figure::after { content: "?"; position: absolute; right: -14px; bottom: -18px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--sand); color: var(--ink); font: 500 1.8rem/1 var(--serif); box-shadow: 0 10px 24px rgba(0, 0, 0, .5); animation: kv-ping 2.4s ease-out 1.4s infinite; }
 .kv-fan figure:not(:last-child)::after { display: none; }
 @keyframes kv-deal { from { opacity: 0; transform: rotate(0deg) translate(0, 60px) scale(.9); } }
+@keyframes kv-bob { 50% { translate: -50% calc(-50% - 7px); } }
+@keyframes kv-ping { 0% { box-shadow: 0 0 0 0 rgba(127, 214, 220, .55), 0 10px 24px rgba(0, 0, 0, .5); } 70%, 100% { box-shadow: 0 0 0 14px rgba(127, 214, 220, 0), 0 10px 24px rgba(0, 0, 0, .5); } }
+
+/* the games: one list, the same choice as the tabs of the chronicle */
+.kv-picker { border: 0; padding: 0; margin: 0; min-width: 0; max-width: 540px; }
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
