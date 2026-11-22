@@ -29,6 +29,11 @@ window.QuizRanked = (() => {
     $('kv-network').textContent = key ? t(key) : '';
     $('kv-network').hidden = !key;
   }
+
+  /* ---------- the chronicle ---------- */
+  const points = n => {
+    if (I18n.lang !== 'bs') return t(n === 1 ? 'bod1' : 'bodN', {n});
+    const d = n % 10, h = n % 100;
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
