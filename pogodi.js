@@ -516,12 +516,9 @@
   ranked.title = (score, game, size) => t(rankKey(score, game, game === 'surv' ? 0 : size * 100));
   const gameName = () => mode === 'quiz' ? t('kv.row.q' + len) : t('kv.' + mode);
   function updateMenu() {
-    lengthPicker.hidden = mode !== 'quiz';
-    document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
-    $('kv-description').textContent = t('kv.help.' + mode);
-    $('kv-practice').textContent = t(mode === 'daily' ? (playedToday() ? 'kv.viewDaily' : 'kv.playDaily') : 'kv.practice');
-    // the daily challenge has no server board
-    const board = mode !== 'daily' && !!window.quizConfig;
+    // the list of games and the tabs of the chronicle are the same choice
+    document.querySelectorAll('#kv-intro [data-mode]').forEach(b => {
+      const on = b.dataset.mode === mode && (!b.dataset.len || +b.dataset.len === len);
     $('kv-ranked').hidden = !board; $('kv-competition').hidden = !board; $('kv-practice').classList.toggle('ghost', board);
     if (mode !== 'daily') ranked.select(mode,gameSize());
     best();
