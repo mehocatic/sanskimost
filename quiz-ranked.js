@@ -4,7 +4,7 @@
 window.QuizRanked = (() => {
   const config = window.quizConfig;
   const $ = id => document.getElementById(id);
-  const board = $('kv-board'), form = $('kv-submit').querySelector('form');
+  const chron = $('kv-chron'), sheet = $('kv-sheet'), lines = $('kv-lines'), note = $('kv-chr-note'), form = $('kv-form');
   const t = (key, vars) => I18n.t('kv.' + key, vars);
   let token, mode = 'mix', size = 10, message = '', boardRequest = 0;
 
