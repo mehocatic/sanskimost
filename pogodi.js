@@ -142,7 +142,6 @@
     if (mode === 'daily') return 0;
     try { return +localStorage.getItem(KEY()) || 0; } catch (e) { return 0; }
   }
-  best();
 
   function show(id) {
     ['kv-intro', 'kv-round', 'kv-end'].forEach(s => { $(s).hidden = s !== id; });
