@@ -59,6 +59,11 @@ window.QuizRanked = (() => {
     g.append(ring, num);
     svg.append(g);
     return svg;
+  }
+  function line(i, cls = '') {
+    const li = document.createElement('li');
+    li.className = 'kv-line' + (cls ? ' ' + cls : '');
+    li.style.setProperty('--i', i);
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
