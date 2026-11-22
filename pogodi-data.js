@@ -72,6 +72,10 @@ Object.assign(window.KVS, {
   "l-hasanbeg": {
     "n": "Stav (arhiv) (Hasan-beg Čekić)",
     "u": "https://arhiv.stav.ba/ko-su-bile-vodje-otpora-u-krajini-i-kakva-je-njihova-sudbina/"
+  },
+  "golf": {
+    "n": "Oslobođenje: Sanski Most ušao u svjetsku knjigu rekorda zahvaljujući popularnom Golfu 2 (6. 11. 2026.)",
+    "u": "https://www.oslobodjenje.ba/magazin/zanimljivosti/sanski-most-usao-u-svjetsku-knjigu-rekorda-zahvaljujuci-popularnom-golfu-2/"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
@@ -272,5 +276,6 @@ window.KVQ = [
   {"id":"kamen2008","t":"choice","c":"znamenitosti","ok":4,"o":[["1998","1998"],["2003","2003"],["2014","2014"],["2008","2008"]],"q":["Koje je godine tvrđava Kamengrad proglašena nacionalnim spomenikom?","In what year was Kamengrad fortress declared a national monument?"],"a":["Nacionalni spomenik je od 2008.","It has been a national monument since 2008."],"nosrc":true},
   {"id":"kamenopsada","t":"choice","c":"znamenitosti","ok":2,"o":[["3","3"],["11","11"],["7","7"],["25","25"]],"q":["Koliko je godina, prema legendi, trajala opsada Kamengrada?","According to legend, how many years did the siege of Kamengrad last?"],"a":["Prema legendi opsada je trajala 11 godina.","According to legend the siege lasted 11 years."],"nosrc":true},
   {"id":"musala2003","t":"choice","c":"znamenitosti","ok":4,"o":[["1992","1992"],["2008","2008"],["2014","2014"],["2003","2003"]],"q":["Koje je godine Fatihova musala proglašena nacionalnim spomenikom?","In what year was Fatih’s Musalla declared a national monument?"],"a":["Nacionalni spomenik je od 2003.","It has been a national monument since 2003."],"nosrc":true},
-  {"id":"hasanbegopor","t":"choice","c":"historija","ok":1,"o":[["Austrougarskoj","The Austro-Hungarian"],["Osmanskoj","The Ottoman"],["Njemačkoj","The German"],["Mletačkoj","The Venetian"]],"q":["Čijoj se okupaciji 1878. opirao Hasan-beg Čekić?","Whose occupation in 1878 did Hasan-beg Čekić resist?"],"a":["Bio je jedan od predvodnika otpora austrougarskoj okupaciji 1878.","He was one of the leaders of resistance to the Austro-Hungarian occupation in 1878."],"s":"l-hasanbeg"}
+  {"id":"hasanbegopor","t":"choice","c":"historija","ok":1,"o":[["Austrougarskoj","The Austro-Hungarian"],["Osmanskoj","The Ottoman"],["Njemačkoj","The German"],["Mletačkoj","The Venetian"]],"q":["Čijoj se okupaciji 1878. opirao Hasan-beg Čekić?","Whose occupation in 1878 did Hasan-beg Čekić resist?"],"a":["Bio je jedan od predvodnika otpora austrougarskoj okupaciji 1878.","He was one of the leaders of resistance to the Austro-Hungarian occupation in 1878."],"s":"l-hasanbeg"},
+  {"id":"golf2","t":"choice","c":"dogadjaji","ok":2,"o":[["12","12"],["20","20"],["16","16"],["26","26"]],"q":["Koliko je osoba 31. jula 2026. na Sana Retro Festivalu stalo u jedan Volkswagen Golf Mk2, što je potvrdila agencija WRCAC?","How many people fitted into one Volkswagen Golf Mk2 at the Sana Retro Festival on 31 July 2026, as confirmed by the agency WRCAC?"],"a":["Rekord je postavio Oldtimer klub 1912 Sanski Most. Certifikat agencije WRCAC iz Londona izdat je 2. novembra 2026.","The record was set by the Oldtimer Club 1912 Sanski Most. The WRCAC agency in London issued the certificate on 2 November 2026."],"recent":true,"s":"golf"}
 ];
