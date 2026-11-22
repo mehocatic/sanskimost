@@ -139,17 +139,8 @@
   $('kv-fan').innerHTML = DECOR.map((f, i) => `<figure style="--r:${[-9, 5, -2][i]}deg;--dx:${[-70, 75, 0][i]}%;--dy:${[6, -10, 12][i]}%;--d:${i * .14}s"><img src="photos/arhiv/${f}.webp" alt=""></figure>`).join('');
   // the best total of this game on this browser (the chronicle shows the ranked one)
   function best() {
-    if (mode === 'daily') {
-      const n = streakNow();
-      $('kv-best').hidden = !n;
-      $('kv-best').textContent = t('kv.streak', { n });
-      return 0;
-    }
-    let b = 0;
-    try { b = +localStorage.getItem(KEY()) || 0; } catch (e) { /* no storage: no best score */ }
-    $('kv-best').hidden = !b;
-    $('kv-best').textContent = t('kv.best', { n: b });
-    return b;
+    if (mode === 'daily') return 0;
+    try { return +localStorage.getItem(KEY()) || 0; } catch (e) { return 0; }
   }
   best();
 
