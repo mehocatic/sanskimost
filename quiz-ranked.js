@@ -116,15 +116,9 @@ window.QuizRanked = (() => {
       if (request === boardRequest) render(rows);
     } catch {
       if (request !== boardRequest) return;
-      rows.forEach(({display_name, score}) => {
-        const item = document.createElement('li');
-        const points = document.createElement('b');
-        points.textContent = score;
-        item.append(document.createTextNode(display_name + ' '), points);
-        list.append(item);
-      });
-      if (!rows.length) note.textContent = t('boardEmpty');
-    } catch { if (request === boardRequest) note.textContent = t('netError'); }
+      lines.replaceChildren();
+      note.textContent = t('netError');
+    }
   }
   async function start(selected,count) {
     let player;
