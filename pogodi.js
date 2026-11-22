@@ -577,6 +577,10 @@
   try {
     const c = document.createElement('canvas'), g = c.getContext('2d');
     c.width = c.height = 140;
+    const img = g.createImageData(140, 140);
+    for (let i = 0; i < img.data.length; i += 4) {
+      const v = Math.random();
+      img.data.set([104, 86, 56, v < .55 ? 0 : (v - .55) * 70], i);
   $('kv-again').addEventListener('click', () => start(competitive));
   $('kv-bank').textContent = t('kv.bank', { n: Q.length });
   // every source the questions rest on, one link each
