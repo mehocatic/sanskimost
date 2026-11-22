@@ -545,6 +545,11 @@
   }
   function dailyLine() {
     const n = streakNow();
+    $('kv-daily-t').textContent = t('kv.dailyNo', { n: dayNo() });
+    $('kv-daily-m').textContent = (n ? t('kv.streak', { n }) + ' · ' : '') + t('kv.dailyNew', { time: untilNext() });
+    $('kv-daily-go').textContent = t(playedToday() ? 'kv.dailySee' : 'kv.dailyGo');
+    $('kv-daily').setAttribute('aria-label', $('kv-daily-t').textContent + ', ' + t(playedToday() ? 'kv.viewDaily' : 'kv.playDaily'));
+  }
   $('kv-practice').addEventListener('click', () => start(false));
   $('kv-ranked').addEventListener('click', () => start(true));
   $('kv-menu').addEventListener('click', () => {
