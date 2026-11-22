@@ -15,7 +15,7 @@
 .kv-chron-home { grid-area: chron; min-width: 0; padding-top: 30px; }
 .kv-more { grid-area: more; min-width: 0; margin-top: 40px; }
 .kv-intro .eyebrow { color: var(--sand); }
-.kv-intro h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(3.6rem, 9vw, 8.6rem); line-height: .88; letter-spacing: -.02em; margin-bottom: 28px; }
+.kv-intro h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(3.3rem, 5.4vw, 5rem); line-height: .88; letter-spacing: -.02em; margin-bottom: 22px; }
 .kv-intro h1 em { display: block; color: transparent; -webkit-text-stroke: 1.4px var(--sand); }
 .kv-lead { max-width: 34ch; font-size: 1.08rem; line-height: 1.6; color: rgba(246, 244, 238, .82); margin-bottom: 34px; }
 .kv-best { margin-top: 22px; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(246, 244, 238, .64); }
