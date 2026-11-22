@@ -64,6 +64,12 @@ Object.assign(window.KVS, {
     "u": "https://fmks.gov.ba/wp-content/uploads/2026/09/V.-broj-1103-2026-4.pdf"
   }
 });
+Object.assign(window.KVS, {
+  "l-albahari": {
+    "n": "Jerusalem Post (Moris Albahari)",
+    "u": "https://www.jpost.com/diaspora/article-723030"
+  }
+});
 function translatedQuestion(id, category, correct, source = id) {
   const pair = field => ['bs', 'en'].map(lang => window.I18N[lang]['kv.' + id + '.' + field]);
   return { id, t: 'choice', recent: source === id, c: category, ok: correct, o: [0, 1, 2, 3].map(i => pair('o' + i)), q: pair('q'), a: pair('a'), s: source };
@@ -248,5 +254,6 @@ window.KVQ = [
   {"id":"berak","t":"choice","c":"dogadjaji","ok":1,"o":["Ljubica Berak","Hasiba Agić","Aida Semić","Safet Bučo"],"q":["Ko je u julu 2024, na koncertu „Zdravo bili Krajišnici“, zapjevao u Sanskom Mostu nakon 45 godina?","Who sang in Sanski Most in July 2024, at the “Zdravo bili Krajišnici” concert, for the first time in 45 years?"],"a":["Ljubica Berak. Koncert je bio dio „Ljeta na Sani“, s izvođačima Fondacije Sevdah.","Ljubica Berak. The concert was part of “Ljeto na Sani”, with performers of the Sevdah Foundation."],"s":"berak"},
   {"id":"radiosana","t":"year","c":"historija","y":1995,"f":1960,"to":2016,"q":["Kada je Radio Sana počeo emitovati program?","When did Radio Sana start broadcasting?"],"a":["U oktobru 1995. Do 1992. radio je radio Sanski Most.","In October 1995. Until 1992 the station was Radio Sanski Most."],"s":"radio"},
   {"id":"rtvsana","t":"year","c":"historija","y":2016,"f":1990,"to":2025,"q":["Koje je godine RTV Sana počela emitovati i televizijski program?","In what year did RTV Sana start television broadcasting?"],"a":["2016, kada je Radio Sana dobio i televiziju.","2016, when Radio Sana added television."],"s":"rtv"},
-  {"id":"banjablato","t":"choice","c":"priroda","ok":1,"o":[["Ljekovitim blatom","Healing mud"],["Slanim jezerom","A salt lake"],["Ledenom pećinom","An ice cave"],["Gejzirom","A geyser"]],"q":["Po čemu je, uz termalnu vodu, poznata banja Sanska Ilidža?","Besides its thermal water, what is the Sanska Ilidža spa known for?"],"a":["Po ljekovitom blatu, koje traže ljudi s reumatskim i koštanim tegobama.","Healing mud, sought after by people with rheumatic and bone complaints."],"s":"banja"}
+  {"id":"banjablato","t":"choice","c":"priroda","ok":1,"o":[["Ljekovitim blatom","Healing mud"],["Slanim jezerom","A salt lake"],["Ledenom pećinom","An ice cave"],["Gejzirom","A geyser"]],"q":["Po čemu je, uz termalnu vodu, poznata banja Sanska Ilidža?","Besides its thermal water, what is the Sanska Ilidža spa known for?"],"a":["Po ljekovitom blatu, koje traže ljudi s reumatskim i koštanim tegobama.","Healing mud, sought after by people with rheumatic and bone complaints."],"s":"banja"},
+  {"id":"albaharipos","t":"choice","c":"ljudi","ok":4,"o":[["Gradonačelnik Sarajeva","Mayor of Sarajevo"],["Profesor historije","A history professor"],["Ljekar","A physician"],["Pilot i direktor sarajevskog aerodroma","A pilot and director of Sarajevo airport"]],"q":["Šta je Moris Albahari postao poslije rata?","What did Moris Albahari become after the war?"],"a":["Poslije rata postao je pilot i direktor sarajevskog aerodroma.","After the war he became a pilot and director of Sarajevo airport."],"s":"l-albahari"}
 ];
