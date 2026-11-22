@@ -1,4 +1,4 @@
-/* "Guess the year": ten photographs from the archive, one at a time. Builds on arhiv.css (grain, prints, buttons). */
+/* The quiz: a start screen with the town chronicle, one round at a time, the result. Builds on arhiv.css (grain, prints, buttons). */
 .pogodi-page { min-height: 100vh; min-height: 100svh; }
 .pogodi-page .btn.big { min-height: 54px; padding: 0 34px; font-size: .9rem; letter-spacing: .04em; transition: transform .25s cubic-bezier(.2, .7, .2, 1), background .25s ease; }
 .pogodi-page .btn.big:hover { transform: translateY(-2px); background: #a5e6ea; }
