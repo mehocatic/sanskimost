@@ -50,6 +50,11 @@
 .kv-daily-txt b { display: block; font: 500 1.4rem/1.1 var(--serif); }
 .kv-daily-txt small { display: block; margin-top: 5px; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(246, 244, 238, .66); font-variant-numeric: tabular-nums; }
 .kv-daily-go { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--sand); white-space: nowrap; transition: color .25s ease; }
+.kv-daily:hover .kv-daily-go { color: var(--paper); }
+.kv-daily:focus-visible { outline: 2px solid var(--sand); outline-offset: 4px; }
+@keyframes kv-sway { 0%, 100% { rotate: -4deg; } 50% { rotate: -1deg; } }
+
+/* ---------- the town chronicle: a register page, one name per line ---------- */
 
 /* ---------- 2. one photograph ---------- */
 .kv-round { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); grid-template-rows: auto 1fr; column-gap: clamp(28px, 5vw, 80px); padding: 84px var(--pad) 36px; }
