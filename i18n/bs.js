@@ -66,6 +66,7 @@ I18N.bs = {
   'kv.dailyNew': "novi za {time}",
   'kv.dailyGo': "Igraj →",
   'kv.dailySee': "Rezultat →",
+  'kv.playMode': "Igraj: {mode}",
   'kv.ligaprvak.q': "Ko je osvojio prvo službeno prvenstvo općinske nogometne lige 1979/80?",
   'kv.ligaprvak.a': "Radnički iz Zdene osvojio je 33 boda, dva više od Jedinstva iz Tomine.",
   'kv.ligaprvak.o0': "Radnički Zdena",
