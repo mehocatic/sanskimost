@@ -6,7 +6,10 @@ window.QuizRanked = (() => {
   const $ = id => document.getElementById(id);
   const chron = $('kv-chron'), sheet = $('kv-sheet'), lines = $('kv-lines'), note = $('kv-chr-note'), form = $('kv-form');
   const t = (key, vars) => I18n.t('kv.' + key, vars);
-  let token, mode = 'mix', size = 10, message = '', boardRequest = 0;
+  const SVG = 'http://www.w3.org/2000/svg';
+  // mine: a finished ranked game waiting for its name ({score}), shown as an empty line in the chronicle
+  let token, mode = 'mix', size = 10, message = '', boardRequest = 0, mine = null;
+  const api = {title: () => ''};
 
   async function rpc(method, data) {
     const response = await fetch(config.url + '/rest/v1/rpc/quiz_' + method, {
