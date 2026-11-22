@@ -256,6 +256,7 @@ I18N.bs = {
   'nav.plan': 'Posjeta',
   'nav.history': 'Historija',
   'nav.archive': 'Arhiv',
+  'nav.corridor': 'Hodnik',
   'nav.quiz': 'Kviz',
   'nav.people': 'Ličnosti',
   'lic.meta': "Ličnosti povezane sa Sanskim Mostom kroz sport, kulturu, nauku, zanate i javni život. Biografije s izvorima i pregled dobitnika Zlatnog ljiljana.",
