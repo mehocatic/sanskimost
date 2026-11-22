@@ -19,7 +19,7 @@ img { max-width: 100%; }
   --rise-h: clamp(110px, 20svh, 220px);
   --river-light: #7fd6dc;
   --river-text: #d9f3f4;
-  --serif: "Cormorant Garamond", Georgia, serif;
+  --serif: "EB Garamond", Georgia, serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --gutter: clamp(20px, 6vw, 96px);
 }
