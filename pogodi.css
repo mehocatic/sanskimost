@@ -259,7 +259,8 @@
   .kv-tabs button { padding: 0 6px; font-size: .92rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .kv-fan figure, .kv-photo .print, .kv-card, .kv-ans, .shown .kv-true { animation: none; }
+  .kv-fan figure, .kv-fan figure::after, .kv-daily-print, .kv-photo .print, .kv-card, .kv-ans, .shown .kv-true, .kv-line *, .kv-stamp { animation: none; }
+  .kv-dock { transition: none; }
 }
 
 /* source of an answer */
