@@ -14,7 +14,7 @@ I18N.bs = {
   'kv.help.mix': "Pogodi godinu na šest fotografija iz arhiva i odgovori na četiri pitanja.",
   'kv.help.quiz': "Izaberi 10 ili 20 pitanja o Sanskom Mostu.",
   'kv.help.surv': "Biraj između četiri odgovora. Igra završava trećom greškom ili nakon 80 pitanja.",
-  'kv.modeLimit': "Za ovu rang-listu imaš tri pokušaja dnevno na ovom pregledniku.",
+  'kv.modeLimit': "Za ovu hroniku imaš tri pokušaja dnevno na ovom pregledniku.",
   'kv.competition': "Takmičenje u znanju",
   'kv.daily': "Igraj 10 ili 20 pitanja. Svaki dan imaš po tri takmičarske igre za obje dužine na ovom pregledniku.",
   'kv.compete': "Igraj za rang-listu",
