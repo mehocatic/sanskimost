@@ -74,6 +74,11 @@ window.QuizRanked = (() => {
     // a new score goes after the equal ones, as the server orders them by time
     const at = mine ? list.filter(r => r.score >= mine.score).length : -1;
     if (mine) list.splice(at, 0, {me: true, score: mine.score});
+    // a score inside the ten pushes the tenth out; one below them gets a line of its own under the ten, without a place
+    if (mine && at < 10) list.length = Math.min(list.length, 10);
+    list.forEach((r, i) => {
+      const li = line(i, r.me ? 'edit' : i < 3 ? 'top' : '');
+      li.append(span('n', r.me && at >= 10 ? '–' : (i + 1) + '.'));
   async function refresh() {
     const request = ++boardRequest;
     const list = board.querySelector('ol'), note = board.querySelector('p');
