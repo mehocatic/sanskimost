@@ -157,8 +157,9 @@
       <h2 id="kv-rank"></h2>
       <p class="kv-avg" id="kv-avg"></p>
       <section id="kv-submit" hidden>
-        <form><label for="kv-name" data-i18n="kv.nickname"></label>
-          <input id="kv-name" required maxlength="40" autocomplete="off">
+        <!-- the chronicle comes here, with an empty line for the name (its input belongs to the form below) -->
+        <div id="kv-chron-slot"></div>
+        <form id="kv-form">
           <button class="btn big" data-i18n="kv.publish"></button>
         </form>
       </section>
