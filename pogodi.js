@@ -136,7 +136,8 @@
   const cur = () => set[at];
 
   /* ---------- start ---------- */
-  $('kv-fan').innerHTML = DECOR.map((f, i) => `<figure style="--r:${[-9, 5, -2][i]}deg;--dx:${[-26, 22, 0][i]}%;--dy:${[4, -8, 6][i]}%;--d:${i * .14}s"><img src="photos/arhiv/${f}.webp" alt=""></figure>`).join('');
+  $('kv-fan').innerHTML = DECOR.map((f, i) => `<figure style="--r:${[-9, 5, -2][i]}deg;--dx:${[-70, 75, 0][i]}%;--dy:${[6, -10, 12][i]}%;--d:${i * .14}s"><img src="photos/arhiv/${f}.webp" alt=""></figure>`).join('');
+  // the best total of this game on this browser (the chronicle shows the ranked one)
   function best() {
     if (mode === 'daily') {
       const n = streakNow();
