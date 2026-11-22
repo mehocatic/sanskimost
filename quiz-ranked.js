@@ -150,10 +150,10 @@ window.QuizRanked = (() => {
         if (!photo) throw new Error('unknown_photo');
         return {kind: 'photo', p: {...photo}, to: row.to};
       }
-      const q = {id:row.id, t:row.kind, q:row.q};
-      if (row.kind === 'choice') q.o = row.bs.map((v,i) => [v,row.en[i]]);
-      else Object.assign(q, {f:row.f, to:row.to, u:row.u});
-      return {kind:row.kind, q};
+      const q = {id: row.id, t: row.kind, q: row.q};
+      if (row.kind === 'choice') q.o = row.bs.map((v, i) => [v, row.en[i]]);
+      else Object.assign(q, {f: row.f, to: row.to, u: row.u});
+      return {kind: row.kind, q};
     });
   }
   function finish() {
