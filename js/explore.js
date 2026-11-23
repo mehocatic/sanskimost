@@ -269,6 +269,7 @@
       // the visitor's dot is always in view: with the town when far away, with the whole route on a route
       const fit = pts => map.fitBounds(pts, { padding: [40, 40], maxZoom: 14, animate: !reduce });
       if (far) fit([me, TOWN]);
+      else if (route) fit([me, ...visible().map(p => p.coords)]);
       else map.setView(me, 13, { animate: !reduce });
       show(false);
     }, err => {
