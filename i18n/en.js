@@ -21,7 +21,7 @@ I18N.en = {
   'kv.publish': "Sign the chronicle",
   'kv.boardEmpty': "The chronicle is still empty.",
   'kv.netError': "Could not reach the quiz. Please try again.",
-  'kv.limit': "All three attempts for this chronicle are used up for today.",
+  'kv.limit': "You have already played this chronicle today. New questions tomorrow.",
   'kv.published': "Your name is in the chronicle.",
   'kv.storage': "Enable browser storage to play a daily ranked game.",
   'kv.size': "{n} questions",
