@@ -1,11 +1,11 @@
 # Tehničke sitnice (za kasnije)
 
-Stanje na 22.11.2026. Sajt je objavljen na https://sanausrcu.netlify.app/ (Netlify, novi nalog).
+Stanje na 23.11.2026. Sajt je objavljen na https://sanausrcu.netlify.app/ (Netlify, novi nalog).
 Označi stavku kad je urađena.
 
 ## Prvo provjeriti
 - [x] **Nova migracija pitanja (primijenjena 22.11.2026., baza ima 289 aktivnih pitanja):** `supabase/migrations/202611220001_quiz_new_questions.sql` (109 pitanja i izmjena teksta pitanja o Blihi). Zalijepiti cijeli fajl u Supabase SQL Editor i pokrenuti. Može se pokrenuti više puta bez duplikata.
-- [ ] **Supabase migracije.** Migracija `supabase/migrations/202611210003_quiz_modes.sql` (načini igre) mora biti primijenjena na bazi. Provjera: na živom sajtu otvori /pogodi i probaj "Igraj za rang-listu" u sva tri načina (Fotografije i pitanja, Samo pitanja, Do 3 greške).
+- [x] **Supabase migracije.** Migracija `supabase/migrations/202611210003_quiz_modes.sql` (načini igre) je primijenjena (provjereno 23.11.2026.: funkcija `quiz_start` na bazi prima `p_mode`). Ostaje odigrati "Igraj za rang-listu" u sva tri načina na telefonu (stavka ispod).
 - [ ] **Telefon.** Odigraj dnevni izazov i otvori /arhiv na pravom telefonu. Provjeri i dijeljenje rezultata (Viber, WhatsApp).
 - [x] **Adresa.** Ostajemo na `sanausrcu.netlify.app` (22. 11. 2026). Stara adresa `visitsanskimost.netlify.app` je zamijenjena u `og:url` i slikama u HTML fajlovima, `sitemap.xml`, `robots.txt` i `pogodi.js` (tekst na kartici rezultata). Ako se projekat kasnije preimenuje, zamijeniti `sanausrcu.netlify.app` na istim mjestima.
 
