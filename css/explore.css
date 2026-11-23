@@ -97,6 +97,7 @@ body { color: var(--fg); min-height: 100svh; }
   .filters::-webkit-scrollbar { display: none; }
   .filter { flex: none; }
   .route-bar { padding: 0 var(--gutter); }
+  .explore-tools, .locate-msg { margin-left: var(--gutter); margin-right: var(--gutter); }
 }
 
 /* soften the standard tiles so they sit well with the palette */
