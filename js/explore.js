@@ -199,6 +199,7 @@
       const dot = make('span', 'poi-dot');
       dot.setAttribute('aria-hidden', 'true');
       b.append(dot, make('span', 'poi-name', nameOf(p)), make('span', 'poi-cat', catName(p.cat)));
+      if (me) b.appendChild(make('span', 'poi-dist', fmtKm(km(me, p.coords))));
       b.addEventListener('click', () => focusPoint(p));
       li.appendChild(b);
       return li;
