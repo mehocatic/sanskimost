@@ -21,7 +21,7 @@ I18N.bs = {
   'kv.board': "Rang-lista",
   'kv.nickname': "Ime ili nadimak za Gradsku hroniku",
   'kv.publish': "Upiši se u hroniku",
-  'kv.boardEmpty': "Hronika je još prazna.",
+  'kv.boardEmpty': "Danas u hronici još nema nikoga.",
   'kv.netError': "Veza s kvizom nije uspjela. Pokušaj ponovo.",
   'kv.limit': "Današnji pokušaj za ovu hroniku je iskorišten. Nova pitanja su sutra.",
   'kv.published': "Ime je upisano u hroniku.",
