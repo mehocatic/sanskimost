@@ -138,7 +138,7 @@ const PLACES = [
       pic("korcanica3.jpg", { main: true }), // the monument, shown at the top (738 x 416)
       pic("korcanica4.webp"), // the ruined hotel
       pic("korcanica-snijeg.webp"), // the ruined hotel from the front, in snow (from Meho's folder, korcanicaHotel.jpg)
-      // TODO(verify): an old postcard of the hotel; it is in Meho's notes from the book, the publisher of the postcard is not known
+      // an old postcard of the hotel, from Meho's notes from the book; the publisher is not known. Meho has permission to use the book's photos (2026-11-23)
       pic("arhiv/korcanica-razglednica.webp", { srcset: "photos/arhiv/korcanica-razglednica-1001.webp 1001w, photos/arhiv/korcanica-razglednica.webp 1600w", archive: true, source: BOOK })
     ],
     // the hotel on the postcard (cut out of it) and the same hotel now, from the front as on the postcard; caption: `tn` in the language files
