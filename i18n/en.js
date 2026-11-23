@@ -19,7 +19,7 @@ I18N.en = {
   'kv.board': "Leaderboard",
   'kv.nickname': "Name or nickname for the town chronicle",
   'kv.publish': "Sign the chronicle",
-  'kv.boardEmpty': "The chronicle is still empty.",
+  'kv.boardEmpty': "No one is in the chronicle yet today.",
   'kv.netError': "Could not reach the quiz. Please try again.",
   'kv.limit': "You have already played this chronicle today. New questions tomorrow.",
   'kv.published': "Your name is in the chronicle.",
