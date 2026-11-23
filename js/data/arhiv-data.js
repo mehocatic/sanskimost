@@ -32,7 +32,7 @@ window.ARCHIVE = {
     {"f": "sanski-most-1938", "y": 1938, "cat": "sana", "cap": "hist.5.f.1938", "w": 720, "h": 464, "place": "most"},
     {"f": "most-1939", "y": 1939, "cat": "sana", "cap": "hist.5.f.most", "w": 800, "h": 492, "place": "most", "src": "hist.src.book"},
     {"f": "sokolski-dom", "y": 1939, "cat": "ulice", "cap": "hist.5.f.dom", "w": 715, "h": 405, "place": "sokolski", "src": "hist.src.book"},
-    {"f": "blihe-1942", "y": 1942, "cat": "sana", "cap": "arh.c.blihe", "w": 370, "h": 604, "place": "blihe", "src": "aukcije.hr"},
+    {"f": "blihe-1942", "y": 1942, "cat": "sana", "cap": "arh.c.blihe", "w": 370, "h": 604, "place": "blihe"},
     {"f": "avion-1944", "y": 1944, "cat": "ljudi", "cap": "hist.5.f.avion", "w": 800, "h": 523, "src": "hist.src.book"},
     {"f": "hamzibegova-1946", "y": 1946, "cat": "ulice", "cap": "arh.c.hamz", "w": 495, "h": 800, "place": "hamzibegova", "src": "hist.src.book"},
     {"f": "trnova-1957", "y": 1957, "cat": "ljudi", "cap": "hist.zv.5.f", "w": 665, "h": 1100, "place": "trnova"},
