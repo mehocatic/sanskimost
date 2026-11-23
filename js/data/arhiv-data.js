@@ -132,7 +132,7 @@ window.ARCHIVE = {
     {"f": "poplava-stara2", "y": null, "cat": "poplave", "cap": "hist.6.g2", "w": 800, "h": 516},
     {"f": "poplava-stara3", "y": null, "cat": "poplave", "cap": "hist.6.g10", "w": 339, "h": 206},
     {"f": "rat-1944-a", "y": 1944, "cat": "ljudi", "cap": "hist.5.f.rat1", "w": 1073, "h": 809, "yl": "arh.y.4344", "quiz": false},
-    {"f": "rat-1944-b", "y": 1944, "cat": "ljudi", "cap": "hist.5.f.rat2", "w": 1053, "h": 813, "place": "stanica", "quiz": false},
+    {"f": "rat-1944-b", "y": 1944, "cat": "ljudi", "cap": "hist.5.f.rat2", "w": 1053, "h": 813, "place": "stanica"},
     {"f": "ringispil-karici", "y": null, "cat": "ljudi", "cap": "hist.zv.5.e", "w": 1100, "h": 806},
     {"f": "sana-zgrade", "y": null, "cat": "sana", "cap": "hist.5.f.zgrade", "w": 984, "h": 633},
     {"f": "sanski-most-stari", "y": null, "cat": "ulice", "cap": "hist.hero.cap", "w": 642, "h": 420, "src": "hist.src.book"},
