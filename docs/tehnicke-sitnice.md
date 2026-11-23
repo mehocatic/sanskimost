@@ -33,7 +33,7 @@ Oznake na fotografijama su ostavljene, a kredit je upisan u arhiv (polje izvora)
 Za svaku: pitati vlasnika za dozvolu, ili zamijeniti fotografijom koja je naša ili ima dozvoljenu licencu (npr. Wikimedia Commons CC0).
 
 ## Provjera unosa (`TODO(verify)` u kodu)
-Nalaze se u komentarima `places.js` i `index.html`. Pregled: `grep -rn "TODO(verify)" .`
+Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled: `grep -rn "TODO(verify)" .`
 - [ ] Opisi koji počivaju na komentarima čitalaca (Tito 1972, poplava 1976 i Alagića sokak, štafeta mladosti).
 - [ ] Doček hadžije Muharema Zukića 1968 (protumačen iz naziva fajla).
 - [ ] Godine iz naziva fajlova: gradnja novog mosta (2012. i 2013.), Mašinski most 1956.
