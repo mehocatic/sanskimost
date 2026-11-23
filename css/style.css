@@ -382,3 +382,5 @@ html.lenis, html.lenis body { height: auto; }
 .sound-btn span { color: var(--sand); margin-left: .5rem; }
 .sound-btn b { font-weight: inherit; }
 .sound-btn:hover { border-color: var(--sand); }
+
+/* On phones the browser bar hides while scrolling, and the screen grows from the small (svh) to the large (lvh) height. */
