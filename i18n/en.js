@@ -575,6 +575,7 @@ I18N.en = {
   'photo.turbe.general': 'General Mehmed Alagić',
   'photo.zavnobih.sokolski': 'The Sokolski dom',
   'photo.zavnobih.people': 'A group of locals in front of a building',
+  'photo.susnjar.obelisk': 'Obelisk of the Šušnjar Memorial Complex',
   'place.alt.label': 'Elevation',
   'place.alt': '{m} m',
   'place.map.open': 'Show on map',

@@ -577,6 +577,7 @@ I18N.bs = {
   'photo.turbe.general': 'General Mehmed Alagić',
   'photo.zavnobih.sokolski': 'Sokolski dom',
   'photo.zavnobih.people': 'Grupa mještana ispred zgrade',
+  'photo.susnjar.obelisk': 'Obelisk memorijalnog kompleksa Šušnjar',
   'place.alt.label': 'Nadmorska visina',
   'place.alt': '{m} m',
   'place.map.open': 'Prikaži na karti',
