@@ -38,6 +38,8 @@ body { color: var(--fg); min-height: 100svh; }
   background: #fff; color: var(--fg); border: 1px solid var(--rule); font: inherit; font-size: .9rem;
 }
 .search::placeholder { color: var(--fg-muted); opacity: 1; }
+.search:focus-visible { outline: 2px solid var(--sand-dark); outline-offset: 2px; border-color: var(--fg-muted); }
+.search[hidden] { display: none; }
 
 /* map and list: side by side from 900px (the page is one screen high, the map takes what the header leaves), list under the map on phones */
 .explore-main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; border-top: 1px solid var(--rule); }
