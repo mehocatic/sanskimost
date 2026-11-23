@@ -90,7 +90,7 @@ window.ARCHIVE = {
     {"f": "prijatelji-6", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-6", "w": 1024, "h": 910, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "prijatelji-7", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-7", "w": 552, "h": 349, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "trke-1", "y": 2010, "cat": "ljudi", "cap": "sport.trke-1", "w": 1024, "h": 721},
-    {"f": "trke-2", "y": 2010, "cat": "ljudi", "cap": "sport.trke-2", "w": 632, "h": 1024, "quiz": false},
+    {"f": "trke-2", "y": 2010, "cat": "ljudi", "cap": "sport.trke-2", "w": 632, "h": 1024},
     {"f": "trke-3", "y": 2010, "cat": "ljudi", "cap": "sport.trke-3", "w": 1024, "h": 747, "quiz": false},
     {"f": "trke-4", "y": 2010, "cat": "ljudi", "cap": "sport.trke-4", "w": 997, "h": 1024, "quiz": false},
     {"f": "poplava-2014-a", "y": 2014, "cat": "poplave", "cap": "hist.6.g12", "w": 800, "h": 600},
