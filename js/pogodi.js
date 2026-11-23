@@ -29,7 +29,8 @@
   const nf = n => n.toLocaleString(I18n.lang === 'bs' ? 'de' : 'en').replace('-', '−');
   const fmt = y => UNIT ? `${nf(y)} ${UNIT}` : (y < 0 ? t('kv.bce', { n: -y }) : String(y));
 
-  // Left out: documents, photographs with only a rough date, and those where the year can be read in the picture itself.
+  // Left out: documents, photographs with only a rough date (unless marked quiz: true, e.g. Tito's visit, about 1972),
+  // and those where the year can be read in the picture itself.
   const SHOWS_YEAR = ['avion-1944', 'hamzibegova-1946', 'trnova-1957', 'prijedorska-1961', 'lovac-1968', 'poplava-1996', 'lovac-2005'];
   const POOL = A.photos.filter(p => p.quiz !== false && p.y && !p.yl && p.cat !== 'dokumenti' && !SHOWS_YEAR.includes(p.f));
   const DECOR = ['stari-grad-sana', 'plivanje2', 'zaledjena-sana'];
