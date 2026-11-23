@@ -57,3 +57,4 @@ Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled:
 
 ## Jezik (bosanski)
 - "Kolovoz" i "kolovozna ploča" su ispravni i u BiH (Zakon o osnovama sigurnosti saobraćaja na putevima u BiH). Ostaju u opisima mosta.
+- "Nogostup" je zamijenjen s "trotoar", "Pomaknite" s "Pomjerite" (Meho, 23.11.2026.).
