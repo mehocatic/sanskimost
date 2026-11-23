@@ -251,7 +251,7 @@ const PLACES = [
     // Fiskulturni dom in Sanski Most in which the Second Session of ZAVNOBiH was held", and Zukanović's book says the same; burnt and demolished in 1995.
     photos: [
       pic("zavnobih.webp"), // a photo of the old building in a book; no author or license known
-      // the same building, the Sokolski dom; TODO(verify): from Meho's notes from the book, the photographer is not known
+      // the same building, the Sokolski dom, from Meho's notes from the book; the photographer is not known. Meho has permission (2026-11-23)
       pic("arhiv/sokolski-dom.webp", { archive: "1939", source: BOOK, altKey: "photo.zavnobih.sokolski" }),
       // a large group in front of a building; Meho thinks they are the people who built the Sokolski dom (not stated on the site)
       pic("arhiv/zavnobih-ljudi.webp", { archive: true, altKey: "photo.zavnobih.people" }),
