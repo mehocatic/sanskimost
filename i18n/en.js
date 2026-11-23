@@ -569,6 +569,7 @@ I18N.en = {
   'place.km.air': 'about {km} km in a straight line from the town centre',
   'photo.grmec.view': 'View from a lookout on Grmeč',
   'photo.grmec.gorge': 'A stream in a rocky gorge on Grmeč',
+  'photo.blihe.path': 'The path to the Blihe waterfall',
   'place.alt.label': 'Elevation',
   'place.alt': '{m} m',
   'place.map.open': 'Show on map',

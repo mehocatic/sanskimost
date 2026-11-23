@@ -571,6 +571,7 @@ I18N.bs = {
   'place.km.air': 'oko {km} km zračne linije od centra',
   'photo.grmec.view': 'Pogled s vidikovca na Grmeču',
   'photo.grmec.gorge': 'Potok u kamenitom klancu na Grmeču',
+  'photo.blihe.path': 'Staza do vodopada Blihe',
   'place.alt.label': 'Nadmorska visina',
   'place.alt': '{m} m',
   'place.map.open': 'Prikaži na karti',
