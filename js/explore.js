@@ -239,6 +239,14 @@
   });
   if (route) searchEl.hidden = true;
 
+  function locateOff() {
+    if (meLayer) map.removeLayer(meLayer);
+    me = meLayer = null;
+    locateBtn.setAttribute('aria-pressed', 'false');
+    setMsg(null);
+    show(false);
+  }
+
   /* ---------- language switch ---------- */
   window.addEventListener('langchange', () => {
     markers.forEach((m, id) => {
