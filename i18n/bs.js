@@ -1014,7 +1014,7 @@ I18N.bs = {
     'mulez': {
       name: 'Mulež',
       short: 'Planina iznad kanjona Sane, s via ferratom duž stijene od 90 m.',
-      long: 'Mulež je planina iznad kanjona Sane s planinarskim stazama, od lakših, pogodnih za porodice i početnike, do zahtjevnih uspona.\n\nVia ferrata (osigurana penjačka staza), otvorena od septembra 2024, vodi uz stijenu visoku 90 m, po sajlama i metalnim stepenicama. Izgradilo ju je planinarsko društvo SPD „Mulež“, a namijenjena je iskusnim planinarima.\n\nNovoizgrađeni viseći most dug 60 m spaja dvije stijene iznad dubokih provalija. S rute se vide kanjon rijeke Sane i sanska kotlina.\n\nU podnožju planine, na Ilidži, nalazi se sumporni izvor.',
+      long: 'Mulež je planina iznad kanjona Sane s planinarskim stazama, od lakših, pogodnih za porodice i početnike, do zahtjevnih uspona. Najviši vrh je Veliki Divić, 1.013 m.\n\nVia ferrata (osigurana penjačka staza), otvorena od septembra 2024, vodi uz stijenu visoku 90 m, po sajlama i metalnim stepenicama. Izgradilo ju je planinarsko društvo SPD „Mulež“, a namijenjena je iskusnim planinarima.\n\nNovoizgrađeni viseći most dug 60 m spaja dvije stijene iznad dubokih provalija. S rute se vide kanjon rijeke Sane i sanska kotlina.\n\nU podnožju planine, na Ilidži, nalazi se sumporni izvor.',
       note: 'Za iskusne planinare. Preporučuju se kaciga, pojas i sajle; pratite sigurnosne oznake.',
       see: []
     },
