@@ -196,7 +196,7 @@ const PLACES = [
     // coords: given by Meho (2026-10-25). Checked against OpenStreetMap: the point is inside Općina Sanski Most (relation 2528261),
     // about 17 km from the town centre; OSM has no object called Mulež or a via ferrata there, so there is no OSM id to cite.
     coords: [44.65399773076312, 16.81145299681311],
-    // TODO(verify): the highest peak, V. Divić, is given as 1013 m by one source. Not shown until verified.
+    // Highest peak Veliki Divić, 1013 m: planinarenje.ba ("Veliki Divič") and dinarskogorje.com ("V. Divić") (checked 2026-11-23).
     photos: [
       pic("mulez.jpg", { hero: true, pos: "50% 50%", posM: "40% 50%", srcset: "photos/mulez-1200.webp 1200w, photos/mulez.jpg 2048w" }), // 2048 x 1152; the JPEG stays, a WebP of it was not smaller
       pic("mulez2.jpg", { srcset: "photos/mulez2-1080.webp 1080w, photos/mulez2.jpg 2048w" }),
