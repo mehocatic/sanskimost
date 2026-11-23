@@ -190,7 +190,7 @@ window.ARCHIVE = {
     {"f": "novi-most-2012-e", "y": 2012, "cat": "sana", "cap": "arh.c.novi-most-2012-e", "w": 960, "h": 541, "place": "most"},
     {"f": "novi-most-2013-a", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-a", "w": 859, "h": 992, "place": "most"},
     {"f": "novi-most-2013-b", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-b", "w": 960, "h": 720, "place": "most"},
-    {"f": "novi-most-2013-c", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-c", "w": 960, "h": 720, "place": "most", "quiz": false},
+    {"f": "novi-most-2013-c", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-c", "w": 960, "h": 720, "place": "most"},
     {"f": "novi-most-2013-d", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-d", "w": 960, "h": 720, "place": "most", "quiz": false},
     {"f": "novi-most-2013-e", "y": 2013, "cat": "sana", "cap": "arh.c.novi-most-2013-e", "w": 720, "h": 960, "place": "most", "quiz": false},
     {"f": "delegati-zavnobih-opis", "y": 1944, "cat": "dokumenti", "cap": "arh.c.delegati-zavnobih-opis", "w": 1600, "h": 552, "src": "Foto-služba Muzeja narodne revolucije BiH, Sarajevo", "quiz": false},
