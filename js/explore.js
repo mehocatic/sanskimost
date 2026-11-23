@@ -198,7 +198,8 @@
     cluster.addLayers(list.map(p => markers.get(p.id)));
     renderBar();
     renderList(list);
-    if (fit) fitTo(list);
+    // a search with no result leaves the map where it was
+    if (fit && (list.length || !query)) fitTo(list);
   }
 
   /* ---------- language switch ---------- */
