@@ -856,6 +856,7 @@ I18N.bs = {
   'explore.locate.wait': 'Tražim vašu lokaciju...',
   'explore.locate.denied': 'Pristup lokaciji nije dozvoljen. Možete ga uključiti u postavkama preglednika.',
   'explore.locate.error': 'Lokacija trenutno nije dostupna.',
+  'explore.locate.far': 'Udaljeni ste oko {km} od Sanskog Mosta, zračnom linijom.',
   'cat.nature': 'Priroda',
   'cat.water': 'Voda',
   'cat.history': 'Historija',

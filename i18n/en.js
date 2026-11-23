@@ -854,6 +854,7 @@ I18N.en = {
   'explore.locate.wait': 'Finding your location...',
   'explore.locate.denied': 'Location access is not allowed. You can turn it on in your browser settings.',
   'explore.locate.error': 'Your location is not available right now.',
+  'explore.locate.far': 'You are about {km} from Sanski Most, in a straight line.',
   'cat.nature': 'Nature',
   'cat.water': 'Water',
   'cat.history': 'History',
