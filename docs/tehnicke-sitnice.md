@@ -29,7 +29,7 @@ Oznake na fotografijama su ostavljene, a kredit je upisan u arhiv (polje izvora)
 - [x] **SanUM** (Meho, 23.11.2026.: fotografije nisu njihove): oznaka uklonjena sa poplava-valjak, poplava-odozgo, masinski-most-1956, centar-cvijece (popravkom tog dijela) i mulez-pogled (odsječen donji rub). Verzije s oznakom su u `originals/arhiv/*-sa-oznakom.webp`.
 - [ ] **Foto: Grgić**: sana-led-a, sana-led-b, sana-led-c.
 - [ ] **ArchitectonicTravels**: photos/susnjar.webp.
-- [ ] **aukcije.hr**: photos/arhiv/blihe-1942.webp (stara fotografija vodopada).
+- [x] **aukcije.hr**: photos/arhiv/blihe-1942.webp. Oznaka uklonjena 23.11.2026. (Meho), izvor obrisan; verzija s oznakom je u `originals/arhiv/blihe-1942-sa-oznakom.webp`.
 Za svaku: pitati vlasnika za dozvolu, ili zamijeniti fotografijom koja je naša ili ima dozvoljenu licencu (npr. Wikimedia Commons CC0).
 
 ## Provjera unosa (`TODO(verify)` u kodu)
