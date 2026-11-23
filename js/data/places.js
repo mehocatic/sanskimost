@@ -52,7 +52,7 @@ const PLACES = [
       pic("bliha4.webp"),
       pic("bliha5.webp"),
       pic("bliha6.webp"),
-      pic("bliha-vodopad-staza.webp", { altKey: "photo.blihe.path" }), // 512 x 768, the original is in originals/blihinVodopad.jpg; author not known (TODO(verify))
+      pic("bliha-vodopad-staza.webp", { altKey: "photo.blihe.path" }), // 512 x 768, the original is in originals/blihinVodopad.jpg; no author, free to use (Meho, 2026-11-23)
       // an old postcard of the waterfall, 1942 (file name in Meho's folder). The aukcije.hr mark (where it was offered for sale) was removed
       // on 2026-11-23 at Meho's request; originals/arhiv/blihe-1942-sa-oznakom.webp keeps the marked file
       pic("arhiv/blihe-1942.webp", { archive: "1942" })
