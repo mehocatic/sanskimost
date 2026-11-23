@@ -28,7 +28,7 @@
     if (ogTitle) ogTitle.content = document.title;
     if (ogDesc) ogDesc.content = desc;
   };
-  // og:url keeps the placeholder domain (TODO(verify) in place.html) and gets the real path of this place
+  // og:url in place.html gets the real path of this place
   if (ogUrl && slug && index >= 0) ogUrl.content = ogUrl.content.replace(/\/place.*$/, `/place?slug=${encodeURIComponent(slug)}`);
 
   if (index < 0) {
