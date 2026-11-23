@@ -442,7 +442,7 @@ I18N.bs = {
   // home: head and hero
   'home.meta': 'Sanski Most, Bosna i Hercegovina: grad na devet rijeka, sa srednjovjekovnom tvrđavom, pećinama, Hamzibegovom džamijom s četiri munare i vodopadom Blihe.',
   'hero.caption': 'Vodopad Blihe',
-  'hero.scroll': 'Pomaknite prema dolje',
+  'hero.scroll': 'Pomjerite prema dolje',
   'hero.outro': 'Sanski Most · Bosna i Hercegovina',
 
   // closing lines of the hero
