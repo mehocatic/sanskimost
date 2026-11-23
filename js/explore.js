@@ -3,6 +3,7 @@
 // - a list of the visible points; a click centres the map on the point and opens its popup
 // - ?route=<id> (routes.js) shows only that route's stops, with a line through them in order
 // - points close together are clustered until zoom 16
+// - search by name (with the category filter) and "My location" (distances in the list, nearest first)
 (() => {
   const TOWN = [44.7658, 16.6663];
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
