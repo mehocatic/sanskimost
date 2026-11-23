@@ -45,7 +45,7 @@
 
   const p = PLACES[index];
   const name = () => I18n.place(p, 'name');
-  const photoLabel = entry => entry.captionKey ? I18n.t(entry.captionKey) : entry.altKey ? I18n.t(entry.altKey) : entry.alt || name();
+  const photoLabel = entry => entry.captionKey ? I18n.t(entry.captionKey) : entry.altKey ? I18n.t(entry.altKey) : name();
 
   const entries = (p.photos || []).map(photoEntry).filter(e => e.src);
 

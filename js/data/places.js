@@ -12,12 +12,12 @@
 // see     : links of the "Also worth seeing" entries, in the same order as the texts in the language files:
 //           the slug of a place the entry links to, or null for a plain text entry (omit when there is none)
 // photos  : the first photo is the cover on the card (shown cropped to the card). Each entry is created with pic(name, extra):
-//           { src, srcset, author, license, sourceUrl, alt, main, hero, pos, posM }
+//           { src, srcset, author, license, sourceUrl, altKey, main, hero, pos, posM }
 //           - author, license, sourceUrl: shown as a small credit in the photo viewer (all optional, empty ones are left out;
 //             nothing is filled in on assumption)
 //           - archive: an old photo, postcard or document; true shows "Archive" on the slide, a string (a year) shows that
 //           - source: where an old photo comes from when its author is not known (a book, an archive), shown as "Source: ..."
-//           - alt: the alt text of the photo (not shown; the same text in both languages), otherwise the place name is used
+//           - altKey: key in i18n/bs.js and en.js for the alt text of the photo (not shown), otherwise the place name is used
 //           - srcset: a smaller file for phones, e.g. "photos/a-1200.webp 1200w, photos/a.webp 2400w"
 //             (slider photos: the small file is as wide as a 3x phone needs for the 300 px row, at most 1080 px; made from originals/)
 //           - hero: true marks the one photo that fills the top of the place page, cropped (object-fit: cover). Only for a
