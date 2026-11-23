@@ -102,7 +102,7 @@ const PLACES = [
     see: [null, null, null],
     photos: [
       pic("hamzibegova.webp"),
-      pic("hamzibegova5.webp", { main: true }), // the mosque with four minarets, shown at the top (1024 x 1472)
+      pic("hamzibegova5.webp", { srcset: "photos/hamzibegova5-626.webp 626w, photos/hamzibegova5.webp 1024w", main: true }), // the mosque with four minarets, shown at the top (1024 x 1472)
       pic("hamzibegova2.webp"),
       pic("hamzibegova3.webp"),
       pic("hamzibegova4.webp"),
