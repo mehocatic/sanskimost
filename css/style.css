@@ -389,4 +389,5 @@ html.lenis, html.lenis body { height: auto; }
 @supports (height: 100lvh) {
   #stage { height: 100lvh; }
   #scroll-hint { bottom: calc(100lvh - 100svh + 6svh); }
+  #hero-caption { bottom: calc(100lvh - 100svh + 5svh); }
 }
