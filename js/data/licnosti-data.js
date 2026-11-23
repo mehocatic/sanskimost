@@ -6,7 +6,7 @@
 // (22 Nov 2026, originals in originals/licnosti/). Sizes in LICNOSTI_PHOTOS below. TODO(verify): author and licence of each portrait are not recorded yet.
 // No portrait yet: Hasan-beg Cekic, Arif Hukanovic (the corridor shows their initials).
 // Removed on 22 Nov 2026 at Meho's request: Politics (except Hasan-beg Cekic, now under heritage) and Health.
-// TODO(verify): Pantelic (birthplace, from one article), Alagic (from Meho's notes, see FACTS.md).
+// Pantelic: born in Kozica on Grmeč, inmedia.ba ("Fudbaleri porijeklom iz Sanskog Mosta", 2023) (checked 2026-11-23). Alagic: Meho's notes, sources in FACTS.md.
 // TODO(verify), added 18 Nov 2026 from Meho's JSON (poznate_osobe_sanski_most.json), each checked against at least one source: Muharemovic (mother from Sanski Most, klix only), Demirovic and Jasmin Handanovic (one article each), Fikret Kurtovic, Kazic, Tabakovic, Cerić, Mandic, H. Bilajbegovic (single source each).
 // Held back on purpose (Meho to decide): Enver Burnic, Adil Draganovic (ICTY witnesses), Rezak Hukanovic (birthplace sources disagree), Hamza-beg (already in Historija).
 // Catic, Begic and Kugic (survivors and witnesses) were added with Meho's approval on 18 Nov 2026; they rest on the sources named in the entries only, TODO(verify).
