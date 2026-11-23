@@ -384,3 +384,4 @@ html.lenis, html.lenis body { height: auto; }
 .sound-btn:hover { border-color: var(--sand); }
 
 /* On phones the browser bar hides while scrolling, and the screen grows from the small (svh) to the large (lvh) height. */
+/* A stage of 100svh then leaves a strip of the page showing under it, so the stage takes the large height. */
