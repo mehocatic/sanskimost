@@ -949,7 +949,7 @@ I18N.bs = {
     'kamengrad': {
       name: 'Tvrđava Kamengrad',
       short: 'Srednjovjekovna tvrđava iznad Donjeg Kamengrada, prvi put spomenuta 1374. Nacionalni spomenik od 2008.',
-      long: "Tvrđava se nalazi iznad Donjeg Kamengrada. Najstariji poznati pisani spomen potječe od 3. maja 1374. Predaja vezuje osvajanje Kamengrada za 1463. godinu. Komisija za očuvanje nacionalnih spomenika navodi 1498, a historičar Hamdija Kreševljaković 1499. godinu. Tvrđava je proglašena nacionalnim spomenikom 2008.\n\nOsmanlije su Kamengrad učinile sjedištem nahije, s posadom pod zapovjedništvom dizdara.",
+      long: "Tvrđava se nalazi iznad Donjeg Kamengrada. Najstariji poznati pisani spomen potječe od 3. maja 1374. Predaja vezuje osvajanje Kamengrada za 1463. godinu. Komisija za očuvanje nacionalnih spomenika navodi 1498, a historičar Hamdija Kreševljaković 1499. godinu. Tvrđava je proglašena nacionalnim spomenikom 2008.\n\nOsmanlije su Kamengrad učinile sjedištem nahije, s posadom pod zapovjedništvom dizdara. Oko 1541. osnovan je Kamengradski kadiluk.",
       note: 'Lokalna legenda kaže da su Osmanlije opsjedale tvrđavu jedanaest godina.',
       see: [
         'Fatihova musala, ispod tvrđave.',
