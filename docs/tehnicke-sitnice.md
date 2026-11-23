@@ -47,5 +47,6 @@ Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled:
 
 ## Kviz
 - [ ] **Migracija `supabase/migrations/202611230001_quiz_daily_set.sql` (23.11.2026.)**: pokrenuti u Supabase SQL Editoru prije objave. Rang igra daje ista pitanja svima tog dana, jedan pokušaj dnevno po igri, rang-lista je za taj dan; isključuje 30 slabih pitanja, dodaje 18 novih i 89 fotografija. Isprobana lokalno (PGlite) sa svim migracijama.
+- [ ] **Migracija `supabase/migrations/202611230002_quiz_jasarevic_wording.sql`**: pokrenuti u Supabaseu (jasnije pitanje o Senudinu Jašareviću).
 - [ ] Baza pitanja: 277 aktivnih nakon te migracije (bilo 289), cilj 400. Svako pitanje mora imati izvor u `KVS` (`node tools/provjeri-pogodi.js` provjerava).
 - [ ] Fotografije godina u kvizu postoje na dva mjesta: `arhiv-data.js` i SQL (`quiz_private.photos`). Kad se dodaje fotografija za rang igru, dodati je u oba.
