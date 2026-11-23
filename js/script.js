@@ -73,7 +73,7 @@ function nearest(i) {
 let lastW = 0, lastH = 0;
 function resize() {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  // The stage uses the small viewport height so browser toolbars do not resize the scene.
+  // The stage uses the large viewport height (lvh), which does not change when phone browser bars show or hide.
   const w = stage.clientWidth || window.innerWidth, h = stage.clientHeight || window.innerHeight;
   if (w === lastW && h === lastH) return;
   lastW = w; lastH = h;
