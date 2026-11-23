@@ -853,6 +853,7 @@ I18N.bs = {
   'explore.search.placeholder': 'Traži mjesto',
   'explore.search.none': 'Nijedno mjesto ne odgovara pretrazi „{q}“.',
   'explore.locate': 'Moja lokacija',
+  'explore.locate.wait': 'Tražim vašu lokaciju...',
   'cat.nature': 'Priroda',
   'cat.water': 'Voda',
   'cat.history': 'Historija',

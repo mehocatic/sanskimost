@@ -851,6 +851,7 @@ I18N.en = {
   'explore.search.placeholder': 'Find a place',
   'explore.search.none': 'No place matches “{q}”.',
   'explore.locate': 'My location',
+  'explore.locate.wait': 'Finding your location...',
   'cat.nature': 'Nature',
   'cat.water': 'Water',
   'cat.history': 'History',
