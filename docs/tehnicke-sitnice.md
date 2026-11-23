@@ -43,5 +43,5 @@ Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled:
 - [ ] Nove fotografije imaju `quiz: false`. Kad se godine potvrde, ukloniti tu oznaku pa mogu u kviz.
 
 ## Kviz
-- [ ] Baza pitanja: 180. Cilj 400. Svako pitanje mora imati izvor u `KVS` (`node provjeri-pogodi.js` provjerava).
+- [ ] Baza pitanja: 289 aktivnih u bazi (22.11.2026.), cilj 400. Svako pitanje mora imati izvor u `KVS` (`node tools/provjeri-pogodi.js` provjerava).
 - [ ] Fotografije godina u kvizu postoje na dva mjesta: `arhiv-data.js` i SQL (`quiz_private.photos`). Kad se dodaje fotografija za rang igru, dodati je u oba.
