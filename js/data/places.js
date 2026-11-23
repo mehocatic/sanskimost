@@ -186,6 +186,7 @@ const PLACES = [
     // bobijasko-oko2.webp: confirmed by Meho (2026-11-23) as Bobijaško oko; the photos have no author and are free to use.
     photos: [
       pic("bobijasko-oko.webp"),
+      pic("bobijasko-oko2.webp"), // 1024 x 1024
       pic("bobijasko-oko3.jpg"),
       pic("bobijasko-oko4.webp")
     ]
