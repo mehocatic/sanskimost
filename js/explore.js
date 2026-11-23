@@ -263,8 +263,13 @@
       const ring = acc ? L.circle(me, { radius: acc, color: '#151a18', weight: 1, opacity: .5, fillOpacity: .08, interactive: false }) : null;
       meLayer = L.layerGroup(ring ? [ring, dot] : [dot]).addTo(map);
       locateBtn.setAttribute('aria-pressed', 'true');
-      setMsg(null);
-      map.setView(me, 13, { animate: !reduce });
+      const fromTown = km(me, TOWN);
+      const far = fromTown > 60;
+      setMsg(far ? 'explore.locate.far' : null, () => ({ km: fmtKm(fromTown) }));
+      // the visitor's dot is always in view: with the town when far away, with the whole route on a route
+      const fit = pts => map.fitBounds(pts, { padding: [40, 40], maxZoom: 14, animate: !reduce });
+      if (far) fit([me, TOWN]);
+      else map.setView(me, 13, { animate: !reduce });
       show(false);
     }, err => {
       locateBtn.disabled = false;
