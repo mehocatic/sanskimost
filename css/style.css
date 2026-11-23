@@ -385,3 +385,4 @@ html.lenis, html.lenis body { height: auto; }
 
 /* On phones the browser bar hides while scrolling, and the screen grows from the small (svh) to the large (lvh) height. */
 /* A stage of 100svh then leaves a strip of the page showing under it, so the stage takes the large height. */
+/* The lines near its bottom are lifted by the difference, so the bar does not cover them while it is shown. */
