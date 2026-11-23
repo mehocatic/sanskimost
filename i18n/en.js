@@ -46,7 +46,7 @@ I18N.en = {
   'kv.tab.surv': "3 strikes",
   'kv.chr.kicker': "Sanski Most · Quiz",
   'kv.chr.title': "Town chronicle",
-  'kv.chr.top': "{mode} · top 10",
+  'kv.chr.top': "{mode} · today’s top 10",
   'kv.chr.you': "you",
   'kv.chr.best': "your best",
   'kv.chr.notYet': "your name is not here yet",
