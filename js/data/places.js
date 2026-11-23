@@ -271,7 +271,7 @@ const PLACES = [
     // no independent second source was found, so the note names both. The executions of 1941 are deliberately not described (Meho: nothing too dark).
     photos: [
       // a documentation photo of the Zavod USK; credit as on bih.uganjaj.ba (checked 2026-11-23). The "#ArchitectonicTravels" mark on the photo stays
-      pic("susnjar.webp", { srcset: "photos/susnjar-1080.webp 1080w, photos/susnjar.webp 1600w", author: "ArchitectonicTravels", altKey: "photo.susnjar.obelisk" })
+      pic("susnjar.webp", { srcset: "photos/susnjar-1080.webp 1080w, photos/susnjar.webp 1600w", author: "ArchitectonicTravels · arhiv Zavoda USK", sourceUrl: "https://www.kulturnonaslijedjeusk.ba/bs/clanak/memorijalni-kompleks-susnjari-sanski-most-graditeljska-cjelina/80", altKey: "photo.susnjar.obelisk" })
     ]
   },
   {
