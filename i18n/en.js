@@ -948,7 +948,7 @@ I18N.en = {
     'kamengrad': {
       name: 'Kamengrad Fortress',
       short: 'A medieval fortress above Donji Kamengrad, first mentioned in 1374. A national monument since 2008.',
-      long: "Kamengrad stands above Donji Kamengrad. The earliest known written mention is dated 3 May 1374. Local tradition links the Ottoman conquest to 1463. The Commission to Preserve National Monuments gives 1498, while historian Hamdija Kreševljaković gives 1499. The fortress became a national monument in 2008.",
+      long: "Kamengrad stands above Donji Kamengrad. The earliest known written mention is dated 3 May 1374. Local tradition links the Ottoman conquest to 1463. The Commission to Preserve National Monuments gives 1498, while historian Hamdija Kreševljaković gives 1499. The fortress became a national monument in 2008.\n\nThe Ottomans made Kamengrad the seat of a nahiye, with a garrison under a dizdar.",
       note: 'Local legend says the Ottomans besieged the fortress for eleven years.',
       see: [
         'Fatih’s Musalla, below the fortress.',
