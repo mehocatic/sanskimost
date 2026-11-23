@@ -1049,7 +1049,7 @@ I18N.bs = {
     'stari-majdan-most': {
       name: 'Most u Starom Majdanu',
       short: 'Kameni most u Starom Majdanu, poznat kao Rimski most; nacionalni spomenik od 2008.',
-      long: 'U centru Starog Majdana, preko potoka Gračanice, nalazi se kameni most s dva luka, poznat kao Rimski most. Dug je 8,40 m i širok 4,25 m. Vodi se kao historijski spomenik.\n\nMjesto je vezano za rudarstvo. Željezna ruda vadila se ovdje i prije osmanske vlasti, a uz rudnik su radile topionica i kovnica. Osmanlije su preradu rude obnovile oko 1571, a najviše su se izrađivala topovska đulad i puščane cijevi.\n\nGrad Stari Majdan podignut je sredinom 18. stoljeća. U njega je iz Kamengrada preseljeno sjedište kapetanije i kadiluka, a tvrđava je do tridesetih godina 19. stoljeća imala stalnu posadu.',
+      long: 'U centru Starog Majdana, preko potoka Gračanice, nalazi se kameni most s dva luka, poznat kao Rimski most. Dug je 8,40 m i širok 4,25 m. Nacionalni spomenik Bosne i Hercegovine je od 2008.\n\nMjesto je vezano za rudarstvo. Željezna ruda vadila se ovdje i prije osmanske vlasti, a uz rudnik su radile topionica i kovnica. Osmanlije su preradu rude obnovile oko 1571, a najviše su se izrađivala topovska đulad i puščane cijevi.\n\nGrad Stari Majdan podignut je sredinom 18. stoljeća. U njega je iz Kamengrada preseljeno sjedište kapetanije i kadiluka, a tvrđava je do tridesetih godina 19. stoljeća imala stalnu posadu.',
       see: ['Tvrđava Kamengrad, odakle je sjedište preseljeno.']
     }
   }
