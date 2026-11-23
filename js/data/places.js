@@ -105,7 +105,7 @@ const PLACES = [
       pic("hamzibegova5.webp", { srcset: "photos/hamzibegova5-626.webp 626w, photos/hamzibegova5.webp 1024w", main: true }), // the mosque with four minarets, shown at the top (1024 x 1472)
       pic("hamzibegova2.webp"),
       pic("hamzibegova3.webp"),
-      pic("hamzibegova4.webp"),
+      pic("hamzibegova4.webp", { srcset: "photos/hamzibegova4-1080.webp 1080w, photos/hamzibegova4.webp 1600w" }),
       // TODO(verify): from Meho's notes from the book; the book is the source, the photographer is not known
       pic("arhiv/sanski-most-1938.webp", { archive: "1938" }),
       pic("arhiv/most-1939.webp", { archive: "1939", source: BOOK }),
