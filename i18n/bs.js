@@ -851,6 +851,7 @@ I18N.bs = {
   'explore.missing': 'Još nisu na karti: {names}.',
   'explore.search.label': 'Pretražite mjesta po imenu',
   'explore.search.placeholder': 'Traži mjesto',
+  'explore.search.none': 'Nijedno mjesto ne odgovara pretrazi „{q}“.',
   'cat.nature': 'Priroda',
   'cat.water': 'Voda',
   'cat.history': 'Historija',
