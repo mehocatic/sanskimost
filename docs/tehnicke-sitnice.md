@@ -39,7 +39,7 @@ Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled:
 - [ ] Godine iz naziva fajlova: gradnja novog mosta (2012. i 2013.), Mašinski most 1956.
 - [x] Stari Majdan: potok Gračanica, nacionalni spomenik od 2008., 8,40 x 4,25 m, tačka na karti (OSM way 292464101, Meho da provjeri). Starost nije poznata i ostaje izostavljena. Fotografija bez autora, slobodna (Meho).
 - [x] Fotografije bez oznake (Blihe staza, Stari Majdan, pećina Mračaj): bez autora, slobodne za korištenje (Meho, 23.11.2026.).
-- [ ] Mračaj: datum ekspedicije i dužina (1100 m iz dokumenta nije potvrđena).
+- [x] Mračaj: oko 1.350 m istraženo do septembra 2024. (nasljedje.org, 17.10.2024.). Na sajtu.
 - [ ] Nove fotografije imaju `quiz: false`. Kad se godine potvrde, ukloniti tu oznaku pa mogu u kviz.
 
 ## Kviz
