@@ -570,6 +570,7 @@ I18N.en = {
   'photo.grmec.view': 'View from a lookout on Grmeč',
   'photo.grmec.gorge': 'A stream in a rocky gorge on Grmeč',
   'photo.blihe.path': 'The path to the Blihe waterfall',
+  'photo.musalla.postcard': 'The Musalla of Sultan Fatih Mehmed II, Donji Kamengrad',
   'place.alt.label': 'Elevation',
   'place.alt': '{m} m',
   'place.map.open': 'Show on map',
