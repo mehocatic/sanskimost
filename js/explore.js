@@ -141,8 +141,17 @@
     if (path.length > 1) routeLine = L.polyline(path, { color: '#b89b72', weight: 3, opacity: .9, dashArray: '2 8', lineCap: 'round', interactive: false }).addTo(map);
   }
 
-  const visible = () => route ? stops.filter(x => x.p).map(x => x.p)
-    : active === 'all' ? points : points.filter(p => p.cat === active);
+  /* ---------- search: by name in both languages, without diacritics (susnjar finds Šušnjar) ---------- */
+  const fold = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd');
+  const searchEl = $('search');
+  let query = '';
+  const matches = p => !query || [nameOf(p), p.name.bs, p.name.en].some(n => fold(n).includes(query));
+
+  const visible = () => {
+    if (route) return stops.filter(x => x.p).map(x => x.p);
+    const list = (active === 'all' ? points : points.filter(p => p.cat === active)).filter(matches);
+    return list;
+  };
 
   function fitTo(list) {
     if (!list.length) map.setView(TOWN, 11);
