@@ -34,12 +34,3 @@ window.PlacesLib = (() => {
 
   return { placeholder, photo, photoEntry };
 })();
-
-// Page transitions are cosmetic: if the browser skips or aborts one, that must never surface as an error
-['pageswap', 'pagereveal'].forEach(type => {
-  window.addEventListener(type, e => {
-    const vt = e.viewTransition;
-    if (!vt) return;
-    ['ready', 'finished', 'updateCallbackDone'].forEach(k => vt[k] && vt[k].catch(() => {}));
-  });
-});
