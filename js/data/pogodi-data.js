@@ -43,7 +43,6 @@ window.KVS = {"opc1":{"n":"Općina Sanski Most: Historija općine","u":"https://
 Object.assign(window.KVS, {
   "mulezmost": {"n":"Furaj.ba","u":"https://furaj.ba/wp-content/uploads/2024/10/Furajba-40-web-2.pdf"},
   "emiruspon": {"n":"Dnevni avaz","u":"https://www.avaz.ba/lifestyle/putovanja/925433/planinar-i-zaljubljenik-u-prirodu-iz-sanskog-mosta-emir-music-osvojio-monblan"},
-  "galerijafaber": {"n":"Umjetnička galerija BiH","u":"https://ugbih.ba/?p=8730"},
   "sanskafoto": {"n":"Nezavisne novine","u":"https://www.nezavisne.com/kultura/knjizevnost/Promocija-knjige-Jasmina-Zukanovica-Proslost-Sanskog-Mosta-kroz-stare-fotografije/676099"},
   "petica": {
     "n": "Moje trčanje",
