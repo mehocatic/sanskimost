@@ -31,6 +31,9 @@ body { color: var(--fg); min-height: 100svh; }
 .route-all::before { content: "\2190"; margin-right: .6rem; letter-spacing: 0; }
 .route-all:hover { text-decoration: underline; }
 
+/* search and "My location": one row under the filters */
+.explore-tools { display: flex; gap: 10px; margin-top: 12px; }
+
 /* map and list: side by side from 900px (the page is one screen high, the map takes what the header leaves), list under the map on phones */
 .explore-main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; border-top: 1px solid var(--rule); }
 #map { height: 100%; background: var(--mist); z-index: 0; }
