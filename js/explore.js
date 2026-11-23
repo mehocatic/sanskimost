@@ -160,6 +160,12 @@
     const s = String(d < 10 ? Math.round(d * 10) / 10 : Math.round(d));
     return (I18n.lang === 'bs' ? s.replace('.', ',') : s) + ' km';
   };
+  function setMsg(key, params) {
+    msg = key ? { key, params } : null;
+    msgEl.hidden = !msg;
+    msgEl.textContent = msg ? I18n.t(msg.key, typeof msg.params === 'function' ? msg.params() : msg.params) : '';
+  }
+
   const visible = () => {
     if (route) return stops.filter(x => x.p).map(x => x.p);
     const list = (active === 'all' ? points : points.filter(p => p.cat === active)).filter(matches);
