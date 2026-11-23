@@ -44,7 +44,7 @@ const PLACES = [
     coords: [44.7889880, 16.5247591],
     km: 14, // FACTS.md: about 14 km from town
     photos: [
-      pic("bliha3.webp"), // the cover on the card
+      pic("bliha3.webp", { srcset: "photos/bliha3-721.webp 721w, photos/bliha3.webp 1080w" }), // the cover on the card
       // hero: 2400 px wide WebP (and 1200 px for phones) made from the 5464 x 3640 px original, which is in originals/bliha2.jpg
       pic("arhiv/bliha-jesen.webp", { author: "Đana Talić", license: "CC0", sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Bliha_Waterfall,_Sanski_Most.jpg" }),
       pic("bliha2.webp", { hero: true, pos: "50% 30%", posM: "54% 45%", srcset: "photos/bliha2-1200.webp 1200w, photos/bliha2.webp 2400w" }),
