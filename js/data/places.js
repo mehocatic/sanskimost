@@ -246,7 +246,6 @@ const PLACES = [
     // coords: given by Meho (2026-10-25), the site of the building. It matches the OpenStreetMap street "ZAVNOBIH-a" (way 41075160, same point).
     coords: [44.76558562977139, 16.670158483327427],
     // Works officially started on 27 October 2026 (first phase): RTV USK, rtvusk.ba/clanak/18843 (checked 2026-11-23). Update the page when the works move on.
-    // The page only says the project has been contracted; update it when the works start.
     // Confirmed 2026-11-15 (ANUBiH, parlament.ba): first session 25-26 November 1943 in Mrkonjić Grad; the site now says 1943.
     // The Sokolski dom (1939) is the building of the session: zavnobih.webp, a page of a book, shows it with the caption "the building of the
     // Fiskulturni dom in Sanski Most in which the Second Session of ZAVNOBiH was held", and Zukanović's book says the same; burnt and demolished in 1995.
