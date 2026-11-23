@@ -177,7 +177,7 @@ window.ARCHIVE = {
     {"f": "trg-zastave", "y": null, "cat": "ljudi", "cap": "arh.c.trg-zastave", "w": 740, "h": 494, "place": "trg", "quiz": false},
     {"f": "poplava-2014-kolibica", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-kolibica", "w": 1600, "h": 1200},
     {"f": "poplava-2014-most-a", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-most-a", "w": 1600, "h": 1200},
-    {"f": "poplava-2014-most-b", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-most-b", "w": 1600, "h": 1200, "quiz": false},
+    {"f": "poplava-2014-most-b", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-most-b", "w": 1600, "h": 1200},
     {"f": "poplava-2014-ulica", "y": 2014, "cat": "poplave", "cap": "arh.c.poplava-2014-ulica", "w": 1200, "h": 1600, "quiz": false},
     {"f": "srusen-most-1943", "y": 1943, "cat": "sana", "cap": "arh.c.srusen-most-1943", "w": 1280, "h": 871, "place": "most", "quiz": false},
     {"f": "razglednica-spomenik", "y": null, "cat": "ulice", "cap": "arh.c.razglednica-spomenik", "w": 1300, "h": 890, "src": "hist.src.postcard", "quiz": false},
