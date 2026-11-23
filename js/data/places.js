@@ -67,7 +67,7 @@ const PLACES = [
     // The site now lists the dates as "sources differ" and no longer says that most historians give 1463.
     // Kadiluk about 1541, captaincy from 1624 (with Stari Majdan and Vakuf), nahiye under a dizdar: Zavod USK, kulturnonaslijedjeusk.ba/bs/clanak/52,
     // and Kreševljaković, "Kamengrad", Naše starine VI (1959). Donji grad (Palanka), walls and palisades of 5 to 7 m, the Babonić Blagajski princes:
-    // TODO(verify): the text also names the Babonić Blagajski princes, a nahija under a dizdar, the lower town Donji Grad (Palanka) and walls
+    // bosna.hr, "U sjeni Kamengrada" (checked 2026-11-23). Back on the site in both languages at Meho's request (2026-11-23).
     // of 5 to 7 m; none of it is in FACTS.md either. Left on the site from the earlier session, to be confirmed or cut.
     see: ["musalla", "blihe"],
     photos: [
