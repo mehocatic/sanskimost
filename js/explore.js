@@ -155,6 +155,11 @@
     const h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLon / 2) ** 2;
     return 12742 * Math.asin(Math.sqrt(h));
   };
+  // one decimal under 10 km; a decimal comma in Bosnian (not every browser has Bosnian number formats)
+  const fmtKm = d => {
+    const s = String(d < 10 ? Math.round(d * 10) / 10 : Math.round(d));
+    return (I18n.lang === 'bs' ? s.replace('.', ',') : s) + ' km';
+  };
   const visible = () => {
     if (route) return stops.filter(x => x.p).map(x => x.p);
     const list = (active === 'all' ? points : points.filter(p => p.cat === active)).filter(matches);
