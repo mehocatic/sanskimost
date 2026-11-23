@@ -259,7 +259,6 @@ window.KVQ = [
   translatedQuestion('galerijafaber', 'dogadjaji', 4),
   translatedQuestion('sanskafoto', 'ljudi', 2),
   translatedQuestion('petica', 'dogadjaji', 4),
-  translatedQuestion('petrez', 'ljudi', 2),
   translatedQuestion('homofaber', 'ljudi', 2),
   translatedQuestion('maraton26', 'ljudi', 3),
   {"id":"devet","t":"choice","c":"priroda","ok":3,"o":["6","7","8","9"],"q":["Sanski Most se zove grad na devet rijeka. Koliko je rječica uz Sanu?","Sanski Most is called the town on nine rivers. How many smaller rivers run alongside the Sana?"],"a":["Osam: Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka i Kozica. Sa Sanom to je devet.","Eight: the Sanica, Dabar, Zdena, Bliha, Majdanska rijeka, Japra, Sasinka and Kozica. With the Sana that makes nine."],"s":"opc2"},
