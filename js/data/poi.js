@@ -262,6 +262,15 @@ const POI = [
     short: { en: "Orthodox church.", bs: "Pravoslavna crkva." }
   },
   {
+    // the bridge in Stari Majdan: the same point as places.js (OSM way 292464101 over the Gračanica stream); texts: i18n/en.js, i18n/bs.js
+    id: "stari-majdan-most",
+    slug: "stari-majdan-most",
+    cat: "history",
+    coords: [44.827875, 16.604976],
+    name: { en: "The bridge in Stari Majdan", bs: "Most u Starom Majdanu" },
+    short: { en: "A stone bridge known as the Roman bridge; a national monument since 2008.", bs: "Kameni most poznat kao Rimski most; nacionalni spomenik od 2008." }
+  },
+  {
     // OSM way 587634998 (amenity=place_of_worship, denomination=serbian_orthodox), way centre; OSM name "Crkva u Kljevcima -Sveti arhiđakon Stefan"
     id: "crkva-kljevci",
     cat: "culture",
