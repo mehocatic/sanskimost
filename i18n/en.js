@@ -547,7 +547,7 @@ I18N.en = {
   'rivers.eyebrow': 'Nine rivers',
   'rivers.title.html': 'The town on<br>nine rivers',
   'rivers.fact': 'The Sana is about 142 km long and flows into the Una at Novi Grad.',
-  'rivers.source': 'The Sana rises near Mrkonjić Grad. In Mračaj cave, part of the spring area, divers on the latest expedition passed an underwater waterfall that had stopped them before. The end of the cave is still unknown.',
+  'rivers.source': 'The Sana rises near Mrkonjić Grad. In Mračaj cave, part of the spring area, cave divers had explored about 1,350 m of the cave by 2024.',
 
   // footer
   'footer.country': 'Bosnia and Herzegovina',
