@@ -280,7 +280,7 @@ const PLACES = [
     // the 18th century it had 2 large and 3 small cannons and 300 border guards; the cannon sentence was left out because of that.
     see: ["kamengrad"],
     photos: [
-      pic("stari-majdan-most.webp", { alt: "Kameni most u Starom Majdanu" }) // 1600 x 1200; author not known (TODO(verify))
+      pic("stari-majdan-most.webp", { srcset: "photos/stari-majdan-most-1080.webp 1080w, photos/stari-majdan-most.webp 1600w", alt: "Kameni most u Starom Majdanu" }) // 1600 x 1200; author not known (TODO(verify))
     ]
   }
 ];
