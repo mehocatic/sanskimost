@@ -40,6 +40,7 @@ Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled:
 - [x] Stari Majdan: potok Gračanica, nacionalni spomenik od 2008., 8,40 x 4,25 m, tačka na karti (OSM way 292464101, Meho da provjeri). Starost nije poznata i ostaje izostavljena. Fotografija bez autora, slobodna (Meho).
 - [x] Fotografije bez oznake (Blihe staza, Stari Majdan, pećina Mračaj): bez autora, slobodne za korištenje (Meho, 23.11.2026.).
 - [x] Mračaj: oko 1.350 m istraženo do septembra 2024. (nasljedje.org, 17.10.2024.). Na sajtu.
+- [x] Kamengrad (kadiluk, kapetanija, nahija, Palanka, zidovi), Mulež (Veliki Divić 1.013 m), ZAVNOBiH (obnova počela 27.10.2026.), Korčanica (316 boraca, 2.732 m², uz "prema lokalnim izvorima"): potvrđeno 23.11.2026., na sajtu. Izvori u `FACTS.md`.
 - [ ] Nove fotografije imaju `quiz: false`. Kad se godine potvrde, ukloniti tu oznaku pa mogu u kviz.
 
 ## Kviz
