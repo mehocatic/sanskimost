@@ -83,7 +83,7 @@ window.ARCHIVE = {
     {"f": "muhici-1998-c", "y": 1998, "cat": "ulice", "cap": "hist.ul.4.d", "w": 461, "h": 225, "place": "muhici", "src": "hist.src.es"},
     {"f": "lovac-2005", "y": 2005, "cat": "ulice", "cap": "hist.ul.6.b", "w": 1100, "h": 825, "place": "lovac"},
     {"f": "prijatelji-1", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-1", "w": 1133, "h": 1236, "src": "35 godina ONK Sloboda (2015)"},
-    {"f": "prijatelji-2", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-2", "w": 1024, "h": 851, "quiz": false, "src": "35 godina ONK Sloboda (2015)"},
+    {"f": "prijatelji-2", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-2", "w": 1024, "h": 851, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "prijatelji-3", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-3", "w": 1024, "h": 820, "quiz": false, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "prijatelji-4", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-4", "w": 1024, "h": 845, "quiz": false, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "prijatelji-5", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-5", "w": 1024, "h": 831, "quiz": false, "src": "35 godina ONK Sloboda (2015)"},
