@@ -1048,7 +1048,7 @@ I18N.bs = {
     },
     'stari-majdan-most': {
       name: 'Most u Starom Majdanu',
-      short: 'Kameni most u Starom Majdanu, poznat kao Rimski most; historijski spomenik.',
+      short: 'Kameni most u Starom Majdanu, poznat kao Rimski most; nacionalni spomenik od 2008.',
       long: 'U Starom Majdanu je kameni most s lukovima, poznat kao Rimski most. Vodi se kao historijski spomenik.\n\nMjesto je vezano za rudarstvo. Željezna ruda vadila se ovdje i prije osmanske vlasti, a uz rudnik su radile topionica i kovnica. Osmanlije su preradu rude obnovile oko 1571, a najviše su se izrađivala topovska đulad i puščane cijevi.\n\nGrad Stari Majdan podignut je sredinom 18. stoljeća. U njega je iz Kamengrada preseljeno sjedište kapetanije i kadiluka, a tvrđava je do tridesetih godina 19. stoljeća imala stalnu posadu.',
       see: ['Tvrđava Kamengrad, odakle je sjedište preseljeno.']
     }
