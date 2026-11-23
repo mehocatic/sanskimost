@@ -17,7 +17,8 @@ Označi stavku kad je urađena.
 
 ## Pretraga i vidljivost
 - [ ] Dodati sajt u Google Search Console i poslati `sitemap.xml` (sada ima i stranice Šušnjara i mosta u Starom Majdanu).
-- [ ] Kad se odluči adresa, provjeriti `robots.txt` i canonical.
+- [x] `robots.txt` i `sitemap.xml` su na `sanausrcu.netlify.app` (22.11.2026.).
+- [ ] Canonical tagovi još ne postoje ni na jednoj stranici.
 
 ## Podaci i sigurnosne kopije
 - [ ] **Originali fotografija** su samo na ovom računaru (`originals/` nije u gitu, a novi su u `originals/arhiv/`). Kopirati folder na vanjski disk ili cloud.
