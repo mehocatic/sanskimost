@@ -215,6 +215,7 @@
   searchEl.addEventListener('keydown', e => {
     if (e.key === 'Escape' && searchEl.value) { searchEl.value = ''; searchEl.dispatchEvent(new Event('input')); }
   });
+  if (route) searchEl.hidden = true;
 
   /* ---------- language switch ---------- */
   window.addEventListener('langchange', () => {
