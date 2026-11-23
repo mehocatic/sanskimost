@@ -859,6 +859,7 @@ I18N.bs = {
   'explore.locate.far': 'Udaljeni ste oko {km} od Sanskog Mosta, zračnom linijom.',
   'explore.locate.rough': 'Preglednik ne zna vašu tačnu lokaciju. Na telefonu s uključenom lokacijom radi bolje.',
   'explore.locate.you': 'Vi ste ovdje',
+  'explore.dist.note': 'Udaljenost od vas, zračnom linijom.',
   'cat.nature': 'Priroda',
   'cat.water': 'Voda',
   'cat.history': 'Historija',

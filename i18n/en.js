@@ -857,6 +857,7 @@ I18N.en = {
   'explore.locate.far': 'You are about {km} from Sanski Most, in a straight line.',
   'explore.locate.rough': 'Your browser does not know your exact location. It works better on a phone with location turned on.',
   'explore.locate.you': 'You are here',
+  'explore.dist.note': 'Distance from you, in a straight line.',
   'cat.nature': 'Nature',
   'cat.water': 'Water',
   'cat.history': 'History',
