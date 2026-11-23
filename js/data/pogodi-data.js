@@ -229,10 +229,6 @@ Object.assign(window.KVS, {
   "kons": {
     "n": "Zavod za zaštitu kulturnog naslijeđa Bihać: popisni registar",
     "u": "http://old.kons.gov.ba/"
-  },
-  "tz": {
-    "n": "Turistička zajednica Sanski Most: Planiraj posjetu",
-    "u": "https://exploresanskimost.ba/planiraj-posjetu"
   }
 });
 function translatedQuestion(id, category, correct, source = id) {
