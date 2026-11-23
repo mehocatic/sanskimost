@@ -203,6 +203,7 @@ const PLACES = [
       pic("mulez4.webp", { srcset: "photos/mulez4-675.webp 675w, photos/mulez4.webp 1200w" }),
       pic("mulez5.webp", { srcset: "photos/mulez5-1080.webp 1080w, photos/mulez5.webp 1600w" }),
       // a view over the valley from Mulež, confirmed by Meho (2026-11-23); no author, free to use. The "SanUM" mark was not the owner's
+      // and was cut off with the bottom 100 px (originals/mulezPlanina.jpg keeps the full photo)
       pic("mulez-pogled.webp", { srcset: "photos/mulez-pogled-639.webp 639w, photos/mulez-pogled.webp 1080w", altKey: "photo.mulez.view" })
     ]
   },
