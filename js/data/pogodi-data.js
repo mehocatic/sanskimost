@@ -252,7 +252,6 @@ function translatedQuestion(id, category, correct, source = id) {
 }
 window.KVQ = [
   translatedQuestion('dzekoposjeta', 'dogadjaji', 2, 'hist'),
-  translatedQuestion('trkeulice', 'dogadjaji', 3, 'hist'),
   translatedQuestion('ligaprvak', 'dogadjaji', 1, 'hist'),
   translatedQuestion('mulezmost', 'priroda', 3),
   translatedQuestion('emiruspon', 'ljudi', 2),
