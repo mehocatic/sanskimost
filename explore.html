@@ -53,6 +53,11 @@
   <div class="explore-bar">
     <div class="filters" id="filters" role="group" aria-label="Filtrirajte kartu po kategoriji" data-i18n-attr="aria-label:explore.filter"></div>
     <div class="route-bar" id="route-bar" hidden></div>
+    <!-- search by name (both languages, without diacritics) and the visitor's own position; nothing is sent or stored -->
+    <div class="explore-tools">
+      <input class="search" id="search" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search" aria-controls="poi-items"
+        placeholder="Traži mjesto" aria-label="Pretražite mjesta po imenu" data-i18n-attr="placeholder:explore.search.placeholder;aria-label:explore.search.label">
+    </div>
   </div>
 
   <div class="explore-main">
