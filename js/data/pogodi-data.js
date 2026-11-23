@@ -231,6 +231,44 @@ Object.assign(window.KVS, {
     "u": "http://old.kons.gov.ba/"
   }
 });
+Object.assign(window.KVS, {
+  "zavodkam": {
+    "n": "Zavod za zaštitu kulturnog naslijeđa USK: Musalla u Kamengradu",
+    "u": "https://www.kulturnonaslijedjeusk.ba/bs/clanak/graditeljska-cjelina-musalla-u-kamengradu-sa-grebljem/52"
+  },
+  "bosnahr": {
+    "n": "Bosna.hr: U sjeni Kamengrada",
+    "u": "https://bosna.hr/u-sjeni-kamengrada-musalla-kao-svjedocanstvo-prvog-susreta-bosne-s-islamom/"
+  },
+  "planinarenje": {
+    "n": "Planinarenje.ba: Mulež",
+    "u": "https://planinarenje.ba/planinarski-imenik/planine/1013-mulez"
+  },
+  "mracaj24": {
+    "n": "Republički zavod: Speleoronilačka ekspedicija u SP Vrela Sane (2024)",
+    "u": "https://nasljedje.org/speleoronilacka-ekspedicija-u-sp-vrela-sane/"
+  },
+  "zavnobnova": {
+    "n": "RTV USK: Zvanično počela obnova zgrade ZAVNOBiH-a",
+    "u": "https://www.rtvusk.ba/clanak/sanski-most-zvanicno-pocela-obnova-zgrade-zavnobih-a-nacionalnog-spomenika-unistenog-1995-godine/18843"
+  },
+  "majdanwiki": {
+    "n": "Wikipedia: Most u Starom Majdanu",
+    "u": "https://bs.wikipedia.org/wiki/Most_u_Starom_Majdanu"
+  },
+  "majdanavaz": {
+    "n": "Dnevni avaz: Rimski most u Starom Majdanu",
+    "u": "https://avaz.ba/vijesti/bih/300728/sanski-most-lukovi-rimskog-mosta-nekad-su-bili-toliko-visoki-da-je-ispod-njih-mogao-projahati-konjanik"
+  },
+  "zavodmajdan": {
+    "n": "Zavod za zaštitu kulturnog naslijeđa USK: Most u Starom Majdanu",
+    "u": "https://www.kulturnonaslijedjeusk.ba/bs/clanak/most-u-starom-majdanu-poznat-kao-rimski-most-historijski-spomenik-sanski-most/77"
+  },
+  "pdklek": {
+    "n": "PD Klekovača: Ćopićevim stazama",
+    "u": "https://www.pdklekovaca.org/?p=5560"
+  }
+});
 function translatedQuestion(id, category, correct, source = id) {
   const pair = field => ['bs', 'en'].map(lang => window.I18N[lang]['kv.' + id + '.' + field]);
   return { id, t: 'choice', recent: source === id, c: category, ok: correct, o: [0, 1, 2, 3].map(i => pair('o' + i)), q: pair('q'), a: pair('a'), s: source };
