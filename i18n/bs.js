@@ -549,7 +549,7 @@ I18N.bs = {
   'rivers.eyebrow': 'Devet rijeka',
   'rivers.title.html': 'Grad na<br>devet rijeka',
   'rivers.fact': 'Sana je duga oko 142 km i ulijeva se u Unu kod Novog Grada.',
-  'rivers.source': 'Sana izvire kod Mrkonjić Grada. U pećini Mračaj, u sklopu izvorišta, ronioci su u posljednjoj ekspediciji prošli podvodni slap koji ih je ranije zaustavljao. Kraj pećine još nije poznat.',
+  'rivers.source': 'Sana izvire kod Mrkonjić Grada. U pećini Mračaj, u sklopu izvorišta, speleoronioci su do 2024. istražili oko 1.350 m pećine.',
 
   // footer
   'footer.country': 'Bosna i Hercegovina',
