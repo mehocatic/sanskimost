@@ -281,6 +281,7 @@ const PLACES = [
     // so the point is the best match, not a confirmed one; Meho to check on the map.
     // Gračanica stream, 8.40 x 4.25 m, two arches: bs.wikipedia "Most u Starom Majdanu"; national monument by a 2008 KONS decision: avaz.ba (2017);
     // sanskimost.gov.ba/nacionalni-spomenici (checked 2026-11-23). The 2011 KONS decision for a "Rimski most" on the Orlja is a bridge in Olovo, not this one.
+    // Age left out: no date is known (late Middle Ages in the literature, "Roman" in tradition).
     see: ["kamengrad"],
     photos: [
       pic("stari-majdan-most.webp", { srcset: "photos/stari-majdan-most-1080.webp 1080w, photos/stari-majdan-most.webp 1600w", altKey: "photo.majdan.bridge" }) // 1600 x 1200; no author, free to use (Meho, 2026-11-23)
