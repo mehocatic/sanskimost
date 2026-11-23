@@ -210,10 +210,6 @@ Object.assign(window.KVS, {
     "n": "Inmedia (Emir Tabaković)",
     "u": "https://inmedia.ba/1996-godina-ovdje-radio-sana-emir-tabakovic/"
   },
-  "l-biscevic": {
-    "n": "Porodična biografija (Faik Biščević Fajko)",
-    "u": "https://nedimbiscevic.info/biografija/"
-  },
   "l-pisteljic": {
     "n": "Ljekarska komora RS (Slavko Pišteljić)",
     "u": "https://www.komoradoktorars.org/v3/kod%2034print.pdf"
