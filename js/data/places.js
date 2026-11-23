@@ -66,7 +66,7 @@ const PLACES = [
     // Dates of the Ottoman conquest differ in sources: 1463 (tradition, Fatih's musalla), 1498 (KONS decision), 1499 (Kreševljaković); the site lists them as "sources differ".
     // The site now lists the dates as "sources differ" and no longer says that most historians give 1463.
     // Kadiluk about 1541, captaincy from 1624 (with Stari Majdan and Vakuf), nahiye under a dizdar: Zavod USK, kulturnonaslijedjeusk.ba/bs/clanak/52,
-    // (Stari Majdan, Sanski Most "Vakuf"). Neither is in FACTS.md, so both sentences were taken off the site (EN and BS).
+    // and Kreševljaković, "Kamengrad", Naše starine VI (1959). Donji grad (Palanka), walls and palisades of 5 to 7 m, the Babonić Blagajski princes:
     // TODO(verify): the text also names the Babonić Blagajski princes, a nahija under a dizdar, the lower town Donji Grad (Palanka) and walls
     // of 5 to 7 m; none of it is in FACTS.md either. Left on the site from the earlier session, to be confirmed or cut.
     see: ["musalla", "blihe"],
