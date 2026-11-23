@@ -65,7 +65,7 @@ const PLACES = [
     // Checked 2026-11-15: first mention is 3 May 1374 (Kreševljaković, KONS, bs Wikipedia); no source found for 1373, so the site says 1374.
     // Dates of the Ottoman conquest differ in sources: 1463 (tradition, Fatih's musalla), 1498 (KONS decision), 1499 (Kreševljaković); the site lists them as "sources differ".
     // The site now lists the dates as "sources differ" and no longer says that most historians give 1463.
-    // TODO(verify): Meho's text says the Kamengrad kadiluk was founded around 1541 and that from 1624 the town was the seat of a captaincy
+    // Kadiluk about 1541, captaincy from 1624 (with Stari Majdan and Vakuf), nahiye under a dizdar: Zavod USK, kulturnonaslijedjeusk.ba/bs/clanak/52,
     // (Stari Majdan, Sanski Most "Vakuf"). Neither is in FACTS.md, so both sentences were taken off the site (EN and BS).
     // TODO(verify): the text also names the Babonić Blagajski princes, a nahija under a dizdar, the lower town Donji Grad (Palanka) and walls
     // of 5 to 7 m; none of it is in FACTS.md either. Left on the site from the earlier session, to be confirmed or cut.
