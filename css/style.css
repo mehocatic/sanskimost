@@ -9,7 +9,7 @@ html, body { background: var(--bg); color: var(--paper); }
 body.home-page { background: var(--paper); }
 
 /* Height of this section decides how long the scroll takes to play the whole video */
-#scene { position: relative; height: 600vh; height: 600svh; }
+#scene { position: relative; height: 600vh; height: 600svh; background: var(--deep); }
 
 /* sticky keeps the canvas on screen while the page scrolls through #scene */
 #stage {
