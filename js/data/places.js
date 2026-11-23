@@ -105,7 +105,7 @@ const PLACES = [
       pic("hamzibegova2.webp"),
       pic("hamzibegova3.webp"),
       pic("hamzibegova4.webp", { srcset: "photos/hamzibegova4-1080.webp 1080w, photos/hamzibegova4.webp 1600w" }),
-      // TODO(verify): from Meho's notes from the book; the book is the source, the photographer is not known
+      // from Meho's notes from the book; the photographer is not known. Meho has permission to use the book's photos (2026-11-23)
       pic("arhiv/sanski-most-1938.webp", { archive: "1938" }),
       pic("arhiv/most-1939.webp", { archive: "1939", source: BOOK }),
       pic("arhiv/hamzibegova-1946.webp", { archive: "1946", source: BOOK }),
