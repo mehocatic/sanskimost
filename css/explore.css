@@ -33,6 +33,10 @@ body { color: var(--fg); min-height: 100svh; }
 
 /* search and "My location": one row under the filters */
 .explore-tools { display: flex; gap: 10px; margin-top: 12px; }
+.search {
+  flex: 1 1 auto; min-width: 0; max-width: 420px; min-height: 44px; padding: 0 1rem; border-radius: 999px;
+  background: #fff; color: var(--fg); border: 1px solid var(--rule); font: inherit; font-size: .9rem;
+}
 
 /* map and list: side by side from 900px (the page is one screen high, the map takes what the header leaves), list under the map on phones */
 .explore-main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; border-top: 1px solid var(--rule); }
