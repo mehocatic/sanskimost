@@ -357,7 +357,7 @@ I18N.bs = {
   'arh.c.novi-most-2012-d': 'Oplata i armatura kolovozne ploče',
   'arh.c.novi-most-2012-e': 'Kolovozna ploča u izradi, pogled niz most',
   'arh.c.novi-most-2013-a': 'Radovi na prilazu mostu, bager i radnici',
-  'arh.c.novi-most-2013-b': 'Ograda i nogostup novog mosta',
+  'arh.c.novi-most-2013-b': 'Ograda i trotoar novog mosta',
   'arh.c.novi-most-2013-c': 'Nova ograda mosta, pogled uz rijeku',
   'arh.c.novi-most-2013-d': 'Ograda i nogostup, još bez završne obrade',
   'arh.c.novi-most-2013-e': 'Armatura i betoniranje kolovoza',
