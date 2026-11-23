@@ -208,6 +208,8 @@
     const missing = stops.filter(x => !x.p).map(x => places[x.s.slug] ? I18n.place(places[x.s.slug], 'name') : x.s.slug);
     $('route-missing').hidden = !missing.length;
     $('route-missing').textContent = missing.length ? I18n.t('explore.missing', { names: missing.join(', ') }) : '';
+    items.classList.toggle('with-dist', !!me);
+    $('dist-note').hidden = !me || !list.length;
     $('search-none').hidden = !(query && !list.length);
     $('search-none').textContent = query && !list.length ? I18n.t('explore.search.none', { q: searchEl.value.trim() }) : '';
   }
