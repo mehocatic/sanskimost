@@ -388,4 +388,5 @@ html.lenis, html.lenis body { height: auto; }
 /* The lines near its bottom are lifted by the difference, so the bar does not cover them while it is shown. */
 @supports (height: 100lvh) {
   #stage { height: 100lvh; }
+  #scroll-hint { bottom: calc(100lvh - 100svh + 6svh); }
 }
