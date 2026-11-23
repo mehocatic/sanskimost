@@ -854,6 +854,7 @@ I18N.bs = {
   'explore.search.none': 'Nijedno mjesto ne odgovara pretrazi „{q}“.',
   'explore.locate': 'Moja lokacija',
   'explore.locate.wait': 'Tražim vašu lokaciju...',
+  'explore.locate.denied': 'Pristup lokaciji nije dozvoljen. Možete ga uključiti u postavkama preglednika.',
   'cat.nature': 'Priroda',
   'cat.water': 'Voda',
   'cat.history': 'Historija',

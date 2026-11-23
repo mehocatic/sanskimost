@@ -852,6 +852,7 @@ I18N.en = {
   'explore.search.none': 'No place matches “{q}”.',
   'explore.locate': 'My location',
   'explore.locate.wait': 'Finding your location...',
+  'explore.locate.denied': 'Location access is not allowed. You can turn it on in your browser settings.',
   'cat.nature': 'Nature',
   'cat.water': 'Water',
   'cat.history': 'History',
