@@ -290,6 +290,7 @@
     renderLegend();
     renderBar();
     renderList(visible());
+    if (msg) setMsg(msg.key, msg.params);
   });
 
   window.addEventListener('hashchange', () => { if (!route) setFilter(fromHash(), false); });
