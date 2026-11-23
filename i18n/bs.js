@@ -573,6 +573,7 @@ I18N.bs = {
   'photo.grmec.gorge': 'Potok u kamenitom klancu na Grmeču',
   'photo.blihe.path': 'Staza do vodopada Blihe',
   'photo.musalla.postcard': 'Musalla Sultan Fatih Mehmed II., D. Kamengrad',
+  'photo.mulez.view': 'Pogled s planine na dolinu',
   'place.alt.label': 'Nadmorska visina',
   'place.alt': '{m} m',
   'place.map.open': 'Prikaži na karti',
