@@ -11,6 +11,7 @@
 // Sanski Most, inmedia.ba), Demirovic, Jasmin Handanovic, Fikret Kurtovic, Ceric, Mandic, H. Bilajbegovic. Kazic: the page says "by his own account"
 // he was born in Tomina; no second source. Emir Tabakovic: his own text on inmedia.ba (Radio Sana, 13 January 1996) (checked 2026-11-23); the report checked a
 // different person (Haris Tabakovic, a footballer from Stolac).
+// Not added (Meho, 2026-11-23): Enver Burnic (killed in 1992, not an ICTY witness), Adil Draganovic, Rezak Hukanovic (born in Prijedor or Sanica,
 // Catic, Begic and Kugic (survivors and witnesses) were added with Meho's approval on 18 Nov 2026; they rest on the sources named in the entries only, TODO(verify).
 window.LICNOSTI_CATS = [
   { id: 'bastina', key: 'lic.heritage' },
