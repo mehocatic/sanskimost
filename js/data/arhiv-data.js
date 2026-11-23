@@ -197,7 +197,7 @@ window.ARCHIVE = {
     {"f": "delegati-zavnobih", "y": 1944, "cat": "ljudi", "cap": "arh.c.delegati-zavnobih", "w": 1600, "h": 1123, "src": "Foto-služba Muzeja narodne revolucije BiH, Sarajevo"},
     {"f": "rodic-1944", "y": 1944, "cat": "ljudi", "cap": "arh.c.rodic-1944", "w": 1065, "h": 821, "src": "Muzej revolucije naroda Jugoslavije"},
     {"f": "rekord-golf-a", "y": 2026, "cat": "ljudi", "cap": "arh.c.rekord-golf-a", "w": 1280, "h": 880},
-    {"f": "rekord-golf-b", "y": 2026, "cat": "ljudi", "cap": "arh.c.rekord-golf-b", "w": 1280, "h": 880, "quiz": false},
+    {"f": "rekord-golf-b", "y": 2026, "cat": "ljudi", "cap": "arh.c.rekord-golf-b", "w": 1280, "h": 880},
     {"f": "rekord-golf-potvrda", "y": 2026, "cat": "dokumenti", "cap": "arh.c.rekord-golf-potvrda", "w": 720, "h": 540, "src": "WRCAC", "quiz": false}
   ]
 };
