@@ -8,7 +8,7 @@
 // Removed on 22 Nov 2026 at Meho's request: Politics (except Hasan-beg Cekic, now under heritage) and Health.
 // Pantelic: born in Kozica on Grmeč, inmedia.ba ("Fudbaleri porijeklom iz Sanskog Mosta", 2023) (checked 2026-11-23). Alagic: Meho's notes, sources in FACTS.md.
 // Added 18 Nov 2026 from Meho's JSON (poznate_osobe_sanski_most.json). Confirmed by Meho's fact-check report (2026-11-23): Muharemovic (mother from
-// Held back on purpose (Meho to decide): Enver Burnic, Adil Draganovic (ICTY witnesses), Rezak Hukanovic (birthplace sources disagree), Hamza-beg (already in Historija).
+// Sanski Most, inmedia.ba), Demirovic, Jasmin Handanovic, Fikret Kurtovic, Ceric, Mandic, H. Bilajbegovic. Kazic: the page says "by his own account"
 // Catic, Begic and Kugic (survivors and witnesses) were added with Meho's approval on 18 Nov 2026; they rest on the sources named in the entries only, TODO(verify).
 window.LICNOSTI_CATS = [
   { id: 'bastina', key: 'lic.heritage' },
