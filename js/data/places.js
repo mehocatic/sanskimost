@@ -139,7 +139,7 @@ const PLACES = [
       pic("korcanica4.webp"), // the ruined hotel
       pic("korcanica-snijeg.webp"), // the ruined hotel from the front, in snow (from Meho's folder, korcanicaHotel.jpg)
       // TODO(verify): an old postcard of the hotel; it is in Meho's notes from the book, the publisher of the postcard is not known
-      pic("arhiv/korcanica-razglednica.webp", { archive: true, source: BOOK })
+      pic("arhiv/korcanica-razglednica.webp", { srcset: "photos/arhiv/korcanica-razglednica-1001.webp 1001w, photos/arhiv/korcanica-razglednica.webp 1600w", archive: true, source: BOOK })
     ],
     // the hotel on the postcard (cut out of it) and the same hotel now, from the front as on the postcard; caption: `tn` in the language files
     thenNow: { old: "arhiv/korcanica-hotel.webp", now: "korcanica-snijeg.webp", ar: "4 / 3", posOld: "50% 45%", posNow: "52% 50%" }
