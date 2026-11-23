@@ -19,6 +19,7 @@
 //           - source: where an old photo comes from when its author is not known (a book, an archive), shown as "Source: ..."
 //           - alt: the alt text of the photo (not shown; the same text in both languages), otherwise the place name is used
 //           - srcset: a smaller file for phones, e.g. "photos/a-1200.webp 1200w, photos/a.webp 2400w"
+//             (slider photos: the small file is as wide as a 3x phone needs for the 300 px row, at most 1080 px; made from originals/)
 //           - hero: true marks the one photo that fills the top of the place page, cropped (object-fit: cover). Only for a
 //             landscape photo at least about 1600 px wide. A place without one gets a banner: its main photo (main: true,
 //             otherwise the first) blurred and darkened across the whole width, with the same photo sharp and whole on it,
