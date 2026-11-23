@@ -37,7 +37,7 @@ Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled:
 - [ ] Opisi koji počivaju na komentarima čitalaca (Tito 1972, poplava 1976 i Alagića sokak, štafeta mladosti).
 - [ ] Doček hadžije Muharema Zukića 1968 (protumačen iz naziva fajla).
 - [ ] Godine iz naziva fajlova: gradnja novog mosta (2012. i 2013.), Mašinski most 1956.
-- [ ] Stari Majdan: lokacija mosta, starost, godina proglašenja spomenikom, autor fotografije.
+- [x] Stari Majdan: potok Gračanica, nacionalni spomenik od 2008., 8,40 x 4,25 m, tačka na karti (OSM way 292464101, Meho da provjeri). Starost nije poznata i ostaje izostavljena. Fotografija bez autora, slobodna (Meho).
 - [ ] Autori fotografija bez oznake (Blihe staza, Stari Majdan, pećina Mračaj).
 - [ ] Mračaj: datum ekspedicije i dužina (1100 m iz dokumenta nije potvrđena).
 - [ ] Nove fotografije imaju `quiz: false`. Kad se godine potvrde, ukloniti tu oznaku pa mogu u kviz.
