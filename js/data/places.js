@@ -126,7 +126,7 @@ const PLACES = [
     coords: [44.6872744, 16.4375984],
     km: 32, // the Korčanica text says about 32 km from town
     alt: 836, // elevation in m: Zukanović, "Sanski Most nekad i sad" (2024)
-    // TODO(verify): Meho's text gives 316 fallen fighters buried in two tombs, and 2732 m2 for the hospital; no source is named, so left out.
+    // 316 fallen fighters in the two tombs and 2,732 m2 for the hospital: PD Klekovača (pdklekovaca.org/?p=5560) (checked 2026-11-23); only local and hiking
     // The book describes the monument as a "split flower bud", which is what the two semicircular walls in the photos are.
     // The material and the "underground museum" of an earlier text are left out until a source settles them.
     // Left out: the book says the battle for the wounded on the Neretva started from here; no second source.
