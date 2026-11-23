@@ -283,6 +283,7 @@ const PLACES = [
     // sanskimost.gov.ba/nacionalni-spomenici (checked 2026-11-23). The 2011 KONS decision for a "Rimski most" on the Orlja is a bridge in Olovo, not this one.
     // Age left out: no date is known (late Middle Ages in the literature, "Roman" in tradition).
     // Left out: 2 large and 3 small cannons and 300 border guards in the first half of the 18th century; the same source (Zavod USK, Pečenković)
+    // dates the town to the middle of that century, so the sentence contradicts it.
     see: ["kamengrad"],
     photos: [
       pic("stari-majdan-most.webp", { srcset: "photos/stari-majdan-most-1080.webp 1080w, photos/stari-majdan-most.webp 1600w", altKey: "photo.majdan.bridge" }) // 1600 x 1200; no author, free to use (Meho, 2026-11-23)
