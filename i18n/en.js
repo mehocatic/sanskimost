@@ -573,6 +573,7 @@ I18N.en = {
   'photo.musalla.postcard': 'The Musalla of Sultan Fatih Mehmed II, Donji Kamengrad',
   'photo.mulez.view': 'View from the mountain over the valley',
   'photo.turbe.general': 'General Mehmed Alagić',
+  'photo.zavnobih.sokolski': 'The Sokolski dom',
   'place.alt.label': 'Elevation',
   'place.alt': '{m} m',
   'place.map.open': 'Show on map',

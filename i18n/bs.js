@@ -575,6 +575,7 @@ I18N.bs = {
   'photo.musalla.postcard': 'Musalla Sultan Fatih Mehmed II., D. Kamengrad',
   'photo.mulez.view': 'Pogled s planine na dolinu',
   'photo.turbe.general': 'General Mehmed Alagić',
+  'photo.zavnobih.sokolski': 'Sokolski dom',
   'place.alt.label': 'Nadmorska visina',
   'place.alt': '{m} m',
   'place.map.open': 'Prikaži na karti',
