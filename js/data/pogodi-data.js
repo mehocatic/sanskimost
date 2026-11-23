@@ -48,10 +48,6 @@ Object.assign(window.KVS, {
     "n": "Moje trčanje",
     "u": "https://trcanje.net/arhiva/52757"
   },
-  "petrez": {
-    "n": "Inmedia",
-    "u": "https://inmedia.ba/sanska-petica-sanjani-na-domacem-terenu/"
-  },
   "homofaber": {
     "n": "SBS Bosnian",
     "u": "https://www.youtube.com/watch?v=4cTKcjyADeo"
