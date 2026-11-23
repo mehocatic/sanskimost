@@ -23,7 +23,7 @@ I18N.bs = {
   'kv.publish': "Upiši se u hroniku",
   'kv.boardEmpty': "Hronika je još prazna.",
   'kv.netError': "Veza s kvizom nije uspjela. Pokušaj ponovo.",
-  'kv.limit': "Danas su iskorištena sva tri pokušaja za ovu hroniku.",
+  'kv.limit': "Današnji pokušaj za ovu hroniku je iskorišten. Nova pitanja su sutra.",
   'kv.published': "Ime je upisano u hroniku.",
   'kv.storage': "Za dnevne pokušaje omogući lokalnu pohranu u pregledniku.",
   'kv.size': "{n} pitanja",
