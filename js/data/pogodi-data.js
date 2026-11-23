@@ -255,7 +255,6 @@ window.KVQ = [
   translatedQuestion('ligaprvak', 'dogadjaji', 1, 'hist'),
   translatedQuestion('mulezmost', 'priroda', 3),
   translatedQuestion('emiruspon', 'ljudi', 2),
-  translatedQuestion('ocimaljubavi', 'ljudi', 1),
   translatedQuestion('galerijafaber', 'dogadjaji', 4),
   translatedQuestion('sanskafoto', 'ljudi', 2),
   translatedQuestion('petica', 'dogadjaji', 4),
