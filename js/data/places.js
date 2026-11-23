@@ -269,7 +269,7 @@ const PLACES = [
     // no independent second source was found, so the note names both. The executions of 1941 are deliberately not described (Meho: nothing too dark).
     photos: [
       // the mark "#ArchitectonicTravels" is on the photograph itself and was left there; TODO(verify): author and license
-      pic("susnjar.webp", { author: "ArchitectonicTravels", alt: "Obelisk memorijalnog kompleksa Šušnjar" })
+      pic("susnjar.webp", { srcset: "photos/susnjar-1080.webp 1080w, photos/susnjar.webp 1600w", author: "ArchitectonicTravels", alt: "Obelisk memorijalnog kompleksa Šušnjar" })
     ]
   },
   {
