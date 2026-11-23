@@ -198,7 +198,7 @@ const PLACES = [
     // TODO(verify): the highest peak, V. Divić, is given as 1013 m by one source. Not shown until verified.
     photos: [
       pic("mulez.jpg", { hero: true, pos: "50% 50%", posM: "40% 50%", srcset: "photos/mulez-1200.webp 1200w, photos/mulez.jpg 2048w" }), // 2048 x 1152; the JPEG stays, a WebP of it was not smaller
-      pic("mulez2.jpg"),
+      pic("mulez2.jpg", { srcset: "photos/mulez2-1080.webp 1080w, photos/mulez2.jpg 2048w" }),
       pic("mulez3.jpg"),
       pic("mulez4.webp"),
       pic("mulez5.webp"),
