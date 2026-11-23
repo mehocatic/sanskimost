@@ -3,7 +3,6 @@
 //  c: category, q: question, a: explanation, both as [bosnian, english]; answers may be plain text or [bosnian, english]
 window.KVS = {"opc1":{"n":"Općina Sanski Most: Historija općine","u":"https://sanskimost.gov.ba/historija-opcine-sanski-most/"},
   "t1902":{"n":"Faktor: Bosnia Storm Chasers","u":"https://faktor.ba/bosna-i-hercegovina/aktuelno/lovci-na-oluje-u-bih-cilj-je-edukacija-javnosti-o-vrstama-oblaka-oluja-i-ekstrema/163082"},
-  "popisi":{"n":"Institut za istoriju: Prilozi 35","u":"https://prilozi.iis.unsa.ba/wp-content/uploads/2023/05/prilozi_35.pdf"},
   "opc2":{"n":"Općina Sanski Most: Otkrijte Sanski Most","u":"https://sanskimost.gov.ba/otkrijte-sanski-most-biser-krajine-koji-spaja-prirodu-i-tradiciju/"},
   "wiki":{"n":"Wikipedia: Sanski Most","u":"https://en.wikipedia.org/wiki/Sanski_Most"},
   "sana":{"n":"Wikipedia: Sana (river)","u":"https://en.wikipedia.org/wiki/Sana_(river)"},
