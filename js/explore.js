@@ -169,7 +169,7 @@
   const visible = () => {
     if (route) return stops.filter(x => x.p).map(x => x.p);
     const list = (active === 'all' ? points : points.filter(p => p.cat === active)).filter(matches);
-    return list;
+    return me ? list.slice().sort((a, b) => km(me, a.coords) - km(me, b.coords)) : list;
   };
 
   function fitTo(list) {
