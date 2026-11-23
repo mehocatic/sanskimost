@@ -147,6 +147,9 @@
   let query = '';
   const matches = p => !query || [nameOf(p), p.name.bs, p.name.en].some(n => fold(n).includes(query));
 
+  /* ---------- my location: shown on the map, distances in the list; the position never leaves the browser ---------- */
+  const locateBtn = $('locate'), msgEl = $('locate-msg');
+  let me = null, meLayer = null, msg = null;
   const visible = () => {
     if (route) return stops.filter(x => x.p).map(x => x.p);
     const list = (active === 'all' ? points : points.filter(p => p.cat === active)).filter(matches);
