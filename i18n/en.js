@@ -853,6 +853,7 @@ I18N.en = {
   'explore.locate': 'My location',
   'explore.locate.wait': 'Finding your location...',
   'explore.locate.denied': 'Location access is not allowed. You can turn it on in your browser settings.',
+  'explore.locate.error': 'Your location is not available right now.',
   'cat.nature': 'Nature',
   'cat.water': 'Water',
   'cat.history': 'History',
