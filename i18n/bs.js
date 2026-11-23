@@ -16,7 +16,7 @@ I18N.bs = {
   'kv.help.surv': "Biraj između četiri odgovora. Igra završava trećom greškom ili nakon 80 pitanja.",
   'kv.modeLimit': "Za ovu hroniku imaš jedan pokušaj dnevno. Svi danas igraju ista pitanja.",
   'kv.competition': "Takmičenje u znanju",
-  'kv.daily': "Igraj 10 ili 20 pitanja. Svaki dan imaš po tri takmičarske igre za obje dužine na ovom pregledniku.",
+  'kv.daily': "Igraj 10 ili 20 pitanja. Svaki dan svi dobiju ista pitanja, a imaš po jednu takmičarsku igru za obje dužine.",
   'kv.compete': "Igraj za hroniku",
   'kv.board': "Rang-lista",
   'kv.nickname': "Ime ili nadimak za Gradsku hroniku",
