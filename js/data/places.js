@@ -279,7 +279,7 @@ const PLACES = [
     // coords: where OpenStreetMap way 292464101 (bridge=yes) crosses the Gračanica stream (way 292464099), between the Orthodox church
     // (way 447355421, 37 m away) and the school, as avaz.ba (2017) and bs.wikipedia describe it (checked 2026-11-23). OSM does not tag the bridge as a monument,
     // so the point is the best match, not a confirmed one; Meho to check on the map.
-    // the 18th century it had 2 large and 3 small cannons and 300 border guards; the cannon sentence was left out because of that.
+    // Gračanica stream, 8.40 x 4.25 m, two arches: bs.wikipedia "Most u Starom Majdanu"; national monument by a 2008 KONS decision: avaz.ba (2017);
     see: ["kamengrad"],
     photos: [
       pic("stari-majdan-most.webp", { srcset: "photos/stari-majdan-most-1080.webp 1080w, photos/stari-majdan-most.webp 1600w", altKey: "photo.majdan.bridge" }) // 1600 x 1200; no author, free to use (Meho, 2026-11-23)
