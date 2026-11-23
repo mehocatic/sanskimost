@@ -98,8 +98,6 @@ const PLACES = [
     // Demolition date: bs Wikipedia, Inmedia and the Medžlis (2007) say 27 June 1992; a 2025 Medžlis text says 27 May (probably an error). The 1992 timeline entry now says only "in June". Meho's text says members of the Army of Republika Srpska demolished the mosque and that
     // the building material and gravestones were taken to a dump. No source is named, so only the date is on the site.
     // TODO(verify): the text says "the largest mosque in Sanski Most"; left out (superlative, no source).
-    // TODO(verify): hamzibegova4.webp (a prayer, wooden mihrab, looks like a scanned print) does not look like the interior in
-    // hamzibegova2 and 3 (white walls, teal carpet). Meho to confirm it is the Hamzibeg Mosque.
     see: [null, null, null],
     photos: [
       pic("hamzibegova.webp"),
