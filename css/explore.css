@@ -46,6 +46,7 @@ body { color: var(--fg); min-height: 100svh; }
   transition: background .2s ease, border-color .2s ease, color .2s ease;
 }
 .locate:hover { border-color: var(--fg-muted); color: var(--fg); }
+.locate[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 
 /* map and list: side by side from 900px (the page is one screen high, the map takes what the header leaves), list under the map on phones */
 .explore-main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; border-top: 1px solid var(--rule); }
