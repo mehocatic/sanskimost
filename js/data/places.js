@@ -278,7 +278,7 @@ const PLACES = [
     slug: "stari-majdan-most",
     // coords: where OpenStreetMap way 292464101 (bridge=yes) crosses the Gračanica stream (way 292464099), between the Orthodox church
     // (way 447355421, 37 m away) and the school, as avaz.ba (2017) and bs.wikipedia describe it (checked 2026-11-23). OSM does not tag the bridge as a monument,
-    // TODO(verify): the source text (KONS, Pečenković) dates the town both to the middle of the 18th century and says that in the first half of
+    // so the point is the best match, not a confirmed one; Meho to check on the map.
     // the 18th century it had 2 large and 3 small cannons and 300 border guards; the cannon sentence was left out because of that.
     see: ["kamengrad"],
     photos: [
