@@ -48,7 +48,7 @@ I18N.bs = {
   'kv.tab.surv': "3 greške",
   'kv.chr.kicker': "Sanski Most · Kviz",
   'kv.chr.title': "Gradska hronika",
-  'kv.chr.top': "{mode} · najboljih 10",
+  'kv.chr.top': "{mode} · najboljih 10 danas",
   'kv.chr.you': "ti",
   'kv.chr.best': "tvoj rekord",
   'kv.chr.notYet': "još nema tvog imena",
