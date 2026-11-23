@@ -246,6 +246,26 @@
     setMsg(null);
     show(false);
   }
+  locateBtn.addEventListener('click', () => {
+    if (me) return locateOff();
+    if (!('geolocation' in navigator)) return setMsg('explore.locate.error');
+    locateBtn.disabled = true;
+    setMsg('explore.locate.wait');
+    navigator.geolocation.getCurrentPosition(pos => {
+      locateBtn.disabled = false;
+      me = [pos.coords.latitude, pos.coords.longitude];
+      const icon = L.divIcon({ className: 'me-pin', html: '<span></span>', iconSize: [20, 20], iconAnchor: [10, 10] });
+      const dot = L.marker(me, { icon, title: I18n.t('explore.locate.you'), alt: I18n.t('explore.locate.you'), keyboard: false, zIndexOffset: 1000 });
+      meLayer = L.layerGroup([dot]).addTo(map);
+      locateBtn.setAttribute('aria-pressed', 'true');
+      setMsg(null);
+      map.setView(me, 13, { animate: !reduce });
+      show(false);
+    }, err => {
+      locateBtn.disabled = false;
+      setMsg(err.code === 1 ? 'explore.locate.denied' : 'explore.locate.error');
+    }, { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 });
+  });
 
   /* ---------- language switch ---------- */
   window.addEventListener('langchange', () => {
