@@ -72,6 +72,8 @@ body { color: var(--fg); min-height: 100svh; }
 .poi-cat { grid-column: 2; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--fg-muted); }
 .list-note { padding: 0 20px 12px; font-size: .85rem; line-height: 1.45; color: var(--fg-muted); }
 .list-note[hidden] { display: none; }
+/* distance from the visitor, at the right of each row */
+.with-dist .poi-item { grid-template-columns: 12px minmax(0, 1fr) auto; }
 .numbered .poi-item { grid-template-columns: 26px minmax(0, 1fr); }
 .numbered .poi-dot { width: 22px; height: 22px; counter-increment: stop; display: flex; align-items: center; justify-content: center; font-size: .72rem; color: var(--deep); }
 .numbered .poi-dot::before { content: counter(stop); }
