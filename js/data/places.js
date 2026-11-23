@@ -54,7 +54,7 @@ const PLACES = [
       pic("bliha6.webp"),
       pic("bliha-vodopad-staza.webp", { altKey: "photo.blihe.path" }), // 512 x 768, the original is in originals/blihinVodopad.jpg; author not known (TODO(verify))
       // an old photograph of the waterfall, 1942 (file name in Meho's folder); it carries the mark of aukcije.hr, where it was offered
-      pic("arhiv/blihe-1942.webp", { archive: "1942", source: "aukcije.hr" })
+      pic("arhiv/blihe-1942.webp", { archive: "1942" })
     ]
   },
   {
