@@ -232,7 +232,7 @@ const PLACES = [
     // is a different one); add coords when Meho gives them or the turbe is mapped.
     // The Medžlis confirmed that the turbe exists, that a park in the town bears the general's name (OSM leisure=park, way 40699044, on the map as a name only)
     // and that the portrait may be published.
-    // TODO(verify): Meho's text names no source for the military career; it is written as plain facts, without his evaluations.
+    // Military career: Meho's text, matching the sources named in Meho's fact-check report (2026-11-23): historija.ba, rtvusk.ba, stav.ba.
     // Left out on purpose: birthplace and parents, and the passages that judge his command (they are opinion, not fact).
     photos: [
       pic("turbe.webp"),
