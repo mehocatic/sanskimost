@@ -253,6 +253,10 @@
     setMsg('explore.locate.wait');
     navigator.geolocation.getCurrentPosition(pos => {
       locateBtn.disabled = false;
+      // accuracy in metres, as the browser reports it. A computer without GPS often guesses from the internet connection
+      // (tens of km off); such a guess would put the dot in another town, so nothing is drawn and only a short note is shown
+      const acc = pos.coords.accuracy || 0;
+      if (acc > 2000) return setMsg('explore.locate.rough');
       me = [pos.coords.latitude, pos.coords.longitude];
       const icon = L.divIcon({ className: 'me-pin', html: '<span></span>', iconSize: [20, 20], iconAnchor: [10, 10] });
       const dot = L.marker(me, { icon, title: I18n.t('explore.locate.you'), alt: I18n.t('explore.locate.you'), keyboard: false, zIndexOffset: 1000 });
