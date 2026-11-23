@@ -235,7 +235,7 @@ const PLACES = [
     photos: [
       pic("turbe.webp"),
       pic("turbe2.webp"), // the gravestone, "General Mehmed Alagić 1947-2003"
-      pic("turbe3.webp", { alt: "General Mehmed Alagić" }) // a portrait, no visible caption; the Medžlis confirmed who it shows and that it may be published
+      pic("turbe3.webp", { altKey: "photo.turbe.general" }) // a portrait, no visible caption; the Medžlis confirmed who it shows and that it may be published
     ]
   },
   {
