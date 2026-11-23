@@ -43,7 +43,7 @@ Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled:
 - [x] Kamengrad (kadiluk, kapetanija, nahija, Palanka, zidovi), Mulež (Veliki Divić 1.013 m), ZAVNOBiH (obnova počela 27.10.2026.), Korčanica (316 boraca, 2.732 m², uz "prema lokalnim izvorima"): potvrđeno 23.11.2026., na sajtu. Izvori u `FACTS.md`.
 - [ ] ZAVNOBiH: tekst "obnova je počela" ažurirati kad radovi odmaknu.
 - [ ] Ostaju otvoreni: autori i licence portreta, Čatić, Begić i Kugić (samo izvori iz unosa), opisi u Arhivu (Tito 1972, poplava 1976, štafeta, Zukić 1968, godine mostova).
-- [ ] Nove fotografije imaju `quiz: false`. Kad se godine potvrde, ukloniti tu oznaku pa mogu u kviz.
+- [x] Arhivske fotografije s godinom su u kvizu (Meho, 23.11.2026.: izvora nema, fotografije su stare). Doček Tita (oko 1972.) i most s hotelom (oko 1970.) su u kvizu s oznakom `quiz: true`. Klubovi iz općinske lige nemaju godinu i nisu u kvizu.
 
 ## Kviz
 - [ ] Baza pitanja: 289 aktivnih u bazi (22.11.2026.), cilj 400. Svako pitanje mora imati izvor u `KVS` (`node tools/provjeri-pogodi.js` provjerava).
