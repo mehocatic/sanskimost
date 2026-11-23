@@ -600,6 +600,7 @@ I18N.bs = {
   'tn.title': 'Nekad i danas',
 
   // history page (historija.html)
+  'hist.doctitle': 'Historija · Sanski Most',
   'hist.meta': 'Historija Sanskog Mosta od prahistorije do danas, u osam poglavlja i sa starim fotografijama.',
   'hist.eyebrow': 'Historija',
   'hist.title.html': 'Pet hiljada godina<br>uz Sanu',

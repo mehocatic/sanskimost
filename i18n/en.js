@@ -598,6 +598,7 @@ I18N.en = {
   'tn.title': 'Then and now',
 
   // history page (historija.html)
+  'hist.doctitle': 'History · Sanski Most',
   'hist.meta': 'The history of Sanski Most from prehistory to today, in eight chapters with old photographs.',
   'hist.eyebrow': 'History',
   'hist.title.html': 'Five thousand years<br>on the Sana',
