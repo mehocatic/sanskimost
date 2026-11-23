@@ -212,6 +212,9 @@
       show(true);
     }, 250);
   });
+  searchEl.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && searchEl.value) { searchEl.value = ''; searchEl.dispatchEvent(new Event('input')); }
+  });
 
   /* ---------- language switch ---------- */
   window.addEventListener('langchange', () => {
