@@ -1013,7 +1013,7 @@ I18N.en = {
     'mulez': {
       name: 'Mulež',
       short: 'A mountain above the Sana canyon, with a via ferrata along a 90 m rock wall.',
-      long: 'Mulež is a mountain above the Sana canyon, with hiking trails from easy ones, suitable for families and beginners, to demanding climbs.\n\nThe via ferrata (a secured climbing route), open since September 2024, runs up a 90 m rock wall on cables and metal steps. It was built by the mountaineering society SPD “Mulež” and is meant for experienced hikers.\n\nA newly built suspension bridge, 60 m long, links two rock faces above deep gorges. From the route there are views of the Sana canyon and the Sana basin.\n\nA sulphur spring at Ilidža lies at the foot of the mountain.',
+      long: 'Mulež is a mountain above the Sana canyon, with hiking trails from easy ones, suitable for families and beginners, to demanding climbs. Its highest peak is Veliki Divić, 1,013 m.\n\nThe via ferrata (a secured climbing route), open since September 2024, runs up a 90 m rock wall on cables and metal steps. It was built by the mountaineering society SPD “Mulež” and is meant for experienced hikers.\n\nA newly built suspension bridge, 60 m long, links two rock faces above deep gorges. From the route there are views of the Sana canyon and the Sana basin.\n\nA sulphur spring at Ilidža lies at the foot of the mountain.',
       note: 'For experienced hikers. A helmet, harness and cables are recommended; follow the safety signs.',
       see: []
     },
