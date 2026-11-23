@@ -574,6 +574,7 @@ I18N.en = {
   'photo.mulez.view': 'View from the mountain over the valley',
   'photo.turbe.general': 'General Mehmed Alagić',
   'photo.zavnobih.sokolski': 'The Sokolski dom',
+  'photo.zavnobih.people': 'A group of locals in front of a building',
   'place.alt.label': 'Elevation',
   'place.alt': '{m} m',
   'place.map.open': 'Show on map',

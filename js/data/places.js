@@ -252,7 +252,7 @@ const PLACES = [
       // the same building, the Sokolski dom; TODO(verify): from Meho's notes from the book, the photographer is not known
       pic("arhiv/sokolski-dom.webp", { archive: "1939", source: BOOK, altKey: "photo.zavnobih.sokolski" }),
       // a large group in front of a building; Meho thinks they are the people who built the Sokolski dom (not stated on the site)
-      pic("arhiv/zavnobih-ljudi.webp", { archive: true, alt: "Grupa mještana ispred zgrade" }),
+      pic("arhiv/zavnobih-ljudi.webp", { archive: true, altKey: "photo.zavnobih.people" }),
       // photos/zavnobih2.jpg (in originals/) is a computer render of the planned building, not a photo of it
       pic("zavnobih3.jpg"), // the memorial slab "Dom ZAVNOBiH-a"
       pic("zavnobih4.jpg") // a view of the town, the building is not in it

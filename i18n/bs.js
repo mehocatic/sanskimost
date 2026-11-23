@@ -576,6 +576,7 @@ I18N.bs = {
   'photo.mulez.view': 'Pogled s planine na dolinu',
   'photo.turbe.general': 'General Mehmed Alagić',
   'photo.zavnobih.sokolski': 'Sokolski dom',
+  'photo.zavnobih.people': 'Grupa mještana ispred zgrade',
   'place.alt.label': 'Nadmorska visina',
   'place.alt': '{m} m',
   'place.map.open': 'Prikaži na karti',
