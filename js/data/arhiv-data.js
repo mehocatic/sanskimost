@@ -100,7 +100,7 @@ window.ARCHIVE = {
     {"f": "sana-2014", "y": 2014, "cat": "poplave", "cap": "hist.6.g3", "w": 640, "h": 480, "place": "most"},
     {"f": "musalla-ljeto", "y": 2018, "cat": "ulice", "cap": "arh.c.musalla-ljeto", "w": 853, "h": 1280, "place": "musala", "src": "Almedin Handanovic"},
     {"f": "bliha-ljeto", "y": 2019, "cat": "sana", "cap": "arh.c.bliha-ljeto", "w": 1280, "h": 853, "place": "blihe"},
-    {"f": "bliha-jesen", "y": 2021, "cat": "sana", "cap": "arh.c.bliha-jesen", "w": 960, "h": 1280, "place": "blihe", "quiz": false, "src": "Đana Talić · Wikimedia Commons · CC0"},
+    {"f": "bliha-jesen", "y": 2021, "cat": "sana", "cap": "arh.c.bliha-jesen", "w": 960, "h": 1280, "place": "blihe", "src": "Đana Talić · Wikimedia Commons · CC0"},
     {"f": "petica-start", "y": 2026, "cat": "ljudi", "cap": "sport.petica-start", "w": 650, "h": 465},
     {"f": "liga-fk-borac-podlug", "y": null, "cat": "ljudi", "cap": "sport.liga-fk-borac-podlug", "w": 1195, "h": 896},
     {"f": "liga-fk-brastvo-stari-majdan", "y": null, "cat": "ljudi", "cap": "sport.liga-fk-brastvo-stari-majdan", "w": 1280, "h": 816},
