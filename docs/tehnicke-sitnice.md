@@ -54,3 +54,6 @@ Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled:
 ## Mobitel
 - [ ] Početna: provjeriti na iPhoneu da se pri skrolu više ne vidi svijetla traka ispod scene (scena je sada 100lvh, 23.11.2026.).
 - [x] Uzrok: scena je bila 100svh (ekran s prikazanom trakom preglednika); kad se traka sakrije, ispod scene se vidjela stranica. Iza scene je sada i tamna pozadina, pa eventualni razmak nije svijetao.
+
+## Jezik (bosanski)
+- "Kolovoz" i "kolovozna ploča" su ispravni i u BiH (Zakon o osnovama sigurnosti saobraćaja na putevima u BiH). Ostaju u opisima mosta.
