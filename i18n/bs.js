@@ -578,6 +578,7 @@ I18N.bs = {
   'photo.zavnobih.sokolski': 'Sokolski dom',
   'photo.zavnobih.people': 'Grupa mještana ispred zgrade',
   'photo.susnjar.obelisk': 'Obelisk memorijalnog kompleksa Šušnjar',
+  'photo.majdan.bridge': 'Kameni most u Starom Majdanu',
   'place.alt.label': 'Nadmorska visina',
   'place.alt': '{m} m',
   'place.map.open': 'Prikaži na karti',

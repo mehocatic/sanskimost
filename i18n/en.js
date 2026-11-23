@@ -576,6 +576,7 @@ I18N.en = {
   'photo.zavnobih.sokolski': 'The Sokolski dom',
   'photo.zavnobih.people': 'A group of locals in front of a building',
   'photo.susnjar.obelisk': 'Obelisk of the Šušnjar Memorial Complex',
+  'photo.majdan.bridge': 'The stone bridge in Stari Majdan',
   'place.alt.label': 'Elevation',
   'place.alt': '{m} m',
   'place.map.open': 'Show on map',
