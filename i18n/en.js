@@ -1047,7 +1047,7 @@ I18N.en = {
     },
     'stari-majdan-most': {
       name: 'The bridge in Stari Majdan',
-      short: 'A stone bridge in Stari Majdan, known as the Roman bridge; a historic monument.',
+      short: 'A stone bridge in Stari Majdan, known as the Roman bridge; a national monument since 2008.',
       long: 'In Stari Majdan there is a stone arched bridge known as the Roman bridge. It is listed as a historic monument.\n\nThe place is tied to mining. Iron ore was dug here even before Ottoman rule, and a smelter and a mint worked beside the mine. The Ottomans restored the processing of ore around 1571, and the works made mostly cannonballs and rifle barrels.\n\nThe town of Stari Majdan was built in the middle of the 18th century. The seat of the captaincy and the kadi district was moved to it from Kamengrad, and the fortress kept a permanent garrison until the 1830s.',
       see: ['Kamengrad Fortress, from where the seat was moved.']
     }
