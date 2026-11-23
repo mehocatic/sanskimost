@@ -260,7 +260,8 @@
       me = [pos.coords.latitude, pos.coords.longitude];
       const icon = L.divIcon({ className: 'me-pin', html: '<span></span>', iconSize: [20, 20], iconAnchor: [10, 10] });
       const dot = L.marker(me, { icon, title: I18n.t('explore.locate.you'), alt: I18n.t('explore.locate.you'), keyboard: false, zIndexOffset: 1000 });
-      meLayer = L.layerGroup([dot]).addTo(map);
+      const ring = acc ? L.circle(me, { radius: acc, color: '#151a18', weight: 1, opacity: .5, fillOpacity: .08, interactive: false }) : null;
+      meLayer = L.layerGroup(ring ? [ring, dot] : [dot]).addTo(map);
       locateBtn.setAttribute('aria-pressed', 'true');
       setMsg(null);
       map.setView(me, 13, { animate: !reduce });
