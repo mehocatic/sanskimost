@@ -51,7 +51,7 @@ window.ARCHIVE = {
     {"f": "prijedorska-1976", "y": 1976, "cat": "poplave", "cap": "hist.ul.1.b", "w": 825, "h": 1100, "place": "prijedorska"},
     {"f": "plivaci-1", "y": 1983, "cat": "dokumenti", "cap": "sport.plivaci-1", "w": 590, "h": 587, "quiz": false},
     {"f": "plivaci-2", "y": 1983, "cat": "sana", "cap": "sport.plivaci-2", "w": 1280, "h": 816},
-    {"f": "plivaci-3", "y": 1983, "cat": "sana", "cap": "sport.plivaci-3", "w": 1312, "h": 814, "quiz": false},
+    {"f": "plivaci-3", "y": 1983, "cat": "sana", "cap": "sport.plivaci-3", "w": 1312, "h": 814},
     {"f": "korida-1986", "y": 1986, "cat": "ljudi", "cap": "hist.zv.5.a", "w": 916, "h": 490},
     {"f": "izbori-1996", "y": 1996, "cat": "ulice", "cap": "hist.ul.5.d", "w": 1100, "h": 745, "place": "centar", "src": "hist.src.es"},
     {"f": "kino-sana-1996", "y": 1996, "cat": "ulice", "cap": "hist.ul.5.a", "w": 481, "h": 310, "place": "kino", "src": "hist.src.es"},
