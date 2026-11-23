@@ -850,6 +850,7 @@ I18N.en = {
   'explore.search.label': 'Search places by name',
   'explore.search.placeholder': 'Find a place',
   'explore.search.none': 'No place matches “{q}”.',
+  'explore.locate': 'My location',
   'cat.nature': 'Nature',
   'cat.water': 'Water',
   'cat.history': 'History',
