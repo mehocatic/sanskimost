@@ -855,6 +855,7 @@ I18N.en = {
   'explore.locate.denied': 'Location access is not allowed. You can turn it on in your browser settings.',
   'explore.locate.error': 'Your location is not available right now.',
   'explore.locate.far': 'You are about {km} from Sanski Most, in a straight line.',
+  'explore.locate.rough': 'Your browser does not know your exact location. It works better on a phone with location turned on.',
   'cat.nature': 'Nature',
   'cat.water': 'Water',
   'cat.history': 'History',
