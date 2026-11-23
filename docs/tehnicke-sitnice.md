@@ -42,6 +42,7 @@ Nalaze se u komentarima `places.js`, `licnosti-data.js` i `index.html`. Pregled:
 - [x] Mračaj: oko 1.350 m istraženo do septembra 2024. (nasljedje.org, 17.10.2024.). Na sajtu.
 - [x] Kamengrad (kadiluk, kapetanija, nahija, Palanka, zidovi), Mulež (Veliki Divić 1.013 m), ZAVNOBiH (obnova počela 27.10.2026.), Korčanica (316 boraca, 2.732 m², uz "prema lokalnim izvorima"): potvrđeno 23.11.2026., na sajtu. Izvori u `FACTS.md`.
 - [ ] ZAVNOBiH: tekst "obnova je počela" ažurirati kad radovi odmaknu.
+- [ ] Ostaju otvoreni: autori i licence portreta, Čatić, Begić i Kugić (samo izvori iz unosa), opisi u Arhivu (Tito 1972, poplava 1976, štafeta, Zukić 1968, godine mostova).
 - [ ] Nove fotografije imaju `quiz: false`. Kad se godine potvrde, ukloniti tu oznaku pa mogu u kviz.
 
 ## Kviz
