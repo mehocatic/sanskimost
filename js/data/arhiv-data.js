@@ -86,7 +86,7 @@ window.ARCHIVE = {
     {"f": "prijatelji-2", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-2", "w": 1024, "h": 851, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "prijatelji-3", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-3", "w": 1024, "h": 820, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "prijatelji-4", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-4", "w": 1024, "h": 845, "src": "35 godina ONK Sloboda (2015)"},
-    {"f": "prijatelji-5", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-5", "w": 1024, "h": 831, "quiz": false, "src": "35 godina ONK Sloboda (2015)"},
+    {"f": "prijatelji-5", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-5", "w": 1024, "h": 831, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "prijatelji-6", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-6", "w": 1024, "h": 910, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "prijatelji-7", "y": 2009, "cat": "ljudi", "cap": "sport.prijatelji-7", "w": 552, "h": 349, "quiz": false, "src": "35 godina ONK Sloboda (2015)"},
     {"f": "trke-1", "y": 2010, "cat": "ljudi", "cap": "sport.trke-1", "w": 1024, "h": 721},
