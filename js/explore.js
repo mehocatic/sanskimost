@@ -291,6 +291,7 @@
     renderBar();
     renderList(visible());
     if (msg) setMsg(msg.key, msg.params);
+    if (meLayer) meLayer.eachLayer(l => { if (l instanceof L.Marker) { const el = l.getElement(); if (el) el.title = I18n.t('explore.locate.you'); } });
   });
 
   window.addEventListener('hashchange', () => { if (!route) setFilter(fromHash(), false); });
