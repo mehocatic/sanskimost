@@ -202,6 +202,17 @@
     if (fit && (list.length || !query)) fitTo(list);
   }
 
+  let typing = 0;
+  searchEl.addEventListener('input', () => {
+    clearTimeout(typing);
+    typing = setTimeout(() => {
+      const q = fold(searchEl.value.trim());
+      if (q === query) return;
+      query = q;
+      show(true);
+    }, 250);
+  });
+
   /* ---------- language switch ---------- */
   window.addEventListener('langchange', () => {
     markers.forEach((m, id) => {
