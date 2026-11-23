@@ -847,6 +847,7 @@ I18N.en = {
   'explore.route': 'Route: {name}',
   'explore.showAll': 'Show all places',
   'explore.missing': 'Not on the map yet: {names}.',
+  'explore.search.label': 'Search places by name',
   'cat.nature': 'Nature',
   'cat.water': 'Water',
   'cat.history': 'History',

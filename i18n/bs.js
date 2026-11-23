@@ -849,6 +849,7 @@ I18N.bs = {
   'explore.route': 'Ruta: {name}',
   'explore.showAll': 'Prikažite sva mjesta',
   'explore.missing': 'Još nisu na karti: {names}.',
+  'explore.search.label': 'Pretražite mjesta po imenu',
   'cat.nature': 'Priroda',
   'cat.water': 'Voda',
   'cat.history': 'Historija',
