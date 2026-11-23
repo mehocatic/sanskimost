@@ -14,7 +14,7 @@ I18N.en = {
   'kv.help.surv': "Choose from four answers. The game ends after your third mistake or after 80 questions.",
   'kv.modeLimit': "You get one attempt a day for this chronicle. Everyone plays the same questions today.",
   'kv.competition': "Knowledge challenge",
-  'kv.daily': "Play 10 or 20 questions. Each day this browser gets three ranked games of each length.",
+  'kv.daily': "Play 10 or 20 questions. Each day everyone gets the same questions, and you get one ranked game of each length.",
   'kv.compete': "Play for the chronicle",
   'kv.board': "Leaderboard",
   'kv.nickname': "Name or nickname for the town chronicle",
