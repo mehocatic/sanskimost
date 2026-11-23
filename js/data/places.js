@@ -270,7 +270,7 @@ const PLACES = [
     // The page says it briefly and without numbers of victims. Source of the changes: the KONS register text (Pečenković) and one interview (istinomjer.ba);
     // no independent second source was found, so the note names both. The executions of 1941 are deliberately not described (Meho: nothing too dark).
     photos: [
-      // the mark "#ArchitectonicTravels" is on the photograph itself and was left there; TODO(verify): author and license
+      // a documentation photo of the Zavod USK; credit as on bih.uganjaj.ba (checked 2026-11-23). The "#ArchitectonicTravels" mark on the photo stays
       pic("susnjar.webp", { srcset: "photos/susnjar-1080.webp 1080w, photos/susnjar.webp 1600w", author: "ArchitectonicTravels", altKey: "photo.susnjar.obelisk" })
     ]
   },
