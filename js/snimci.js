@@ -28,3 +28,19 @@
   const kind = f => t('sn.g.' + f.id);
   const desc = f => t('sn.s.' + f.id);
   const capTexts = f => [f.title, catLabel(f) + ' / ' + f.src, f.y + ' · ' + kind(f)];
+
+  /* ---------- the tapes ---------- */
+  function cover(f, i) {
+    return `<div class="cv-top"><span class="cv-lbl">${esc(t('sn.cover'))}</span><span>#${num(i)}</span></div>` +
+      `<div class="cv-title">${esc(f.title)}</div>` +
+      `<div class="cv-frame"><b class="cv-year">${f.y}</b></div>` +
+      `<div class="cv-foot"><span class="cv-src">${esc(f.src)}</span><span class="cv-min">${f.min} ${esc(t('sn.min'))}</span></div>`;
+  }
+  stage.innerHTML = Array.from({ length: TOTAL }, (_, v) => {
+    const i = v % N, f = F[i];
+    return `<div class="tape" data-v="${v}" aria-hidden="true">` +
+      `<div class="face sp tone-${f.cat}"><i class="sp-band"></i><span class="sp-num">${num(i)}</span><span class="sp-title">${esc(f.title)}</span>` +
+      `<div class="sp-foot"><span class="sp-year">${f.y}</span><span class="sp-min">${f.min}′</span></div></div>` +
+      `<div class="face cv tone-${f.cat}">${cover(f, i)}</div></div>`;
+  }).join('');
+  const tapes = Array.from(stage.children);
