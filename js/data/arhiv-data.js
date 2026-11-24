@@ -24,6 +24,7 @@ window.ARCHIVE = {
     {"id": "trnova", "name": {"bs": "Trnova", "en": "Trnova"}, "coords": [44.8025494, 16.6683527], "approx": true}
   ],
   photos: [
+    {"f": "sana-1912", "y": 1912, "cat": "sana", "cap": "arh.c.sana-1912", "w": 800, "h": 504, "quiz": false},
     {"f": "trg-1900", "y": 1900, "cat": "ulice", "cap": "hist.ul.2.a", "w": 1079, "h": 604, "place": "trg", "src": "hist.src.book", "yl": "arh.y.c1900"},
     {"f": "spomenik-1915", "y": 1915, "cat": "ljudi", "cap": "hist.4.f.spomenik", "w": 632, "h": 479, "src": "hist.src.paper"},
     {"f": "spomenik-1915-novine", "y": 1915, "cat": "dokumenti", "cap": "hist.4.f.novine", "w": 720, "h": 476, "src": "hist.src.paper"},
