@@ -266,4 +266,14 @@
     });
   }
 
+  // ---------- labels: names at the lilies and the village names, placed where they cover nothing
+  const labels = $('zlj-labels');
+  const vils = Object.entries(PLACES).map(([n, [la, lo]]) => {
+    const e = document.createElement('div'); e.className = 'zlj-vil'; e.textContent = n; labels.appendChild(e);
+    return { e, n, v: new THREE.Vector3(X(lo), 0, Zc(la)), o: { el: e, optional: true, pri: 99 } };
+  });
+  pins.forEach(p => {
+    p.lab = document.createElement('div'); p.lab.className = 'zlj-lab'; p.lab.textContent = p.z.name; labels.appendChild(p.lab);
+    p.o = { el: p.lab };
+  });
 })();
