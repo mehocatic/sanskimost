@@ -88,3 +88,23 @@
   <!-- a circle that follows the mouse over the cover in the middle (wide screens with a mouse only) -->
   <div class="sn-cursor" id="cursor" aria-hidden="true"><span data-i18n="sn.cursor">Otvori</span></div>
 
+  <!-- one recording, opened -->
+  <dialog id="dt" class="on-paper" aria-labelledby="dt-title">
+    <button type="button" class="dt-x" id="dt-x"><span data-i18n="arh.close">Zatvori</span> ✕</button>
+    <div class="dt-grid">
+      <div class="dt-copy">
+        <div class="d-mask"><p class="d-line dt-sub" id="dt-sub"></p></div>
+        <div class="d-mask"><h2 class="d-line dt-title" id="dt-title"></h2></div>
+        <div class="d-mask"><p class="d-line dt-meta" id="dt-meta"></p></div>
+        <div class="d-mask"><p class="d-line dt-note" id="dt-note" hidden data-i18n="sn.note"></p></div>
+        <div class="d-mask"><p class="d-line dt-syn" id="dt-syn"></p></div>
+        <div class="d-mask"><p class="d-line dt-src" id="dt-src"></p></div>
+        <div class="d-mask"><div class="d-line dt-act">
+          <a class="dt-watch" id="dt-watch" target="_blank" rel="noopener noreferrer" aria-describedby="dt-ext" data-i18n="sn.watch">Gledaj na YouTubeu ↗</a>
+          <span class="dt-ext" id="dt-ext" data-i18n="sn.ext">Otvara se u novom prozoru, na YouTubeu.</span>
+        </div></div>
+      </div>
+      <div class="dt-poster" id="dt-poster" aria-hidden="true"></div>
+    </div>
+  </dialog>
+
