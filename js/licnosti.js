@@ -376,4 +376,51 @@
     measure(); buildKeys(); fromScroll(); measureLabels();
   }
 
+  let last = performance.now(), t0 = 0;
+  function frame(now) {
+    raf = requestAnimationFrame(frame);
+    const dt = Math.min((now - last) / 1000, .05); last = now;
+    const k = reduce ? 1 : 1 - Math.exp(-dt * 3.2);
+    cur.t.lerp(want.t, k); cur.dist += (want.dist - cur.dist) * k; cur.el += (want.el - cur.el) * k; cur.az += (want.az - cur.az) * k;
+    const az = cur.az + (reduce ? 0 : Math.sin(now / 9000) * .04);
+    camera.position.set(cur.t.x + cur.dist * Math.cos(cur.el) * Math.sin(az), cur.t.y + cur.dist * Math.sin(cur.el), cur.t.z + cur.dist * Math.cos(cur.el) * Math.cos(az));
+    camera.lookAt(cur.t);
+
+    const active = Math.round(S) - 1;
+    // the lilies get smaller when the camera is high above the whole valley
+    const lilyK = THREE.MathUtils.lerp(1, small ? .55 : .62, THREE.MathUtils.smoothstep(cur.dist, 12, 34));
+    const lilyPx = .042 * lilyK * camera.projectionMatrix.elements[5] * innerHeight / 2;
+    const unit = camera.projectionMatrix.elements[5] * innerHeight / 2;
+    pins.forEach((p, i) => {
+      p.rise += ((S > i + .55 ? 1 : 0) - p.rise) * (reduce ? 1 : 1 - Math.exp(-dt * 2.6));
+      const r = p.rise, isNow = i === active;
+      p.stem.scale.y = Math.max(r * p.colh, .0001);
+      const rad = .8 * camera.position.distanceTo(tmp.set(p.x, p.y + r * p.colh / 2, p.zz)) / unit;
+      p.stem.scale.x = p.stem.scale.z = rad;
+      p.spr.position.y = r * p.colh;
+      p.spr.material.opacity = THREE.MathUtils.smoothstep(r, .6, 1);
+      p.spr.scale.set(.036 * lilyK, .042 * lilyK, 1);
+      terrainMat.uniforms.uPin.value[i].set(p.x, p.zz, r, isNow ? 1 : 0);
+      p.lab.classList.toggle('on', r > .7); p.lab.classList.toggle('now', isNow && r > .7);
+    });
+
+    // labels: the person in focus first, then the others, then the village names
+    const order = pins.map((p, i) => {
+      const top = p.rise > .05 ? toScreen(tmp.set(p.x, p.y + p.rise * p.colh, p.zz)) : null;
+      const at = top && [top[0], top[1] - lilyPx * .5];
+      return Object.assign(p.o, { at, show: p.rise > .7, mw: lilyPx * .85, mh: lilyPx, pri: i === active ? -1 : i,
+        mark: at && p.rise > .5 ? [at[0] - lilyPx * .43, at[1] - lilyPx / 2, at[0] + lilyPx * .43, at[1] + lilyPx / 2] : null });
+    }).sort((a, b) => a.pri - b.pri);
+    vils.forEach(v => {
+      v.v.y = worldY(v.v.x, v.v.z) + .05;
+      // a village name steps back once a person from that village has a pin there
+      order.push(Object.assign(v.o, { at: toScreen(v.v), show: !pins.some(p => placeOf(p.z) === v.n && p.rise > .5), mw: 4, mh: 4, mark: null }));
+    });
+    layoutLabels(order);
+
+    terrainMat.uniforms.uT.value = reduce ? 1 : Math.min((now - t0) / 4200, 1);
+    terrainMat.uniforms.uTime.value = reduce ? 0 : now / 1000;
+    renderer.render(scene, camera);
+  }
+
 })();
