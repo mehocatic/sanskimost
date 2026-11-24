@@ -727,6 +727,8 @@
         const assets = PRINTS.map((pr, idx) => {
           const outer = idx < OUTER_COUNT;
           const { pw, ph } = frameDims(pr);
+          const mw = pw + 2 * MOUNT, mh = ph + 2 * MOUNT, fw = mw + 2 * FRAME, fh = mh + 2 * FRAME;
+          const glowH = Math.min(1.15, 5.4 - (PY + fh / 2)) + fh * .7, labelX = -fw / 2 + LABEL_W / 2;
           const a = {
             pw, ph,
             haloGeo: new THREE.PlaneGeometry(2.1 * pw, 1.75 * ph), shadowGeo: new THREE.PlaneGeometry(1.25 * pw, 1.18 * ph),
