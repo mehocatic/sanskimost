@@ -13,7 +13,8 @@
   // everyone in the order of the fields, then the order of the data file; the walls take turns, so both walls go through the fields together
   const CATS = window.LICNOSTI_CATS || [], SIZES = window.LICNOSTI_PHOTOS || {};
   const ALL = CATS.flatMap(c => (window.LICNOSTI || []).filter(p => p.cat === c.id));
-  const outerP = ALL.filter((p, i) => i % 2 === 0), innerP = ALL.filter((p, i) => i % 2 === 1);
+  // the first person goes on the inner wall, which the camera faces at the start
+  const innerP = ALL.filter((p, i) => i % 2 === 0), outerP = ALL.filter((p, i) => i % 2 === 1);
   const OUTER_COUNT = outerP.length, INNER_COUNT = innerP.length;
   // without a portrait (Hasan-beg Cekic, Arif Hukanovic): a card with the initials, 3:4
   const PRINTS = [...outerP, ...innerP].map((p, i) => {
