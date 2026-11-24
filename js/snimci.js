@@ -305,3 +305,30 @@
   $('dt-x').addEventListener('click', closeDetail);
   dlg.addEventListener('cancel', e => { e.preventDefault(); closeDetail(); });
 
+  /* ---------- language, size, first picture ---------- */
+  function texts() {
+    $('count').textContent = t('sn.count', { n: N });
+    setCaption(active, 0, true);
+    stage.querySelectorAll('.cv-lbl').forEach(el => { el.textContent = t('sn.cover'); });
+    stage.querySelectorAll('.cv-min').forEach((el, v) => { el.textContent = F[v % N].min + ' ' + t('sn.min'); });
+    if (dlg.open) fill(shown);
+  }
+  addEventListener('langchange', () => { texts(); wake(); });
+  addEventListener('resize', measure);
+  mqReduce.addEventListener('change', wake);
+
+  active = 0;
+  tabs.querySelector('[data-cat="' + F[0].cat + '"]').setAttribute('aria-current', 'true');
+  texts();
+  measure();
+  document.fonts && document.fonts.ready.then(() => { measure(); });
+
+  // a shared address: #snimak=<id>
+  const m = /^#snimak=([\w-]+)/.exec(location.hash);
+  const at = m ? F.findIndex(f => f.id === m[1]) : -1;
+  if (at >= 0) {
+    s = T = START + at; active = at;
+    setActive(at, 0); setCaption(at, 0, true);
+    requestAnimationFrame(() => { frame(performance.now()); openDetail(true); });
+  }
+})();
