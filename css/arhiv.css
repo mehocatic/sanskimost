@@ -405,3 +405,6 @@
   flex: none; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%;
   border: 1px solid rgba(246, 244, 238, .3); transition: background .4s ease, color .4s ease, border-color .4s ease;
 }
+.vid-go svg { transition: translate .5s cubic-bezier(.2, .8, .2, 1); }
+.vid-cta:hover .vid-go { background: var(--sand); border-color: var(--sand); color: var(--ink); }
+.vid-cta:hover .vid-go svg { translate: 3px 0; }
