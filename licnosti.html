@@ -41,39 +41,18 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="t-open" data-i18n="nav.menu">Meni</span><span class="t-close" data-i18n="nav.close">Zatvori</span></button>
   </nav>
 
-  <main>
-    <section class="zlj zlj-page on-deep" id="zlatni-ljiljani" aria-labelledby="zlj-title">
-      <div class="zlj-grid">
-        <div class="zlj-side">
-          <svg class="zlj-lily" id="zlj-lily" viewBox="0 0 200 240" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="zlj-gold" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#f6e3a8"/><stop offset=".5" stop-color="#d4af5a"/><stop offset="1" stop-color="#8f6a22"/>
-              </linearGradient>
-              <radialGradient id="zlj-halo"><stop offset="0" stop-color="#d4af5a" stop-opacity=".32"/><stop offset="1" stop-color="#d4af5a" stop-opacity="0"/></radialGradient>
-            </defs>
-            <circle class="zlj-halo" cx="100" cy="118" r="100" fill="url(#zlj-halo)"/>
-            <g class="zlj-shape">
-              <path pathLength="1" d="M100 8C112 34 124 62 120 92C117 114 108 130 100 146C92 130 83 114 80 92C76 62 88 34 100 8Z"/>
-              <path pathLength="1" d="M106 138C112 108 134 84 160 82C184 80 198 98 192 120C188 136 172 144 160 138C170 134 176 124 172 114C166 102 150 102 140 112C130 122 126 134 124 144Z"/>
-              <path pathLength="1" d="M94 138C88 108 66 84 40 82C16 80 2 98 8 120C12 136 28 144 40 138C30 134 24 124 28 114C34 102 50 102 60 112C70 122 74 134 76 144Z"/>
-              <path pathLength="1" d="M62 146H138Q142 146 142 150V158Q142 162 138 162H62Q58 162 58 158V150Q58 146 62 146Z"/>
-              <path pathLength="1" d="M100 166C106 184 110 204 100 232C90 204 94 184 100 166Z"/>
-              <path pathLength="1" d="M110 166C122 182 140 190 160 186C150 200 126 202 110 178Z"/>
-              <path pathLength="1" d="M90 166C78 182 60 190 40 186C50 200 74 202 90 178Z"/>
-            </g>
-            <path class="zlj-rib" pathLength="1" d="M100 34V132"/>
-          </svg>
-          <p class="eyebrow zlj-eyebrow" data-i18n="lic.zlj.eyebrow">Najviše ratno priznanje</p>
-          <h1 id="zlj-title" data-i18n="lic.zlj.title">Zlatni ljiljani Sanskog Mosta</h1>
-          <p class="zlj-lead" data-i18n="lic.zlj.lead">Zlatni ljiljan je najviše ratno priznanje Armije Republike Bosne i Hercegovine iz rata od 1992. do 1995.</p>
-          <p class="zlj-sub" data-i18n="lic.zlj.sub">Ljiljan je hiljadu godina simbol Bosne.</p>
-          <p class="zlj-foot"><span id="zlj-count"></span> <a id="zlj-src" href="#" rel="noopener" target="_blank"></a></p>
-          <a class="zlj-people" href="hodnik" data-i18n="lic.zlj.people">Ličnosti Sanskog Mosta →</a>
-        </div>
-        <ol class="zlj-roll" id="zlj-list"></ol>
+  <main class="zlj on-mist" id="zlatni-ljiljani">
+    <section class="zlj-st zlj-intro" aria-labelledby="zlj-title">
+      <div class="zlj-card">
+        <p class="zlj-sc" data-i18n="lic.zlj.eyebrow">Najviše ratno priznanje</p>
+        <h1 id="zlj-title" data-i18n="lic.zlj.title">Zlatni ljiljani Sanskog Mosta</h1>
+        <p data-i18n="lic.zlj.lead">Zlatni ljiljan je najviše ratno priznanje Armije Republike Bosne i Hercegovine iz rata od 1992. do 1995.</p>
+        <p class="zlj-it" data-i18n="lic.zlj.sub">Ljiljan je hiljadu godina simbol Bosne.</p>
       </div>
+      <span class="zlj-hint" data-i18n="hero.scroll" aria-hidden="true">Pomjerite prema dolje</span>
     </section>
+
+    <ol class="zlj-list" id="zlj-list"></ol>
   </main>
 
   <footer class="site-foot on-deep">
