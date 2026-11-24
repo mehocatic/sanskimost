@@ -228,4 +228,26 @@
     scene.add(new THREE.Mesh(g, terrainMat));
   }
 
+  // the lily on top of each pin: drawn large (mipmapped, so it stays sharp when small), gold with a dark outline,
+  // on a thin paper halo so it reads over the contour lines
+  function lilyTexture() {
+    const W = 512, Hh = 600, k = W / 220;
+    const c = document.createElement('canvas'); c.width = W; c.height = Hh;
+    const x = c.getContext('2d');
+    x.translate(10 * k, 4 * k); x.scale(k, k);
+    const all = [...LILY_C.map(d => [new Path2D(d), false]), ...LILY_R.flatMap(d => [[new Path2D(d), false], [new Path2D(d), true]])];
+    const each = fn => all.forEach(([path, mir]) => { x.save(); if (mir) { x.translate(200, 0); x.scale(-1, 1); } fn(path); x.restore(); });
+    x.lineJoin = 'round'; x.lineCap = 'round';
+    x.strokeStyle = 'rgba(238,235,227,.95)'; x.lineWidth = 15; each(pa => x.stroke(pa));
+    const g = x.createLinearGradient(40, 0, 160, 240);
+    g.addColorStop(0, '#f0d58c'); g.addColorStop(.45, '#c49a45'); g.addColorStop(1, '#7d5c20');
+    x.fillStyle = g; each(pa => x.fill(pa));
+    x.strokeStyle = '#4d3a14'; x.lineWidth = 3.4; each(pa => x.stroke(pa));
+    x.strokeStyle = '#5a4316'; x.lineWidth = 3.5; x.stroke(new Path2D(LILY_RIB));
+    x.strokeStyle = 'rgba(255,244,210,.7)'; x.lineWidth = 2.5; x.stroke(new Path2D('M92 44C87 60 86 80 90 100'));
+    const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+    tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    return tex;
+  }
+
 })();
