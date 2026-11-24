@@ -227,6 +227,8 @@ html:has(#dt[open]) { overflow: hidden; }
   width: var(--CW); height: var(--CD); left: calc(var(--CW) / -2); top: calc(var(--CD) / -2); transform: rotateX(90deg) translateZ(calc(var(--CH) / 2));
   background: linear-gradient(90deg, #2d2d2d, #1b1b1b 70%, #141414); border-radius: 2px;
 }
+.vc-svg { display: block; width: 100%; height: 100%; }
+.vc-svg .vf-acc { fill: var(--accent); }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
