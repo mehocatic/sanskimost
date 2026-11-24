@@ -187,8 +187,11 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
 }
 @media (orientation: landscape) and (max-height: 500px) {
   .hint { display: none; }
-  .caption { bottom: 18px; }
-  .headline { font-size: min(11vw, 24vh); white-space: nowrap; }
+  .caption, .plate { bottom: 18px; right: 132px; }
+  .headline { font-size: min(8vw, 17vh); }
+  .intro-mask, .plate-role { display: none; }
+  .plate-name { font-size: min(7vw, 15vh); }
+  .plate-open { margin-top: 8px; }
   .arrows { left: auto; right: 16px; bottom: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
