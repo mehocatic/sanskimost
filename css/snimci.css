@@ -202,3 +202,6 @@ html:has(#dt[open]) { overflow: hidden; }
   .dt-poster { order: -1; --HP: min(46svh, 360px); }
   .dt-title { font-size: 1.8rem; }
 }
+@media (prefers-reduced-motion: reduce) {
+  .sn-back, .sn-tabs button, .dt-watch, .dt-x { transition-duration: 1ms !important; }
+}
