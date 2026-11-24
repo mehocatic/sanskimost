@@ -229,6 +229,9 @@ html:has(#dt[open]) { overflow: hidden; }
 }
 .vc-svg { display: block; width: 100%; height: 100%; }
 .vc-svg .vf-acc { fill: var(--accent); }
+.vc-svg .vf-hand { font-family: "Caveat", cursive; fill: #22304d; }
+.vc-svg .vf-num { font-family: var(--sans); font-size: 7px; font-weight: 600; letter-spacing: .06em; fill: #22304d; }
+.vc-svg .reel { transform-box: fill-box; transform-origin: center; animation: reel 5.5s linear infinite; }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
