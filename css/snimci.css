@@ -174,3 +174,15 @@ html:has(#dt[open]) { overflow: hidden; }
 .dt-poster .cv-title { font-size: clamp(1.15rem, 2vw, 1.7rem); }
 .dt-poster .cv-year { font-size: calc(var(--HP) * .16); }
 
+/* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
+@media (min-width: 768px) {
+  #sn { height: 100svh; overflow: hidden; }
+  .sn-credit { position: absolute; left: 0; right: 0; bottom: 6px; margin: 0; padding: 0 var(--pad); max-width: none; }
+}
+
+/* wide screens: the way back and the count sit beside the title, not above it */
+@media (min-width: 768px) {
+  .sn-row { position: absolute; left: var(--pad); right: var(--pad); top: 84px; margin: 0; pointer-events: none; }
+  .sn-row > * { pointer-events: auto; }
+}
+
