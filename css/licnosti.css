@@ -14,3 +14,8 @@
 .zlj-lab.now { color: var(--ink); text-decoration: underline; text-decoration-color: var(--leaf); text-underline-offset: 3px; }
 .zlj-loading { position: fixed; left: 50%; top: 50%; z-index: 1; transform: translate(-50%, -50%); font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--ink-muted); }
 
+/* the story: one block per stop of the flight; the page has no footer, so it ends on the whole valley */
+.zlj-list { list-style: none; }
+.zlj-st { position: relative; z-index: 2; display: flex; align-items: center; min-height: 115svh; padding: 0 var(--gutter); }
+.zlj-intro { min-height: 100svh; }
+
