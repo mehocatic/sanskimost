@@ -273,4 +273,6 @@ html:has(#dt[open]) { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   .sn-back, .sn-tabs button, .dt-watch, .dt-x { transition-duration: 1ms !important; }
+  .vhs-scene, .vhs-floor, .vc-svg .reel { animation: none; }
+  .vhs-cas { animation: none; --out: .47; }
 }
