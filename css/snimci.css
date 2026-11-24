@@ -190,6 +190,8 @@ html:has(#dt[open]) { overflow: hidden; }
 
 /* the sleeve */
 .vhs .vs { position: absolute; top: calc(var(--S) / -2); height: var(--S); box-sizing: border-box; }
+.vhs .vs-front { width: var(--SW); left: calc(var(--SW) / -2); transform: translateZ(calc(var(--SD) / 2)); padding: calc(var(--S) * .028) calc(var(--S) * .028) calc(var(--S) * .022); border-radius: 2px 2px 3px 3px; box-shadow: none; }
+.vhs .vs-left { width: var(--SD); left: calc(var(--SD) / -2); transform: rotateY(-90deg) translateZ(calc(var(--SW) / 2)); --shade: .34; padding-bottom: calc(var(--S) * .02); }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
