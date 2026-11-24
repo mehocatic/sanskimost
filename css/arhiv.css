@@ -450,3 +450,6 @@
 }
 
 @keyframes vid-in { from { opacity: 0; translate: 0 18px; } }
+@keyframes reel { to { transform: rotate(360deg); } }
+@keyframes vid-peek { 0%, 24%, 100% { translate: 0 0; } 10% { translate: 12px -1px; } }
+@keyframes rec { 50% { opacity: .35; } }
