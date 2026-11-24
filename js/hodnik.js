@@ -739,7 +739,7 @@
             labelMat: new THREE.MeshBasicMaterial({ map: this.labels[idx].tex, transparent: true, depthWrite: false }),
             thumb: thumbs[idx]
           };
-          this.disposables.push(a.haloGeo, a.shadowGeo, a.frameGeo, a.printGeo, a.printMat, a.labelMat);
+          this.disposables.push(a.haloGeo, a.shadowGeo, a.labelGeo, a.mountGeo, a.bevelGeo, a.printGeo, a.printMat, a.labelMat);
           return a;
         });
 
