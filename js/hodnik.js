@@ -861,7 +861,8 @@
 
       step(dir) {
         if (this.overlay) return;
-        if (this.focusedEntry) { this.stepBack(); return; }
+        // in focus the arrows go from portrait to portrait, in the order of the fields
+        if (this.focusedEntry) { const k = ORDER.indexOf(this.focusedEntry.printIndex); this.focusPrint(ORDER[(k + dir + ORDER.length) % ORDER.length]); return; }
         if (this.glide && this.glide.mode === 'intro') this.glide = null;
         const d = this.walkOffset();
         this.targetTh = (Math.round((this.targetTh - d) / STEP) - dir) * STEP + d;
