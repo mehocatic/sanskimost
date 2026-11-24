@@ -750,11 +750,21 @@
           group.position.set(cx, 0, cz);
           if (wall === 'outer') group.lookAt(0, 0, 0); else group.lookAt(cx * 2, 0, cz * 2);
           const put = (geo, mat, x, y, z) => { const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); group.add(m); return m; };
-          put(a.haloGeo, haloMat, 0, PY + .05, .005);
-          put(a.shadowGeo, shadowMat, .05, PY - .06, .01);
-          put(a.frameGeo, frameMat, 0, PY, .045);
-          const printMesh = put(a.printGeo, a.printMat, 0, PY, .077);
-          put(labelGeo, a.labelMat, -a.pw / 2 + .46, PY - a.ph / 2 - .42, .02);
+          // layers stand a few millimetres apart (not fractions of one), so far away they do not fight over the same pixels and flicker
+          put(a.haloGeo, haloMat, 0, a.glowTop - a.glowH / 2, a.wallZ + .006);
+          put(a.shadowGeo, shadowMat, .07, PY - .1, a.wallZ + .012);
+          const mountMesh = put(a.mountGeo, mountMat, 0, PY, .05);
+          put(a.bevelGeo, bevelMat, 0, PY, .054);
+          const printMesh = put(a.printGeo, a.printMat, 0, PY, .058);
+          // the frame in front of the mount, and the same outline a little lower and to the right, darker, as its shadow on the wall
+          group.updateMatrixWorld(true);
+          // the frame, the mount and the photograph bend with the wall too, so no edge stands off a curved wall
+          const R = wall === 'outer' ? OUTER_RADIUS : INNER_RADIUS, sign = wall === 'outer' ? 1 : -1;
+          const bend = x => sign * (R - Math.sqrt(R * R - Math.min(x * x, R * R * .98)));
+          addFrame(group.matrixWorld, a.mw, a.mh, 0, PY, .068, bend);
+          addSides(group.matrixWorld, a.mw, a.mh, PY, bend, a.wallZ, .066);
+          shadowFrames.push([group.matrixWorld.clone(), a.mw, a.mh, bend, a.wallZ]);
+          put(a.labelGeo, a.labelMat, a.labelX, PY - a.fh / 2 - .1 - LABEL_W * LABEL_CH / 2 / 640, a.wallZ + .02);
           const entry = { printIndex, angle, wall, pw: a.pw, ph: a.ph, mesh: printMesh, mat: a.printMat, thumb: a.thumb, full: null, loading: false };
           printMesh.userData.entry = entry;
           this.entries.push(entry); this.meshes.push(printMesh);
