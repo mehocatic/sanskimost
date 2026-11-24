@@ -226,6 +226,7 @@
     } catch (e) { return false; }
 
     const OUTER_RADIUS = 18, INNER_RADIUS = 12.2, WALL_HEIGHT = 6.2, PY = 1.95;
+    const LABEL_W = 1.45, LABEL_CH = 196; // the name label under a portrait: width in world units, height of its canvas (at 640 wide)
     const STEP = (2 * Math.PI) / OUTER_COUNT;
 
     // frame size on the wall (world units, not pixels): a photograph is never shown above its natural size on a normal screen
