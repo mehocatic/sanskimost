@@ -771,8 +771,33 @@
           this.entries.push(entry);
           scene.add(group);
         };
-        for (let s = 0; s < OUTER_COUNT; s++) make(s, s * 2 * Math.PI / OUTER_COUNT, 'outer');
-        for (let k = 0; k < INNER_COUNT; k++) make(OUTER_COUNT + k, (k + .5) * 2 * Math.PI / INNER_COUNT, 'inner');
+        // the camera looks towards smaller angles, so the people go that way: walking forward goes through the fields in order
+        for (let s = 0; s < OUTER_COUNT; s++) make(s, -(s + 1) * 2 * Math.PI / OUTER_COUNT, 'outer');
+        for (let k = 0; k < INNER_COUNT; k++) make(OUTER_COUNT + k, -(k + .5) * 2 * Math.PI / INNER_COUNT, 'inner');
+
+        // the frames: one mesh per kind of piece; then their shadows, the same outlines a little lower and to the right, black and see-through
+        const flush = makeMat => {
+          for (const k of Object.keys(pieceTex)) {
+            const g = new THREE.BufferGeometry();
+            g.setAttribute('position', new THREE.Float32BufferAttribute(piecePos[k], 3));
+            g.setAttribute('uv', new THREE.Float32BufferAttribute(pieceUv[k], 2));
+            piecePos[k] = []; pieceUv[k] = [];
+            const mat = makeMat(pieceTex[k]);
+            this.disposables.push(g, mat);
+            scene.add(new THREE.Mesh(g, mat));
+          }
+        };
+        // alpha to coverage gives the cut-out outline soft edges without sorting see-through pieces
+        flush(map => new THREE.MeshBasicMaterial({ map, alphaTest: .5, alphaToCoverage: true }));
+        // the shadow lies on the wall, only a little below and to the right of the frame, since the frame stands close to the wall
+        for (const [m, w, h, bend, wallZ] of shadowFrames) addFrame(m, w, h, .012, PY - .022, wallZ + .009, bend);
+        flush(map => new THREE.MeshBasicMaterial({ map, color: 0x000000, transparent: true, opacity: .16, depthWrite: false }));
+        const sideGeo = new THREE.BufferGeometry();
+        sideGeo.setAttribute('position', new THREE.Float32BufferAttribute(sidePos, 3));
+        sideGeo.setAttribute('color', new THREE.Float32BufferAttribute(sideCol, 3));
+        const sideMat = new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.DoubleSide });
+        this.disposables.push(sideGeo, sideMat);
+        scene.add(new THREE.Mesh(sideGeo, sideMat));
       }
 
       // full-size pictures only for the frames the camera can see (and the focused one): the rest keep the small picture, so memory stays small on a phone
