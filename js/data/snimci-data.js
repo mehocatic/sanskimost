@@ -17,5 +17,9 @@ window.SNIMCI = {
       title: 'Ulazak mlade vojske 5. korpusa u Sanski Most' },
     { id: 'ap-borbe', cat: 'sana', y: 1995, min: 5, yt: '9Rlh6HKWp6I', src: 'AP ARCHIVE',
       title: 'Battle Rages Near Sanski Most' },
+    { id: 'brdanin', cat: 'tribunal', y: 2004, min: 45, yt: 'dFiiYn865eA', src: 'HAŠKI TRIBUNAL (MKSJ)',
+      title: 'Presuda Pretresnog vijeća: Radoslav Brđanin' },
+    { id: 'stanisic-simatovic', cat: 'tribunal', y: 2023, min: 30, yt: 'jk93wI3lDLo', src: 'SENSE CENTAR / MRMKS',
+      title: 'Stanišić i Simatović – Žalbena presuda' }, // TODO(verify) "Sanski Most 1992. i 1995." in the description
   ]
 };
