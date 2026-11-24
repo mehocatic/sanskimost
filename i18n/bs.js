@@ -367,7 +367,7 @@ I18N.bs = {
   'hod.meta': 'Ličnosti Sanskog Mosta u galeriji portreta: sport, nauka i književnost, muzika, umjetnost, baština i sjećanje na rat. Kratke biografije s izvorima.',
   'hod.stage': 'Galerija portreta. Strelicama ulijevo i udesno se krećete, Enter otvara biografiju.',
   'hod.kicker': 'Galerija portreta',
-  'hod.headline': 'Hodnik ličnosti',
+  'hod.headline': 'Ličnosti Sanskog Mosta',
   'hod.hint.walk1': 'Skroluj ili prevuci za šetnju',
   'hod.hint.walk2': 'Kliknite portret da priđete bliže',
   'hod.hint.focus1': 'Kliknite portret za biografiju',
