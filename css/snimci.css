@@ -45,3 +45,13 @@
 .stage { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; }
 .tape { position: absolute; left: 0; top: 0; width: 0; height: 0; transform-style: preserve-3d; will-change: transform; cursor: pointer; }
 
+.face {
+  position: absolute; top: calc(var(--H) / -2); height: var(--H); box-sizing: border-box; overflow: hidden;
+  border-radius: 2px; border: 1px solid rgba(255, 255, 255, .1); backface-visibility: hidden;
+}
+.face::after { content: ""; position: absolute; inset: 0; background: #000; opacity: var(--shade, 0); pointer-events: none; border-radius: 2px; }
+.tone-logori { background: #1d1a18; --accent: #b83b28; }
+.tone-sana { background: #1a1f24; --accent: #3d6386; }
+.tone-tribunal { background: #161d2e; --accent: #1f3fb0; }
+.tone-doc { background: #1f201b; --accent: #82784a; }
+
