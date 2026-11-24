@@ -107,4 +107,21 @@
     if (two.length > 1) two[0].colh = COLH * 1.5;
   });
 
+  // ---------- heights (Web Mercator pixels at zoom 11; the file starts at pixel OX, OY)
+  const N = 2 ** 11 * 256, OX = 286009, OY = 188786;
+  const gx = lon => (lon + 180) / 360 * N;
+  const gy = lat => { const r = lat * Math.PI / 180; return (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * N; };
+  let H = null, HW = 0, HH = 0;
+  async function loadHeights() {
+    const im = new Image();
+    im.src = 'photos/teren/visine.png';
+    await im.decode();
+    HW = im.naturalWidth; HH = im.naturalHeight;
+    const c = document.createElement('canvas'); c.width = HW; c.height = HH;
+    const x = c.getContext('2d', { willReadFrequently: true });
+    x.drawImage(im, 0, 0);
+    const d = x.getImageData(0, 0, HW, HH).data;
+    H = new Float32Array(HW * HH);
+    for (let i = 0; i < H.length; i++) H[i] = d[i * 4] * 256 + d[i * 4 + 1] - 32768;
+  }
 })();
