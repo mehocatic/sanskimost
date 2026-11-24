@@ -9,5 +9,9 @@
 // y: stays as it is for now; Meho will replace the years on the spines with pictures later.
 window.SNIMCI = {
   films: [
+    { id: 'aziz-catic', cat: 'logori', y: 1992, min: 42, yt: 'nh4WTYZyMBg', src: 'USMENO SVJEDOČANSTVO / LOGORAŠI',
+      title: 'Svjedočenje Aziza Čatića – Logori Betonirka i Manjača' },
+    { id: 'ap-sana-zauzeta', cat: 'sana', y: 1995, min: 4, yt: 'IIXzOJLKRrg', src: 'AP ARCHIVE',
+      title: 'Sanski Most Captured By Bosnian Army' },
   ]
 };
