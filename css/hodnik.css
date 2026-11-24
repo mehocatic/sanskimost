@@ -123,8 +123,13 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
 #lb::backdrop { background: rgba(58, 53, 80, .35); }
 #lb[open] { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, .8fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
 .lb-ph { height: 100%; min-height: 0; display: flex; align-items: center; justify-content: center; }
-/* never larger than the photograph itself: the natural size, only shrunk to fit */
-.lb-ph img { max-width: 100%; max-height: 100%; width: auto; height: auto; border: 8px solid var(--frame); box-shadow: 0 24px 60px rgba(120, 90, 50, .26); }
+/* the photograph in the carved frame of the corridor: hodnik.js sizes the picture (never above its natural size) and draws the frame
+   and the mount on the canvas round it; the padding is the room the frame takes */
+.lb-art { position: relative; flex: none; }
+.lb-art img { display: block; position: relative; z-index: 0; }
+.lb-art .lb-mono { display: flex; position: relative; z-index: 0; }
+.lb-ph img { max-width: none; max-height: none; }
+.lb-frame { position: absolute; inset: 0; z-index: 1; pointer-events: none; filter: drop-shadow(0 16px 26px rgba(90, 70, 40, .28)) drop-shadow(0 2px 3px rgba(60, 45, 25, .25)); }
 .lb-txt { max-height: 100%; overflow-y: auto; }
 .lb-mono { width: min(360px, 70%); aspect-ratio: 3 / 4; background: #F6EAD8; border: 8px solid var(--frame); box-shadow: 0 24px 60px rgba(120, 90, 50, .26); font-size: clamp(5rem, 10vw, 9rem); }
 .lb-cat { margin: 0 0 14px; font-family: var(--h-mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-60); }
