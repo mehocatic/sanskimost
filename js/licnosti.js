@@ -431,4 +431,8 @@
   t0 = performance.now();
   raf = requestAnimationFrame(frame);
 
+  addEventListener('scroll', fromScroll, { passive: true });
+  addEventListener('resize', resize);
+  document.fonts && document.fonts.ready.then(measureLabels);
+  addEventListener('langchange', () => { renderCards(); measure(); fromScroll(); });
 })();
