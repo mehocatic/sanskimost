@@ -943,7 +943,7 @@
         if (this.camera && e.pointerType === 'mouse') {
           const m = this.hitAt(e.clientX, e.clientY);
           host.classList.toggle('pointer', !!m);
-          this.hoveringFocused = !!m && !!this.focusedEntry && m === this.focusedEntry.mesh;
+          this.hoveringFocused = !!m && !!this.focusedEntry && m.userData.entry === this.focusedEntry;
           this.updatePill();
         }
       }
