@@ -252,6 +252,7 @@ I18N.en = {
   'lic.zlj.note': 'Note',
   'lic.zlj.loading': 'Loading the terrain…',
   'lic.zlj.seven': 'Seven lilies',
+  'lic.zlj.places': 'The points mark the places of birth.',
   'lic.source': 'Source',
   'lic.count': '{n} people',
   'lic.note.h': "Suggest someone",
