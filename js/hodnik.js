@@ -544,16 +544,19 @@
       }
 
       backdropTextures() {
-        const radial = (inner, outer) => {
-          const c = document.createElement('canvas'); c.width = c.height = 256;
-          const x = c.getContext('2d'), g = x.createRadialGradient(128, 128, 0, 128, 128, 128);
-          g.addColorStop(0, inner); g.addColorStop(.35, inner); g.addColorStop(1, outer);
-          x.fillStyle = g; x.fillRect(0, 0, 256, 256);
-          const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
-          this.disposables.push(tex);
-          return tex;
-        };
-        const haloTex = radial('rgba(255,255,255,0.95)', 'rgba(255,255,255,0)');
+        // a warm wash of light on the wall, strongest under the rail and fading down and to the sides, as under a gallery lamp
+        // drawn pixel by pixel, so it fades to nothing at every edge of its plane
+        const S = 128, hc = document.createElement('canvas'); hc.width = hc.height = S;
+        const hx = hc.getContext('2d'), img = hx.createImageData(S, S);
+        for (let py = 0; py < S; py++) for (let px = 0; px < S; px++) {
+          const u = (px + .5) / S * 2 - 1, v = (py + .5) / S;
+          const across = Math.max(0, 1 - u * u / Math.max(.05, .35 + .65 * v)); // narrow at the top, wider lower down
+          const a = Math.pow(across, 2) * Math.pow(1 - v, 1.4) * Math.min(1, v * 4.5);
+          const o = (py * S + px) * 4;
+          img.data[o] = 255; img.data[o + 1] = 251; img.data[o + 2] = 242; img.data[o + 3] = Math.round(a * 215);
+        }
+        hx.putImageData(img, 0, 0);
+        const haloTex = new THREE.CanvasTexture(hc); haloTex.colorSpace = THREE.SRGBColorSpace; this.disposables.push(haloTex);
         const c = document.createElement('canvas'); c.width = c.height = 256;
         const x = c.getContext('2d'), g = x.createRadialGradient(128, 128, 0, 128, 128, 128);
         g.addColorStop(0, 'rgba(120,90,50,0.28)'); g.addColorStop(.25, 'rgba(120,90,50,0.28)'); g.addColorStop(1, 'rgba(120,90,50,0)');
