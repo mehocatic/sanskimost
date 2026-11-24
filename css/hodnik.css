@@ -181,7 +181,7 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
   .lb-ph { height: auto; }
 
   .lb-txt { overflow: visible; }
-  .lb-mono { width: min(240px, 60vw); margin: 0 auto; }
+
   .lb-cat { margin: 22px 0 10px; }
   .lb-x { right: 12px; }
 }
