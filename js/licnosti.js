@@ -84,4 +84,22 @@
   const COLH = 1.6;                                     // height of a pin
   const small = innerWidth < 700;
 
+  // the pins; two people from one village stand about 900 m apart around the village point, on a line across the
+  // direction of the nearest other village (Vrhpolje and Hrustovo are 2 km apart), and the one further north
+  // (further from the camera) gets a taller stem, so the two lilies do not cover each other from above
+  const many = {}, seen = {};
+  Z.forEach(z => { const v = placeOf(z); many[v] = (many[v] || 0) + 1; });
+  const pins = Z.filter(z => PLACES[placeOf(z)]).map(z => {
+    const v = placeOf(z), p = PLACES[v], x = X(p[1]), zz = Zc(p[0]);
+    const n = (seen[v] = (seen[v] || 0) + 1);
+    if (many[v] < 2) return { z, x, zz, colh: COLH };
+    let nx = 0, nz = 0, best = Infinity;
+    Object.entries(PLACES).forEach(([o, q]) => {
+      if (o === v) return;
+      const dx = X(q[1]) - x, dz = Zc(q[0]) - zz, d = Math.hypot(dx, dz);
+      if (d < best) { best = d; nx = dx / d; nz = dz / d; }
+    });
+    const s = n === 1 ? -.45 : .45;
+    return { z, x: x - nz * s, zz: zz + nx * s, colh: COLH };
+  });
 })();
