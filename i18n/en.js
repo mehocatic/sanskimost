@@ -251,6 +251,7 @@ I18N.en = {
   'lic.zlj.unit': 'Unit',
   'lic.zlj.note': 'Note',
   'lic.zlj.loading': 'Loading the terrain…',
+  'lic.zlj.seven': 'Seven lilies',
   'lic.source': 'Source',
   'lic.count': '{n} people',
   'lic.note.h': "Suggest someone",

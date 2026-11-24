@@ -253,6 +253,7 @@ I18N.bs = {
   'lic.zlj.unit': 'Jedinica',
   'lic.zlj.note': 'Napomena',
   'lic.zlj.loading': 'Učitavam teren…',
+  'lic.zlj.seven': 'Sedam ljiljana',
   'lic.source': 'Izvor',
   'lic.count': '{n} ličnosti',
   'lic.note.h': "Predloži ličnost",
