@@ -351,3 +351,7 @@
 .scrub { transition: opacity .35s ease, translate .35s ease; }
 .scrub.away { opacity: 0; translate: 0 20px; pointer-events: none; }
 .v-map .site-foot { display: none; }
+
+/* link to the video recordings (snimci.html), in the line above the title */
+.arh-video { padding: 12px 2px; color: var(--paper); text-underline-offset: 4px; pointer-events: auto; }
+.arh-video:hover { color: var(--sand); }
