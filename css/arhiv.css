@@ -448,3 +448,5 @@
   .vid-s { font-size: .74rem; }
   .vid-go { display: none; }
 }
+
+@keyframes vid-in { from { opacity: 0; translate: 0 18px; } }
