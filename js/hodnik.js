@@ -614,10 +614,7 @@
             else { lines[1] = lines[1].replace(/[ ,.:;]*$/, '') + '…'; break; }
           }
           while (ctx.measureText(lines[lines.length - 1]).width > 580) lines[lines.length - 1] = lines[lines.length - 1].slice(0, -2) + '…';
-          lines.forEach((ln, k) => ctx.fillText(ln, 30, 114 + k * 38));
-          ctx.fillStyle = 'rgba(58, 53, 80, 0.7)';
-          ctx.font = '500 24px Inter, system-ui, sans-serif';
-          ctx.fillText(catOf(p).toUpperCase(), 30, 232, 580);
+          lines.forEach((ln, k) => ctx.fillText(ln, 30, 136 + k * 38));
           item.tex.needsUpdate = true;
         }
         for (const m of this.monos || []) { this.drawMonogram(m.c, m.name); m.tex.needsUpdate = true; }
