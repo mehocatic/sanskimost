@@ -250,6 +250,7 @@ I18N.en = {
   'lic.zlj.born': 'Born',
   'lic.zlj.unit': 'Unit',
   'lic.zlj.note': 'Note',
+  'lic.zlj.loading': 'Loading the terrain…',
   'lic.source': 'Source',
   'lic.count': '{n} people',
   'lic.note.h': "Suggest someone",
