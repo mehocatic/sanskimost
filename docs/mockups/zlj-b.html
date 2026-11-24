@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup B · Zlatni ljiljani</title>
+<link rel="stylesheet" href="../../vendor/fonts/fonts.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --gold: #d4af5a; --gold-l: #f1dc9e; --gold-d: #8f6a22; --bg: #090b0a; --fg: #f6f4ee; --soft: rgba(246,244,238,.8); --muted: rgba(246,244,238,.55);
+    --serif: "EB Garamond", Georgia, serif; --sans: Inter, system-ui, sans-serif; --gutter: clamp(16px, 6vw, 96px); }
+  html { background: var(--bg); }
+  body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.6; overflow-x: clip; }
+  .lily { display: block; width: 100%; height: auto; overflow: visible; }
+
+  .stage { min-height: 100svh; display: grid; place-items: center; padding: 72px var(--gutter) 90px;
+    background: radial-gradient(ellipse 70% 60% at 50% 45%, #1a1d1b, var(--bg) 75%); }
+
+  /* the plaque: dark stone with gilded, engraved letters; a raking light follows the pointer */
+  .plaque { position: relative; width: min(100%, 860px); padding: clamp(36px, 7vw, 80px) clamp(20px, 6vw, 84px) clamp(32px, 6vw, 70px); border-radius: 6px; isolation: isolate;
+    --lx: 30%; --ly: 20%;
+    background:
+      radial-gradient(circle at var(--lx) var(--ly), rgba(255,236,190,.13), rgba(255,236,190,0) 45%),
+      linear-gradient(160deg, #262a27, #161917 55%, #0f1110);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.06), inset 0 0 0 1px rgba(212,175,90,.18), inset 0 0 0 10px #111312, inset 0 0 0 11px rgba(212,175,90,.28), 0 40px 80px rgba(0,0,0,.6); }
+  .plaque::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; opacity: .55; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  /* four rivets */
+  .plaque i { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #f1dc9e, #8f6a22 70%); box-shadow: 0 1px 2px rgba(0,0,0,.8); }
+  .plaque i:nth-of-type(1) { left: 22px; top: 22px; } .plaque i:nth-of-type(2) { right: 22px; top: 22px; } .plaque i:nth-of-type(3) { left: 22px; bottom: 22px; } .plaque i:nth-of-type(4) { right: 22px; bottom: 22px; }
+
+  .engr { background: linear-gradient(180deg, #fff2c8 0%, #e2bf6c 45%, #9c7429 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 -1px 0 rgba(0,0,0,.85)) drop-shadow(0 1px 0 rgba(255,230,170,.18)); }
+  .p-head { text-align: center; }
+  .p-head .lily { width: clamp(44px, 9vw, 64px); margin: 0 auto 1rem; filter: drop-shadow(0 -1px 0 rgba(0,0,0,.8)); }
+  .p-head h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.5rem, 4.8vw, 2.6rem); letter-spacing: .14em; text-transform: uppercase; line-height: 1.1; }
+  .p-head p { margin-top: .5rem; font-family: var(--serif); font-style: italic; font-size: clamp(1rem, 2.6vw, 1.2rem); color: rgba(241,220,158,.7); }
+  .rule { height: 1px; margin: clamp(20px, 4vw, 34px) auto; width: min(80%, 420px); background: linear-gradient(90deg, rgba(212,175,90,0), rgba(212,175,90,.7), rgba(212,175,90,0)); }
+
+  .names { list-style: none; }
+  .names li + li { border-top: 1px solid rgba(212,175,90,.12); }
+  .names button { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 4px 16px; width: 100%; padding: clamp(10px, 1.8vw, 16px) clamp(4px, 2vw, 18px); cursor: pointer; border-radius: 4px; transition: background .3s ease; }
+  .names button:focus-visible { outline: 1px solid var(--gold); }
+  .n-name { font-family: var(--serif); font-weight: 500; font-size: clamp(1.45rem, 5vw, 2.4rem); letter-spacing: .06em; text-transform: uppercase; line-height: 1.1; }
+  .n-year { font-family: var(--serif); font-size: clamp(1rem, 2.4vw, 1.35rem); letter-spacing: .1em; font-variant-numeric: lining-nums; }
+  .n-meta { grid-column: 1 / -1; font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(246,244,238,.45); }
+  .n-meta b { font-weight: 400; color: var(--gold); margin-left: .6rem; }
+  @media (hover: hover) { .names button:hover { background: rgba(212,175,90,.06); } }
+
+  .p-foot { margin-top: clamp(20px, 4vw, 30px); text-align: center; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(246,244,238,.4); }
+
+  .below { max-width: 40rem; margin: 0 auto; padding: 40px var(--gutter) 140px; text-align: center; }
+  .below .eyebrow { font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+  .below p.lead { margin-top: 1rem; color: var(--soft); font-size: 1.05rem; }
+  .below .foot { margin-top: 1rem; font-size: .8rem; color: var(--muted); } .below a { color: var(--gold-l); }
+  .btn { display: inline-flex; align-items: center; min-height: 46px; margin-top: 1.6rem; padding: 0 1.3rem; border: 1px solid rgba(212,175,90,.55); border-radius: 999px; color: var(--gold-l) !important; text-decoration: none; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; }
+
+  /* detail: a sheet from the bottom on phones, a card in the middle on desktop */
+  dialog { margin: auto auto 0; width: 100%; max-width: 560px; border: 0; padding: 0; background: transparent; color: var(--fg); }
+  dialog::backdrop { background: rgba(5,6,6,.7); backdrop-filter: blur(4px); }
+  .sheet { position: relative; padding: 30px 24px 34px; border-radius: 16px 16px 0 0; background: linear-gradient(170deg, #22261f, #121413); border-top: 1px solid rgba(212,175,90,.5); animation: up .4s cubic-bezier(.2,.7,.2,1); }
+  @media (min-width: 700px) { dialog { margin: auto; } .sheet { border-radius: 10px; border: 1px solid rgba(212,175,90,.4); padding: 40px 44px; } }
+  @keyframes up { from { transform: translateY(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .sheet .yr { font-family: var(--serif); color: var(--gold); font-size: 1.1rem; }
+  .sheet h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 8vw, 3rem); line-height: 1; margin-top: .3rem; }
+  .post { display: inline-block; margin-top: .8rem; padding: .25rem .7rem; border: 1px solid rgba(212,175,90,.6); border-radius: 999px; font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-l); }
+  .sheet dl { display: grid; gap: 14px; margin-top: 1.4rem; }
+  .sheet dt { font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+  .sheet dd { color: var(--soft); }
+  .sheet .note { margin-top: 1.2rem; font-family: var(--serif); font-style: italic; font-size: 1.25rem; line-height: 1.4; }
+  .x { position: absolute; right: 14px; top: 14px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(212,175,90,.45); background: none; color: var(--gold-l); font-size: 20px; cursor: pointer; }
+
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <article class="plaque" id="plaque">
+      <i></i><i></i><i></i><i></i>
+      <header class="p-head">
+        <div id="lily"></div>
+        <h1 class="engr">Zlatni ljiljani<br>Sanskog Mosta</h1>
+        <p>Najviše ratno priznanje</p>
+      </header>
+      <div class="rule"></div>
+      <ol class="names" id="names"></ol>
+      <div class="rule"></div>
+      <p class="p-foot">1992 – 1995</p>
+    </article>
+  </div>
+
+  <section class="below">
+    <p class="eyebrow">O priznanju</p>
+    <p class="lead">Zlatni ljiljan je najviše ratno priznanje Armije Republike Bosne i Hercegovine iz rata od 1992. do 1995.</p>
+    <p class="lead" style="font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold-l)">Ljiljan je hiljadu godina simbol Bosne.</p>
+    <p class="foot"><span id="count"></span> <a id="src" target="_blank" rel="noopener">Izvor: Wikipedia</a></p>
+    <a class="btn" href="../../hodnik">Ličnosti Sanskog Mosta →</a>
+  </section>
+
+  <dialog id="dlg"><div class="sheet" id="sheet"></div></dialog>
+
+<script src="../../js/data/licnosti-data.js"></script>
+<script src="zlj-common.js"></script>
+<script>
+  const Z = window.ZLJILJANI;
+  lily.innerHTML = ZLJ_LILY('p');
+  count.textContent = Z.length + ' dobitnika.'; src.href = window.ZLJILJANI_SRC;
+  names.innerHTML = Z.map((z, i) => `<li><button type="button" data-i="${i}">
+    <span class="n-name engr">${z.name}</span><span class="n-year engr">${z.year}</span>
+    <span class="n-meta">${zljPlace(z)}${z.post ? '<b>Posthumno</b>' : ''}</span></button></li>`).join('');
+  names.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const z = Z[+b.dataset.i];
+    sheet.innerHTML = `<button class="x" aria-label="Zatvori">×</button><p class="yr">${z.year}</p><h2>${z.name}</h2>
+      ${z.post ? '<span class="post">Posthumno</span>' : ''}
+      <dl><div><dt>Rođenje</dt><dd>${z.born.bs}</dd></div><div><dt>Jedinica</dt><dd>${z.unit.bs}</dd></div></dl>
+      ${z.note ? `<p class="note">${z.note.bs}</p>` : ''}`;
+    dlg.showModal();
+  });
+  dlg.addEventListener('click', e => { if (e.target === dlg || e.target.closest('.x')) dlg.close(); });
+
+  // raking light: follows the mouse; on touch it drifts slowly across the plaque
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (matchMedia('(hover: hover)').matches) {
+    addEventListener('pointermove', e => {
+      const r = plaque.getBoundingClientRect();
+      plaque.style.setProperty('--lx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      plaque.style.setProperty('--ly', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+    });
+  } else if (!reduce) {
+    const t0 = performance.now();
+    (function tick(t) {
+      const k = (t - t0) / 9000;
+      plaque.style.setProperty('--lx', (50 + 45 * Math.sin(k * Math.PI * 2)).toFixed(1) + '%');
+      plaque.style.setProperty('--ly', (35 + 25 * Math.cos(k * Math.PI * 2)).toFixed(1) + '%');
+      requestAnimationFrame(tick);
+    })(t0);
+  }
+</script>
+</body>
+</html>
