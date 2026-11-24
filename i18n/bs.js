@@ -301,6 +301,7 @@ I18N.bs = {
   'arh.tosnimci': 'Video 1992–1995',
   'arh.vid.k': 'Video arhiv',
   'arh.vid.t': 'Snimci 1992–1995',
+  'arh.vid.s': 'Svjedočenja, presude i dokumentarni filmovi',
   'sn.doctitle': 'Snimci 1992–1995 · Sanski Most',
   'sn.meta': 'Video snimci o Sanskom Mostu 1992–1995: svjedočenja, terenski snimci, presude i dokumentarni filmovi. Svaki snimak vodi na izvor.',
   'sn.eyebrow': 'Arhiv · Snimci 1992–1995',
