@@ -363,3 +363,9 @@
   transition: border-color .45s ease, box-shadow .45s ease, opacity .45s ease, translate .55s cubic-bezier(.2, .8, .2, 1), visibility 0s;
   animation: vid-in 1s cubic-bezier(.2, .8, .2, 1) .35s backwards;
 }
+/* a light that passes over the card on hover */
+.vid-cta::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(127, 214, 220, .13) 50%, transparent 65%);
+  translate: -110% 0; transition: translate 1s cubic-bezier(.2, .8, .2, 1);
+}
