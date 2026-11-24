@@ -276,4 +276,10 @@
     p.lab = document.createElement('div'); p.lab.className = 'zlj-lab'; p.lab.textContent = p.z.name; labels.appendChild(p.lab);
     p.o = { el: p.lab };
   });
+  const tmp = new THREE.Vector3();
+  function toScreen(v) {
+    tmp.copy(v).project(camera);
+    if (tmp.z > 1 || Math.abs(tmp.x) > 1.3 || Math.abs(tmp.y) > 1.3) return null;
+    return [(tmp.x + 1) / 2 * innerWidth, (1 - tmp.y) / 2 * innerHeight];
+  }
 })();
