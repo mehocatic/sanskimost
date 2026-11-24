@@ -211,6 +211,13 @@ html:has(#dt[open]) { overflow: hidden; }
   background-size: 280% 100%; background-position: var(--gx, 62%) 0;
 }
 
+/* the tape: it slides up out of the sleeve after the page opens, a little more under the mouse */
+.vhs-cas {
+  position: absolute; left: 0; top: 0; width: 0; height: 0; transform-style: preserve-3d;
+  transform: translateY(calc(var(--S) * .5 - var(--CH) * .5 - var(--S) * .012 - (var(--out) + var(--lift)) * var(--CH)));
+  animation: vhs-out 1.3s cubic-bezier(.2, .8, .2, 1) .6s both;
+}
+
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
   #sn { height: 100svh; overflow: hidden; }
