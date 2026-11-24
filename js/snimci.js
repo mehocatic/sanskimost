@@ -299,7 +299,8 @@
     $('dt-syn').textContent = desc(f);
     $('dt-src').textContent = t('sn.source') + ': ' + f.src;
     $('dt-watch').href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(f.yt);
-    $('dt-poster').innerHTML = `<div class="face cv tone-${f.cat}">${cover(f, i)}</div>`;
+    $('dt-poster').innerHTML = vhs(f, i);
+    tiltNow();
   }
   // the cover in the middle, as a clip on the whole dialog: the dialog grows out of it and shrinks back into it
   function coverClip() {
