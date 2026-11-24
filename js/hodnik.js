@@ -258,7 +258,7 @@
       }
 
       portraitSmall() { return this.small && innerHeight > innerWidth; }
-      walkOffset() { return this.portraitSmall() ? .14 + .9 * STEP : .14; }
+      walkOffset() { return this.portraitSmall() ? .14 + .35 * STEP : .14; }
       walkPose(th) {
         return this.portraitSmall()
           ? { th, r: 15.4, yaw: -.42, y: 1.9, pitch: -.1 }
