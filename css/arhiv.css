@@ -453,3 +453,7 @@
 @keyframes reel { to { transform: rotate(360deg); } }
 @keyframes vid-peek { 0%, 24%, 100% { translate: 0 0; } 10% { translate: 12px -1px; } }
 @keyframes rec { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) {
+  .vid-cta, .vid-cas, .vid-cas .reel, .rec { animation: none; }
+  .vid-cta, .vid-cta::after, .vid-cas, .vid-sleeve, .vid-go, .vid-go svg { transition-duration: 1ms; }
+}
