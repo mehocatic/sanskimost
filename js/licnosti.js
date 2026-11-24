@@ -282,4 +282,9 @@
     if (tmp.z > 1 || Math.abs(tmp.x) > 1.3 || Math.abs(tmp.y) > 1.3) return null;
     return [(tmp.x + 1) / 2 * innerWidth, (1 - tmp.y) / 2 * innerHeight];
   }
+  // sizes are measured once (again after a resize or when the fonts arrive), not every frame
+  function measureLabels() {
+    pins.forEach(p => { p.o.w = p.lab.offsetWidth; p.o.h = p.lab.offsetHeight; });
+    vils.forEach(v => { v.o.w = v.e.offsetWidth; v.o.h = v.e.offsetHeight; });
+  }
 })();
