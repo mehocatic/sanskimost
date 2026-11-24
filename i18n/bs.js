@@ -372,6 +372,7 @@ I18N.bs = {
   'hod.hint.walk2': 'Kliknite portret da priđete bliže',
   'hod.hint.focus1': 'Kliknite portret za biografiju',
   'hod.hint.focus2': 'Esc ili klik sa strane za povratak',
+  'hod.intro': 'Sport, nauka i književnost, muzika, umjetnost, baština i sjećanje na rat. Kratke biografije s izvorima.',
   'hod.pill': 'Otvori biografiju',
   'hod.listhead': 'Ličnosti po oblastima',
   'hod.prev': 'Prethodni portret',
