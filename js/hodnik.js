@@ -358,19 +358,95 @@
       buildCorridor(scene, maxAniso) {
         const texOf = (c, aniso) => { const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; if (aniso) t.anisotropy = maxAniso; this.disposables.push(t); return t; };
         const add = (geo, mat, y) => { const m = new THREE.Mesh(geo, mat); if (y != null) m.position.y = y; scene.add(m); this.disposables.push(geo, mat); return m; };
-        const outerTex = gradTex([[0, '#F5EBD8'], [.2, '#FBF3E3'], [.6, '#FBF3E3'], [.86, '#F8EDD9'], [1, '#EFDFC4']]);
-        add(new THREE.CylinderGeometry(OUTER_RADIUS, OUTER_RADIUS, WALL_HEIGHT, 160, 1, true), new THREE.MeshBasicMaterial({ map: outerTex, side: THREE.BackSide }), 3.1);
-        const innerTex = gradTex([[0, '#F7EEDD'], [.3, '#FFFAF0'], [.8, '#FDF5E6'], [1, '#F1E1C6']]);
-        add(new THREE.CylinderGeometry(INNER_RADIUS, INNER_RADIUS, WALL_HEIGHT, 120, 1, true), new THREE.MeshBasicMaterial({ map: innerTex, side: THREE.FrontSide }), 3.1);
-        this.disposables.push(outerTex, innerTex);
 
-        const fc = document.createElement('canvas'); fc.width = fc.height = 1024;
-        const fx = fc.getContext('2d'), fg = fx.createRadialGradient(512, 512, 512 * INNER_RADIUS / OUTER_RADIUS, 512, 512, 512);
-        fg.addColorStop(0, '#EDD6B0'); fg.addColorStop(.55, '#F3E1C3'); fg.addColorStop(1, '#EFDAB8');
-        fx.fillStyle = fg; fx.fillRect(0, 0, 1024, 1024);
-        const floorTex = new THREE.CanvasTexture(fc); floorTex.colorSpace = THREE.SRGBColorSpace; this.disposables.push(floorTex);
-        add(new THREE.CircleGeometry(OUTER_RADIUS, 160), new THREE.MeshBasicMaterial({ map: floorTex })).rotation.x = -Math.PI / 2;
-        const ceil = add(new THREE.CircleGeometry(OUTER_RADIUS, 160), new THREE.MeshBasicMaterial({ color: '#FAF1E0', side: THREE.BackSide }), WALL_HEIGHT);
+        let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+        // soft blobs drawn also one tile to the left and right, so the texture repeats round the circle without a seam
+        const blobs = (x, w, h, n, rMin, rMax, cols) => {
+          for (let i = 0; i < n; i++) {
+            const bx = rnd() * w, by = rnd() * h, r = rMin + rnd() * (rMax - rMin), col = cols[Math.floor(rnd() * cols.length)];
+            for (const ox of [-w, 0, w]) {
+              const g = x.createRadialGradient(bx + ox, by, 0, bx + ox, by, r);
+              g.addColorStop(0, col); g.addColorStop(1, col.replace(/[\d.]+\)$/, '0)'));
+              x.fillStyle = g; x.fillRect(bx + ox - r, by - r, 2 * r, 2 * r);
+            }
+          }
+        };
+
+        // the walls: warm plaster with a soft mottling, a carved cornice under the ceiling and an oak skirting board
+        // canvas y 0 is the top of the wall: a height h on the wall is at y = (1 - h / WALL_HEIGHT) * H
+        const wallTex = (light, mid, tiles) => {
+          const W = 256, H = 1024, c = document.createElement('canvas'); c.width = W; c.height = H;
+          const x = c.getContext('2d'), yAt = h => (1 - h / WALL_HEIGHT) * H;
+          const g = x.createLinearGradient(0, 0, 0, H);
+          g.addColorStop(0, mid); g.addColorStop(.25, light); g.addColorStop(.8, light); g.addColorStop(1, mid);
+          x.fillStyle = g; x.fillRect(0, 0, W, H);
+          blobs(x, W, H, 90, 20, 70, ['rgba(214, 196, 166, 0.10)', 'rgba(255, 252, 244, 0.16)']);
+          const band = (h0, h1, col) => { x.fillStyle = col; x.fillRect(0, yAt(h1), W, yAt(h0) - yAt(h1)); };
+          const fade = (h0, h1, from, to) => { const fg = x.createLinearGradient(0, yAt(h1), 0, yAt(h0)); fg.addColorStop(0, from); fg.addColorStop(1, to); x.fillStyle = fg; x.fillRect(0, yAt(h1), W, yAt(h0) - yAt(h1)); };
+          // cornice: shadow on the wall, a lit cove, a row of small blocks (dentils), a lit lip
+          fade(5.45, 5.6, 'rgba(110, 85, 50, 0)', 'rgba(110, 85, 50, 0.16)');
+          band(5.6, 5.64, '#D9C6A3'); band(5.64, 5.68, '#F7EEDD');
+          band(5.68, 5.8, '#E7D8BC');
+          for (let k = 0; k < 8; k++) { x.fillStyle = '#F5EBD8'; x.fillRect(k * 32 + 4, yAt(5.79), 22, yAt(5.69) - yAt(5.79)); x.fillStyle = 'rgba(110, 85, 50, 0.25)'; x.fillRect(k * 32 + 26, yAt(5.79), 3, yAt(5.69) - yAt(5.79)); }
+          band(5.8, 5.84, '#CDB690');
+          const cove = x.createLinearGradient(0, yAt(6.2), 0, yAt(5.84)); cove.addColorStop(0, '#E2D2B4'); cove.addColorStop(1, '#FBF4E6');
+          x.fillStyle = cove; x.fillRect(0, yAt(6.2), W, yAt(5.84) - yAt(6.2));
+          // skirting board in oak, with a lit top edge and a shadow above it
+          fade(.2, .34, 'rgba(110, 85, 50, 0)', 'rgba(110, 85, 50, 0.12)');
+          band(0, .2, '#C9A97B'); band(.17, .2, '#DCC096'); band(.165, .17, '#A88A5E'); band(0, .025, '#9E8058');
+          const t = texOf(c, true); t.wrapS = THREE.RepeatWrapping; t.repeat.x = tiles;
+          return t;
+        };
+        // a whole number of tiles round each wall (about 3 units each), so the seam does not show
+        add(new THREE.CylinderGeometry(OUTER_RADIUS, OUTER_RADIUS, WALL_HEIGHT, 160, 1, true), new THREE.MeshBasicMaterial({ map: wallTex('#EEE4D3', '#E2D4BE', 38), side: THREE.BackSide }), WALL_HEIGHT / 2);
+        add(new THREE.CylinderGeometry(INNER_RADIUS, INNER_RADIUS, WALL_HEIGHT, 120, 1, true), new THREE.MeshBasicMaterial({ map: wallTex('#F1E8D8', '#E5D9C4', 26), side: THREE.FrontSide }), WALL_HEIGHT / 2);
+
+        this.buildColumns(scene, texOf);
+
+        // light oak boards laid round the circle: the texture runs along the boards, and its u goes round the ring
+        const pc = document.createElement('canvas'); pc.width = pc.height = 512;
+        const px = pc.getContext('2d'), tones = ['#E3CDA7', '#DEC69E', '#E8D3B0', '#DAC097', '#E1CAA3', '#D6BB90'];
+        const ROW = 64;
+        for (let row = 0; row < 512 / ROW; row++) {
+          const y = row * ROW, joints = [];
+          for (let k = 0, xj = rnd() * 220; k < 3; k++, xj += 150 + rnd() * 70) joints.push(xj % 512);
+          joints.sort((p, q) => p - q);
+          joints.forEach((j0, k) => {
+            const j1 = k + 1 < joints.length ? joints[k + 1] : joints[0] + 512, len = j1 - j0;
+            for (const ox of [0, -512]) {
+              const bx = j0 + ox;
+              px.fillStyle = tones[Math.floor(rnd() * tones.length)]; px.fillRect(bx, y, len, ROW);
+              px.globalAlpha = .13; px.strokeStyle = '#B08F62'; px.lineWidth = 1;
+              for (let n = 0; n < 4; n++) { const gy = y + 8 + rnd() * (ROW - 16); px.beginPath(); px.moveTo(bx + 6, gy); px.bezierCurveTo(bx + len * .3, gy + rnd() * 6 - 3, bx + len * .7, gy + rnd() * 6 - 3, bx + len - 6, gy); px.stroke(); }
+              px.globalAlpha = .4; px.fillStyle = '#A6865B'; px.fillRect(bx, y, 1.5, ROW);
+              px.globalAlpha = 1;
+            }
+          });
+          px.globalAlpha = .38; px.fillStyle = '#A6865B'; px.fillRect(0, y, 512, 1.5); px.globalAlpha = 1;
+        }
+        const floorTex = texOf(pc, true);
+        floorTex.wrapS = floorTex.wrapT = THREE.RepeatWrapping;
+        // boards about 0.45 wide and 2 to 3 long: 8 rows per tile across, a whole number of tiles round
+        const SEGS = 320, RINGS = 12, MID_R = (INNER_RADIUS + OUTER_RADIUS) / 2, TILE_V = 8 * .45, TILES_U = Math.round(2 * Math.PI * MID_R / 7.6);
+        const floorGeo = new THREE.RingGeometry(INNER_RADIUS - .05, OUTER_RADIUS + .05, SEGS, RINGS);
+        const pos = floorGeo.attributes.position, uv = floorGeo.attributes.uv;
+        for (let j = 0, n = 0; j <= RINGS; j++) for (let i = 0; i <= SEGS; i++, n++) {
+          const r = Math.hypot(pos.getX(n), pos.getY(n));
+          uv.setXY(n, i / SEGS * TILES_U, (r - INNER_RADIUS) / TILE_V);
+        }
+        uv.needsUpdate = true;
+        add(floorGeo, new THREE.MeshBasicMaterial({ map: floorTex })).rotation.x = -Math.PI / 2;
+
+        // a soft darkening where the floor meets the walls, and a little in the middle of the walk
+        const ac = document.createElement('canvas'); ac.width = ac.height = 1024;
+        const ax = ac.getContext('2d'), ri = (INNER_RADIUS - .05) / OUTER_RADIUS, ag = ax.createRadialGradient(512, 512, 0, 512, 512, 512);
+        ag.addColorStop(0, 'rgba(110, 80, 45, 0.3)'); ag.addColorStop(ri, 'rgba(110, 80, 45, 0.3)'); ag.addColorStop(ri + .035, 'rgba(110, 80, 45, 0)');
+        ag.addColorStop(.965, 'rgba(110, 80, 45, 0)'); ag.addColorStop(1, 'rgba(110, 80, 45, 0.28)');
+        ax.fillStyle = ag; ax.fillRect(0, 0, 1024, 1024);
+        add(new THREE.CircleGeometry(OUTER_RADIUS, 160), new THREE.MeshBasicMaterial({ map: texOf(ac), transparent: true, depthWrite: false }), .004).rotation.x = -Math.PI / 2;
+
+        // the ceiling: coffers between beams that run across the corridor over each pilaster, with a ring of light along the middle
+        const ceil = add(new THREE.CircleGeometry(OUTER_RADIUS, 160), new THREE.MeshBasicMaterial({ color: '#EDE2CF', side: THREE.BackSide }), WALL_HEIGHT);
         ceil.rotation.x = -Math.PI / 2;
       }
 
