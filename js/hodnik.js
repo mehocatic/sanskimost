@@ -31,6 +31,11 @@
   const catOf = p => tx(CATS.find(c => c.id === p.cat));
   const initials = n => n.split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join('');
 
+  // the pieces of the photographed frame (tools/okvir-isjeci.py writes them), in the photograph's pixels: D reaches from the opening out past the carving, C is a corner
+  const FRAME_D = 140, FRAME_C = 250;
+  const FRAME_PIECES = { 'c-tl': [250, 250], 'c-tr': [250, 250], 't-l': [158, 140], 't-c': [260, 140], 't-r': [154, 140], 'b-c': [260, 140], 'b-p': [154, 140],
+    'l-c': [140, 135], 'l-p': [140, 116], 'r-c': [140, 135], 'r-p': [140, 116] };
+
   const mqSmall = matchMedia('(max-width: 819px), (orientation: portrait) and (max-width: 1100px), (orientation: landscape) and (max-height: 500px)');
   const mqMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
