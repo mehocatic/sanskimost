@@ -145,4 +145,30 @@
   let terrainMat = null, raf = 0;
   canvas.addEventListener('webglcontextlost', e => { e.preventDefault(); cancelAnimationFrame(raf); noGL(); });
 
+  // rivers as a distance field read by the terrain shader: each texel holds how far it is from the bank, so the shader draws
+  // a sharp, smooth edge at any zoom (a painted texture turns into pixels close up), and a river never sinks under the mesh
+  function riverTexture() {
+    const S = 2048, k = S / (2 * R), RANGE = 3;        // RANGE: texels over which the field goes from the bank to 0 or 1
+    const f = new Uint8Array(S * S);
+    (window.ZLJ_RIVERS || []).forEach(w => {
+      const half = (w.n === 'Sana' ? .045 : .022) * k, pad = half + RANGE + 1;
+      const P = w.p.map(([la, lo]) => [(X(lo) + R) * k, (Zc(la) + R) * k]);
+      for (let i = 1; i < P.length; i++) {
+        const [ax, ay] = P[i - 1], [bx, by] = P[i], dx = bx - ax, dy = by - ay, L2 = dx * dx + dy * dy || 1;
+        const x0 = Math.max(0, Math.floor(Math.min(ax, bx) - pad)), x1 = Math.min(S - 1, Math.ceil(Math.max(ax, bx) + pad));
+        const y0 = Math.max(0, Math.floor(Math.min(ay, by) - pad)), y1 = Math.min(S - 1, Math.ceil(Math.max(ay, by) + pad));
+        for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) {
+          const px = x + .5, py = y + .5, u = Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / L2));
+          const d = Math.hypot(px - ax - u * dx, py - ay - u * dy);
+          const v = Math.max(0, Math.min(255, Math.round((.5 + (half - d) / (2 * RANGE)) * 255)));
+          const j = y * S + x; if (v > f[j]) f[j] = v;
+        }
+      }
+    });
+    const tex = new THREE.DataTexture(f, S, S, THREE.RedFormat, THREE.UnsignedByteType);
+    tex.minFilter = THREE.LinearMipmapLinearFilter; tex.magFilter = THREE.LinearFilter; tex.generateMipmaps = true;
+    tex.anisotropy = renderer.capabilities.getMaxAnisotropy(); tex.needsUpdate = true;
+    return tex;
+  }
+
 })();
