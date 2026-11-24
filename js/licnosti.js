@@ -171,4 +171,61 @@
     return tex;
   }
 
+  // the terrain: paper shaded from the north-west, contour lines every 20 m (every 100 m stronger), the rivers,
+  // the marks at the foot of the pins (a dot and a ring, and for the person in focus a ring that spreads out),
+  // and a soft round edge into the paper. uT runs 0 to 1 at the start: the contours are drawn from the valleys up.
+  function buildTerrain() {
+    const S = small ? 260 : 420;
+    const g = new THREE.PlaneGeometry(2 * R, 2 * R, S, S);
+    g.rotateX(-Math.PI / 2);
+    const p = g.attributes.position, hA = new Float32Array(p.count);
+    for (let i = 0; i < p.count; i++) {
+      const x = p.getX(i), z = p.getZ(i);
+      hA[i] = heightAt(LON0 + x / KX, LAT0 - z / KY);
+      p.setY(i, worldY(x, z));
+    }
+    g.setAttribute('aH', new THREE.BufferAttribute(hA, 1));
+    g.computeVertexNormals();
+    const n = pins.length;
+    terrainMat = new THREE.ShaderMaterial({
+      uniforms: {
+        uPaper: { value: PAPER }, uInk: { value: new THREE.Color('#151a18') }, uRiver: { value: new THREE.Color('#1795a0') },
+        uLeaf: { value: new THREE.Color('#a8823a') }, uRiv: { value: riverTexture() }, uR: { value: R }, uT: { value: reduce ? 1 : 0 },
+        uTime: { value: 0 }, uPin: { value: pins.map(() => new THREE.Vector4()) },
+      },
+      vertexShader: `attribute float aH; varying float vH; varying vec3 vN; varying vec3 vW;
+        void main(){ vH = aH; vN = normal; vW = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+      fragmentShader: `uniform vec3 uPaper, uInk, uRiver, uLeaf; uniform sampler2D uRiv; uniform float uR, uT, uTime; uniform vec4 uPin[${n}];
+        varying float vH; varying vec3 vN; varying vec3 vW;
+        float line(float v, float w){ float fw = fwidth(v); float f = abs(fract(v - .5) - .5) / max(fw, 1e-4); return (1. - smoothstep(w - .5, w + .5, f)) * (1. - smoothstep(.25, .6, fw)); }
+        void main(){
+          vec3 L = normalize(vec3(-.55, .75, -.45));
+          float sh = clamp(dot(normalize(vN), L), 0., 1.);
+          vec3 c = uPaper * mix(1., mix(.5, 1.06, pow(sh, .85)), smoothstep(.35, 1., uT));
+          float minor = line(vH / 20., .8) * .22, major = line(vH / 100., 1.2) * .55;
+          float drawn = 1. - smoothstep(-30., 0., vH - mix(80., 1700., smoothstep(0., .75, uT)));
+          c = mix(c, uInk, max(minor, major) * drawn);
+          float f = texture2D(uRiv, (vW.xz + uR) / (2. * uR)).r;
+          float aa = max(fwidth(f), 1e-3);
+          float edge = smoothstep(.5 - aa, .5 + aa, f);
+          float far = smoothstep(.12, .5, f) * smoothstep(.04, .2, aa);
+          c = mix(c, uRiver, max(edge, far) * .9 * smoothstep(.55, 1., uT));
+          float mk = 0.;
+          for (int i = 0; i < ${n}; i++) {
+            vec4 P = uPin[i];
+            float dd = length(vW.xz - P.xy), a2 = max(fwidth(dd), 1e-4), w = max(.011, a2 * .9);
+            float ring = 1. - smoothstep(w, w + a2, abs(dd - .13));
+            float dotm = 1. - smoothstep(.03, .03 + a2, dd);
+            float ph = fract(uTime * .4), wave = P.w * (1. - smoothstep(w, w + a2, abs(dd - (.13 + ph * .5)))) * (1. - ph);
+            mk = max(mk, max(max(ring, dotm), wave) * P.z);
+          }
+          c = mix(c, uLeaf, mk * .85);
+          c = mix(c, uPaper, smoothstep(.8, .98, length(vW.xz) / uR));
+          gl_FragColor = vec4(c, 1.);
+          #include <colorspace_fragment>
+        }`,
+    });
+    scene.add(new THREE.Mesh(g, terrainMat));
+  }
+
 })();
