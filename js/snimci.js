@@ -250,3 +250,24 @@
     else if (e.key === 'Enter' && e.target === shelf) { e.preventDefault(); openDetail(); }
   });
 
+  /* ---------- one recording opened ---------- */
+  const lines = Array.from(dlg.querySelectorAll('.d-line'));
+  let shown = 0;
+  function fill(i) {
+    shown = i;
+    const f = F[i];
+    $('dt-sub').textContent = catLabel(f) + ' / ' + f.src;
+    $('dt-title').textContent = f.title;
+    $('dt-meta').textContent = `${f.y} / ${kind(f)} / ${f.min} ${t('sn.min')}`;
+    $('dt-note').hidden = f.cat !== 'logori';
+    $('dt-syn').textContent = desc(f);
+    $('dt-src').textContent = t('sn.source') + ': ' + f.src;
+    $('dt-watch').href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(f.yt);
+    $('dt-poster').innerHTML = `<div class="face cv tone-${f.cat}">${cover(f, i)}</div>`;
+  }
+  // the cover in the middle, as a clip on the whole dialog: the dialog grows out of it and shrinks back into it
+  function coverClip() {
+    const c = tapes[((Math.round(s) % TOTAL) + TOTAL) % TOTAL].lastElementChild.getBoundingClientRect();
+    return `inset(${Math.max(0, c.top).toFixed(1)}px ${Math.max(0, innerWidth - c.right).toFixed(1)}px ${Math.max(0, innerHeight - c.bottom).toFixed(1)}px ${Math.max(0, c.left).toFixed(1)}px round 3px)`;
+  }
+  const FULL = 'inset(0px 0px 0px 0px round 0px)';
