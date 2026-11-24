@@ -33,3 +33,15 @@
 .sn-tabs button:hover { border-color: var(--ink); }
 .sn-tabs button[aria-current="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 
+/* ---------- the shelf ---------- */
+.shelf {
+  position: relative; height: calc(var(--H) + 80px); margin-top: clamp(4px, 1.6svh, 20px);
+  perspective: 2200px; perspective-origin: 50% 50%; overflow-x: clip;
+  touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab;
+}
+.shelf:active { cursor: grabbing; }
+.shelf:focus-visible { outline: 2px solid var(--acc); outline-offset: -4px; }
+.h-probe { position: absolute; left: -9999px; top: 0; width: 1px; height: var(--H); visibility: hidden; pointer-events: none; }
+.stage { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; }
+.tape { position: absolute; left: 0; top: 0; width: 0; height: 0; transform-style: preserve-3d; will-change: transform; cursor: pointer; }
+
