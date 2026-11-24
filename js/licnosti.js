@@ -295,4 +295,13 @@
       [r, y - mh / 2 - hh * .4], [r, y + mh / 2 - hh * .6], [l, y - mh / 2 - hh * .4], [l, y + mh / 2 - hh * .6]]
       .map(([a, b]) => [a, b, a + w, b + hh]);
   }
+  const cards = () => main.querySelectorAll('.zlj-card');
+  function cardRect() {
+    let best = null, area = 0;
+    cards().forEach(e => {
+      const r = e.getBoundingClientRect(), a = Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 0)) * r.width;
+      if (a > area) { area = a; best = [r.left - 8, r.top - 8, r.right + 8, r.bottom + 8]; }
+    });
+    return best;
+  }
 })();
