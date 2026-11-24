@@ -408,3 +408,6 @@
 .vid-go svg { transition: translate .5s cubic-bezier(.2, .8, .2, 1); }
 .vid-cta:hover .vid-go { background: var(--sand); border-color: var(--sand); color: var(--ink); }
 .vid-cta:hover .vid-go svg { translate: 3px 0; }
+
+/* the red light of a recording camera */
+.rec { flex: none; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #e0442e; box-shadow: 0 0 0 3px rgba(224, 68, 46, .2); animation: rec 1.6s ease-in-out infinite; }
