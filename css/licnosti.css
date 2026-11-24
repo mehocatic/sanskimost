@@ -57,3 +57,4 @@
 .zlj.no-gl .zlj-intro { padding-top: clamp(96px, 16svh, 150px); }
 .zlj.no-gl .zlj-outro { padding-bottom: 80px; }
 
+@media (prefers-reduced-motion: reduce) { .zlj-lab { transition: none; } }
