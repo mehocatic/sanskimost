@@ -12,3 +12,5 @@
 .zlj-lab { font-size: 17px; color: var(--ink-soft); padding: 1px 4px; border-radius: 2px; background: rgba(238, 235, 227, .75); opacity: 0; transition: opacity .6s ease; }
 .zlj-lab.on { opacity: 1; }
 .zlj-lab.now { color: var(--ink); text-decoration: underline; text-decoration-color: var(--leaf); text-underline-offset: 3px; }
+.zlj-loading { position: fixed; left: 50%; top: 50%; z-index: 1; transform: translate(-50%, -50%); font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--ink-muted); }
+
