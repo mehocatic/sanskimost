@@ -240,6 +240,8 @@ html:has(#dt[open]) { overflow: hidden; }
 }
 @keyframes vhs-bob { from { transform: translateY(0); } to { transform: translateY(calc(var(--HP) * -.016)); } }
 @keyframes vhs-floor { to { scale: .9; opacity: .75; } }
+@keyframes vhs-out { from { --out: 0; } to { --out: .47; } }
+@keyframes reel { to { transform: rotate(360deg); } }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
