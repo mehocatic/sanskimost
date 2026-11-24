@@ -254,6 +254,39 @@
   });
 
   /* ---------- one recording opened ---------- */
+  // the tape stands in its sleeve: label at the top, the two reels one above the other (only the upper one comes out)
+  const HUB = '<circle r="11" fill="#ece7dc"/><circle r="5.6" fill="#090909"/>' +
+    [0, 60, 120, 180, 240, 300].map(a => `<rect x="-1" y="-5.8" width="2" height="2.3" fill="#ece7dc" transform="rotate(${a})"/>`).join('') +
+    '<circle r="8.8" fill="none" stroke="#b9b2a2" stroke-width=".7" stroke-dasharray="2.2 2.6"/>';
+  function tapeFace(f, i) {
+    return `<svg class="vc-svg" viewBox="0 0 100 194">` +
+      `<defs><linearGradient id="vf-body" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#262626"/><stop offset=".55" stop-color="#191919"/><stop offset="1" stop-color="#101010"/></linearGradient>` +
+      `<linearGradient id="vf-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".06"/></linearGradient>` +
+      `<clipPath id="vf-win"><rect x="14" y="46" width="72" height="130" rx="6"/></clipPath></defs>` +
+      `<rect width="100" height="194" rx="3" fill="url(#vf-body)"/>` +
+      `<rect x="8" y="6" width="84" height="34" rx="2" fill="#efe9db"/><rect class="vf-acc" x="8" y="6" width="84" height="4"/>` +
+      `<path d="M13 22.5h74M13 35.5h74" stroke="#d3cab6" stroke-width=".6"/>` +
+      `<text x="13" y="21" class="vf-hand" font-size="12">Sanski Most</text>` +
+      `<text x="13" y="34" class="vf-hand" font-size="12.5">${f.y}</text>` +
+      `<text x="87" y="33.5" text-anchor="end" class="vf-num">#${num(i)}</text>` +
+      `<rect x="14" y="46" width="72" height="130" rx="6" fill="#080808" stroke="#2e2e2e"/>` +
+      `<g clip-path="url(#vf-win)"><circle cx="50" cy="80" r="31" fill="#2b1f17"/><circle cx="50" cy="80" r="23" fill="none" stroke="#3a2a1f" stroke-width=".8"/>` +
+      `<circle cx="50" cy="146" r="17" fill="#2b1f17"/><path d="M19.5 80V174" stroke="#2b1f17" stroke-width="1.4"/></g>` +
+      `<g transform="translate(50 80)"><g class="reel">${HUB}</g></g><g transform="translate(50 146)"><g class="reel">${HUB}</g></g>` +
+      `<rect x="14" y="46" width="72" height="130" rx="6" fill="url(#vf-glass)"/>` +
+      `<g fill="#2b2b2b"><circle cx="7" cy="44" r="2"/><circle cx="93" cy="44" r="2"/><circle cx="6" cy="186" r="2"/><circle cx="94" cy="186" r="2"/></g>` +
+      `<path d="M30 184h40M30 187.5h40M30 191h40" stroke="#262626" stroke-width="1.2"/></svg>`;
+  }
+  // the sleeve as a box (cover in front, spine on the left, open at the top) and the tape half out of it (css/snimci.css)
+  function vhs(f, i) {
+    const tone = 'tone-' + f.cat;
+    return `<div class="vhs-scene"><div class="vhs ${tone}">` +
+      `<i class="vs vs-back"></i><i class="vs vs-right"></i>` +
+      `<div class="vhs-cas"><i class="vc vc-top"></i><i class="vc vc-left"></i><div class="vc vc-front">${tapeFace(f, i)}</div></div>` +
+      `<div class="face sp vs vs-left ${tone}">${spine(f, i)}</div>` +
+      `<div class="face cv vs vs-front ${tone}">${cover(f, i)}<i class="vs-gloss"></i></div>` +
+      `</div></div><i class="vhs-floor"></i>`;
+  }
   const lines = Array.from(dlg.querySelectorAll('.d-line'));
   let shown = 0;
   function fill(i) {
