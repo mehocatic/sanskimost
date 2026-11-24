@@ -250,4 +250,20 @@
     return tex;
   }
 
+  // pins: a hairline stem (its radius is set every frame, so it stays about 1.6 px wide) with the lily standing on top
+  function buildPins() {
+    const tex = lilyTexture();
+    const stemG = new THREE.CylinderGeometry(1, 1, 1, 8); stemG.translate(0, .5, 0);
+    const stemM = new THREE.MeshBasicMaterial({ color: '#2a2f2c' });
+    pins.forEach(p => {
+      p.y = worldY(p.x, p.zz);
+      const grp = new THREE.Group(); grp.position.set(p.x, p.y - .02, p.zz);
+      const stem = new THREE.Mesh(stemG, stemM); stem.scale.set(.01, .0001, .01);
+      const spr = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, opacity: 0, sizeAttenuation: false, depthTest: false }));
+      spr.center.set(.5, .02); spr.renderOrder = 5;
+      grp.add(stem, spr); scene.add(grp);
+      Object.assign(p, { stem, spr, rise: 0 });
+    });
+  }
+
 })();
