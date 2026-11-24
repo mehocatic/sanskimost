@@ -339,6 +339,38 @@
     dlg.animate([{ clipPath: FULL, transform: 'rotate(0deg)' }, { clipPath: coverClip(), transform: 'rotate(-4.5deg)' }], { duration: 650, easing: 'cubic-bezier(.76,0,.18,1)', fill: 'forwards' }).onfinish = done;
   }
   $('dt-x').addEventListener('click', closeDetail);
+
+  // the opened tape turns a little towards the mouse, and the light on its sleeve moves with it.
+  // Without a mouse (phones), or when the mouse rests for a while, it sways slowly by itself.
+  const poster = $('dt-poster');
+  const SWAY_AFTER = 2500; // ms without the mouse moving
+  let tgX = 0, tgY = 0, tcX = 0, tcY = 0, traf = 0, lastMouse = -1e9;
+  function tiltNow() {
+    traf = 0;
+    const v = poster.querySelector('.vhs');
+    if (!v) return;
+    const rm = reduced(), now = performance.now();
+    const sway = !rm && dlg.open && now - lastMouse > SWAY_AFTER;
+    if (sway) { const k = now / 1000; tgX = Math.sin(k * .85) * .85; tgY = Math.sin(k * .55 + 1) * .45; }
+    else if (rm) { tgX = tgY = 0; }
+    const a = rm ? 1 : sway ? .05 : .085;
+    tcX += (tgX - tcX) * a; tcY += (tgY - tcY) * a;
+    v.style.setProperty('--ry', (32 + tcX * 12).toFixed(2) + 'deg');
+    v.style.setProperty('--rx', (-12 + tcY * 8).toFixed(2) + 'deg');
+    v.style.setProperty('--gx', (62 - tcX * 34).toFixed(1) + '%');
+    if (sway || Math.abs(tgX - tcX) > .002 || Math.abs(tgY - tcY) > .002) traf = requestAnimationFrame(tiltNow);
+  }
+  const startTilt = () => { if (!traf) traf = requestAnimationFrame(tiltNow); };
+  // a tap on the tape does what the mouse does on a computer: it pulls the tape a little further out
+  poster.addEventListener('click', () => { if (!reduced()) poster.classList.toggle('lift'); });
+  dlg.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    lastMouse = performance.now();
+    const r = poster.getBoundingClientRect();
+    tgX = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (innerWidth / 2)));
+    tgY = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (innerHeight / 2)));
+    startTilt();
+  });
   dlg.addEventListener('cancel', e => { e.preventDefault(); closeDetail(); });
 
   /* ---------- language, size, first picture ---------- */
