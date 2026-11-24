@@ -9,3 +9,6 @@
 .zlj-labels { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
 .zlj-vil, .zlj-lab { position: absolute; left: 0; top: 0; white-space: nowrap; line-height: 1.15; font-family: var(--serif); will-change: transform; visibility: hidden; }
 .zlj-vil { font-style: italic; font-size: 15px; color: var(--ink-muted); }
+.zlj-lab { font-size: 17px; color: var(--ink-soft); padding: 1px 4px; border-radius: 2px; background: rgba(238, 235, 227, .75); opacity: 0; transition: opacity .6s ease; }
+.zlj-lab.on { opacity: 1; }
+.zlj-lab.now { color: var(--ink); text-decoration: underline; text-decoration-color: var(--leaf); text-underline-offset: 3px; }
