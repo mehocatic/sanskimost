@@ -172,6 +172,12 @@ html:has(#dt[open]) { overflow: hidden; }
    --SW its width (the cover), --SD its depth (the spine). The tape is a little smaller than the inside of the sleeve. */
 @property --out { syntax: "<number>"; inherits: false; initial-value: 0; }
 @property --lift { syntax: "<number>"; inherits: true; initial-value: 0; }
+.dt-poster {
+  --HP: min(80svh, 720px); --S: calc(var(--HP) * .68); --H: var(--S); --SW: calc(var(--S) * .527); --SD: calc(var(--S) * .169);
+  --CH: calc(var(--S) * .965); --CW: calc(var(--CH) * 100 / 194); --CD: calc(var(--SD) * .78);
+  position: relative; justify-self: center; height: var(--HP); width: calc(var(--HP) * .64); max-width: 100%;
+  perspective: 1700px; perspective-origin: 50% 30%;
+}
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
