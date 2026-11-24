@@ -235,7 +235,7 @@ I18N.en = {
   'nav.people': 'Golden Lilies',
   'lic.meta': 'Golden Lily recipients from the pre-war municipality of Sanski Most, with the year of the award, place of birth and unit.',
   'lic.doctitle': 'Golden Lilies · Sanski Most',
-  'lic.zlj.people': 'The people of Sanski Most are in the Corridor →',
+  'lic.zlj.people': 'People of Sanski Most →',
   'lic.born': 'From Sanski Most',
   'lic.origin': 'Roots in Sanski Most',
   'lic.linked': "Ties to Sanski Most",
