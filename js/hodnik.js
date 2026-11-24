@@ -353,15 +353,10 @@
         this.glide = { startMs: performance.now(), durationMs: 1400, from: { ...this.pose }, to: { ...target }, mode: 'intro' };
       }
 
-      buildCorridor(scene) {
-        const gradTex = (stops) => {
-          const c = document.createElement('canvas'); c.width = 4; c.height = 256;
-          const x = c.getContext('2d'), g = x.createLinearGradient(0, 0, 0, 256);
-          stops.forEach(([o, col]) => g.addColorStop(o, col));
-          x.fillStyle = g; x.fillRect(0, 0, 4, 256);
-          const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
-          return tex;
-        };
+      // a gallery: warm white walls with a skirting board and a picture rail, a light oak floor, a ceiling with a ring of light
+      // everything is drawn into small canvas textures (no lights, no shadows), so a phone keeps up
+      buildCorridor(scene, maxAniso) {
+        const texOf = (c, aniso) => { const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; if (aniso) t.anisotropy = maxAniso; this.disposables.push(t); return t; };
         const add = (geo, mat, y) => { const m = new THREE.Mesh(geo, mat); if (y != null) m.position.y = y; scene.add(m); this.disposables.push(geo, mat); return m; };
         const outerTex = gradTex([[0, '#F5EBD8'], [.2, '#FBF3E3'], [.6, '#FBF3E3'], [.86, '#F8EDD9'], [1, '#EFDFC4']]);
         add(new THREE.CylinderGeometry(OUTER_RADIUS, OUTER_RADIUS, WALL_HEIGHT, 160, 1, true), new THREE.MeshBasicMaterial({ map: outerTex, side: THREE.BackSide }), 3.1);
