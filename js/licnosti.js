@@ -76,4 +76,12 @@
     'Hrustovo': [44.6653424, 16.7180207],
   };
 
+  // ---------- the map and its local frame (1 unit = 1 km)
+  const LAT0 = 44.75, LON0 = 16.61, R = 17.5;           // centre and radius of the round map
+  const KX = 111.32 * Math.cos(LAT0 * Math.PI / 180), KY = 110.57;
+  const X = lon => (lon - LON0) * KX, Zc = lat => -(lat - LAT0) * KY;
+  const EXAG = 2.4, BASE = 120;                         // height exaggeration, metres left under the floor
+  const COLH = 1.6;                                     // height of a pin
+  const small = innerWidth < 700;
+
 })();
