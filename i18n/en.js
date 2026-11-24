@@ -311,6 +311,7 @@ I18N.en = {
   'arh.open': 'Open the photograph',
   'arh.tosnimci': 'Video 1992–1995',
   'arh.vid.k': 'Video archive',
+  'arh.vid.t': 'Recordings 1992–1995',
   'sn.doctitle': 'Recordings 1992–1995 · Sanski Most',
   'sn.meta': 'Video recordings about Sanski Most 1992–1995: testimonies, field footage, judgements and documentaries. Each recording links to its source.',
   'sn.eyebrow': 'Archive · Recordings 1992–1995',
