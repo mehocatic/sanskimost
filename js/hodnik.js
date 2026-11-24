@@ -584,7 +584,7 @@
 
       createLabels(maxAniso) {
         this.labels = PRINTS.map(pr => {
-          const canvas = document.createElement('canvas'); canvas.width = 640; canvas.height = 260;
+          const canvas = document.createElement('canvas'); canvas.width = 1280; canvas.height = 2 * LABEL_CH; // drawn at twice the size, so the text stays sharp close up
           const tex = new THREE.CanvasTexture(canvas); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = maxAniso;
           this.disposables.push(tex);
           return { canvas, tex, index: pr.index };
