@@ -1023,7 +1023,12 @@
     return true;
   }
 
-  function setFocused(f) { focused = f; setHints(); }
+  function setFocused(f, printIndex) {
+    focused = f;
+    if (f) { plateAt = printIndex; fillPlate(); }
+    gui.classList.toggle('focused', f);
+    setHints();
+  }
 
   // without WebGL (or when the context is lost) only the list is left
   function showNoGL() {
