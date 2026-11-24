@@ -44,3 +44,13 @@
       `<div class="face cv tone-${f.cat}">${cover(f, i)}</div></div>`;
   }).join('');
   const tapes = Array.from(stage.children);
+
+  /* ---------- motion state ---------- */
+  let s = START, T = START;          // s: where the shelf is, T: where it is going (a tape number, a tape per step)
+  let active = 0, lastDir = 1;       // the recording in the middle
+  let hover = -1;
+  let mx = 0, my = 0, px = 0, py = 0, hasPtr = false, tiltX = 0, tiltY = 0;
+  let H = 320, ws = 54, d = 168, gap = 9.6; // tape height, spine width, cover width, space between tapes
+  let down = false, dragging = false, dragX = 0, dragT = START, dragId = -1, noClickUntil = 0;
+  let snapTimer = 0, raf = 0, last = 0, closing = false;
+  const lift = new Float64Array(TOTAL);
