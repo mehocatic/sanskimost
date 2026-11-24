@@ -393,6 +393,7 @@ I18N.en = {
   'arh.c.trg-cvjetnjak': 'The square with a flower bed, a tall building behind',
   'arh.c.sip-dzamija-kuce': 'Across the Sana: the ŠIP building, a mosque and old Bosnian houses',
   'arh.c.sana-1912': 'Across the Sana: a wooden bridge, houses along the bank and a church behind them',
+  'arh.c.sana-snijeg-1940': 'The Sana under snow, a mosque minaret behind the houses',
   'arh.c.pumpa-vedro-polje': 'The first petrol station at Vedro polje',
   'arh.c.poplava-1976': 'The flood of 21 to 23 July 1976. According to the note with the photo, the street is Alagića sokak.',
   'arh.c.most-hotel-1970': 'The town bridge and the hotel under construction, around 1970',
