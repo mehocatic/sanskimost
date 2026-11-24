@@ -2,7 +2,7 @@
    The scene is drawn by hodnik.js; this file styles what lies over it: the title, the arrows, the hint, the Gallery / List switch, the list and the dialog. */
 
 .hodnik-page {
-  --wall: #FFF9EC; --page: #FFF9EF; --ink: #3A3550; --ink-60: rgba(58, 53, 80, .6); --ink-35: rgba(58, 53, 80, .35);
+  --wash: 238, 228, 211; --wall: #EEE4D3; --page: #FFF9EF; --ink: #3A3550; --ink-60: rgba(58, 53, 80, .6); --ink-35: rgba(58, 53, 80, .35);
   --h-serif: var(--serif); --h-mono: var(--sans); --h-cond: var(--serif);
   --u: min(calc(100vw / 1440), calc(100vh / 900)); --w: calc(100vw / 1440);
   height: 100%; overflow: hidden; background: var(--wall); color: var(--ink);
