@@ -283,8 +283,8 @@
         renderer.domElement.addEventListener('webglcontextlost', ev => { ev.preventDefault(); cancelAnimationFrame(this.raf); showNoGL(); });
 
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color('#FFF9EC');
-        scene.fog = new THREE.Fog('#FFF9EC', 10, 46);
+        scene.background = new THREE.Color('#EEE4D3');
+        scene.fog = new THREE.Fog('#EEE4D3', 18, 60);
         this.scene = scene;
         this.camera = new THREE.PerspectiveCamera(w >= h ? 56 : 70, w / h, .05, 100);
         scene.add(new THREE.HemisphereLight(0xfffdf6, 0xe9cfa6, 1.55));
