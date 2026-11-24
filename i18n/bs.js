@@ -255,6 +255,7 @@ I18N.bs = {
   'lic.zlj.loading': 'Učitavam teren…',
   'lic.zlj.seven': 'Sedam ljiljana',
   'lic.zlj.places': 'Tačke označavaju mjesta rođenja.',
+  'lic.zlj.credit': 'Teren: Terrain Tiles (Mapzen, AWS Open Data). Rijeke i mjesta: © OpenStreetMap saradnici.',
   'lic.source': 'Izvor',
   'lic.count': '{n} ličnosti',
   'lic.note.h': "Predloži ličnost",
