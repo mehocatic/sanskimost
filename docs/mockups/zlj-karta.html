@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototip · Zlatni ljiljani na karti</title>
+<link rel="stylesheet" href="../../vendor/fonts/fonts.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --paper: #eeebe3; --ink: #151a18; --ink-soft: rgba(21,26,24,.78); --ink-muted: rgba(21,26,24,.56); --river: #1795a0; --leaf: #a8823a;
+    --serif: "EB Garamond", Georgia, serif; --sans: Inter, system-ui, sans-serif; --gutter: clamp(16px, 5vw, 80px); }
+  html, body { background: var(--paper); color: var(--ink); }
+  body { font-family: var(--sans); line-height: 1.55; overflow-x: clip; }
+
+  #gl { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .labels { position: fixed; inset: 0; pointer-events: none; overflow: hidden; }
+  .vil, .lab { position: absolute; left: 0; top: 0; white-space: nowrap; will-change: transform; }
+  .vil { font-family: var(--serif); font-style: italic; font-size: 15px; line-height: 1.15; color: var(--ink-muted); }
+  .lab { font-family: var(--serif); font-size: 17px; line-height: 1.15; color: var(--ink-soft); opacity: 0; transition: opacity .6s ease; padding: 1px 4px; border-radius: 2px; background: rgba(238,235,227,.75); }
+  .lab.on { opacity: 1; }
+  .lab.now { color: var(--ink); text-decoration: underline; text-decoration-color: var(--leaf); text-underline-offset: 3px; }
+
+  .loading { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--ink-muted); transition: opacity .8s ease; }
+  .loading.done { opacity: 0; pointer-events: none; }
+
+  /* the text runs over the map; each block is one stop of the flight */
+  .story { position: relative; z-index: 2; }
+  .st { position: relative; min-height: 115svh; display: flex; align-items: center; padding: 0 var(--gutter); }
+  .st:first-child { min-height: 100svh; }
+  .legend { width: min(100%, 25rem); padding: 26px 26px 24px; background: rgba(238,235,227,.93); border: 1px solid var(--ink);
+    box-shadow: 0 0 0 4px rgba(238,235,227,.93), 0 0 0 5px rgba(21,26,24,.35); }
+  .sc { font-variant: small-caps; letter-spacing: .08em; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-muted); }
+  .legend h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.3rem, 7vw, 3.4rem); line-height: .98; margin-top: .4rem; }
+  .legend h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.1rem, 6.4vw, 3rem); line-height: 1; margin-top: .2rem; }
+  .legend p { margin-top: .9rem; color: var(--ink-soft); }
+  .legend .it { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--ink); margin-top: .5rem; }
+  .yr { display: flex; align-items: center; gap: 10px; }
+  .yr svg { width: 18px; height: auto; }
+  .legend dl { display: grid; gap: 10px; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid rgba(21,26,24,.25); }
+  .legend dt { font-variant: small-caps; letter-spacing: .08em; font-family: var(--serif); color: var(--ink-muted); line-height: 1.1; }
+  .legend dd { color: var(--ink); }
+  .legend .note { font-family: var(--serif); font-style: italic; font-size: 1.15rem; line-height: 1.4; color: var(--ink); }
+  .post { display: inline-block; margin-top: .7rem; font-variant: small-caps; letter-spacing: .08em; font-family: var(--serif); color: var(--leaf); border-bottom: 1px solid var(--leaf); }
+  .legend a { color: var(--ink); }
+  .credit { margin-top: 1rem !important; font-size: .72rem; color: var(--ink-muted) !important; }
+  .hint { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); font-family: var(--serif); font-style: italic; color: var(--ink-muted); }
+
+  @media (max-width: 700px) {
+    .st { align-items: flex-end; padding-bottom: 7svh; }
+    .st:first-child { align-items: flex-end; }
+    .legend { padding: 20px 18px 18px; }
+    .vil { font-size: 13px; } .lab { font-size: 14px; }
+    .legend h2 { font-size: 2rem; }
+    .legend dl { gap: 6px; margin-top: .8rem; padding-top: .7rem; }
+    .legend .note { font-size: 1.05rem; }
+    .legend p { margin-top: .6rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="labels" id="labels" aria-hidden="true"></div>
+  <p class="loading" id="loading">Učitavam teren…</p>
+
+  <main class="story" id="story">
+    <section class="st">
+      <div class="legend">
+        <p class="sc">Najviše ratno priznanje</p>
+        <h1>Zlatni ljiljani Sanskog Mosta</h1>
+        <p>Zlatni ljiljan je najviše ratno priznanje Armije Republike Bosne i Hercegovine iz rata od 1992. do 1995.</p>
+        <p class="it">Ljiljan je hiljadu godina simbol Bosne.</p>
+      </div>
+      <span class="hint">Skrolaj</span>
+    </section>
+    <!-- seven stops are added here -->
+    <section class="st" id="outro">
+      <div class="legend">
+        <p class="sc"><span id="count"></span></p>
+        <h2>Sedam ljiljana</h2>
+        <p>Tačke stoje u mjestima rođenja.</p>
+        <p><a id="src" target="_blank" rel="noopener">Izvor: Wikipedia</a> · <a href="../../hodnik">Ličnosti Sanskog Mosta →</a></p>
+        <p class="credit">Teren: Terrain Tiles (Mapzen, AWS Open Data). Rijeke i mjesta: © OpenStreetMap saradnici.</p>
+      </div>
+    </section>
+  </main>
+
+<script src="../../js/data/licnosti-data.js"></script>
+<script src="zlj-rivers.js"></script>
+<script type="module">
+import * as THREE from '../../vendor/three.module.min.js';
+
+// ---------- data
+const COLH = 1.6;   // height of a pin, km (before the height exaggeration)
+// TODO(verify): the points are the OSM place nodes of each village (nominatim, 2026-11-24), not the exact birthplace.
+const PLACES = {
+  'Skucani Vakuf': [44.7846637, 16.4598220],
+  'Stari Majdan':  [44.8286950, 16.6052365],
+  'Sanski Most':   [44.7651882, 16.6656827],
+  'Vrhpolje':      [44.6702203, 16.7442405],
+  'Hrustovo':      [44.6653424, 16.7180207],
+};
+const Z = window.ZLJILJANI;
+const placeOf = z => z.born.bs.split(',')[0].trim();
+const dateOf = z => z.born.bs.split(',').slice(1).join(',').trim();
+
+// ---------- the area and its local frame (1 unit = 1 km)
+const LAT0 = 44.75, LON0 = 16.61, R = 17.5;           // centre and radius of the round map
+const KX = 111.32 * Math.cos(LAT0 * Math.PI / 180), KY = 110.57;
+const X = lon => (lon - LON0) * KX, Zc = lat => -(lat - LAT0) * KY;
+const EXAG = 2.4, BASE = 120;                         // height exaggeration, metres under the floor
+const small = innerWidth < 700;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ---------- the story blocks for the seven
+// the lily: a centre petal, a band, a centre foot, and the right-hand petal and foot (the left ones are mirrored)
+const LILY_C = ['M100 6C108 24 121 46 121 74C121 98 110 116 100 130C90 116 79 98 79 74C79 46 92 24 100 6Z',
+  'M66 132H134Q140 132 140 138V146Q140 152 134 152H66Q60 152 60 146V138Q60 132 66 132Z',
+  'M100 154C106 172 108 194 100 226C92 194 94 172 100 154Z'];
+const LILY_R = ['M104 132C106 108 120 86 144 80C168 74 190 86 192 108C194 126 180 138 166 134C156 131 152 120 158 112C163 106 172 108 174 115C176 106 168 98 156 99C138 101 124 116 118 134Z',
+  'M108 154C118 170 134 180 154 178C150 192 128 198 112 176C110 168 108 160 108 154Z'];
+const LILY_RIB = 'M100 30V116';
+const LILY = `<svg viewBox="0 0 200 240" aria-hidden="true"><g fill="#b08a3e" stroke="#5a4316" stroke-width="5" stroke-linejoin="round">${
+  LILY_C.map(d => `<path d="${d}"/>`).join('')}${LILY_R.map(d => `<path d="${d}"/><path d="${d}" transform="matrix(-1 0 0 1 200 0)"/>`).join('')}</g><path d="${LILY_RIB}" stroke="#5a4316" stroke-width="4" stroke-linecap="round"/></svg>`;
+const outro = document.getElementById('outro');
+Z.forEach(z => {
+  const s = document.createElement('section');
+  s.className = 'st';
+  s.innerHTML = `<div class="legend">
+    <p class="sc yr">${LILY}<span>${z.year} · ${placeOf(z)}</span></p>
+    <h2>${z.name}</h2>
+    ${z.post ? '<span class="post">posthumno</span>' : ''}
+    <dl><div><dt>Rođenje</dt><dd>${dateOf(z)}</dd></div><div><dt>Jedinica</dt><dd>${z.unit.bs}</dd></div>
+    ${z.note ? `<div><dt>Napomena</dt><dd class="note">${z.note.bs}</dd></div>` : ''}</dl></div>`;
+  outro.before(s);
+});
+document.getElementById('count').textContent = Z.length + ' dobitnika';
+document.getElementById('src').href = window.ZLJILJANI_SRC;
+
+// two people from the same village stand about 900 m apart around the village point,
+// on a line across the direction of the nearest other village, so they do not crowd it (Vrhpolje and Hrustovo are 2 km apart)
+const many = {}, seen = {};
+Z.forEach(z => { many[placeOf(z)] = (many[placeOf(z)] || 0) + 1; });
+const pins = Z.map(z => {
+  const v = placeOf(z), p = PLACES[v], x = X(p[1]), zz = Zc(p[0]);
+  const n = (seen[v] = (seen[v] || 0) + 1);
+  if (many[v] < 2) return { z, x, zz, y: 0 };
+  let nx = 0, nz = 0, best = Infinity;
+  Object.entries(PLACES).forEach(([o, q]) => { if (o === v) return; const dx = X(q[1]) - x, dz = Zc(q[0]) - zz, d = Math.hypot(dx, dz); if (d < best) { best = d; nx = dx / d; nz = dz / d; } });
+  const s = n === 1 ? -.45 : .45;
+  return { z, x: x - nz * s, zz: zz + nx * s, y: 0 };
+});
+// in a pair, the pin further north (further from the camera) gets a taller stem, so the two lilies do not cover each other from above
+pins.forEach(p => { p.colh = COLH; });
+Object.keys(many).filter(v => many[v] > 1).forEach(v => {
+  const two = pins.filter(p => placeOf(p.z) === v).sort((a, b) => a.zz - b.zz);
+  two[0].colh = COLH * 1.5;
+});
+
+// ---------- terrain from Terrarium tiles (height = R*256 + G + B/256 - 32768)
+const TZ = small ? 10 : 11, N = 2 ** TZ;
+const tx = lon => (lon + 180) / 360 * N;
+const ty = lat => { const r = lat * Math.PI / 180; return (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * N; };
+const lonMin = LON0 - R / KX, lonMax = LON0 + R / KX, latMin = LAT0 - R / KY, latMax = LAT0 + R / KY;
+const x0 = Math.floor(tx(lonMin)), x1 = Math.floor(tx(lonMax)), y0 = Math.floor(ty(latMax)), y1 = Math.floor(ty(latMin));
+const TW = (x1 - x0 + 1) * 256, TH = (y1 - y0 + 1) * 256;
+let H = null;
+
+async function loadTerrain() {
+  const cv = document.createElement('canvas'); cv.width = TW; cv.height = TH;
+  const cx = cv.getContext('2d', { willReadFrequently: true });
+  const jobs = [];
+  for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) jobs.push(new Promise((ok, no) => {
+    const im = new Image(); im.crossOrigin = 'anonymous';
+    im.onload = () => { cx.drawImage(im, (x - x0) * 256, (y - y0) * 256); ok(); };
+    im.onerror = no;
+    im.src = `https://s3.amazonaws.com/elevation-tiles-prod/terrarium/${TZ}/${x}/${y}.png`;
+  }));
+  await Promise.all(jobs);
+  const d = cx.getImageData(0, 0, TW, TH).data;
+  H = new Float32Array(TW * TH);
+  for (let i = 0; i < H.length; i++) H[i] = d[i * 4] * 256 + d[i * 4 + 1] + d[i * 4 + 2] / 256 - 32768;
+}
+function heightAt(lon, lat) {
+  if (!H) return 200;
+  const px = Math.min(Math.max((tx(lon) - x0) * 256 - .5, 0), TW - 2), py = Math.min(Math.max((ty(lat) - y0) * 256 - .5, 0), TH - 2);
+  const ix = px | 0, iy = py | 0, fx = px - ix, fy = py - iy, i = iy * TW + ix;
+  return (H[i] * (1 - fx) + H[i + 1] * fx) * (1 - fy) + (H[i + TW] * (1 - fx) + H[i + TW + 1] * fx) * fy;
+}
+const fadeAt = (x, z) => 1 - THREE.MathUtils.smoothstep(Math.hypot(x, z) / R, .86, 1);
+const worldY = (x, z) => Math.max(heightAt(LON0 + x / KX, LAT0 - z / KY) - BASE, 0) / 1000 * EXAG * fadeAt(x, z);
+
+// ---------- scene
+const canvas = document.getElementById('gl');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const PAPER = new THREE.Color('#eeebe3');
+renderer.setClearColor(PAPER);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(38, 1, .05, 400);
+let terrainMat = null, t0 = 0;
+
+function buildTerrain() {
+  const S = small ? 260 : 420;
+  const g = new THREE.PlaneGeometry(2 * R, 2 * R, S, S);
+  g.rotateX(-Math.PI / 2);
+  const p = g.attributes.position, hA = new Float32Array(p.count);
+  for (let i = 0; i < p.count; i++) {
+    const x = p.getX(i), z = p.getZ(i);
+    hA[i] = heightAt(LON0 + x / KX, LAT0 - z / KY);
+    p.setY(i, worldY(x, z));
+  }
+  g.setAttribute('aH', new THREE.BufferAttribute(hA, 1));
+  g.computeVertexNormals();
+  const m = new THREE.ShaderMaterial({
+    uniforms: { uPaper: { value: PAPER }, uInk: { value: new THREE.Color('#151a18') }, uRiver: { value: new THREE.Color('#1795a0') }, uRiv: { value: riverTexture() }, uR: { value: R }, uT: { value: 0 }, uTime: { value: 0 },
+      uLeaf: { value: new THREE.Color('#a8823a') }, uPin: { value: pins.map(() => new THREE.Vector4(0, 0, 0, 0)) } },
+    vertexShader: `attribute float aH; varying float vH; varying vec3 vN; varying vec3 vW;
+      void main(){ vH = aH; vN = normal; vW = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+    fragmentShader: `uniform vec3 uPaper, uInk, uRiver; uniform sampler2D uRiv; uniform float uR, uT, uTime; uniform vec3 uLeaf; uniform vec4 uPin[${pins.length}]; varying float vH; varying vec3 vN; varying vec3 vW;
+      float line(float v, float w){ float fw = fwidth(v); float f = abs(fract(v - .5) - .5) / max(fw, 1e-4); return (1. - smoothstep(w - .5, w + .5, f)) * (1. - smoothstep(.25, .6, fw)); }
+      void main(){
+        vec3 L = normalize(vec3(-.55, .75, -.45));
+        float sh = clamp(dot(normalize(vN), L), 0., 1.);
+        vec3 c = uPaper * mix(1., mix(.5, 1.06, pow(sh, .85)), smoothstep(.35, 1., uT));
+        float minor = line(vH / 20., .8) * .22, major = line(vH / 100., 1.2) * .55;
+        float drawn = 1. - smoothstep(-30., 0., vH - mix(80., 1700., smoothstep(0., .75, uT)));   // contours are drawn from the valleys up
+        c = mix(c, uInk, max(minor, major) * drawn);
+        float f = texture2D(uRiv, (vW.xz + uR) / (2. * uR)).r;
+        float aa = max(fwidth(f), 1e-3);
+        float edge = smoothstep(.5 - aa, .5 + aa, f);                  // a sharp bank close up
+        float far = smoothstep(.12, .5, f) * smoothstep(.04, .2, aa);   // far away a thin river stays as a soft line
+        c = mix(c, uRiver, max(edge, far) * .9 * smoothstep(.55, 1., uT));
+        // the mark at the foot of each pin: a dot and a ring (130 m), and for the person in focus a ring that spreads out
+        float mk = 0.;
+        for (int i = 0; i < ${pins.length}; i++) {
+          vec4 P = uPin[i];
+          float dd = length(vW.xz - P.xy), a2 = max(fwidth(dd), 1e-4), w = max(.011, a2 * .9);
+          float ring = 1. - smoothstep(w, w + a2, abs(dd - .13));
+          float dotm = 1. - smoothstep(.03, .03 + a2, dd);
+          float ph = fract(uTime * .4), wave = P.w * (1. - smoothstep(w, w + a2, abs(dd - (.13 + ph * .5)))) * (1. - ph);
+          mk = max(mk, max(max(ring, dotm), wave) * P.z);
+        }
+        c = mix(c, uLeaf, mk * .85);
+        float d = length(vW.xz) / uR;
+        c = mix(c, uPaper, smoothstep(.8, .98, d));
+        gl_FragColor = vec4(c, 1.);
+        #include <colorspace_fragment>
+      }`,
+  });
+  scene.add(new THREE.Mesh(g, m));
+  terrainMat = m;
+}
+
+// rivers from OpenStreetMap (zlj-rivers.js) as a distance field that the terrain shader reads:
+// each texel holds how far it is from the river bank, so the shader can draw a sharp, smooth edge at any zoom
+// (a plain painted texture turns into pixels close up), and a river can never sink under the mesh in a narrow valley
+function riverTexture() {
+  const S = 2048, k = S / (2 * R), RANGE = 3;          // RANGE: texels over which the field goes from the bank to 0 or 1
+  const f = new Uint8Array(S * S);
+  (window.ZLJ_RIVERS || []).forEach(w => {
+    const half = (w.n === 'Sana' ? .045 : .022) * k, pad = half + RANGE + 1;
+    const P = w.p.map(([la, lo]) => [(X(lo) + R) * k, (Zc(la) + R) * k]);
+    for (let i = 1; i < P.length; i++) {
+      const [ax, ay] = P[i - 1], [bx, by] = P[i], dx = bx - ax, dy = by - ay, L2 = dx * dx + dy * dy || 1;
+      const x0 = Math.max(0, Math.floor(Math.min(ax, bx) - pad)), x1 = Math.min(S - 1, Math.ceil(Math.max(ax, bx) + pad));
+      const y0 = Math.max(0, Math.floor(Math.min(ay, by) - pad)), y1 = Math.min(S - 1, Math.ceil(Math.max(ay, by) + pad));
+      for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) {
+        const px = x + .5, py = y + .5, t = Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / L2));
+        const d = Math.hypot(px - ax - t * dx, py - ay - t * dy);
+        const v = Math.max(0, Math.min(255, Math.round((.5 + (half - d) / (2 * RANGE)) * 255)));
+        const j = y * S + x; if (v > f[j]) f[j] = v;
+      }
+    }
+  });
+  const t = new THREE.DataTexture(f, S, S, THREE.RedFormat, THREE.UnsignedByteType);
+  t.minFilter = THREE.LinearMipmapLinearFilter; t.magFilter = THREE.LinearFilter; t.generateMipmaps = true;
+  t.anisotropy = renderer.capabilities.getMaxAnisotropy(); t.needsUpdate = true;
+  return t;
+}
+
+// the lily on top of each pin: drawn large (mipmapped, so it stays sharp when small), gold with a dark outline,
+// on a thin paper halo so it reads over the contour lines
+function lilyTexture() {
+  const W = 512, H = 600, k = W / 220;
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
+  const x = c.getContext('2d');
+  x.translate(10 * k, 4 * k); x.scale(k, k);
+  const all = [...LILY_C.map(d => [new Path2D(d), false]), ...LILY_R.flatMap(d => [[new Path2D(d), false], [new Path2D(d), true]])];
+  const each = fn => all.forEach(([path, mir]) => { x.save(); if (mir) { x.translate(200, 0); x.scale(-1, 1); } fn(path); x.restore(); });
+  x.lineJoin = 'round'; x.lineCap = 'round';
+  x.strokeStyle = 'rgba(238,235,227,.95)'; x.lineWidth = 15; each(pa => x.stroke(pa));             // paper halo
+  const g = x.createLinearGradient(40, 0, 160, 240);
+  g.addColorStop(0, '#f0d58c'); g.addColorStop(.45, '#c49a45'); g.addColorStop(1, '#7d5c20');
+  x.fillStyle = g; each(pa => x.fill(pa));                                                        // gold
+  x.strokeStyle = '#4d3a14'; x.lineWidth = 3.4; each(pa => x.stroke(pa));                          // ink outline
+  x.strokeStyle = '#5a4316'; x.lineWidth = 3.5; x.stroke(new Path2D(LILY_RIB));                     // the rib
+  x.strokeStyle = 'rgba(255,244,210,.7)'; x.lineWidth = 2.5; x.stroke(new Path2D('M92 44C87 60 86 80 90 100'));   // a light edge
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = renderer.capabilities.getMaxAnisotropy(); return t;
+}
+
+function buildPins() {
+  const tex = lilyTexture();
+  const stemG = new THREE.CylinderGeometry(1, 1, 1, 8); stemG.translate(0, .5, 0);   // radius set every frame (a constant hairline on screen)
+  const stemM = new THREE.MeshBasicMaterial({ color: '#2a2f2c' });
+  pins.forEach(p => {
+    p.y = worldY(p.x, p.zz);
+    const grp = new THREE.Group(); grp.position.set(p.x, p.y - .02, p.zz);
+    const stem = new THREE.Mesh(stemG, stemM); stem.scale.set(.01, .0001, .01);
+    const spr = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, opacity: 0, sizeAttenuation: false, depthTest: false }));
+    spr.center.set(.5, .02);   // the lily stands on the top of the stem
+    spr.renderOrder = 5;
+    grp.add(stem, spr); scene.add(grp);
+    Object.assign(p, { stem, spr, rise: 0 });
+  });
+}
+
+// ---------- labels
+const labels = document.getElementById('labels');
+const vils = Object.entries(PLACES).map(([n, [la, lo]]) => {
+  const e = document.createElement('div'); e.className = 'vil'; e.textContent = n; labels.appendChild(e);
+  return { e, n, v: new THREE.Vector3(X(lo), 0, Zc(la)) };
+});
+pins.forEach(p => { p.lab = document.createElement('div'); p.lab.className = 'lab'; p.lab.textContent = p.z.name; labels.appendChild(p.lab); });
+const tmp = new THREE.Vector3();
+// screen position of a world point, or null when it is behind the camera or far off screen
+function toScreen(v) {
+  tmp.copy(v).project(camera);
+  if (tmp.z > 1 || Math.abs(tmp.x) > 1.3 || Math.abs(tmp.y) > 1.3) return null;
+  return [(tmp.x + 1) / 2 * innerWidth, (1 - tmp.y) / 2 * innerHeight];
+}
+// label sizes are measured once (and again after a resize or when the fonts arrive), not every frame
+function measureLabels() {
+  pins.forEach(p => { p.w = p.lab.offsetWidth; p.h = p.lab.offsetHeight; });
+  vils.forEach(v => { v.w = v.e.offsetWidth; v.h = v.e.offsetHeight; });
+}
+const overlap = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
+// candidate spots around a mark of size (mw, mh): right, left, above, below, then the four corners
+function spots(x, y, mw, mh, w, h) {
+  const g = 6, r = x + mw / 2 + g, l = x - mw / 2 - g - w, cx = x - w / 2;
+  return [[r, y - h / 2], [l, y - h / 2], [cx, y - mh / 2 - h - 2], [cx, y + mh / 2 + 2],
+    [r, y - mh / 2 - h * .4], [r, y + mh / 2 - h * .6], [l, y - mh / 2 - h * .4], [l, y + mh / 2 - h * .6]]
+    .map(([a, b]) => [a, b, a + w, b + h]);
+}
+// the legend card on screen now: labels keep out of it
+function legendRect() {
+  let best = null, area = 0;
+  document.querySelectorAll('.legend').forEach(e => {
+    const r = e.getBoundingClientRect(), a = Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 0)) * r.width;
+    if (a > area) { area = a; best = [r.left - 8, r.top - 8, r.right + 8, r.bottom + 8]; }
+  });
+  return best;
+}
+// each label goes to the first spot that covers no lily, no other name, not the card and not the screen edge
+function layoutLabels(order) {
+  const M = 6, taken = [], leg = legendRect();
+  if (leg) taken.push(leg);
+  order.forEach(o => { if (o.mark) taken.push(o.mark); });
+  order.forEach(o => {
+    if (!o.at || !o.show) { o.el.style.visibility = 'hidden'; return; }
+    const c = spots(o.at[0], o.at[1], o.mw, o.mh, o.w, o.h);
+    const cost = q => {
+      let s = 0;
+      taken.forEach(t => { if (t !== o.mark) s += overlap(q, t); });
+      if (q[0] < M || q[1] < M || q[2] > innerWidth - M || q[3] > innerHeight - M) s += o.w * o.h;
+      return s;
+    };
+    // keep the last spot while it is still free, so labels do not jump around as the camera moves
+    let k = o.k != null && cost(c[o.k]) === 0 ? o.k : -1;
+    if (k < 0) { let bc = Infinity; c.forEach((q, i) => { const v = cost(q); if (v < bc - .5) { bc = v; k = i; } }); }
+    const q = c[k];
+    o.k = k;
+    if (o.optional && cost(q) > 0) { o.el.style.visibility = 'hidden'; return; }
+    o.el.style.visibility = '';
+    o.el.style.transform = `translate(${q[0].toFixed(1)}px, ${q[1].toFixed(1)}px)`;
+    taken.push(q);
+  });
+}
+
+// ---------- the flight: one key per story block
+const portrait = () => innerWidth / innerHeight < .9;
+let keys = [];
+function buildKeys() {
+  const k = (x, y, z, dist, el, az) => ({ t: new THREE.Vector3(x, y, z), dist, el: el * Math.PI / 180, az: az * Math.PI / 180 });
+  const f = portrait() ? 1.7 : 1;
+  // wide views: far enough that about 27 km of land fits across the screen, also on a narrow phone
+  const wide = d => Math.max(d, 13.5 / (Math.tan(19 * Math.PI / 180) * camera.aspect));
+  keys = [k(-1, .2, 1, wide(36), 46, -8)];
+  pins.forEach((p, i) => keys.push(k(p.x, p.y + .5, p.zz, 6.5 * f, 30, [-30, 10, 40, -10][i % 4])));
+  const cx = pins.reduce((s, p) => s + p.x, 0) / pins.length, cz = pins.reduce((s, p) => s + p.zz, 0) / pins.length;
+  keys.push(k(cx, .6, cz + 1.5, wide(36), 70, 10));
+}
+const want = { t: new THREE.Vector3(), dist: 30, el: .8, az: 0 }, cur = { t: new THREE.Vector3(), dist: 40, el: .9, az: 0 };
+let blocks = [], centres = [];
+function measure() {
+  blocks = [...document.querySelectorAll('.st')];
+  centres = blocks.map(b => b.offsetTop + b.offsetHeight / 2 - innerHeight / 2);
+}
+let S = 0;
+function fromScroll() {
+  if (keys.length < 2 || !centres.length) return;
+  const y = scrollY;
+  let i = 0; while (i < centres.length - 2 && y > centres[i + 1]) i++;
+  const t = THREE.MathUtils.clamp((y - centres[i]) / (centres[i + 1] - centres[i]), 0, 1);
+  const e = THREE.MathUtils.smootherstep(t, .18, .82);
+  S = i + e;
+  const a = keys[i], b = keys[i + 1];
+  want.t.lerpVectors(a.t, b.t, e);
+  const hop = a.t.distanceTo(b.t);
+  want.dist = THREE.MathUtils.lerp(a.dist, b.dist, e) + Math.sin(Math.PI * e) * hop * .55;
+  want.el = THREE.MathUtils.lerp(a.el, b.el, e) + Math.sin(Math.PI * e) * .12;
+  want.az = THREE.MathUtils.lerp(a.az, b.az, e);
+}
+
+function resize() {
+  renderer.setSize(innerWidth, innerHeight, false);
+  camera.aspect = innerWidth / innerHeight;
+  // the legend sits on the left (desktop) or at the bottom (phone): move the centre of the picture away from it
+  if (portrait()) camera.setViewOffset(innerWidth, innerHeight, 0, innerHeight * .16, innerWidth, innerHeight);
+  else camera.setViewOffset(innerWidth, innerHeight, -innerWidth * .14, 0, innerWidth, innerHeight);
+  camera.updateProjectionMatrix();
+  measure(); buildKeys(); fromScroll(); measureLabels();
+}
+document.fonts.ready.then(() => measureLabels());
+
+let last = performance.now(), started = false;
+function frame(now) {
+  const dt = Math.min((now - last) / 1000, .05); last = now;
+  const k = reduce ? 1 : 1 - Math.exp(-dt * 3.2);
+  cur.t.lerp(want.t, k); cur.dist += (want.dist - cur.dist) * k; cur.el += (want.el - cur.el) * k; cur.az += (want.az - cur.az) * k;
+  const drift = reduce ? 0 : Math.sin(now / 9000) * .04;
+  const az = cur.az + drift;
+  camera.position.set(cur.t.x + cur.dist * Math.cos(cur.el) * Math.sin(az), cur.t.y + cur.dist * Math.sin(cur.el), cur.t.z + cur.dist * Math.cos(cur.el) * Math.cos(az));
+  camera.lookAt(cur.t);
+
+  const active = Math.round(S) - 1;
+  // the lilies get smaller when the camera is high above the whole valley
+  const lilyK = THREE.MathUtils.lerp(1, small ? .55 : .62, THREE.MathUtils.smoothstep(cur.dist, 12, 34));
+  pins.forEach((p, i) => {
+    const on = S > i + .55;
+    p.rise += ((on ? 1 : 0) - p.rise) * (reduce ? 1 : 1 - Math.exp(-dt * 2.6));
+    const r = p.rise;
+    p.stem.scale.y = Math.max(r * p.colh, .0001);
+    // stem: about 1.6 px wide on screen at any distance
+    const camD = camera.position.distanceTo(tmp.set(p.x, p.y + r * p.colh / 2, p.zz));
+    const rad = .8 * camD / (camera.projectionMatrix.elements[5] * innerHeight / 2);
+    p.stem.scale.x = p.stem.scale.z = rad;
+    p.spr.position.y = r * p.colh; p.spr.material.opacity = THREE.MathUtils.smoothstep(r, .6, 1);
+    const isNow = i === active;
+    if (terrainMat) terrainMat.uniforms.uPin.value[i].set(p.x, p.zz, r, isNow ? 1 : 0);
+    p.lab.classList.toggle('on', r > .7); p.lab.classList.toggle('now', isNow && r > .7);
+    p.spr.scale.set(.036 * lilyK, .042 * lilyK, 1);
+  });
+  // labels: the person in focus first, then the others, then village names (these hide when there is no room)
+  const lilyPx = .042 * lilyK * camera.projectionMatrix.elements[5] * innerHeight / 2;
+  const order = [];
+  pins.forEach((p, i) => {
+    const top = p.rise > .05 ? toScreen(tmp.set(p.x, p.y + p.rise * p.colh, p.zz)) : null;
+    const at = top && [top[0], top[1] - lilyPx * .5];
+    const o = p.o || (p.o = { el: p.lab });
+    Object.assign(o, { at, show: p.rise > .7, w: p.w, h: p.h, mw: lilyPx * .85, mh: lilyPx, pri: i === active ? -1 : i,
+      mark: at && p.rise > .5 ? [at[0] - lilyPx * .43, at[1] - lilyPx / 2, at[0] + lilyPx * .43, at[1] + lilyPx / 2] : null });
+    order.push(o);
+  });
+  order.sort((a, b) => a.pri - b.pri);
+  vils.forEach(v => {
+    v.v.y = worldY(v.v.x, v.v.z) + .05;
+    const o = v.o || (v.o = { el: v.e, optional: true, pri: 99 });
+    // a village name steps back once a person from that village has a pin there
+    Object.assign(o, { at: toScreen(v.v), show: !pins.some(p => placeOf(p.z) === v.n && p.rise > .5), w: v.w, h: v.h, mw: 4, mh: 4, mark: null });
+    order.push(o);
+  });
+  layoutLabels(order);
+  if (terrainMat) { terrainMat.uniforms.uT.value = reduce ? 1 : Math.min((now - t0) / 4200, 1); terrainMat.uniforms.uTime.value = reduce ? 0 : now / 1000; }
+  renderer.render(scene, camera);
+  requestAnimationFrame(frame);
+}
+
+addEventListener('scroll', fromScroll, { passive: true });
+addEventListener('resize', resize);
+
+try { await loadTerrain(); } catch (e) { console.warn('teren se nije učitao', e); }
+buildTerrain(); buildPins();
+resize();
+Object.assign(cur, { dist: want.dist * 1.25, el: want.el + .15, az: want.az - .3 }); cur.t.copy(want.t);
+document.getElementById('loading').classList.add('done');
+t0 = performance.now();
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
