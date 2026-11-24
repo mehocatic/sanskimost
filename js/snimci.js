@@ -207,3 +207,12 @@
   addEventListener('pointerup', release);
   addEventListener('pointercancel', release);
 
+  // hover lifts a tape a little (mouse only)
+  stage.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    const el = e.target.closest('.tape');
+    const v = el ? +el.dataset.v : -1;
+    if (v !== hover) { hover = v; wake(); }
+  });
+  shelf.addEventListener('pointerleave', () => { hover = -1; wake(); });
+
