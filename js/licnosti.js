@@ -35,4 +35,19 @@
     LILY_C.map(d => `<path d="${d}"/>`).join('')}${LILY_R.map(d => `<path d="${d}"/><path d="${d}" transform="matrix(-1 0 0 1 200 0)"/>`).join('')
     }</g><path d="${LILY_RIB}" stroke="#5a4316" stroke-width="4" stroke-linecap="round"/></svg>`;
 
+  // ---------- the cards
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  function renderCards() {
+    $('zlj-list').innerHTML = Z.map(z => `<li class="zlj-st" id="${esc(z.id)}"><article class="zlj-card">
+      <p class="zlj-sc zlj-yr">${LILY_SVG}<span>${z.year} · ${esc(placeOf(z))}</span></p>
+      <h2>${esc(z.name)}</h2>
+      ${z.post ? `<span class="zlj-post">${esc(t('lic.zlj.post'))}</span>` : ''}
+      <dl><div><dt>${esc(t('lic.zlj.born'))}</dt><dd>${esc(dateOf(z))}</dd></div><div><dt>${esc(t('lic.zlj.unit'))}</dt><dd>${esc(tx(z.unit))}</dd></div>
+      ${z.note ? `<div><dt>${esc(t('lic.zlj.note'))}</dt><dd class="zlj-note">${esc(tx(z.note))}</dd></div>` : ''}</dl>
+    </article></li>`).join('');
+    $('zlj-count').textContent = t('lic.zlj.count', { n: Z.length });
+    const a = $('zlj-src');
+    if (window.ZLJILJANI_SRC) { a.href = window.ZLJILJANI_SRC; a.textContent = t('lic.source') + ': Wikipedia'; } else a.hidden = true;
+  }
+  renderCards();
 })();
