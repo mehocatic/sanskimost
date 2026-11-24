@@ -437,3 +437,14 @@
   .arh-video { display: none; }
   .v-map .vid-cta { display: none; }
 }
+@media (max-width: 420px) {
+  .vid-cta { gap: 12px; padding: 10px 12px 10px 8px; }
+  .vid-art { width: 120px; height: 84px; }
+  .vid-cas { left: 16px; top: 12px; width: 96px; }
+  .vid-sleeve { width: 52px; height: 84px; }
+  .vid-sleeve b { font-size: 25px; }
+  .vid-cta:hover .vid-cas { transform: translateX(10px) rotate(2deg); }
+  .vid-t { font-size: 1.35rem; }
+  .vid-s { font-size: .74rem; }
+  .vid-go { display: none; }
+}
