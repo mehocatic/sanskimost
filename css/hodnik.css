@@ -179,7 +179,7 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
   .lic-note { margin-top: 56px; padding-top: 24px; }
   #lb[open] { display: block; overflow-y: auto; padding: 64px 20px 40px; }
   .lb-ph { height: auto; }
-  .lb-ph img { max-height: 62svh; border-width: 6px; }
+
   .lb-txt { overflow: visible; }
   .lb-mono { width: min(240px, 60vw); margin: 0 auto; }
   .lb-cat { margin: 22px 0 10px; }
