@@ -4,6 +4,7 @@
 //  - one photograph opens in a dialog; its address is kept in the hash (#foto=<file>), so it can be shared
 (() => {
   const A = window.ARCHIVE;
+  A.photos.sort((a, b) => (a.y == null) - (b.y == null) || (a.y || 0) - (b.y || 0));
   const $ = id => document.getElementById(id);
   const t = (k, v) => I18n.t(k, v);
   const wide = window.matchMedia('(min-width: 900px) and (min-height: 560px)');
