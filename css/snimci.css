@@ -184,6 +184,9 @@ html:has(#dt[open]) { overflow: hidden; }
   transform: rotateX(var(--rx, -12deg)) rotateY(var(--ry, 32deg));
   transition: --lift .8s cubic-bezier(.2, .8, .2, 1);
 }
+@media (hover: hover) { .dt-poster:hover .vhs { --lift: .08; } }
+.dt-poster.lift .vhs { --lift: .08; }   /* a tap on a phone (snimci.js) */
+.dt-poster { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
