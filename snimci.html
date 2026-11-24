@@ -49,3 +49,14 @@
       <p class="eyebrow" data-i18n="sn.eyebrow">Arhiv · Snimci 1992–1995</p>
       <h1 data-i18n-html="sn.title.html">Historijska video <em>građa</em></h1>
     </header>
+
+    <!-- themes: each one jumps to the next recording of that theme (snimci.js) -->
+    <div class="sn-tabs" id="tabs" role="group" aria-label="Tema" data-i18n-attr="aria-label:arh.filter">
+      <button type="button" data-cat="all" data-i18n="sn.cat.all">Sve</button>
+      <button type="button" data-cat="logori" data-i18n="sn.cat.logori">1992. Logori</button>
+      <button type="button" data-cat="sana" data-i18n="sn.cat.sana">1995. Sana 95</button>
+      <button type="button" data-cat="tribunal" data-i18n="sn.cat.tribunal">Haški tribunal</button>
+      <button type="button" data-cat="doc" data-i18n="sn.cat.doc">Dokumentarci</button>
+    </div>
+
+    <!-- the shelf: tapes are built by snimci.js. They are decorative copies (the list loops), the caption below is what is read out -->
