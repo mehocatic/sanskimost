@@ -167,12 +167,10 @@ html:has(#dt[open]) { overflow: hidden; }
 .dt-watch:hover { background: var(--ink); color: var(--paper); }
 .dt-ext { font-size: .74rem; color: var(--fg-muted); }
 
-/* the same cover as on the shelf, flat and large */
-.dt-poster { --HP: min(72svh, 640px); justify-self: center; height: var(--HP); aspect-ratio: 474 / 900; max-width: 100%; }
-.dt-poster .face { position: relative; top: 0; left: 0; width: 100%; height: 100%; transform: none; backface-visibility: visible; --H: var(--HP); padding: 16px 16px 14px; }
-.dt-poster .cv-top, .dt-poster .cv-foot { font-size: 11px; }
-.dt-poster .cv-title { font-size: clamp(1.15rem, 2vw, 1.7rem); }
-.dt-poster .cv-year { font-size: calc(var(--HP) * .16); }
+/* ---------- the opened tape: its sleeve as a box, the tape half out of it (snimci.js vhs()) ----------
+   .vhs is a point in the middle of the sleeve; every face is placed from it. Sizes follow the shelf: --S the height of the sleeve,
+   --SW its width (the cover), --SD its depth (the spine). The tape is a little smaller than the inside of the sleeve. */
+@property --out { syntax: "<number>"; inherits: false; initial-value: 0; }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
