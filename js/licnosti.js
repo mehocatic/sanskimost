@@ -353,4 +353,17 @@
       return r.top + scrollY + r.height / 2 - innerHeight / 2;
     });
   }
+  function fromScroll() {
+    if (keys.length < 2 || centres.length !== keys.length) return;
+    const y = scrollY;
+    let i = 0; while (i < centres.length - 2 && y > centres[i + 1]) i++;
+    const u = THREE.MathUtils.clamp((y - centres[i]) / (centres[i + 1] - centres[i]), 0, 1);
+    const e = THREE.MathUtils.smootherstep(u, .18, .82);
+    S = i + e;
+    const a = keys[i], b = keys[i + 1], hop = a.t.distanceTo(b.t);
+    want.t.lerpVectors(a.t, b.t, e);
+    want.dist = THREE.MathUtils.lerp(a.dist, b.dist, e) + Math.sin(Math.PI * e) * hop * .55;   // rise between far places
+    want.el = THREE.MathUtils.lerp(a.el, b.el, e) + Math.sin(Math.PI * e) * .12;
+    want.az = THREE.MathUtils.lerp(a.az, b.az, e);
+  }
 })();
