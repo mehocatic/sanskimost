@@ -63,3 +63,71 @@
     wake();
   }
 
+  function frame(now) {
+    raf = 0;
+    const dt = Math.min(.05, Math.max(.001, (now - last) / 1000));
+    last = now;
+    const r = shelf.getBoundingClientRect();
+    const ccx = r.left + r.width / 2, ccy = r.top + r.height / 2;
+    const rm = reduced();
+    let busy = false;
+
+    // the spring
+    const diff = T - s;
+    if (Math.abs(diff) < 1e-4 || rm) s = T;
+    else { s += diff * (1 - Math.exp(-(dragging ? 18 : 5.2) * dt)); busy = true; }
+    // far from the start after many turns: shift back by whole copies, the picture stays the same
+    if (Math.abs(s - START) > N * 4) {
+      const shift = Math.round((s - START) / TOTAL) * TOTAL;
+      if (shift) { s -= shift; T -= shift; dragT -= shift; }
+    }
+    const na = mod(Math.round(s));
+    if (na !== active) setActive(na, Math.sign(T - s) || lastDir || 1);
+
+    // the cover in the middle follows the mouse a little
+    const open = dlg.open;
+    const onCover = hasPtr && !open && Math.abs(T - s) < .3 && Math.abs(mx - ccx) < .55 * d && Math.abs(my - ccy) < .55 * H;
+    const tY = onCover ? (mx - ccx) / (.55 * d) * 9 : hasPtr ? (mx - ccx) / Math.max(1, r.width) * 5 : 0;
+    const tX = onCover ? -(my - ccy) / (H / 2) * 6 : 0;
+    const ta = rm ? 1 : 1 - Math.exp(-7 * dt);
+    tiltY += (tY - tiltY) * ta; tiltX += (tX - tiltX) * ta;
+    if (Math.abs(tY - tiltY) > .02 || Math.abs(tX - tiltX) > .02) busy = true;
+
+    const la = rm ? 1 : 1 - Math.exp(-12 * dt);
+    const cull = r.width / 2 + 1.5 * d;
+    for (let v = 0; v < TOTAL; v++) {
+      const el = tapes[v], q = rel(v, s);
+      // the tape in the middle turns by 90 degrees; B spreads its neighbours apart so the cover has room
+      const B = Math.abs(q) < 1 ? (q + Math.sin(Math.PI * q) / Math.PI) / 2 : q > 0 ? .5 : -.5;
+      const x = q * (ws + gap) + (d - ws + 1.6 * gap) * B;
+      if (Math.abs(x) > cull) { el.style.visibility = 'hidden'; continue; }
+      el.style.visibility = 'visible';
+      const o = smooth(1 - Math.abs(q));
+      const tl = hover === v && Math.abs(q) > .5 && !open ? 1 : 0;
+      lift[v] += (tl - lift[v]) * la;
+      if (Math.abs(tl - lift[v]) > .004) busy = true;
+      el.style.transform = `translate3d(${x.toFixed(2)}px, ${(-o * .025 * H - lift[v] * .045 * H).toFixed(2)}px, ${(o * .2 * H).toFixed(2)}px) ` +
+        `rotateZ(${(-4.5 * o).toFixed(3)}deg) rotateX(${(tiltX * o).toFixed(3)}deg) rotateY(${(-90 * o + tiltY * o).toFixed(3)}deg)`;
+      el.style.zIndex = String(Math.round(100 - Math.abs(q) * 4));
+      el.firstElementChild.style.setProperty('--shade', (o * .55).toFixed(3));
+      el.lastElementChild.style.setProperty('--shade', ((1 - o) * .5).toFixed(3));
+    }
+
+    // the circle follows the mouse (px, py) and shows over the cover in the middle
+    px += (mx - px) * (rm ? 1 : 1 - Math.exp(-16 * dt)); py += (my - py) * (rm ? 1 : 1 - Math.exp(-16 * dt));
+    if (Math.abs(mx - px) > .5 || Math.abs(my - py) > .5) busy = true;
+    cursor.style.transform = `translate3d(${px.toFixed(1)}px, ${py.toFixed(1)}px, 0)`;
+    cursor.classList.toggle('on', onCover);
+    shelf.classList.toggle('is-cover', onCover);
+
+    // the play button (touch and keyboard) sits on the cover in the middle and grows as the cover arrives
+    const k = open ? 0 : smooth(1 - Math.abs(T - s) * 3);
+    ring.style.left = (r.width / 2).toFixed(1) + 'px';
+    ring.style.top = (r.height / 2 + .27 * H).toFixed(1) + 'px';
+    ring.style.transform = `scale(${k.toFixed(3)})`;
+    ring.style.pointerEvents = k > .5 ? 'auto' : 'none';
+    ring.tabIndex = k > .5 ? 0 : -1;
+
+    if (busy) raf = requestAnimationFrame(frame);
+  }
+  function wake() { if (!raf) { last = performance.now(); raf = requestAnimationFrame(frame); } }
