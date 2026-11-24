@@ -219,6 +219,10 @@ html:has(#dt[open]) { overflow: hidden; }
 }
 .vhs .vc { position: absolute; backface-visibility: hidden; }
 .vhs .vc-front { width: var(--CW); height: var(--CH); left: calc(var(--CW) / -2); top: calc(var(--CH) / -2); transform: translateZ(calc(var(--CD) / 2)); border-radius: 3px; overflow: hidden; background: #171717; }
+.vhs .vc-left {
+  width: var(--CD); height: var(--CH); left: calc(var(--CD) / -2); top: calc(var(--CH) / -2); transform: rotateY(-90deg) translateZ(calc(var(--CW) / 2));
+  background: repeating-linear-gradient(0deg, #141414 0 3px, #0b0b0b 3px 4px);
+}
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
