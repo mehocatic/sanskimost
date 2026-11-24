@@ -843,7 +843,7 @@
       focusEntry(entry) {
         const to = this.focusPose(entry, this.shortestNear(entry.angle, this.pose.th));
         this.focusedEntry = entry;
-        setFocused(true);
+        setFocused(true, entry.printIndex);
         if (this.reduced) { this.pose = { ...to }; this.targetTh = to.th; this.glide = null; this.applyPose(); this.updatePill(); return; }
         this.glide = { startMs: performance.now(), durationMs: 950, from: { ...this.pose }, to, mode: 'focus' };
       }
