@@ -66,4 +66,14 @@
   const loading = $('zlj-loading');
   loading.hidden = false;
 
+  // ---------- places of birth
+  // TODO(verify): each point is the OpenStreetMap place node of the village (Nominatim, 2026-11-24), not the exact birthplace.
+  const PLACES = {
+    'Skucani Vakuf': [44.7846637, 16.4598220],
+    'Stari Majdan': [44.8286950, 16.6052365],
+    'Sanski Most': [44.7651882, 16.6656827],
+    'Vrhpolje': [44.6702203, 16.7442405],
+    'Hrustovo': [44.6653424, 16.7180207],
+  };
+
 })();
