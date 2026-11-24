@@ -766,8 +766,9 @@
           shadowFrames.push([group.matrixWorld.clone(), a.mw, a.mh, bend, a.wallZ]);
           put(a.labelGeo, a.labelMat, a.labelX, PY - a.fh / 2 - .1 - LABEL_W * LABEL_CH / 2 / 640, a.wallZ + .02);
           const entry = { printIndex, angle, wall, pw: a.pw, ph: a.ph, mesh: printMesh, mat: a.printMat, thumb: a.thumb, full: null, loading: false };
-          printMesh.userData.entry = entry;
-          this.entries.push(entry); this.meshes.push(printMesh);
+          // the frame and the mount answer a click as well as the photograph
+          for (const m of [printMesh, mountMesh]) { m.userData.entry = entry; this.meshes.push(m); }
+          this.entries.push(entry);
           scene.add(group);
         };
         for (let s = 0; s < OUTER_COUNT; s++) make(s, s * 2 * Math.PI / OUTER_COUNT, 'outer');
