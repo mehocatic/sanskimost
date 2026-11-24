@@ -421,3 +421,10 @@
 }
 .arh-video:hover { background: var(--sand); color: var(--ink); }
 .arh-video:focus-visible { outline: 2px solid var(--sand); outline-offset: 3px; }
+
+@media (min-width: 900px) and (min-height: 560px) {
+  .vid-cta { width: min(440px, 44vw); }
+  /* the strip runs under the title: the card steps aside, the small link comes in */
+  .sc .vid-cta, .v-map .vid-cta { opacity: 0; translate: 0 -14px; visibility: hidden; pointer-events: none; transition: opacity .35s ease, translate .45s ease, visibility 0s linear .45s; }
+  .sc .arh-video, .v-map .arh-video { opacity: 1; visibility: visible; transition: opacity .4s ease .15s, visibility 0s, background .3s ease, color .3s ease; }
+}
