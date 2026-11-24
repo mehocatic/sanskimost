@@ -139,7 +139,7 @@ window.ARCHIVE = {
     {"f": "sana-zgrade", "y": null, "cat": "sana", "cap": "hist.5.f.zgrade", "w": 984, "h": 633},
     {"f": "sanski-most-stari", "y": null, "cat": "ulice", "cap": "hist.hero.cap", "w": 642, "h": 420, "src": "hist.src.book"},
     {"f": "sip-sana", "y": null, "cat": "ulice", "cap": "hist.zv.2.b", "w": 960, "h": 638},
-    {"f": "skok-masinski-most", "y": null, "cat": "sana", "cap": "hist.6.g8", "w": 542, "h": 800},
+    {"f": "skok-masinski-most", "y": 1983, "yl": "arh.y.80s", "cat": "sana", "cap": "hist.6.g8", "w": 542, "h": 800},
     {"f": "splaviste-caplje", "y": null, "cat": "sana", "cap": "hist.zv.2.a", "w": 1200, "h": 678},
     {"f": "stanica-grmec", "y": null, "cat": "ljudi", "cap": "hist.zv.1.a", "w": 518, "h": 733},
     {"f": "stari-grad-sana", "y": null, "cat": "sana", "cap": "hist.3.f.grad", "w": 720, "h": 507, "src": "hist.src.book"},
