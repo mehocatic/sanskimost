@@ -304,4 +304,31 @@
     });
     return best;
   }
+  // each label takes the first spot that covers no lily, no other name, not the card and not the screen edge;
+  // it keeps its spot while that is still free, so labels do not jump as the camera moves
+  function layoutLabels(order) {
+    const M = 6, taken = [], card = cardRect(), nav = document.querySelector('.site-nav');
+    if (card) taken.push(card);
+    if (nav) taken.push([0, 0, innerWidth, nav.offsetHeight + 4]);
+    order.forEach(o => { if (o.mark) taken.push(o.mark); });
+    order.forEach(o => {
+      if (!o.at || !o.show) { o.el.style.visibility = 'hidden'; return; }
+      const c = spots(o.at[0], o.at[1], o.mw, o.mh, o.w, o.h);
+      const cost = q => {
+        let s = 0;
+        taken.forEach(r => { if (r !== o.mark) s += overlap(q, r); });
+        if (q[0] < M || q[1] < M || q[2] > innerWidth - M || q[3] > innerHeight - M) s += o.w * o.h;
+        return s;
+      };
+      let k = o.k != null && cost(c[o.k]) === 0 ? o.k : -1;
+      if (k < 0) { let bc = Infinity; c.forEach((q, i) => { const v = cost(q); if (v < bc - .5) { bc = v; k = i; } }); }
+      const q = c[k];
+      o.k = k;
+      if (o.optional && cost(q) > 0) { o.el.style.visibility = 'hidden'; return; }
+      o.el.style.visibility = 'visible';
+      o.el.style.transform = `translate(${q[0].toFixed(1)}px, ${q[1].toFixed(1)}px)`;
+      taken.push(q);
+    });
+  }
+
 })();
