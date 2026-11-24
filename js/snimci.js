@@ -181,3 +181,29 @@
   $('next').addEventListener('click', () => step(1));
   ring.addEventListener('click', () => openDetail());
 
+  // drag
+  shelf.addEventListener('pointerdown', e => {
+    if (dlg.open || (e.pointerType === 'mouse' && e.button !== 0) || e.target.closest('.play-ring')) return;
+    down = true; dragging = false; dragX = e.clientX; dragT = T; dragId = e.pointerId;
+  });
+  addEventListener('pointermove', e => {
+    if (e.pointerType === 'mouse') { mx = e.clientX; my = e.clientY; if (!hasPtr) { px = mx; py = my; } hasPtr = true; }
+    if (down && e.pointerId === dragId) {
+      const dx = e.clientX - dragX;
+      if (!dragging && Math.abs(dx) > 5) { dragging = true; try { shelf.setPointerCapture(dragId); } catch (err) { /* the drag still works */ } }
+      if (dragging) { T = dragT - dx / (ws + gap); lastDir = dx < 0 ? 1 : -1; }
+    }
+    wake();
+  }, { passive: true });
+  const release = e => {
+    if (!down || e.pointerId !== dragId) return;
+    down = false;
+    if (dragging) {
+      dragging = false; T = Math.round(T); noClickUntil = performance.now() + 80;
+      try { shelf.releasePointerCapture(e.pointerId); } catch (err) { /* already released */ }
+    }
+    wake();
+  };
+  addEventListener('pointerup', release);
+  addEventListener('pointercancel', release);
+
