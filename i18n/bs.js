@@ -280,6 +280,7 @@ I18N.bs = {
   'arh.y.4344': '1943. ili 1944.',
   'arh.y.c1970': 'oko 1970.',
   'arh.y.8182': '1981/82.',
+  'arh.y.80s': '1980-ih',
   'arh.end': "Istraži fotografije po mjestu",
   'arh.end.map': 'Pogledaj na karti →',
   'arh.map': 'Karta starih fotografija',

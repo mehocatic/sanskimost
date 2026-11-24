@@ -278,6 +278,7 @@ I18N.en = {
   'arh.y.4344': '1943 or 1944',
   'arh.y.c1970': 'c. 1970',
   'arh.y.8182': '1981/82',
+  'arh.y.80s': '1980s',
   'arh.end': "Explore the photographs by location",
   'arh.end.map': 'See them on the map →',
   'arh.map': 'Map of old photographs',
