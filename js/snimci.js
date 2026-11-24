@@ -159,3 +159,25 @@
     tabs.querySelectorAll('button').forEach(b => { if (b.dataset.cat === F[i].cat) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
   }
 
+  /* ---------- moving ---------- */
+  function go(to, dir) { T = to; if (dir) lastDir = dir; wake(); }
+  const step = n => { if (!dlg.open) go(Math.round(T) + n, n >= 0 ? 1 : -1); };
+  function jumpTo(i) {
+    if (dlg.open) return;
+    let df = (i - mod(Math.round(T))) % N;
+    if (df > N / 2) df -= N;
+    if (df < -N / 2) df += N;
+    go(Math.round(T) + df, df ? (df > 0 ? 1 : -1) : 0);
+  }
+  tabs.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.dataset.cat === 'all') return jumpTo(0);
+    const same = F.map((f, i) => f.cat === b.dataset.cat ? i : -1).filter(i => i >= 0);
+    const at = same.indexOf(mod(Math.round(T)));
+    jumpTo(at >= 0 ? same[(at + 1) % same.length] : same[0]);
+  });
+  $('prev').addEventListener('click', () => step(-1));
+  $('next').addEventListener('click', () => step(1));
+  ring.addEventListener('click', () => openDetail());
+
