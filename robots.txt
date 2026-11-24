@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # The 404 page is not listed here; it stays out of search with <meta name="robots" content="noindex">.
-Sitemap: https://sanausrcu.netlify.app/sitemap.xml
+Sitemap: https://sanskimost.pages.dev/sitemap.xml
