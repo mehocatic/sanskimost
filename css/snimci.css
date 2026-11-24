@@ -167,3 +167,10 @@ html:has(#dt[open]) { overflow: hidden; }
 .dt-watch:hover { background: var(--ink); color: var(--paper); }
 .dt-ext { font-size: .74rem; color: var(--fg-muted); }
 
+/* the same cover as on the shelf, flat and large */
+.dt-poster { --HP: min(72svh, 640px); justify-self: center; height: var(--HP); aspect-ratio: 474 / 900; max-width: 100%; }
+.dt-poster .face { position: relative; top: 0; left: 0; width: 100%; height: 100%; transform: none; backface-visibility: visible; --H: var(--HP); padding: 16px 16px 14px; }
+.dt-poster .cv-top, .dt-poster .cv-foot { font-size: 11px; }
+.dt-poster .cv-title { font-size: clamp(1.15rem, 2vw, 1.7rem); }
+.dt-poster .cv-year { font-size: calc(var(--HP) * .16); }
+
