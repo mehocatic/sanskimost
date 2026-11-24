@@ -135,3 +135,35 @@
 
 .sn-credit { margin: auto auto 0; padding: 28px var(--pad) 20px; max-width: 52ch; text-align: center; font-size: .78rem; line-height: 1.5; color: var(--fg-muted); }
 
+/* ---------- one recording opened ---------- */
+#dt {
+  position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0;
+  background: var(--paper); color: var(--ink); overflow-y: auto; overflow-x: hidden;
+}
+#dt:not([open]) { display: none; }
+html:has(#dt[open]) { overflow: hidden; }
+#dt::backdrop { background: var(--paper); }
+.dt-x {
+  position: fixed; z-index: 3; top: 16px; left: var(--pad); min-height: 44px; padding: 0 18px; border: 1px solid var(--rule) !important; border-radius: 99px;
+  background: var(--paper) !important; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase;
+}
+.dt-x:hover { background: var(--ink) !important; color: var(--paper); }
+.dt-x:focus-visible, .dt-watch:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; }
+.dt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4vw; align-items: center; min-height: 100%; padding: 96px 6vw 56px 7vw; box-sizing: border-box; }
+.dt-copy { display: flex; flex-direction: column; gap: 16px; max-width: 540px; }
+.d-mask { overflow: hidden; }
+.d-line { display: block; }
+.dt-sub { color: var(--acc); font-size: .74rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
+.dt-title { font-family: var(--serif); font-weight: 500; font-size: clamp(1.9rem, 3.4vw, 3.2rem); line-height: 1.04; letter-spacing: -.015em; }
+.dt-meta { color: var(--fg-muted); font-size: .76rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; font-variant-numeric: lining-nums; }
+.dt-note { padding-left: 12px; border-left: 2px solid var(--acc); font-size: .88rem; line-height: 1.45; color: var(--fg-soft); }
+.dt-syn { font-family: var(--serif); font-size: 1.12rem; line-height: 1.5; max-width: 44ch; }
+.dt-src { font-family: var(--serif); font-style: italic; font-size: .98rem; color: var(--fg-muted); }
+.dt-act { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 6px; }
+.dt-watch {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border: 1px solid var(--ink); border-radius: 99px;
+  color: var(--ink); font-size: .8rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background .3s ease, color .3s ease;
+}
+.dt-watch:hover { background: var(--ink); color: var(--paper); }
+.dt-ext { font-size: .74rem; color: var(--fg-muted); }
+
