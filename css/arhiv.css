@@ -392,3 +392,7 @@
 }
 .vid-cta:hover .vid-sleeve { transform: rotate(-10deg) translateX(-2px); }
 .vid-sleeve small { margin-bottom: 4px; font-size: 5.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(237, 233, 223, .7); white-space: nowrap; }
+.vid-sleeve b {
+  font-family: var(--serif); font-weight: 500; font-size: 29px; line-height: .9; letter-spacing: -.02em; font-variant-numeric: lining-nums;
+  color: transparent; -webkit-text-stroke: .8px rgba(237, 233, 223, .7);
+}
