@@ -308,6 +308,7 @@ I18N.en = {
   'hod.hint.focus1': 'Click the portrait for the biography',
   'hod.hint.focus2': 'Esc or click away to step back',
   'hod.intro': 'Sport, science and literature, music, art, heritage and the memory of war. Short biographies with sources.',
+  'hod.hint.twalk1': 'Swipe to walk round',
   'hod.pill': 'Open biography',
   'hod.listhead': 'People by field',
   'hod.prev': 'Previous portrait',
