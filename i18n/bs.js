@@ -232,7 +232,7 @@ I18N.bs = {
   'nav.plan': 'Posjeta',
   'nav.history': 'Historija',
   'nav.archive': 'Arhiv',
-  'nav.corridor': 'Hodnik',
+  'nav.corridor': 'Ličnosti',
   'nav.quiz': 'Kviz',
   'nav.people': 'Zlatni ljiljani',
   'lic.meta': 'Dobitnici Zlatnog ljiljana iz predratne općine Sanski Most, s godinom priznanja, mjestom rođenja i jedinicom.',
