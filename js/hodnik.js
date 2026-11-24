@@ -594,10 +594,16 @@
       redrawAllLabels() {
         for (const item of this.labels) {
           const p = PRINTS[item.index].p, ctx = item.canvas.getContext('2d');
-          ctx.clearRect(0, 0, 640, 260);
-          ctx.fillStyle = '#3A3550';
-          ctx.font = '500 56px "EB Garamond", Georgia, serif';
-          ctx.fillText(p.name, 30, 66, 580);
+          ctx.setTransform(2, 0, 0, 2, 0, 0); ctx.clearRect(0, 0, 640, LABEL_CH);
+          // the field on top, like a museum label, then the name and the role
+          ctx.fillStyle = '#6B4F22';
+          ctx.font = '600 23px Inter, system-ui, sans-serif';
+          if ('letterSpacing' in ctx) ctx.letterSpacing = '3px';
+          ctx.fillText(catOf(p).toUpperCase(), 30, 30, 580);
+          if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+          ctx.fillStyle = '#2B2740';
+          ctx.font = '600 58px "EB Garamond", Georgia, serif';
+          ctx.fillText(p.name, 30, 90, 580);
           // the role on two lines at most (the whole text is in the dialog)
           ctx.font = 'italic 400 38px "EB Garamond", Georgia, serif';
           const words = roleOf(p).split(' '), lines = [''];
