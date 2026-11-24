@@ -54,3 +54,12 @@
   let down = false, dragging = false, dragX = 0, dragT = START, dragId = -1, noClickUntil = 0;
   let snapTimer = 0, raf = 0, last = 0, closing = false;
   const lift = new Float64Array(TOTAL);
+
+  function measure() {
+    H = probe.getBoundingClientRect().height || Math.min(innerHeight * .46, innerWidth * .31);
+    ws = H * 142 / 840; d = H * 474 / 900; gap = H * .05;
+    stage.style.setProperty('--ws', ws.toFixed(2) + 'px');
+    stage.style.setProperty('--d', d.toFixed(2) + 'px');
+    wake();
+  }
+
