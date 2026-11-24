@@ -128,7 +128,7 @@ window.ARCHIVE = {
     {"f": "musala-razglednica", "y": null, "cat": "ulice", "cap": "hist.3.f.musala", "w": 679, "h": 470, "place": "musala", "src": "hist.src.postcard"},
     {"f": "novine-vrhpolje", "y": null, "cat": "dokumenti", "cap": "hist.zv.1.clip", "w": 677, "h": 900},
     {"f": "plivanje", "y": 1983, "yl": "arh.y.80s", "cat": "sana", "cap": "hist.6.g6", "w": 800, "h": 522, "quiz": false}, // TODO(verify) y: doc says the last town swimming championship was "42 years ago"; FACTS.md: championship 27.7.1983
-    {"f": "plivanje2", "y": null, "cat": "sana", "cap": "hist.6.g7", "w": 800, "h": 543},
+    {"f": "plivanje2", "y": 1983, "yl": "arh.y.80s", "cat": "sana", "cap": "hist.6.g7", "w": 800, "h": 543},
     {"f": "ploca-kapija", "y": null, "cat": "dokumenti", "cap": "hist.3.f.ploca", "w": 408, "h": 360, "src": "hist.src.book"},
     {"f": "poplava-stara", "y": null, "cat": "poplave", "cap": "hist.6.g1", "w": 688, "h": 485},
     {"f": "poplava-stara2", "y": null, "cat": "poplave", "cap": "hist.6.g2", "w": 800, "h": 516},
