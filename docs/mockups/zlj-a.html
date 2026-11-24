@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup A · Zlatni ljiljani</title>
+<link rel="stylesheet" href="../../vendor/fonts/fonts.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --gold: #d4af5a; --gold-l: #f1dc9e; --gold-d: #8f6a22; --bg: #0b0d0c; --fg: #f6f4ee; --soft: rgba(246,244,238,.78); --muted: rgba(246,244,238,.55);
+    --serif: "EB Garamond", Georgia, serif; --sans: Inter, system-ui, sans-serif; --gutter: clamp(20px, 6vw, 96px); }
+  html { background: var(--bg); }
+  body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.6; overflow-x: clip; }
+  .lily { display: block; width: 100%; height: auto; overflow: visible; }
+
+  /* ---------- hero */
+  .hero { position: relative; min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 96px var(--gutter) 120px; overflow: hidden;
+    background: radial-gradient(ellipse 55% 45% at 50% 38%, rgba(212,175,90,.20), rgba(212,175,90,0) 70%), var(--bg); }
+  .hero::after { content: ""; position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: linear-gradient(rgba(212,175,90,0), rgba(212,175,90,.25) 40%, rgba(212,175,90,0)); }
+  .hero-in { position: relative; z-index: 1; max-width: 44rem; }
+  .hero .big { width: clamp(110px, 26vw, 180px); margin: 0 auto 2rem; filter: drop-shadow(0 0 40px rgba(212,175,90,.35)); animation: rise 1.6s cubic-bezier(.2,.7,.2,1) both; }
+  .eyebrow { font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+  h1 { margin-top: 1rem; font-family: var(--serif); font-weight: 400; line-height: .95; font-size: clamp(2.8rem, 9vw, 6.4rem); letter-spacing: -.01em;
+    background: linear-gradient(180deg, var(--gold-l) 10%, var(--gold) 60%, #a98034); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { margin: 1.4rem auto 0; max-width: 32rem; color: var(--soft); }
+  .sub { margin-top: .5rem; font-family: var(--serif); font-style: italic; font-size: 1.3rem; color: var(--gold-l); }
+  .seven { display: flex; justify-content: center; gap: clamp(10px, 2.4vw, 22px); margin-top: 2.6rem; }
+  .seven span { width: clamp(22px, 4.6vw, 34px); opacity: 0; animation: rise .9s ease both; }
+  .seven span:nth-child(1){animation-delay:.9s}.seven span:nth-child(2){animation-delay:1s}.seven span:nth-child(3){animation-delay:1.1s}.seven span:nth-child(4){animation-delay:1.2s}.seven span:nth-child(5){animation-delay:1.3s}.seven span:nth-child(6){animation-delay:1.4s}.seven span:nth-child(7){animation-delay:1.5s}
+  .foot { margin-top: 1.4rem; font-size: .8rem; color: var(--muted); }
+  .foot a { color: var(--gold-l); }
+  .scroll { position: absolute; left: 50%; bottom: 70px; transform: translateX(-50%); font-size: .64rem; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- the rail: seven lilies that light up as you go */
+  .rail { position: sticky; top: 0; z-index: 5; display: flex; justify-content: center; gap: 14px; padding: 14px 0; background: linear-gradient(var(--bg) 60%, rgba(11,13,12,0)); }
+  .rail a { width: 20px; opacity: .22; filter: grayscale(1); transition: opacity .5s ease, filter .5s ease, transform .5s ease; }
+  .rail a.on { opacity: 1; filter: none; transform: scale(1.25); }
+  .rail a.past { opacity: .7; filter: none; }
+
+  /* ---------- one chapter per person */
+  .ch { position: relative; min-height: 100svh; display: grid; align-items: center; padding: 80px var(--gutter); overflow: hidden; border-top: 1px solid rgba(212,175,90,.14); }
+  .ch-year { position: absolute; right: -.06em; bottom: -.18em; font-family: var(--serif); font-size: clamp(9rem, 34vw, 30rem); line-height: 1; color: transparent;
+    -webkit-text-stroke: 1px rgba(212,175,90,.22); font-variant-numeric: lining-nums; pointer-events: none; user-select: none;
+    transform: translateY(var(--py, 0)); }
+  .ch-in { position: relative; max-width: 46rem; }
+  .ch-num { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--gold); }
+  .ch-num b { font-style: normal; font-weight: 400; letter-spacing: .2em; font-size: .72rem; font-family: var(--sans); text-transform: uppercase; color: var(--muted); margin-left: .8rem; }
+  .ch h2 { margin-top: .6rem; font-family: var(--serif); font-weight: 400; line-height: .92; font-size: clamp(3.2rem, 11vw, 8rem); letter-spacing: -.015em; }
+  .ch h2 span { display: block; }
+  .ch h2 span + span { color: var(--gold-l); }
+  .post { display: inline-block; margin-top: 1.2rem; padding: .3rem .8rem; border: 1px solid rgba(212,175,90,.6); border-radius: 999px; font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-l); }
+  .facts { display: grid; gap: 18px 48px; margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid rgba(212,175,90,.3); max-width: 36rem; }
+  .facts dt { font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+  .facts dd { margin-top: .25rem; font-size: 1.05rem; color: var(--soft); }
+  .note { margin-top: 1.8rem; max-width: 34rem; font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 2.6vw, 1.6rem); line-height: 1.4; }
+  @media (min-width: 640px) { .facts { grid-template-columns: repeat(3, max-content); } }
+
+  /* reveal */
+  .js .ch-in > * { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .js .ch.in .ch-in > * { opacity: 1; transform: none; }
+  .js .ch.in .ch-in > :nth-child(2) { transition-delay: .12s; } .js .ch.in .ch-in > :nth-child(3) { transition-delay: .24s; } .js .ch.in .ch-in > :nth-child(4) { transition-delay: .36s; } .js .ch.in .ch-in > :nth-child(5) { transition-delay: .48s; }
+
+  .end { min-height: 70svh; display: grid; place-items: center; text-align: center; padding: 80px var(--gutter) 140px; border-top: 1px solid rgba(212,175,90,.14); }
+  .end .lily { width: 46px; margin: 0 auto 1.4rem; }
+  .end p { font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--gold-l); }
+  .btn { display: inline-flex; align-items: center; min-height: 46px; margin-top: 1.6rem; padding: 0 1.3rem; border: 1px solid rgba(212,175,90,.55); border-radius: 999px; color: var(--gold-l); text-decoration: none; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .js .ch-in > * { opacity: 1; transform: none; } .seven span { opacity: 1; } }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-in">
+      <div class="big" id="big"></div>
+      <p class="eyebrow">Najviše ratno priznanje</p>
+      <h1>Zlatni ljiljani Sanskog Mosta</h1>
+      <p class="lead">Zlatni ljiljan je najviše ratno priznanje Armije Republike Bosne i Hercegovine iz rata od 1992. do 1995.</p>
+      <p class="sub">Ljiljan je hiljadu godina simbol Bosne.</p>
+      <div class="seven" id="seven"></div>
+      <p class="foot"><span id="count"></span> <a id="src" target="_blank" rel="noopener">Izvor: Wikipedia</a></p>
+    </div>
+    <span class="scroll">Skrolaj</span>
+  </header>
+
+  <nav class="rail" id="rail" aria-label="Dobitnici"></nav>
+  <main id="chapters"></main>
+
+  <section class="end">
+    <div>
+      <div id="endlily"></div>
+      <p>Ljiljan je hiljadu godina simbol Bosne.</p>
+      <a class="btn" href="../../hodnik">Ličnosti Sanskog Mosta →</a>
+    </div>
+  </section>
+
+<script src="../../js/data/licnosti-data.js"></script>
+<script src="zlj-common.js"></script>
+<script>
+  const Z = window.ZLJILJANI, ROM = ['I','II','III','IV','V','VI','VII','VIII','IX'];
+  document.documentElement.classList.add('js');
+  big.innerHTML = ZLJ_LILY('big'); endlily.innerHTML = ZLJ_LILY('end');
+  seven.innerHTML = Z.map((z, i) => `<span>${ZLJ_LILY('s' + i)}</span>`).join('');
+  count.textContent = Z.length + ' dobitnika.'; src.href = window.ZLJILJANI_SRC;
+  rail.innerHTML = Z.map((z, i) => `<a href="#${z.id}" title="${z.name}">${ZLJ_LILY('r' + i)}</a>`).join('');
+  chapters.innerHTML = Z.map((z, i) => {
+    const [first, ...rest] = z.name.split(' ');
+    return `<section class="ch" id="${z.id}">
+      <span class="ch-year" aria-hidden="true">${z.year}</span>
+      <div class="ch-in">
+        <p class="ch-num">${ROM[i]}<b>${z.year}</b></p>
+        <h2><span>${first}</span><span>${rest.join(' ')}</span></h2>
+        ${z.post ? '<span class="post">Posthumno</span>' : '<span></span>'}
+        <dl class="facts">
+          <div><dt>Mjesto</dt><dd>${zljPlace(z)}</dd></div>
+          <div><dt>Rođenje</dt><dd>${zljDate(z)}</dd></div>
+          <div><dt>Jedinica</dt><dd>${z.unit.bs}</dd></div>
+        </dl>
+        ${z.note ? `<p class="note">${z.note.bs}</p>` : ''}
+      </div>
+    </section>`;
+  }).join('');
+
+  const chs = [...document.querySelectorAll('.ch')], dots = [...rail.children];
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    const k = chs.indexOf(e.target);
+    dots.forEach((d, j) => { d.classList.toggle('on', j === k); d.classList.toggle('past', j < k); });
+  }), { threshold: .45 });
+  chs.forEach(c => io.observe(c));
+  // slow parallax of the big year
+  const years = chs.map(c => c.querySelector('.ch-year'));
+  addEventListener('scroll', () => requestAnimationFrame(() => {
+    chs.forEach((c, i) => { const r = c.getBoundingClientRect(); years[i].style.setProperty('--py', (r.top * -.18).toFixed(1) + 'px'); });
+  }), { passive: true });
+</script>
+</body>
+</html>
