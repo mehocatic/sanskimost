@@ -4,6 +4,8 @@
 .hodnik-page {
   --wash: 238, 228, 211; --wall: #EEE4D3; --page: #FFF9EF; --ink: #3A3550; --ink-60: rgba(58, 53, 80, .6); --ink-35: rgba(58, 53, 80, .35);
   --h-serif: var(--serif); --h-mono: var(--sans); --h-cond: var(--serif);
+  /* buttons in the dark ink of the rest of the site, not the page ink */
+  --btn: #151a18; --btn-text: #f6f4ee;
   --u: min(calc(100vw / 1440), calc(100vh / 900)); --w: calc(100vw / 1440);
   height: 100%; overflow: hidden; background: var(--wall); color: var(--ink);
 }
