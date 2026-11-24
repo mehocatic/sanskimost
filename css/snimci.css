@@ -186,3 +186,19 @@ html:has(#dt[open]) { overflow: hidden; }
   .sn-row > * { pointer-events: auto; }
 }
 
+/* ---------- phones ---------- */
+@media (max-width: 767px) {
+  .snimci-page { --H: min(76vw, 40svh); }
+  .sn-head { padding-top: 72px; }
+  .sn-row { margin-bottom: 4px; }
+  .sn-head h1 { font-size: 1.75rem; }
+  .sn-tabs { justify-content: flex-start; margin-top: 12px; }
+  .caption { padding: 14px 52px 0; min-height: 124px; }
+  .arrow-prev { left: 2px; top: 8px; }
+  .arrow-next { right: 2px; top: 8px; }
+  .cap-title { font-size: 1.2rem; }
+  .dt-x { top: 10px; }
+  .dt-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; padding: 72px 22px 40px; min-height: 0; }
+  .dt-poster { order: -1; --HP: min(46svh, 360px); }
+  .dt-title { font-size: 1.8rem; }
+}
