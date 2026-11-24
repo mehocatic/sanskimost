@@ -448,6 +448,99 @@
         // the ceiling: coffers between beams that run across the corridor over each pilaster, with a ring of light along the middle
         const ceil = add(new THREE.CircleGeometry(OUTER_RADIUS, 160), new THREE.MeshBasicMaterial({ color: '#EDE2CF', side: THREE.BackSide }), WALL_HEIGHT);
         ceil.rotation.x = -Math.PI / 2;
+        const strip = add(new THREE.RingGeometry(MID_R - .3, MID_R + .3, 240), new THREE.MeshBasicMaterial({ color: '#FFFCF5', side: THREE.DoubleSide }), WALL_HEIGHT - .02);
+        strip.rotation.x = -Math.PI / 2;
+        const edge = add(new THREE.RingGeometry(MID_R - .4, MID_R + .4, 240), new THREE.MeshBasicMaterial({ color: '#DCCDB2', side: THREE.DoubleSide }), WALL_HEIGHT - .015);
+        edge.rotation.x = -Math.PI / 2;
+        // a beam: lighter in the middle of its underside, darker at the edges
+        const bc = document.createElement('canvas'); bc.width = bc.height = 64;
+        const bx = bc.getContext('2d'), bg = bx.createLinearGradient(0, 0, 64, 0);
+        bg.addColorStop(0, '#CDBA98'); bg.addColorStop(.2, '#EFE4D0'); bg.addColorStop(.8, '#EFE4D0'); bg.addColorStop(1, '#CDBA98');
+        bx.fillStyle = bg; bx.fillRect(0, 0, 64, 64);
+        const beamTex = texOf(bc), beamMat = new THREE.MeshBasicMaterial({ map: beamTex });
+        const beamLen = OUTER_RADIUS - INNER_RADIUS, beamGeo = new THREE.BoxGeometry(.32, .22, beamLen);
+        this.disposables.push(beamMat, beamGeo);
+        for (let s = 0; s < OUTER_COUNT; s++) {
+          const a = -(s + .5) * STEP, m = new THREE.Mesh(beamGeo, beamMat);
+          m.position.set(MID_R * Math.cos(a), WALL_HEIGHT - .11, MID_R * Math.sin(a));
+          m.lookAt(0, WALL_HEIGHT - .11, 0); scene.add(m);
+        }
+      }
+
+      // engaged Ionic columns on the outer wall, halfway between the pictures: a plinth and two rings at the foot, a fluted shaft that narrows a little
+      // towards the top, a capital with volutes, and a block that carries the cornice. Their axis stands in the wall, so half of each column shows.
+      // They are the only lit things in the scene (the rest has its light painted in): the light makes the flutes and the rings read as round.
+      // Each part is one instanced mesh for all the columns, so the whole colonnade costs a dozen draw calls.
+      buildColumns(scene, texOf) {
+        const N = OUTER_COUNT, R_AXIS = OUTER_RADIUS - .02;
+        const stone = new THREE.MeshLambertMaterial({ color: '#F2E9DA' });
+        const stoneDim = new THREE.MeshLambertMaterial({ color: '#E6D8BF' });
+        this.disposables.push(stone, stoneDim);
+        // light for the columns only: a soft sky from above and a lamp in the middle of the room, which faces every column the same way
+        scene.add(new THREE.HemisphereLight(0xfffaf2, 0xb9a07c, 1.5));
+        const lamp = new THREE.PointLight(0xfff5e8, 2.1, 0, 0); lamp.position.set(0, 4.2, 0); scene.add(lamp);
+
+        // the fluted shaft: 24 concave flutes with narrow flat fillets between them, slightly wider at the foot (entasis)
+        const SH0 = .42, SH1 = 4.92, shaft = new THREE.CylinderGeometry(.205, .232, SH1 - SH0, 192, 1, true);
+        {
+          const p = shaft.attributes.position, NF = 24;
+          for (let i = 0; i < p.count; i++) {
+            const x = p.getX(i), z = p.getZ(i), th = Math.atan2(x, z);
+            const ph = (((th / (2 * Math.PI)) * NF) % 1 + 1) % 1, fil = .16;
+            const g = ph < fil ? 0 : Math.sin(Math.PI * (ph - fil) / (1 - fil));
+            const k = 1 - .1 * g;
+            p.setX(i, x * k); p.setZ(i, z * k);
+          }
+          shaft.computeVertexNormals();
+        }
+        // the capital's echinus, a flared ring under the abacus
+        const echinus = new THREE.LatheGeometry([[.2, 0], [.225, .03], [.26, .08], [.29, .13], [.3, .16]].map(([r, y]) => new THREE.Vector2(r, y)), 64);
+        const parts = [
+          [new THREE.BoxGeometry(.7, .2, .7), stoneDim, 0, .1, 0],                     // plinth, as tall as the skirting board
+          [new THREE.TorusGeometry(.27, .055, 14, 64), stone, 0, .265, 0, true],         // lower torus
+          [new THREE.CylinderGeometry(.235, .25, .06, 64), stoneDim, 0, .33, 0],         // scotia
+          [new THREE.TorusGeometry(.245, .035, 12, 64), stone, 0, .39, 0, true],         // upper torus
+          [shaft, stone, 0, (SH0 + SH1) / 2, 0],
+          [new THREE.TorusGeometry(.212, .026, 10, 64), stone, 0, SH1 + .02, 0, true],   // necking ring
+          [echinus, stone, 0, SH1 + .04, 0],
+          [new THREE.BoxGeometry(.72, .09, .72), stoneDim, 0, SH1 + .245, 0],           // abacus
+          [new THREE.TorusGeometry(.065, .024, 10, 32), stone, -.3, SH1 + .14, .25],    // volutes, left and right
+          [new THREE.TorusGeometry(.065, .024, 10, 32), stone, .3, SH1 + .14, .25],
+          [new THREE.SphereGeometry(.028, 12, 8), stoneDim, -.3, SH1 + .14, .27],       // their eyes
+          [new THREE.SphereGeometry(.028, 12, 8), stoneDim, .3, SH1 + .14, .27],
+          [new THREE.BoxGeometry(.82, 5.6 - (SH1 + .29), .56), stone, 0, (5.6 + SH1 + .29) / 2, 0], // the block under the cornice
+        ];
+        const col = new THREE.Object3D(), part = new THREE.Matrix4(), m = new THREE.Matrix4();
+        for (const [geo, mat, px, py, pz, flat] of parts) {
+          this.disposables.push(geo);
+          const inst = new THREE.InstancedMesh(geo, mat, N);
+          part.makeTranslation(px, py, pz);
+          if (flat) part.multiply(new THREE.Matrix4().makeRotationX(Math.PI / 2));
+          for (let s = 0; s < N; s++) {
+            const a = -(s + .5) * STEP;
+            col.position.set(R_AXIS * Math.cos(a), 0, R_AXIS * Math.sin(a)); col.lookAt(0, 0, 0); col.updateMatrix();
+            inst.setMatrixAt(s, m.multiplyMatrices(col.matrix, part));
+          }
+          inst.instanceMatrix.needsUpdate = true;
+          scene.add(inst);
+        }
+
+        // a soft shadow on the wall on both sides of each column, so it stands off the wall
+        const sc = document.createElement('canvas'); sc.width = 128; sc.height = 4;
+        const sx = sc.getContext('2d'), sg = sx.createLinearGradient(0, 0, 128, 0);
+        sg.addColorStop(0, 'rgba(110, 85, 50, 0)'); sg.addColorStop(.3, 'rgba(110, 85, 50, 0.2)'); sg.addColorStop(.5, 'rgba(110, 85, 50, 0.24)');
+        sg.addColorStop(.7, 'rgba(110, 85, 50, 0.2)'); sg.addColorStop(1, 'rgba(110, 85, 50, 0)');
+        sx.fillStyle = sg; sx.fillRect(0, 0, 128, 4);
+        const aoMat = new THREE.MeshBasicMaterial({ map: texOf(sc), transparent: true, depthWrite: false }), aoGeo = new THREE.PlaneGeometry(1.15, 5.4);
+        this.disposables.push(aoMat, aoGeo);
+        const ao = new THREE.InstancedMesh(aoGeo, aoMat, N);
+        part.makeTranslation(0, 2.9, -.012);
+        for (let s = 0; s < N; s++) {
+          const a = -(s + .5) * STEP;
+          col.position.set(R_AXIS * Math.cos(a), 0, R_AXIS * Math.sin(a)); col.lookAt(0, 0, 0); col.updateMatrix();
+          ao.setMatrixAt(s, m.multiplyMatrices(col.matrix, part));
+        }
+        scene.add(ao);
       }
 
       backdropTextures() {
