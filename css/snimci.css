@@ -1,0 +1,12 @@
+/* Video archive page: a shelf of tapes (js/snimci.js). Colours come from base.css; the tape colours code the themes. */
+.snimci-page {
+  --pad: clamp(20px, 3.4vw, 48px);
+  --H: max(200px, min(46svh, 31vw, 100svh - 500px));            /* height of one tape; the width of a spine and of a cover follow from it (snimci.js) */
+  background: var(--paper); color: var(--ink);
+}
+.snimci-page button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+.snimci-page [hidden] { display: none !important; }
+
+#sn { min-height: 100svh; display: flex; flex-direction: column; padding-bottom: 8px; }
+#sn > * { flex-shrink: 0; }
+
