@@ -743,6 +743,7 @@
           return a;
         });
 
+        const shadowFrames = [];
         const make = (printIndex, angle, wall) => {
           const a = assets[printIndex], group = new THREE.Group();
           const radius = wall === 'outer' ? 17.98 : 12.22, cx = radius * Math.cos(angle), cz = radius * Math.sin(angle);
