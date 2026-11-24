@@ -419,3 +419,5 @@
   background: rgba(17, 22, 20, .6); letter-spacing: .14em;
   opacity: 0; visibility: hidden; transition: opacity .4s ease, visibility 0s linear .4s, background .3s ease, color .3s ease;
 }
+.arh-video:hover { background: var(--sand); color: var(--ink); }
+.arh-video:focus-visible { outline: 2px solid var(--sand); outline-offset: 3px; }
