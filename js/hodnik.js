@@ -91,6 +91,88 @@
     else { a.target = '_blank'; a.rel = 'noopener'; }
     a.textContent = (p.src.internal ? '' : t('lic.source') + ': ') + p.src.label;
   }
+  /* ---------- the carved frame round the photograph in the dialog ---------- */
+  // the same pieces of the photographed frame as on the walls (photos/okvir/, tools/okvir-isjeci.py), laid out the same way on a canvas:
+  // corners (the bottom ones mirrored), the carved middle of each side unstretched, plain stretches repeated mirrored; a white mount inside.
+  const framePieces = {};
+  const framesReady = Promise.all(Object.keys(FRAME_PIECES).map(k => new Promise(res => {
+    const im = new Image(); im.onload = im.onerror = () => res(); im.src = `photos/okvir/${k}.webp`; framePieces[k] = im;
+  })));
+  function drawFrame(cv, w, h, band, mount) {
+    const dpr = Math.min(2, devicePixelRatio || 1), W = w + 2 * (band + mount), H = h + 2 * (band + mount);
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); cv.style.width = W + 'px'; cv.style.height = H + 'px';
+    const x = cv.getContext('2d'); x.setTransform(dpr, 0, 0, dpr, 0, 0); x.clearRect(0, 0, W, H);
+    const k = band / FRAME_D, C = FRAME_C * k, P = FRAME_PIECES;
+    // the mount, with a hole where the photograph shows through
+    x.fillStyle = '#FBF8F1'; x.fillRect(band - 1, band - 1, W - 2 * band + 2, H - 2 * band + 2);
+    x.clearRect(band + mount, band + mount, w, h);
+    x.strokeStyle = 'rgba(120, 100, 70, .28)'; x.lineWidth = 1; x.strokeRect(band + mount - .5, band + mount - .5, w + 1, h + 1);
+    // one piece: source part sx..sx+sw x sy..sy+sh into dx, dy, dw, dh, mirrored if asked
+    const put = (key, sx, sy, sw, sh, dx, dy, dw, dh, fx, fy) => {
+      const im = framePieces[key]; if (!im || !im.naturalWidth || dw <= 0 || dh <= 0) return;
+      x.save(); x.translate(dx + (fx ? dw : 0), dy + (fy ? dh : 0)); x.scale(fx ? -1 : 1, fy ? -1 : 1);
+      x.drawImage(im, sx, sy, sw, sh, 0, 0, dw, dh); x.restore();
+    };
+    // a plain stretch along x: mirrored repeats, an odd number, so both ends meet what the photograph had next to them;
+    // `startAtMiddle`: the piece's left end was against the carved middle; `flip`: the whole stretch drawn mirrored
+    const plainH = (key, x0, y0, len, hh, startAtMiddle, flip) => {
+      const [pw, ph] = P[key], seg = pw * k, r = len / seg;
+      if (r < 1) { const sw = pw * r; put(key, startAtMiddle ? 0 : pw - sw, 0, sw, ph, x0, y0, len, hh, flip, false); return; }
+      const n = Math.max(1, 2 * Math.round((r - 1) / 2) + 1), d = len / n;
+      for (let i = 0; i < n; i++) put(key, 0, 0, pw, ph, x0 + i * d, y0, d + .5, hh, (i % 2 === 1) !== !!flip, false);
+    };
+    // the same down a side: the piece's top was against the corner; `fy` draws it upside down (the lower stretch)
+    const plainV = (key, x0, y0, len, ww, fy) => {
+      const [pw, ph] = P[key], seg = ph * k, r = len / seg;
+      if (r < 1) { const sh = ph * r; put(key, 0, ph - sh, pw, sh, x0, y0, ww, len, false, fy); return; }
+      const n = Math.max(1, 2 * Math.round((r - 1) / 2) + 1), d = len / n;
+      for (let i = 0; i < n; i++) put(key, 0, 0, pw, ph, x0, y0 + i * d, ww, d + .5, false, (i % 2 === 1) !== !!fy);
+    };
+    const D = band, runH = W - 2 * C, midW = Math.min(P['t-c'][0] * k, runH), cut = midW / (P['t-c'][0] * k);
+    const msx = P['t-c'][0] * (1 - cut) / 2, msw = P['t-c'][0] * cut, plH = (runH - midW) / 2;
+    const runV = H - 2 * C, midH = Math.min(P['l-c'][1] * k, runV), vcut = midH / (P['l-c'][1] * k);
+    const msy = P['l-c'][1] * (1 - vcut) / 2, msh = P['l-c'][1] * vcut, plV = (runV - midH) / 2;
+    // top: plain (ends against the middle), middle, plain (starts against it); bottom: the same from the bottom pieces
+    if (plH > 0) {
+      plainH('t-l', C, 0, plH, D, false, false);
+      plainH('t-r', C + plH + midW, 0, plH, D, true, false);
+      plainH('b-p', C + plH + midW, H - D, plH, D, true, false);
+      plainH('b-p', C, H - D, plH, D, true, true);
+    }
+    put('t-c', msx, 0, msw, P['t-c'][1], C + plH, 0, midW, D);
+    put('b-c', msx, 0, msw, P['b-c'][1], C + plH, H - D, midW, D);
+    // left and right: plain from the corner, middle, the plain again upside down
+    if (plV > 0) {
+      plainV('l-p', 0, C, plV, D, false); plainV('l-p', 0, C + plV + midH, plV, D, true);
+      plainV('r-p', W - D, C, plV, D, false); plainV('r-p', W - D, C + plV + midH, plV, D, true);
+    }
+    put('l-c', 0, msy, P['l-c'][0], msh, 0, C + plV, D, midH);
+    put('r-c', 0, msy, P['r-c'][0], msh, W - D, C + plV, D, midH);
+    // corners last, over the ends of the sides
+    put('c-tl', 0, 0, FRAME_C, FRAME_C, 0, 0, C, C);
+    put('c-tr', 0, 0, FRAME_C, FRAME_C, W - C, 0, C, C);
+    put('c-tl', 0, 0, FRAME_C, FRAME_C, 0, H - C, C, C, false, true);
+    put('c-tr', 0, 0, FRAME_C, FRAME_C, W - C, H - C, C, C, false, true);
+  }
+  // fit the photograph (never above its natural size), the mount and the frame into the space the dialog gives the picture
+  function layoutDialogFrame() {
+    if (opened < 0 || !lb.open) return;
+    const it = PRINTS[opened], ph = $('lb-ph'), art = $('lb-art'), img = $('lb-img'), mono = $('lb-mono');
+    const narrow = mqSmall.matches;
+    const availW = ph.clientWidth, availH = narrow ? innerHeight * .62 : ph.clientHeight;
+    if (!availW || !availH) return;
+    const band = Math.round(Math.max(26, Math.min(64, Math.min(availW, availH) * .085))), mount = Math.round(band * .4), pad = band + mount;
+    const nw = it.photo ? it.width : 600, nh = it.photo ? it.height : 800;
+    const s = Math.min(it.photo ? 1 : 2, (availW - 2 * pad) / nw, (availH - 2 * pad) / nh);
+    const w = Math.max(40, Math.round(nw * s)), h = Math.max(40, Math.round(nh * s));
+    const el = it.photo ? img : mono;
+    el.style.width = w + 'px'; el.style.height = h + 'px';
+    art.style.padding = pad + 'px';
+    drawFrame($('lb-frame'), w, h, band, mount);
+  }
+  framesReady.then(layoutDialogFrame);
+  addEventListener('resize', layoutDialogFrame);
+
   function openPhoto(i) {
     opened = i;
     fillDialog();
