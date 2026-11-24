@@ -38,3 +38,16 @@
 .zlj-card .zlj-credit { margin-top: 1rem; font-size: .72rem; color: var(--ink-muted); }
 .zlj-hint { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); font-family: var(--serif); font-style: italic; color: var(--ink-muted); white-space: nowrap; }
 
+/* phones: the card at the bottom, the map above it */
+@media (max-width: 700px) {
+  .zlj-st { align-items: flex-end; padding-bottom: 7svh; }
+  .zlj-card { padding: 20px 18px 18px; }
+  .zlj-card h2 { font-size: 2rem; }
+  .zlj-card p { margin-top: .6rem; }
+  .zlj-card dl { gap: 6px; margin-top: .8rem; padding-top: .7rem; }
+  .zlj-card .zlj-note { font-size: 1.05rem; }
+  .zlj-vil { font-size: 13px; }
+  .zlj-lab { font-size: 14px; }
+  .zlj-intro .zlj-hint { display: none; }
+}
+
