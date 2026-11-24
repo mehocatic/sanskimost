@@ -352,6 +352,14 @@
 .scrub.away { opacity: 0; translate: 0 20px; pointer-events: none; }
 .v-map .site-foot { display: none; }
 
-/* link to the video recordings (snimci.html), in the line above the title */
-.arh-video { padding: 12px 2px; color: var(--paper); text-underline-offset: 4px; pointer-events: auto; }
-.arh-video:hover { color: var(--sand); }
+/* ---------- the way to the video recordings (snimci.html) ---------- */
+/* a card under the title: a tape half out of its sleeve; it slides further out and the reels turn on hover */
+.vid-cta {
+  position: relative; isolation: isolate; display: flex; align-items: center; gap: 18px; width: min(100%, 440px); margin-top: 26px; padding: 12px 16px 12px 12px;
+  border: 1px solid rgba(246, 244, 238, .16); border-radius: 18px; overflow: hidden; color: var(--paper); text-decoration: none; pointer-events: auto;
+  background: linear-gradient(135deg, rgba(246, 244, 238, .085), rgba(246, 244, 238, .02) 60%), rgba(17, 22, 20, .55);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  box-shadow: 0 24px 60px -28px rgba(0, 0, 0, .85), inset 0 1px 0 rgba(246, 244, 238, .08);
+  transition: border-color .45s ease, box-shadow .45s ease, opacity .45s ease, translate .55s cubic-bezier(.2, .8, .2, 1), visibility 0s;
+  animation: vid-in 1s cubic-bezier(.2, .8, .2, 1) .35s backwards;
+}
