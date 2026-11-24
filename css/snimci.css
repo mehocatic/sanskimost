@@ -103,3 +103,19 @@
 .play-ring svg { transform: translateX(1px); }
 .play-ring:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; }
 
+/* with a mouse the circle below replaces the button; the button still shows when it has the keyboard focus */
+.sn-cursor { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .play-ring { opacity: 0; }
+  .play-ring:focus-visible { opacity: 1; }
+  .shelf.is-cover, .shelf.is-cover .tape { cursor: none; }
+  .sn-cursor {
+    display: flex; position: fixed; left: 0; top: 0; z-index: 90; width: 92px; height: 92px; margin: -46px 0 0 -46px; border-radius: 50%;
+    align-items: center; justify-content: center; pointer-events: none; will-change: transform;
+    background: var(--ink); color: var(--paper); box-shadow: 0 8px 28px rgba(0, 0, 0, .28);
+    font-size: .72rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+    opacity: 0; scale: .4; transition: opacity .25s ease, scale .4s cubic-bezier(.2, .8, .2, 1);
+  }
+  .sn-cursor.on { opacity: 1; scale: 1; }
+}
+
