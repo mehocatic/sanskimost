@@ -379,3 +379,7 @@
   filter: drop-shadow(0 10px 12px rgba(0, 0, 0, .55)); transform: rotate(-3deg);
   transition: transform .8s cubic-bezier(.2, .8, .2, 1);
 }
+.vid-cas .reel { transform-box: fill-box; transform-origin: center; animation: reel 7s linear infinite; }
+/* now and then the tape peeks a little further out by itself, so the card is noticed */
+.vid-cas { animation: vid-peek 7s cubic-bezier(.45, 0, .2, 1) 2s infinite; }
+.vid-cta:hover .vid-cas { transform: translateX(18px) rotate(2deg); animation-play-state: paused; }
