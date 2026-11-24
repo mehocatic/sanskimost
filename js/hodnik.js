@@ -212,7 +212,7 @@
   mqTouch.addEventListener('change', setHints);
 
   addEventListener('langchange', () => {
-    setHints(); fillDialog(); if (list.classList.contains('open')) buildList();
+    setHints(); fillDialog(); fillPlate(); if (list.classList.contains('open')) buildList();
     if (stage) stage.redrawAllLabels();
   });
 
