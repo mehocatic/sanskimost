@@ -24,4 +24,15 @@
   const placeOf = z => z.born.bs.split(',')[0].trim();
   const dateOf = z => tx(z.born).split(',').slice(1).join(',').trim();
 
+  // ---------- the lily: a centre petal, a band, a centre foot, and the right-hand petal and foot (the left ones are mirrored)
+  const LILY_C = ['M100 6C108 24 121 46 121 74C121 98 110 116 100 130C90 116 79 98 79 74C79 46 92 24 100 6Z',
+    'M66 132H134Q140 132 140 138V146Q140 152 134 152H66Q60 152 60 146V138Q60 132 66 132Z',
+    'M100 154C106 172 108 194 100 226C92 194 94 172 100 154Z'];
+  const LILY_R = ['M104 132C106 108 120 86 144 80C168 74 190 86 192 108C194 126 180 138 166 134C156 131 152 120 158 112C163 106 172 108 174 115C176 106 168 98 156 99C138 101 124 116 118 134Z',
+    'M108 154C118 170 134 180 154 178C150 192 128 198 112 176C110 168 108 160 108 154Z'];
+  const LILY_RIB = 'M100 30V116';
+  const LILY_SVG = `<svg viewBox="0 0 200 240" aria-hidden="true" focusable="false"><g fill="#b08a3e" stroke="#5a4316" stroke-width="5" stroke-linejoin="round">${
+    LILY_C.map(d => `<path d="${d}"/>`).join('')}${LILY_R.map(d => `<path d="${d}"/><path d="${d}" transform="matrix(-1 0 0 1 200 0)"/>`).join('')
+    }</g><path d="${LILY_RIB}" stroke="#5a4316" stroke-width="4" stroke-linecap="round"/></svg>`;
+
 })();
