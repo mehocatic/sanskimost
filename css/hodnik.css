@@ -157,10 +157,13 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
   .gui::after { display: none; }
   .kicker-mask { margin: 0 0 8px 0; }
   .kicker { font-size: 11px; }
-  .headline-row { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .headline { font-size: min(17vw, 15vh); white-space: normal; line-height: .88; }
-  html[lang="en"] .headline { font-size: min(14vw, 13vh); }
-  .arrows { left: 16px; bottom: 24px; top: auto; flex-direction: row; gap: 8px; }
+  .headline { font-size: min(12.5vw, 11vh); line-height: .92; }
+  .intro-mask { margin: 12px 0 0; }
+  .intro { font-size: 14px; }
+  .plate-name { font-size: min(10vw, 40px); }
+  .plate-role { font-size: 17px; }
+  .plate-open { margin-top: 14px; }
+  .arrows { left: 16px; right: auto; bottom: 24px; gap: 8px; }
   .arrow-btn { width: 44px; height: 44px; }
   .arrow-svg { width: 18px; height: 18px; }
   .list-section { padding: 84px 16px 60px; }
