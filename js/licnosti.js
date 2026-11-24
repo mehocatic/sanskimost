@@ -20,4 +20,8 @@
   const h = decodeURIComponent(location.hash.slice(1));
   if (h && people.some(p => p.id === h)) { location.replace('hodnik#' + encodeURIComponent(h)); return; }
 
+  // place of birth and date from the data ("Skucani Vakuf, 9. april 1951.")
+  const placeOf = z => z.born.bs.split(',')[0].trim();
+  const dateOf = z => tx(z.born).split(',').slice(1).join(',').trim();
+
 })();
