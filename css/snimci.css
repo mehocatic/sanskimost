@@ -94,3 +94,12 @@
 .cv-src { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .cv-min { flex: none; padding: 1px 4px; border: 1px solid rgba(237, 233, 223, .45); white-space: nowrap; }
 
+.play-ring {
+  position: absolute; z-index: 300; width: 44px; height: 44px; margin: -22px 0 0 -22px; padding: 0; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; will-change: transform;
+  border: 1px solid var(--ink) !important; background: rgba(246, 244, 238, .86) !important; color: var(--ink);
+}
+.play-ring { width: 52px; height: 52px; margin: -26px 0 0 -26px; }
+.play-ring svg { transform: translateX(1px); }
+.play-ring:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; }
+
