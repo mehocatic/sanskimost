@@ -364,7 +364,7 @@ I18N.bs = {
   'sn.g.juris-nepobjedivih': 'Dokumentarni film',
   'sn.s.juris-nepobjedivih': 'Dokumentarni prikaz ratnog puta 510. oslobodilačke brigade 5. korpusa u oslobađanju općina Bosanske Krajine.',
   'hod.doctitle': 'Ličnosti Sanskog Mosta · Sanski Most',
-  'hod.meta': 'Ličnosti Sanskog Mosta u hodniku s portretima: sport, nauka i književnost, muzika, umjetnost, baština i sjećanje na rat. Kratke biografije s izvorima.',
+  'hod.meta': 'Ličnosti Sanskog Mosta u galeriji portreta: sport, nauka i književnost, muzika, umjetnost, baština i sjećanje na rat. Kratke biografije s izvorima.',
   'hod.stage': 'Hodnik s portretima. Strelicama ulijevo i udesno se krećete, Enter otvara biografiju.',
   'hod.kicker': 'Upravo prolazite kroz',
   'hod.headline': 'Hodnik ličnosti',
