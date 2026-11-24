@@ -131,3 +131,31 @@
     if (busy) raf = requestAnimationFrame(frame);
   }
   function wake() { if (!raf) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+
+  /* ---------- caption ---------- */
+  const caps = [$('cap-title'), $('cap-sub'), $('cap-year')];
+  function swap(box, text, dir) {
+    if (reduced()) { box.innerHTML = ''; const sp = document.createElement('span'); sp.className = 'cap-span'; sp.textContent = text; box.appendChild(sp); return; }
+    const sign = dir >= 0 ? 1 : -1;
+    Array.from(box.children).forEach(old => {
+      old.style.cssText += ';position:absolute;left:0;right:0;top:0';
+      if (old.dataset.leaving) return;
+      old.dataset.leaving = '1';
+      old.setAttribute('aria-hidden', 'true'); // only the new text is read out
+      const from = getComputedStyle(old).transform;
+      old.animate([{ transform: from && from !== 'none' ? from : 'translateY(0%)' }, { transform: `translateY(${-sign * 105}%)` }], { duration: 600, easing: EASE, fill: 'both' }).onfinish = () => old.remove();
+    });
+    const sp = document.createElement('span');
+    sp.className = 'cap-span'; sp.textContent = text;
+    box.appendChild(sp);
+    sp.animate([{ transform: `translateY(${sign * 105}%)` }, { transform: 'translateY(0%)' }], { duration: 600, easing: EASE, fill: 'both' });
+  }
+  function setCaption(i, dir, instant) {
+    capTexts(F[i]).forEach((text, k) => { if (instant) { caps[k].innerHTML = ''; const sp = document.createElement('span'); sp.className = 'cap-span'; sp.textContent = text; caps[k].appendChild(sp); } else swap(caps[k], text, dir); });
+  }
+  function setActive(i, dir) {
+    active = i;
+    setCaption(i, dir);
+    tabs.querySelectorAll('button').forEach(b => { if (b.dataset.cat === F[i].cat) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+  }
+
