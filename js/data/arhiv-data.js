@@ -118,7 +118,7 @@ window.ARCHIVE = {
     {"f": "liga-fk-zadrugar-ostra-luka", "y": null, "cat": "ljudi", "cap": "sport.liga-fk-zadrugar-ostra-luka", "w": 1248, "h": 862},
     {"f": "liga-fk-mladost-lipnik", "y": null, "cat": "ljudi", "cap": "sport.liga-fk-mladost-lipnik", "w": 1267, "h": 832},
     {"f": "liga-ofk-sloboda-mahala", "y": null, "cat": "ljudi", "cap": "sport.liga-ofk-sloboda-mahala", "w": 1258, "h": 832},
-    {"f": "liga-opcinska-liga-sezona-1981-82", "y": 1981, "cat": "ljudi", "cap": "sport.liga-opcinska-liga-sezona-1981-82", "w": 1166, "h": 895},
+    {"f": "liga-opcinska-liga-sezona-1981-82", "y": 1981, "yl": "arh.y.8182", "cat": "ljudi", "cap": "sport.liga-opcinska-liga-sezona-1981-82", "w": 1166, "h": 895},
     {"f": "radnicki-isjecak", "y": null, "cat": "dokumenti", "cap": "sport.radnicki-isjecak", "w": 662, "h": 1292},
     {"f": "biblioteka-1970", "y": null, "cat": "ulice", "cap": "hist.ul.5.z", "place": "jugobanka", "w": 838, "h": 855},
     {"f": "fudbal-ekipa", "y": null, "cat": "ljudi", "cap": "hist.5.f.fudbal", "w": 1344, "h": 768, "src": "hist.src.book"},
