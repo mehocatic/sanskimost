@@ -63,4 +63,7 @@
     addEventListener('langchange', renderCards);
     return;
   }
+  const loading = $('zlj-loading');
+  loading.hidden = false;
+
 })();
