@@ -230,7 +230,7 @@ I18N.en = {
   'nav.plan': 'Visit',
   'nav.history': 'History',
   'nav.archive': 'Archive',
-  'nav.corridor': 'Corridor',
+  'nav.corridor': 'People',
   'nav.quiz': 'Quiz',
   'nav.people': 'Golden Lilies',
   'lic.meta': 'Golden Lily recipients from the pre-war municipality of Sanski Most, with the year of the award, place of birth and unit.',
