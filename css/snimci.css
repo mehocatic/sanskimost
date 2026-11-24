@@ -178,6 +178,7 @@ html:has(#dt[open]) { overflow: hidden; }
   position: relative; justify-self: center; height: var(--HP); width: calc(var(--HP) * .64); max-width: 100%;
   perspective: 1700px; perspective-origin: 50% 30%;
 }
+.vhs-scene { position: absolute; left: 50%; top: calc(var(--HP) * .99 - var(--S) / 2); transform-style: preserve-3d; animation: vhs-bob 6s ease-in-out infinite alternate; }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
