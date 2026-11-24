@@ -22,3 +22,10 @@
 /* a card like a map legend: paper, a fine ink frame with a second line around it */
 .zlj-card { width: min(100%, 25rem); padding: 26px 26px 24px; background: rgba(238, 235, 227, .94); border: 1px solid var(--ink);
   box-shadow: 0 0 0 4px rgba(238, 235, 227, .94), 0 0 0 5px rgba(21, 26, 24, .35); }
+.zlj-sc, .zlj-card dt { font-family: var(--serif); font-variant: small-caps; letter-spacing: .08em; font-size: 1.05rem; line-height: 1.2; color: var(--ink-muted); }
+.zlj-card h1 { margin-top: .4rem; font-family: var(--serif); font-weight: 400; font-size: clamp(2.3rem, 7vw, 3.4rem); line-height: .98; }
+.zlj-card h2 { margin-top: .2rem; font-family: var(--serif); font-weight: 400; font-size: clamp(2.1rem, 6.4vw, 3rem); line-height: 1; }
+.zlj-card p { margin-top: .9rem; color: var(--ink-soft); }
+.zlj-card .zlj-sc { margin-top: 0; }
+.zlj-card .zlj-it { margin-top: .5rem; font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--ink); }
+.zlj-card a { color: var(--ink); text-underline-offset: 3px; }
