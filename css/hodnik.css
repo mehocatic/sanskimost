@@ -116,7 +116,7 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
 .lic-note { max-width: 40rem; margin-top: calc(80 * var(--w)); padding-top: calc(28 * var(--w)); border-top: 1px solid var(--ink-35); }
 .lic-note h2 { margin: 0; font-family: var(--h-serif); font-weight: 500; font-size: max(26px, calc(36 * var(--w))); line-height: 1.1; }
 .lic-note p { margin: .7rem 0 0; color: var(--ink-60); }
-.lic-mail { display: inline-flex; align-items: center; min-height: 46px; margin-top: 1.2rem; padding: 0 22px; border-radius: 99px; background: var(--ink); color: var(--wall); font-family: var(--h-mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
+.lic-mail { display: inline-flex; align-items: center; min-height: 46px; margin-top: 1.2rem; padding: 0 22px; border-radius: 99px; background: var(--btn); color: var(--btn-text); font-family: var(--h-mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
 
 /* one photograph, opened */
 #lb { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 72px calc(48 * var(--w)) 48px; border: 0; background: var(--page); color: var(--ink); overflow: hidden; }
