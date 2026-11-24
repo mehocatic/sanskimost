@@ -423,4 +423,12 @@
     renderer.render(scene, camera);
   }
 
+  try { await loadHeights(); } catch (e) { console.warn('visine terena se nisu učitale', e); }
+  buildTerrain(); buildPins();
+  resize();
+  Object.assign(cur, { dist: want.dist * 1.25, el: want.el + .15, az: want.az - .3 }); cur.t.copy(want.t);
+  loading.hidden = true;
+  t0 = performance.now();
+  raf = requestAnimationFrame(frame);
+
 })();
