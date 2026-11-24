@@ -69,8 +69,8 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
 
 .hint { position: absolute; right: calc(27 * var(--u)); bottom: calc(38 * var(--u)); text-align: right; font-family: var(--h-mono); font-size: max(11px, calc(10 * var(--u))); letter-spacing: .12em; line-height: 1.65; text-transform: uppercase; }
 
-
-.caption { position: absolute; left: calc(25 * var(--u)); right: calc(25 * var(--u)); bottom: calc(30 * var(--u)); }
+/* the title (while walking) and the plate of the person in focus share the bottom left corner and take turns */
+.caption, .plate { position: absolute; left: calc(25 * var(--u)); right: calc(360 * var(--u)); bottom: calc(34 * var(--u)); transition: opacity .35s ease, transform .45s cubic-bezier(.2, .7, .2, 1), visibility .35s; }
 .kicker-mask { width: max-content; margin: 0 0 calc(10 * var(--u)) calc(3 * var(--u)); }
 .kicker { font-family: var(--h-mono); font-size: max(11px, calc(11.5 * var(--u))); letter-spacing: .14em; text-transform: uppercase; }
 .headline-row { display: flex; align-items: flex-end; flex-wrap: wrap; gap: calc(28 * var(--u)); }
