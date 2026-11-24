@@ -321,7 +321,7 @@
         this.failsafe = setTimeout(() => { if (!launched && !this.destroyed) { launched = true; this.redrawAllLabels(); this.beginOpening(); } }, 4000);
         const fontsReady = () => { if (this.destroyed) return; this.redrawAllLabels(); fontsLoaded = true; tryLaunch(); };
         Promise.all([
-          document.fonts.load('500 56px "EB Garamond"', 'čćšžđ'), document.fonts.load('italic 400 38px "EB Garamond"', 'čćšžđ'), document.fonts.load('500 24px Inter', 'čćšžđ'),
+          document.fonts.load('600 58px "EB Garamond"', 'čćšžđ'), document.fonts.load('italic 400 38px "EB Garamond"', 'čćšžđ'), document.fonts.load('600 24px Inter', 'čćšžđ'),
         ]).then(() => document.fonts.ready).then(fontsReady, fontsReady);
 
         this.onResize = () => this.handleResize();
