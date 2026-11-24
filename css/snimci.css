@@ -171,6 +171,7 @@ html:has(#dt[open]) { overflow: hidden; }
    .vhs is a point in the middle of the sleeve; every face is placed from it. Sizes follow the shelf: --S the height of the sleeve,
    --SW its width (the cover), --SD its depth (the spine). The tape is a little smaller than the inside of the sleeve. */
 @property --out { syntax: "<number>"; inherits: false; initial-value: 0; }
+@property --lift { syntax: "<number>"; inherits: true; initial-value: 0; }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
