@@ -50,4 +50,17 @@
     if (window.ZLJILJANI_SRC) { a.href = window.ZLJILJANI_SRC; a.textContent = t('lic.source') + ': Wikipedia'; } else a.hidden = true;
   }
   renderCards();
+  const noGL = () => main.classList.add('no-gl');
+
+  // ---------- WebGL and three.js
+  let THREE;
+  try {
+    const probe = document.createElement('canvas');
+    if (!(probe.getContext('webgl2') || probe.getContext('webgl'))) throw new Error('no webgl');
+    THREE = await import('../vendor/three.module.min.js');
+  } catch (e) {
+    noGL();
+    addEventListener('langchange', renderCards);
+    return;
+  }
 })();
