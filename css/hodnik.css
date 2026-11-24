@@ -61,9 +61,10 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
 .gui.intro-done .rise { animation: maskRise 1000ms cubic-bezier(.2, .7, .2, 1) calc(250ms + var(--mi) * 60ms) both; }
 @keyframes maskRise { from { transform: translateY(105%); } to { transform: translateY(0); } }
 
-.arrows { position: absolute; left: calc(27 * var(--u)); top: calc(262 * var(--u)); display: flex; flex-direction: column; gap: calc(10 * var(--u)); }
-.arrow-btn { width: max(24px, calc(50 * var(--u))); height: max(24px, calc(50 * var(--u))); border: 1.5px solid var(--ink); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); background: transparent; transition: background .25s ease, color .25s ease; }
-.arrow-btn:hover { background: var(--ink); color: var(--wall); }
+/* bottom right, above the hint: clear of the portraits on the near wall */
+.arrows { position: absolute; right: calc(27 * var(--u)); bottom: calc(96 * var(--u)); display: flex; gap: calc(10 * var(--u)); }
+.arrow-btn { width: max(24px, calc(50 * var(--u))); height: max(24px, calc(50 * var(--u))); border: 1.5px solid var(--btn); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--btn); background: transparent; transition: background .25s ease, color .25s ease; }
+.arrow-btn:hover { background: var(--btn); color: var(--btn-text); }
 .arrow-svg { width: calc(20 * var(--u)); height: calc(20 * var(--u)); }
 
 .hint { position: absolute; right: calc(27 * var(--u)); bottom: calc(38 * var(--u)); text-align: right; font-family: var(--h-mono); font-size: max(11px, calc(10 * var(--u))); letter-spacing: .12em; line-height: 1.65; text-transform: uppercase; }
