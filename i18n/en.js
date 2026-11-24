@@ -298,7 +298,7 @@ I18N.en = {
   'arh.place': 'Place',
   'arh.source': 'Source',
   'arh.approx': 'The position on the map is approximate.',
-  'hod.doctitle': 'Corridor of People · Sanski Most',
+  'hod.doctitle': 'People of Sanski Most · Sanski Most',
   'hod.meta': 'People of Sanski Most in a corridor of portraits: sport, science and literature, music, art, heritage and the memory of war. Short biographies with sources.',
   'hod.stage': 'A corridor with portraits. Use the left and right arrow keys to move, Enter opens a biography.',
   'hod.kicker': 'You are walking through',
