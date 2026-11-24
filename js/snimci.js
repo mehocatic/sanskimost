@@ -18,3 +18,13 @@
   const rel = (v, s) => ((((v - s) % TOTAL) + TOTAL + TOTAL / 2) % TOTAL) - TOTAL / 2;
   const smooth = x => { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
   const EASE = 'cubic-bezier(.2,.8,.2,1)';
+
+  const cursor = $('cursor');
+  const shelf = $('shelf'), stage = $('stage'), probe = $('probe'), ring = $('play'), tabs = $('tabs');
+  const dlg = $('dt');
+
+  /* ---------- text of one recording, in the current language ---------- */
+  const catLabel = f => t('sn.cat.' + f.cat);
+  const kind = f => t('sn.g.' + f.id);
+  const desc = f => t('sn.s.' + f.id);
+  const capTexts = f => [f.title, catLabel(f) + ' / ' + f.src, f.y + ' · ' + kind(f)];
