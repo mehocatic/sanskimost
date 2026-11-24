@@ -730,9 +730,11 @@
           const mw = pw + 2 * MOUNT, mh = ph + 2 * MOUNT, fw = mw + 2 * FRAME, fh = mh + 2 * FRAME;
           const glowH = Math.min(1.15, 5.4 - (PY + fh / 2)) + fh * .7, labelX = -fw / 2 + LABEL_W / 2;
           const a = {
-            pw, ph,
-            haloGeo: new THREE.PlaneGeometry(2.1 * pw, 1.75 * ph), shadowGeo: new THREE.PlaneGeometry(1.25 * pw, 1.18 * ph),
-            frameGeo: new THREE.BoxGeometry(pw + .07, ph + .07, .06), printGeo: new THREE.PlaneGeometry(pw, ph),
+            pw, ph, mw, mh, fw, fh, glowH, glowTop: Math.min(PY + fh / 2 + 1.15, 5.4), labelX, wallZ: outer ? -OUT_GAP : -IN_GAP,
+            haloGeo: bent(1.8 * fw, glowH, 0, outer), shadowGeo: bent(1.14 * fw, 1.12 * fh, .07, outer),
+            labelGeo: bent(LABEL_W, LABEL_W * LABEL_CH / 640, labelX, outer),
+            mountGeo: bent(mw + .02, mh + .02, 0, outer),
+            bevelGeo: bent(pw + .024, ph + .024, 0, outer), printGeo: bent(pw, ph, 0, outer),
             printMat: new THREE.MeshBasicMaterial({ map: thumbs[idx] }),
             labelMat: new THREE.MeshBasicMaterial({ map: this.labels[idx].tex, transparent: true, depthWrite: false }),
             thumb: thumbs[idx]
