@@ -300,7 +300,7 @@ I18N.en = {
   'arh.approx': 'The position on the map is approximate.',
   'hod.doctitle': 'People of Sanski Most · Sanski Most',
   'hod.meta': 'People of Sanski Most in a gallery of portraits: sport, science and literature, music, art, heritage and the memory of war. Short biographies with sources.',
-  'hod.stage': 'A corridor with portraits. Use the left and right arrow keys to move, Enter opens a biography.',
+  'hod.stage': 'A gallery of portraits. Use the left and right arrow keys to move, Enter opens a biography.',
   'hod.kicker': 'You are walking through',
   'hod.headline': 'Corridor of People',
   'hod.hint.walk1': 'Scroll or drag to walk round',
