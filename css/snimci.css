@@ -233,6 +233,12 @@ html:has(#dt[open]) { overflow: hidden; }
 .vc-svg .vf-num { font-family: var(--sans); font-size: 7px; font-weight: 600; letter-spacing: .06em; fill: #22304d; }
 .vc-svg .reel { transform-box: fill-box; transform-origin: center; animation: reel 5.5s linear infinite; }
 
+/* the shadow on the floor breathes with the floating tape */
+.vhs-floor {
+  position: absolute; left: 50%; bottom: calc(var(--HP) * -.015); width: calc(var(--HP) * .5); height: calc(var(--HP) * .07); translate: -42% 0;
+  background: radial-gradient(closest-side, rgba(20, 16, 10, .34), rgba(20, 16, 10, 0)); animation: vhs-floor 6s ease-in-out infinite alternate;
+}
+
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
   #sn { height: 100svh; overflow: hidden; }
