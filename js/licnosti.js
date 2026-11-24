@@ -345,4 +345,12 @@
     const cx = pins.reduce((s, p) => s + p.x, 0) / (pins.length || 1), cz = pins.reduce((s, p) => s + p.zz, 0) / (pins.length || 1);
     keys.push(k(cx, .6, cz + 1.5, wide(36), 70, 10));
   }
+  const want = { t: new THREE.Vector3(), dist: 30, el: .8, az: 0 }, cur = { t: new THREE.Vector3(), dist: 40, el: .9, az: 0 };
+  let centres = [], S = 0;
+  function measure() {
+    centres = [...main.querySelectorAll('.zlj-st')].map(b => {
+      const r = b.getBoundingClientRect();
+      return r.top + scrollY + r.height / 2 - innerHeight / 2;
+    });
+  }
 })();
