@@ -746,7 +746,7 @@
         const shadowFrames = [];
         const make = (printIndex, angle, wall) => {
           const a = assets[printIndex], group = new THREE.Group();
-          const radius = wall === 'outer' ? 17.98 : 12.22, cx = radius * Math.cos(angle), cz = radius * Math.sin(angle);
+          const radius = wall === 'outer' ? OUTER_RADIUS - OUT_GAP : INNER_RADIUS + IN_GAP, cx = radius * Math.cos(angle), cz = radius * Math.sin(angle);
           group.position.set(cx, 0, cz);
           if (wall === 'outer') group.lookAt(0, 0, 0); else group.lookAt(cx * 2, 0, cz * 2);
           const put = (geo, mat, x, y, z) => { const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); group.add(m); return m; };
