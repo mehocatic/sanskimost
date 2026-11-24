@@ -318,6 +318,8 @@
     const from = coverClip();
     dlg.getAnimations().forEach(a => a.cancel());
     dlg.showModal();
+    poster.classList.remove('lift');
+    startTilt();
     dlg.scrollTop = 0;
     try { history.replaceState(null, '', '#snimak=' + F[i].id); } catch (e) { /* the address just is not updated */ }
     wake();
