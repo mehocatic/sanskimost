@@ -331,4 +331,18 @@
     });
   }
 
+  // ---------- the flight: one key per card (the intro, each person, the whole valley)
+  const portrait = () => innerWidth / innerHeight < .9;
+  let keys = [];
+  function buildKeys() {
+    const k = (x, y, z, dist, el, az) => ({ t: new THREE.Vector3(x, y, z), dist, el: el * Math.PI / 180, az: az * Math.PI / 180 });
+    const f = portrait() ? 1.7 : 1;
+    // wide views: far enough that about 27 km of land fits across the screen, also on a narrow phone
+    const wide = d => Math.max(d, 13.5 / (Math.tan(19 * Math.PI / 180) * camera.aspect));
+    keys = [k(-1, .2, 1, wide(36), 46, -8)];
+    // the camera looks at the middle of the pin, so a taller pin's lily stays clear of the menu
+    pins.forEach((p, i) => keys.push(k(p.x, p.y + p.colh * .5, p.zz, 6.5 * f, 30, [-30, 10, 40, -10][i % 4])));
+    const cx = pins.reduce((s, p) => s + p.x, 0) / (pins.length || 1), cz = pins.reduce((s, p) => s + p.zz, 0) / (pins.length || 1);
+    keys.push(k(cx, .6, cz + 1.5, wide(36), 70, 10));
+  }
 })();
