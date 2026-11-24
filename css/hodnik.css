@@ -197,5 +197,5 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .rise { transform: none; }
   .gui.intro-done .rise { animation: none; }
-  .veil, .canvas-mount, .gui { transition: none; }
+  .veil, .canvas-mount, .gui, .caption, .plate { transition: none; }
 }
