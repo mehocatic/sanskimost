@@ -623,9 +623,106 @@
       buildPrintGroups(scene, thumbs, haloTex, shadowTex) {
         const haloMat = new THREE.MeshBasicMaterial({ map: haloTex, transparent: true, depthWrite: false, fog: true });
         const shadowMat = new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, fog: true });
-        const frameMat = new THREE.MeshBasicMaterial({ color: '#D3AA72' });
-        const labelGeo = new THREE.PlaneGeometry(.92, .92 * 260 / 640);
-        this.disposables.push(haloMat, shadowMat, frameMat, labelGeo);
+        // the frames are built from a photograph of a real carved frame, cut into pieces by tools/okvir-isjeci.py (photos/okvir/):
+        // two top corners (mirrored for the bottom ones), the carved middle of each side, and a plain stretch on either side of it that is
+        // repeated, mirrored, as far as the frame needs. The middles are never stretched, so the carving keeps its shape on every frame.
+        // All the frames' pieces of one kind go into one mesh, so 48 frames cost a couple of dozen draw calls.
+        // Sizes are the photograph's pixels; PX turns them into world units. D: from the opening out past the carving; C: a corner.
+        const PX = .0019, MOUNT = .1, D_PX = FRAME_D, C_PX = FRAME_C, PIECES = FRAME_PIECES;
+        const DW = D_PX * PX, CW = C_PX * PX, FRAME = DW * .92; // FRAME: about how far the carving reaches past the mount
+        const pieceTex = {}, piecePos = {}, pieceUv = {};
+        const texLoader = new THREE.TextureLoader();
+        for (const k of Object.keys(PIECES)) {
+          const t = texLoader.load(`photos/okvir/${k}.webp`);
+          t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = this.maxAniso;
+          if (k === 't-l' || k === 't-r' || k === 'b-p') t.wrapS = THREE.MirroredRepeatWrapping;
+          if (k === 'l-p' || k === 'r-p') t.wrapT = THREE.MirroredRepeatWrapping;
+          pieceTex[k] = t; piecePos[k] = []; pieceUv[k] = []; this.disposables.push(t);
+        }
+        const mountMat = new THREE.MeshBasicMaterial({ color: '#FBF8F1' });
+        const bevelMat = new THREE.MeshBasicMaterial({ color: '#E4D8C4' });
+        this.disposables.push(haloMat, shadowMat, mountMat, bevelMat);
+        // one rectangle of one piece, x0..x1 and y0..y1 in the frame's own plane; the texture's u runs u0 -> u1 left to right, v v0 -> v1 bottom to top
+        const _v = new THREE.Vector3();
+        let bendZ = () => 0; // how far the wall behind a point of the frame comes forward (outer wall) or falls back (inner wall), see make()
+        const rect = (k, m, x0, y0, x1, y1, u0, u1, v0, v1, z) => {
+          for (const [x, y, u, v] of [[x0, y0, u0, v0], [x1, y0, u1, v0], [x1, y1, u1, v1], [x0, y0, u0, v0], [x1, y1, u1, v1], [x0, y1, u0, v1]]) {
+            _v.set(x, y, z + bendZ(x)).applyMatrix4(m); piecePos[k].push(_v.x, _v.y, _v.z); pieceUv[k].push(u, v);
+          }
+        };
+        // how a plain stretch of `len` is covered by a piece `pw` long: an odd number of mirrored repeats (so both ends meet what the photograph had
+        // next to them), or a part of it when the stretch is shorter than the piece
+        const reps = (len, pw) => { const r = len / pw; return r < 1 ? r : Math.max(1, 2 * Math.round((r - 1) / 2) + 1); };
+        // the whole frame round a mount mw x mh centred at (cx, cy)
+        const addFrame = (m, mw, mh, cx, cy, z, bend) => {
+          bendZ = bend;
+          const xl = cx - mw / 2, xr = cx + mw / 2, yt = cy + mh / 2, yb = cy - mh / 2;
+          // corners: the top ones as photographed, the bottom ones the same turned upside down
+          rect('c-tl', m, xl - DW, yt + DW - CW, xl - DW + CW, yt + DW, 0, 1, 0, 1, z);
+          rect('c-tr', m, xr + DW - CW, yt + DW - CW, xr + DW, yt + DW, 0, 1, 0, 1, z);
+          rect('c-tl', m, xl - DW, yb - DW, xl - DW + CW, yb - DW + CW, 0, 1, 1, 0, z);
+          rect('c-tr', m, xr + DW - CW, yb - DW, xr + DW, yb - DW + CW, 0, 1, 1, 0, z);
+          // top and bottom: plain, middle, plain
+          const runH = mw + 2 * DW - 2 * CW, midW = Math.min(PIECES['t-c'][0] * PX, runH), midCut = midW / (PIECES['t-c'][0] * PX);
+          const plainH = (runH - midW) / 2, xa = xl - DW + CW, xm0 = cx - midW / 2, xm1 = cx + midW / 2, xb = xr + DW - CW;
+          const mu0 = (1 - midCut) / 2, mu1 = 1 - mu0;
+          rect('t-c', m, xm0, yt, xm1, yt + DW, mu0, mu1, 0, 1, z);
+          rect('b-c', m, xm0, yb - DW, xm1, yb, mu0, mu1, 0, 1, z);
+          if (plainH > .005) {
+            const nl = reps(plainH, PIECES['t-l'][0] * PX), nr = reps(plainH, PIECES['t-r'][0] * PX), nb = reps(plainH, PIECES['b-p'][0] * PX);
+            rect('t-l', m, xa, yt, xm0, yt + DW, 1 - nl, 1, 0, 1, z);     // ends at u = 1, against the middle
+            rect('t-r', m, xm1, yt, xb, yt + DW, 0, nr, 0, 1, z);         // starts at u = 0, against the middle
+            rect('b-p', m, xm1, yb - DW, xb, yb, 0, nb, 0, 1, z);
+            rect('b-p', m, xa, yb - DW, xm0, yb, nb, 0, 0, 1, z);         // the bottom right stretch, mirrored for the left
+          }
+          // left and right: plain, middle, plain (the lower plain is the upper one upside down)
+          const runV = mh + 2 * DW - 2 * CW, midH = Math.min(PIECES['l-c'][1] * PX, runV), vCut = midH / (PIECES['l-c'][1] * PX);
+          const plainV = (runV - midH) / 2, ya = yt + DW - CW, ym1 = cy + midH / 2, ym0 = cy - midH / 2, yz = yb - DW + CW;
+          const mv0 = (1 - vCut) / 2, mv1 = 1 - mv0;
+          rect('l-c', m, xl - DW, ym0, xl, ym1, 0, 1, mv0, mv1, z);
+          rect('r-c', m, xr, ym0, xr + DW, ym1, 0, 1, mv0, mv1, z);
+          if (plainV > .005) {
+            const nv = reps(plainV, PIECES['l-p'][1] * PX);
+            rect('l-p', m, xl - DW, ym1, xl, ya, 0, 1, 1 - nv, 1, z);     // its top (v = 1) against the corner
+            rect('l-p', m, xl - DW, yz, xl, ym0, 0, 1, 1, 1 - nv, z);
+            rect('r-p', m, xr, ym1, xr + DW, ya, 0, 1, 1 - nv, 1, z);
+            rect('r-p', m, xr, yz, xr + DW, ym0, 0, 1, 1, 1 - nv, z);
+          }
+        };
+
+        // the frame's thickness: four sides from the back of the carving down to the wall, set in a little from the outline (where the frame
+        // is solid all round), so that seen at an angle the frame stands on the wall instead of hanging in front of it. Lit like the rest:
+        // the top side lightest, the bottom darkest, each side darker towards the wall. All frames' sides are one mesh.
+        const sidePos = [], sideCol = [], _c = new THREE.Color();
+        const addSides = (m, mw, mh, cy, bend, zBack, zFront) => {
+          const e = DW * .68, x0 = -mw / 2 - e, x1 = mw / 2 + e, y0 = cy - mh / 2 - e, y1 = cy + mh / 2 + e;
+          const front = new THREE.Color('#EDE6D9'), back = new THREE.Color('#A89A82');
+          const quad = (pts, lum) => { // pts: [x, y, zIsFront] for 4 corners, in order
+            const v = pts.map(([x, y, f]) => { _v.set(x, y, (f ? zFront : zBack) + bend(x)).applyMatrix4(m); _c.copy(f ? front : back).multiplyScalar(lum); return [_v.x, _v.y, _v.z, _c.r, _c.g, _c.b]; });
+            for (const i of [0, 1, 2, 0, 2, 3]) { sidePos.push(v[i][0], v[i][1], v[i][2]); sideCol.push(v[i][3], v[i][4], v[i][5]); }
+          };
+          const N = 12; // the long sides in short pieces, so they follow the curve of the wall
+          for (let i = 0; i < N; i++) {
+            const xa = x0 + (x1 - x0) * i / N, xb = x0 + (x1 - x0) * (i + 1) / N;
+            quad([[xa, y1, 0], [xb, y1, 0], [xb, y1, 1], [xa, y1, 1]], 1.04);   // top
+            quad([[xa, y0, 0], [xb, y0, 0], [xb, y0, 1], [xa, y0, 1]], .72);    // bottom
+          }
+          quad([[x0, y0, 0], [x0, y1, 0], [x0, y1, 1], [x0, y0, 1]], .95);       // left, towards the light
+          quad([[x1, y0, 0], [x1, y1, 0], [x1, y1, 1], [x1, y0, 1]], .8);        // right
+        };
+
+        // the walls are curved and the glow, the shadow and the label are wide and flat: bend them to follow the wall,
+        // or the wall cuts through their ends (a hard edge on the glow, the first letters of a name missing)
+        const OUT_GAP = .02, IN_GAP = .02; // how far a frame's group stands off the outer / inner wall (everything on it follows the curve)
+        const bent = (w, h, cx, outer) => {
+          const g = new THREE.PlaneGeometry(w, h, 24, 1), p = g.attributes.position, R = outer ? OUTER_RADIUS : INNER_RADIUS;
+          for (let i = 0; i < p.count; i++) {
+            const X = Math.min(R * .99, Math.abs(cx + p.getX(i))), d = R - Math.sqrt(R * R - X * X);
+            p.setZ(i, outer ? d : -d);
+          }
+          p.needsUpdate = true;
+          return g;
+        };
 
         const assets = PRINTS.map((pr, idx) => {
           const { pw, ph } = frameDims(pr);
