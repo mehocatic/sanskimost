@@ -182,8 +182,8 @@
     if (stage) stage.overlay = true;
     setHash('#' + PRINTS[i].p.id);
   }
-  // previous / next in the order of the list (by field)
-  const ORDER = CATS.flatMap(c => PRINTS.filter(it => it.p.cat === c.id).map(it => it.index));
+  // previous / next in the order of the fields (ALL), which is also the order along the corridor: even places on the inner wall, odd on the outer
+  const ORDER = ALL.map((p, i) => i % 2 === 0 ? OUTER_COUNT + i / 2 : (i - 1) / 2);
   const stepPerson = d => { const k = ORDER.indexOf(opened); if (k >= 0) openPhoto(ORDER[(k + d + ORDER.length) % ORDER.length]); };
   $('lb-prev').addEventListener('click', () => stepPerson(-1));
   $('lb-next').addEventListener('click', () => stepPerson(1));
