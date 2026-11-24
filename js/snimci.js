@@ -216,3 +216,37 @@
   });
   shelf.addEventListener('pointerleave', () => { hover = -1; wake(); });
 
+  // click: the cover in the middle opens, another tape comes to the middle.
+  // The cover is found by its place, not by the element under the mouse: in 3D the spine of a neighbour can lie in front of it.
+  shelf.addEventListener('click', e => {
+    if (dlg.open || e.target.closest('.play-ring') || performance.now() < noClickUntil) return;
+    const r = shelf.getBoundingClientRect();
+    if (Math.abs(T - s) < .3 && Math.abs(e.clientX - (r.left + r.width / 2)) < .55 * d && Math.abs(e.clientY - (r.top + r.height / 2)) < .55 * H) return openDetail();
+    const el = e.target.closest('.tape');
+    if (!el) return;
+    const q = rel(+el.dataset.v, s);
+    go(Math.round(s + q), q >= 0 ? 1 : -1);
+  });
+
+  // the wheel turns the shelf, in either direction. On a phone or a very short window the page itself can scroll
+  // (there is a line of text below the shelf), so there only sideways scrolling is taken.
+  addEventListener('wheel', e => {
+    if (dlg.open) return;
+    const fits = document.documentElement.scrollHeight <= innerHeight + 2;
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : fits ? e.deltaY : 0;
+    if (!delta) return;
+    e.preventDefault();
+    lastDir = delta > 0 ? 1 : -1;
+    T += delta / (ws + gap) * .5;
+    clearTimeout(snapTimer);
+    snapTimer = setTimeout(() => { T = Math.round(T); wake(); }, 160);
+    wake();
+  }, { passive: false });
+
+  addEventListener('keydown', e => {
+    if (dlg.open || e.altKey || e.ctrlKey || e.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+    if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    else if (e.key === 'Enter' && e.target === shelf) { e.preventDefault(); openDetail(); }
+  });
+
