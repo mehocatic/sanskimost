@@ -1,8 +1,9 @@
 // Hodnik ličnosti: the round corridor of the "Hodnik historije" project (Three.js, vendor/three.module.min.js, the same version r160),
 // ported to plain JavaScript. The scene, the walk and the focus glide are the original ones; what hangs in it are the people of Sanski Most:
 //   - licnosti-data.js and i18n give the names, roles, biographies and sources, photos/licnosti/ the portraits,
-//   - the people go in the order of the fields, taking turns between the outer and the inner wall,
-//   - a click on the focused portrait opens the biography in a dialog (previous / next go through the list order),
+//   - the people go in the order of the fields, taking turns between the inner and the outer wall, so walking forward goes through them in order,
+//   - a click on a portrait brings it close and shows its plate (field, place, name, role); in focus the arrows go from person to person,
+//   - a click on the focused portrait (or the plate's button) opens the biography in a dialog (previous / next go through the same order),
 //   - without WebGL (or when the context is lost) everyone is shown as a grid, grouped by field; there is no switch to it.
 (() => {
   const $ = id => document.getElementById(id);
