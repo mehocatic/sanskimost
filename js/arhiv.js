@@ -4,6 +4,8 @@
 //  - one photograph opens in a dialog; its address is kept in the hash (#foto=<file>), so it can be shared
 (() => {
   const A = window.ARCHIVE;
+  // time order, whatever the order in arhiv-data.js (new photographs are often added at its end); undated ones last.
+  // The sort is stable, so photographs of the same year keep their order from the file.
   A.photos.sort((a, b) => (a.y == null) - (b.y == null) || (a.y || 0) - (b.y || 0));
   const $ = id => document.getElementById(id);
   const t = (k, v) => I18n.t(k, v);
