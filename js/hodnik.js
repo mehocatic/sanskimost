@@ -725,6 +725,7 @@
         };
 
         const assets = PRINTS.map((pr, idx) => {
+          const outer = idx < OUTER_COUNT;
           const { pw, ph } = frameDims(pr);
           const a = {
             pw, ph,
