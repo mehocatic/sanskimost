@@ -366,4 +366,14 @@
     want.el = THREE.MathUtils.lerp(a.el, b.el, e) + Math.sin(Math.PI * e) * .12;
     want.az = THREE.MathUtils.lerp(a.az, b.az, e);
   }
+  function resize() {
+    renderer.setSize(innerWidth, innerHeight, false);
+    camera.aspect = innerWidth / innerHeight;
+    // the card is on the left (desktop) or at the bottom (phone): move the centre of the picture away from it
+    if (portrait()) camera.setViewOffset(innerWidth, innerHeight, 0, innerHeight * .16, innerWidth, innerHeight);
+    else camera.setViewOffset(innerWidth, innerHeight, -innerWidth * .14, 0, innerWidth, innerHeight);
+    camera.updateProjectionMatrix();
+    measure(); buildKeys(); fromScroll(); measureLabels();
+  }
+
 })();
