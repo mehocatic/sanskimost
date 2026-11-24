@@ -433,3 +433,7 @@
   .vid-cta { display: none; }
   .arh-video { opacity: 1; visibility: visible; }
 }
+@media not ((min-width: 900px) and (min-height: 560px)) {
+  .arh-video { display: none; }
+  .v-map .vid-cta { display: none; }
+}
