@@ -124,4 +124,13 @@
     H = new Float32Array(HW * HH);
     for (let i = 0; i < H.length; i++) H[i] = d[i * 4] * 256 + d[i * 4 + 1] - 32768;
   }
+  function heightAt(lon, lat) {
+    if (!H) return 200;
+    const px = Math.min(Math.max(gx(lon) - OX - .5, 0), HW - 2), py = Math.min(Math.max(gy(lat) - OY - .5, 0), HH - 2);
+    const ix = px | 0, iy = py | 0, fx = px - ix, fy = py - iy, i = iy * HW + ix;
+    return (H[i] * (1 - fx) + H[i + 1] * fx) * (1 - fy) + (H[i + HW] * (1 - fx) + H[i + HW + 1] * fx) * fy;
+  }
+  const fadeAt = (x, z) => 1 - THREE.MathUtils.smoothstep(Math.hypot(x, z) / R, .86, 1);
+  const worldY = (x, z) => Math.max(heightAt(LON0 + x / KX, LAT0 - z / KY) - BASE, 0) / 1000 * EXAG * fadeAt(x, z);
+
 })();
