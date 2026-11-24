@@ -271,3 +271,37 @@
     return `inset(${Math.max(0, c.top).toFixed(1)}px ${Math.max(0, innerWidth - c.right).toFixed(1)}px ${Math.max(0, innerHeight - c.bottom).toFixed(1)}px ${Math.max(0, c.left).toFixed(1)}px round 3px)`;
   }
   const FULL = 'inset(0px 0px 0px 0px round 0px)';
+
+  function openDetail(instant) {
+    if (dlg.open || closing) return;
+    T = Math.round(T); s = T;
+    const i = mod(T);
+    if (i !== active) setActive(i, lastDir);
+    fill(i);
+    const from = coverClip();
+    dlg.getAnimations().forEach(a => a.cancel());
+    dlg.showModal();
+    dlg.scrollTop = 0;
+    try { history.replaceState(null, '', '#snimak=' + F[i].id); } catch (e) { /* the address just is not updated */ }
+    wake();
+    if (instant || reduced()) return;
+    dlg.animate([{ clipPath: from, transform: 'rotate(-4.5deg)' }, { clipPath: FULL, transform: 'rotate(0deg)' }], { duration: 800, easing: 'cubic-bezier(.76,0,.18,1)' });
+    lines.forEach((el, k) => el.animate([{ transform: 'translateY(110%)' }, { transform: 'translateY(0%)' }], { duration: 800, delay: 450 + k * 60, easing: EASE, fill: 'backwards' }));
+  }
+  function closeDetail() {
+    if (!dlg.open || closing) return;
+    closing = true;
+    const done = () => {
+      dlg.close();
+      dlg.getAnimations().forEach(a => a.cancel());
+      closing = false;
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* as above */ }
+      wake();
+      if (ring.tabIndex === 0) ring.focus({ preventScroll: true }); else shelf.focus({ preventScroll: true });
+    };
+    if (reduced()) return done();
+    dlg.animate([{ clipPath: FULL, transform: 'rotate(0deg)' }, { clipPath: coverClip(), transform: 'rotate(-4.5deg)' }], { duration: 650, easing: 'cubic-bezier(.76,0,.18,1)', fill: 'forwards' }).onfinish = done;
+  }
+  $('dt-x').addEventListener('click', closeDetail);
+  dlg.addEventListener('cancel', e => { e.preventDefault(); closeDetail(); });
+
