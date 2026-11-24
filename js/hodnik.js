@@ -289,6 +289,7 @@
         this.camera = new THREE.PerspectiveCamera(w >= h ? 56 : 70, w / h, .25, 80); // a near plane well away from 0 keeps depth precise, so far frames do not flicker
         const maxAniso = Math.min(renderer.capabilities.getMaxAnisotropy(), this.small ? 4 : 8);
         this.maxAniso = maxAniso;
+        this.buildCorridor(scene, maxAniso);
         const { haloTex, shadowTex } = this.backdropTextures();
 
         let texLoaded = false, fontsLoaded = false, launched = false;
