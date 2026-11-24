@@ -368,7 +368,7 @@ I18N.bs = {
   'hod.stage': 'Galerija portreta. Strelicama ulijevo i udesno se krećete, Enter otvara biografiju.',
   'hod.kicker': 'Galerija portreta',
   'hod.headline': 'Ličnosti Sanskog Mosta',
-  'hod.hint.walk1': 'Skroluj ili prevuci za šetnju',
+  'hod.hint.walk1': 'Skrolujte ili prevucite za šetnju',
   'hod.hint.walk2': 'Kliknite portret da priđete bliže',
   'hod.hint.focus1': 'Kliknite portret za biografiju',
   'hod.hint.focus2': 'Esc ili klik sa strane za povratak',
