@@ -298,7 +298,7 @@ I18N.bs = {
   'arh.source': 'Izvor',
   'arh.approx': 'Položaj na karti je približan.',
   'arh.open': 'Otvori fotografiju',
-  'arh.tosnimci': 'Video snimci 1992–1995 →',
+  'arh.tosnimci': 'Video 1992–1995',
   'sn.doctitle': 'Snimci 1992–1995 · Sanski Most',
   'sn.meta': 'Video snimci o Sanskom Mostu 1992–1995: svjedočenja, terenski snimci, presude i dokumentarni filmovi. Svaki snimak vodi na izvor.',
   'sn.eyebrow': 'Arhiv · Snimci 1992–1995',
