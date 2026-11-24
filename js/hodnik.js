@@ -177,6 +177,7 @@
     opened = i;
     fillDialog();
     if (!lb.open) lb.showModal();
+    layoutDialogFrame();
     lb.scrollTop = 0; $('lb-txt').scrollTop = 0;
     if (stage) stage.overlay = true;
     setHash('#' + PRINTS[i].p.id);
