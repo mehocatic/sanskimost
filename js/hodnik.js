@@ -286,11 +286,7 @@
         scene.background = new THREE.Color('#EEE4D3');
         scene.fog = new THREE.Fog('#EEE4D3', 18, 60);
         this.scene = scene;
-        this.camera = new THREE.PerspectiveCamera(w >= h ? 56 : 70, w / h, .05, 100);
-        scene.add(new THREE.HemisphereLight(0xfffdf6, 0xe9cfa6, 1.55));
-        scene.add(new THREE.AmbientLight(0xfff6e6, .55));
-        this.buildCorridor(scene);
-
+        this.camera = new THREE.PerspectiveCamera(w >= h ? 56 : 70, w / h, .25, 80); // a near plane well away from 0 keeps depth precise, so far frames do not flicker
         const maxAniso = Math.min(renderer.capabilities.getMaxAnisotropy(), this.small ? 4 : 8);
         this.maxAniso = maxAniso;
         const { haloTex, shadowTex } = this.backdropTextures();
