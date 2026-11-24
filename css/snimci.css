@@ -55,3 +55,18 @@
 .tone-tribunal { background: #161d2e; --accent: #1f3fb0; }
 .tone-doc { background: #1f201b; --accent: #82784a; }
 
+/* the spine, facing the room */
+.sp {
+  width: var(--ws); left: calc(var(--ws) / -2); transform: translateZ(calc(var(--d) / 2));
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 0 0 8px; color: #ede9df;
+}
+.sp-band { display: block; width: 100%; height: 10px; background: var(--accent); flex: none; }
+.sp-num { margin-top: 4px; font-size: 9px; font-weight: 600; letter-spacing: .1em; opacity: .7; }
+.sp-title {
+  writing-mode: vertical-rl; transform: rotate(180deg); max-height: 62%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-family: var(--serif); font-size: clamp(10px, calc(var(--H) * .04), 15px); line-height: 1.1;
+}
+.sp-foot { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.sp-year { font-size: 9px; font-weight: 600; letter-spacing: .06em; opacity: .8; font-variant-numeric: lining-nums; }
+.sp-min { font-size: 9px; font-weight: 600; padding: 2px 4px; border: 1px solid rgba(237, 233, 223, .45); opacity: .85; }
+
