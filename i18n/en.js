@@ -310,6 +310,7 @@ I18N.en = {
   'hod.next': 'Next portrait',
   'arh.open': 'Open the photograph',
   'arh.tosnimci': 'Video 1992–1995',
+  'arh.vid.k': 'Video archive',
   'sn.doctitle': 'Recordings 1992–1995 · Sanski Most',
   'sn.meta': 'Video recordings about Sanski Most 1992–1995: testimonies, field footage, judgements and documentaries. Each recording links to its source.',
   'sn.eyebrow': 'Archive · Recordings 1992–1995',
