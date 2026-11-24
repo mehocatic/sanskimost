@@ -411,3 +411,11 @@
 
 /* the red light of a recording camera */
 .rec { flex: none; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #e0442e; box-shadow: 0 0 0 3px rgba(224, 68, 46, .2); animation: rec 1.6s ease-in-out infinite; }
+
+/* the small link in the line above the title: shown where the card is not */
+.arh-video {
+  display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; padding: 5px 12px; vertical-align: middle;
+  border: 1px solid rgba(127, 214, 220, .45); border-radius: 99px; color: var(--paper); text-decoration: none; pointer-events: auto;
+  background: rgba(17, 22, 20, .6); letter-spacing: .14em;
+  opacity: 0; visibility: hidden; transition: opacity .4s ease, visibility 0s linear .4s, background .3s ease, color .3s ease;
+}
