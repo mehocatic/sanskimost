@@ -70,3 +70,27 @@
 .sp-year { font-size: 9px; font-weight: 600; letter-spacing: .06em; opacity: .8; font-variant-numeric: lining-nums; }
 .sp-min { font-size: 9px; font-weight: 600; padding: 2px 4px; border: 1px solid rgba(237, 233, 223, .45); opacity: .85; }
 
+/* the cover, turned away until the tape comes to the middle. No picture from other sites: the year stands in the frame. */
+.cv {
+  width: var(--d); left: calc(var(--d) / -2); transform: rotateY(90deg) translateZ(calc(var(--ws) / 2));
+  display: flex; flex-direction: column; justify-content: space-between; padding: 10px 10px 8px; color: #ede9df;
+  border-top: 4px solid var(--accent); box-shadow: 0 30px 60px -28px rgba(20, 16, 10, .55);
+}
+.cv-top { display: flex; justify-content: space-between; gap: 6px; font-size: 8px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+.cv-title {
+  margin: 4px 0; font-family: var(--serif); font-size: clamp(11px, calc(var(--H) * .044), 16px); line-height: 1.15;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.cv-frame {
+  flex: 1 1 auto; min-height: 0; margin: 4px 0; display: flex; align-items: center; justify-content: center;
+  background: #101010 repeating-linear-gradient(0deg, rgba(255, 255, 255, .045) 0 1px, transparent 1px 3px);
+  border: 1px solid rgba(237, 233, 223, .22); overflow: hidden;
+}
+.cv-year {
+  font-family: var(--serif); font-weight: 500; font-size: calc(var(--H) * .14); line-height: 1; letter-spacing: -.02em; font-variant-numeric: lining-nums;
+  color: transparent; -webkit-text-stroke: 1px rgba(237, 233, 223, .55);
+}
+.cv-foot { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 8px; font-weight: 600; letter-spacing: .08em; opacity: .85; }
+.cv-src { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cv-min { flex: none; padding: 1px 4px; border: 1px solid rgba(237, 233, 223, .45); white-space: nowrap; }
+
