@@ -287,4 +287,12 @@
     pins.forEach(p => { p.o.w = p.lab.offsetWidth; p.o.h = p.lab.offsetHeight; });
     vils.forEach(v => { v.o.w = v.e.offsetWidth; v.o.h = v.e.offsetHeight; });
   }
+  const overlap = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
+  // spots around a mark of size (mw, mh): right, left, above, below, then the four corners
+  function spots(x, y, mw, mh, w, hh) {
+    const g = 6, r = x + mw / 2 + g, l = x - mw / 2 - g - w, cx = x - w / 2;
+    return [[r, y - hh / 2], [l, y - hh / 2], [cx, y - mh / 2 - hh - 2], [cx, y + mh / 2 + 2],
+      [r, y - mh / 2 - hh * .4], [r, y + mh / 2 - hh * .6], [l, y - mh / 2 - hh * .4], [l, y + mh / 2 - hh * .6]]
+      .map(([a, b]) => [a, b, a + w, b + hh]);
+  }
 })();
