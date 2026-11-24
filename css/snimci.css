@@ -217,6 +217,8 @@ html:has(#dt[open]) { overflow: hidden; }
   transform: translateY(calc(var(--S) * .5 - var(--CH) * .5 - var(--S) * .012 - (var(--out) + var(--lift)) * var(--CH)));
   animation: vhs-out 1.3s cubic-bezier(.2, .8, .2, 1) .6s both;
 }
+.vhs .vc { position: absolute; backface-visibility: hidden; }
+.vhs .vc-front { width: var(--CW); height: var(--CH); left: calc(var(--CW) / -2); top: calc(var(--CH) / -2); transform: translateZ(calc(var(--CD) / 2)); border-radius: 3px; overflow: hidden; background: #171717; }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
