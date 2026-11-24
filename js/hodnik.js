@@ -45,7 +45,7 @@
   /* ---------- text that changes with the state ---------- */
   const mqTouch = matchMedia('(hover: none), (pointer: coarse)');
   function setHints() {
-    const k = focused ? 'focus' : 'walk';
+    const k = (mqTouch.matches ? 't' : '') + (focused ? 'focus' : 'walk');
     $('hint1').textContent = t(`hod.hint.${k}1`);
     $('hint2').textContent = t(`hod.hint.${k}2`);
   }
