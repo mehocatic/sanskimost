@@ -302,7 +302,7 @@ I18N.en = {
   'hod.meta': 'People of Sanski Most in a gallery of portraits: sport, science and literature, music, art, heritage and the memory of war. Short biographies with sources.',
   'hod.stage': 'A gallery of portraits. Use the left and right arrow keys to move, Enter opens a biography.',
   'hod.kicker': 'A gallery of portraits',
-  'hod.headline': 'Corridor of People',
+  'hod.headline': 'People of Sanski Most',
   'hod.hint.walk1': 'Scroll or drag to walk round',
   'hod.hint.walk2': 'Click a portrait to look closer',
   'hod.hint.focus1': 'Click the portrait for the biography',
