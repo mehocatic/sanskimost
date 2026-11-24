@@ -401,3 +401,7 @@
 .vid-k { display: flex; align-items: center; gap: 7px; font-size: .64rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--sand); }
 .vid-t { font-family: var(--serif); font-size: 1.6rem; line-height: 1.04; letter-spacing: -.01em; font-variant-numeric: lining-nums; text-wrap: balance; }
 .vid-s { font-size: .78rem; line-height: 1.35; color: rgba(246, 244, 238, .66); }
+.vid-go {
+  flex: none; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid rgba(246, 244, 238, .3); transition: background .4s ease, color .4s ease, border-color .4s ease;
+}
