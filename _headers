@@ -1,0 +1,12 @@
+/photos/*
+  Cache-Control: public, max-age=604800
+
+# Frejmovi i vendor se mijenjaju samo novim folderom (frames-v3 ...), pa je dug keš siguran.
+/frames-v2/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/frames-m-v2/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
