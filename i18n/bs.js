@@ -394,6 +394,7 @@ I18N.bs = {
   'arh.c.kino-sana-razglednica': 'Kino „Sana“ na staroj razglednici',
   'arh.c.trg-cvjetnjak': 'Trg s cvjetnjakom, u pozadini visoka zgrada',
   'arh.c.sip-dzamija-kuce': 'Pogled preko Sane: zgrada ŠIP-a, džamija i stare bosanske kuće',
+  'arh.c.sana-1912': 'Pogled preko Sane: drveni most, kuće uz obalu i crkva u pozadini',
   'arh.c.pumpa-vedro-polje': 'Prva benzinska pumpa na Vedrom polju',
   'arh.c.poplava-1976': 'Poplava od 21. do 23. jula 1976. Prema opisu uz fotografiju, ulica je Alagića sokak.',
   'arh.c.most-hotel-1970': 'Gradski most i hotel u izgradnji, oko 1970.',
