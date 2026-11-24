@@ -196,6 +196,8 @@ html:has(#dt[open]) { overflow: hidden; }
 .vhs .vs-right { width: var(--SD); left: calc(var(--SD) / -2); transform: rotateY(90deg) translateZ(calc(var(--SW) / 2)); background: #0d0f14; }
 .vhs .vs-front .cv-top, .vhs .vs-front .cv-foot { font-size: max(7px, calc(var(--S) * .018)); }
 .vhs .vs-front .cv-title { font-size: calc(var(--S) * .042); margin: calc(var(--S) * .012) 0; }
+.vhs .vs-front .cv-year { font-size: calc(var(--S) * .15); }
+.vhs .vs-left .sp-band { height: calc(var(--S) * .025); }
 
 /* wide screens: the page is exactly one screen, so the wheel always turns the shelf */
 @media (min-width: 768px) {
