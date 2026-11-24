@@ -311,6 +311,7 @@ I18N.en = {
   'hod.hint.twalk1': 'Swipe to walk round',
   'hod.hint.twalk2': 'Tap a portrait to look closer',
   'hod.hint.tfocus1': 'Tap the portrait for the biography',
+  'hod.hint.tfocus2': 'Tap beside it to step back',
   'hod.pill': 'Open biography',
   'hod.listhead': 'People by field',
   'hod.prev': 'Previous portrait',

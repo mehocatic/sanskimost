@@ -376,6 +376,7 @@ I18N.bs = {
   'hod.hint.twalk1': 'Prevucite za šetnju',
   'hod.hint.twalk2': 'Dodirnite portret da priđete bliže',
   'hod.hint.tfocus1': 'Dodirnite portret za biografiju',
+  'hod.hint.tfocus2': 'Dodir sa strane vraća u šetnju',
   'hod.pill': 'Otvori biografiju',
   'hod.listhead': 'Ličnosti po oblastima',
   'hod.prev': 'Prethodni portret',
