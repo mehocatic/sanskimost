@@ -198,6 +198,19 @@
   lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
   $('lb-x').addEventListener('click', () => lb.close());
 
+  /* ---------- the plate of the person in focus ---------- */
+  let plateAt = -1;
+  function fillPlate() {
+    if (plateAt < 0) return;
+    const p = PRINTS[plateAt].p;
+    $('plate-cat').textContent = catOf(p);
+    $('plate-n').textContent = `${ORDER.indexOf(plateAt) + 1} / ${ORDER.length}`;
+    $('plate-name').textContent = p.name;
+    $('plate-role').textContent = roleOf(p);
+  }
+  $('plate-open').addEventListener('click', () => { if (plateAt >= 0) openPhoto(plateAt); });
+  mqTouch.addEventListener('change', setHints);
+
   addEventListener('langchange', () => {
     setHints(); fillDialog(); if (list.classList.contains('open')) buildList();
     if (stage) stage.redrawAllLabels();
