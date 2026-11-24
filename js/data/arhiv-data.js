@@ -25,7 +25,7 @@ window.ARCHIVE = {
   ],
   photos: [
     {"f": "sana-1912", "y": 1912, "cat": "sana", "cap": "arh.c.sana-1912", "w": 800, "h": 504, "quiz": false}, // TODO(verify) y: from the file name Meho sent ("Sanski Most - 1912. god.")
-    {"f": "sana-snijeg-1940", "y": 1940, "cat": "sana", "cap": "arh.c.sana-snijeg-1940", "w": 720, "h": 513, "quiz": false},
+    {"f": "sana-snijeg-1940", "y": 1940, "yl": "arh.y.40s", "cat": "sana", "cap": "arh.c.sana-snijeg-1940", "w": 720, "h": 513, "quiz": false},
     {"f": "trg-1900", "y": 1900, "cat": "ulice", "cap": "hist.ul.2.a", "w": 1079, "h": 604, "place": "trg", "src": "hist.src.book", "yl": "arh.y.c1900"},
     {"f": "spomenik-1915", "y": 1915, "cat": "ljudi", "cap": "hist.4.f.spomenik", "w": 632, "h": 479, "src": "hist.src.paper"},
     {"f": "spomenik-1915-novine", "y": 1915, "cat": "dokumenti", "cap": "hist.4.f.novine", "w": 720, "h": 476, "src": "hist.src.paper"},
