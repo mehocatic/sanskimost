@@ -33,6 +33,27 @@ html:has(.hodnik-page) { height: 100%; overflow: hidden; }
 /* over the scene */
 .gui { position: fixed; inset: 0; z-index: 20; pointer-events: none; opacity: 1; visibility: visible; transition: opacity .3s ease, visibility .3s ease; }
 .gui.hidden { opacity: 0; visibility: hidden; }
+/* a soft wash over the floor, so the title and the plate read well over the boards */
+/* on a wide screen only under the title (left) and the hint (right), so the labels on the walls in between stay clear */
+.gui::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 48%;
+  background: linear-gradient(to top, rgba(var(--wash), .96), rgba(var(--wash), .86) 50%, rgba(var(--wash), 0));
+  -webkit-mask-image: linear-gradient(to right, #000 0, #000 60%, transparent 78%, transparent 84%, #000 96%);
+  mask-image: linear-gradient(to right, #000 0, #000 60%, transparent 78%, transparent 84%, #000 96%);
+  transition: opacity .35s ease;
+}
+/* in focus the camera looks at the wall, not the floor: the plate reads well without it, and the label under the portrait stays clear */
+.gui.focused::before { opacity: 0; }
+/* in focus, a low wash only behind the plate (bottom left), below the label under the portrait */
+.gui::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30%;
+  background: linear-gradient(to top, rgba(var(--wash), .97), rgba(var(--wash), .9) 55%, rgba(var(--wash), 0));
+  -webkit-mask-image: linear-gradient(to right, #000 0, #000 30%, transparent 46%, transparent 80%, #000 94%);
+  mask-image: linear-gradient(to right, #000 0, #000 30%, transparent 46%, transparent 80%, #000 94%);
+  opacity: 0; transition: opacity .35s ease;
+}
+.gui.focused::after { opacity: 1; }
+.gui > * { z-index: 1; }
 .gui button { pointer-events: auto; }
 .gui.hidden button { pointer-events: none; }
 .mask { display: block; overflow: hidden; }
