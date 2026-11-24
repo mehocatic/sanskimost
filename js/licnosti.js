@@ -133,4 +133,16 @@
   const fadeAt = (x, z) => 1 - THREE.MathUtils.smoothstep(Math.hypot(x, z) / R, .86, 1);
   const worldY = (x, z) => Math.max(heightAt(LON0 + x / KX, LAT0 - z / KY) - BASE, 0) / 1000 * EXAG * fadeAt(x, z);
 
+  // ---------- scene
+  const canvas = $('zlj-gl');
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); } catch (e) { loading.hidden = true; noGL(); return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const PAPER = new THREE.Color('#eeebe3');
+  renderer.setClearColor(PAPER);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(38, 1, .05, 400);
+  let terrainMat = null, raf = 0;
+  canvas.addEventListener('webglcontextlost', e => { e.preventDefault(); cancelAnimationFrame(raf); noGL(); });
+
 })();
