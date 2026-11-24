@@ -43,6 +43,7 @@
   let stage = null, focused = false, opened = -1;
 
   /* ---------- text that changes with the state ---------- */
+  const mqTouch = matchMedia('(hover: none), (pointer: coarse)');
   function setHints() {
     const k = focused ? 'focus' : 'walk';
     $('hint1').textContent = t(`hod.hint.${k}1`);
