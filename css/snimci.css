@@ -268,7 +268,7 @@ html:has(#dt[open]) { overflow: hidden; }
   .cap-title { font-size: 1.2rem; }
   .dt-x { top: 10px; }
   .dt-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; padding: 72px 22px 40px; min-height: 0; }
-  .dt-poster { order: -1; --HP: min(46svh, 360px); }
+  .dt-poster { order: -1; --HP: min(52svh, 400px); }
   .dt-title { font-size: 1.8rem; }
 }
 @media (prefers-reduced-motion: reduce) {
