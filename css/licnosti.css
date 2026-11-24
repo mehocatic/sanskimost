@@ -35,3 +35,6 @@
 .zlj-card dl { display: grid; gap: 10px; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid rgba(21, 26, 24, .25); }
 .zlj-card dd { color: var(--ink); }
 .zlj-card .zlj-note { font-family: var(--serif); font-style: italic; font-size: 1.15rem; line-height: 1.4; }
+.zlj-card .zlj-credit { margin-top: 1rem; font-size: .72rem; color: var(--ink-muted); }
+.zlj-hint { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); font-family: var(--serif); font-style: italic; color: var(--ink-muted); white-space: nowrap; }
+
