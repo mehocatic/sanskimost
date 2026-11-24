@@ -251,6 +251,7 @@ I18N.bs = {
   'lic.next': 'Sljedeća',
   'lic.zlj.born': 'Rođenje',
   'lic.zlj.unit': 'Jedinica',
+  'lic.zlj.note': 'Napomena',
   'lic.source': 'Izvor',
   'lic.count': '{n} ličnosti',
   'lic.note.h': "Predloži ličnost",

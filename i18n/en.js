@@ -249,6 +249,7 @@ I18N.en = {
   'lic.next': 'Next',
   'lic.zlj.born': 'Born',
   'lic.zlj.unit': 'Unit',
+  'lic.zlj.note': 'Note',
   'lic.source': 'Source',
   'lic.count': '{n} people',
   'lic.note.h': "Suggest someone",
