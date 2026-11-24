@@ -102,4 +102,9 @@
     const s = n === 1 ? -.45 : .45;
     return { z, x: x - nz * s, zz: zz + nx * s, colh: COLH };
   });
+  Object.keys(many).filter(v => many[v] > 1).forEach(v => {
+    const two = pins.filter(p => placeOf(p.z) === v).sort((a, b) => a.zz - b.zz);
+    if (two.length > 1) two[0].colh = COLH * 1.5;
+  });
+
 })();
