@@ -16,4 +16,8 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const main = $('zlatni-ljiljani');
 
+  // a link to a person on the old People page: that person is now in the corridor
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (h && people.some(p => p.id === h)) { location.replace('hodnik#' + encodeURIComponent(h)); return; }
+
 })();
