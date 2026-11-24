@@ -884,12 +884,9 @@
 
       updatePill() {
         const pill = $('pill');
-        if (this.overlay || !this.focusedEntry) { pill.classList.remove('visible'); return; }
-        if (this.small) {
-          const r = this.projectRect(this.focusedEntry);
-          pill.style.left = `${r.left + r.width / 2}px`; pill.style.top = `${r.top + r.height * .55}px`;
-          pill.classList.add('visible');
-        } else if (this.hoveringFocused) {
+        // on a small screen the plate under the portrait has the button, so the pill is only for the mouse
+        if (this.overlay || !this.focusedEntry || this.small) { pill.classList.remove('visible'); return; }
+        if (this.hoveringFocused) {
           pill.style.left = `${this.cursorX}px`; pill.style.top = `${this.cursorY}px`;
           pill.classList.add('visible');
         } else pill.classList.remove('visible');
