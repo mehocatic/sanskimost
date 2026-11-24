@@ -19,3 +19,6 @@
 .zlj-st { position: relative; z-index: 2; display: flex; align-items: center; min-height: 115svh; padding: 0 var(--gutter); }
 .zlj-intro { min-height: 100svh; }
 
+/* a card like a map legend: paper, a fine ink frame with a second line around it */
+.zlj-card { width: min(100%, 25rem); padding: 26px 26px 24px; background: rgba(238, 235, 227, .94); border: 1px solid var(--ink);
+  box-shadow: 0 0 0 4px rgba(238, 235, 227, .94), 0 0 0 5px rgba(21, 26, 24, .35); }
