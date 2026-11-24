@@ -237,7 +237,7 @@ I18N.bs = {
   'nav.people': 'Zlatni ljiljani',
   'lic.meta': 'Dobitnici Zlatnog ljiljana iz predratne općine Sanski Most, s godinom priznanja, mjestom rođenja i jedinicom.',
   'lic.doctitle': 'Zlatni ljiljani · Sanski Most',
-  'lic.zlj.people': 'Ličnosti Sanskog Mosta su u Hodniku →',
+  'lic.zlj.people': 'Ličnosti Sanskog Mosta →',
   'lic.born': 'Iz Sanskog Mosta',
   'lic.origin': 'Korijeni u Sanskom Mostu',
   'lic.linked': "Veza sa Sanskim Mostom",
