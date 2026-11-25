@@ -891,6 +891,28 @@
         if (Math.abs(pr.vx) + Math.abs(pr.vy) > 3 && Math.random() < .3) drop(pr.x / W, 1 - (pr.y + pr.hh * .9) / H, .008, .3);
       }
 
+      // water step (the mask of the scene on screen keeps the land dry)
+      if (simOn) {
+        gl.useProgram(sim.p);
+        gl.viewport(0, 0, simW, simH);
+        gl.bindFramebuffer(gl.FRAMEBUFFER, rt[1].fb);
+        gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, rt[0].t);
+        gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, masks[shown].t);
+        gl.uniform1i(sim.u.uS, 0); gl.uniform1i(sim.u.uM, 1);
+        gl.uniform2f(sim.u.uTx, 1 / simW, 1 / simH);
+        gl.uniform2f(sim.u.uRes, W, H);
+        const fs = focus(shown);
+        gl.uniform4f(sim.u.uMIm, S.w, S.h, fs[0], 1 - fs[1]);
+        gl.uniform1f(sim.u.uAsp, W / H);
+        const arr = new Float32Array(64);
+        drops.forEach((d, j) => arr.set(d, j * 4));
+        gl.uniform4fv(sim.u.uD, arr);
+        gl.uniform1i(sim.u.uN, drops.length);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+        rt.reverse();
+      }
+      drops = [];
+
 }
 }
 })();
