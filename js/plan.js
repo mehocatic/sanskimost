@@ -635,6 +635,28 @@
       if (tex[i].loading) return; tex[i].loading = true;
       const S = SCENES[i];
       const im = new Image(); im.decoding = 'async'; im.src = S.src;
-}
+      im.decode().then(() => {
+        tex[i] = { t: texFrom(im), loading: true };
+        if (i === 0) SCENES.forEach((_, j) => j && load(j));
+      }).catch(() => {});
+      if (S.mask) {
+        const mim = new Image(); mim.src = S.mask;
+        mim.decode().then(() => {
+          // the water points of the mask, so the drops that fall by themselves land on water
+          const c = document.createElement('canvas'); c.width = mim.width; c.height = mim.height;
+          const x = c.getContext('2d'); x.drawImage(mim, 0, 0);
+          const d = x.getImageData(0, 0, c.width, c.height).data, pts = [];
+          for (let y = 0; y < c.height; y += 2) for (let xx = 0; xx < c.width; xx += 2) if (d[(y * c.width + xx) * 4] > 200) pts.push([xx / c.width, y / c.height]);
+          masks[i] = { t: texFrom(mim), pts };
+          if (i === 0) setTimeout(() => arrive(0), 700);
+        }).catch(() => {});
+      }
+      if (S.print) {
+        const pim = new Image(); pim.src = S.print.src;
+        Promise.all([pim.decode(), fontsReady]).then(() => { printImgs[i] = pim; composePrint(i); }).catch(() => {});
+      }
+    }
+    load(0);
+
 }
 })();
