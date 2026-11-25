@@ -5,7 +5,7 @@
   const nav = document.querySelector('.site-nav');
   if (!nav) return;
   const toggle = nav.querySelector('.nav-toggle');
-  const CLEAR = '#scene, .plan-hero, .place-head.has-hero'; // photo headers: the bar has no background over them
+  const CLEAR = '#scene, .plan-water, .place-head.has-hero'; // photo headers (and the water of the Visit page): the bar has no background over them
   const TONED = '.on-deep, .on-paper, .on-mist';
 
   // what lies under the middle of the bar: 'clear', 'dark' or 'light'
