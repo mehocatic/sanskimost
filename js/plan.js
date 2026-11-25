@@ -203,5 +203,6 @@
           ${strip('sana')}` }
     ];
 
+    const YEAR = [['plan.y.spring'], ['plan.y.summer'], ['plan.y.musalla', firstFridayJuly()], ['plan.y.sana', toSana], ['plan.y.oct', days(10, 10)]];
 }
 })();
