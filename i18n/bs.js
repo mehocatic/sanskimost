@@ -1011,6 +1011,7 @@ I18N.bs = {
   'pv.k.sink': 'Ponor i vrelo',
   'pv.k.where': 'Kuda voda ide',
   'pv.k.under': 'Pod zemljom',
+  'pv.k.dabar': 'Izvor rijeke Dabar',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
