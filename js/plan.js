@@ -298,4 +298,31 @@
     }));
   }
 
+  /* ---------- live: the weather in town now (Open-Meteo, CC BY 4.0) ---------- */
+  let raining = false, wx = null;
+  const SKY = c => c === 0 ? 'clear' : c <= 2 ? 'partly' : c === 3 ? 'cloudy' : c <= 48 ? 'fog' : c <= 57 ? 'drizzle' : c <= 67 ? 'rain'
+    : c <= 77 ? 'snow' : c <= 82 ? 'showers' : c <= 86 ? 'snow' : 'storm'; // WMO weather codes
+  function showWeather() {
+    const now = document.getElementById('now'), rain = document.getElementById('rain');
+    if (!now || !wx) return;
+    rain.hidden = !raining;
+    now.textContent = t('pv.now', { t: Math.round(wx.temp), sky: t('pv.sky.' + SKY(wx.code)) }) + (wx.hm ? ' ' + t(wx.past ? 'pv.sunset.past' : 'pv.sunset', { hm: wx.hm }) : '');
+    now.hidden = false;
+  }
+  (async () => {
+    try {
+      const ac = new AbortController(); setTimeout(() => ac.abort(), 7000);
+      const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,precipitation,weather_code&daily=sunset&forecast_days=1&timezone=Europe%2FSarajevo`, { signal: ac.signal });
+      if (!r.ok) return;
+      const j = await r.json(), c = j.current || {};
+      if (typeof c.temperature_2m !== 'number') return;
+      raining = c.precipitation > 0 || (c.weather_code >= 51 && c.weather_code <= 67) || (c.weather_code >= 80 && c.weather_code <= 82) || c.weather_code >= 95;
+      const set = j.daily && j.daily.sunset && j.daily.sunset[0], hm = set ? set.slice(11, 16) : '';
+      const past = !!set && new Date().toLocaleTimeString('en-GB', { timeZone: 'Europe/Sarajevo', hour: '2-digit', minute: '2-digit' }) > hm;
+      wx = { temp: c.temperature_2m, code: c.weather_code, hm, past };
+      showWeather();
+      const now = document.getElementById('now');
+      if (window.gsap && !reduce && now) gsap.fromTo(now, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' });
+    } catch (e) { /* no weather: nothing is shown */ }
+  })();
 })();
