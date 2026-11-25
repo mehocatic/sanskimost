@@ -961,5 +961,13 @@
     }
     requestAnimationFrame(frame);
 
-}
+    let lw = innerWidth, lh = innerHeight;
+    addEventListener('resize', () => {
+      if (innerWidth === lw && Math.abs(innerHeight - lh) < 140) { H = innerHeight; return; }
+      lw = innerWidth; lh = innerHeight; resize(); measure(); fontsReady.then(drawWords);
+    });
+    // a new language: the captions written on the old photographs follow it
+    return { measure, relabel: () => SCENES.forEach((s, i) => s.print && composePrint(i)) };
+  }
+
 })();
