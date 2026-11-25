@@ -757,7 +757,15 @@
       const p = masks[i].pts; if (!p || !p.length) return false;
       for (let k = 0; k < 8; k++) {
         const [x, y] = toScreen(i, p[(Math.random() * p.length) | 0]);
-}
-}
+        if (x > 4 && x < W - 4 && y > 64 && y < H - 4) { drop(x / W, 1 - y / H, r, s); return true; }
+      }
+      return false;
+    };
+    // a new scene: one drop on its most telling water (the pool under the falls, the river under the bridge)
+    function arrive(i) {
+      const s = SCENES[i];
+      if (s.hot && masks[i].pts) { const [x, y] = toScreen(i, s.hot); drop(x / W, 1 - y / H, .012, 1.8); }
+    }
+
 }
 })();
