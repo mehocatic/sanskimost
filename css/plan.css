@@ -177,3 +177,11 @@ html:not(.js-anim) .ph-b { margin-top: 2rem; }
 .rc-map::after { content: "\2192"; margin-left: .6rem; letter-spacing: 0; }
 .rc-map:hover { background: var(--acc); color: var(--paper); }
 .plan-check { margin-top: clamp(48px, 8svh, 90px); padding-bottom: var(--rise-h); font-family: var(--serif); font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--fg-soft); }
+@media (min-width: 900px) { .rcards { grid-template-columns: 1fr 1fr; } }
+@media (prefers-reduced-motion: reduce) { .rc-photo { transition: none; } }
+
+/* the river block of the information: Ljeto na Sani, fishing, kayak */
+.river li { padding: .9rem 0; border-bottom: 1px solid rgba(246,244,238,.14); }
+.plan .river h3 { font-size: 1.4rem; line-height: 1.15; }
+.river li p { margin-top: .3rem; }
+.plan .rcards { margin-top: 1.4rem; }
