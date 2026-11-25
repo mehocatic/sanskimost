@@ -667,6 +667,21 @@
       const c = document.createElement('canvas'); c.width = Math.round(W * dpr); c.height = Math.round(bh * dpr);
       const x = c.getContext('2d'); x.scale(dpr, dpr); x.fillStyle = '#fff'; x.textBaseline = 'middle';
       let fs = bh / 4 * .66;
-}
+      const font = s => `italic 400 ${s}px "EB Garamond", Georgia, serif`;
+      x.font = font(fs);
+      const widest = Math.max(...ROWS.map(r => r.reduce((a, s) => a + x.measureText(s).width, 0) + (r.length - 1) * fs * 1.4));
+      if (widest > W * .9) { fs *= W * .9 / widest; x.font = font(fs); }
+      ROWS.forEach((names, r) => {
+        const y = bh - (r + .5) * bh / 4, slot = W / names.length, nudge = [-.12, .1, -.05, .14][r] * slot;
+        names.forEach((s, j) => {
+          const w = x.measureText(s).width;
+          x.fillText(s, Math.min(Math.max(slot * j + (slot - w) / 2 + nudge, 8), W - w - 8), y);
+        });
+      });
+      if (words !== blank) gl.deleteTexture(words);
+      words = texFrom(c);
+    }
+    fontsReady.then(drawWords);
+
 }
 })();
