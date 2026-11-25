@@ -561,5 +561,6 @@
   }`;
 
   function shader(type, src) {
+    const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
 }
 })();
