@@ -113,9 +113,10 @@
   /* ---------- the page: the scenes (ph-a = number and title, ph-b = further down: photos, distance, note, map), then the information ---------- */
   function build() {
     const S = strips();
-    const strip = key => `<div class="strip">${S[key].map((p, i) =>
+    const arrow = (dir, ch) => `<button type="button" class="sa ${dir}" aria-label="${esc(t('pv.' + dir))}">${ch}</button>`;
+    const strip = key => `<div class="strip-w">${arrow('prev', '←')}<div class="strip">${S[key].map((p, i) =>
       `<button type="button" style="--r:${[-1.6, 1.1, -.6, 1.5, -1.2, .7, -1.4][i % 7]}deg" data-f="${p.f}" data-w="${p.w}" data-c="${esc(p.c)}">` +
-      `<img src="${p.t}" alt="${esc(p.c)}" loading="lazy" decoding="async"></button>`).join('')}</div>`;
+      `<img src="${p.t}" alt="${esc(p.c)}" loading="lazy" decoding="async" draggable="false"></button>`).join('')}</div>${arrow('next', '→')}</div>`;
     const hint = key => `<p class="hint"><i></i><span>${esc(t(key + (fine ? '.mouse' : '.touch')))}</span></p>`;
     const SECTIONS = [
       { cls: 'short intro', a: `
@@ -261,6 +262,7 @@
       (s.cap ? `<div class="capw"><p class="cap">${esc(s.cap)}</p></div>` : '') +
       `<div class="stack"><div class="tx ph-a">${s.a}</div>${s.b ? `<div class="tx ph-b">${s.b}</div>` : ''}</div>${s.extra || ''}</div></section>`).join('') + PLAN;
     secs = [...main.querySelectorAll('.sc')];
+    main.querySelectorAll('.strip').forEach(rowSetup);
     routes();
     showWeather();
     if (motionWanted) document.getElementById('motion').hidden = false;
@@ -345,10 +347,35 @@
     else addEventListener('deviceorientation', onTilt);
   }
 
+  /* ---------- the rows of photos: swiped with a finger; dragged, wheeled sideways or moved with the arrows with a mouse ---------- */
+  function rowArrows(row) {
+    const w = row.parentElement;
+    w.querySelector('.sa.prev').disabled = row.scrollLeft < 4;
+    w.querySelector('.sa.next').disabled = row.scrollLeft + row.clientWidth > row.scrollWidth - 4;
+  }
+  function rowSetup(row) {
+    row.addEventListener('scroll', () => rowArrows(row), { passive: true });
+    // a sideways wheel or trackpad stays with the row; the smooth page scroll only gets the vertical one
+    row.addEventListener('wheel', e => { if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey) e.stopPropagation(); }, { passive: true });
+    let x0 = 0, s0 = 0, down = false;
+    row.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; down = true; x0 = e.clientX; s0 = row.scrollLeft; });
+    row.addEventListener('pointermove', e => {
+      if (!down) return;
+      const dx = e.clientX - x0;
+      if (!row.classList.contains('dragging') && Math.abs(dx) > 5) { row.classList.add('dragging'); row.setPointerCapture(e.pointerId); }
+      if (row.classList.contains('dragging')) row.scrollLeft = s0 - dx;
+    });
+    // after a drag the click does not open the photo (the photos take no clicks while dragging)
+    const up = () => { down = false; if (row.classList.contains('dragging')) setTimeout(() => row.classList.remove('dragging'), 0); };
+    row.addEventListener('pointerup', up); row.addEventListener('pointercancel', up);
+    requestAnimationFrame(() => rowArrows(row));
+  }
+
   /* ---------- the page ---------- */
   const main = document.getElementById('main');
   const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
   let secs = [];
+  addEventListener('resize', () => main.querySelectorAll('.strip').forEach(rowArrows));
   build();
 
   main.addEventListener('click', e => {
@@ -356,6 +383,8 @@
       DOE.requestPermission().then(r => { if (r === 'granted') { addEventListener('deviceorientation', onTilt); motionWanted = false; document.getElementById('motion').hidden = true; } }).catch(() => {});
       return;
     }
+    const arrow = e.target.closest('.sa');
+    if (arrow) { const row = arrow.parentElement.querySelector('.strip'); row.scrollBy({ left: (arrow.classList.contains('next') ? 1 : -1) * row.clientWidth * .8, behavior: 'smooth' }); return; }
     // a photo of the row: the lightbox, never larger than the photo itself
     const b = e.target.closest('.strip button'); if (!b) return;
     lbImg.src = b.dataset.f; lbImg.alt = b.dataset.c; lbImg.style.setProperty('--nw', b.dataset.w + 'px'); lbCap.textContent = b.dataset.c;
