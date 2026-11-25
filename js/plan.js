@@ -749,5 +749,15 @@
       return [(sw > W ? -(sw - W) * f[0] : (W - sw) / 2) + q[0] * sw, (sh > H ? -(sh - H) * f[1] : (H - sh) / 2) + q[1] * sh];
     };
 
+    /* drops: [x, y (0..1, y up), radius (in screen heights), strength] */
+    let drops = [];
+    const drop = (x, y, r, s) => { drops.push([x, y, r, s]); if (drops.length > 16) drops.shift(); };
+    // a drop somewhere on the water of a scene (never on land, never off screen)
+    const waterDrop = (i, r, s) => {
+      const p = masks[i].pts; if (!p || !p.length) return false;
+      for (let k = 0; k < 8; k++) {
+        const [x, y] = toScreen(i, p[(Math.random() * p.length) | 0]);
+}
+}
 }
 })();
