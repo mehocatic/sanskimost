@@ -970,4 +970,21 @@
     return { measure, relabel: () => SCENES.forEach((s, i) => s.print && composePrint(i)) };
   }
 
+  /* ================= text: GSAP ================= */
+  const animate = !reduce && window.gsap && window.ScrollTrigger;
+  const scrubNumbers = () => document.querySelectorAll('[data-scrub]').forEach(n => { n.firstChild.textContent = n.dataset.scrub; });
+  if (!animate) {
+    scrubNumbers();
+    addEventListener('langchange', () => { build(); scrubNumbers(); if (run) { run.relabel(); run.measure(); } });
+    return;
+  }
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+  ScrollTrigger.config({ ignoreMobileResize: true });
+  document.documentElement.classList.add('js-anim');
+  const lenis = window.Lenis ? new Lenis({ lerp: .1 }) : null;
+  if (lenis) { lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add(x => lenis.raf(x * 1000)); gsap.ticker.lagSmoothing(0); }
+  // the lightbox stops the page from scrolling under it
+  lb.addEventListener('close', () => lenis && lenis.start());
+  main.addEventListener('click', e => { if (e.target.closest('.strip button') && lenis) lenis.stop(); });
+
 })();
