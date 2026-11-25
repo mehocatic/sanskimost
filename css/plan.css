@@ -109,3 +109,12 @@ html:not(.js-anim) .ph-b { margin-top: 2rem; }
 .plan .plan-head h2 { font-size: clamp(3rem, 12vw, 7.5rem); line-height: .9; }
 .plan-head p { margin-top: 1rem; color: var(--paper-muted); max-width: 32rem; }
 .blocks { display: grid; gap: clamp(48px, 8svh, 90px); margin-top: clamp(48px, 9svh, 100px); }
+@media (min-width: 900px) { .blocks { grid-template-columns: 1.1fr 1fr; column-gap: clamp(48px, 7vw, 120px); } .blocks .wide { grid-column: 1 / -1; } }
+.blk > .k { display: block; padding-bottom: .7rem; border-bottom: 1px solid rgba(246,244,238,.22); }
+.roads li { display: grid; grid-template-columns: minmax(5.6rem, auto) 1fr auto; align-items: baseline; gap: 14px; padding: .9rem 0; border-bottom: 1px solid rgba(246,244,238,.14); }
+.roads .t { font-family: var(--serif); font-size: clamp(2rem, 6vw, 3rem); line-height: 1; font-variant-numeric: lining-nums; }
+.roads .c { font-family: var(--serif); font-size: 1.35rem; }
+.roads .d { font-size: .85rem; color: var(--paper-muted); text-align: right; }
+.blk dl div { margin-top: 1rem; }
+.blk dt { font-family: var(--serif); font-variant: small-caps; letter-spacing: .08em; color: var(--paper-muted); }
+.blk dd { color: var(--paper-soft); }
