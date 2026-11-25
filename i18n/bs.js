@@ -1015,6 +1015,7 @@ I18N.bs = {
   'pv.k.hall': 'Hodnik',
   'pv.k.prehistory': 'Praistorija',
   'pv.k.ferrata': 'Via ferrata',
+  'pv.free': 'Ulaz je besplatan.',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
