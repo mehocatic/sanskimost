@@ -51,4 +51,5 @@
       // TODO(verify) year: arhiv-data says 1980s, from Meho's document
       print: { src: 'photos/arhiv/skok-masinski-most.webp', w: 542, h: 800, cap: () => `${t('hist.6.g8')}, ${t('arh.y.80s')}`, home: [.74, .47], homeM: [.72, .29], r: -.06, flow: -1 } }
   ];
+
 })();
