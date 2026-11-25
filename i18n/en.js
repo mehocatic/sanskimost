@@ -991,6 +991,7 @@ I18N.en = {
   'pv.sky.fog': 'fog',
   'pv.sky.drizzle': 'drizzle',
   'pv.sky.rain': 'rain',
+  'pv.sky.snow': 'snow',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
