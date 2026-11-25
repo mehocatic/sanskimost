@@ -608,5 +608,19 @@
     }
     const blank = solid([13, 18, 16, 255]), dry = solid([0, 0, 0, 255]);
 
+    const fontsReady = document.fonts ? Promise.all([
+      document.fonts.load('italic 400 80px "EB Garamond"'), document.fonts.load('500 40px Caveat')]).catch(() => {}) : Promise.resolve();
+
+    // the photos of the scenes, their water masks, and the old prints composed as paper photographs
+    const tex = SCENES.map(() => ({ t: blank }));
+    const masks = SCENES.map(() => ({ t: dry, pts: null }));
+    const prints = SCENES.map(() => null);
+    const printImgs = [];
+    function composePrint(i) {
+      const pr = SCENES[i].print, pim = printImgs[i];
+      if (!pr || !pim) return;
+      const m = Math.round(pr.w * .045) + 6, capH = Math.round(pr.w * .12) + 18;
+      const c = document.createElement('canvas'); c.width = pr.w + 2 * m; c.height = pr.h + m + capH;
+}
 }
 })();
