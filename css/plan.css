@@ -9,6 +9,7 @@ html:has(.plan-page) { background: #0d1210; }
 /* resets with no weight (:where), so every rule below that gives a margin or a colour wins */
 :where(.plan-page main) :where(ul, ol) { list-style: none; margin: 0; padding: 0; }
 :where(.plan-page main) :where(p, h1, h2, h3, dl, dd, figure) { margin: 0; }
+:where(.plan-page main, .plan-page .lb) a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 
