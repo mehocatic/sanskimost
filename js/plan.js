@@ -408,4 +408,5 @@
     h *= smoothstep(.12, .6, texture(uM, clamp(q, 0., 1.)).r * ins);
     o = vec4(clamp(h, -2.5, 2.5), s.r, 0., 1.);
   }`;
+
 })();
