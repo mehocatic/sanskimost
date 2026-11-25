@@ -1025,6 +1025,7 @@ I18N.bs = {
   'pv.in.tomorrow': 'sutra',
   'pv.in.day': 'za {n} dan',
   'pv.in.days': 'za {n} dana',
+  'pv.weather': 'Vrijeme: Open-Meteo.',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

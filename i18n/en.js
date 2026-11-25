@@ -1023,6 +1023,7 @@ I18N.en = {
   'pv.in.tomorrow': 'tomorrow',
   'pv.in.day': 'in {n} day',
   'pv.in.days': 'in {n} days',
+  'pv.weather': 'Weather: Open-Meteo.',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
