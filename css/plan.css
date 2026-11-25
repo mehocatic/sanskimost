@@ -78,7 +78,8 @@ html.lenis, html.lenis body { height: auto; }
 @media (max-width: 899px) { .cue { left: auto; right: var(--gutter); } }
 
 /* photos of the place: a row of prints, swiped sideways */
-.strip { display: flex; gap: 14px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none;
+.strip-w { position: relative; }
+.strip { display: flex; gap: 14px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none;
   margin: 1.1rem calc(-1 * var(--gutter)) 0; padding: 8px var(--gutter) 12px; }
 .strip::-webkit-scrollbar { display: none; }
 .strip button { flex: none; scroll-snap-align: start; border: 0; padding: 5px 5px 6px; background: var(--print); cursor: zoom-in;
