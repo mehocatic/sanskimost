@@ -152,3 +152,11 @@ html:not(.js-anim) .ph-b { margin-top: 2rem; }
 /* open: the photos fan out; without animation they are open from the start */
 .rcard .rc-photo:nth-child(1), .js-anim .rcard.open .rc-photo:nth-child(1) { transform: translate(-112%, -50%) rotate(-7deg); z-index: 1; }
 .rcard .rc-photo:nth-child(2), .js-anim .rcard.open .rc-photo:nth-child(2) { transform: translate(-50%, -54%) rotate(1deg); z-index: 3; }
+.rcard .rc-photo:nth-child(3), .js-anim .rcard.open .rc-photo:nth-child(3) { transform: translate(12%, -48%) rotate(6deg); z-index: 2; }
+.rc-fan .rc-photo:only-child { transform: translate(-50%, -50%) rotate(-2deg); }
+.rc-fan .rc-photo:first-child:nth-last-child(2), .js-anim .rcard.open .rc-photo:first-child:nth-last-child(2) { transform: translate(-90%, -50%) rotate(-5deg); }
+.rc-fan .rc-photo:last-child:nth-child(2), .js-anim .rcard.open .rc-photo:last-child:nth-child(2) { transform: translate(-10%, -52%) rotate(4deg); }
+.js-anim .rcard:not(.open) .rc-photo { transform: translate(-50%, -50%) rotate(0deg); }
+.rcard:hover .rc-photo:nth-child(1) { transform: translate(-122%, -52%) rotate(-10deg); }
+.rcard:hover .rc-photo:nth-child(3) { transform: translate(22%, -46%) rotate(9deg); }
+.rc-num { font-size: .72rem; letter-spacing: .2em; color: var(--acc); margin-bottom: .6rem; }
