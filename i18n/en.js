@@ -1011,6 +1011,7 @@ I18N.en = {
   'pv.k.under': 'Underground',
   'pv.k.dabar': 'Source of the Dabar',
   'pv.k.hall': 'The passage',
+  'pv.k.prehistory': 'Prehistory',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
