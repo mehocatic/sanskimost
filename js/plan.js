@@ -989,5 +989,51 @@
 
   const at = (sec, f) => () => `top+=${(sec.offsetHeight - innerHeight) * f} top`;
   function go() {
+    secs.forEach((sec, i) => {
+      const a = sec.querySelector('.ph-a'), b = sec.querySelector('.ph-b'), cap = sec.querySelector('.cap');
+      const kin = a.querySelector('.kin'), num = a.querySelector('.num');
+      const rest = [...a.children].filter(el => el !== kin && el !== num);
+      const split = kin ? new SplitText(kin, { type: 'lines,chars', linesClass: 'split-line' }) : null;
+      const tl = gsap.timeline({ paused: true });
+      if (num) {
+        tl.fromTo(num, { yPercent: 40, opacity: 0, filter: 'blur(14px)' }, { yPercent: 0, opacity: 1, filter: 'blur(0px)', duration: 1.3, ease: 'expo.out' }, 0);
+        if (num.dataset.count) {
+          const to = +num.dataset.count, o = { v: 0 }, small = num.querySelector('small').outerHTML;
+          tl.to(o, { v: to, duration: 1.5, ease: 'power3.out', onUpdate: () => { num.innerHTML = Math.round(o.v) + small; } }, 0);
+        }
+      }
+      if (split) tl.fromTo(split.chars, { yPercent: 115, rotate: 7, opacity: 0 }, { yPercent: 0, rotate: 0, opacity: 1, duration: 1.05, ease: 'expo.out', stagger: .024 }, num ? .2 : .1);
+      tl.fromTo(rest, { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: .9, ease: 'power3.out', stagger: .08 }, num ? .45 : .4);
+      if (cap) tl.fromTo(cap, { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 1, ease: 'power2.out' }, .35);
+      ScrollTrigger.create({
+        trigger: sec, start: i === 0 ? 'top top' : 'top 50%',
+        onEnter: () => tl.timeScale(1).play(), onLeaveBack: () => tl.timeScale(2.4).reverse()
+      });
+      if (i === 0 || sec.getBoundingClientRect().top < innerHeight * .5) tl.play();
+
+      // a number that follows the scroll: metres walked into the cave, metres climbed up the wall
+      const scrub = a.querySelector('[data-scrub]');
+      if (scrub) {
+        const to = +scrub.dataset.scrub, small = scrub.querySelector('small').outerHTML;
+        ScrollTrigger.create({ trigger: sec, start: 'top top', end: at(sec, .4), scrub: true,
+          onUpdate: s => { scrub.innerHTML = Math.round(to * s.progress) + small; } });
+      }
+
+      // further down the same scene: the first part gives way to photos and details
+      if (b) {
+        gsap.set(b, { autoAlpha: 0 });
+        const kids = [...b.children];
+        const tb = gsap.timeline({ scrollTrigger: { trigger: sec, start: at(sec, .36), end: at(sec, .56), scrub: .6 } });
+        tb.to(a, { autoAlpha: 0, y: -50, ease: 'power1.in', duration: .5 }, 0)
+          .to(b, { autoAlpha: 1, duration: .01 }, .45)
+          .fromTo(kids, { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: .08, duration: .5, ease: 'power2.out' }, .45);
+        const row = b.querySelector('.strip');
+        if (row) tb.fromTo(row.children, { x: 80 }, { x: 0, stagger: .04, duration: .5, ease: 'power2.out' }, .5);
+        b.querySelectorAll('.big b[data-count]').forEach(n => {
+          const o = { v: 0 }, to = +n.dataset.count;
+          ScrollTrigger.create({ trigger: sec, start: at(sec, .5), once: true, onEnter: () => gsap.to(o, { v: to, duration: 1.4, ease: 'power3.out', onUpdate: () => { n.textContent = Math.round(o.v); } }) });
+        });
+      }
+    });
 }
 })();
