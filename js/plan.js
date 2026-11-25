@@ -54,4 +54,50 @@
 
   // the prints in a row: t = small file for the row, f = file for the lightbox (with its natural size), c = caption
   const ph = (tt, f, w, h, c) => ({ t: tt, f, w, h, c });
+  const strips = () => ({
+    blihe: [
+      ph('photos/bliha3-721.webp', 'photos/bliha3.webp', 1080, 1349, P('blihe', 'name')),
+      ph('photos/arhiv/bliha-jesen-675.webp', 'photos/arhiv/bliha-jesen.webp', 960, 1280, t('arh.c.bliha-jesen')),
+      ph('photos/bliha5.webp', 'photos/bliha5.webp', 800, 533, P('blihe', 'name')),
+      ph('photos/arhiv/bliha-ljeto.webp', 'photos/arhiv/bliha-ljeto.webp', 1280, 853, t('arh.c.bliha-ljeto')),
+      ph('photos/bliha4.webp', 'photos/bliha4.webp', 768, 768, P('blihe', 'name')),
+      ph('photos/bliha-vodopad-staza.webp', 'photos/bliha-vodopad-staza.webp', 512, 768, P('blihe', 'name')),
+      ph('photos/bliha6.webp', 'photos/bliha6.webp', 800, 492, P('blihe', 'name'))
+    ],
+    kamengrad: [
+      ph('photos/kamengrad4.webp', 'photos/kamengrad4.webp', 1024, 432, P('kamengrad', 'name')),
+      ph('photos/kamengrad2.webp', 'photos/kamengrad2.webp', 650, 409, P('kamengrad', 'name')),
+      ph('photos/kamengrad3.jpg', 'photos/kamengrad3.jpg', 793, 386, P('kamengrad', 'name')),
+      ph('photos/kamengrad5.webp', 'photos/kamengrad5.webp', 701, 392, P('kamengrad', 'name'))
+    ],
+    'bobijasko-oko': [
+      ph('photos/bobijasko-oko.webp', 'photos/bobijasko-oko.webp', 696, 861, P('bobijasko-oko', 'name')),
+      ph('photos/bobijasko-oko3.jpg', 'photos/bobijasko-oko3.jpg', 739, 415, P('bobijasko-oko', 'name')),
+      ph('photos/bobijasko-oko4.webp', 'photos/bobijasko-oko4.webp', 399, 501, P('bobijasko-oko', 'name'))
+    ],
+    dabarska: [
+      ph('photos/dabarska7.webp', 'photos/dabarska7.webp', 1200, 900, P('dabarska', 'name')),
+      ph('photos/dabarska3.jpg', 'photos/dabarska3.jpg', 1280, 819, P('dabarska', 'name')),
+      ph('photos/dabarska6.jpg', 'photos/dabarska6.jpg', 554, 554, P('dabarska', 'name')),
+      ph('photos/dabarska4.jpg', 'photos/dabarska4.jpg', 447, 447, P('dabarska', 'name'))
+    ],
+    hrustovacka: [
+      ph('photos/hrustovacka3.webp', 'photos/hrustovacka3.webp', 1180, 885, P('hrustovacka', 'name')),
+      ph('photos/hrustovacka.jpg', 'photos/hrustovacka.jpg', 441, 695, P('hrustovacka', 'name')),
+      ph('photos/hrustovacka2.jpg', 'photos/hrustovacka2.jpg', 640, 480, P('hrustovacka', 'name')),
+      ph('photos/hrustovacka4.webp', 'photos/hrustovacka4.webp', 400, 500, P('hrustovacka', 'name'))
+    ],
+    mulez: [
+      ph('photos/mulez4-675.webp', 'photos/mulez4.webp', 1200, 1600, P('mulez', 'name')),
+      ph('photos/mulez5-1080.webp', 'photos/mulez5.webp', 1600, 1200, P('mulez', 'name')),
+      ph('photos/mulez2-1080.webp', 'photos/mulez2.jpg', 2048, 1153, P('mulez', 'name')),
+      ph('photos/mulez3.jpg', 'photos/mulez3.jpg', 960, 540, P('mulez', 'name'))
+    ],
+    sana: [
+      ph('photos/arhiv/plivanje.webp', 'photos/arhiv/plivanje.webp', 800, 522, `${t('hist.6.g6')}, ${t('arh.y.80s')}`),
+      ph('photos/arhiv/masinski-most-1956.webp', 'photos/arhiv/masinski-most-1956.webp', 1416, 1004, t('arh.c.masinski-most-1956')),
+      ph('photos/grad/gradski-most-rijeka.webp', 'photos/grad/gradski-most-rijeka.webp', 1600, 1070, t('grad.gradski-most-rijeka')),
+      ph('photos/arhiv/sana-1912.webp', 'photos/arhiv/sana-1912.webp', 800, 504, t('arh.c.sana-1912'))
+    ]
+  });
 })();
