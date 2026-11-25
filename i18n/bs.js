@@ -1023,6 +1023,7 @@ I18N.bs = {
   'pv.sana.days': 'dana do 20. jula, Dana rijeke Sane.',
   'pv.in.today': 'danas',
   'pv.in.tomorrow': 'sutra',
+  'pv.in.day': 'za {n} dan',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
