@@ -49,3 +49,12 @@ html.lenis, html.lenis body { height: auto; }
 
 /* hint: how to touch the water */
 .hint { display: inline-flex; align-items: center; gap: 12px; margin-top: 1.2rem; font-size: .9rem; color: var(--paper-soft); }
+.tx .hint { font-size: .9rem; }
+.hint i { position: relative; width: 26px; height: 26px; flex: none; }
+.hint i::before, .hint i::after { content: ""; position: absolute; inset: 0; border: 1px solid var(--paper); border-radius: 50%; animation: ring 2.6s ease-out infinite; }
+.hint i::after { animation-delay: 1.3s; }
+@keyframes ring { 0% { transform: scale(.15); opacity: .9; } 100% { transform: scale(1.35); opacity: 0; } }
+.now { font-family: var(--serif); font-style: italic; font-size: 1.15rem !important; color: var(--paper) !important; }
+.now[hidden], .rain[hidden] { display: none; }
+.motion { display: inline-flex; align-items: center; min-height: 44px; margin-top: .6rem; padding: 0; background: none; border: 0; border-bottom: 1px solid var(--paper-muted);
+  color: var(--paper); font-family: var(--serif); font-size: 1.12rem; cursor: pointer; pointer-events: auto; }
