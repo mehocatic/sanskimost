@@ -1006,6 +1006,7 @@ I18N.bs = {
   'pv.lamp.touch': 'Skrolajte i svjetlo ide kroz pećinu.',
   'pv.follow': 'Skrolajte dalje i pratite vodu.',
   'pv.k.blihe': 'Blihin skok',
+  'pv.k.fort': 'Tvrđava',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
