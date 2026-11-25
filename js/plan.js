@@ -387,4 +387,5 @@
     return q;
   }`;
 
+  // wave equation on a grid: R = height now, G = height a step ago; drops push the surface down.
 })();
