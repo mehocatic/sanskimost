@@ -848,6 +848,21 @@
       // the moving water leaves ripples along its edge (only where there is water)
       if (em > .01 && em < .99 && Math.random() < .4) waterDrop(st.b, .01, .25);
 
+      // the lamp: on its path through the cave (scroll), or where the finger or mouse points, or the way the phone is tilted
+      if (caveOn) {
+        let [px, py] = toScreen(shown, spline(S.path, progress(shown) / .9));
+        px += Math.sin(time * .9) * W * .012 + tilt.x * W * .3;
+        py += Math.sin(time * 1.3 + 1) * H * .01 + tilt.y * H * .22;
+        if (now - aim.t < 2500) { px = aim.x; py = aim.y; }
+        light.tx = px; light.ty = H - py;
+      }
+      const lx = light.x, ly = light.y;
+      light.x += (light.tx - light.x) * .07; light.y += (light.ty - light.y) * .07;
+      light.vx += ((light.x - lx) - light.vx) * .3; light.vy += ((light.y - ly) - light.vy) * .3;
+      const into = st.kind === 1 && st.a !== st.b && SCENES[st.b].dark;
+      light.i = into ? Math.min(Math.max((em - .55) / .4, 0), 1) : Math.min(1, light.i + dt * 2);
+      clear.s = Math.max(0, clear.s - dt * .35);
+
 }
 }
 })();
