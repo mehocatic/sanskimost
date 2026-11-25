@@ -134,3 +134,12 @@ html:not(.js-anim) .ph-b { margin-top: 2rem; }
 .end { margin-top: clamp(70px, 12svh, 130px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;
   padding-top: 28px; border-top: 1px solid rgba(246,244,238,.22); }
 .plan .end h3 { font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1; }
+.cta { display: inline-flex; align-items: center; gap: .6em; min-height: 48px; padding: 0 22px; background: var(--paper); color: var(--pv-deep); text-decoration: none;
+  font-family: var(--serif); font-size: 1.2rem; transition: background .25s ease; }
+.cta:hover { background: var(--pv-river); }
+.js-anim .rv { opacity: 0; transform: translateY(36px); }
+
+/* ---------- routes (from routes.js) ---------- */
+.rcards { display: grid; gap: clamp(48px, 7svh, 72px) clamp(32px, 4vw, 64px); }
+.rcard { display: grid; gap: 26px; }
+.rc-fan { position: relative; display: block; aspect-ratio: 16 / 10; max-height: 360px; }
