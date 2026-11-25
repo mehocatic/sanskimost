@@ -1014,6 +1014,7 @@ I18N.bs = {
   'pv.k.dabar': 'Izvor rijeke Dabar',
   'pv.k.hall': 'Hodnik',
   'pv.k.prehistory': 'Praistorija',
+  'pv.k.ferrata': 'Via ferrata',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
