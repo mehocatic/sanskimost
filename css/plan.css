@@ -23,7 +23,7 @@ html.lenis, html.lenis body { height: auto; }
 /* ---------- scenes: the text stays (sticky) while the water moves under it ---------- */
 .sc { position: relative; height: 185svh; }
 .sc.short { height: 130svh; }
-.sc-in { position: sticky; top: 0; height: 100svh; display: flex; flex-direction: column; justify-content: flex-end;
+.sc-in { position: sticky; top: 0; height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; justify-content: safe flex-end;
   padding: 84px var(--gutter) calc(30px + env(safe-area-inset-bottom)); pointer-events: none; }
 .sc-in a, .sc-in button, .strip { pointer-events: auto; }
 .stack { display: grid; grid-template-columns: minmax(0, 1fr); align-items: end; }
