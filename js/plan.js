@@ -205,5 +205,56 @@
 
     const YEAR = [['plan.y.spring'], ['plan.y.summer'], ['plan.y.musalla', firstFridayJuly()], ['plan.y.sana', toSana], ['plan.y.oct', days(10, 10)]];
     const RIVER = ['plan.sum.fish', 'plan.sum.kayak'];
+    const PLAN = `
+      <section class="plan on-deep" id="plan" aria-labelledby="plan-t">
+        <header class="plan-head rv"><h2 id="plan-t">${esc(t('plan.before.title'))}</h2><p>${esc(t('plan.lead'))}</p></header>
+        <div class="blocks">
+          <div class="blk rv">
+            <span class="k">${esc(t('plan.get.title'))}</span>
+            <ul class="roads">
+              <li><span class="t">1 h 45</span><span class="c">Bihać</span><span class="d">${esc(t('plan.get.bihac'))}</span></li>
+              <li><span class="t">2 h 45</span><span class="c">Zagreb</span><span class="d">${esc(t('plan.get.zagreb'))}</span></li>
+              <li><span class="t">4 h</span><span class="c">Sarajevo</span><span class="d">${esc(t('plan.get.sarajevo'))}</span></li>
+            </ul>
+            <dl>
+              <div><dt>${esc(t('plan.get.air.k'))}</dt><dd>${esc(t('plan.get.air'))}</dd></div>
+              <div><dt>${esc(t('plan.get.bus.k'))}</dt><dd>${esc(t('plan.get.bus'))}</dd></div>
+              <div><dt>${esc(t('plan.get.town.k'))}</dt><dd>${esc(t('plan.get.town'))}</dd></div>
+            </dl>
+            <p class="fine">${esc(t('plan.get.note'))}</p>
+          </div>
+          <div class="blk rv">
+            <span class="k">${esc(t('plan.stay.title'))}</span>
+            <div class="stay">
+              <p><b data-count="279">279</b><span>${esc(t('plan.stay.beds'))}</span></p>
+              <p><b data-count="4">4</b><span>${esc(t('plan.stay.hotels'))}</span></p>
+              <p><b data-count="25">25</b><span>${esc(t('plan.stay.private'))}</span></p>
+            </div>
+            <p>${esc(t('plan.stay.lead'))}</p>
+            <p>${esc(t('plan.stay.tip'))}</p>
+            <div class="spa"><span class="k">${esc(t('plan.stay.spa.k'))}</span><h3>${esc(t('plan.stay.spa.t'))}</h3><p>${esc(t('plan.stay.spa'))}</p></div>
+            <p><a href="https://exploresanskimost.ba/planiraj-posjetu/" rel="noopener" target="_blank">${esc(t('plan.stay.list'))} ↗</a></p>
+            <p class="fine">${esc(t('plan.stay.tz'))} · Prijedorska 5 · <a href="tel:+38761355120">061 355 120</a></p>
+          </div>
+          <div class="blk wide rv">
+            <span class="k">${esc(t('plan.when.eyebrow'))}</span>
+            <ul class="year">${YEAR.map(([k, n]) => `<li><b>${esc(t(k + '.when'))}</b><span>${esc(t(k))}</span>${n == null ? '' : `<em>${esc(inDays(n))}</em>`}</li>`).join('')}</ul>
+          </div>
+          <div class="blk wide rv">
+            <span class="k">${esc(t('pv.river.t'))}</span>
+            <p>${esc(t('plan.sum.lead'))}</p>
+            <ul class="river">${RIVER.map(k => `<li><h3>${esc(t(k + '.t'))}</h3><p>${esc(t(k))}</p></li>`).join('')}</ul>
+          </div>
+          <div class="blk wide">
+            <span class="k rv">${esc(t('plan.routes.title'))}</span>
+            <ol class="rcards" id="plan-routes"></ol>
+          </div>
+        </div>
+        <div class="end rv">
+          <h3>${esc(t('plan.cta.title'))}</h3>
+          <a class="cta" href="explore">${esc(t('plan.cta.btn'))} <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="fine" style="margin-top:2.4rem">${esc(t('routes.conditions'))} ${esc(t('pv.weather'))}</p>
+      </section>`;
 }
 })();
