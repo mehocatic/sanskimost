@@ -10,6 +10,8 @@ html:has(.plan-page) { background: #0d1210; }
 :where(.plan-page main) :where(ul, ol) { list-style: none; margin: 0; padding: 0; }
 :where(.plan-page main) :where(p, h1, h2, h3, dl, dd, figure) { margin: 0; }
 :where(.plan-page main, .plan-page .lb) a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+/* iPhone turns times and dates into links: keep them as plain text */
+.plan-page a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font: inherit !important; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 
