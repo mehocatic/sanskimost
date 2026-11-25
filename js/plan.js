@@ -101,4 +101,17 @@
     ]
   });
 
+  /* ---------- dates: how many days until ---------- */
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const days = (m, d) => { let x = new Date(today.getFullYear(), m - 1, d); if (x < today) x = new Date(today.getFullYear() + 1, m - 1, d); return Math.round((x - today) / 864e5); };
+  const firstFridayJuly = () => { const f = y => { const d = new Date(y, 6, 1); d.setDate(1 + (5 - d.getDay() + 7) % 7); return d; };
+    let x = f(today.getFullYear()); if (x < today) x = f(today.getFullYear() + 1); return Math.round((x - today) / 864e5); };
+  const one = n => I18n.lang === 'bs' ? n % 10 === 1 && n % 100 !== 11 : n === 1; // "1 dan, 21 dan" / "1 day"
+  const inDays = n => n === 0 ? t('pv.in.today') : n === 1 ? t('pv.in.tomorrow') : t(one(n) ? 'pv.in.day' : 'pv.in.days', { n });
+  const toSana = days(7, 20);
+
+  /* ---------- the page: the scenes (ph-a = number and title, ph-b = further down: photos, distance, note, map), then the information ---------- */
+  function build() {
+    const S = strips();
+}
 })();
