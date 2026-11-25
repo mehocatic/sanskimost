@@ -18,4 +18,18 @@
   const t = (k, v) => I18n.t(k, v);
   const bySlug = Object.fromEntries(PLACES.map(p => [p.slug, p]));
   const P = (slug, f) => I18n.place(bySlug[slug], f);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const page = slug => `place?slug=${encodeURIComponent(slug)}`;
+  const map = slug => `explore?place=${encodeURIComponent(slug)}`;
+  const LAT = 44.7638251, LON = 16.6648616; // centre of town (Hamzibegova džamija, OSM way 346178044)
+
+  // one sentence of a place text, so nothing is reworded: by a word it contains (the same in both languages),
+  // or by [paragraph, sentence] where the wording differs
+  const sentence = (slug, field, has) => {
+    const text = P(slug, field), split = s => s.split(/(?<=\.)\s+/);
+    if (Array.isArray(has)) return (split(text.split(/\n\n+/)[has[0]] || '')[has[1]] || '').trim();
+    return (split(text).find(s => s.includes(has)) || '').trim();
+  };
+  const links = slug => `<a href="${map(slug)}">${esc(t('pv.map'))} →</a><a href="${page(slug)}">${esc(t('pv.page'))} →</a>`;
+
 })();
