@@ -99,6 +99,12 @@ html.lenis, html.lenis body { height: auto; }
   .sa.next { right: 0; }
   .sa:disabled { opacity: 0; pointer-events: none; }
 }
+/* a phone: the details of a scene stay under the menu */
+@media (max-width: 899px) {
+  .ph-b p { font-size: .95rem; }
+  .ph-b .strip img { height: clamp(86px, 13svh, 120px); }
+  .ph-b .strip { margin-top: .8rem; }
+}
 .big { display: flex; align-items: baseline; gap: .5rem; margin-top: .4rem; }
 .big b { font-family: var(--serif); font-weight: 400; font-size: clamp(3.2rem, 12vw, 5.6rem); line-height: .9; font-variant-numeric: lining-nums tabular-nums; }
 .big span { color: var(--paper-soft); max-width: 18rem; line-height: 1.3; }
