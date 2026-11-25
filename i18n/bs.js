@@ -1007,6 +1007,7 @@ I18N.bs = {
   'pv.follow': 'Skrolajte dalje i pratite vodu.',
   'pv.k.blihe': 'Blihin skok',
   'pv.k.fort': 'Tvrđava',
+  'pv.k.palanka': 'Palanka',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
