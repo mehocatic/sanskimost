@@ -85,7 +85,9 @@ html.lenis, html.lenis body { height: auto; }
 .strip button { flex: none; scroll-snap-align: start; border: 0; padding: 5px 5px 6px; background: var(--print); cursor: zoom-in;
   transform: rotate(var(--r, 0deg)); box-shadow: 0 10px 26px rgba(0,0,0,.45); transition: transform .35s ease; }
 .strip button:hover, .strip button:focus-visible { transform: rotate(0deg) translateY(-4px); }
-.strip img { display: block; height: clamp(104px, 17svh, 176px); width: auto; background: #222; }
+.strip img { display: block; height: clamp(104px, 17svh, 176px); width: auto; background: #222; -webkit-user-drag: none; user-select: none; }
+.strip.dragging { scroll-snap-type: none; cursor: grabbing; }
+.strip.dragging button { pointer-events: none; }
 .big { display: flex; align-items: baseline; gap: .5rem; margin-top: .4rem; }
 .big b { font-family: var(--serif); font-weight: 400; font-size: clamp(3.2rem, 12vw, 5.6rem); line-height: .9; font-variant-numeric: lining-nums tabular-nums; }
 .big span { color: var(--paper-soft); max-width: 18rem; line-height: 1.3; }
