@@ -995,6 +995,7 @@ I18N.en = {
   'pv.sky.showers': 'showers',
   'pv.sky.storm': 'thunderstorm',
   'pv.rain': 'It is raining in Sanski Most right now, so it rains here too.',
+  'pv.hint.mouse': 'Move the mouse over the water.',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
