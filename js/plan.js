@@ -258,7 +258,7 @@
       </section>`;
 
     main.innerHTML = SECTIONS.map((s, i) => `<section class="sc ${s.cls || ''} ${SCENES[i].print ? 'has-print' : ''}" data-i="${i}" style="--bg:url('${SCENES[i].src}')"><div class="sc-in">` +
-      (s.cap ? `<p class="cap">${esc(s.cap)}</p>` : '') +
+      (s.cap ? `<div class="capw"><p class="cap">${esc(s.cap)}</p></div>` : '') +
       `<div class="stack"><div class="tx ph-a">${s.a}</div>${s.b ? `<div class="tx ph-b">${s.b}</div>` : ''}</div>${s.extra || ''}</div></section>`).join('') + PLAN;
     secs = [...main.querySelectorAll('.sc')];
     routes();
@@ -1010,6 +1010,12 @@
         onEnter: () => tl.timeScale(1).play(), onLeaveBack: () => tl.timeScale(2.4).reverse()
       });
       if (i === 0 || sec.getBoundingClientRect().top < innerHeight * .5) tl.play();
+
+      // the text of the place leaves before the water brings the next one (the change comes when the section's bottom passes the middle)
+      gsap.fromTo([sec.querySelector('.stack'), sec.querySelector('.capw'), sec.querySelector('.cue')].filter(Boolean), { opacity: 1 }, {
+        opacity: 0, ease: 'none', immediateRender: false,
+        scrollTrigger: { trigger: sec, start: 'bottom 96%', end: 'bottom 60%', scrub: true }
+      });
 
       // a number that follows the scroll: metres walked into the cave, metres climbed up the wall
       const scrub = a.querySelector('[data-scrub]');
