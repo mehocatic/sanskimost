@@ -32,4 +32,23 @@
   };
   const links = slug => `<a href="${map(slug)}">${esc(t('pv.map'))} →</a><a href="${page(slug)}">${esc(t('pv.page'))} →</a>`;
 
+  /* ---------- the photos behind the scenes: src, natural size, focus (x from the left, y from the top) ----------
+     mask: where the photo has water; hot: the water a new scene's first drop falls on; dark + path: a cave and the lamp's way
+     through it; drain: the sinkhole the water runs into; pan: the focus moves from f to pan with the scroll; print: an old photo on the water */
+  const SCENES = [
+    { src: 'photos/grad/masinski-most-sumrak.webp', w: 1350, h: 900, f: [.5, .5], words: 1,
+      mask: 'photos/maske/masinski-most-sumrak.png', hot: [.45, .86] },
+    { src: 'photos/bliha2.webp', w: 2400, h: 1599, f: [.54, .45], mask: 'photos/maske/bliha2.png', hot: [.565, .69],
+      print: { src: 'photos/arhiv/blihe-1942.webp', w: 370, h: 604, cap: () => t('arh.c.blihe'), home: [.73, .4], homeM: [.72, .27], r: .05, flow: 1 } },
+    { src: 'photos/kamengrad.webp', w: 1200, h: 896, f: [.5, .45], sun: 1 },
+    { src: 'photos/bobijasko-oko2.webp', w: 1024, h: 1024, f: [.72, .5], mask: 'photos/maske/bobijasko-oko2.png', hot: [.78, .66], drain: [.78, .62] },
+    { src: 'photos/dabarska2.webp', w: 1640, h: 924, f: [.6, .55], dark: 1,
+      path: [[.14, .2], [.42, .13], [.8, .42], [.62, .7], [.47, .55]] },  // vault, roof, right wall, the man on the path, the dark way in
+    { src: 'photos/hrustovacka5.webp', w: 1024, h: 768, f: [.5, .45], dark: 1,
+      path: [[.15, .28], [.45, .3], [.78, .42], [.83, .53], [.45, .55], [.4, .76], [.68, .76], [.6, .92]] }, // walls, ceiling, stalactites, flowstone, people, the path on
+    { src: 'photos/mulez-pogled.webp', w: 1080, h: 1520, f: [.5, .95], pan: [.5, .05], fog: 1 },
+    { src: 'photos/grad/skokovi-masinski.webp', w: 1600, h: 1070, f: [.64, .55], mask: 'photos/maske/skokovi-masinski.png', hot: [.6, .76],
+      // TODO(verify) year: arhiv-data says 1980s, from Meho's document
+      print: { src: 'photos/arhiv/skok-masinski-most.webp', w: 542, h: 800, cap: () => `${t('hist.6.g8')}, ${t('arh.y.80s')}`, home: [.74, .47], homeM: [.72, .29], r: -.06, flow: -1 } }
+  ];
 })();
