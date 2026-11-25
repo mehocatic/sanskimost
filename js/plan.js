@@ -712,8 +712,14 @@
         if (w !== simW || h !== simH) {
           rt.forEach(r => { gl.deleteTexture(r.t); gl.deleteFramebuffer(r.fb); });
           simW = w; simH = h;
-}
-}
-}
+          const a = makeRT(w, h), b = makeRT(w, h);
+          rt = a && b ? [a, b] : [];
+          simOn = rt.length === 2 && !simOff;
+        }
+      }
+      prints.forEach(p => { if (p) p.x = null; });
+    }
+    resize();
+
 }
 })();
