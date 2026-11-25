@@ -981,6 +981,8 @@ I18N.bs = {
   'plan.y.sana': 'Dan rijeke Sane; u julu je i manifestacija „Ljeto na Sani“.',
   'plan.cta.title': 'Sva mjesta na jednoj karti',
   'plan.cta.btn': 'Otvorite kartu',
+  // Visit page (plan.js): the places seen through water
+  'pv.title1': 'Devet rijeka.',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

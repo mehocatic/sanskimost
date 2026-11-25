@@ -979,6 +979,8 @@ I18N.en = {
   'plan.y.sana': 'Sana River Day; the “Ljeto na Sani” festival is also in July.',
   'plan.cta.title': 'Every place on one map',
   'plan.cta.btn': 'Open the map',
+  // Visit page (plan.js): the places seen through water
+  'pv.title1': 'Nine rivers.',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
