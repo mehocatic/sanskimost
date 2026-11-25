@@ -1036,5 +1036,21 @@
       }
     });
 
-}
+    // the information below
+    ScrollTrigger.batch('.rv', { start: 'top 88%', once: true, onEnter: els => gsap.to(els, { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out', stagger: .12 }) });
+    document.querySelectorAll('.stay b[data-count]').forEach(b => {
+      const o = { v: 0 }, to = +b.dataset.count;
+      ScrollTrigger.create({ trigger: b, start: 'top 90%', once: true, onEnter: () => gsap.to(o, { v: to, duration: 1.8, ease: 'power3.out', onUpdate: () => { b.textContent = Math.round(o.v); } }) });
+    });
+    // routes: the cards come up one after another and their photos fan out
+    ScrollTrigger.batch('.rcard', {
+      start: 'top 85%', once: true,
+      onEnter: els => els.forEach((el, i) => { gsap.fromTo(el, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: i * .12 }); el.classList.add('open'); })
+    });
+    ScrollTrigger.refresh();
+    if (run) run.measure();
+  }
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go);
+  addEventListener('load', () => { ScrollTrigger.refresh(); if (run) run.measure(); });
+
 })();
