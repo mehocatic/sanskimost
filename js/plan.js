@@ -818,6 +818,20 @@
       const time = (now - t0) / 1000;
       if (phone && simOn && ++frames > 90 && frames < 400) { if (dt > 1 / 26) slow++; if (slow > 120) { simOn = false; simOff = true; } }
 
+      // a new scene: start the water towards it (or turn back if it is the one we came from)
+      const tg = target();
+      if (tg !== st.b) {
+        if (tg === st.a && st.m > 0) { st.a = st.b; st.b = tg; st.m = 1 - st.m; }
+        else { if (st.m >= .5) st.a = st.b; st.b = tg; st.m = 0; }
+        st.kind = drainOf(st.a, st.b) >= 0 ? 1 : 0;
+        // after the sinkhole the lamp is lit where the water went
+        if (st.kind === 1 && SCENES[Math.max(st.a, st.b)].dark) { const c = drainCentre(); light.x = c[0] * W; light.y = c[1] * H; }
+      }
+      if (st.a !== st.b) { st.m += dt / DUR; if (st.m >= 1) { st.a = st.b; st.m = 0; arrive(st.b); } }
+      const em = st.a === st.b ? 0 : ease(st.m);
+      const shown = em < .5 ? st.a : st.b, S = SCENES[shown];
+      const caveOn = !!S.dark;
+
 }
 }
 })();
