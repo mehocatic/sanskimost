@@ -999,6 +999,7 @@ I18N.en = {
   'pv.hint.touch': 'Touch the water.',
   'pv.motion': 'Turn on phone motion',
   'pv.print.mouse': 'You can move the old photograph with the mouse.',
+  'pv.print.touch': 'The old photograph floats as you scroll.',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
