@@ -697,6 +697,23 @@
       const fb = gl.createFramebuffer();
       gl.bindFramebuffer(gl.FRAMEBUFFER, fb);
       gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tx, 0);
+      const ok = gl.checkFramebufferStatus(gl.FRAMEBUFFER) === gl.FRAMEBUFFER_COMPLETE;
+      gl.clearColor(0, 0, 0, 1); gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+      return ok ? { t: tx, fb } : null;
+    }
+    function resize() {
+      W = innerWidth; H = innerHeight;
+      const dpr = Math.min(devicePixelRatio || 1, phone ? 1.5 : 2);
+      canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+      if (sim) {
+        const k = Math.min(1, (phone ? 320 : 640) / Math.max(W, H));
+        const w = Math.max(64, Math.round(W * k)), h = Math.max(64, Math.round(H * k));
+        if (w !== simW || h !== simH) {
+          rt.forEach(r => { gl.deleteTexture(r.t); gl.deleteFramebuffer(r.fb); });
+          simW = w; simH = h;
+}
+}
 }
 }
 })();
