@@ -1026,6 +1026,7 @@ I18N.en = {
   'pv.weather': 'Weather: Open-Meteo.',
   'pv.river.t': 'On the river',
   'pv.photo': 'Photo',
+  'pv.prev': 'Previous photo',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',

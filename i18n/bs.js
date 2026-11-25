@@ -1028,6 +1028,7 @@ I18N.bs = {
   'pv.weather': 'Vrijeme: Open-Meteo.',
   'pv.river.t': 'Na rijeci',
   'pv.photo': 'Fotografija',
+  'pv.prev': 'Prethodna fotografija',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
