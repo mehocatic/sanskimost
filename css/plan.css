@@ -32,3 +32,12 @@ html.lenis, html.lenis body { height: auto; }
 
 .k { font-family: var(--serif); font-variant: small-caps; letter-spacing: .09em; font-size: 1.1rem; color: var(--paper-muted); }
 .plan-page main h1, .plan-page main h2, .plan-page main h3 { font-family: var(--serif); font-weight: 400; }
+.plan-page main h1 { font-size: clamp(3.4rem, 15vw, 10.5rem); line-height: .9; letter-spacing: -.02em; margin-top: .2rem; }
+.plan-page main h1 .ln { display: block; }
+.plan-page main h2 { font-size: clamp(2.3rem, 9vw, 4.6rem); line-height: .98; letter-spacing: -.01em; }
+.num { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(6.8rem, 34vw, 19rem); line-height: .8; letter-spacing: -.045em;
+  font-variant-numeric: lining-nums tabular-nums; margin-left: -.04em; }
+.num small { font-size: .34em; letter-spacing: 0; margin-left: .08em; color: var(--paper-soft); }
+.num.mid { font-size: clamp(4.6rem, 22vw, 10rem); }
+.tx p { margin-top: .8rem; max-width: 34rem; color: var(--paper-soft); font-size: clamp(1rem, 1.3vw, 1.12rem); }
+.tx .note { font-size: .95rem; padding-left: 12px; border-left: 2px solid var(--pv-river); }
