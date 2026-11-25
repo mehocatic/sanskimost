@@ -1019,6 +1019,7 @@ I18N.bs = {
   'pv.map': 'Na karti',
   'pv.page': 'Stranica mjesta',
   'pv.sana.today': 'Danas je Dan rijeke Sane.',
+  'pv.sana.day': 'dan do 20. jula, Dana rijeke Sane.',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
