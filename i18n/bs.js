@@ -1027,6 +1027,7 @@ I18N.bs = {
   'pv.in.days': 'za {n} dana',
   'pv.weather': 'Vrijeme: Open-Meteo.',
   'pv.river.t': 'Na rijeci',
+  'pv.photo': 'Fotografija',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
