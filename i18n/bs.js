@@ -994,6 +994,7 @@ I18N.bs = {
   'pv.sky.drizzle': 'sitna kiša',
   'pv.sky.rain': 'kiša',
   'pv.sky.snow': 'snijeg',
+  'pv.sky.showers': 'pljuskovi',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
