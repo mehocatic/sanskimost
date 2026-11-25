@@ -985,6 +985,7 @@ I18N.bs = {
   'pv.title1': 'Devet rijeka.',
   'pv.title2': 'Jedan grad.',
   'pv.now': 'Sada u Sanskom Mostu: {t} °C, {sky}.',
+  'pv.sunset': 'Sunce zalazi u {hm}.',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
