@@ -1019,6 +1019,7 @@ I18N.en = {
   'pv.sana.today': 'Today is Sana River Day.',
   'pv.sana.day': 'day until 20 July, Sana River Day.',
   'pv.sana.days': 'days until 20 July, Sana River Day.',
+  'pv.in.today': 'today',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
