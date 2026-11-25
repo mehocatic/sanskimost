@@ -1029,6 +1029,7 @@ I18N.bs = {
   'pv.river.t': 'Na rijeci',
   'pv.photo': 'Fotografija',
   'pv.prev': 'Prethodna fotografija',
+  'pv.next': 'Sljedeća fotografija',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

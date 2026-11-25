@@ -1027,6 +1027,7 @@ I18N.en = {
   'pv.river.t': 'On the river',
   'pv.photo': 'Photo',
   'pv.prev': 'Previous photo',
+  'pv.next': 'Next photo',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
