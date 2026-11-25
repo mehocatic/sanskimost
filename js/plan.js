@@ -560,4 +560,6 @@
     o = vec4(col, 1.);
   }`;
 
+  function shader(type, src) {
+}
 })();
