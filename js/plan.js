@@ -325,4 +325,5 @@
       if (window.gsap && !reduce && now) gsap.fromTo(now, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' });
     } catch (e) { /* no weather: nothing is shown */ }
   })();
+
 })();
