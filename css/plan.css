@@ -169,3 +169,11 @@ html:not(.js-anim) .ph-b { margin-top: 2rem; }
 .rc-stops a:hover { color: var(--acc); }
 .rc-km { margin-left: auto; font-size: .8rem; color: var(--fg-muted); }
 .rc-extra { max-width: 40ch; margin-top: 1rem; padding-left: 1rem; border-left: 1px solid var(--acc); font-size: .9rem; color: var(--fg-muted); }
+.rc-map {
+  display: inline-flex; align-items: center; min-height: 44px; margin-top: 1.2rem; padding: 0 1.3rem; border-radius: 999px;
+  border: 1px solid var(--acc); color: var(--acc); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
+  transition: background .25s ease, color .25s ease;
+}
+.rc-map::after { content: "\2192"; margin-left: .6rem; letter-spacing: 0; }
+.rc-map:hover { background: var(--acc); color: var(--paper); }
+.plan-check { margin-top: clamp(48px, 8svh, 90px); padding-bottom: var(--rise-h); font-family: var(--serif); font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--fg-soft); }
