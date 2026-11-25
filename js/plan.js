@@ -880,7 +880,17 @@
         if (near) { pr.vx += pv.x * .22; pr.vy -= pv.y * .22; pv.x = pv.y = 0; }
         // the tilt of the phone lets it slide
         pr.vx += tilt.x * .55; pr.vy += tilt.y * .55;
-}
+        pr.vx += (hx - pr.x) * .0025; pr.vy += (hy - pr.y) * .0025;
+        pr.vx *= .93; pr.vy *= .93;
+        pr.x += pr.vx; pr.y += pr.vy + Math.sin(time * 1.1 + prI) * .12;
+        pr.x = Math.min(Math.max(pr.x, pr.hw * .4), W - pr.hw * .4); pr.y = Math.min(Math.max(pr.y, 70), H - pr.hh * .4);
+        // on a phone it sinks when the details of the place come up, so it never covers the text
+        const keep = !(phone && progress(prI) > .36);
+        pr.a = keep ? Math.min(1, pr.a + dt * 1.5) : Math.max(0, pr.a - dt * 2.2);
+        pr.rot = spec.r + pr.vx * .006 + Math.sin(time * .7 + prI) * .02;
+        if (Math.abs(pr.vx) + Math.abs(pr.vy) > 3 && Math.random() < .3) drop(pr.x / W, 1 - (pr.y + pr.hh * .9) / H, .008, .3);
+      }
+
 }
 }
 })();
