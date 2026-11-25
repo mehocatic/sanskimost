@@ -126,3 +126,11 @@ html:not(.js-anim) .ph-b { margin-top: 2rem; }
 .spa { margin-top: 1.4rem; padding: 16px 18px; border: 1px solid rgba(246,244,238,.22); }
 .plan .spa h3 { font-size: 1.5rem; }
 .spa p { margin-top: .35rem; }
+.year li { display: grid; grid-template-columns: minmax(7.5rem, 11rem) 1fr auto; gap: 16px; align-items: baseline; padding: .9rem 0; border-bottom: 1px solid rgba(246,244,238,.14); }
+.year b { font-family: var(--serif); font-weight: 400; font-size: 1.3rem; line-height: 1.2; }
+.year span { color: var(--paper-soft); }
+.year em { font-family: var(--serif); font-size: 1.05rem; color: var(--pv-river); white-space: nowrap; }
+@media (max-width: 599px) { .year li { grid-template-columns: 1fr auto; gap: 2px 12px; } .year span { grid-column: 1 / -1; grid-row: 2; } .year em { grid-row: 1; grid-column: 2; } }
+.end { margin-top: clamp(70px, 12svh, 130px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;
+  padding-top: 28px; border-top: 1px solid rgba(246,244,238,.22); }
+.plan .end h3 { font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1; }
