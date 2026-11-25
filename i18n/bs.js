@@ -1017,6 +1017,7 @@ I18N.bs = {
   'pv.k.ferrata': 'Via ferrata',
   'pv.free': 'Ulaz je besplatan.',
   'pv.map': 'Na karti',
+  'pv.page': 'Stranica mjesta',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

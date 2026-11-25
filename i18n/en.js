@@ -1015,6 +1015,7 @@ I18N.en = {
   'pv.k.ferrata': 'Via ferrata',
   'pv.free': 'Entry is free.',
   'pv.map': 'On the map',
+  'pv.page': 'Place page',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
