@@ -260,5 +260,15 @@
     main.innerHTML = SECTIONS.map((s, i) => `<section class="sc ${s.cls || ''} ${SCENES[i].print ? 'has-print' : ''}" data-i="${i}" style="--bg:url('${SCENES[i].src}')"><div class="sc-in">` +
       (s.cap ? `<p class="cap">${esc(s.cap)}</p>` : '') +
       `<div class="stack"><div class="tx ph-a">${s.a}</div>${s.b ? `<div class="tx ph-b">${s.b}</div>` : ''}</div>${s.extra || ''}</div></section>`).join('') + PLAN;
-}
+    secs = [...main.querySelectorAll('.sc')];
+    routes();
+    showWeather();
+    if (motionWanted) document.getElementById('motion').hidden = false;
+    document.getElementById('lb-x').textContent = t('lb.close');
+    lb.setAttribute('aria-label', t('pv.photo'));
+    document.title = t('plan.doctitle');
+    const og = document.querySelector('meta[property="og:title"]');
+    if (og) og.content = document.title;
+  }
+
 })();
