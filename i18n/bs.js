@@ -999,6 +999,7 @@ I18N.bs = {
   'pv.rain': 'U Sanskom Mostu upravo pada kiša, pa pada i ovdje.',
   'pv.hint.mouse': 'Pomjerite miš preko vode.',
   'pv.hint.touch': 'Dodirnite vodu.',
+  'pv.motion': 'Uključi pokrete telefona',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
