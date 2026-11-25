@@ -271,4 +271,30 @@
     if (og) og.content = document.title;
   }
 
+  /* ---------- routes (routes.js): a fan of the stops' photos, then the stops ---------- */
+  function routes() {
+    const { photo, photoEntry } = window.PlacesLib;
+    const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+    const cover = slug => { const p = bySlug[slug], e = photoEntry(p.photos && p.photos[0]); return photo(e.src, P(slug, 'name'), null, false); };
+    document.getElementById('plan-routes').replaceChildren(...ROUTES.map((r, i) => {
+      const li = el('li', 'rcard');
+      const fan = el('a', 'rc-fan'); fan.href = `explore?route=${encodeURIComponent(r.id)}`;
+      fan.setAttribute('tabindex', '-1'); fan.setAttribute('aria-hidden', 'true');
+      r.stops.filter(s => bySlug[s.slug]).slice(0, 3).forEach(s => { const f = el('span', 'rc-photo'); f.appendChild(cover(s.slug)); fan.appendChild(f); });
+      const body = el('div', 'rc-body');
+      body.append(el('p', 'rc-num', String(i + 1).padStart(2, '0')), el('h3', 'rc-name', t(`route.${r.id}.name`)), el('p', 'rc-text', t(`route.${r.id}.text`)));
+      const stops = el('ol', 'rc-stops');
+      r.stops.forEach(s => {
+        if (!bySlug[s.slug]) return;
+        const st = el('li'), a = el('a', null, P(s.slug, 'name')); a.href = page(s.slug); st.appendChild(a);
+        if (s.km) st.appendChild(el('span', 'rc-km', t(bySlug[s.slug].kmKey || 'routes.km', { km: s.km })));
+        stops.appendChild(st);
+      });
+      body.appendChild(stops);
+      if (r.extra) body.appendChild(el('p', 'rc-extra', t(r.extra)));
+      const m = el('a', 'rc-map', t('routes.map')); m.href = `explore?route=${encodeURIComponent(r.id)}`; body.appendChild(m);
+      li.append(fan, body);
+      return li;
+    }));
+  }
 })();
