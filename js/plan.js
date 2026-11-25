@@ -388,4 +388,5 @@
   }`;
 
   // wave equation on a grid: R = height now, G = height a step ago; drops push the surface down.
+  // On land (the mask of the photo is black) the surface is held flat, so the waves stop and bounce at the shore.
 })();
