@@ -363,4 +363,14 @@
   });
   lb.addEventListener('click', () => lb.close ? lb.close() : lb.removeAttribute('open'));
 
+  /* ================= WebGL: water over the photos ================= */
+  const canvas = document.getElementById('gl');
+  const gl = !reduce && canvas.getContext('webgl2', { antialias: false, alpha: false, depth: false, stencil: false, powerPreference: 'high-performance' });
+  const halfOk = gl && (gl.getExtension('EXT_color_buffer_float') || gl.getExtension('EXT_color_buffer_half_float'));
+  if (!gl) document.documentElement.classList.add('nogl');
+
+  const VS = `#version 300 es
+  in vec2 p; out vec2 vUv;
+  void main() { vUv = p * .5 + .5; gl_Position = vec4(p, 0., 1.); }`;
+
 })();
