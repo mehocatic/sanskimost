@@ -88,6 +88,17 @@ html.lenis, html.lenis body { height: auto; }
 .strip img { display: block; height: clamp(104px, 17svh, 176px); width: auto; background: #222; -webkit-user-drag: none; user-select: none; }
 .strip.dragging { scroll-snap-type: none; cursor: grabbing; }
 .strip.dragging button { pointer-events: none; }
+/* arrows for a mouse; a finger swipes */
+.sa { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .strip { cursor: grab; }
+  .sa { display: grid; place-items: center; position: absolute; top: 50%; z-index: 2; width: 44px; height: 44px; margin-top: -22px; pointer-events: auto;
+    background: rgba(13,18,16,.72); border: 1px solid rgba(246,244,238,.4); color: var(--paper); font-size: 1.1rem; cursor: pointer; transition: opacity .25s ease, background .25s ease; }
+  .sa:hover { background: rgba(13,18,16,.92); }
+  .sa.prev { left: 0; }
+  .sa.next { right: 0; }
+  .sa:disabled { opacity: 0; pointer-events: none; }
+}
 .big { display: flex; align-items: baseline; gap: .5rem; margin-top: .4rem; }
 .big b { font-family: var(--serif); font-weight: 400; font-size: clamp(3.2rem, 12vw, 5.6rem); line-height: .9; font-variant-numeric: lining-nums tabular-nums; }
 .big span { color: var(--paper-soft); max-width: 18rem; line-height: 1.3; }
