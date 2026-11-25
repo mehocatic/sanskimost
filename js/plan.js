@@ -795,5 +795,16 @@
     addEventListener('touchmove', e => { const tt = e.touches[0]; moveTo(tt.clientX, tt.clientY, 1.2, false); }, { passive: true });
     addEventListener('pointerleave', () => { last = null; });
 
+    /* ---------- the lamp ---------- */
+    const light = { x: W * .6, y: H * .55, tx: W * .6, ty: H * .55, vx: 0, vy: 0, i: 1 };
+
+    /* ---------- the change of scene is timed, not scrolled ---------- */
+    const st = { a: 0, b: 0, m: 0, kind: 0 };
+    const DUR = 1.05;
+    const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+    const drainOf = (a, b) => { const lo = Math.min(a, b); return SCENES[lo].drain && Math.max(a, b) === lo + 1 ? lo : -1; };
+    const drainCentre = () => { const i = drainOf(st.a, st.b); if (i < 0) return [.5, .5]; const [x, y] = toScreen(i, SCENES[i].drain); return [x / W, 1 - y / H]; };
+    const fogI = SCENES.findIndex(s => s.fog), sunI = SCENES.findIndex(s => s.sun);
+
 }
 })();
