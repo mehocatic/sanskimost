@@ -1016,6 +1016,7 @@ I18N.en = {
   'pv.free': 'Entry is free.',
   'pv.map': 'On the map',
   'pv.page': 'Place page',
+  'pv.sana.today': 'Today is Sana River Day.',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
