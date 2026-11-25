@@ -268,6 +268,8 @@
     if (motionWanted) document.getElementById('motion').hidden = false;
     document.getElementById('lb-x').textContent = t('lb.close');
     lb.setAttribute('aria-label', t('pv.photo'));
+    document.getElementById('lb-prev').setAttribute('aria-label', t('pv.prev'));
+    document.getElementById('lb-next').setAttribute('aria-label', t('pv.next'));
     document.title = t('plan.doctitle');
     const og = document.querySelector('meta[property="og:title"]');
     if (og) og.content = document.title;
@@ -374,7 +376,7 @@
   /* ---------- the page ---------- */
   const main = document.getElementById('main');
   const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
-  let secs = [];
+  let secs = [], lbList = [], lbI = 0;
   addEventListener('resize', () => main.querySelectorAll('.strip').forEach(rowArrows));
   build();
 
@@ -385,12 +387,35 @@
     }
     const arrow = e.target.closest('.sa');
     if (arrow) { const row = arrow.parentElement.querySelector('.strip'); row.scrollBy({ left: (arrow.classList.contains('next') ? 1 : -1) * row.clientWidth * .8, behavior: 'smooth' }); return; }
-    // a photo of the row: the lightbox, never larger than the photo itself
+    // a photo of the row: the lightbox, never larger than the photo itself, with the rest of the row
     const b = e.target.closest('.strip button'); if (!b) return;
-    lbImg.src = b.dataset.f; lbImg.alt = b.dataset.c; lbImg.style.setProperty('--nw', b.dataset.w + 'px'); lbCap.textContent = b.dataset.c;
+    lbList = [...b.parentElement.children];
+    lbShow(lbList.indexOf(b));
     lb.showModal ? lb.showModal() : lb.setAttribute('open', '');
   });
-  lb.addEventListener('click', () => lb.close ? lb.close() : lb.removeAttribute('open'));
+
+  /* ---------- the lightbox: arrows, keys and a swipe go through the row ---------- */
+  function lbShow(i) {
+    lbI = (i + lbList.length) % lbList.length;
+    const b = lbList[lbI];
+    lbImg.src = b.dataset.f; lbImg.alt = b.dataset.c; lbImg.style.setProperty('--nw', b.dataset.w + 'px'); lbCap.textContent = b.dataset.c;
+    document.getElementById('lb-n').textContent = lbList.length > 1 ? `${lbI + 1} / ${lbList.length}` : '';
+    document.getElementById('lb-prev').hidden = document.getElementById('lb-next').hidden = lbList.length < 2;
+  }
+  const lbClose = () => lb.close ? lb.close() : lb.removeAttribute('open');
+  lb.addEventListener('click', e => {
+    if (e.target.id === 'lb-prev') return lbShow(lbI - 1);
+    if (e.target.id === 'lb-next') return lbShow(lbI + 1);
+    if (e.target === lb || e.target.id === 'lb-x' || e.target.tagName === 'FIGURE') lbClose();
+  });
+  lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') lbShow(lbI - 1); if (e.key === 'ArrowRight') lbShow(lbI + 1); });
+  let sx = null;
+  lb.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    if (sx === null) return;
+    const dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 50 && lbList.length > 1) lbShow(lbI + (dx < 0 ? 1 : -1));
+  }, { passive: true });
 
   /* ================= WebGL: water over the photos ================= */
   const canvas = document.getElementById('gl');
