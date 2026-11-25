@@ -806,5 +806,18 @@
     const drainCentre = () => { const i = drainOf(st.a, st.b); if (i < 0) return [.5, .5]; const [x, y] = toScreen(i, SCENES[i].drain); return [x / W, 1 - y / H]; };
     const fogI = SCENES.findIndex(s => s.fog), sunI = SCENES.findIndex(s => s.sun);
 
+    let t0 = performance.now(), prev = t0, nextAmbient = 0, nextScrollDrop = 0, lastScroll = scrollY;
+    let slow = 0, frames = 0; // a phone that cannot keep up: count slow frames, then switch the water off
+    function frame(now) {
+      requestAnimationFrame(frame);
+      if (document.hidden) return;
+      const dt = Math.min(.05, (now - prev) / 1000); prev = now;
+      const sv = scrollY - lastScroll; lastScroll = scrollY;
+      const pl = plan();
+      if (pl && pl.getBoundingClientRect().top <= 0) return; // the information covers the water: rest
+      const time = (now - t0) / 1000;
+      if (phone && simOn && ++frames > 90 && frames < 400) { if (dt > 1 / 26) slow++; if (slow > 120) { simOn = false; simOff = true; } }
+
+}
 }
 })();
