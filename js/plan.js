@@ -721,5 +721,33 @@
     }
     resize();
 
+    /* ---------- scroll: which scene, and how far into it ---------- */
+    let geo = [];
+    function measure() { geo = secs.map(s => ({ top: s.offsetTop, h: s.offsetHeight })); }
+    measure();
+    const plan = () => document.getElementById('plan');
+    const target = () => { const y = scrollY + H * .5; let i = 0; while (i < geo.length - 1 && y >= geo[i + 1].top) i++; return i; };
+    const progress = i => { const g = geo[i]; return g ? Math.min(Math.max((scrollY - g.top) / Math.max(1, g.h - H), 0), 1) : 0; };
+    // Catmull-Rom through the points of a path, t from 0 to 1: a soft curve, like a hand holding a torch
+    const spline = (pts, tt) => {
+      const n = pts.length - 1, f = Math.min(Math.max(tt, 0), .9999) * n, i = Math.floor(f), u = f - i;
+      const p0 = pts[Math.max(i - 1, 0)], p1 = pts[i], p2 = pts[Math.min(i + 1, n)], p3 = pts[Math.min(i + 2, n)];
+      const c = (a, b, e, g) => .5 * (2 * b + (-a + e) * u + (2 * a - 5 * b + 4 * e - g) * u * u + (-a + 3 * b - 3 * e + g) * u * u * u);
+      return [c(p0[0], p1[0], p2[0], p3[0]), c(p0[1], p1[1], p2[1], p3[1])];
+    };
+    const focus = i => {
+      const s = SCENES[i];
+      // in a cave the photo slides with the lamp, so the lit point stays on a narrow screen
+      if (s.path) { const q = spline(s.path, progress(i) / .9); return [s.f[0] * .15 + q[0] * .85, s.f[1] * .15 + q[1] * .85]; }
+      if (!s.pan) return s.f;
+      const p = progress(i), c = v => Math.min(Math.max(v, 0), 1);
+      return [c(s.f[0] + (s.pan[0] - s.f[0]) * p + tilt.x * .15), c(s.f[1] + (s.pan[1] - s.f[1]) * p + tilt.y * .1)];
+    };
+    // a point of a photo (0..1 from the top left) on the screen, in px from the top left
+    const toScreen = (i, q) => {
+      const s = SCENES[i], f = focus(i), k = Math.min(Math.max(W / s.w, H / s.h), 1), sw = s.w * k, sh = s.h * k;
+      return [(sw > W ? -(sw - W) * f[0] : (W - sw) / 2) + q[0] * sw, (sh > H ? -(sh - H) * f[1] : (H - sh) / 2) + q[1] * sh];
+    };
+
 }
 })();
