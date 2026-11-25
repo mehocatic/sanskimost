@@ -6,8 +6,9 @@
   background: var(--pv-deep); color: var(--paper); overflow-x: clip;
 }
 html:has(.plan-page) { background: #0d1210; }
-.plan-page main ul { list-style: none; margin: 0; padding: 0; }
-.plan-page main p, .plan-page main h1, .plan-page main h2, .plan-page main h3, .plan-page main dl, .plan-page main dd, .plan-page main figure { margin: 0; }
+/* resets with no weight (:where), so every rule below that gives a margin or a colour wins */
+:where(.plan-page main) :where(ul, ol) { list-style: none; margin: 0; padding: 0; }
+:where(.plan-page main) :where(p, h1, h2, h3, dl, dd, figure) { margin: 0; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 
