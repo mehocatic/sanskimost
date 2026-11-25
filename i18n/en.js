@@ -1001,6 +1001,7 @@ I18N.en = {
   'pv.print.mouse': 'You can move the old photograph with the mouse.',
   'pv.print.touch': 'The old photograph floats as you scroll.',
   'pv.lamp.mouse': 'The light follows the mouse.',
+  'pv.lamp.touch': 'Scroll and the light moves through the cave.',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
