@@ -767,5 +767,33 @@
       if (s.hot && masks[i].pts) { const [x, y] = toScreen(i, s.hot); drop(x / W, 1 - y / H, .012, 1.8); }
     }
 
+    let last = null, lastMove = -1e9;
+    const pv = { x: 0, y: 0, cx: -1e4, cy: -1e4 };
+    const aim = { x: 0, y: 0, t: -1e9 };   // where the finger or mouse points the lamp, and when
+    const clear = { x: .5, y: .5, s: 0 };   // where the fog is parted
+    function moveTo(cx, cy, strength, mouse) {
+      const x = cx / W, y = 1 - cy / H;
+      if (last) {
+        const dx = (x - last.x) * W, dy = (y - last.y) * H, d = Math.hypot(dx, dy);
+        if (d > 2) drop(x, y, .008, Math.min(1, .2 + d * .018) * strength);
+        pv.x = dx; pv.y = -dy;
+      }
+      pv.cx = cx; pv.cy = cy;
+      last = { x, y }; lastMove = performance.now();
+      clear.x = x; clear.y = y; clear.s = 1;
+      if (mouse) { aim.x = cx; aim.y = cy; aim.t = lastMove; }
+    }
+    addEventListener('pointermove', e => { if (e.pointerType !== 'touch') moveTo(e.clientX, e.clientY, 1, true); }, { passive: true });
+    addEventListener('pointerdown', e => {
+      if (lb.open) return;
+      const x = e.clientX / W, y = 1 - e.clientY / H; drop(x, y, .012, 1.6);
+      aim.x = e.clientX; aim.y = e.clientY; aim.t = performance.now();
+      clear.x = x; clear.y = y; clear.s = 1;
+    }, { passive: true });
+    // on a phone the finger that scrolls also draws on the water and parts the fog; only a tap points the lamp
+    addEventListener('touchstart', e => { const tt = e.touches[0]; last = null; moveTo(tt.clientX, tt.clientY, 1.2, false); }, { passive: true });
+    addEventListener('touchmove', e => { const tt = e.touches[0]; moveTo(tt.clientX, tt.clientY, 1.2, false); }, { passive: true });
+    addEventListener('pointerleave', () => { last = null; });
+
 }
 })();
