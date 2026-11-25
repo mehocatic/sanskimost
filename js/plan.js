@@ -373,4 +373,17 @@
   in vec2 p; out vec2 vUv;
   void main() { vUv = p * .5 + .5; gl_Position = vec4(p, 0., 1.); }`;
 
+  // where a photo lands on the screen: like object-fit: cover around its focus, never larger than its natural size
+  const COVER = `
+  vec2 coverQ(vec2 nat, vec2 foc, vec2 uv, out float inside) {
+    vec2 px = uv * uRes;
+    float s = min(max(uRes.x / nat.x, uRes.y / nat.y), 1.);
+    vec2 size = nat * s;
+    vec2 over = size - uRes;
+    vec2 off = vec2(over.x > 0. ? -over.x * foc.x : -over.x * .5, over.y > 0. ? -over.y * foc.y : -over.y * .5);
+    vec2 q = (px - off) / size;
+    vec2 e = smoothstep(vec2(0.), vec2(.045), q) * smoothstep(vec2(1.), vec2(.955), q);
+    inside = (over.x >= 0. ? 1. : e.x) * (over.y >= 0. ? 1. : e.y);
+    return q;
+  }`;
 })();
