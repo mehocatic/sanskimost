@@ -832,6 +832,22 @@
       const shown = em < .5 ? st.a : st.b, S = SCENES[shown];
       const caveOn = !!S.dark;
 
+      // drops that fall by themselves, always on water: rain if it rains in town, otherwise now and then
+      if (now > nextAmbient) {
+        const r = Math.random;
+        if (raining && !caveOn) { waterDrop(shown, .004 + r() * .003, .5 + r() * .5); nextAmbient = now + 70 + r() * 160; }
+        else { waterDrop(shown, .007, .8); nextAmbient = now + 1400 + r() * 2000; }
+      }
+      // the scroll sets the rhythm of the drops
+      if (Math.abs(sv) > 1.5 && now > nextScrollDrop && !caveOn) {
+        waterDrop(shown, .007, Math.min(1, .35 + Math.abs(sv) * .03)); nextScrollDrop = now + 240 + Math.random() * 220;
+      }
+      // tilting the phone sends small waves along the water
+      if (tilt.jolt > .3) { for (let j = 0; j < 3; j++) waterDrop(shown, .01, .5); tilt.jolt = 0; }
+      tilt.jolt *= .9;
+      // the moving water leaves ripples along its edge (only where there is water)
+      if (em > .01 && em < .99 && Math.random() < .4) waterDrop(st.b, .01, .25);
+
 }
 }
 })();
