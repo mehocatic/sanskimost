@@ -559,4 +559,5 @@
     col += (hash(uv * uRes + fract(uTime) * 91.) - .5) * .035;
     o = vec4(col, 1.);
   }`;
+
 })();
