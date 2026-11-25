@@ -91,3 +91,12 @@ html.lenis, html.lenis body { height: auto; }
 html:not(.js-anim) .sc { height: auto; }
 html:not(.js-anim) .sc-in { position: relative; height: auto; min-height: 100svh; }
 html:not(.js-anim) .ph-b { margin-top: 2rem; }
+
+/* lightbox: one photo, never larger than its natural size */
+.lb { position: fixed; inset: 0; z-index: 50; width: 100%; height: 100%; max-width: none; max-height: none; border: 0; padding: 0;
+  background: rgba(6,9,8,.94); color: var(--paper); display: none; place-items: center; }
+.lb[open] { display: grid; }
+.lb::backdrop { background: transparent; }
+.lb figure { display: grid; justify-items: center; gap: 12px; padding: 64px 16px 24px; max-width: 100%; }
+.lb img { display: block; max-width: min(100%, var(--nw)); max-height: 78svh; width: auto; height: auto; }
+.lb figcaption { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--paper-soft); text-align: center; max-width: 40rem; }
