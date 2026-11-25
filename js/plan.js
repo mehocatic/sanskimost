@@ -52,4 +52,6 @@
       print: { src: 'photos/arhiv/skok-masinski-most.webp', w: 542, h: 800, cap: () => `${t('hist.6.g8')}, ${t('arh.y.80s')}`, home: [.74, .47], homeM: [.72, .29], r: -.06, flow: -1 } }
   ];
 
+  // the prints in a row: t = small file for the row, f = file for the lightbox (with its natural size), c = caption
+  const ph = (tt, f, w, h, c) => ({ t: tt, f, w, h, c });
 })();
