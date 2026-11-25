@@ -925,6 +925,21 @@
       gl.activeTexture(gl.TEXTURE4); gl.bindTexture(gl.TEXTURE_2D, pr ? pr.t : blank);
       gl.activeTexture(gl.TEXTURE5); gl.bindTexture(gl.TEXTURE_2D, masks[st.a].t);
       gl.activeTexture(gl.TEXTURE6); gl.bindTexture(gl.TEXTURE_2D, masks[st.b].t);
+      const u = render.u;
+      gl.uniform1i(u.uA, 0); gl.uniform1i(u.uB, 1); gl.uniform1i(u.uS, 2); gl.uniform1i(u.uW, 3); gl.uniform1i(u.uP, 4);
+      gl.uniform1i(u.uMA, 5); gl.uniform1i(u.uMB, 6);
+      gl.uniform2f(u.uRes, W, H);
+      gl.uniform2f(u.uTx, 1 / (simW || 1), 1 / (simH || 1));
+      gl.uniform4f(u.uImA, A.w, A.h, fa[0], 1 - fa[1]);
+      gl.uniform4f(u.uImB, Bs.w, Bs.h, fb[0], 1 - fb[1]);
+      gl.uniform1f(u.uMix, em);
+      gl.uniform1f(u.uKind, st.kind);
+      const c = drainCentre(), asp = W / H;
+      gl.uniform2f(u.uC, c[0], c[1]);
+      gl.uniform1f(u.uRmax, Math.max(...[[0, 0], [1, 0], [0, 1], [1, 1]].map(([x, y]) => Math.hypot((x - c[0]) * asp, y - c[1]))) + .12);
+      gl.uniform1f(u.uTime, time);
+      gl.uniform1f(u.uDarkA, A.dark || 0); gl.uniform1f(u.uDarkB, Bs.dark || 0);
+      gl.uniform1f(u.uWA, A.words ? 1 : 0); gl.uniform1f(u.uWB, Bs.words ? 1 : 0);
 }
 }
 })();
