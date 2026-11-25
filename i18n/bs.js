@@ -1024,6 +1024,7 @@ I18N.bs = {
   'pv.in.today': 'danas',
   'pv.in.tomorrow': 'sutra',
   'pv.in.day': 'za {n} dan',
+  'pv.in.days': 'za {n} dana',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

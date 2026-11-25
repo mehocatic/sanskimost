@@ -1022,6 +1022,7 @@ I18N.en = {
   'pv.in.today': 'today',
   'pv.in.tomorrow': 'tomorrow',
   'pv.in.day': 'in {n} day',
+  'pv.in.days': 'in {n} days',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
