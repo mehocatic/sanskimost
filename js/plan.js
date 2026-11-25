@@ -863,6 +863,24 @@
       light.i = into ? Math.min(Math.max((em - .55) / .4, 0), 1) : Math.min(1, light.i + dt * 2);
       clear.s = Math.max(0, clear.s - dt * .35);
 
+      // the floating print of the scene on screen (or the one being covered)
+      let pOwn = -1, pr = null, prI = -1;
+      if (prints[st.b] && st.a !== st.b) { pOwn = 1; prI = st.b; } else if (prints[st.a]) { pOwn = 0; prI = st.a; }
+      if (prI >= 0) {
+        pr = prints[prI];
+        const spec = SCENES[prI].print;
+        const s = Math.min(1, (phone ? .42 : .26) * W / pr.cw, (phone ? .3 : .52) * H / pr.ch);
+        pr.hw = pr.cw * s / 2; pr.hh = pr.ch * s / 2;
+        const home = phone ? spec.homeM : spec.home, hx = home[0] * W, hy = home[1] * H;
+        if (pr.x === null) { pr.x = hx; pr.y = hy + H * .15; }
+        // the scroll is the current: it carries the print downstream and turns it; when the scroll stops it drifts back
+        pr.vx += Math.max(-6, Math.min(6, sv)) * .07 * (spec.flow || 1); pr.vy -= Math.max(-6, Math.min(6, sv)) * .02;
+        // the finger or mouse that moves over it pushes it
+        const near = Math.abs(pv.cx - pr.x) < pr.hw + 30 && Math.abs(pv.cy - pr.y) < pr.hh + 30 && now - lastMove < 80;
+        if (near) { pr.vx += pv.x * .22; pr.vy -= pv.y * .22; pv.x = pv.y = 0; }
+        // the tilt of the phone lets it slide
+        pr.vx += tilt.x * .55; pr.vy += tilt.y * .55;
+}
 }
 }
 })();
