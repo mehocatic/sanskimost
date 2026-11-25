@@ -1003,6 +1003,7 @@ I18N.en = {
   'pv.lamp.mouse': 'The light follows the mouse.',
   'pv.lamp.touch': 'Scroll and the light moves through the cave.',
   'pv.follow': 'Scroll on and follow the water.',
+  'pv.k.blihe': 'Blihin skok',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
