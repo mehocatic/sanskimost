@@ -409,4 +409,154 @@
     o = vec4(clamp(h, -2.5, 2.5), s.r, 0., 1.);
   }`;
 
+  const FS = `#version 300 es
+  precision highp float;
+  uniform sampler2D uA, uB, uS, uW, uP, uMA, uMB;
+  uniform vec2 uRes, uTx, uLight, uLightV, uC, uTilt, uWBand;
+  uniform vec4 uImA, uImB, uPR, uClear;
+  uniform float uMix, uTime, uDarkA, uDarkB, uSim, uLightR, uLampI, uKind, uRmax, uWA, uWB, uPRot, uPA, uPOwn;
+  uniform float uFogA, uFogB, uFogP, uSunA, uSunB, uSunP;
+  in vec2 vUv; out vec4 o;
+
+  float hash(vec2 p) { p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+  float noise(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f);
+    return mix(mix(hash(i), hash(i + vec2(1, 0)), f.x), mix(hash(i + vec2(0, 1)), hash(i + vec2(1, 1)), f.x), f.y); }
+  float fbm(vec2 p) { float v = 0., a = .5; for (int i = 0; i < 4; i++) { v += a * noise(p); p *= 2.03; a *= .5; } return v; }
+  mat2 rot(float a) { float c = cos(a), s = sin(a); return mat2(c, s, -s, c); }
+  ${COVER}
+  // a photo on the screen; where a smaller photo does not reach the edge of a large screen, it fades into the dark (alpha)
+  vec4 sampleImg(sampler2D t, vec2 nat, vec2 foc, vec2 uv) { float ins; vec2 q = coverQ(nat, foc, uv, ins); return vec4(texture(t, clamp(q, 0., 1.)).rgb, ins); }
+  // how much water the photo has at this point (its mask: white = water)
+  float maskAt(sampler2D m, vec2 nat, vec2 foc, vec2 uv) { float ins; vec2 q = coverQ(nat, foc, uv, ins); return texture(m, clamp(q, 0., 1.)).r * ins; }
+
+  void main() {
+    vec2 uv = vUv;
+    float asp = uRes.x / uRes.y;
+    bool moving = uMix > .001 && uMix < .999;
+
+    // k: where the next scene already is; band: the moving edge of the water
+    float k, band = 0., dist = 0.;
+    vec2 d = vec2(0.);
+    if (uKind < .5) {
+      // the water rises from below
+      float front = uMix * 1.3 - .15;
+      float edge = uv.y + (fbm(vec2(uv.x * 3.2, uTime * .25)) - .5) * .16 + sin(uv.x * 9. + uTime * 1.7) * .012;
+      k = smoothstep(front + .035, front - .035, edge);
+      band = moving ? exp(-pow((edge - front) / .07, 2.)) : 0.;
+    } else {
+      // the water drains into the sinkhole of Bobijaško oko, turning, and the cave opens where it went
+      d = (uv - uC) * vec2(asp, 1.);
+      dist = length(d);
+      float wob = (fbm(vec2(atan(d.y, d.x) * 1.6 + uTime * .5, uTime * .3)) - .5) * .07;
+      float R = uMix * uRmax;
+      k = smoothstep(R + .03, R - .03, dist + wob);
+      band = moving ? exp(-pow((dist + wob - R) / .06, 2.)) : 0.;
+    }
+
+    // the water surface: slope of the height field, only where the photo has water
+    float wm = mix(maskAt(uMA, uImA.xy, uImA.zw, uv), maskAt(uMB, uImB.xy, uImB.zw, uv), k);
+    vec2 n = vec2(0.);
+    if (uSim > .5) {
+      float l = texture(uS, uv - vec2(uTx.x, 0.)).r, r = texture(uS, uv + vec2(uTx.x, 0.)).r;
+      float dn = texture(uS, uv - vec2(0., uTx.y)).r, u = texture(uS, uv + vec2(0., uTx.y)).r;
+      n = clamp(vec2(l - r, dn - u), -.5, .5);
+    }
+    n = (n + uTilt * .06) * wm;
+    vec2 refr = n * .026;
+
+    vec2 uvA, uvB; float shadeA = 1.;
+    if (uKind < .5) {
+      uvA = uv + vec2(0., band * .018) + refr;
+      uvB = uv + refr - vec2(0., band * .018) + vec2(0., (1. - uMix) * .05 * k);
+    } else {
+      float ang = uMix * 4.2 * exp(-dist * 1.4);
+      vec2 dA = rot(ang) * d * (1. - uMix * .3 * exp(-dist * 2.));
+      uvA = uC + dA / vec2(asp, 1.) + refr;
+      uvB = uC + (uv - uC) * (1. + (1. - uMix) * .22) + refr * 1.3;
+      shadeA = 1. - .6 * uMix * smoothstep(uMix * uRmax + .45, uMix * uRmax, dist);
+    }
+
+    vec4 a = sampleImg(uA, uImA.xy, uImA.zw, uvA);
+    vec4 b = sampleImg(uB, uImB.xy, uImB.zw, uvB);
+    vec3 deep = vec3(.051, .071, .063);
+    vec3 ca = mix(deep, a.rgb, a.a) * shadeA, cb = mix(deep, b.rgb, b.a);
+    vec3 col = mix(ca, cb, k);
+
+    // Kamengrad: warm evening light moving slowly over the walls
+    float sunAmt = mix(uSunA, uSunB, k);
+    if (sunAmt > .001) {
+      float sx = uv.x * asp * .9 - uv.y * .45;
+      float glow = exp(-pow((sx - mix(-.7, asp * .9 + .2, uSunP)) / .4, 2.));
+      col = mix(col, col * (.8 + glow * vec3(.62, .42, .2)) + glow * vec3(.05, .03, .0), sunAmt);
+    }
+
+    // Mulež: fog over the valley, thinner the higher you climb; the finger or mouse parts it
+    float fogAmt = mix(uFogA, uFogB, k) * uFogP;
+    if (fogAmt > .001) {
+      vec2 fp = uv * vec2(asp, 1.);
+      float f1 = fbm(fp * 2.2 + vec2(uTime * .025, uTime * .006));
+      float f2 = fbm(fp * 4.5 - vec2(uTime * .04, 0.) + f1);
+      float fog = smoothstep(.32, .82, f1 * .65 + f2 * .45) * (smoothstep(1.05, .2, uv.y) * .6 + .4);
+      vec2 cd = (uv - uClear.xy) * vec2(asp, 1.);
+      fog *= 1. - uClear.z * exp(-dot(cd, cd) / .025);
+      col = mix(col, vec3(.86, .88, .89), clamp(fog * fogAmt, 0., .9));
+    }
+
+    // the names of the nine rivers on the river itself (intro only): laid out to fit the screen, so all nine are seen
+    float wa = mix(uWA, uWB, k);
+    if (wa > .001) {
+      float wy = (uv.y * uRes.y - uWBand.x) / uWBand.y;
+      if (wy > 0. && wy < 1.) {
+        float row = floor(wy * 4.);
+        vec2 wuv = vec2(uv.x + sin(uTime * .35 + row * 1.7) * .006, wy) + (refr + uTilt * .004) * 1.6;
+        float w = texture(uW, clamp(wuv, 0., 1.)).a;
+        col = mix(col, vec3(.97, .95, .9), w * .62 * wa * mix(.7, 1., smoothstep(.2, .7, wm)));
+      }
+    }
+
+    // the cave: dark, lit only by the lamp; a quick move stretches the beam
+    float dark = mix(uDarkA, uDarkB, k);
+    if (dark > .001) {
+      vec2 lp = (uv * uRes - uLight) / uLightR;
+      float sp = length(uLightV);
+      if (sp > .5) { vec2 vd = uLightV / sp; lp -= vd * dot(lp, vd) * (1. - 1. / (1. + min(sp * .03, .8))); }
+      float flick = .94 + .06 * noise(vec2(uTime * 7., 1.3));
+      float lit = exp(-dot(lp, lp) * 1.6) * flick * uLampI;
+      float halo = exp(-dot(lp, lp) * .22) * .14 * uLampI;
+      vec3 lamp = col * (lit * 1.45 + halo) * vec3(1.06, .96, .82);
+      col = mix(col, lamp + col * .02, dark);
+    }
+
+    // light on the slopes of the waves, and the moving edge catching the light
+    vec3 N = normalize(vec3(n * 9., 1.));
+    float spec = pow(max(dot(N, normalize(vec3(-.35, .55, 1.))), 0.), 140.) * smoothstep(.05, .4, wm);
+    col += spec * .32 * (1. - dark * .7);
+    col += band * .07;
+
+    // an old photograph floating on the water: moved by the waves, covered by the next water
+    if (uPOwn > -.5) {
+      float pa = uPA * (uPOwn < .5 ? 1. - k : k);
+      if (pa > .001) {
+        vec2 lp = rot(-uPRot) * (uv * uRes + n * 16. - uPR.xy);
+        vec2 sd = max(abs(lp + vec2(-9., 16.)) - uPR.zw, 0.);
+        col *= 1. - .5 * exp(-dot(sd, sd) / 500.) * pa;
+        float e = min(uPR.z - abs(lp.x), uPR.w - abs(lp.y));
+        float al = clamp(e + .5, 0., 1.) * pa;
+        if (al > 0.) {
+          vec3 pc = texture(uP, lp / (2. * uPR.zw) + .5).rgb;
+          pc *= .9 + dot(n, vec2(.6, .9)) * 1.2;
+          pc += spec * .3;
+          col = mix(col, pc, al);
+        }
+      }
+    }
+
+    // shade at the bottom (for the text) and a little at the top (for the menu)
+    col *= mix(1., .36, smoothstep(.58, 0., uv.y));
+    col *= mix(1., .7, smoothstep(.84, 1., uv.y));
+    float vig = smoothstep(1.25, .35, length((uv - .5) * vec2(asp, 1.) * .9));
+    col *= mix(.72, 1., vig);
+    col += (hash(uv * uRes + fract(uTime) * 91.) - .5) * .035;
+    o = vec4(col, 1.);
+  }`;
 })();
