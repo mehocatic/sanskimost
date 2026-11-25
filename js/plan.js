@@ -1053,4 +1053,11 @@
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go);
   addEventListener('load', () => { ScrollTrigger.refresh(); if (run) run.measure(); });
 
+  // a new language: the page is built again in it, with its animations
+  addEventListener('langchange', () => {
+    ScrollTrigger.getAll().forEach(s => s.kill());
+    build();
+    if (run) { run.relabel(); run.measure(); }
+    go();
+  });
 })();
