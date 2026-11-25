@@ -1002,6 +1002,7 @@ I18N.bs = {
   'pv.motion': 'Uključi pokrete telefona',
   'pv.print.mouse': 'Staru fotografiju možete pomjeriti mišem.',
   'pv.print.touch': 'Stara fotografija pluta dok skrolate.',
+  'pv.lamp.mouse': 'Svjetlo prati miš.',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
