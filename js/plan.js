@@ -326,4 +326,23 @@
     } catch (e) { /* no weather: nothing is shown */ }
   })();
 
+  /* ---------- tilting the phone ---------- */
+  // Android sends the events without asking; iPhone asks once, after a tap on the button. Without it everything still runs on scroll.
+  const tilt = { x: 0, y: 0, b0: null, g0: 0, jolt: 0 };
+  function onTilt(e) {
+    if (e.beta == null || e.gamma == null) return;
+    if (tilt.b0 === null) { tilt.b0 = e.beta; tilt.g0 = e.gamma; }
+    // the way the phone is held slowly becomes "level", so holding it still calms everything down
+    tilt.b0 += (e.beta - tilt.b0) * .004; tilt.g0 += (e.gamma - tilt.g0) * .004;
+    const tx = Math.max(-1, Math.min(1, (e.gamma - tilt.g0) / 28)), ty = Math.max(-1, Math.min(1, (e.beta - tilt.b0) / 28));
+    tilt.jolt += Math.abs(tx - tilt.x) + Math.abs(ty - tilt.y);
+    tilt.x += (tx - tilt.x) * .25; tilt.y += (ty - tilt.y) * .25;
+  }
+  const DOE = window.DeviceOrientationEvent;
+  let motionWanted = false;
+  if (!fine && DOE && !reduce) {
+    if (typeof DOE.requestPermission === 'function') motionWanted = true;
+    else addEventListener('deviceorientation', onTilt);
+  }
+
 })();
