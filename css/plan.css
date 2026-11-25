@@ -41,3 +41,11 @@ html.lenis, html.lenis body { height: auto; }
 .num.mid { font-size: clamp(4.6rem, 22vw, 10rem); }
 .tx p { margin-top: .8rem; max-width: 34rem; color: var(--paper-soft); font-size: clamp(1rem, 1.3vw, 1.12rem); }
 .tx .note { font-size: .95rem; padding-left: 12px; border-left: 2px solid var(--pv-river); }
+.meta { display: flex; flex-wrap: wrap; gap: .3rem 1.3rem; margin-top: .9rem; font-family: var(--serif); font-style: italic; font-size: 1.08rem; color: var(--paper-muted); }
+.tx .meta { font-size: 1.08rem; color: var(--paper-muted); }
+.meta a { font-style: normal; text-underline-offset: 4px; text-decoration-thickness: 1px; color: var(--paper); }
+.chars { display: inline-block; }
+.split-line { overflow: hidden; padding: .06em 0 .2em; margin: -.06em 0 -.2em; }
+
+/* hint: how to touch the water */
+.hint { display: inline-flex; align-items: center; gap: 12px; margin-top: 1.2rem; font-size: .9rem; color: var(--paper-soft); }
