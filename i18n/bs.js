@@ -1008,6 +1008,7 @@ I18N.bs = {
   'pv.k.blihe': 'Blihin skok',
   'pv.k.fort': 'Tvrđava',
   'pv.k.palanka': 'Palanka',
+  'pv.k.sink': 'Ponor i vrelo',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
