@@ -100,3 +100,12 @@ html:not(.js-anim) .ph-b { margin-top: 2rem; }
 .lb figure { display: grid; justify-items: center; gap: 12px; padding: 64px 16px 24px; max-width: 100%; }
 .lb img { display: block; max-width: min(100%, var(--nw)); max-height: 78svh; width: auto; height: auto; }
 .lb figcaption { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--paper-soft); text-align: center; max-width: 40rem; }
+.lb button { position: absolute; top: 12px; right: var(--gutter); min-height: 44px; padding: 0 14px; background: none; border: 1px solid rgba(246,244,238,.4);
+  color: var(--paper); font: inherit; font-size: .9rem; cursor: pointer; }
+
+/* ---------- before you go: plain information, over the dark water ---------- */
+.plan { position: relative; z-index: 5; background: var(--pv-deep); padding: clamp(80px, 14svh, 150px) var(--gutter) 80px; }
+.plan::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 26svh; background: linear-gradient(rgba(13,18,16,0), var(--pv-deep)); pointer-events: none; }
+.plan .plan-head h2 { font-size: clamp(3rem, 12vw, 7.5rem); line-height: .9; }
+.plan-head p { margin-top: 1rem; color: var(--paper-muted); max-width: 32rem; }
+.blocks { display: grid; gap: clamp(48px, 8svh, 90px); margin-top: clamp(48px, 9svh, 100px); }
