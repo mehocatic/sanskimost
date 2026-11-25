@@ -100,4 +100,5 @@
       ph('photos/arhiv/sana-1912.webp', 'photos/arhiv/sana-1912.webp', 800, 504, t('arh.c.sana-1912'))
     ]
   });
+
 })();
