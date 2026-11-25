@@ -987,6 +987,7 @@ I18N.en = {
   'pv.sunset.past': 'The sun set at {hm}.',
   'pv.sky.clear': 'clear',
   'pv.sky.partly': 'partly cloudy',
+  'pv.sky.cloudy': 'cloudy',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',

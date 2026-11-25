@@ -989,6 +989,7 @@ I18N.bs = {
   'pv.sunset.past': 'Sunce je zašlo u {hm}.',
   'pv.sky.clear': 'vedro',
   'pv.sky.partly': 'djelimično oblačno',
+  'pv.sky.cloudy': 'oblačno',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
