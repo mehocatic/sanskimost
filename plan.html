@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://sanskimost.pages.dev/photos/og.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preload" as="image" href="photos/bliha2.webp" imagesrcset="photos/bliha2-1200.webp 1200w, photos/bliha2.webp 2400w" imagesizes="100vw">
+  <link rel="preload" as="image" href="photos/grad/masinski-most-sumrak.webp">
   <link rel="stylesheet" href="vendor/fonts/fonts.css">
   <script src="js/vt.js"></script>
   <script defer src="js/lib.js"></script>
@@ -42,142 +42,15 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="t-open" data-i18n="nav.menu">Meni</span><span class="t-close" data-i18n="nav.close">Zatvori</span></button>
   </nav>
 
-  <main>
-    <!-- hero: the Blihe photo that is the hero of its place page (places.js), filled by plan.js -->
-    <header class="plan-hero" id="plan-hero">
-      <div class="plan-hero-media" id="plan-hero-media" aria-hidden="true"></div>
-      <div class="plan-hero-text">
-        <p class="eyebrow" data-i18n="plan.eyebrow">Posjeta</p>
-        <h1 class="plan-title"><span class="pt-mask"><span class="pt-line" data-i18n="plan.title">Planirajte posjetu</span></span></h1>
-        <p class="plan-lead" data-i18n="plan.lead">Udaljenosti, praktične napomene i prijedlozi ruta za Sanski Most i okolinu.</p>
-      </div>
-      <p class="plan-scroll" aria-hidden="true" data-i18n="hero.scroll">Pomaknite prema dolje</p>
-    </header>
+  <!-- the places seen through water: js/plan.js draws the photos and the water here (WebGL2) and builds the text below in the language chosen -->
+  <canvas id="gl" class="plan-water" aria-hidden="true"></canvas>
+  <main id="main"></main>
 
-    <div class="rise to-paper" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
-
-
-    <section class="plan-sec on-paper" id="sec-dist" aria-labelledby="plan-dist-title">
-      <header class="sec-head">
-        <p class="eyebrow" data-i18n="plan.dist.eyebrow">Udaljenosti</p>
-        <h2 id="plan-dist-title" class="reveal" data-i18n="plan.dist.title">Koliko je daleko od grada</h2>
-      </header>
-      <!-- filled by plan.js: only the distances the site already states -->
-      <div class="journey" id="journey"></div>
-      <p class="plan-small" data-i18n="plan.dist.note">Udaljenosti su približne. Do prašume na Grmeču ima oko 17 km zračne linije od centra grada.</p>
-    </section>
-
-    <!-- getting here: drive times and distances from rome2rio (approximate), the rest from the tourist board's "Planiraj posjetu" page -->
-    <section class="plan-sec on-paper" id="sec-get" aria-labelledby="plan-get-title">
-      <header class="sec-head">
-        <p class="eyebrow" data-i18n="plan.get.eyebrow">Dolazak</p>
-        <h2 id="plan-get-title" class="reveal" data-i18n="plan.get.title">Kako doći</h2>
-      </header>
-      <div class="get-grid">
-        <ul class="get-dist">
-          <li><span class="get-t">1 h 45</span><span class="get-city">Bihać</span><span class="get-km" data-i18n="plan.get.bihac">oko 85 km</span></li>
-          <li><span class="get-t">2 h 45</span><span class="get-city">Zagreb</span><span class="get-km" data-i18n="plan.get.zagreb">vožnje</span></li>
-          <li><span class="get-t">4 h</span><span class="get-city">Sarajevo</span><span class="get-km" data-i18n="plan.get.sarajevo">oko 220 km</span></li>
-        </ul>
-        <dl class="get-notes">
-          <div><dt data-i18n="plan.get.air.k">Aerodromi</dt><dd data-i18n="plan.get.air">Najbliži su Banja Luka i Zagreb; Sarajevo je dalje.</dd></div>
-          <div><dt data-i18n="plan.get.bus.k">Autobus</dt><dd data-i18n="plan.get.bus">Autobuska stanica je na Bulevaru VII korpusa. Redovi vožnje se mijenjaju, pa ih provjerite kod prevoznika.</dd></div>
-          <div><dt data-i18n="plan.get.town.k">U gradu</dt><dd data-i18n="plan.get.town">Parkirajte u centru i idite pješice uz Sanu: znamenitosti u gradu su na pješačkoj udaljenosti.</dd></div>
-        </dl>
-      </div>
-      <p class="plan-small" data-i18n="plan.get.note">Vrijeme vožnje je približno i ovisi o putu i granici.</p>
-    </section>
-
-    <section class="plan-sec on-paper" id="sec-before" aria-labelledby="plan-before-title">
-      <header class="sec-head">
-        <p class="eyebrow" data-i18n="plan.before.eyebrow">Praktično</p>
-        <h2 id="plan-before-title" class="reveal" data-i18n="plan.before.title">Prije polaska</h2>
-      </header>
-      <!-- filled by plan.js from the practical notes of the places (i18n: places.<slug>.note) -->
-      <ul class="tips" id="plan-tips"></ul>
-    </section>
-
-
-    <section class="plan-sec on-mist" id="sec-when" aria-labelledby="plan-when-title">
-      <header class="sec-head">
-        <p class="eyebrow" data-i18n="plan.when.eyebrow">Kada ići</p>
-        <h2 id="plan-when-title" class="reveal" data-i18n="plan.when.title">Kada</h2>
-      </header>
-      <!-- the year on one line: only moments the site already states (place notes, Musalla, 10 October). Filled by plan.js -->
-      <div class="year" id="plan-year"></div>
-    </section>
-
-
-    <!-- summer: Ljeto na Sani (RTV "Sana", Oslobođenje, inmedia.ba), the diaspora, the river (Općina 2026, DSR "Sana") -->
-    <div class="rise to-deep" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
-    <section class="plan-sec on-deep" id="sec-summer" aria-labelledby="plan-sum-title">
-      <div class="sum-grid">
-        <div class="sum-text">
-          <p class="eyebrow" data-i18n="plan.sum.eyebrow">Ljeto</p>
-          <h2 id="plan-sum-title" class="reveal" data-i18n="plan.sum.title">Ljeto na Sani</h2>
-          <p class="sum-lead" data-i18n="plan.sum.lead">Ljeti grad višestruko naraste: kući dolaze Sanjani iz dijaspore, a s njima i turisti. Uveče je korzo u Prijedorskoj ulici pun ljudi.</p>
-          <ul class="sum-list">
-            <li><h3 data-i18n="plan.sum.fest.t">Manifestacija „Ljeto na Sani“</h3><p data-i18n="plan.sum.fest">Održava se od 1997. Počinje u julu Sladoledijadom za djecu u Malom parku na Zdeni, a završava krajem jula ili početkom augusta tradicionalnim skokovima s Gradskog mosta. Između su koncerti, izložbe i sport. Organizator je RTV „Sana“.</p></li>
-            <li><h3 data-i18n="plan.sum.swim.t">Kupanje</h3><p data-i18n="plan.sum.swim">Ljeti se kupa u Sani, na plažama u gradu i oko njega. Građani su 2026. izglasali uređenje plaža Gerzovo i Radinovac.</p></li>
-            <li><h3 data-i18n="plan.sum.fish.t">Ribolov</h3><p data-i18n="plan.sum.fish">Vodama Sane i njenih pritoka gazduje Društvo sportskih ribolovaca „Sana“, osnovano 1950. Dozvolu i pravila tražite kod društva.</p></li>
-            <li><h3 data-i18n="plan.sum.kayak.t">Kajak</h3><p data-i18n="plan.sum.kayak">Sana je mirnija od Une, pa je spuštanje kajakom pogodno i za početnike.</p></li>
-          </ul>
-        </div>
-        <div class="sum-pics summer-album">
-          <figure class="evening-walk"><img src="photos/grad/grad-u-sumrak.webp" width="1080" height="1440" loading="lazy" decoding="async" alt=""><figcaption data-i18n="grad.grad-u-sumrak">Večernja šetnja u Sanskom Mostu</figcaption></figure>
-          <figure class="sum-pic a"><img src="photos/arhiv/skok-masinski-most.webp" alt="" loading="lazy" width="542" height="800"><figcaption data-i18n="hist.6.g8">Skok s Mašinskog mosta</figcaption></figure>
-          <figure class="summer-dives"><img src="photos/grad/skokovi-masinski.webp" width="1600" height="1070" loading="lazy" decoding="async" alt=""><figcaption data-i18n="grad.skokovi-masinski">Publika na Mašinskom mostu i obali za vrijeme skokova</figcaption></figure>
-          <figure class="sum-pic b"><img src="photos/arhiv/plivanje.webp" alt="" loading="lazy" width="800" height="522"><figcaption data-i18n="hist.6.g6">Kupanje na Sani</figcaption></figure>
-        </div>
-      </div>
-    </section>
-    <div class="rise to-paper" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
-
-    <!-- where to stay: the tourist board's register (exploresanskimost.ba/planiraj-posjetu), the spa from RTV "Sana" and Al Jazeera -->
-    <section class="plan-sec on-paper" id="sec-stay" aria-labelledby="plan-stay-title">
-      <header class="sec-head">
-        <p class="eyebrow" data-i18n="plan.stay.eyebrow">Smještaj</p>
-        <h2 id="plan-stay-title" class="reveal" data-i18n="plan.stay.title">Gdje spavati</h2>
-      </header>
-      <div class="stay-grid">
-        <ul class="stay-nums">
-          <li><b>279</b><span data-i18n="plan.stay.beds">registrovanih kreveta</span></li>
-          <li><b>4</b><span data-i18n="plan.stay.hotels">hotela i motela</span></li>
-          <li><b>25</b><span data-i18n="plan.stay.private">apartmana, soba i kuća za odmor</span></li>
-        </ul>
-        <div class="stay-text">
-          <p class="stay-lead" data-i18n="plan.stay.lead">U centru su hoteli Cat Deluxe i Centar. Ostalo su apartmani, sobe i kuće za odmor u domaćinstvima, u gradu i uz Sanu.</p>
-          <p class="stay-tip" data-i18n="plan.stay.tip">Za jul i august rezervišite ranije: tada je u gradu najviše ljudi.</p>
-          <article class="stay-spa">
-            <p class="stay-spa-k" data-i18n="plan.stay.spa.k">Banja</p>
-            <h3 data-i18n="plan.stay.spa.t">Sanska Ilidža</h3>
-            <p data-i18n="plan.stay.spa">Oko 13 km uzvodno, u podnožju Muleža: termalni bazeni, ljekovito blato i smještaj. Radno vrijeme provjerite prije polaska.</p>
-          </article>
-          <div class="stay-links">
-            <a class="cta-line" href="https://exploresanskimost.ba/planiraj-posjetu/" rel="noopener" target="_blank"><span data-i18n="plan.stay.list">Službeni popis smještaja</span> <span aria-hidden="true">↗</span></a>
-            <p class="stay-tz"><span data-i18n="plan.stay.tz">Turistička zajednica Sanski Most</span> · Prijedorska 5 · <a href="tel:+38761355120">061 355 120</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="plan-sec on-paper" id="sec-routes" aria-labelledby="plan-routes-title">
-      <header class="sec-head">
-        <p class="eyebrow" data-i18n="routes.eyebrow">Prijedlozi</p>
-        <h2 id="plan-routes-title" class="reveal" data-i18n="plan.routes.title">Prijedlozi ruta</h2>
-      </header>
-      <!-- filled by plan.js from routes.js -->
-      <ol class="rcards" id="plan-routes"></ol>
-      <p class="plan-check" data-i18n="routes.conditions">Provjerite uvjete prije polaska.</p>
-    </section>
-
-    <div class="rise to-deep" aria-hidden="true"><svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 70 C 180 8 360 132 540 70 S 900 8 1080 70 S 1320 126 1440 60 L1440 200 L0 200 Z"/></svg></div>
-
-    <section class="plan-cta on-deep" aria-labelledby="plan-cta-title">
-      <h2 id="plan-cta-title" class="reveal" data-i18n="plan.cta.title">Sva mjesta na jednoj karti</h2>
-      <a class="cta-btn" href="explore" data-i18n="plan.cta.btn">Otvorite kartu</a>
-    </section>
-  </main>
+  <!-- one photo of a place, never larger than its natural size -->
+  <dialog class="lb" id="lb" aria-label="Fotografija">
+    <button type="button" id="lb-x">Zatvori</button>
+    <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  </dialog>
 
   <footer class="site-foot on-deep">
     <div class="sf-brand">
@@ -207,6 +80,7 @@
   <script defer src="js/i18n.js"></script>
   <script defer src="vendor/gsap.min.js"></script>
   <script defer src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="vendor/SplitText.min.js"></script>
   <script defer src="vendor/lenis.min.js"></script>
   <script defer src="js/plan.js"></script>
   <script defer src="js/nav.js"></script>
