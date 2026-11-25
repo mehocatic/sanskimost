@@ -389,4 +389,23 @@
 
   // wave equation on a grid: R = height now, G = height a step ago; drops push the surface down.
   // On land (the mask of the photo is black) the surface is held flat, so the waves stop and bounce at the shore.
+  const SIM = `#version 300 es
+  precision highp float;
+  uniform sampler2D uS, uM; uniform vec2 uTx, uRes; uniform vec4 uD[16], uMIm; uniform int uN; uniform float uAsp;
+  in vec2 vUv; out vec4 o;
+  ${COVER}
+  void main() {
+    vec4 s = texture(uS, vUv);
+    float h = (texture(uS, vUv - vec2(uTx.x, 0.)).r + texture(uS, vUv + vec2(uTx.x, 0.)).r +
+               texture(uS, vUv - vec2(0., uTx.y)).r + texture(uS, vUv + vec2(0., uTx.y)).r) * .5 - s.g;
+    h *= .976;
+    for (int i = 0; i < 16; i++) {
+      if (i >= uN) break;
+      vec2 d = vUv - uD[i].xy; d.x *= uAsp;
+      h -= uD[i].w * exp(-dot(d, d) / (uD[i].z * uD[i].z));
+    }
+    float ins; vec2 q = coverQ(uMIm.xy, uMIm.zw, vUv, ins);
+    h *= smoothstep(.12, .6, texture(uM, clamp(q, 0., 1.)).r * ins);
+    o = vec4(clamp(h, -2.5, 2.5), s.r, 0., 1.);
+  }`;
 })();
