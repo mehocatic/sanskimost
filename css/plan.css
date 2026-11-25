@@ -24,3 +24,11 @@ html.lenis, html.lenis body { height: auto; }
 .sc-in a, .sc-in button, .strip { pointer-events: auto; }
 .stack { display: grid; grid-template-columns: minmax(0, 1fr); align-items: end; }
 .stack > * { min-width: 0; }
+.js-anim .stack > * { grid-area: 1 / 1; }
+.tx { max-width: 44rem; text-shadow: 0 1px 24px rgba(0,0,0,.4); }
+.ph-b { max-width: min(100%, 76rem); }
+.cap { position: absolute; top: 72px; right: var(--gutter); max-width: 16rem; text-align: right; font-family: var(--serif); font-style: italic;
+  font-size: .98rem; line-height: 1.25; color: var(--paper-muted); text-shadow: 0 1px 14px rgba(0,0,0,.5); }
+
+.k { font-family: var(--serif); font-variant: small-caps; letter-spacing: .09em; font-size: 1.1rem; color: var(--paper-muted); }
+.plan-page main h1, .plan-page main h2, .plan-page main h3 { font-family: var(--serif); font-weight: 400; }
