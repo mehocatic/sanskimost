@@ -58,3 +58,12 @@ html.lenis, html.lenis body { height: auto; }
 .now[hidden], .rain[hidden] { display: none; }
 .motion { display: inline-flex; align-items: center; min-height: 44px; margin-top: .6rem; padding: 0; background: none; border: 0; border-bottom: 1px solid var(--paper-muted);
   color: var(--paper); font-family: var(--serif); font-size: 1.12rem; cursor: pointer; pointer-events: auto; }
+.motion[hidden] { display: none; }
+.ph-a .motion:not([hidden]) { display: flex; width: fit-content; }
+/* the intro: the text at the top, so the river with the nine names stays clear at the bottom */
+.sc.intro .sc-in { justify-content: flex-start; padding-top: 96px; }
+.sc.intro .tx { max-width: none; }
+.rain { margin-top: .4rem !important; font-size: .9rem !important; color: var(--pv-river) !important; }
+
+.cue { position: absolute; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom)); width: 1px; height: 46px; background: linear-gradient(var(--paper), transparent);
+  transform-origin: top; animation: drip 2.2s ease-in-out infinite; }
