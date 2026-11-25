@@ -256,5 +256,6 @@
         </div>
         <p class="fine" style="margin-top:2.4rem">${esc(t('routes.conditions'))} ${esc(t('pv.weather'))}</p>
       </section>`;
+
 }
 })();
