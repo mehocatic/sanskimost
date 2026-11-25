@@ -117,5 +117,90 @@
       `<button type="button" style="--r:${[-1.6, 1.1, -.6, 1.5, -1.2, .7, -1.4][i % 7]}deg" data-f="${p.f}" data-w="${p.w}" data-c="${esc(p.c)}">` +
       `<img src="${p.t}" alt="${esc(p.c)}" loading="lazy" decoding="async"></button>`).join('')}</div>`;
     const hint = key => `<p class="hint"><i></i><span>${esc(t(key + (fine ? '.mouse' : '.touch')))}</span></p>`;
+    const SECTIONS = [
+      { cls: 'short intro', a: `
+          <p class="k">${esc(t('plan.eyebrow'))}</p>
+          <h1 class="kin"><span class="ln">${esc(t('pv.title1'))}</span><span class="ln">${esc(t('pv.title2'))}</span></h1>
+          <p class="now" id="now" hidden></p>
+          <p class="rain" id="rain" hidden>${esc(t('pv.rain'))}</p>
+          ${hint('pv.hint')}
+          <button class="motion" id="motion" type="button" hidden>${esc(t('pv.motion'))}</button>`, extra: '<span class="cue" aria-hidden="true"></span>' },
+
+      { cap: P('blihe', 'name'), a: `
+          <span class="num" data-count="56">56<small>m</small></span>
+          <h2 class="kin">${esc(P('blihe', 'name'))}</h2>
+          <p>${esc(P('blihe', 'short'))}</p>
+          ${hint('pv.print')}`, b: `
+          <p class="k">${esc(t('pv.k.blihe'))}</p>
+          <p>${esc(sentence('blihe', 'long', 'Blihin skok'))}</p>
+          <p class="note">${esc(t('note.cvjetna'))}</p>
+          <p class="meta"><span>${esc(t('routes.km', { km: 14 }))}</span>${links('blihe')}</p>
+          ${strip('blihe')}` },
+
+      { cap: P('kamengrad', 'name'), a: `
+          <p class="k">${esc(t('pv.k.fort'))}</p>
+          <span class="num mid">1374</span>
+          <h2 class="kin">${esc(P('kamengrad', 'name'))}</h2>
+          <p>${esc(P('kamengrad', 'short'))}</p>`, b: `
+          <p class="k">${esc(t('pv.k.palanka'))}</p>
+          <p>${esc(sentence('kamengrad', 'long', 'Palanka'))}</p>
+          <p class="note">${esc(P('kamengrad', 'note'))}</p>
+          <p class="meta"><span>${esc(I18n.see(bySlug.kamengrad)[0].text)}</span>${links('kamengrad')}</p>
+          ${strip('kamengrad')}` },
+
+      { cap: P('bobijasko-oko', 'name'), a: `
+          <p class="k">${esc(t('pv.k.sink'))}</p>
+          <h2 class="kin">${esc(P('bobijasko-oko', 'name'))}</h2>
+          <p>${esc(P('bobijasko-oko', 'short'))}</p>
+          <p>${esc(sentence('bobijasko-oko', 'long', [1, 0]))}</p>`, b: `
+          <p class="k">${esc(t('pv.k.where'))}</p>
+          <p>${esc(sentence('bobijasko-oko', 'long', 'Jezernic'))}</p>
+          <p class="note">${esc(sentence('bobijasko-oko', 'note', [0, 0]))} ${esc(sentence('bobijasko-oko', 'note', [0, 1]))}</p>
+          <p class="meta"><span>${esc(t('routes.km', { km: 20 }))}</span>${links('bobijasko-oko')}</p>
+          ${strip('bobijasko-oko')}
+          <p class="hint"><i></i><span>${esc(t('pv.follow'))}</span></p>` },
+
+      { cap: P('dabarska', 'name'), a: `
+          <p class="k">${esc(t('pv.k.under'))}</p>
+          <span class="num" data-count="200">200<small>m</small></span>
+          <h2 class="kin">${esc(P('dabarska', 'name'))}</h2>
+          <p>${esc(sentence('dabarska', 'long', '200 m'))}</p>
+          ${hint('pv.lamp')}`, b: `
+          <p class="k">${esc(t('pv.k.dabar'))}</p>
+          <p>${esc(sentence('dabarska', 'long', [2, 1]))}</p>
+          <p class="note">${esc(P('dabarska', 'note'))}</p>
+          <p class="meta">${links('dabarska')}</p>
+          ${strip('dabarska')}` },
+
+      { cap: P('hrustovacka', 'name'), a: `
+          <p class="k">${esc(t('pv.k.hall'))}</p>
+          <span class="num" data-scrub="500">0<small>m</small></span>
+          <h2 class="kin">${esc(P('hrustovacka', 'name'))}</h2>
+          <p>${esc(sentence('hrustovacka', 'long', '500 m'))}</p>`, b: `
+          <p class="k">${esc(t('pv.k.prehistory'))}</p>
+          <p>${esc(P('hrustovacka', 'short'))}</p>
+          <p class="note">${esc(P('hrustovacka', 'note'))}</p>
+          <p class="meta"><span>${esc(t('routes.km', { km: 13 }))}</span><span>${esc(t('pv.free'))}</span>${links('hrustovacka')}</p>
+          ${strip('hrustovacka')}` },
+
+      { cap: P('mulez', 'name'), a: `
+          <p class="k">${esc(t('pv.k.ferrata'))}</p>
+          <span class="num" data-scrub="90">0<small>m</small></span>
+          <h2 class="kin">${esc(P('mulez', 'name'))}</h2>
+          <p>${esc(sentence('mulez', 'long', '90 m'))}</p>`, b: `
+          <div class="big"><b>60<small style="font-size:.4em"> m</small></b><span>${esc(sentence('mulez', 'long', '60 m'))}</span></div>
+          <p class="note">${esc(P('mulez', 'note'))}</p>
+          <p class="meta">${links('mulez')}</p>
+          ${strip('mulez')}` },
+
+      { cap: t('grad.skokovi-masinski'), a: `
+          <p class="k">${esc(t('plan.sum.eyebrow'))}</p>
+          <span class="num mid">1997</span>
+          <h2 class="kin">${esc(t('plan.sum.title'))}</h2>
+          <p>${esc(t('plan.sum.fest'))}</p>`, b: `
+          <div class="big"><b data-count="${toSana}">${toSana}</b><span>${esc(toSana === 0 ? t('pv.sana.today') : t(one(toSana) ? 'pv.sana.day' : 'pv.sana.days'))}</span></div>
+          <p class="note">${esc(t('plan.sum.swim'))}</p>
+          ${strip('sana')}` }
+    ];
 }
 })();
