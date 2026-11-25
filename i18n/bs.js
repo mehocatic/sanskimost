@@ -1000,6 +1000,7 @@ I18N.bs = {
   'pv.hint.mouse': 'Pomjerite miš preko vode.',
   'pv.hint.touch': 'Dodirnite vodu.',
   'pv.motion': 'Uključi pokrete telefona',
+  'pv.print.mouse': 'Staru fotografiju možete pomjeriti mišem.',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
