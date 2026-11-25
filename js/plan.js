@@ -658,5 +658,15 @@
     }
     load(0);
 
+    // the river names: four rows across the band at the bottom of the screen, sized so the longest row fits
+    let words = blank, band = [0, 1];
+    const ROWS = [['Sana', 'Sanica'], ['Dabar', 'Zdena', 'Bliha'], ['Majdanska rijeka', 'Japra'], ['Sasinka', 'Kozica']]; // FACTS.md: the nine rivers
+    function drawWords() {
+      const bh = Math.round(H * .2), y0 = Math.round(H * .035), dpr = Math.min(devicePixelRatio || 1, 2);
+      band = [y0, bh];
+      const c = document.createElement('canvas'); c.width = Math.round(W * dpr); c.height = Math.round(bh * dpr);
+      const x = c.getContext('2d'); x.scale(dpr, dpr); x.fillStyle = '#fff'; x.textBaseline = 'middle';
+      let fs = bh / 4 * .66;
+}
 }
 })();
