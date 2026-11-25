@@ -345,4 +345,22 @@
     else addEventListener('deviceorientation', onTilt);
   }
 
+  /* ---------- the page ---------- */
+  const main = document.getElementById('main');
+  const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
+  let secs = [];
+  build();
+
+  main.addEventListener('click', e => {
+    if (e.target.closest('#motion')) {
+      DOE.requestPermission().then(r => { if (r === 'granted') { addEventListener('deviceorientation', onTilt); motionWanted = false; document.getElementById('motion').hidden = true; } }).catch(() => {});
+      return;
+    }
+    // a photo of the row: the lightbox, never larger than the photo itself
+    const b = e.target.closest('.strip button'); if (!b) return;
+    lbImg.src = b.dataset.f; lbImg.alt = b.dataset.c; lbImg.style.setProperty('--nw', b.dataset.w + 'px'); lbCap.textContent = b.dataset.c;
+    lb.showModal ? lb.showModal() : lb.setAttribute('open', '');
+  });
+  lb.addEventListener('click', () => lb.close ? lb.close() : lb.removeAttribute('open'));
+
 })();
