@@ -982,6 +982,7 @@ I18N.en = {
   // Visit page (plan.js): the places seen through water
   'pv.title1': 'Nine rivers.',
   'pv.title2': 'One town.',
+  'pv.now': 'Now in Sanski Most: {t} °C, {sky}.',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',

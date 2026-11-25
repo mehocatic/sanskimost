@@ -984,6 +984,7 @@ I18N.bs = {
   // Visit page (plan.js): the places seen through water
   'pv.title1': 'Devet rijeka.',
   'pv.title2': 'Jedan grad.',
+  'pv.now': 'Sada u Sanskom Mostu: {t} °C, {sky}.',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
