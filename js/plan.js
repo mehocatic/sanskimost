@@ -202,5 +202,6 @@
           <p class="note">${esc(t('plan.sum.swim'))}</p>
           ${strip('sana')}` }
     ];
+
 }
 })();
