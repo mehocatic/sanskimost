@@ -987,4 +987,7 @@
   lb.addEventListener('close', () => lenis && lenis.start());
   main.addEventListener('click', e => { if (e.target.closest('.strip button') && lenis) lenis.stop(); });
 
+  const at = (sec, f) => () => `top+=${(sec.offsetHeight - innerHeight) * f} top`;
+  function go() {
+}
 })();
