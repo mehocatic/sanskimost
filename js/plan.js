@@ -621,6 +621,20 @@
       if (!pr || !pim) return;
       const m = Math.round(pr.w * .045) + 6, capH = Math.round(pr.w * .12) + 18;
       const c = document.createElement('canvas'); c.width = pr.w + 2 * m; c.height = pr.h + m + capH;
+      const x = c.getContext('2d');
+      x.fillStyle = '#ece5d3'; x.fillRect(0, 0, c.width, c.height);
+      for (let s = 0; s < 900; s++) { x.fillStyle = `rgba(90,70,40,${Math.random() * .05})`; x.fillRect(Math.random() * c.width, Math.random() * c.height, 2, 2); }
+      x.drawImage(pim, m, m, pr.w, pr.h);
+      x.fillStyle = '#3b352b'; x.font = `500 ${Math.round(capH * .46)}px Caveat, cursive`; x.textBaseline = 'middle';
+      x.fillText(pr.cap(), m + 2, pr.h + m + capH * .52, pr.w);
+      const old = prints[i];
+      if (old) gl.deleteTexture(old.t);
+      prints[i] = Object.assign(old || { x: null, y: 0, vx: 0, vy: 0, a: 0 }, { t: texFrom(c), cw: c.width, ch: c.height });
+    }
+    function load(i) {
+      if (tex[i].loading) return; tex[i].loading = true;
+      const S = SCENES[i];
+      const im = new Image(); im.decoding = 'async'; im.src = S.src;
 }
 }
 })();
