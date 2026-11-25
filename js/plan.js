@@ -940,6 +940,26 @@
       gl.uniform1f(u.uTime, time);
       gl.uniform1f(u.uDarkA, A.dark || 0); gl.uniform1f(u.uDarkB, Bs.dark || 0);
       gl.uniform1f(u.uWA, A.words ? 1 : 0); gl.uniform1f(u.uWB, Bs.words ? 1 : 0);
-}
+      gl.uniform2f(u.uWBand, band[0], band[1]);
+      gl.uniform1f(u.uFogA, A.fog ? 1 : 0); gl.uniform1f(u.uFogB, Bs.fog ? 1 : 0);
+      gl.uniform1f(u.uFogP, fogI < 0 ? 0 : 1 - .82 * progress(fogI));
+      gl.uniform4f(u.uClear, clear.x, clear.y, clear.s * .9, 0);
+      gl.uniform1f(u.uSunA, A.sun ? 1 : 0); gl.uniform1f(u.uSunB, Bs.sun ? 1 : 0);
+      gl.uniform1f(u.uSunP, sunI < 0 ? 0 : .15 + .7 * progress(sunI));
+      gl.uniform1f(u.uSim, simOn ? 1 : 0);
+      gl.uniform2f(u.uTilt, tilt.x, -tilt.y);
+      gl.uniform2f(u.uLight, light.x, light.y);
+      gl.uniform2f(u.uLightV, light.vx, light.vy);
+      gl.uniform1f(u.uLampI, light.i);
+      gl.uniform1f(u.uLightR, Math.min(W, H) * (W < 900 ? .42 : .3));
+      gl.uniform1f(u.uPOwn, pOwn);
+      if (pr) {
+        gl.uniform4f(u.uPR, pr.x, H - pr.y, pr.hw, pr.hh);
+        gl.uniform1f(u.uPRot, -pr.rot); gl.uniform1f(u.uPA, pr.a);
+      }
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    }
+    requestAnimationFrame(frame);
+
 }
 })();
