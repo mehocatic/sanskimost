@@ -496,3 +496,22 @@
     if (phone.matches) center(li, false);
     else setTimeout(() => li.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }), reduce ? 0 : 450);
     setTimeout(() => flip(li.querySelector('.pc'), true), reduce ? 0 : 900);
+  }
+
+  /* ---------- adding and removing ---------- */
+  function toggle(id, pc) {
+    const adding = !plan.includes(id);
+    plan = adding ? [...plan, id] : plan.filter(x => x !== id);
+    save();
+    syncCards();
+    envelope(adding);
+    if (adding && !reduce && pc) {
+      const mark = pc.querySelector('.pc-mark');
+      mark.animate([{ transform: 'rotate(-20deg) scale(1.9)', opacity: 0 }, { transform: 'rotate(-8deg) scale(1)', opacity: 1 }], { duration: 320, easing: 'cubic-bezier(.5,0,.75,0)' });
+      fly(pc.querySelector('.pc-photo img'));
+    }
+  }
+  function syncCards() {
+    deck().querySelectorAll('li').forEach(li => {
+      const id = li.dataset.id, on = plan.includes(id), name = nameOf(card[id]);
+      li.querySelector('.pc').classList.toggle('in-plan', on);
