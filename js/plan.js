@@ -285,3 +285,22 @@
           <div class="pack-fan" aria-hidden="true">${st.slice(0, 3).map((s, i) => `<span style="--i:${i};--a:${[-5, 2, 6][i]}deg"><img src="${thumb(card[s.slug])}" alt="" loading="lazy" decoding="async"></span>`).join('')}</div>
           <h3>${esc(t(`route.${r.id}.name`))}</h3>
           <p class="pack-t">${esc(t(`route.${r.id}.text`))}</p>
+          <div class="pack-body">
+            <ol>${st.map(s => { const c = card[s.slug], km = s.km || c.km; return `<li><span>${esc(nameOf(c))}</span>${km ? `<span class="km">${km} km</span>` : ''}</li>`; }).join('')}</ol>
+            ${r.extra ? `<p class="extra">${esc(t(r.extra))}</p>` : ''}
+          </div>
+          <button class="take" type="button" data-route="${r.id}">${esc(t('vis.ready.take'))}</button>
+        </li>`; }).join('')}</ol>
+      </section>
+
+      <section class="v-info on-deep" aria-labelledby="info-t">
+        <h2 id="info-t" class="rv">${esc(t('plan.before.title'))}</h2>
+        <p class="v-sub rv">${esc(t('plan.lead'))}</p>
+        <div class="blocks">
+          <div class="blk rv">
+            <span class="k">${esc(t('plan.get.title'))}</span>
+            <ul class="roads">${ROADS.map(([tm, city, k]) => `<li><span class="t">${tm}</span><span class="c">${city}</span><span class="d">${esc(t(k))}</span></li>`).join('')}</ul>
+            <dl>
+              <div><dt>${esc(t('plan.get.air.k'))}</dt><dd>${esc(t('plan.get.air'))}</dd></div>
+              <div><dt>${esc(t('plan.get.bus.k'))}</dt><dd>${esc(t('plan.get.bus'))}</dd></div>
+              <div><dt>${esc(t('plan.get.town.k'))}</dt><dd>${esc(t('plan.get.town'))}</dd></div>
