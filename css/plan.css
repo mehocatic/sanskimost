@@ -60,3 +60,19 @@
 .fan-card.up, .fan-card:focus-visible { --lift: -38px; box-shadow: 0 2px 4px rgba(21, 26, 24, .12), 0 34px 50px -20px rgba(21, 26, 24, .5); }
 @media (hover: hover) and (pointer: fine) {
   .fan-card:hover { --lift: -38px; box-shadow: 0 2px 4px rgba(21, 26, 24, .12), 0 34px 50px -20px rgba(21, 26, 24, .5); }
+}
+
+/* the postmark: a round ink stamp with the town, today's date and the weather there now */
+.pm { position: absolute; color: var(--ink-stamp); mix-blend-mode: multiply; pointer-events: none; }
+.pm svg { display: block; width: 100%; height: auto; overflow: visible; }
+.pm text { fill: currentColor; font-family: var(--sans); }
+/* stamped over the top corner of the last postcard, as if the hand had gone through the post */
+.fan .pm { top: 9%; right: max(0px, calc(50% - 1.25 * clamp(150px, 15vw, 230px) - 40px)); width: clamp(118px, 11vw, 150px); transform: rotate(-11deg); opacity: .88; z-index: 10; }
+
+/* ---------- the postcards ---------- */
+.v-deck { padding: clamp(40px, 8svh, 96px) 0 clamp(56px, 10svh, 120px); }
+.v-head { padding: 0 var(--gutter); display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 32px; }
+.v-head h2 { font-size: clamp(2.6rem, 6vw, 5.4rem); }
+.v-hint { font-family: var(--hand); font-size: 1.35rem; line-height: 1.2; color: var(--fg-muted); }
+
+.chips { display: flex; gap: 8px; margin-top: 1.6rem; padding: 0 var(--gutter) 4px; overflow-x: auto; scrollbar-width: none; }
