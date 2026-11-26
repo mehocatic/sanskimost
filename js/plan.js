@@ -611,3 +611,22 @@
 
   /* ---------- appearing on scroll ---------- */
   function reveal() {
+    const els = main.querySelectorAll('.rv');
+    if (reduce || !('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(e => io.observe(e));
+  }
+
+  /* ---------- live: the weather in town now (Open-Meteo, CC BY 4.0) ---------- */
+  let wx = null;
+  const SKY = c => c === 0 ? 'clear' : c <= 2 ? 'partly' : c === 3 ? 'cloudy' : c <= 48 ? 'fog' : c <= 57 ? 'drizzle' : c <= 67 ? 'rain'
+    : c <= 77 ? 'snow' : c <= 82 ? 'showers' : c <= 86 ? 'snow' : 'storm'; // WMO weather codes
+  function showWeather() {
+    const now = $('v-now'), pm = $('pm-hero');
+    if (!now || !wx) return;
+    const sky = t('pv.sky.' + SKY(wx.code));
+    now.textContent = t('pv.now', { t: Math.round(wx.temp), sky }) + (wx.hm ? ' ' + t(wx.past ? 'pv.sunset.past' : 'pv.sunset', { hm: wx.hm }) : '');
+    now.hidden = false;
+    pm.innerHTML = postmark('Sanski Most', dmy(today), `${Math.round(wx.temp)}°C`, sky.length > 14 ? '' : sky);
+  }
+  (async () => {
