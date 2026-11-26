@@ -11,7 +11,7 @@ window.SNIMCI = {
   films: [
     { id: 'aziz-catic', cat: 'logori', y: 1992, min: 42, yt: 'nh4WTYZyMBg', cover: 'nh4WTYZyMBg.webp', src: 'USMENO SVJEDOČANSTVO / LOGORAŠI',
       title: 'Svjedočenje Aziza Čatića – Logori Betonirka i Manjača' },
-    { id: 'ap-sana-zauzeta', cat: 'sana', y: 1995, min: 4, yt: 'IIXzOJLKRrg', src: 'AP ARCHIVE',
+    { id: 'ap-sana-zauzeta', cat: 'sana', y: 1995, min: 4, yt: 'IIXzOJLKRrg', cover: 'IIXzOJLKRrg.webp', src: 'AP ARCHIVE',
       title: 'Sanski Most Captured By Bosnian Army' },
     { id: 'mlada-vojska', cat: 'sana', y: 1995, min: 7, yt: 'J0vEEX4ltHQ', src: 'ARHIV 5. KORPUSA ARBIH',
       title: 'Ulazak mlade vojske 5. korpusa u Sanski Most' },
