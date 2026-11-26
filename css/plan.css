@@ -45,3 +45,18 @@
 .v-go:hover span { transform: translateY(3px); }
 
 /* the hand of postcards: each one turned around a point below the hand */
+.fan { position: relative; height: clamp(320px, 46vw, 560px); }
+.fan-card {
+  position: absolute; left: 50%; bottom: 13%; width: clamp(150px, 15vw, 230px); aspect-ratio: 5 / 7; padding: 7px 7px 0;
+  background: var(--card); border: 0; border-radius: 3px; cursor: pointer;
+  box-shadow: 0 1px 2px rgba(21, 26, 24, .12), 0 18px 34px -16px rgba(21, 26, 24, .5);
+  transform-origin: 50% 135%;
+  transform: translateX(-50%) rotate(var(--a)) translateY(var(--lift, 0px));
+  transition: transform .9s cubic-bezier(.22, 1, .36, 1), box-shadow .9s cubic-bezier(.22, 1, .36, 1);
+}
+.fan-card img { display: block; width: 100%; height: calc(100% - 34px); object-fit: cover; }
+.fan-card span { display: block; padding-top: 6px; font-family: var(--serif); font-size: clamp(.82rem, 1vw, 1rem); line-height: 1.2; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* a postcard rises out of the hand along its own slant and keeps its place in the hand (no jump to the front) */
+.fan-card.up, .fan-card:focus-visible { --lift: -38px; box-shadow: 0 2px 4px rgba(21, 26, 24, .12), 0 34px 50px -20px rgba(21, 26, 24, .5); }
+@media (hover: hover) and (pointer: fine) {
+  .fan-card:hover { --lift: -38px; box-shadow: 0 2px 4px rgba(21, 26, 24, .12), 0 34px 50px -20px rgba(21, 26, 24, .5); }
