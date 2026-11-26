@@ -343,3 +343,22 @@
     if (og) og.content = document.title;
     wire();
     layoutYear();
+    applyFilter(false);
+    showWeather();
+    envelope(false);
+    reveal();
+  }
+
+  /* ---------- behaviour ---------- */
+  const deck = () => $('deck');
+  const items = () => [...deck().children].filter(li => !li.hidden);
+
+  function flip(pc, on) {
+    pc.classList.remove('tilting');
+    pc.classList.toggle('flip', on);
+    pc.querySelector('.pc-front').inert = on;
+    pc.querySelector('.pc-back').inert = !on;
+    if (on) pc.querySelector('.add2').focus({ preventScroll: true });
+  }
+
+  function wire() {
