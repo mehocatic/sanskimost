@@ -1012,6 +1012,10 @@ I18N.bs = {
   'vis.deck.hint.mouse': 'Kliknite razglednicu da je okrenete.',
   'vis.f.label': 'Prikaži razglednice',
   'vis.f.all': 'Sve',
+  'vis.f.cave': 'Pećine',
+  'vis.f.town': 'U gradu',
+  'vis.turn': 'Okreni razglednicu: {name}',
+  'vis.turn.back': 'Okreni nazad',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

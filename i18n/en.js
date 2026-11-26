@@ -1010,6 +1010,10 @@ I18N.en = {
   'vis.deck.hint.mouse': 'Click a postcard to turn it over.',
   'vis.f.label': 'Show postcards',
   'vis.f.all': 'All',
+  'vis.f.cave': 'Caves',
+  'vis.f.town': 'In town',
+  'vis.turn': 'Turn the postcard over: {name}',
+  'vis.turn.back': 'Turn back',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
