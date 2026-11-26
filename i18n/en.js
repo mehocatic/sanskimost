@@ -1038,6 +1038,10 @@ I18N.en = {
   'vis.plan.one': '{n} place',
   'vis.plan.many': '{n} places',
   'vis.plan.open': 'Open the plan',
+  'vis.plan.empty': 'The plan is empty. Add postcards or take one of the ready plans.',
+  'vis.plan.order': 'Sorted from the nearest place to the farthest.',
+  'vis.plan.map': 'The plan on the map',
+  'vis.plan.share': 'Send the plan',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',

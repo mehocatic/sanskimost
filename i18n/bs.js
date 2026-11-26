@@ -1040,6 +1040,10 @@ I18N.bs = {
   'vis.plan.one': '{n} mjesto',
   'vis.plan.many': '{n} mjesta',
   'vis.plan.open': 'Otvori plan',
+  'vis.plan.empty': 'Plan je prazan. Dodajte razglednice ili uzmite jedan od gotovih planova.',
+  'vis.plan.order': 'Poredano od najbližeg prema najdaljem mjestu.',
+  'vis.plan.map': 'Plan na karti',
+  'vis.plan.share': 'Pošalji plan',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
