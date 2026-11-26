@@ -151,3 +151,22 @@
           </div>
           <div class="pc-face pc-back" inert>
             <div class="pc-top">
+              <h3>${esc(name)}</h3>
+              <span class="stamp"><img src="${c.stamp}" alt="" loading="lazy" decoding="async">${stampVal ? `<b>${esc(stampVal)}</b>` : ''}</span>
+            </div>
+            <span class="pm">${postmark('Sanski Most', tagName(c.tags[0]), dmy(today).slice(0, -5), '')}</span>
+            <div class="pc-body">
+              <p class="pc-msg">${esc(msg)}</p>
+              ${ps ? `<p class="pc-ps"><i>P. S.</i> ${esc(ps)}</p>` : ''}
+              <dl class="pc-lines">${lines.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+            </div>
+            <div class="pc-act">
+              <button class="add2" type="button" aria-pressed="${inPlan}">${esc(t(inPlan ? 'vis.remove' : 'vis.add'))}</button>
+              ${page}${map}
+              <button class="turnback" type="button" aria-label="${esc(t('vis.turn.back'))}">↺</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </li>`;
+  }
