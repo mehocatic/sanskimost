@@ -170,3 +170,22 @@
       </article>
     </li>`;
   }
+
+  const FAN = ['mulez', 'dabarska', 'kamengrad', 'blihe', 'hamzibegova', 'bobijasko-oko', 'sana'];
+  // the year: two seasons (from month, day to month, day; months from 0) and three days, each with a photo of the place it is about
+  const SEASONS = [
+    { k: 'plan.y.spring', from: [2, 1], to: [4, 31], img: 'photos/bobijasko-oko.webp' },
+    { k: 'plan.y.summer', from: [5, 1], to: [7, 31], img: 'photos/dabarska7.webp' }
+  ];
+  const DAYS = () => [
+    { k: 'plan.y.musalla', at: firstFriJuly(), img: 'photos/musalla2.webp' },
+    { k: 'plan.y.sana', at: next(7, 20), img: 'photos/grad/skokovi-masinski.webp' },
+    { k: 'plan.y.oct', at: next(10, 10), img: 'photos/grad/grad-u-sumrak.webp' }
+  ];
+  const ROADS = [['1 h 45', 'Bihać', 'plan.get.bihac'], ['2 h 45', 'Zagreb', 'plan.get.zagreb'], ['4 h', 'Sarajevo', 'plan.get.sarajevo']];
+
+  /* ---------- the year: the next twelve months from the first of this month ---------- */
+  function yearItems() {
+    const S = new Date(today.getFullYear(), today.getMonth(), 1), E = new Date(today.getFullYear() + 1, today.getMonth(), 1);
+    const pos = d => Math.max(0, Math.min(100, (d - S) / (E - S) * 100));
+    const seasons = SEASONS.map(x => {
