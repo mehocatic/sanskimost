@@ -630,3 +630,22 @@
     pm.innerHTML = postmark('Sanski Most', dmy(today), `${Math.round(wx.temp)}°C`, sky.length > 14 ? '' : sky);
   }
   (async () => {
+    try {
+      const ac = new AbortController(); setTimeout(() => ac.abort(), 7000);
+      const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${CENTRE[0]}&longitude=${CENTRE[1]}&current=temperature_2m,weather_code&daily=sunset&forecast_days=1&timezone=Europe%2FSarajevo`, { signal: ac.signal });
+      if (!r.ok) return;
+      const j = await r.json(), c = j.current || {};
+      if (typeof c.temperature_2m !== 'number') return;
+      const set = j.daily && j.daily.sunset && j.daily.sunset[0], hm = set ? set.slice(11, 16) : '';
+      const past = !!set && new Date().toLocaleTimeString('en-GB', { timeZone: 'Europe/Sarajevo', hour: '2-digit', minute: '2-digit' }) > hm;
+      wx = { temp: c.temperature_2m, code: c.weather_code, hm, past };
+      showWeather();
+    } catch (e) { /* no weather: the postmark shows the date only */ }
+  })();
+
+  phone.addEventListener('change', onDeckScroll);
+  addEventListener('resize', () => { onDeckScroll(); layoutYear(); });
+  addEventListener('langchange', () => { build(); if (sheet.open) openSheet(); });
+  build();
+  if (received) openSheet();
+})();
