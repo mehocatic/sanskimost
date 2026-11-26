@@ -1002,6 +1002,10 @@ I18N.en = {
   'pv.in.days': 'in {n} days',
   'pv.weather': 'Weather: Open-Meteo.',
   // Visit page (plan.js): the postcards, the plan and the ready plans
+  'vis.title': 'What to visit in Sanski Most',
+  'vis.lead': 'Each place is a postcard. Turn it over for the distance and notes, and put the places you want to see into your plan.',
+  'vis.go': 'See the postcards',
+  'vis.deck.title': 'Postcards',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',

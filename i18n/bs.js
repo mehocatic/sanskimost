@@ -1004,6 +1004,10 @@ I18N.bs = {
   'pv.in.days': 'za {n} dana',
   'pv.weather': 'Vrijeme: Open-Meteo.',
   // Visit page (plan.js): the postcards, the plan and the ready plans
+  'vis.title': 'Šta posjetiti u Sanskom Mostu',
+  'vis.lead': 'Svako mjesto je jedna razglednica. Okrenite je za udaljenost i napomene, a mjesta koja želite vidjeti stavite u svoj plan.',
+  'vis.go': 'Pogledajte razglednice',
+  'vis.deck.title': 'Razglednice',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
