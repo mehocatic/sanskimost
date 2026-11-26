@@ -390,3 +390,19 @@
   .fan-card { bottom: 8%; transition-duration: .55s; }
   .v-go { margin-top: 1.5rem; }
   .deck {
+    display: flex; gap: 16px; margin-top: 22px; padding: 14px calc((100vw - var(--card-w)) / 2) 26px;
+    overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain;
+  }
+  .deck::-webkit-scrollbar { display: none; }
+  .deck > li { flex: none; width: var(--card-w); scroll-snap-align: center; transition: transform .2s linear, opacity .2s linear; }
+  .pc:hover { --rot: var(--rot0, 0deg); }
+  .deck-nav { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 0 var(--gutter); }
+  .deck-nav button { width: 48px; height: 48px; border: 1px solid var(--rule); border-radius: 50%; background: none; cursor: pointer; font-size: 1.1rem; }
+  .deck-nav button:disabled { opacity: .3; cursor: default; }
+  .deck-nav span { min-width: 5.5em; text-align: center; font-size: .86rem; color: var(--fg-muted); font-variant-numeric: tabular-nums; }
+  .pc-name { font-size: 1.26rem; }
+  .v-deck { padding-bottom: 96px; }
+  .env { left: auto; right: 12px; width: 160px; height: 88px; transform: none; }
+  .env[hidden] { transform: translateY(140%); }
+  .env:hover { transform: none; }
+  .env-back, .env-front, .env-flap { height: 62px; }
