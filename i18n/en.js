@@ -1042,6 +1042,10 @@ I18N.en = {
   'vis.plan.order': 'Sorted from the nearest place to the farthest.',
   'vis.plan.map': 'The plan on the map',
   'vis.plan.share': 'Send the plan',
+  'vis.plan.share.text': 'A plan for a visit to Sanski Most',
+  'vis.plan.copied': 'The link to the plan is copied.',
+  'vis.plan.clear': 'Clear the plan',
+  'vis.plan.received': 'This plan was sent to you as a link. You can change it.',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',

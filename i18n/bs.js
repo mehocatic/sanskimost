@@ -1044,6 +1044,10 @@ I18N.bs = {
   'vis.plan.order': 'Poredano od najbližeg prema najdaljem mjestu.',
   'vis.plan.map': 'Plan na karti',
   'vis.plan.share': 'Pošalji plan',
+  'vis.plan.share.text': 'Plan posjete Sanskom Mostu',
+  'vis.plan.copied': 'Link do plana je kopiran.',
+  'vis.plan.clear': 'Isprazni plan',
+  'vis.plan.received': 'Ovaj plan vam je poslan linkom. Možete ga mijenjati.',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
