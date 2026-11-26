@@ -21,7 +21,7 @@ window.SNIMCI = {
       title: 'Presuda Pretresnog vijeća: Radoslav Brđanin' },
     { id: 'stanisic-simatovic', cat: 'tribunal', y: 2023, min: 30, yt: 'jk93wI3lDLo', cover: 'jk93wI3lDLo.webp', src: 'SENSE CENTAR / MRMKS',
       title: 'Stanišić i Simatović – Žalbena presuda' }, // TODO(verify) "Sanski Most 1992. i 1995." in the description
-    { id: 'rajif-begic', cat: 'logori', y: 1992, min: 12, yt: 'difjNxFJv-8', src: 'MREŽA REKOM',
+    { id: 'rajif-begic', cat: 'logori', y: 1992, min: 12, yt: 'difjNxFJv-8', cover: 'difjNxFJv-8.webp', src: 'MREŽA REKOM',
       title: 'Svjedočenje: Rajif Begić (Vrhpoljski most)' },
     { id: 'sense-arhiva', cat: 'tribunal', y: 1992, min: 25, yt: 'ORKzfG1GbUM', src: 'SENSE TRANSITIONAL JUSTICE',
       title: 'Arhiva slučajeva: Sanski Most 1992' }, // TODO(verify) "sistematskim zatvaranjima" and the list of places
