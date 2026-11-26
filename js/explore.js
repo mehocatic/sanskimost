@@ -1,7 +1,7 @@
 // Map page: the points from poi.js, coloured by category. Map data: OpenStreetMap contributors.
 // - one category at a time (or all), kept in the URL hash (#water), so it works without localStorage
 // - a list of the visible points; a click centres the map on the point and opens its popup
-// - ?route=<id> (routes.js) shows only that route's stops, with a line through them in order
+// - ?route=<id> (routes.js) shows only that route's stops, with a line through them in order; ?places=a,b does the same for a plan from plan.html
 // - points close together are clustered until zoom 16
 // - search by name (with the category filter) and "My location" (distances in the list, nearest first)
 (() => {
@@ -21,7 +21,10 @@
   const CATS = POI_CATS.filter(c => points.some(p => p.cat === c.id));
   const colorOf = id => (POI_CATS.find(c => c.id === id) || {}).color;
   const places = Object.fromEntries(PLACES.map(p => [p.slug, p]));
-  const route = ROUTES.find(r => r.id === new URLSearchParams(location.search).get('route')) || null;
+  // ?places=a,b,c (the plan from plan.html) is shown like a route named "Your plan", in the order given
+  const qs = new URLSearchParams(location.search);
+  const own = [...new Set((qs.get('places') || '').split(',').filter(s => places[s]))];
+  const route = ROUTES.find(r => r.id === qs.get('route')) || (own.length ? { id: 'plan', stops: own.map(slug => ({ slug })) } : null);
 
   // texts in the current language; a point with a page uses the live texts of places.js / i18n/bs.js
   const nameOf = p => (p.slug && places[p.slug]) ? I18n.place(places[p.slug], 'name') : (p.name[I18n.lang] || p.name.en);
