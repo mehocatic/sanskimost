@@ -422,3 +422,18 @@
   .yr-list .yr-today > i { background: var(--paper); }
   .yr-list .yr-today b { font-weight: 500; }
   .yr-list .yr-c img { width: 64px; height: 64px; }
+  .sheet { margin: auto 0 0; width: 100vw; height: auto; max-height: 88dvh; border-radius: 10px 10px 0 0; }
+  .sheet[open] { animation: sheet-up .45s cubic-bezier(.2, .8, .2, 1); }
+  .sheet-in { min-height: 0; }
+  .sh-head h2 { font-size: 2.2rem; }
+}
+@keyframes sheet-up { from { transform: translateY(100%); } }
+@media (max-width: 380px) {
+  .pc-back { padding: 14px 13px 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc, .pc-in, .fan-card, .env, .rv, .pc-photo img, .pack-fan span { transition: none !important; }
+  .rv { opacity: 1; transform: none; }
+  .sheet[open], .env.bump { animation: none; }
+}
