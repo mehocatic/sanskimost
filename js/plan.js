@@ -36,3 +36,22 @@
      ps: the P.S. on the back; when / entry: extra lines on the back. The texts are the place texts or existing keys. */
   const CARDS = [
     { id: 'blihe', tags: ['water', 'nature'], img: ['photos/bliha3.webp', 'photos/bliha3-721.webp 721w, photos/bliha3.webp 1080w'], stamp: 'photos/arhiv/blihe-1942.webp', km: 14, ps: () => t('note.cvjetna') },
+    { id: 'sana', tags: ['water', 'town'], img: ['photos/grad/masinski-most-sumrak.webp'], stamp: 'photos/arhiv/sana-1912.webp', coords: CENTRE, map: 'explore#water',
+      name: () => t('vis.sana.name'), msg: () => t('plan.sum.swim'), ps: () => t('plan.sum.kayak'), when: () => `${t('plan.y.sana.when')} · ${inDays(daysTo(next(7, 20)))}` },
+    { id: 'kamengrad', tags: ['past'], img: ['photos/kamengrad.webp'], stamp: 'photos/kamengrad2.webp', ps: () => P('kamengrad', 'note') },
+    { id: 'hamzibegova', tags: ['past', 'town'], img: ['photos/hamzibegova5.webp', 'photos/hamzibegova5-626.webp 626w, photos/hamzibegova5.webp 1024w'], stamp: 'photos/arhiv/hamzibegova-1946.webp' },
+    { id: 'dabarska', tags: ['cave', 'water'], img: ['photos/dabarska7.webp'], stamp: 'photos/dabarska6.jpg', ps: () => P('dabarska', 'note') },
+    { id: 'hrustovacka', tags: ['cave', 'past'], img: ['photos/hrustovacka3.webp'], stamp: 'photos/hrustovacka4.webp', km: 13, ps: () => P('hrustovacka', 'note'), entry: () => t('pv.free') },
+    { id: 'bobijasko-oko', tags: ['water', 'nature'], img: ['photos/bobijasko-oko2.webp'], stamp: 'photos/bobijasko-oko4.webp', km: 20, ps: () => t('note.bobijasko'), when: () => t('plan.y.spring.when') },
+    { id: 'mulez', tags: ['nature'], img: ['photos/mulez4.webp', 'photos/mulez4-675.webp 675w, photos/mulez4.webp 1200w'], stamp: 'photos/mulez3.jpg', ps: () => P('mulez', 'note') },
+    { id: 'musalla', tags: ['past'], img: ['photos/musalla.webp'], stamp: 'photos/arhiv/musala-razglednica.webp', ps: () => t('plan.y.musalla'),
+      when: () => `${t('plan.y.musalla.when')} · ${inDays(daysTo(firstFriJuly()))}` },
+    { id: 'grmec-forest', tags: ['nature'], img: ['photos/grmec3.webp'], stamp: 'photos/grmec.jpg', km: 17, air: true },
+    { id: 'korcanica', tags: ['past', 'nature'], img: ['photos/korcanica-snijeg.webp'], stamp: 'photos/arhiv/korcanica-razglednica-1001.webp', km: 32 },
+    { id: 'stari-majdan-most', tags: ['past'], img: ['photos/stari-majdan-most-1080.webp'], stamp: 'photos/stari-majdan-most-1080.webp' },
+    { id: 'zavnobih', tags: ['past', 'town'], img: ['photos/zavnobih.webp'], stamp: 'photos/arhiv/delegati-zavnobih.webp' },
+    { id: 'turbe-alagic', tags: ['past'], img: ['photos/turbe3.webp'], stamp: 'photos/turbe.webp' },
+    { id: 'susnjar', tags: ['past'], img: ['photos/susnjar-1080.webp'], stamp: 'photos/susnjar-1080.webp' }
+  ];
+  const card = Object.fromEntries(CARDS.map(c => [c.id, c]));
+  const TAGS = ['water', 'cave', 'past', 'nature', 'town'];
