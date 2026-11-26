@@ -265,3 +265,18 @@
 .yr-c { display: flex; align-items: flex-start; gap: 12px; }
 .yr-c img { flex: none; width: 56px; height: 56px; object-fit: cover; border-radius: 3px; }
 .yr-c b { display: block; font-weight: 500; font-size: .95rem; line-height: 1.3; }
+.yr-c span { display: block; margin-top: 2px; font-size: .86rem; line-height: 1.4; color: var(--fg-soft); }
+.yr-c em { display: block; margin-top: 4px; font-style: normal; font-size: .8rem; font-weight: 500; color: var(--sand); }
+.yr-seasons { position: relative; height: 140px; margin-top: 14px; }
+.yr-season {
+  position: absolute; top: 0; bottom: 0; padding: 14px 14px 12px; overflow: hidden;
+  background: linear-gradient(rgba(127, 214, 220, .14), rgba(127, 214, 220, .04)); border-top: 3px solid var(--sand); border-radius: 0 0 4px 4px;
+}
+.yr-track { position: relative; height: 28px; margin-top: 16px; }
+.yr-track::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(127, 214, 220, .4); }
+.yr-dot { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--sand); box-shadow: 0 0 0 5px rgba(127, 214, 220, .18); }
+.yr-days { position: relative; height: calc(var(--rows, 2) * (var(--row) + 14px)); margin-top: 14px; }
+.yr-day { --r: 0; position: absolute; top: calc(var(--r) * (var(--row) + 14px)); width: 270px; max-width: 46%; min-height: calc(var(--row) - 10px); padding: 14px; background: rgba(246, 244, 238, .05); border-left: 2px solid var(--sand); border-radius: 0 4px 4px 0; }
+.yr-day::before { content: ""; position: absolute; left: -2px; bottom: 100%; width: 2px; height: calc(21px + var(--r) * (var(--row) + 14px)); background: var(--sand); }
+.yr-day.to-left { transform: translateX(-100%); border-left: 0; border-right: 2px solid var(--sand); border-radius: 4px 0 0 4px; }
+.yr-day.to-left::before { left: auto; right: -2px; }
