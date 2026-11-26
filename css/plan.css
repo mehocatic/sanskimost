@@ -92,3 +92,19 @@
   justify-items: center; gap: clamp(36px, 4vw, 56px) clamp(20px, 2.4vw, 36px); margin-top: clamp(28px, 4vw, 48px); padding: 0 var(--gutter);
 }
 .deck > li { width: 100%; max-width: var(--card-w); }
+.deck > li[hidden] { display: none; }
+.deck-nav { display: none; }
+
+.pc { --rot: 0deg; --tx: 0deg; --ty: 0deg; position: relative; width: 100%; aspect-ratio: 5 / 7.3; perspective: 1600px; transform: rotate(var(--rot)); transition: transform .5s cubic-bezier(.2, .8, .2, 1); }
+.pc:hover { --rot: 0deg; }
+.pc-in {
+  position: relative; width: 100%; height: 100%; transform-style: preserve-3d;
+  transform: rotateX(var(--ty)) rotateY(var(--tx));
+  transition: transform .8s cubic-bezier(.25, .8, .25, 1);
+}
+.pc.flip .pc-in { transform: rotateX(var(--ty)) rotateY(calc(180deg + var(--tx))); }
+.pc.tilting .pc-in { transition: transform .12s linear; }
+.pc-face {
+  position: absolute; inset: 0; overflow: hidden; border-radius: 3px; background: var(--card); color: var(--ink);
+  -webkit-backface-visibility: hidden; backface-visibility: hidden;
+  box-shadow: 0 1px 2px rgba(21, 26, 24, .1), 0 22px 40px -22px rgba(21, 26, 24, .55);
