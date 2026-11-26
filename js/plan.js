@@ -477,3 +477,22 @@
       $('dk-prev').disabled = best === 0;
       $('dk-next').disabled = best === list.length - 1;
       d.dataset.at = best;
+    });
+  }
+  function center(li, smooth) {
+    const d = deck();
+    d.scrollTo({ left: li.offsetLeft - (d.clientWidth - li.offsetWidth) / 2, behavior: smooth && !reduce ? 'smooth' : 'auto' });
+  }
+  function step(dir) {
+    const list = items(), i = Math.max(0, Math.min(list.length - 1, (+deck().dataset.at || 0) + dir));
+    if (list[i]) center(list[i], true);
+  }
+
+  // from the hand at the top: show that postcard and turn it over
+  function openCard(id) {
+    if (filter !== 'all') { filter = 'all'; applyFilter(false); }
+    const li = deck().querySelector(`li[data-id="${id}"]`);
+    $('karte').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    if (phone.matches) center(li, false);
+    else setTimeout(() => li.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }), reduce ? 0 : 450);
+    setTimeout(() => flip(li.querySelector('.pc'), true), reduce ? 0 : 900);
