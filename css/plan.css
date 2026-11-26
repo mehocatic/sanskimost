@@ -123,3 +123,19 @@
 .pc-dist { font-size: .78rem; color: rgba(21, 26, 24, .62); }
 .pc-turn { position: absolute; right: 12px; bottom: 26px; font-family: var(--hand); font-size: 1.15rem; color: rgba(21, 26, 24, .5); pointer-events: none; }
 
+/* the add button on the photo, and the ink mark the card gets when it is in the plan */
+.pc-add {
+  position: absolute; top: 18px; right: 18px; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px;
+  background: rgba(251, 250, 246, .94); border: 0; border-radius: 50%; cursor: pointer; color: var(--ink);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .22); transition: transform .25s ease, background .2s ease, color .2s ease;
+}
+.pc-add svg { width: 18px; height: 18px; transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+.pc-add:hover { transform: scale(1.08); }
+.pc-add[aria-pressed="true"] { background: var(--ink-stamp); color: #fff; }
+.pc-add[aria-pressed="true"] svg { transform: rotate(45deg); }
+.pc-mark {
+  position: absolute; left: 22px; top: 26px; z-index: 1; padding: 6px 12px 5px;
+  border: 2px solid currentColor; border-radius: 4px; color: #fff; background: rgba(15, 122, 133, .85);
+  font-size: .7rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; line-height: 1;
+  transform: rotate(-8deg); opacity: 0; pointer-events: none;
+}
