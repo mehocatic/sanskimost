@@ -228,3 +228,22 @@
     let best = null;
     const n = items.length, opts = 6; // 3 rows x 2 sides
     for (let code = 0; code < opts ** n; code++) {
+      let c = code, ok = true, rows = 0, lefts = 0;
+      const placed = items.map(it => { const o = c % opts; c = Math.floor(c / opts); const row = o >> 1, left = o & 1;
+        const a = left ? it.x - it.w : it.x; return { ...it, row, left, a, b: a + it.w }; });
+      for (const q of placed) {
+        if (q.a < 0 || q.b > W) { ok = false; break; }
+        rows = Math.max(rows, q.row + 1); lefts += q.left;
+      }
+      if (!ok) continue;
+      if (placed.some((q, i) => placed.some((r, j) => j > i && q.row === r.row && q.a < r.b + 12 && r.a < q.b + 12))) continue;
+      // the line down to a lower card may not run through a card above it
+      if (placed.some(q => placed.some(r => r.row < q.row && q.x > r.a - 10 && q.x < r.b + 10))) continue;
+      const score = rows * 10 + lefts;
+      if (!best || score < best.score) best = { score, rows, placed };
+    }
+    if (!best) return;
+    best.placed.forEach(q => { q.el.classList.toggle('to-left', !!q.left); q.el.style.setProperty('--r', q.row); });
+    box.style.setProperty('--rows', best.rows);
+  }
+
