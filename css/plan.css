@@ -343,3 +343,19 @@
 .sh-head h2 { font-size: 2.6rem; line-height: 1; }
 .sh-head p { margin-top: .3rem; font-family: var(--hand); font-size: 1.3rem; color: rgba(21, 26, 24, .6); }
 .sh-x { flex: none; min-height: 44px; padding: 0 1rem; background: none; border: 1px solid rgba(21, 26, 24, .25); border-radius: 999px; cursor: pointer; font-size: .86rem; }
+.sh-note { margin-top: 1rem; padding: 10px 12px; background: rgba(15, 122, 133, .1); border-radius: 3px; font-size: .9rem; }
+.sh-order { margin-top: 1rem; font-size: .82rem; color: rgba(21, 26, 24, .6); }
+.sh-list { list-style: none; margin-top: .6rem; }
+.sh-list li { display: grid; grid-template-columns: 26px 64px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(21, 26, 24, .14); }
+.sh-list .n { font-family: var(--serif); font-size: 1.3rem; color: rgba(21, 26, 24, .5); text-align: center; }
+.sh-list img { width: 64px; height: 64px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, .18); }
+.sh-list a.nm { font-family: var(--serif); font-size: 1.2rem; line-height: 1.15; text-decoration: none; }
+.sh-list a.nm:hover { text-decoration: underline; }
+.sh-list .d { display: block; font-size: .78rem; color: rgba(21, 26, 24, .6); }
+.sh-list .ps { display: block; margin-top: 2px; font-family: var(--hand); font-size: 1.08rem; line-height: 1.1; color: #34505a; }
+.sh-list .rm { width: 40px; height: 40px; background: none; border: 0; border-radius: 50%; cursor: pointer; font-size: 1.3rem; color: rgba(21, 26, 24, .5); }
+.sh-list .rm:hover { background: rgba(21, 26, 24, .07); color: var(--ink); }
+.sh-empty { margin-top: 1.4rem; color: rgba(21, 26, 24, .75); }
+.sh-act { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.4rem; }
+.sh-act a, .sh-act button {
+  display: inline-flex; align-items: center; min-height: 46px; padding: 0 1.2rem; border: 1px solid var(--btn); border-radius: 999px;
