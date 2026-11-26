@@ -27,7 +27,7 @@ window.SNIMCI = {
       title: 'Arhiva slučajeva: Sanski Most 1992' }, // TODO(verify) "sistematskim zatvaranjima" and the list of places
     { id: 'dudakovic', cat: 'sana', y: 1995, min: 38, yt: 'SHHBmrlSYsw', cover: 'SHHBmrlSYsw.webp', src: 'TV VIHOR',
       title: 'General Atif Dudaković o operaciji Sana 95' }, // TODO(verify) y: an interview about 1995, probably recorded later
-    { id: 'komandanti', cat: 'sana', y: 1995, min: 42, yt: '8v2qlPPQ9bo', src: 'TV VIHOR',
+    { id: 'komandanti', cat: 'sana', y: 1995, min: 42, yt: '8v2qlPPQ9bo', cover: '8v2qlPPQ9bo.webp', src: 'TV VIHOR',
       title: 'Komandanti o operaciji SANA 95' }, // TODO(verify) y, as above
     { id: '505-brigada', cat: 'sana', y: 1995, min: 28, yt: 'uU8Uw11bupQ', src: 'INFORMATIVNA SLUŽBA 505.',
       title: '505. viteška brigada u operaciji Sana 95' },
