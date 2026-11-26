@@ -189,3 +189,22 @@
     const S = new Date(today.getFullYear(), today.getMonth(), 1), E = new Date(today.getFullYear() + 1, today.getMonth(), 1);
     const pos = d => Math.max(0, Math.min(100, (d - S) / (E - S) * 100));
     const seasons = SEASONS.map(x => {
+      const y = today.getFullYear();
+      let a = new Date(y, ...x.from), b = new Date(y, ...x.to);
+      if (b < today) { a = new Date(y + 1, ...x.from); b = new Date(y + 1, ...x.to); }
+      const now = a <= today;
+      return { ...x, band: true, a: pos(a), b: pos(b), soon: now ? 0 : daysTo(a), when: now ? t('vis.year.now') : inDays(daysTo(a)) };
+    });
+    const days = DAYS().map(x => ({ ...x, p: pos(x.at), soon: daysTo(x.at), when: inDays(daysTo(x.at)) }));
+    return { S, pos, seasons, days };
+  }
+  function yearHTML() {
+    const { S, pos, seasons, days } = yearItems();
+    const names = t('vis.months').split(',');
+    const months = Array.from({ length: 12 }, (_, i) => new Date(S.getFullYear(), S.getMonth() + i, 1));
+    const box = x => `<div class="yr-c"><img src="${x.img}" alt="" loading="lazy" decoding="async"><div><b>${esc(t(x.k + '.when'))}</b><span>${esc(t(x.k))}</span><em>${esc(x.when)}</em></div></div>`;
+    const wide = `<div class="yr" id="yr">
+        <div class="yr-months">${months.map((m, i) => `<span class="${i === 0 ? 'cur' : ''}">${esc(names[m.getMonth()])}${m.getMonth() === 0 ? ` <small>${m.getFullYear()}</small>` : ''}</span>`).join('')}</div>
+        <div class="yr-seasons">${seasons.map(x => `<div class="yr-season" style="left:${x.a}%;width:${x.b - x.a}%">${box(x)}</div>`).join('')}</div>
+        <div class="yr-track">${days.map(x => `<span class="yr-dot" style="left:${x.p}%"></span>`).join('')}</div>
+        <div class="yr-days">${days.map(x => `<div class="yr-day" data-p="${x.p}" style="left:${x.p}%">${box(x)}</div>`).join('')}</div>
