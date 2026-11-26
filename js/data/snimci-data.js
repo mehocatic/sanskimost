@@ -33,9 +33,9 @@ window.SNIMCI = {
       title: '505. viteška brigada u operaciji Sana 95' },
     { id: 'domazeti', cat: 'sana', y: 1995, min: 15, yt: 'rbPwVppGwsY', cover: 'rbPwVppGwsY-arhiv.webp', src: 'BIR TV REPORTAŽA',
       title: 'Sanski Most: Zločin u Domazetima 1995.' }, // TODO(verify) the number 15 in the description
-    { id: 'krings', cat: 'logori', y: 1992, min: 10, yt: 'K7gkwjHumn4', cover: 'K7gkwjHumn4.webp', src: 'RTV USK',
+    { id: 'krings', cat: 'logori', y: 1992, min: 10, yt: 'K7gkwjHumn4', cover: 'K7gkwjHumn4-arhiv.webp', src: 'RTV USK',
       title: 'Sjećanje na žrtve logora Krings' },
-    { id: 'hrastova-glavica', cat: 'logori', y: 1992, min: 14, yt: 'RzRyGKg92S0', cover: 'RzRyGKg92S0.webp', src: 'RTV USK',
+    { id: 'hrastova-glavica', cat: 'logori', y: 1992, min: 14, yt: 'RzRyGKg92S0', cover: 'RzRyGKg92S0-arhiv.webp', src: 'RTV USK',
       title: 'Masovna grobnica Hrastova glavica' }, // TODO(verify) "prebačenim iz logora Omarska i Keraterm"
     { id: 'operacija-sana-95', cat: 'doc', y: 2015, min: 98, yt: 'RohHZQC62u4', cover: 'RohHZQC62u4.webp', src: 'AUTOR: AVDO HUSEINOVIĆ',
       title: 'Operacija Sana 95 – Nedovršena pobjeda' },
