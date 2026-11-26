@@ -1020,6 +1020,10 @@ I18N.bs = {
   'vis.add.aria': 'Dodaj u plan: {name}',
   'vis.added': 'U planu',
   'vis.remove': 'Izbaci iz plana',
+  'vis.remove.aria': 'Izbaci iz plana: {name}',
+  'vis.k.dist': 'Udaljenost',
+  'vis.k.dir': 'Smjer',
+  'vis.k.when': 'Kada',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

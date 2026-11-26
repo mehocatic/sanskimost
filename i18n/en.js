@@ -1018,6 +1018,10 @@ I18N.en = {
   'vis.add.aria': 'Add to plan: {name}',
   'vis.added': 'In your plan',
   'vis.remove': 'Remove from plan',
+  'vis.remove.aria': 'Remove from plan: {name}',
+  'vis.k.dist': 'Distance',
+  'vis.k.dir': 'Direction',
+  'vis.k.when': 'When',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
