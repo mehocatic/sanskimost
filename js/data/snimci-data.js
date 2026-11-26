@@ -37,7 +37,7 @@ window.SNIMCI = {
       title: 'Sjećanje na žrtve logora Krings' },
     { id: 'hrastova-glavica', cat: 'logori', y: 1992, min: 14, yt: 'RzRyGKg92S0', cover: 'RzRyGKg92S0.webp', src: 'RTV USK',
       title: 'Masovna grobnica Hrastova glavica' }, // TODO(verify) "prebačenim iz logora Omarska i Keraterm"
-    { id: 'operacija-sana-95', cat: 'doc', y: 2015, min: 98, yt: 'RohHZQC62u4', src: 'AUTOR: AVDO HUSEINOVIĆ',
+    { id: 'operacija-sana-95', cat: 'doc', y: 2015, min: 98, yt: 'RohHZQC62u4', cover: 'RohHZQC62u4.webp', src: 'AUTOR: AVDO HUSEINOVIĆ',
       title: 'Operacija Sana 95 – Nedovršena pobjeda' },
     { id: 'zagonetka-alagic', cat: 'doc', y: 2018, min: 110, yt: 'PAaI4FhWUws', src: '7. KORPUS / MEHMED ALAGIĆ',
       title: 'Zagonetka Alagić – General koji je uspijevao nemoguće' }, // "jedini komandant 7. korpusa ARBiH": wording from Meho
