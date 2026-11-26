@@ -6,7 +6,7 @@
 // title and src stay as published (they are not translated).
 //
 // TODO(verify) for the whole list: the descriptions come from Meho and are not in FACTS.md, except the Vrhpolje bridge (31 May 1992).
-// y: stays as it is for now; Meho will replace the years on the spines with pictures later.
+// cover: optional local WebP filename under photos/snimci/ for the sleeve photo.
 window.SNIMCI = {
   films: [
     { id: 'aziz-catic', cat: 'logori', y: 1992, min: 42, yt: 'nh4WTYZyMBg', cover: 'nh4WTYZyMBg.webp', src: 'USMENO SVJEDOČANSTVO / LOGORAŠI',
