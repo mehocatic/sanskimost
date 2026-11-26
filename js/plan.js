@@ -573,3 +573,22 @@
       ${ids.length ? `<p class="sh-order">${esc(t('vis.plan.order'))}</p>
       <ol class="sh-list">${ids.map((id, i) => { const c = card[id], name = nameOf(c), ps = c.ps ? c.ps() : '';
         return `<li><span class="n">${i + 1}</span><img src="${thumb(c)}" alt="" loading="lazy">
+          <div>${bySlug[id] ? `<a class="nm" href="place?slug=${encodeURIComponent(id)}">${esc(name)}</a>` : `<span class="nm" style="font-family:var(--serif);font-size:1.2rem">${esc(name)}</span>`}
+          <span class="d">${esc(distLong(c))}</span>${ps ? `<span class="ps">${esc(ps)}</span>` : ''}</div>
+          <button class="rm" type="button" data-rm="${id}" aria-label="${esc(t('vis.remove.aria', { name }))}">×</button></li>`; }).join('')}</ol>
+      <div class="sh-act">
+        <a href="explore?places=${ids.map(encodeURIComponent).join(',')}">${esc(t('vis.plan.map'))}</a>
+        <button class="ghost" type="button" data-share>${esc(t('vis.plan.share'))}</button>
+        <button class="clear" type="button" data-clear>${esc(t('vis.plan.clear'))}</button>
+      </div>` : `<p class="sh-empty">${esc(t('vis.plan.empty'))}</p>`}
+      ${ready}`;
+  }
+  function openSheet() {
+    $('sheet-in').innerHTML = sheetHTML();
+    if (!sheet.open) sheet.showModal();
+  }
+  sheet.addEventListener('click', e => {
+    if (e.target === sheet || e.target.closest('[data-close]')) { sheet.close(); return; }
+    const rm = e.target.closest('[data-rm]');
+    if (rm) { plan = plan.filter(x => x !== rm.dataset.rm); save(); syncCards(); envelope(false); openSheet(); return; }
+    const take = e.target.closest('[data-route]');
