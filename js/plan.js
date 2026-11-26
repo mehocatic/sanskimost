@@ -55,3 +55,22 @@
   ];
   const card = Object.fromEntries(CARDS.map(c => [c.id, c]));
   const TAGS = ['water', 'cave', 'past', 'nature', 'town'];
+  const tagName = k => ({ water: t('cat.water'), nature: t('cat.nature'), past: t('cat.history'), cave: t('vis.f.cave'), town: t('vis.f.town') }[k]);
+  const nameOf = c => c.name ? c.name() : P(c.id, 'name');
+  const thumb = c => c.img[1] ? c.img[1].split(' ')[0] : c.img[0];
+
+  /* ---------- where: distance and direction from the centre ---------- */
+  const poi = id => (typeof POI !== 'undefined' ? POI : []).find(p => p.slug === id && p.coords); // poi.js declares POI with const, so it is not on window
+  const coordsOf = c => c.coords || (bySlug[c.id] && bySlug[c.id].coords) || (poi(c.id) && poi(c.id).coords) || null;
+  const rad = d => d * Math.PI / 180;
+  function geo(c) {
+    const co = coordsOf(c);
+    if (!co) return null;
+    const [a1, b1] = CENTRE.map(rad), [a2, b2] = co.map(rad);
+    const h = Math.sin((a2 - a1) / 2) ** 2 + Math.cos(a1) * Math.cos(a2) * Math.sin((b2 - b1) / 2) ** 2;
+    const km = 2 * 6371 * Math.asin(Math.sqrt(h));
+    const y = Math.sin(b2 - b1) * Math.cos(a2), x = Math.cos(a1) * Math.sin(a2) - Math.sin(a1) * Math.cos(a2) * Math.cos(b2 - b1);
+    const deg = (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+    return { km, dir: Math.round(deg / 45) % 8 };
+  }
+  const num = km => km >= 10 ? String(Math.round(km)) : (Math.round(km * 10) / 10).toString().replace('.', I18n.lang === 'bs' ? ',' : '.');
