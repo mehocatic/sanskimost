@@ -218,3 +218,18 @@
 .pack ol li span:first-of-type { flex: 1; }
 .pack ol .km { color: var(--fg-muted); white-space: nowrap; }
 .pack .extra { margin-top: .6rem; font-family: var(--hand); font-size: 1.2rem; line-height: 1.15; color: #34505a; }
+.visit-page main .pack .take {
+  align-self: flex-start; min-height: 44px; margin-top: 1.4rem; padding: 0 1.2rem; border: 1px solid var(--btn); border-radius: 999px;
+  background: transparent; color: var(--btn); cursor: pointer; font-size: .9rem; font-weight: 500; transition: background .2s ease, color .2s ease;
+}
+.visit-page main .pack .take:hover { background: var(--btn); color: var(--paper); }
+
+/* ---------- the practical part (dark) ---------- */
+.v-info { padding: clamp(56px, 10svh, 120px) var(--gutter) clamp(48px, 8svh, 96px); }
+.v-info > h2 { font-size: clamp(2.6rem, 6vw, 5.4rem); }
+.v-info > .v-sub { margin-top: 1rem; max-width: 36rem; color: var(--fg-soft); }
+.v-info .k { display: block; margin-bottom: 1rem; font-family: var(--serif); font-size: 1.7rem; line-height: 1.1; color: var(--fg); }
+.blocks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 5vw, 72px) clamp(32px, 5vw, 80px); margin-top: clamp(36px, 5vw, 64px); }
+.blk.wide { grid-column: 1 / -1; }
+.blk p { color: var(--fg-soft); }
+.blk p + p { margin-top: .8rem; }
