@@ -324,3 +324,22 @@
             <span class="k">${esc(t('plan.when.eyebrow'))}</span>
             <p class="yr-sub">${esc(t('vis.year.sub'))}</p>
             ${yearHTML()}
+          </div>
+          <div class="blk wide rv">
+            <span class="k">${esc(t('plan.sum.title'))}</span>
+            <p>${esc(t('plan.sum.lead'))}</p>
+            <ul class="river-l">${['plan.sum.fest', 'plan.sum.swim', 'plan.sum.fish', 'plan.sum.kayak'].map(k => `<li><h3>${esc(t(k + '.t'))}</h3><p>${esc(t(k))}</p></li>`).join('')}</ul>
+          </div>
+        </div>
+        <div class="v-end rv">
+          <h3>${esc(t('plan.cta.title'))}</h3>
+          <a class="cta" href="explore">${esc(t('plan.cta.btn'))} <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="fine" style="margin-top:2rem">${esc(t('routes.conditions'))} ${esc(t('pv.weather'))}</p>
+      </section>`;
+
+    document.title = `${t('nav.plan')} · Sanski Most`;
+    const og = document.querySelector('meta[property="og:title"]');
+    if (og) og.content = document.title;
+    wire();
+    layoutYear();
