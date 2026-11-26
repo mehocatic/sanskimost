@@ -534,3 +534,23 @@
     document.body.appendChild(f);
     // to the envelope where it settles (it may still be sliding in from below)
     const e = $('env').getBoundingClientRect(), bottom = parseFloat(getComputedStyle($('env')).bottom) || 14;
+    const dx = e.left + e.width / 2 - (r.left + r.width / 2), dy = innerHeight - bottom - e.height / 2 - (r.top + r.height / 2);
+    f.animate([
+      { transform: 'translate(0,0) rotate(0deg) scale(1)', opacity: 1 },
+      { transform: `translate(${dx * .55}px, ${dy * .35 - 60}px) rotate(-10deg) scale(.7)`, opacity: 1, offset: .45 },
+      { transform: `translate(${dx}px, ${dy}px) rotate(6deg) scale(.28)`, opacity: .2 }
+    ], { duration: 760, easing: 'cubic-bezier(.45,.05,.4,1)' }).finished.then(() => f.remove());
+  }
+
+  /* ---------- the envelope ---------- */
+  let pastTop = false;
+  function envelope(bump) {
+    const env = $('env');
+    env.hidden = !pastTop; // not over the top of the page, where the hand of postcards is
+    $('env-t').textContent = t('vis.plan.title');
+    $('env-n').textContent = plan.length;
+    env.classList.toggle('empty', !plan.length);
+    env.setAttribute('aria-label', `${t('vis.plan.open')}: ${countText(plan.length)}`);
+    $('env-cards').innerHTML = plan.slice(-3).map((id, i, a) => `<img src="${thumb(card[id])}" alt="" style="--x:${(i - (a.length - 1) / 2) * 30}px;--a:${(i - (a.length - 1) / 2) * 7}deg">`).join('');
+    if (bump && !reduce) { env.classList.remove('bump'); void env.offsetWidth; env.classList.add('bump'); }
+  }
