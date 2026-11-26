@@ -113,3 +113,22 @@
   const qp = new URLSearchParams(location.search).get('p');
   if (qp) {
     const ids = [...new Set(qp.split(',').filter(id => card[id]))];
+    if (ids.length) { plan = ids; received = true; }
+    history.replaceState(null, '', location.pathname + location.hash);
+  }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(plan)); } catch (e) { /* the plan is not remembered */ } };
+  save();
+  const sorted = () => plan.slice().sort((a, b) => kmOf(card[a]) - kmOf(card[b]));
+  const countText = n => t(one(n) ? 'vis.plan.one' : 'vis.plan.many', { n });
+
+  /* ---------- page ---------- */
+  let filter = 'all';
+  const PLUS = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+
+  function cardHTML(c, i) {
+    const name = nameOf(c), inPlan = plan.includes(c.id), rot = [-1.6, 1.2, -.7, 1.8, -1.2, .6, -1.9, 1][i % 8];
+    const msg = c.msg ? c.msg() : P(c.id, 'short');
+    const ps = c.ps ? c.ps() : '';
+    const dir = dirWord(c);
+    const lines = [[t('vis.k.dist'), distLong(c)]];
+    if (dir) lines.push([t('vis.k.dir'), cap(t('vis.dir.from', { dir }))]);
