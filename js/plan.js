@@ -304,3 +304,23 @@
               <div><dt>${esc(t('plan.get.air.k'))}</dt><dd>${esc(t('plan.get.air'))}</dd></div>
               <div><dt>${esc(t('plan.get.bus.k'))}</dt><dd>${esc(t('plan.get.bus'))}</dd></div>
               <div><dt>${esc(t('plan.get.town.k'))}</dt><dd>${esc(t('plan.get.town'))}</dd></div>
+            </dl>
+            <p class="fine" style="margin-top:.9rem">${esc(t('plan.get.note'))}</p>
+          </div>
+          <div class="blk rv">
+            <span class="k">${esc(t('plan.stay.title'))}</span>
+            <div class="stay">
+              <p><b>279</b><span>${esc(t('plan.stay.beds'))}</span></p>
+              <p><b>4</b><span>${esc(t('plan.stay.hotels'))}</span></p>
+              <p><b>25</b><span>${esc(t('plan.stay.private'))}</span></p>
+            </div>
+            <p>${esc(t('plan.stay.lead'))}</p>
+            <p>${esc(t('plan.stay.tip'))}</p>
+            <div class="spa"><span class="lbl">${esc(t('plan.stay.spa.k'))}</span><h3>${esc(t('plan.stay.spa.t'))}</h3><p>${esc(t('plan.stay.spa'))}</p></div>
+            <p style="margin-top:1.2rem"><a href="https://exploresanskimost.ba/planiraj-posjetu/" rel="noopener" target="_blank">${esc(t('plan.stay.list'))} ↗</a></p>
+            <p class="fine">${esc(t('plan.stay.tz'))} · Prijedorska 5 · <a href="tel:+38761355120">061 355 120</a></p>
+          </div>
+          <div class="blk wide rv">
+            <span class="k">${esc(t('plan.when.eyebrow'))}</span>
+            <p class="yr-sub">${esc(t('vis.year.sub'))}</p>
+            ${yearHTML()}
