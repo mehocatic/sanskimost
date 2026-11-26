@@ -23,7 +23,7 @@ window.SNIMCI = {
       title: 'Stanišić i Simatović – Žalbena presuda' }, // TODO(verify) "Sanski Most 1992. i 1995." in the description
     { id: 'rajif-begic', cat: 'logori', y: 1992, min: 12, yt: 'difjNxFJv-8', cover: 'difjNxFJv-8.webp', src: 'MREŽA REKOM',
       title: 'Svjedočenje: Rajif Begić (Vrhpoljski most)' },
-    { id: 'sense-arhiva', cat: 'tribunal', y: 1992, min: 25, yt: 'ORKzfG1GbUM', src: 'SENSE TRANSITIONAL JUSTICE',
+    { id: 'sense-arhiva', cat: 'tribunal', y: 1992, min: 25, yt: 'ORKzfG1GbUM', cover: 'ORKzfG1GbUM.webp', src: 'SENSE TRANSITIONAL JUSTICE',
       title: 'Arhiva slučajeva: Sanski Most 1992' }, // TODO(verify) "sistematskim zatvaranjima" and the list of places
     { id: 'dudakovic', cat: 'sana', y: 1995, min: 38, yt: 'SHHBmrlSYsw', src: 'TV VIHOR',
       title: 'General Atif Dudaković o operaciji Sana 95' }, // TODO(verify) y: an interview about 1995, probably recorded later
