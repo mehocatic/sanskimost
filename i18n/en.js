@@ -1006,6 +1006,10 @@ I18N.en = {
   'vis.lead': 'Each place is a postcard. Turn it over for the distance and notes, and put the places you want to see into your plan.',
   'vis.go': 'See the postcards',
   'vis.deck.title': 'Postcards',
+  'vis.deck.hint.touch': 'Swipe for the next postcard, tap to turn it over.',
+  'vis.deck.hint.mouse': 'Click a postcard to turn it over.',
+  'vis.f.label': 'Show postcards',
+  'vis.f.all': 'All',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',

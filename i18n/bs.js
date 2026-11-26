@@ -1008,6 +1008,10 @@ I18N.bs = {
   'vis.lead': 'Svako mjesto je jedna razglednica. Okrenite je za udaljenost i napomene, a mjesta koja želite vidjeti stavite u svoj plan.',
   'vis.go': 'Pogledajte razglednice',
   'vis.deck.title': 'Razglednice',
+  'vis.deck.hint.touch': 'Prevucite za sljedeću razglednicu, dodirnite da je okrenete.',
+  'vis.deck.hint.mouse': 'Kliknite razglednicu da je okrenete.',
+  'vis.f.label': 'Prikaži razglednice',
+  'vis.f.all': 'Sve',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
