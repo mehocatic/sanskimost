@@ -439,3 +439,22 @@
     });
     const pm = $('pm-hero');
     pm.animate([{ transform: 'rotate(-24deg) scale(1.35)', opacity: 0 }, { transform: 'rotate(-11deg) scale(1)', opacity: .9 }],
+      { duration: 380, delay: 900, easing: 'cubic-bezier(.5,0,.75,0)', fill: 'backwards' });
+  }
+
+  function applyFilter(user) {
+    const show = li => filter === 'all' || li.dataset.tags.split(' ').includes(filter);
+    const run = () => {
+      [...deck().children].forEach(li => { li.hidden = !show(li); });
+      main.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === filter)));
+      deck().scrollLeft = 0;
+      onDeckScroll();
+    };
+    if (user && document.startViewTransition && !reduce && !phone.matches) {
+      [...deck().children].forEach((li, i) => { li.style.viewTransitionName = `pc-${i}`; });
+      document.startViewTransition(run).finished.finally(() => [...deck().children].forEach(li => { li.style.viewTransitionName = ''; }));
+    } else run();
+  }
+
+  // phones: the postcard in the middle is straight, the ones beside it lean away
+  let deckRaf = 0;
