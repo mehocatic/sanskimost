@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
-  <title>Planirajte posjetu · Sanski Most</title>
+  <title>Posjeta · Sanski Most</title>
   <meta name="description" data-i18n-attr="content:plan.meta" content="Udaljenosti, praktične napomene i prijedlozi ruta za Sanski Most i okolinu.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sanski Most">
-  <meta property="og:title" content="Planirajte posjetu · Sanski Most">
+  <meta property="og:title" content="Posjeta · Sanski Most">
   <meta property="og:description" data-i18n-attr="content:plan.meta" content="Udaljenosti, praktične napomene i prijedlozi ruta za Sanski Most i okolinu.">
   <meta property="og:url" content="https://sanskimost.pages.dev/plan">
   <meta property="og:image" content="https://sanskimost.pages.dev/photos/og.jpg">
@@ -19,14 +19,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://sanskimost.pages.dev/photos/og.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preload" as="image" href="photos/grad/masinski-most-sumrak.webp">
   <link rel="stylesheet" href="vendor/fonts/fonts.css">
   <script src="js/vt.js"></script>
   <script defer src="js/lib.js"></script>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/plan.css">
 </head>
-<body id="top" class="on-deep plan-page">
+<body id="top" class="on-paper visit-page">
 
   <nav class="site-nav" aria-label="Glavni meni" data-i18n-attr="aria-label:nav.label">
     <a class="nav-logo" href="./">Sanski Most</a>
@@ -43,17 +42,22 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="t-open" data-i18n="nav.menu">Meni</span><span class="t-close" data-i18n="nav.close">Zatvori</span></button>
   </nav>
 
-  <!-- the places seen through water: js/plan.js draws the photos and the water here (WebGL2) and builds the text below in the language chosen -->
-  <canvas id="gl" class="plan-water" aria-hidden="true"></canvas>
+  <!-- js/plan.js builds the page in the language chosen: the postcards, the plan, the ready plans and the practical part -->
   <main id="main"></main>
 
-  <!-- one photo of a place, never larger than its natural size -->
-  <dialog class="lb" id="lb" aria-label="Fotografija">
-    <button type="button" id="lb-x">Zatvori</button>
-    <button type="button" class="lb-arrow prev" id="lb-prev" aria-label="Prethodna fotografija">←</button>
-    <button type="button" class="lb-arrow next" id="lb-next" aria-label="Sljedeća fotografija">→</button>
-    <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption><p class="lb-n" id="lb-n"></p></figure>
+  <!-- the plan: an envelope at the bottom of the screen opens the list of the places put into it -->
+  <button class="env empty" id="env" type="button" hidden>
+    <span class="env-back" aria-hidden="true"></span>
+    <span class="env-cards" id="env-cards" aria-hidden="true"></span>
+    <span class="env-front" aria-hidden="true"></span>
+    <span class="env-flap" aria-hidden="true"></span>
+    <span class="env-n" id="env-n" aria-hidden="true"></span>
+    <span class="env-t" id="env-t"></span>
+  </button>
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-t">
+    <div class="sheet-in" id="sheet-in"></div>
   </dialog>
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
 
   <footer class="site-foot on-deep">
     <div class="sf-brand">
@@ -78,13 +82,10 @@
 
   <script defer src="js/data/places.js"></script>
   <script defer src="js/data/routes.js"></script>
+  <script defer src="js/data/poi.js"></script>
   <script defer src="i18n/en.js"></script>
   <script defer src="i18n/bs.js"></script>
   <script defer src="js/i18n.js"></script>
-  <script defer src="vendor/gsap.min.js"></script>
-  <script defer src="vendor/ScrollTrigger.min.js"></script>
-  <script defer src="vendor/SplitText.min.js"></script>
-  <script defer src="vendor/lenis.min.js"></script>
   <script defer src="js/plan.js"></script>
   <script defer src="js/nav.js"></script>
 </body>
