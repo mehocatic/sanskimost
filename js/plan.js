@@ -458,3 +458,22 @@
 
   // phones: the postcard in the middle is straight, the ones beside it lean away
   let deckRaf = 0;
+  function onDeckScroll() {
+    if (deckRaf) return;
+    deckRaf = requestAnimationFrame(() => {
+      deckRaf = 0;
+      const list = items(), d = deck();
+      if (!phone.matches) { list.forEach(li => { li.style.transform = ''; li.style.opacity = ''; }); return; }
+      const mid = d.scrollLeft + d.clientWidth / 2;
+      let best = 0, bestO = Infinity;
+      list.forEach((li, i) => {
+        const o = (li.offsetLeft + li.offsetWidth / 2 - mid) / li.offsetWidth, a = Math.min(Math.abs(o), 1.2);
+        if (Math.abs(o) < bestO) { bestO = Math.abs(o); best = i; }
+        if (reduce) return;
+        li.style.transform = `translateY(${a * 16}px) rotate(${o * 5}deg) scale(${1 - a * .07})`;
+        li.style.opacity = String(1 - a * .3);
+      });
+      $('dk-n').textContent = t('vis.count', { i: best + 1, n: list.length });
+      $('dk-prev').disabled = best === 0;
+      $('dk-next').disabled = best === list.length - 1;
+      d.dataset.at = best;
