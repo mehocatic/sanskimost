@@ -95,8 +95,8 @@
   box-shadow: inset 0 0 12px rgb(40 31 20 / .22);
 }
 .cv-year {
-  font-family: var(--serif); font-weight: 500; font-size: calc(var(--H) * .14); line-height: 1; letter-spacing: -.02em; font-variant-numeric: lining-nums;
-  color: transparent; -webkit-text-stroke: 1px rgba(237, 233, 223, .55);
+  display: flex; align-items: center; gap: 8px; padding: .13em .14em .04em;
+  font-family: var(--serif); font-weight: 500; font-size: calc(var(--H) * .095); line-height: 1; letter-spacing: -.04em; font-variant-numeric: lining-nums;
 }
 .cv-foot { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 8px; font-weight: 600; letter-spacing: .08em; opacity: .85; }
 .cv-src { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
