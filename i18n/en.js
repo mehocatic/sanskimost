@@ -1026,6 +1026,10 @@ I18N.en = {
   'vis.centre': 'In the town centre',
   'vis.air': 'About {km} km as the crow flies',
   'vis.dirs': 'north,northeast,east,southeast,south,southwest,west,northwest',
+  'vis.dir.from': '{dir} of the centre',
+  'vis.noloc': 'The exact location is not on the map yet.',
+  'vis.more': 'Place page',
+  'vis.map': 'On the map',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
