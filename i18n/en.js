@@ -1050,6 +1050,10 @@ I18N.en = {
   'vis.ready.lead': 'Places that are easy to see together. Take a plan, then change it as you like.',
   'vis.ready.take': 'Take this plan',
   'vis.months': 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',
+  'vis.today': 'today',
+  'vis.year.sub': 'The next twelve months, from the start of this month.',
+  'vis.year.now': 'now',
+  'route.plan.name': 'Your plan',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',

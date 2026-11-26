@@ -1052,6 +1052,10 @@ I18N.bs = {
   'vis.ready.lead': 'Mjesta koja se lako obiđu zajedno. Uzmite plan, pa ga promijenite po svom.',
   'vis.ready.take': 'Uzmi ovaj plan',
   'vis.months': 'jan,feb,mar,apr,maj,jun,jul,aug,sep,okt,nov,dec',
+  'vis.today': 'danas',
+  'vis.year.sub': 'Sljedećih dvanaest mjeseci, od početka ovog mjeseca.',
+  'vis.year.now': 'sada',
+  'route.plan.name': 'Vaš plan',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
