@@ -15,7 +15,7 @@ window.SNIMCI = {
       title: 'Sanski Most Captured By Bosnian Army' },
     { id: 'mlada-vojska', cat: 'sana', y: 1995, min: 7, yt: 'J0vEEX4ltHQ', cover: 'J0vEEX4ltHQ.webp', src: 'ARHIV 5. KORPUSA ARBIH',
       title: 'Ulazak mlade vojske 5. korpusa u Sanski Most' },
-    { id: 'ap-borbe', cat: 'sana', y: 1995, min: 5, yt: '9Rlh6HKWp6I', src: 'AP ARCHIVE',
+    { id: 'ap-borbe', cat: 'sana', y: 1995, min: 5, yt: '9Rlh6HKWp6I', cover: '9Rlh6HKWp6I.webp', src: 'AP ARCHIVE',
       title: 'Battle Rages Near Sanski Most' },
     { id: 'brdanin', cat: 'tribunal', y: 2004, min: 45, yt: 'dFiiYn865eA', src: 'HAŠKI TRIBUNAL (MKSJ)',
       title: 'Presuda Pretresnog vijeća: Radoslav Brđanin' },
