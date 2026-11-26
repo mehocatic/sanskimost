@@ -419,3 +419,23 @@
     const tick = () => {
       cards.forEach(c => c.classList.remove('up'));
       if (seen && !held) { cards[i % cards.length].classList.add('up'); i++; }
+      riseT = setTimeout(tick, phone.matches ? 1300 : 2100); // quicker on phones
+    };
+    riseIO = new IntersectionObserver(([e]) => { seen = e.isIntersecting; });
+    riseIO.observe(fan);
+    fan.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { held = true; cards.forEach(c => c.classList.remove('up')); } });
+    fan.addEventListener('pointerleave', () => { held = false; });
+    riseT = setTimeout(tick, 2000); // after the hand is dealt
+  }
+
+  // the hand of postcards is dealt when the page opens
+  function deal() {
+    main.querySelectorAll('.fan-card').forEach((b, i) => {
+      const a = getComputedStyle(b).getPropertyValue('--a');
+      b.animate([
+        { transform: 'translateX(-50%) rotate(0deg) translateY(70px)', opacity: 0 },
+        { transform: `translateX(-50%) rotate(${a}) translateY(0px)`, opacity: 1 }
+      ], { duration: 900, delay: 120 + i * 85, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' });
+    });
+    const pm = $('pm-hero');
+    pm.animate([{ transform: 'rotate(-24deg) scale(1.35)', opacity: 0 }, { transform: 'rotate(-11deg) scale(1)', opacity: .9 }],
