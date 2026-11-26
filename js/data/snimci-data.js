@@ -13,7 +13,7 @@ window.SNIMCI = {
       title: 'Svjedočenje Aziza Čatića – Logori Betonirka i Manjača' },
     { id: 'ap-sana-zauzeta', cat: 'sana', y: 1995, min: 4, yt: 'IIXzOJLKRrg', cover: 'IIXzOJLKRrg.webp', src: 'AP ARCHIVE',
       title: 'Sanski Most Captured By Bosnian Army' },
-    { id: 'mlada-vojska', cat: 'sana', y: 1995, min: 7, yt: 'J0vEEX4ltHQ', src: 'ARHIV 5. KORPUSA ARBIH',
+    { id: 'mlada-vojska', cat: 'sana', y: 1995, min: 7, yt: 'J0vEEX4ltHQ', cover: 'J0vEEX4ltHQ.webp', src: 'ARHIV 5. KORPUSA ARBIH',
       title: 'Ulazak mlade vojske 5. korpusa u Sanski Most' },
     { id: 'ap-borbe', cat: 'sana', y: 1995, min: 5, yt: '9Rlh6HKWp6I', src: 'AP ARCHIVE',
       title: 'Battle Rages Near Sanski Most' },
