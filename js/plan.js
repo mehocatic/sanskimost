@@ -247,3 +247,22 @@
     box.style.setProperty('--rows', best.rows);
   }
 
+  function build() {
+    pmN = 0;
+    const counts = Object.fromEntries(TAGS.map(k => [k, CARDS.filter(c => c.tags.includes(k)).length]));
+    const title = t('vis.title').split(' ');
+    const cut = Math.ceil(title.length / 2);
+
+    main.innerHTML = `
+      <section class="v-hero" aria-labelledby="v-title">
+        <div class="v-txt">
+          <h1 id="v-title"><span class="ln">${esc(title.slice(0, cut).join(' '))}</span><span class="ln">${esc(title.slice(cut).join(' '))}</span></h1>
+          <p class="v-lead">${esc(t('vis.lead'))}</p>
+          <p class="v-now" id="v-now" hidden></p>
+          <a class="v-go" href="#karte">${esc(t('vis.go'))} <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="fan" id="fan">
+          ${FAN.map((id, i) => { const c = card[id]; return `<button class="fan-card" type="button" data-id="${id}" style="--a:${(i - 3) * (phone.matches ? 8 : 9)}deg">
+            <img src="${thumb(c)}" alt="" loading="eager" decoding="async" draggable="false"><span>${esc(nameOf(c))}</span></button>`; }).join('')}
+          <span class="pm" id="pm-hero">${postmark('Sanski Most', dmy(today), 'BiH', '')}</span>
+        </div>
