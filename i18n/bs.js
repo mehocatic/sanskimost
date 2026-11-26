@@ -1024,6 +1024,10 @@ I18N.bs = {
   'vis.k.dist': 'Udaljenost',
   'vis.k.dir': 'Smjer',
   'vis.k.when': 'Kada',
+  'vis.k.entry': 'Ulaz',
+  'vis.centre': 'U centru grada',
+  'vis.air': 'Oko {km} km zračne linije',
+  'vis.dirs': 'sjeverno,sjeveroistočno,istočno,jugoistočno,južno,jugozapadno,zapadno,sjeverozapadno',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',
