@@ -592,3 +592,22 @@
     const rm = e.target.closest('[data-rm]');
     if (rm) { plan = plan.filter(x => x !== rm.dataset.rm); save(); syncCards(); envelope(false); openSheet(); return; }
     const take = e.target.closest('[data-route]');
+    if (take) { ROUTES.find(r => r.id === take.dataset.route).stops.forEach(s => { if (card[s.slug] && !plan.includes(s.slug)) plan.push(s.slug); }); save(); syncCards(); envelope(true); openSheet(); return; }
+    if (e.target.closest('[data-clear]')) { plan = []; received = false; save(); syncCards(); envelope(false); openSheet(); return; }
+    if (e.target.closest('[data-share]')) share();
+  });
+  sheet.addEventListener('close', () => { received = false; });
+  async function share() {
+    const url = `${location.origin}${location.pathname}?p=${sorted().join(',')}`;
+    if (navigator.share) { try { await navigator.share({ title: t('vis.plan.share.text'), url }); return; } catch (e) { if (e.name === 'AbortError') return; } }
+    try { await navigator.clipboard.writeText(url); toast(t('vis.plan.copied')); } catch (e) { toast(url); }
+  }
+  let toastT = 0;
+  function toast(s) {
+    const el = $('toast');
+    el.textContent = s; el.classList.add('on');
+    clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('on'), 2600);
+  }
+
+  /* ---------- appearing on scroll ---------- */
+  function reveal() {
