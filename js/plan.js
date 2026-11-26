@@ -362,3 +362,22 @@
   }
 
   function wire() {
+    deck().addEventListener('click', e => {
+      const pc = e.target.closest('.pc');
+      if (!pc) return;
+      const id = pc.closest('li').dataset.id;
+      if (e.target.closest('.pc-add, .add2')) { toggle(id, pc); return; }
+      if (e.target.closest('.pc-flip')) { flip(pc, true); return; }
+      if (e.target.closest('.turnback')) { flip(pc, false); pc.querySelector('.pc-flip').focus({ preventScroll: true }); return; }
+      // a tap anywhere else on the back turns it back, except on a link or when text is being selected
+      if (pc.classList.contains('flip') && !e.target.closest('a') && !String(getSelection())) flip(pc, false);
+    });
+    deck().addEventListener('keydown', e => {
+      const pc = e.target.closest('.pc.flip');
+      if (e.key === 'Escape' && pc) { flip(pc, false); pc.querySelector('.pc-flip').focus(); }
+    });
+    // a slight tilt under the mouse
+    if (fine && !reduce) {
+      deck().addEventListener('pointermove', e => {
+        const pc = e.target.closest('.pc');
+        if (!pc) return;
