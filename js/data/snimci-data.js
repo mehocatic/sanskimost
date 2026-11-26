@@ -41,7 +41,7 @@ window.SNIMCI = {
       title: 'Operacija Sana 95 – Nedovršena pobjeda' },
     { id: 'zagonetka-alagic', cat: 'doc', y: 2018, min: 110, yt: 'PAaI4FhWUws', cover: 'PAaI4FhWUws.webp', src: '7. KORPUS / MEHMED ALAGIĆ',
       title: 'Zagonetka Alagić – General koji je uspijevao nemoguće' }, // "jedini komandant 7. korpusa ARBiH": wording from Meho
-    { id: 'juris-nepobjedivih', cat: 'doc', y: 2020, min: 85, yt: '7aUMROJANnI', src: '5. KORPUS / 510. BRIGADA',
+    { id: 'juris-nepobjedivih', cat: 'doc', y: 2020, min: 85, yt: '7aUMROJANnI', cover: '7aUMROJANnI.webp', src: '5. KORPUS / 510. BRIGADA',
       title: 'Juriš nepobjedivih – 510. oslobodilačka brigada' }
   ]
 };
