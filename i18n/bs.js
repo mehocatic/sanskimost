@@ -1032,6 +1032,10 @@ I18N.bs = {
   'vis.noloc': 'Tačan položaj još nije na karti.',
   'vis.more': 'Stranica mjesta',
   'vis.map': 'Na karti',
+  'vis.sana.name': 'Sana u gradu',
+  'vis.count': '{i} od {n}',
+  'vis.prev': 'Prethodna razglednica',
+  'vis.next': 'Sljedeća razglednica',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

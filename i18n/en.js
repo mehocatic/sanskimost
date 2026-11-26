@@ -1030,6 +1030,10 @@ I18N.en = {
   'vis.noloc': 'The exact location is not on the map yet.',
   'vis.more': 'Place page',
   'vis.map': 'On the map',
+  'vis.sana.name': 'The Sana in town',
+  'vis.count': '{i} of {n}',
+  'vis.prev': 'Previous postcard',
+  'vis.next': 'Next postcard',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
