@@ -554,3 +554,22 @@
     $('env-cards').innerHTML = plan.slice(-3).map((id, i, a) => `<img src="${thumb(card[id])}" alt="" style="--x:${(i - (a.length - 1) / 2) * 30}px;--a:${(i - (a.length - 1) / 2) * 7}deg">`).join('');
     if (bump && !reduce) { env.classList.remove('bump'); void env.offsetWidth; env.classList.add('bump'); }
   }
+  addEventListener('scroll', () => {
+    const p = scrollY > innerHeight * .55;
+    if (p !== pastTop) { pastTop = p; envelope(false); }
+  }, { passive: true });
+  $('env').addEventListener('click', openSheet);
+
+  /* ---------- the plan sheet ---------- */
+  const sheet = $('sheet');
+  function sheetHTML() {
+    const ids = sorted();
+    const ready = `<p class="sh-ready-t">${esc(t('vis.ready.title'))}</p><ul class="sh-ready">${ROUTES.map(r =>
+      `<li><div><b>${esc(t(`route.${r.id}.name`))}</b><span>${esc(r.stops.filter(s => card[s.slug]).map(s => nameOf(card[s.slug])).join(', '))}</span></div><button type="button" data-route="${r.id}">${esc(t('vis.ready.take'))}</button></li>`).join('')}</ul>`;
+    return `
+      <div class="sh-head"><div><h2 id="sheet-t">${esc(t('vis.plan.title'))}</h2><p>${esc(countText(ids.length))}</p></div>
+        <button class="sh-x" type="button" data-close>${esc(t('lb.close'))}</button></div>
+      ${received ? `<p class="sh-note">${esc(t('vis.plan.received'))}</p>` : ''}
+      ${ids.length ? `<p class="sh-order">${esc(t('vis.plan.order'))}</p>
+      <ol class="sh-list">${ids.map((id, i) => { const c = card[id], name = nameOf(c), ps = c.ps ? c.ps() : '';
+        return `<li><span class="n">${i + 1}</span><img src="${thumb(c)}" alt="" loading="lazy">
