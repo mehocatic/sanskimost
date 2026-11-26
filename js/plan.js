@@ -400,3 +400,22 @@
     deck().addEventListener('scroll', onDeckScroll, { passive: true });
     $('fan').addEventListener('click', e => { const b = e.target.closest('.fan-card'); if (b) openCard(b.dataset.id); });
     main.querySelectorAll('.take').forEach(b => b.addEventListener('click', () => {
+      const r = ROUTES.find(x => x.id === b.dataset.route);
+      r.stops.forEach(s => { if (card[s.slug] && !plan.includes(s.slug)) plan.push(s.slug); });
+      save(); syncCards(); envelope(true); openSheet();
+    }));
+    main.querySelector('.v-go').addEventListener('click', e => { e.preventDefault(); $('karte').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); });
+    if (!reduce) { deal(); riseLoop(); }
+  }
+
+  // one postcard after another rises out of the hand and settles back, so phones (which have no hover) see it too;
+  // it waits while the mouse is over the hand and stops while the hand is off screen
+  let riseT = 0, riseIO = null;
+  function riseLoop() {
+    clearTimeout(riseT);
+    if (riseIO) riseIO.disconnect();
+    const fan = $('fan'), cards = [...fan.querySelectorAll('.fan-card')];
+    let i = 0, seen = true, held = false;
+    const tick = () => {
+      cards.forEach(c => c.classList.remove('up'));
+      if (seen && !held) { cards[i % cards.length].classList.add('up'); i++; }
