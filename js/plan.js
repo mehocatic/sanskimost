@@ -132,3 +132,22 @@
     const dir = dirWord(c);
     const lines = [[t('vis.k.dist'), distLong(c)]];
     if (dir) lines.push([t('vis.k.dir'), cap(t('vis.dir.from', { dir }))]);
+    if (c.when) lines.push([t('vis.k.when'), c.when()]);
+    if (c.entry) lines.push([t('vis.k.entry'), c.entry()]);
+    const page = bySlug[c.id] ? `<a href="place?slug=${encodeURIComponent(c.id)}">${esc(t('vis.more'))} →</a>` : '';
+    const map = c.map ? `<a href="${c.map}">${esc(t('vis.map'))} →</a>` : coordsOf(c) ? `<a href="explore?place=${encodeURIComponent(c.id)}">${esc(t('vis.map'))} →</a>` : '';
+    const stampVal = c.km ? `${c.km} km` : centre(c) ? '0 km' : geo(c) ? `${num(geo(c).km)} km` : '';
+    return `<li data-id="${c.id}" data-tags="${c.tags.join(' ')}">
+      <article class="pc${inPlan ? ' in-plan' : ''}" style="--rot:${rot}deg;--rot0:${rot}deg" aria-label="${esc(name)}">
+        <div class="pc-in">
+          <div class="pc-face pc-front">
+            <button class="pc-flip" type="button" aria-label="${esc(t('vis.turn', { name }))}">
+              <span class="pc-photo"><img src="${c.img[0]}"${c.img[1] ? ` srcset="${c.img[1]}" sizes="(max-width: 760px) 78vw, 300px"` : ''} alt="${esc(name)}" loading="lazy" decoding="async" draggable="false"></span>
+              <span class="pc-cap"><span class="pc-name">${esc(name)}</span><span class="pc-dist">${esc(distShort(c))}</span></span>
+            </button>
+            <span class="pc-turn" aria-hidden="true">↻</span>
+            <button class="pc-add" type="button" aria-pressed="${inPlan}" aria-label="${esc(t(inPlan ? 'vis.remove.aria' : 'vis.add.aria', { name }))}">${PLUS}</button>
+            <span class="pc-mark" aria-hidden="true">${esc(t('vis.added'))}</span>
+          </div>
+          <div class="pc-face pc-back" inert>
+            <div class="pc-top">
