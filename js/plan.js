@@ -74,3 +74,22 @@
     return { km, dir: Math.round(deg / 45) % 8 };
   }
   const num = km => km >= 10 ? String(Math.round(km)) : (Math.round(km * 10) / 10).toString().replace('.', I18n.lang === 'bs' ? ',' : '.');
+  const centre = c => { const g = geo(c); return g && g.km < .4; };
+  const kmOf = c => c.km || (geo(c) ? geo(c).km : Infinity);
+  const dirWord = c => { const g = geo(c); return g && g.km >= .4 ? t('vis.dirs').split(',')[g.dir] : ''; };
+  const cap = s => s ? s[0].toUpperCase() + s.slice(1) : s;
+  function distLong(c) {
+    if (c.km) return c.air ? t('vis.air', { km: c.km }) : t('routes.km', { km: c.km });
+    const g = geo(c);
+    if (!g) return t('vis.noloc');
+    return g.km < .4 ? t('vis.centre') : t('vis.air', { km: num(g.km) });
+  }
+  function distShort(c) {
+    if (centre(c)) return t('vis.centre');
+    const g = geo(c);
+    const km = c.km || (g ? num(g.km) : null);
+    return [km ? `${km} km` : '', dirWord(c)].filter(Boolean).join(' · ');
+  }
+
+  /* ---------- the postmark: town on top, a date or a word below, a word in the middle ---------- */
+  let pmN = 0;
