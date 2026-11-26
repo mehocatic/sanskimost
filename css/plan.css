@@ -76,3 +76,19 @@
 .v-hint { font-family: var(--hand); font-size: 1.35rem; line-height: 1.2; color: var(--fg-muted); }
 
 .chips { display: flex; gap: 8px; margin-top: 1.6rem; padding: 0 var(--gutter) 4px; overflow-x: auto; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: none; display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: 0 1rem;
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px; cursor: pointer;
+  font-size: .9rem; transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.chip b { font-weight: 500; font-size: .78rem; color: var(--fg-muted); font-variant-numeric: tabular-nums; }
+.chip:hover { border-color: var(--btn); }
+.chip[aria-pressed="true"] { background: var(--btn); color: var(--paper); border-color: var(--btn); }
+.chip[aria-pressed="true"] b { color: rgba(246, 244, 238, .7); }
+
+.deck {
+  list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(var(--card-w), 100%), 1fr));
+  justify-items: center; gap: clamp(36px, 4vw, 56px) clamp(20px, 2.4vw, 36px); margin-top: clamp(28px, 4vw, 48px); padding: 0 var(--gutter);
+}
+.deck > li { width: 100%; max-width: var(--card-w); }
