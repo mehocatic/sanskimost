@@ -249,3 +249,19 @@
 .stay span { margin-top: .3rem; font-size: .84rem; line-height: 1.35; color: var(--fg-muted); }
 .spa { margin-top: 1.4rem; padding: 16px 18px; border: 1px solid var(--rule); border-radius: 3px; }
 .spa h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; }
+.spa .lbl { font-size: .8rem; color: var(--fg-muted); }
+
+/* the year: the next twelve months. Seasons are bands over the months, the days hang from a line under them;
+   on phones the same things are a list in the order they come */
+.yr-sub { margin: -.5rem 0 0; font-size: .9rem; color: var(--fg-muted); }
+.yr {
+  --row: 136px; position: relative; margin-top: 44px;
+  background: linear-gradient(to right, var(--rule) 1px, transparent 1px) 0 0 / calc(100% / 12) 100% repeat-x;
+}
+.yr-months { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-bottom: 1px solid var(--rule); }
+.yr-months span { padding: 8px 10px; font-size: .8rem; color: var(--fg-muted); text-transform: capitalize; white-space: nowrap; }
+.yr-months span.cur { color: var(--fg); font-weight: 500; }
+.yr-months small { font-size: .7rem; opacity: .7; }
+.yr-c { display: flex; align-items: flex-start; gap: 12px; }
+.yr-c img { flex: none; width: 56px; height: 56px; object-fit: cover; border-radius: 3px; }
+.yr-c b { display: block; font-weight: 500; font-size: .95rem; line-height: 1.3; }
