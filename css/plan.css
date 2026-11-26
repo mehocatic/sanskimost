@@ -170,3 +170,19 @@
 }
 .pc-act .add2[aria-pressed="true"] { background: transparent; color: var(--btn); }
 .pc-act a { display: inline-flex; align-items: center; min-height: 40px; font-size: .84rem; text-decoration: none; border-bottom: 1px solid transparent; }
+.pc-act a:hover { border-bottom-color: currentColor; }
+.pc.flip .pc-back { cursor: pointer; }
+.pc-act .turnback {
+  margin-left: auto; width: 40px; height: 40px; border: 1px solid rgba(21, 26, 24, .2); border-radius: 50%; background: none; cursor: pointer; font-size: 1.1rem; line-height: 1;
+}
+.pc-act .turnback:hover { background: rgba(21, 26, 24, .06); }
+/* room for the envelope under the footer */
+.visit-page .site-foot { padding-bottom: 96px; }
+
+/* the back is compact at every width, so the text fits the card */
+.pc { aspect-ratio: 5 / 7.5; }
+.pc-top { min-height: 80px; }
+.pc-top h3 { font-size: 1.2rem; }
+.stamp { width: 64px; height: 80px; padding: 5px; }
+.stamp b { font-size: .74rem; left: 5px; right: 5px; bottom: 5px; }
+.pc-back .pm { top: 52px; right: 46px; width: 62px; }
