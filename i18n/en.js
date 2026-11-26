@@ -1046,6 +1046,10 @@ I18N.en = {
   'vis.plan.copied': 'The link to the plan is copied.',
   'vis.plan.clear': 'Clear the plan',
   'vis.plan.received': 'This plan was sent to you as a link. You can change it.',
+  'vis.ready.title': 'Ready plans',
+  'vis.ready.lead': 'Places that are easy to see together. Take a plan, then change it as you like.',
+  'vis.ready.take': 'Take this plan',
+  'vis.months': 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
