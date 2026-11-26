@@ -70,7 +70,7 @@
 .sp-year { font-size: 9px; font-weight: 600; letter-spacing: .06em; opacity: .8; font-variant-numeric: lining-nums; }
 .sp-min { font-size: 9px; font-weight: 600; padding: 2px 4px; border: 1px solid rgba(237, 233, 223, .45); opacity: .85; }
 
-/* the cover, turned away until the tape comes to the middle. No picture from other sites: the year stands in the frame. */
+/* The cover turns forward as it reaches the middle of the shelf. */
 .cv {
   width: var(--d); left: calc(var(--d) / -2); transform: rotateY(90deg) translateZ(calc(var(--ws) / 2));
   display: flex; flex-direction: column; justify-content: space-between; padding: 10px 10px 8px; color: #ede9df;
