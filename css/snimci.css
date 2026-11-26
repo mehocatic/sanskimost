@@ -98,6 +98,7 @@
   display: flex; align-items: center; gap: 8px; padding: .13em .14em .04em;
   font-family: var(--serif); font-weight: 500; font-size: calc(var(--H) * .095); line-height: 1; letter-spacing: -.04em; font-variant-numeric: lining-nums;
 }
+.cv-year::after { content: ""; flex: 1; border-top: 3px double currentColor; opacity: .6; }
 .cv-foot { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 8px; font-weight: 600; letter-spacing: .08em; opacity: .85; }
 .cv-src { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .cv-min { flex: none; padding: 1px 4px; border: 1px solid rgba(237, 233, 223, .45); white-space: nowrap; }
