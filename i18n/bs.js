@@ -1036,6 +1036,10 @@ I18N.bs = {
   'vis.count': '{i} od {n}',
   'vis.prev': 'Prethodna razglednica',
   'vis.next': 'Sljedeća razglednica',
+  'vis.plan.title': 'Vaš plan',
+  'vis.plan.one': '{n} mjesto',
+  'vis.plan.many': '{n} mjesta',
+  'vis.plan.open': 'Otvori plan',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

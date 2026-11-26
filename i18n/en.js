@@ -1034,6 +1034,10 @@ I18N.en = {
   'vis.count': '{i} of {n}',
   'vis.prev': 'Previous postcard',
   'vis.next': 'Next postcard',
+  'vis.plan.title': 'Your plan',
+  'vis.plan.one': '{n} place',
+  'vis.plan.many': '{n} places',
+  'vis.plan.open': 'Open the plan',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
