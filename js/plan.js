@@ -266,3 +266,22 @@
             <img src="${thumb(c)}" alt="" loading="eager" decoding="async" draggable="false"><span>${esc(nameOf(c))}</span></button>`; }).join('')}
           <span class="pm" id="pm-hero">${postmark('Sanski Most', dmy(today), 'BiH', '')}</span>
         </div>
+      </section>
+
+      <section class="v-deck" id="karte" aria-labelledby="deck-t">
+        <div class="v-head"><h2 id="deck-t">${esc(t('vis.deck.title'))}</h2><p class="v-hint">${esc(t(fine ? 'vis.deck.hint.mouse' : 'vis.deck.hint.touch'))}</p></div>
+        <div class="chips" role="group" aria-label="${esc(t('vis.f.label'))}">
+          <button class="chip" type="button" data-f="all" aria-pressed="${filter === 'all'}">${esc(t('vis.f.all'))} <b>${CARDS.length}</b></button>
+          ${TAGS.map(k => `<button class="chip" type="button" data-f="${k}" aria-pressed="${filter === k}">${esc(tagName(k))} <b>${counts[k]}</b></button>`).join('')}
+        </div>
+        <ol class="deck" id="deck">${CARDS.map(cardHTML).join('')}</ol>
+        <div class="deck-nav"><button type="button" id="dk-prev" aria-label="${esc(t('vis.prev'))}">←</button><span id="dk-n" aria-live="polite"></span><button type="button" id="dk-next" aria-label="${esc(t('vis.next'))}">→</button></div>
+      </section>
+
+      <section class="v-ready" aria-labelledby="ready-t">
+        <h2 id="ready-t" class="rv">${esc(t('vis.ready.title'))}</h2>
+        <p class="v-sub rv">${esc(t('vis.ready.lead'))}</p>
+        <ol class="packs">${ROUTES.map(r => { const st = r.stops.filter(s => card[s.slug]); return `<li class="pack rv">
+          <div class="pack-fan" aria-hidden="true">${st.slice(0, 3).map((s, i) => `<span style="--i:${i};--a:${[-5, 2, 6][i]}deg"><img src="${thumb(card[s.slug])}" alt="" loading="lazy" decoding="async"></span>`).join('')}</div>
+          <h3>${esc(t(`route.${r.id}.name`))}</h3>
+          <p class="pack-t">${esc(t(`route.${r.id}.text`))}</p>
