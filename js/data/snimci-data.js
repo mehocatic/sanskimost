@@ -39,7 +39,7 @@ window.SNIMCI = {
       title: 'Masovna grobnica Hrastova glavica' }, // TODO(verify) "prebačenim iz logora Omarska i Keraterm"
     { id: 'operacija-sana-95', cat: 'doc', y: 2015, min: 98, yt: 'RohHZQC62u4', cover: 'RohHZQC62u4.webp', src: 'AUTOR: AVDO HUSEINOVIĆ',
       title: 'Operacija Sana 95 – Nedovršena pobjeda' },
-    { id: 'zagonetka-alagic', cat: 'doc', y: 2018, min: 110, yt: 'PAaI4FhWUws', src: '7. KORPUS / MEHMED ALAGIĆ',
+    { id: 'zagonetka-alagic', cat: 'doc', y: 2018, min: 110, yt: 'PAaI4FhWUws', cover: 'PAaI4FhWUws.webp', src: '7. KORPUS / MEHMED ALAGIĆ',
       title: 'Zagonetka Alagić – General koji je uspijevao nemoguće' }, // "jedini komandant 7. korpusa ARBiH": wording from Meho
     { id: 'juris-nepobjedivih', cat: 'doc', y: 2020, min: 85, yt: '7aUMROJANnI', src: '5. KORPUS / 510. BRIGADA',
       title: 'Juriš nepobjedivih – 510. oslobodilačka brigada' }
