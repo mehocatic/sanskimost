@@ -381,3 +381,22 @@
       deck().addEventListener('pointermove', e => {
         const pc = e.target.closest('.pc');
         if (!pc) return;
+        const r = pc.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        pc.classList.add('tilting');
+        pc.style.setProperty('--tx', `${x * 9}deg`);
+        pc.style.setProperty('--ty', `${-y * 7}deg`);
+      });
+      deck().addEventListener('pointerout', e => {
+        const pc = e.target.closest('.pc');
+        if (!pc || pc.contains(e.relatedTarget)) return;
+        pc.classList.remove('tilting');
+        pc.style.setProperty('--tx', '0deg');
+        pc.style.setProperty('--ty', '0deg');
+      });
+    }
+    main.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => { filter = b.dataset.f; applyFilter(true); }));
+    $('dk-prev').addEventListener('click', () => step(-1));
+    $('dk-next').addEventListener('click', () => step(1));
+    deck().addEventListener('scroll', onDeckScroll, { passive: true });
+    $('fan').addEventListener('click', e => { const b = e.target.closest('.fan-card'); if (b) openCard(b.dataset.id); });
+    main.querySelectorAll('.take').forEach(b => b.addEventListener('click', () => {
