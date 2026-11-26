@@ -280,3 +280,19 @@
 .yr-day::before { content: ""; position: absolute; left: -2px; bottom: 100%; width: 2px; height: calc(21px + var(--r) * (var(--row) + 14px)); background: var(--sand); }
 .yr-day.to-left { transform: translateX(-100%); border-left: 0; border-right: 2px solid var(--sand); border-radius: 4px 0 0 4px; }
 .yr-day.to-left::before { left: auto; right: -2px; }
+.yr-now { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--paper); z-index: 1; }
+.yr-now em { position: absolute; bottom: 100%; left: 50%; margin-bottom: 8px; transform: translateX(-50%); padding: 3px 10px; border-radius: 99px; background: var(--paper); color: var(--ink); font-style: normal; font-size: .72rem; font-weight: 500; white-space: nowrap; }
+.yr-list { display: none; }
+.river-l { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 40px; margin-top: 1.4rem; }
+.river-l h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; margin-bottom: .3rem; }
+.v-end { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px; margin-top: clamp(56px, 8vw, 96px); padding-top: 28px; border-top: 1px solid var(--rule); }
+.v-end h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 2.8rem); line-height: 1.05; }
+.v-end a.cta { display: inline-flex; align-items: center; gap: .6rem; min-height: 50px; padding: 0 1.5rem; background: var(--sand); color: var(--ink); border-radius: 999px; font-weight: 500; text-decoration: none; transition: background .25s ease, transform .25s ease; }
+.v-end a.cta:hover { background: #a5e6ea; transform: translateY(-2px); }
+
+/* ---------- the envelope with the plan, at the bottom of the screen ----------
+   dark like the menu bar: the back, the postcards inside it, the front pocket with a V, and a round seal with the number.
+   Empty, its flap is closed. */
+.env {
+  position: fixed; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); z-index: 55;
+  width: 196px; height: 96px; padding: 0; background: none; border: 0; cursor: pointer; color: var(--paper);
