@@ -208,3 +208,23 @@
         <div class="yr-seasons">${seasons.map(x => `<div class="yr-season" style="left:${x.a}%;width:${x.b - x.a}%">${box(x)}</div>`).join('')}</div>
         <div class="yr-track">${days.map(x => `<span class="yr-dot" style="left:${x.p}%"></span>`).join('')}</div>
         <div class="yr-days">${days.map(x => `<div class="yr-day" data-p="${x.p}" style="left:${x.p}%">${box(x)}</div>`).join('')}</div>
+        <span class="yr-now" style="left:${pos(today)}%"><em>${esc(t('vis.today'))}</em></span>
+      </div>`;
+    // phones: the same, one under the other, in the order they come
+    const all = [...seasons, ...days].sort((a, b) => a.soon - b.soon);
+    const list = `<ol class="yr-list">
+        <li class="yr-today"><i></i><b>${esc(cap(t('vis.today')))}, ${dmy(today)}</b></li>
+        ${all.map(x => `<li class="${x.band ? 'band' : ''}"><i></i>${box(x)}</li>`).join('')}
+      </ol>`;
+    return wide + list;
+  }
+  // the cards of the three days: every way of putting each card in a row (hanging right or left of its dot) is tried,
+  // and the first one where no card covers another wins, with as few rows and left-hanging cards as possible
+  function layoutYear() {
+    const box = $('yr');
+    if (!box || !box.offsetWidth) return;
+    const W = box.offsetWidth, els = [...box.querySelectorAll('.yr-day')].sort((a, b) => a.dataset.p - b.dataset.p);
+    const items = els.map(el => ({ el, w: el.offsetWidth, x: W * el.dataset.p / 100 }));
+    let best = null;
+    const n = items.length, opts = 6; // 3 rows x 2 sides
+    for (let code = 0; code < opts ** n; code++) {
