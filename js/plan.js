@@ -93,3 +93,23 @@
 
   /* ---------- the postmark: town on top, a date or a word below, a word in the middle ---------- */
   let pmN = 0;
+  function postmark(top, bottom, mid, small) {
+    const n = ++pmN;
+    return `<svg viewBox="0 0 120 120" aria-hidden="true">
+      <defs><path id="pmt${n}" d="M 19,60 A 41,41 0 0 1 101,60"/><path id="pmb${n}" d="M 11,60 A 49,49 0 0 0 109,60"/></defs>
+      <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2.6"/>
+      <circle cx="60" cy="60" r="37" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <text font-size="10" font-weight="500" letter-spacing="1.6" text-anchor="middle"><textPath href="#pmt${n}" startOffset="50%">${esc(top.toUpperCase())}</textPath></text>
+      <text font-size="9.5" font-weight="500" letter-spacing="1.4" text-anchor="middle"><textPath href="#pmb${n}" startOffset="50%">${esc(bottom.toUpperCase())}</textPath></text>
+      <text x="60" y="${small ? 62 : 66}" font-size="${small ? 13 : 21}" font-weight="500" text-anchor="middle">${esc(mid)}</text>
+      ${small ? `<text x="60" y="79" font-size="8.5" text-anchor="middle">${esc(small)}</text>` : ''}
+    </svg>`;
+  }
+
+  /* ---------- the plan ---------- */
+  const KEY = 'visit-plan';
+  let plan = [], received = false;
+  try { plan = JSON.parse(localStorage.getItem(KEY) || '[]').filter(id => card[id]); } catch (e) { plan = []; }
+  const qp = new URLSearchParams(location.search).get('p');
+  if (qp) {
+    const ids = [...new Set(qp.split(',').filter(id => card[id]))];
