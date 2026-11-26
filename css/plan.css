@@ -406,3 +406,19 @@
   .env[hidden] { transform: translateY(140%); }
   .env:hover { transform: none; }
   .env-back, .env-front, .env-flap { height: 62px; }
+  .env-cards { bottom: 24px; }
+  .env-cards img { width: 38px; height: 50px; }
+  .env-n { bottom: 25px; }
+  @keyframes bump { 30% { transform: translateY(-9px); } }
+  .toast { bottom: 112px; }
+  .pack > .pack-t { min-height: 0; }
+  .blocks { grid-template-columns: minmax(0, 1fr); }
+  .yr { display: none; }
+  .yr-list { display: block; list-style: none; position: relative; margin-top: 1.6rem; padding-left: 30px; }
+  .yr-list::before { content: ""; position: absolute; left: 8px; top: 10px; bottom: 30px; width: 2px; background: rgba(127, 214, 220, .3); }
+  .yr-list li { position: relative; padding-bottom: 24px; }
+  .yr-list li > i { position: absolute; left: -29px; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--sand); box-shadow: 0 0 0 5px var(--deep); }
+  .yr-list li.band > i { left: -26px; width: 10px; height: 34px; border-radius: 5px; }
+  .yr-list .yr-today > i { background: var(--paper); }
+  .yr-list .yr-today b { font-weight: 500; }
+  .yr-list .yr-c img { width: 64px; height: 64px; }
