@@ -17,3 +17,22 @@
   const bySlug = Object.fromEntries(PLACES.map(p => [p.slug, p]));
   const P = (slug, f) => bySlug[slug] ? I18n.place(bySlug[slug], f) : '';
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const $ = id => document.getElementById(id);
+  const main = $('main');
+  const CENTRE = [44.7638251, 16.6648616]; // Hamzibegova džamija, OSM way 346178044
+
+  /* ---------- dates ---------- */
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const next = (m, d) => { let x = new Date(today.getFullYear(), m - 1, d); if (x < today) x = new Date(today.getFullYear() + 1, m - 1, d); return x; };
+  const firstFriJuly = () => { const f = y => { const d = new Date(y, 6, 1); d.setDate(1 + (5 - d.getDay() + 7) % 7); return d; };
+    let x = f(today.getFullYear()); if (x < today) x = f(today.getFullYear() + 1); return x; };
+  const daysTo = d => Math.round((d - today) / 864e5);
+  const one = n => I18n.lang === 'bs' ? n % 10 === 1 && n % 100 !== 11 : n === 1;
+  const inDays = n => n === 0 ? t('pv.in.today') : n === 1 ? t('pv.in.tomorrow') : t(one(n) ? 'pv.in.day' : 'pv.in.days', { n });
+  const dmy = d => `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
+
+  /* ---------- the postcards ----------
+     img: [file, srcset] of the front photo; stamp: the photo on the stamp; km: distance a text gives (air: it is a straight line);
+     ps: the P.S. on the back; when / entry: extra lines on the back. The texts are the place texts or existing keys. */
+  const CARDS = [
+    { id: 'blihe', tags: ['water', 'nature'], img: ['photos/bliha3.webp', 'photos/bliha3-721.webp 721w, photos/bliha3.webp 1080w'], stamp: 'photos/arhiv/blihe-1942.webp', km: 14, ps: () => t('note.cvjetna') },
