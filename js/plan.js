@@ -515,3 +515,22 @@
     deck().querySelectorAll('li').forEach(li => {
       const id = li.dataset.id, on = plan.includes(id), name = nameOf(card[id]);
       li.querySelector('.pc').classList.toggle('in-plan', on);
+      const a = li.querySelector('.pc-add'), b = li.querySelector('.add2');
+      a.setAttribute('aria-pressed', String(on));
+      a.setAttribute('aria-label', t(on ? 'vis.remove.aria' : 'vis.add.aria', { name }));
+      b.setAttribute('aria-pressed', String(on));
+      b.textContent = t(on ? 'vis.remove' : 'vis.add');
+    });
+  }
+  // a copy of the photo flies into the envelope
+  function fly(img) {
+    if (!img || !img.complete) return;
+    const r = img.getBoundingClientRect();
+    if (r.width === 0) return;
+    const f = document.createElement('img');
+    f.className = 'fly'; f.src = img.currentSrc || img.src; f.alt = '';
+    const w = Math.min(r.width, 150), h = w * 1.25;
+    Object.assign(f.style, { left: `${r.left + r.width / 2 - w / 2}px`, top: `${r.top + r.height / 2 - h / 2}px`, width: `${w}px`, height: `${h}px` });
+    document.body.appendChild(f);
+    // to the envelope where it settles (it may still be sliding in from below)
+    const e = $('env').getBoundingClientRect(), bottom = parseFloat(getComputedStyle($('env')).bottom) || 14;
