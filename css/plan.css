@@ -233,3 +233,19 @@
 .blk.wide { grid-column: 1 / -1; }
 .blk p { color: var(--fg-soft); }
 .blk p + p { margin-top: .8rem; }
+.fine { font-size: .82rem; color: var(--fg-muted) !important; }
+.roads { list-style: none; }
+.roads li { display: grid; grid-template-columns: 5.2em minmax(0, 1fr) auto; align-items: baseline; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.roads .t { font-family: var(--serif); font-size: 1.7rem; line-height: 1; color: var(--river-light); white-space: nowrap; }
+.roads .c { font-size: 1.04rem; }
+.roads .d { font-size: .86rem; color: var(--fg-muted); }
+.v-info dl { margin-top: 1.2rem; }
+.v-info dl div { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.v-info dt { font-size: .8rem; color: var(--fg-muted); }
+.v-info dd { color: var(--fg-soft); }
+.stay { display: flex; flex-wrap: wrap; gap: 18px 30px; margin-bottom: 1.2rem; }
+.stay p { display: flex; flex-direction: column; max-width: 9.5em; }
+.stay b { font-family: var(--serif); font-weight: 400; font-size: 3rem; line-height: 1; color: var(--river-light); }
+.stay span { margin-top: .3rem; font-size: .84rem; line-height: 1.35; color: var(--fg-muted); }
+.spa { margin-top: 1.4rem; padding: 16px 18px; border: 1px solid var(--rule); border-radius: 3px; }
+.spa h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; }
