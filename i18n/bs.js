@@ -1016,6 +1016,10 @@ I18N.bs = {
   'vis.f.town': 'U gradu',
   'vis.turn': 'Okreni razglednicu: {name}',
   'vis.turn.back': 'Okreni nazad',
+  'vis.add': 'Dodaj u plan',
+  'vis.add.aria': 'Dodaj u plan: {name}',
+  'vis.added': 'U planu',
+  'vis.remove': 'Izbaci iz plana',
 
   // 404 page
   'notfound.doctitle': 'Stranica nije pronađena · Sanski Most',

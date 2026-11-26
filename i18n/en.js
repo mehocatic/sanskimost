@@ -1014,6 +1014,10 @@ I18N.en = {
   'vis.f.town': 'In town',
   'vis.turn': 'Turn the postcard over: {name}',
   'vis.turn.back': 'Turn back',
+  'vis.add': 'Add to plan',
+  'vis.add.aria': 'Add to plan: {name}',
+  'vis.added': 'In your plan',
+  'vis.remove': 'Remove from plan',
 
   // 404 page (its buttons use nav.home and nav.explore)
   'notfound.doctitle': 'Page not found · Sanski Most',
