@@ -19,7 +19,7 @@ window.SNIMCI = {
       title: 'Battle Rages Near Sanski Most' },
     { id: 'brdanin', cat: 'tribunal', y: 2004, min: 45, yt: 'dFiiYn865eA', cover: 'dFiiYn865eA.webp', src: 'HAŠKI TRIBUNAL (MKSJ)',
       title: 'Presuda Pretresnog vijeća: Radoslav Brđanin' },
-    { id: 'stanisic-simatovic', cat: 'tribunal', y: 2023, min: 30, yt: 'jk93wI3lDLo', src: 'SENSE CENTAR / MRMKS',
+    { id: 'stanisic-simatovic', cat: 'tribunal', y: 2023, min: 30, yt: 'jk93wI3lDLo', cover: 'jk93wI3lDLo.webp', src: 'SENSE CENTAR / MRMKS',
       title: 'Stanišić i Simatović – Žalbena presuda' }, // TODO(verify) "Sanski Most 1992. i 1995." in the description
     { id: 'rajif-begic', cat: 'logori', y: 1992, min: 12, yt: 'difjNxFJv-8', src: 'MREŽA REKOM',
       title: 'Svjedočenje: Rajif Begić (Vrhpoljski most)' },
