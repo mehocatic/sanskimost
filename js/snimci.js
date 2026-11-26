@@ -31,9 +31,12 @@
 
   /* ---------- the tapes ---------- */
   function cover(f, i) {
+    const photo = f.cover
+      ? `<div class="cv-photo" style="background-image:url('photos/snimci/${encodeURIComponent(f.cover)}')"></div>`
+      : '<div class="cv-photo"></div>';
     return `<div class="cv-top"><span class="cv-lbl">${esc(t('sn.cover'))}</span><span>#${num(i)}</span></div>` +
       `<div class="cv-title">${esc(f.title)}</div>` +
-      `<div class="cv-frame"><b class="cv-year">${f.y}</b></div>` +
+      `<div class="cv-frame">${photo}<b class="cv-year">${f.y}</b></div>` +
       `<div class="cv-foot"><span class="cv-src">${esc(f.src)}</span><span class="cv-min">${f.min} ${esc(t('sn.min'))}</span></div>`;
   }
   function spine(f, i) {
