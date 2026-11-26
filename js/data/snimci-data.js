@@ -31,7 +31,7 @@ window.SNIMCI = {
       title: 'Komandanti o operaciji SANA 95' }, // TODO(verify) y, as above
     { id: '505-brigada', cat: 'sana', y: 1995, min: 28, yt: 'uU8Uw11bupQ', cover: 'uU8Uw11bupQ.webp', src: 'INFORMATIVNA SLUŽBA 505.',
       title: '505. viteška brigada u operaciji Sana 95' },
-    { id: 'domazeti', cat: 'sana', y: 1995, min: 15, yt: 'rbPwVppGwsY', cover: 'rbPwVppGwsY.webp', src: 'BIR TV REPORTAŽA',
+    { id: 'domazeti', cat: 'sana', y: 1995, min: 15, yt: 'rbPwVppGwsY', cover: 'rbPwVppGwsY-arhiv.webp', src: 'BIR TV REPORTAŽA',
       title: 'Sanski Most: Zločin u Domazetima 1995.' }, // TODO(verify) the number 15 in the description
     { id: 'krings', cat: 'logori', y: 1992, min: 10, yt: 'K7gkwjHumn4', cover: 'K7gkwjHumn4.webp', src: 'RTV USK',
       title: 'Sjećanje na žrtve logora Krings' },
